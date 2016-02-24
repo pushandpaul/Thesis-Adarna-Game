@@ -4,51 +4,45 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 	public PlayerController player;
 
-	public bool isFollowing;
+	public Vector2 margin;
+	public Vector2 smoothing;
+
+	public BoxCollider2D bounds;
+
+	private Vector3 _min;
+	private Vector3 _max;
 
 	public float xOffset;
 	public float yOffset;
 
-	private Vector3 position1;
-	private Vector3 position2;
-	public float flipSpeed = 1.0f;
-
-	private float startPoint;
-	private float endPoint;
-	public bool flipped;
+	public bool isFollowing;
 	// Use this for initialization
 	void Start () {
-	
 		player = FindObjectOfType<PlayerController>();
-		isFollowing = true;
-		//position1 = new Vector3(player.transform.position.x + xOffset, player.transform.position.y + yOffset, -10f);
-		//position2 = new Vector3(-(player.transform.position.x + xOffset), player.transform.position.y + yOffset, -10f);
+		_min = bounds.bounds.min;
+		_max = bounds.bounds.max;
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+		var x = transform.position.x;
+		var y = transform.position.y;
+
 		if(isFollowing){
-			transform.position = new Vector3(player.transform.position.x + xOffset, player.transform.position.y + yOffset, -10f);
+			if(Mathf.Abs(x - (player.transform.position.x + xOffset)) > margin.x){
+				x = Mathf.Lerp(x, player.transform.position.x + xOffset, smoothing.x = Time.deltaTime);
+			}
+
+			if(Mathf.Abs(y - (player.transform.position.y + yOffset)) > margin.y){
+				y = Mathf.Lerp(y, player.transform.position.y + yOffset, smoothing.y = Time.deltaTime);
+			}
 		}
-		//position1 = new Vector3(player.transform.position.x + xOffset, player.transform.position.y + yOffset, -10f);
-		//position2 = new Vector3(-(player.transform.position.x + xOffset), player.transform.position.y + yOffset, -10f);
-		//startPoint = player.transform.position.x + xOffset;
-		//endPoint = player.transform.position.x + xOffset;
+
+		var cameraHalfWidth = GetComponent<Camera>().orthographicSize * ((float)Screen.width / Screen.height);﻿
+		x = Mathf.Clamp(x, _min.x + cameraHalfWidth, _max.x - cameraHalfWidth);
+		y = Mathf.Clamp(y, _min.y + GetComponent<Camera>().orthographicSize, _max.y - GetComponent<Camera>().orthographicSize);
+
+		transform.position = new Vector3(x,y, transform.position.z);
 	}
 
-	/*void LateUpdate(){
-		if(!flipped)
-			Flip();
-	}
-	public void Flip(){
-		transform.position = Vector3.Lerp(position1, position2, (Mathf.Sin(flipSpeed * Time.time)));
-		Debug.Log("Current position: " + transform.position.x + " , Target position: " + endPoint);
-		if(transform.position.x == endPoint){
-			flipped = true;
-			//startPoint = player.transform.position.x + xOffset;
-			endPoint = player.transform.position.x + xOffset;
-		}
 		
-	}*/
 }
