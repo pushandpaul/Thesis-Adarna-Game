@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-
 	public float moveSpeed;
 	private float moveVelocity;
 	public float jumpHeight;
@@ -52,14 +51,12 @@ public class PlayerController : MonoBehaviour {
 
 		GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 
+		anim.SetBool("Ground", grounded);
 
-
-		if(Input.GetKeyDown(KeyCode.Space) && grounded)
+		if(Input.GetKeyDown(KeyCode.Space) && grounded){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-
-
-
-
+		}
+	
 		//Flip
 		if(GetComponent<Rigidbody2D>().velocity.x > 0){
 			transform.localScale = new Vector3(scaleX, scaleY, 1f);
