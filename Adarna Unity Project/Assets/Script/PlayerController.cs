@@ -60,32 +60,11 @@ public class PlayerController : MonoBehaviour {
 		//Flip
 		if(GetComponent<Rigidbody2D>().velocity.x > 0){
 			transform.localScale = new Vector3(scaleX, scaleY, 1f);
-			/*if(camera.xOffset < 0)
-				camera.xOffset = 0 - camera.xOffset;*/
 				
 		}
 			
 		else if(GetComponent<Rigidbody2D>().velocity.x < 0){
 			transform.localScale = new Vector3(-scaleX, scaleY, 1f);
-			/*if(camera.xOffset > 0){
-				//camera.Flip();
-				//camera.flipped = false;
-				camera.xOffset = 0 - camera.xOffset;
-			}*/
-				
-		}
-	}
-	void OnTriggerEnter2D(Collider2D other) {
-		
-		if(other.tag == "StopCamera"){
-			Debug.Log("Collided with camera stopper: " + other.name);
-			camera.isFollowing = false;
-		}
-	}
-	void OnTriggerExit2D(Collider2D other){
-		if(other.tag == "StopCamera"){
-			Debug.Log("Left camera stopper: " + other.name);
-			camera.isFollowing = true;
 		}
 	}
 }
