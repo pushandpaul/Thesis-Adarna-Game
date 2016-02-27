@@ -12,10 +12,13 @@ public class CameraController : MonoBehaviour {
 	private Vector3 _min;
 	private Vector3 _max;
 
-	public float xOffset;
+	public float defaultXOffset;
+	public float flippedXOffset;
+	private float xOffset;
 	public float yOffset;
 
 	public bool isFollowing;
+	public bool flipped;
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerController>();
@@ -26,6 +29,11 @@ public class CameraController : MonoBehaviour {
 	void FixedUpdate () {
 		var x = transform.position.x;
 		var y = transform.position.y;
+
+		if(!flipped)
+			xOffset = defaultXOffset;
+		else 
+			xOffset = flippedXOffset;
 
 		if(isFollowing){
 			if(Mathf.Abs(x - (player.transform.position.x + xOffset)) > margin.x){

@@ -19,7 +19,10 @@ public class PlayerController : MonoBehaviour {
 	private float scaleX;
 	private float scaleY;
 
+	private bool waitForPress;
+
 	public CameraController camera;
+	private float defaultCamOffset;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponentInChildren<Animator>();
@@ -59,12 +62,20 @@ public class PlayerController : MonoBehaviour {
 	
 		//Flip
 		if(GetComponent<Rigidbody2D>().velocity.x > 0){
-			transform.localScale = new Vector3(scaleX, scaleY, 1f);
-				
+			transform.localScale = new Vector3(scaleX, scaleY, 0f);
+			camera.flipped = false;
 		}
 			
 		else if(GetComponent<Rigidbody2D>().velocity.x < 0){
-			transform.localScale = new Vector3(-scaleX, scaleY, 1f);
+			transform.localScale = new Vector3(-scaleX, scaleY, 0f);
+			camera.flipped = true;
 		}
+			
+	}
+	public void enablePlayerMovement(){
+		canMove = true;
+	}
+	public void disablePlayerMovement(){
+		canMove = false;
 	}
 }

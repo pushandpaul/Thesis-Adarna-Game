@@ -9,12 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 466198}
   - 212: {fileID: 21218836}
-  - 61: {fileID: 6195446}
-  - 114: {fileID: 11416366}
   - 114: {fileID: 11425254}
+  - 114: {fileID: 11424914}
+  - 58: {fileID: 5876444}
   m_Layer: 0
   m_Name: Bert
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.47, y: 4.68, z: 0.5}
-  m_LocalScale: {x: 4.358625, y: 4.358625, z: 4.358625}
+  m_LocalPosition: {x: 34.3, y: -1.6, z: 0.5}
+  m_LocalScale: {x: 1.2666757, y: 1.2666757, z: 1.2666757}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6195446
-BoxCollider2D:
+--- !u!58 &5876444
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -42,10 +42,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.31, y: -0.04}
   serializedVersion: 2
-  m_Size: {x: 1.75, y: 3}
---- !u!114 &11416366
+  m_Radius: 0.65
+--- !u!114 &11424914
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -53,11 +53,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 130476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d5fccb96d5c8446a57fc3bcf5c991f, type: 3}
+  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNPC: 1
-  requirePress: 1
   flowchart: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &11425254
@@ -102,8 +100,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1320190139
-  m_SortingOrder: 0
+  m_SortingLayerID: -1067694563
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 001df3cef828a47c5a3ba9d603f98c8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
