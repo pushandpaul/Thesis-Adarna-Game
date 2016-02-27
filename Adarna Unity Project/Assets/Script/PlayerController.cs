@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		if(!canMove){
 			anim.SetFloat("Speed", 0);
+			anim.SetBool("Ground", true);
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 			return;
 		}
