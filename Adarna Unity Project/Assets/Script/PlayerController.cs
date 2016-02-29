@@ -72,12 +72,12 @@ public class PlayerController : MonoBehaviour {
 
 		//Flip
 		if(GetComponent<Rigidbody2D>().velocity.x > 0){
-			transform.localScale = new Vector3(scaleX, scaleY, 0f);
+			transform.localScale = new Vector3(scaleX, scaleY, 1f);
 			camera.flipped = false;
 		}
 			
 		else if(GetComponent<Rigidbody2D>().velocity.x < 0){
-			transform.localScale = new Vector3(-scaleX, scaleY, 0f);
+			transform.localScale = new Vector3(-scaleX, scaleY, 1f);
 			camera.flipped = true;
 		}
 			

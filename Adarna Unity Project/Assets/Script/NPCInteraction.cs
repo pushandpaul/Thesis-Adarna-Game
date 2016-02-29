@@ -41,9 +41,9 @@ public class NPCInteraction : MonoBehaviour {
 
 		if(waitForPress && Input.GetKeyDown(KeyCode.E)){
 			if(toFlip)
-				transform.localScale = new Vector3(-scaleX, scaleY, 0f);
+				transform.localScale = new Vector3(-scaleX, scaleY, 1f);
 			else
-				transform.localScale = new Vector3(scaleX, scaleY, 0f);
+				transform.localScale = new Vector3(scaleX, scaleY, 1f);
 			Debug.Log ("Interacted with NPC " + gameObject.name);
 			startDialogue();
 		}
@@ -54,7 +54,7 @@ public class NPCInteraction : MonoBehaviour {
 	}
 
 	public void endDialogue(){
-		transform.localScale = new Vector3(scaleX, scaleY, 0f);
+		transform.localScale = new Vector3(scaleX, scaleY, 1f);
 	}
 		
 	void OnTriggerEnter2D (Collider2D other){

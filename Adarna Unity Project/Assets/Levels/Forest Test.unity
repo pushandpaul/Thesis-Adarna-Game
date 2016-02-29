@@ -224,7 +224,6 @@ GameObject:
   - 114: {fileID: 429780728}
   - 114: {fileID: 429780722}
   - 114: {fileID: 429780733}
-  - 114: {fileID: 429780735}
   - 114: {fileID: 429780736}
   - 114: {fileID: 429780737}
   - 114: {fileID: 429780742}
@@ -255,11 +254,9 @@ GameObject:
   - 114: {fileID: 429780766}
   - 114: {fileID: 429780765}
   - 114: {fileID: 429780771}
-  - 114: {fileID: 429780770}
   - 114: {fileID: 429780769}
   - 114: {fileID: 429780768}
   - 114: {fileID: 429780772}
-  - 114: {fileID: 429780773}
   - 114: {fileID: 429780778}
   - 114: {fileID: 429780777}
   - 114: {fileID: 429780776}
@@ -268,6 +265,10 @@ GameObject:
   - 114: {fileID: 429780764}
   - 114: {fileID: 429780763}
   - 114: {fileID: 429780761}
+  - 114: {fileID: 429780735}
+  - 114: {fileID: 429780770}
+  - 114: {fileID: 429780773}
+  - 114: {fileID: 429780779}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -288,21 +289,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -96.1409, y: 12.753769}
+  scrollPos: {x: -107.472626, y: -73.487274}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.8500001
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 1674.9644
     height: 1245.5403
-  selectedBlock: {fileID: 429780778}
-  selectedCommands: []
-  variables:
-  - {fileID: 429780735}
+  selectedBlock: {fileID: 429780771}
+  selectedCommands:
+  - {fileID: 429780779}
+  variables: []
   description: 
   stepPause: 0
   colorCommands: 1
@@ -324,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 149.3574
+    x: 146.26462
     y: 94.7032
     width: 128
     height: 40
@@ -661,7 +662,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &429780735
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -670,12 +671,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 429780717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 1
-  key: EndConvo
-  value: 0
+  itemId: 68
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 84829426}
+  methodName: disablePlayerMovement
+  delay: 0
 --- !u!114 &429780736
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -734,7 +738,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Maawa po kayo at nagugutom na ako.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -756,8 +760,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 388.49387
-    y: 172.54036
+    x: 389.52478
+    y: 180.54036
     width: 167
     height: 40
   itemId: 25
@@ -765,6 +769,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 429780772}
   commandList:
+  - {fileID: 429780735}
   - {fileID: 429780773}
   - {fileID: 429780738}
   - {fileID: 429780746}
@@ -867,7 +872,7 @@ MonoBehaviour:
   storyText: Saan ba ang iyong lakbay? Baka matulungan kita. Salamat na rin sa iyong
     naibigay.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -917,7 +922,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: (Natuwa) Maraming salamat sa iyo, ginoo. Maraming salamat talaga.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1003,7 +1008,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Huwag na, sa\u2019yo na nga. Mas kakailanganin mo \u2018yan."
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1053,7 +1058,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Bakit mo binalik? Ibinibigay ko na muli sa\u2019yo\u2026"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1104,7 +1109,7 @@ MonoBehaviour:
   storyText: "\u2018Eto nga pala ang tinapay na ibinigay mo sa\u2019kin. Sa\u2019yo
     na iyan, kailangan mo yan dahil malayo ang iyong paroroonan."
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1130,7 +1135,7 @@ MonoBehaviour:
   storyText: "Pumasok ka sa bahay at mayroong tao doon na makakapagturo sa\u2019yo
     kung nasaan ang Ibong Adarna"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1157,7 +1162,7 @@ MonoBehaviour:
     kang titigil para tingnan ang puno, at baka mamatay ka.  Maglakad ka lang at may
     makikita ka ring bahay.\r\n"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1207,7 +1212,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Papayuhan kita, at huwag mong kalilimutan para hindi ka maging bato.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1232,7 +1237,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Aba, mahirap pala ang iyong pinagdadaanan.\r\n"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1282,7 +1287,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Ah\u2026"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1407,7 +1412,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Sigurado ka ba dyan, 'iho?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1432,7 +1437,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Sigurado ka ba dyan, 'iho?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1239648917}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1454,8 +1459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 593.1997
-    y: 200.77565
+    x: 590.10693
+    y: 203.86842
     width: 197
     height: 40
   itemId: 49
@@ -1510,10 +1515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 56
+  itemId: 69
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+  targetObject: {fileID: 84829426}
   methodName: enablePlayerMovement
   delay: 0
 --- !u!114 &429780771
@@ -1540,6 +1545,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 429780770}
   - {fileID: 429780769}
+  - {fileID: 429780779}
 --- !u!114 &429780772
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1564,11 +1570,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 59
+  itemId: 70
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-  methodName: disablePlayerMovement
+  targetObject: {fileID: 1569301210}
+  methodName: centerCam
   delay: 0
 --- !u!114 &429780774
 MonoBehaviour:
@@ -1658,7 +1664,7 @@ MonoBehaviour:
   showAlways: 1
   showCount: 1
   extendPrevious: 0
-  fadeWhenDone: 1
+  fadeWhenDone: 0
   waitForClick: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &429780778
@@ -1674,8 +1680,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 396.72916
-    y: 256.06973
+    x: 394.72916
+    y: 258.06973
     width: 150
     height: 40
   itemId: 60
@@ -1687,6 +1693,23 @@ MonoBehaviour:
   - {fileID: 429780775}
   - {fileID: 429780776}
   - {fileID: 429780774}
+--- !u!114 &429780779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 71
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1569301210}
+  methodName: uncenterCam
+  delay: 0
 --- !u!1 &513294519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &513294520
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1756,7 +1779,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 513294519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.78, y: -2.73, z: 0}
+  m_LocalPosition: {x: 22.78, y: -2.73, z: 0}
   m_LocalScale: {x: 0.5955512, y: 0.5955512, z: 0.5955512}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1815,70 +1838,6 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1569301216}
-    - target: {fileID: 405030, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.0006902164
-      objectReference: {fileID: 0}
-    - target: {fileID: 405030, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.99999976
-      objectReference: {fileID: 0}
-    - target: {fileID: 495470, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.36650118
-      objectReference: {fileID: 0}
-    - target: {fileID: 495470, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9304176
-      objectReference: {fileID: 0}
-    - target: {fileID: 406326, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.0029696492
-      objectReference: {fileID: 0}
-    - target: {fileID: 406326, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999956
-      objectReference: {fileID: 0}
-    - target: {fileID: 486288, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.18920766
-      objectReference: {fileID: 0}
-    - target: {fileID: 486288, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9819371
-      objectReference: {fileID: 0}
-    - target: {fileID: 463458, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.1387323
-      objectReference: {fileID: 0}
-    - target: {fileID: 463458, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.99033
-      objectReference: {fileID: 0}
-    - target: {fileID: 444748, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.17364816
-      objectReference: {fileID: 0}
-    - target: {fileID: 444748, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9848078
-      objectReference: {fileID: 0}
-    - target: {fileID: 459342, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.13052624
-      objectReference: {fileID: 0}
-    - target: {fileID: 459342, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9914449
-      objectReference: {fileID: 0}
-    - target: {fileID: 420732, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.1387323
-      objectReference: {fileID: 0}
-    - target: {fileID: 420732, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.99033
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_IsPrefabParent: 0
@@ -1905,7 +1864,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 13.463502
+      value: 29.5
       objectReference: {fileID: 0}
     - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1935,14 +1894,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 108454, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
-      propertyPath: m_Name
-      value: Leproso (Stand Still)
-      objectReference: {fileID: 0}
     - target: {fileID: 11487260, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
       propertyPath: flowchart
       value: 
       objectReference: {fileID: 429780718}
+    - target: {fileID: 108454, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_Name
+      value: Leproso (Stand Still)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851110, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_Offset.x
+      value: -1.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
   m_IsPrefabParent: 0
@@ -1950,6 +1913,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 447280, guid: 5772b45966a01a944acfbd354f19618c, type: 2}
   m_PrefabInternal: {fileID: 1801020716}
+--- !u!114 &1239648917 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11490808, guid: 92d99bd928fc1d941b927ff6e17cbe81,
+    type: 2}
+  m_PrefabInternal: {fileID: 1014689916}
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
 --- !u!1 &1274112544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,6 +2044,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 130476, guid: 506e1e62c846abc47a9b18d7e1763566, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 506e1e62c846abc47a9b18d7e1763566, type: 2}
   m_IsPrefabParent: 0
@@ -2183,9 +2156,10 @@ MonoBehaviour:
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   flippedXOffset: -5
-  yOffset: 2
+  yOffset: 1.8
   isFollowing: 1
   flipped: 0
+  isCenter: 0
 --- !u!114 &1569301217
 MonoBehaviour:
   m_ObjectHideFlags: 0

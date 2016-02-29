@@ -19,6 +19,7 @@ public class CameraController : MonoBehaviour {
 
 	public bool isFollowing;
 	public bool flipped;
+	public bool isCenter;
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerController>();
@@ -30,10 +31,14 @@ public class CameraController : MonoBehaviour {
 		var x = transform.position.x;
 		var y = transform.position.y;
 
-		if(!flipped)
+		if(!flipped && !isCenter)
 			xOffset = defaultXOffset;
-		else 
+		else if(flipped && !isCenter)
 			xOffset = flippedXOffset;
+		else if(isCenter){
+			xOffset = 0;
+		}
+			
 
 		if(isFollowing){
 			if(Mathf.Abs(x - (player.transform.position.x + xOffset)) > margin.x){
@@ -52,5 +57,11 @@ public class CameraController : MonoBehaviour {
 		transform.position = new Vector3(x,y, transform.position.z);
 	}
 
-		
+	public void centerCam(){
+		isCenter = true;
+	}
+
+	public void uncenterCam(){
+		isCenter = false;
+	}
 }
