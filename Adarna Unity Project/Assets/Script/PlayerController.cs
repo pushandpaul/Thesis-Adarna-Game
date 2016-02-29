@@ -42,6 +42,18 @@ public class PlayerController : MonoBehaviour {
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 			return;
 		}
+
+		if(Input.GetKeyDown(KeyCode.Space) && grounded){
+			Debug.Log(anim.GetFloat("Speed"));
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+		}
+
+		/*if(moveVelocity > 0)
+			Debug.Log("pangit mo paul");
+		else if(moveVelocity == 0)
+			Debug.Log("ganda ni clark");
+		*/
+		anim.SetBool("Ground", grounded);
 			
 		moveVelocity = 0f;
 		if(Input.GetKey(KeyCode.D))
@@ -55,12 +67,9 @@ public class PlayerController : MonoBehaviour {
 
 		GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 
-		anim.SetBool("Ground", grounded);
 
-		if(Input.GetKeyDown(KeyCode.Space) && grounded){
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-		}
-	
+
+
 		//Flip
 		if(GetComponent<Rigidbody2D>().velocity.x > 0){
 			transform.localScale = new Vector3(scaleX, scaleY, 0f);
