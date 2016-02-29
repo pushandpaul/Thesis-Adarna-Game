@@ -131,7 +131,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!61 &139507698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ Transform:
   m_LocalScale: {x: 86.34965, y: 13.555277, z: 1.01}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &429780717
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,11 +227,47 @@ GameObject:
   - 114: {fileID: 429780735}
   - 114: {fileID: 429780736}
   - 114: {fileID: 429780737}
-  - 114: {fileID: 429780741}
-  - 114: {fileID: 429780740}
+  - 114: {fileID: 429780742}
   - 114: {fileID: 429780739}
   - 114: {fileID: 429780738}
-  - 114: {fileID: 429780742}
+  - 114: {fileID: 429780746}
+  - 114: {fileID: 429780745}
+  - 114: {fileID: 429780744}
+  - 114: {fileID: 429780743}
+  - 114: {fileID: 429780741}
+  - 114: {fileID: 429780762}
+  - 114: {fileID: 429780747}
+  - 114: {fileID: 429780760}
+  - 114: {fileID: 429780759}
+  - 114: {fileID: 429780758}
+  - 114: {fileID: 429780757}
+  - 114: {fileID: 429780756}
+  - 114: {fileID: 429780755}
+  - 114: {fileID: 429780754}
+  - 114: {fileID: 429780753}
+  - 114: {fileID: 429780752}
+  - 114: {fileID: 429780751}
+  - 114: {fileID: 429780750}
+  - 114: {fileID: 429780749}
+  - 114: {fileID: 429780748}
+  - 114: {fileID: 429780740}
+  - 114: {fileID: 429780767}
+  - 114: {fileID: 429780766}
+  - 114: {fileID: 429780765}
+  - 114: {fileID: 429780771}
+  - 114: {fileID: 429780770}
+  - 114: {fileID: 429780769}
+  - 114: {fileID: 429780768}
+  - 114: {fileID: 429780772}
+  - 114: {fileID: 429780773}
+  - 114: {fileID: 429780778}
+  - 114: {fileID: 429780777}
+  - 114: {fileID: 429780776}
+  - 114: {fileID: 429780775}
+  - 114: {fileID: 429780774}
+  - 114: {fileID: 429780764}
+  - 114: {fileID: 429780763}
+  - 114: {fileID: 429780761}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -252,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -19.670319, y: -87.24623}
+  scrollPos: {x: -96.1409, y: 12.753769}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -261,9 +297,9 @@ MonoBehaviour:
     serializedVersion: 2
     x: -350
     y: -473
-    width: 1382
-    height: 1232.5684
-  selectedBlock: {fileID: 429780719}
+    width: 1674.9644
+    height: 1245.5403
+  selectedBlock: {fileID: 429780778}
   selectedCommands: []
   variables:
   - {fileID: 429780735}
@@ -476,7 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 259.16718
+    x: 260.34363
     y: 207.71432
     width: 120
     height: 40
@@ -625,7 +661,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &429780735
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -693,10 +729,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 23
+  itemId: 26
   errorMessage: 
   indentLevel: 0
-  storyText: Another test
+  storyText: Maawa po kayo at nagugutom na ako.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -715,23 +751,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 429780717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 22
-  errorMessage: 
-  indentLevel: 0
-  storyText: Hi this is a test dialogue.
+  nodeRect:
+    serializedVersion: 2
+    x: 388.49387
+    y: 172.54036
+    width: 167
+    height: 40
+  itemId: 25
+  blockName: Leproso Start
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
+  eventHandler: {fileID: 429780772}
+  commandList:
+  - {fileID: 429780773}
+  - {fileID: 429780738}
+  - {fileID: 429780746}
+  - {fileID: 429780745}
+  - {fileID: 429780744}
+  - {fileID: 429780743}
+  - {fileID: 429780741}
+  - {fileID: 429780762}
+  - {fileID: 429780764}
 --- !u!114 &429780740
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -740,11 +782,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 429780717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentBlock: {fileID: 429780741}
-  message: Clark
+  itemId: 48
+  errorMessage: 
+  indentLevel: 0
+  storyText: Sa inyo na po. Kailangan ko nang umalis...
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
 --- !u!114 &429780741
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -753,25 +807,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 429780717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 448.4938
-    y: 130.18738
-    width: 120
-    height: 40
-  itemId: 21
-  blockName: TestBlock
+  itemId: 31
+  errorMessage: 
+  indentLevel: 0
+  storyText: Ganun po ba? Salamat. Kasi po, may sakit ang ama ko, at nais kong makahanap
+    ng lunas.
   description: 
-  eventHandler: {fileID: 429780740}
-  commandList:
-  - {fileID: 429780739}
-  - {fileID: 429780738}
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
 --- !u!114 &429780742
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429780717}
@@ -794,6 +850,843 @@ MonoBehaviour:
   fadeWhenDone: 1
   waitForClick: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &429780743
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 30
+  errorMessage: 
+  indentLevel: 0
+  storyText: Saan ba ang iyong lakbay? Baka matulungan kita. Salamat na rin sa iyong
+    naibigay.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780744
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 29
+  errorMessage: 
+  indentLevel: 0
+  storyText: Walang anuman po iyon.
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780745
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 28
+  errorMessage: 
+  indentLevel: 0
+  storyText: (Natuwa) Maraming salamat sa iyo, ginoo. Maraming salamat talaga.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780746
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 27
+  errorMessage: 
+  indentLevel: 0
+  storyText: Ito po, may isa pa po akong tinapay. (Masayang inabot ang tinapay)
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780747
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 614.37616
+    y: 258.42264
+    width: 144
+    height: 40
+  itemId: 34
+  blockName: B. Ibong Adarna
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 429780759}
+  - {fileID: 429780758}
+  - {fileID: 429780757}
+  - {fileID: 429780756}
+  - {fileID: 429780755}
+  - {fileID: 429780754}
+  - {fileID: 429780753}
+  - {fileID: 429780752}
+  - {fileID: 429780751}
+  - {fileID: 429780750}
+  - {fileID: 429780749}
+  - {fileID: 429780748}
+  - {fileID: 429780740}
+  - {fileID: 429780768}
+--- !u!114 &429780748
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 47
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Huwag na, sa\u2019yo na nga. Mas kakailanganin mo \u2018yan."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780749
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 46
+  errorMessage: 
+  indentLevel: 0
+  storyText: Mula bata pa po ako, hindi ko po kayang bawiin ang naibigay ko na.
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780750
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 45
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Bakit mo binalik? Ibinibigay ko na muli sa\u2019yo\u2026"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780751
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 44
+  errorMessage: 
+  indentLevel: 0
+  storyText: (Binalik muli ang tinapay)
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780752
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 43
+  errorMessage: 
+  indentLevel: 0
+  storyText: "\u2018Eto nga pala ang tinapay na ibinigay mo sa\u2019kin. Sa\u2019yo
+    na iyan, kailangan mo yan dahil malayo ang iyong paroroonan."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780753
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 42
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Pumasok ka sa bahay at mayroong tao doon na makakapagturo sa\u2019yo
+    kung nasaan ang Ibong Adarna"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780754
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 41
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Sa iyong paglakbay, may madadaanan kang isang magandang puno. Huwag
+    kang titigil para tingnan ang puno, at baka mamatay ka.  Maglakad ka lang at may
+    makikita ka ring bahay.\r\n"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780755
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 40
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Maging bato? Ano po \u2018yon?"
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780756
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 39
+  errorMessage: 
+  indentLevel: 0
+  storyText: Papayuhan kita, at huwag mong kalilimutan para hindi ka maging bato.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780757
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 38
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Aba, mahirap pala ang iyong pinagdadaanan.\r\n"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780758
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 37
+  errorMessage: 
+  indentLevel: 0
+  storyText: Bukod po roon, tatlong taon nang nawawala ang dalawa kong kapatid
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780759
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 36
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Ah\u2026"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780760
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 609.6703
+    y: 317.24622
+    width: 160
+    height: 40
+  itemId: 35
+  blockName: C. Gintong Tinapay
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 429780765}
+  - {fileID: 429780763}
+--- !u!114 &429780761
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 67
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 429780778}
+  callMode: 0
+--- !u!114 &429780762
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 32
+  errorMessage: 
+  indentLevel: 0
+  storyText: "At sinabi nila na ang makapagpapagaling lang sa kanya ay ang\u2026."
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780763
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 66
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 429780778}
+  callMode: 0
+--- !u!114 &429780764
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 65
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 429780778}
+  callMode: 0
+--- !u!114 &429780765
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 51
+  errorMessage: 
+  indentLevel: 0
+  storyText: Sigurado ka ba dyan, 'iho?
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780766
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 50
+  errorMessage: 
+  indentLevel: 0
+  storyText: Sigurado ka ba dyan, 'iho?
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780767
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 593.1997
+    y: 200.77565
+    width: 197
+    height: 40
+  itemId: 49
+  blockName: A. Istatwa ng Birheng Ina
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 429780766}
+  - {fileID: 429780761}
+--- !u!114 &429780768
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 58
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 429780771}
+  callMode: 0
+--- !u!114 &429780769
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 57
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 108454, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+  methodName: endDialogue
+  delay: 0
+--- !u!114 &429780770
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 56
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+  methodName: enablePlayerMovement
+  delay: 0
+--- !u!114 &429780771
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 804.9643
+    y: 270.18738
+    width: 120
+    height: 40
+  itemId: 55
+  blockName: Leproso End
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 429780770}
+  - {fileID: 429780769}
+--- !u!114 &429780772
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 429780739}
+  message: Leproso (Stand Still)
+--- !u!114 &429780773
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 59
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+  methodName: disablePlayerMovement
+  delay: 0
+--- !u!114 &429780774
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 64
+  errorMessage: 
+  indentLevel: 0
+  text: C. Gintong Tinapay
+  description: 'THOUGHT QUESTION: Ano nga ba ulit ang makakagamot sa aking Ama?'
+  targetBlock: {fileID: 429780760}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+--- !u!114 &429780775
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 63
+  errorMessage: 
+  indentLevel: 0
+  text: A. Istatwa ng Birheng Maria
+  description: 'THOUGHT QUESTION: Ano nga ba ulit ang makakagamot sa aking Ama?'
+  targetBlock: {fileID: 429780767}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+--- !u!114 &429780776
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 62
+  errorMessage: 
+  indentLevel: 0
+  text: B. Ibong Adarna
+  description: 'THOUGHT QUESTION: Ano nga ba ulit ang makakagamot sa aking Ama?'
+  targetBlock: {fileID: 429780747}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+--- !u!114 &429780777
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 61
+  errorMessage: 
+  indentLevel: 0
+  storyText: Ano nga ba ulit ang makakagamot sa aking Ama?
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780778
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 396.72916
+    y: 256.06973
+    width: 150
+    height: 40
+  itemId: 60
+  blockName: Thought Question
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 429780777}
+  - {fileID: 429780775}
+  - {fileID: 429780776}
+  - {fileID: 429780774}
 --- !u!1 &513294519
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +1760,7 @@ Transform:
   m_LocalScale: {x: 0.5955512, y: 0.5955512, z: 0.5955512}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!114 &513294523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -916,12 +1809,76 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11499272, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1569301216}
+    - target: {fileID: 405030, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.0006902164
+      objectReference: {fileID: 0}
+    - target: {fileID: 405030, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 495470, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.36650118
+      objectReference: {fileID: 0}
+    - target: {fileID: 495470, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9304176
+      objectReference: {fileID: 0}
+    - target: {fileID: 406326, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.0029696492
+      objectReference: {fileID: 0}
+    - target: {fileID: 406326, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999956
+      objectReference: {fileID: 0}
+    - target: {fileID: 486288, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.18920766
+      objectReference: {fileID: 0}
+    - target: {fileID: 486288, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9819371
+      objectReference: {fileID: 0}
+    - target: {fileID: 463458, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.1387323
+      objectReference: {fileID: 0}
+    - target: {fileID: 463458, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99033
+      objectReference: {fileID: 0}
+    - target: {fileID: 444748, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.17364816
+      objectReference: {fileID: 0}
+    - target: {fileID: 444748, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9848078
+      objectReference: {fileID: 0}
+    - target: {fileID: 459342, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052624
+      objectReference: {fileID: 0}
+    - target: {fileID: 459342, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 420732, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.1387323
+      objectReference: {fileID: 0}
+    - target: {fileID: 420732, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99033
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_IsPrefabParent: 0
@@ -939,6 +1896,56 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1374942948}
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+--- !u!1001 &1014689916
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13.463502
+      objectReference: {fileID: 0}
+    - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.511142
+      objectReference: {fileID: 0}
+    - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.7526746
+      objectReference: {fileID: 0}
+    - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 493548, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108454, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: m_Name
+      value: Leproso (Stand Still)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487260, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+      propertyPath: flowchart
+      value: 
+      objectReference: {fileID: 429780718}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 92d99bd928fc1d941b927ff6e17cbe81, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1161362161 stripped
 Transform:
   m_PrefabParentObject: {fileID: 447280, guid: 5772b45966a01a944acfbd354f19618c, type: 2}
@@ -1016,7 +2023,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1001 &1374942948
 Prefab:
   m_ObjectHideFlags: 0
@@ -1287,4 +2294,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
