@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 	public PlayerController player;
+	public Camera camera;
 
 	public Vector2 margin;
 	public Vector2 smoothing;
@@ -14,17 +15,29 @@ public class CameraController : MonoBehaviour {
 
 	public float defaultXOffset;
 	public float flippedXOffset;
+	public float defaultYOffset;
+	public float changedYOffset;
 	private float xOffset;
-	public float yOffset;
+	private float yOffset;
+
+	public float zoomSize;
+	private float defaultCamSize;
 
 	public bool isFollowing;
 	public bool flipped;
 	public bool isCenter;
+	public bool isZoomed;
+
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerController>();
+		camera = this.GetComponent<Camera>();
+
 		_min = bounds.bounds.min;
 		_max = bounds.bounds.max;
+		defaultCamSize = camera.orthographicSize;
+	
+		Debug.Log("This is the camera's size: " + defaultCamSize);
 
 	}
 	void FixedUpdate () {
@@ -38,17 +51,26 @@ public class CameraController : MonoBehaviour {
 		else if(isCenter){
 			xOffset = 0;
 		}
-			
 
+		if(isZoomed){
+			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, zoomSize, Time.deltaTime);
+			yOffset = changedYOffset;
+			}
+		else{
+			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, defaultCamSize, Time.deltaTime);
+			yOffset = defaultYOffset;
+		}
+			
 		if(isFollowing){
 			if(Mathf.Abs(x - (player.transform.position.x + xOffset)) > margin.x){
 				x = Mathf.Lerp(x, player.transform.position.x + xOffset, smoothing.x = Time.deltaTime);
 			}
-
 			if(Mathf.Abs(y - (player.transform.position.y + yOffset)) > margin.y){
 				y = Mathf.Lerp(y, player.transform.position.y + yOffset, smoothing.y = Time.deltaTime);
 			}
 		}
+
+
 
 		var cameraHalfWidth = GetComponent<Camera>().orthographicSize * ((float)Screen.width / Screen.height);﻿
 		x = Mathf.Clamp(x, _min.x + cameraHalfWidth, _max.x - cameraHalfWidth);
@@ -63,5 +85,12 @@ public class CameraController : MonoBehaviour {
 
 	public void uncenterCam(){
 		isCenter = false;
+	}
+
+	public void zoomCam(){
+		isZoomed =  true;
+	}
+	public void unzoomCam(){
+		isZoomed =  false;
 	}
 }
