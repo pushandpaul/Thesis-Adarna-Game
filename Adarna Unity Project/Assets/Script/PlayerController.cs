@@ -23,15 +23,22 @@ public class PlayerController : MonoBehaviour {
 
 	public CameraController camera;
 	private float defaultCamOffset;
+
+	public GameObject shadow;
+	private float shadowX;
+	private float shadowY;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponentInChildren<Animator>();
 		scaleX = transform.localScale.x;
 		scaleY = transform.localScale.y;
+		shadowX = shadow.transform.position.x;
+		shadowY = shadow.transform.position.y;
 	}
 
 	void FixedUpdate (){
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+
 	}
 	
 	// Update is called once per frame
@@ -44,9 +51,11 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if(Input.GetKeyDown(KeyCode.Space) && grounded){
-			Debug.Log(anim.GetFloat("Speed"));
+			Debug.Log("This is speed: " + anim.GetFloat("Speed"));
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+
 		}
+		shadow.transform.position = new Vector3(shadow.transform.position.x, shadowY, 0f);
 
 		/*if(moveVelocity > 0)
 			Debug.Log("pangit mo paul");
@@ -82,6 +91,11 @@ public class PlayerController : MonoBehaviour {
 		}
 			
 	}
+
+	void LateUpdate(){
+		
+	}
+
 	public void enablePlayerMovement(){
 		canMove = true;
 	}
