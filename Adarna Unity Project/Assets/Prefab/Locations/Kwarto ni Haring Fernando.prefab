@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439226}
+  - 114: {fileID: 11480108}
   m_Layer: 0
   m_Name: Kwarto ni Haring Fernando
   m_TagString: Untagged
@@ -138,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.69608, y: 3.0926154, z: 0}
+  m_LocalPosition: {x: 11.69608, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408814}
@@ -186,6 +187,26 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11480108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761f3e806362b2b48aed2621f53b4614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpawnRightX: 0
+  playerSpawnLeftX: -2.74
+  playerSpawnY: -1.11
+  playerSpawnZ: 0
+  playerScale: 0.08
+  cameraSpawnRightX: 0
+  cameraSpawnLeftX: 0.06
+  cameraSpawnY: 0.03
+  cameraSpawnZ: -4.5
 --- !u!212 &21207120
 SpriteRenderer:
   m_ObjectHideFlags: 1

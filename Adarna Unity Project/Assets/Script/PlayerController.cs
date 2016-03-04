@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float jumpHeight;
 
 	public bool canMove;
+	public bool flipped;
 
 	public Transform groundCheck;
 	public float groundCheckRadius;
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponentInChildren<Animator>();
-		scaleX = transform.localScale.x;
+		scaleX = Mathf.Abs(transform.localScale.x);
 		scaleY = transform.localScale.y;
 		shadowX = shadow.transform.position.x;
 		shadowY = shadow.transform.position.y;
@@ -73,27 +74,19 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-
 		GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 
-
-
-
 		//Flip
+
 		if(GetComponent<Rigidbody2D>().velocity.x > 0){
-			transform.localScale = new Vector3(scaleX, scaleY, 1f);
+			transform.localScale = new Vector3(scaleX, scaleY, 0f);
 			camera.flipped = false;
 		}
 			
 		else if(GetComponent<Rigidbody2D>().velocity.x < 0){
-			transform.localScale = new Vector3(-scaleX, scaleY, 1f);
+			transform.localScale = new Vector3(-scaleX, scaleY, 0f);
 			camera.flipped = true;
 		}
-			
-	}
-
-	void LateUpdate(){
-		
 	}
 
 	public void enablePlayerMovement(){
