@@ -13,4 +13,6 @@ public class Location : MonoBehaviour {
 	public float cameraSpawnLeftX;
 	public float cameraSpawnY;
 	public float cameraSpawnZ;
+
+	public Transform[] parallaxLayers;
 }

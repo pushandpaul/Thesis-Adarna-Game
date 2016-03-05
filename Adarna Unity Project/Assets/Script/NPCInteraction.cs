@@ -17,7 +17,6 @@ public class NPCInteraction : MonoBehaviour {
 	private float scaleY;
 
 	private bool toFlip;
-
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerController>();

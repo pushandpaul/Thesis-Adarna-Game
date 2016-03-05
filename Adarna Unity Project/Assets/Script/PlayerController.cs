@@ -66,8 +66,10 @@ public class PlayerController : MonoBehaviour {
 		anim.SetBool("Ground", grounded);
 			
 		moveVelocity = 0f;
-		if(Input.GetKey(KeyCode.D))
+		if(Input.GetKey(KeyCode.D)){
 			moveVelocity = moveSpeed;
+		}
+			
 
 		if(Input.GetKey(KeyCode.A))
 			moveVelocity = -moveSpeed;{

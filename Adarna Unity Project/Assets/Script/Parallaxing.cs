@@ -10,7 +10,6 @@ public class Parallaxing : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		previousCameraPosition = transform.position;
-
 		parallaxScales = new float[backgrounds.Length];
 		for(int i = 0; i < parallaxScales.Length; i++){
 			parallaxScales[i] = backgrounds[i].position.z * -1;

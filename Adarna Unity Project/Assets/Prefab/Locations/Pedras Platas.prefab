@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494278}
+  - 114: {fileID: 11488012}
   m_Layer: 0
   m_Name: Pedras Platas
   m_TagString: Untagged
@@ -266,7 +267,7 @@ Transform:
   m_GameObject: {fileID: 146440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.637687, y: -0.43762648, z: 0}
-  m_LocalScale: {x: 55.945465, y: 0.5209838, z: 0.5209838}
+  m_LocalScale: {x: 62.239265, y: 0.5209838, z: 0.5209838}
   m_Children: []
   m_Father: {fileID: 494278}
   m_RootOrder: 5
@@ -277,7 +278,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 68.2, y: -3.6, z: 0}
+  m_LocalPosition: {x: 66.7, y: -3.6, z: 0}
   m_LocalScale: {x: 1.9194454, y: 1.9194454, z: 1.9194454}
   m_Children:
   - {fileID: 475770}
@@ -302,6 +303,31 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11488012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761f3e806362b2b48aed2621f53b4614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpawnRightX: 80
+  playerSpawnLeftX: -3.7
+  playerSpawnY: -2.27
+  playerSpawnZ: 0
+  playerScale: 0.5
+  cameraSpawnRightX: 75
+  cameraSpawnLeftX: -0.01
+  cameraSpawnY: -0.05
+  cameraSpawnZ: -8
+  parallaxLayers:
+  - {fileID: 475770}
+  - {fileID: 416320}
+  - {fileID: 403976}
+  - {fileID: 475184}
 --- !u!212 &21206860
 SpriteRenderer:
   m_ObjectHideFlags: 1

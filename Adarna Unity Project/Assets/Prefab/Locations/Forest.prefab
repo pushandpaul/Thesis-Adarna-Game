@@ -152,6 +152,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454490}
+  - 114: {fileID: 11485748}
   m_Layer: 0
   m_Name: Forest
   m_TagString: Untagged
@@ -302,6 +303,31 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11485748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761f3e806362b2b48aed2621f53b4614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpawnRightX: 64
+  playerSpawnLeftX: -2.73
+  playerSpawnY: -1.86
+  playerSpawnZ: 0
+  playerScale: 0.5
+  cameraSpawnRightX: 60
+  cameraSpawnLeftX: -0.01
+  cameraSpawnY: -0.05
+  cameraSpawnZ: -4.5
+  parallaxLayers:
+  - {fileID: 447280}
+  - {fileID: 408962}
+  - {fileID: 460406}
+  - {fileID: 446132}
 --- !u!212 &21207726
 SpriteRenderer:
   m_ObjectHideFlags: 1
