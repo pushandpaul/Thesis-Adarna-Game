@@ -15,6 +15,7 @@ public class ExitManager : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other){
 		//sceneStateHandler.saveCoordinates();
+		LevelManager.isDoor = false;
 		LevelManager.exitInRight = isRight;
 		SceneManager.LoadScene(nextLocation);
 	}
