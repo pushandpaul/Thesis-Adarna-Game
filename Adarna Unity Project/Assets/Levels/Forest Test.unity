@@ -352,6 +352,19 @@ GameObject:
   - 114: {fileID: 429780779}
   - 114: {fileID: 429780780}
   - 114: {fileID: 429780781}
+  - 114: {fileID: 429780782}
+  - 114: {fileID: 429780783}
+  - 114: {fileID: 429780784}
+  - 114: {fileID: 429780787}
+  - 114: {fileID: 429780786}
+  - 114: {fileID: 429780785}
+  - 114: {fileID: 429780788}
+  - 114: {fileID: 429780790}
+  - 114: {fileID: 429780793}
+  - 114: {fileID: 429780789}
+  - 114: {fileID: 429780792}
+  - 114: {fileID: 429780791}
+  - 114: {fileID: 429780794}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -383,8 +396,12 @@ MonoBehaviour:
     y: -473
     width: 1678.3734
     height: 1372.0847
-  selectedBlock: {fileID: 429780739}
-  selectedCommands: []
+  selectedBlock: {fileID: 429780771}
+  selectedCommands:
+  - {fileID: 429780781}
+  - {fileID: 429780770}
+  - {fileID: 429780769}
+  - {fileID: 429780779}
   variables: []
   description: 
   stepPause: 0
@@ -1617,8 +1634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 803.82794
-    y: 261.09647
+    x: 804.98804
+    y: 259.93637
     width: 120
     height: 40
   itemId: 55
@@ -1764,8 +1781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 394.72916
-    y: 258.06973
+    x: 395.88925
+    y: 259.22983
     width: 150
     height: 40
   itemId: 60
@@ -1828,6 +1845,259 @@ MonoBehaviour:
   targetObject: {fileID: 31907810}
   methodName: unzoomCam
   delay: 0
+--- !u!114 &429780782
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 595.8917
+    y: 48.423714
+    width: 181
+    height: 40
+  itemId: 74
+  blockName: Tagapagsalaysay Start
+  description: 
+  eventHandler: {fileID: 429780783}
+  commandList:
+  - {fileID: 429780787}
+  - {fileID: 429780786}
+  - {fileID: 429780785}
+  - {fileID: 429780784}
+  - {fileID: 429780788}
+  - {fileID: 429780794}
+--- !u!114 &429780783
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 429780782}
+--- !u!114 &429780784
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 75
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Makalipas ang apat na buwan\u2026"
+  description: 
+  character: {fileID: 1365983638}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780785
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 78
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 31907810}
+  methodName: zoomCam
+  delay: 0
+--- !u!114 &429780786
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 77
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 31907810}
+  methodName: centerCam
+  delay: 0
+--- !u!114 &429780787
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 76
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 84829426}
+  methodName: disablePlayerMovement
+  delay: 0
+--- !u!114 &429780788
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 79
+  errorMessage: 
+  indentLevel: 0
+  storyText: Hindi ko inakalang dadating ang posibilidad na mamamatay ako sa gutom...
+    Haaay, isa na lang.
+  description: 
+  character: {fileID: 84829427}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &429780789
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 82
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1365983636}
+  methodName: endDialogue
+  delay: 0
+--- !u!114 &429780790
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 599.372
+    y: 111.068665
+    width: 174
+    height: 40
+  itemId: 80
+  blockName: Tagapagsalaysay End
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 429780793}
+  - {fileID: 429780789}
+  - {fileID: 429780792}
+  - {fileID: 429780791}
+--- !u!114 &429780791
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 84
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 31907810}
+  methodName: unzoomCam
+  delay: 0
+--- !u!114 &429780792
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 83
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 31907810}
+  methodName: uncenterCam
+  delay: 0
+--- !u!114 &429780793
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 81
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 84829426}
+  methodName: enablePlayerMovement
+  delay: 0
+--- !u!114 &429780794
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 85
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 429780718}
+  targetBlock: {fileID: 429780790}
+  callMode: 0
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -1871,6 +2141,18 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 31907812}
+    - target: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: nameColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: nameColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: nameColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_IsPrefabParent: 0
@@ -2074,6 +2356,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1 &1365983636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1365983637}
+  - 114: {fileID: 1365983638}
+  m_Layer: 0
+  m_Name: Tagapagsalaysay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1365983637
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365983636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3530052, y: -2.4818764, z: 0.16896674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+--- !u!114 &1365983638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365983636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Tagapagsalaysay
+  nameColor: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
+  soundEffect: {fileID: 0}
+  profileSprite: {fileID: 0}
+  portraits: []
+  portraitsFace: 0
+  description: 
 --- !u!1 &1508380268
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,6 +2578,18 @@ Prefab:
       propertyPath: flowchart
       value: 
       objectReference: {fileID: 429780718}
+    - target: {fileID: 11457954, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
+      propertyPath: nameColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457954, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
+      propertyPath: nameColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457954, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
+      propertyPath: nameColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
   m_IsPrefabParent: 0
