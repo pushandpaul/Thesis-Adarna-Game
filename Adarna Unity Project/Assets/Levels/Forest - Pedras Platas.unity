@@ -278,7 +278,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &118009223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRight: 0
-  nextLocation: Forest Test
+  nextLocation: 
 --- !u!61 &118009224
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228237634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.07, y: 1.09, z: 0}
+  m_LocalPosition: {x: 38.8, y: 1.09, z: 0}
   m_LocalScale: {x: 101.383064, y: 13.555277, z: 1.01}
   m_Children: []
   m_Father: {fileID: 0}
@@ -409,6 +409,18 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 31907812}
+    - target: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: nameColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: nameColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: nameColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_IsPrefabParent: 0
@@ -601,6 +613,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!1 &1748462622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1748462625}
+  - 58: {fileID: 1748462624}
+  - 114: {fileID: 1748462623}
+  - 114: {fileID: 1748462626}
+  m_Layer: 0
+  m_Name: Pedras Platas Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1748462623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748462622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587b8fea6c8083a4dacdf11e7b57277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 0
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  anObjective: 0
+  message: 
+--- !u!58 &1748462624
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748462622}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.72
+--- !u!4 &1748462625
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748462622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 45.04, y: -1.78, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+--- !u!114 &1748462626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748462622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveIndex: 05000000
+  isNPC: 0
+  isObject: 1
 --- !u!4 &1853178333 stripped
 Transform:
   m_PrefabParentObject: {fileID: 475184, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
@@ -675,9 +761,6 @@ GameObject:
   - 114: {fileID: 2049704008}
   - 114: {fileID: 2049704006}
   - 114: {fileID: 2049704005}
-  - 114: {fileID: 2049704026}
-  - 114: {fileID: 2049704025}
-  - 114: {fileID: 2049704024}
   - 114: {fileID: 2049704027}
   - 114: {fileID: 2049704028}
   - 114: {fileID: 2049704029}
@@ -699,6 +782,11 @@ GameObject:
   - 114: {fileID: 2049704046}
   - 114: {fileID: 2049704045}
   - 114: {fileID: 2049704007}
+  - 114: {fileID: 2049704048}
+  - 114: {fileID: 2049704047}
+  - 114: {fileID: 2049704026}
+  - 114: {fileID: 2049704025}
+  - 114: {fileID: 2049704024}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -719,18 +807,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -357.9331, y: -41.385986}
+  scrollPos: {x: -373.59268, y: -63.756805}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.89402175
+  zoom: 0.8340218
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 1834.0181
-    height: 1268.3617
-  selectedBlock: {fileID: 2049704006}
+    height: 1315.3403
+  selectedBlock: {fileID: 2049704048}
   selectedCommands: []
   variables: []
   description: 
@@ -779,32 +867,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 432.54105
-    y: 207.71428
-    width: 135
+    x: 468.33435
+    y: 198.76595
+    width: 171
     height: 40
   itemId: 18
-  blockName: Don Juan Start
+  blockName: 'Reach: Pedras Platas'
   description: 
   eventHandler: {fileID: 2049704007}
   commandList:
-  - {fileID: 2049704026}
-  - {fileID: 2049704025}
   - {fileID: 2049704024}
   - {fileID: 2049704005}
   - {fileID: 2049704028}
 --- !u!114 &2049704007
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2049704003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 2049704006}
+  message: 'Reach: Pedras Platas'
 --- !u!114 &2049704008
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1163,15 +1250,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2049704003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 73
+  itemId: 98
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: zoomCam
-  delay: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 2049704048}
+  callMode: 1
 --- !u!114 &2049704025
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1183,11 +1270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 71
+  itemId: 97
   errorMessage: 
   indentLevel: 0
   targetObject: {fileID: 31907810}
-  methodName: centerCam
+  methodName: zoomCam
   delay: 0
 --- !u!114 &2049704026
 MonoBehaviour:
@@ -1200,11 +1287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 69
+  itemId: 96
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 644826006}
-  methodName: disablePlayerMovement
+  targetObject: {fileID: 31907810}
+  methodName: centerCam
   delay: 0
 --- !u!114 &2049704027
 MonoBehaviour:
@@ -1271,7 +1358,7 @@ MonoBehaviour:
   showAlways: 1
   showCount: 1
   extendPrevious: 0
-  fadeWhenDone: 1
+  fadeWhenDone: 0
   waitForClick: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &2049704030
@@ -1309,7 +1396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 720.0061
+    x: 721.12463
     y: 205.47719
     width: 149
     height: 40
@@ -1401,7 +1488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 723.3616
+    x: 724.4801
     y: 263.64133
     width: 145
     height: 40
@@ -1517,12 +1604,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 943.7142
-    y: 320.68686
-    width: 128
+    x: 935.8845
+    y: 324.04248
+    width: 125
     height: 40
   itemId: 86
-  blockName: Don Juan End
+  blockName: End Dialogue
   description: 
   eventHandler: {fileID: 0}
   commandList:
@@ -1632,3 +1719,45 @@ MonoBehaviour:
   targetFlowchart: {fileID: 2049704004}
   targetBlock: {fileID: 2049704027}
   callMode: 0
+--- !u!114 &2049704047
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 95
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 644826006}
+  methodName: disablePlayerMovement
+  delay: 0
+--- !u!114 &2049704048
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 489.34528
+    y: 98.01677
+    width: 132
+    height: 40
+  itemId: 94
+  blockName: Start Dialogue
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2049704047}
+  - {fileID: 2049704026}
+  - {fileID: 2049704025}

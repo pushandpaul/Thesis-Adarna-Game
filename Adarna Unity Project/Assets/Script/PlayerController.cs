@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour {
 	public float jumpHeight;
 
 	public bool canMove;
-	public bool flipped;
+	//public bool flipped;
+	public bool facingRight;
 
 	public Transform groundCheck;
 	public float groundCheckRadius;
@@ -31,10 +32,17 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponentInChildren<Animator>();
+		camera = FindObjectOfType<CameraController>();
+
 		scaleX = Mathf.Abs(transform.localScale.x);
 		scaleY = transform.localScale.y;
 		shadowX = shadow.transform.position.x;
 		shadowY = shadow.transform.position.y;
+
+		if(transform.localScale.x < 0)
+			facingRight = false;
+		else if(transform.localScale.x > 0)
+			facingRight = true;
 	}
 
 	void FixedUpdate (){
@@ -83,11 +91,13 @@ public class PlayerController : MonoBehaviour {
 		if(GetComponent<Rigidbody2D>().velocity.x > 0){
 			transform.localScale = new Vector3(scaleX, scaleY, 0f);
 			camera.flipped = false;
+			facingRight = true;
 		}
 			
 		else if(GetComponent<Rigidbody2D>().velocity.x < 0){
 			transform.localScale = new Vector3(-scaleX, scaleY, 0f);
 			camera.flipped = true;
+			facingRight = false;
 		}
 	}
 
