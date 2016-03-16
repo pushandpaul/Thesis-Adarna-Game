@@ -91,6 +91,7 @@ GameObject:
   - 114: {fileID: 11480140}
   - 114: {fileID: 11457954}
   - 212: {fileID: 21279458}
+  - 114: {fileID: 11483576}
   m_Layer: 0
   m_Name: Leproso (Stand Still)
   m_TagString: NPC
@@ -178,7 +179,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.5, y: -1.511142, z: 0.7526746}
+  m_LocalPosition: {x: 29.5, y: -1.48, z: 0.7526746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421216}
@@ -288,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: Leproso
-  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  nameColor: {r: 0, g: 0, b: 0, a: 1}
   soundEffect: {fileID: 0}
   profileSprite: {fileID: 0}
   portraits: []
@@ -305,8 +306,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressToInteract: 1
   flowchart: {fileID: 0}
   player: {fileID: 0}
+  facingRight: 0
+  anObjective: 0
+  message: 
+--- !u!114 &11483576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveIndex: 05000000
+  isNPC: 1
+  isObject: 0
 --- !u!212 &21200808
 SpriteRenderer:
   m_ObjectHideFlags: 1

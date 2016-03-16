@@ -43,6 +43,16 @@ public class ObjectiveMapper : MonoBehaviour {
 				
 		}
 	}
+		
+	public bool checkIfCurrentNPC() {
+		for (int i = 0; i < objectiveIndex.Length; i++) {
+			if (objectiveManager.currentObjectiveIndex == objectiveIndex [i]) {
+				return true;
+				break;
+			} 	
+		}
+		return false;
+	}
 
 	public void checkIfCurrent_object(){
 		for(int i = 0; i < objectiveIndex.Length; i++){

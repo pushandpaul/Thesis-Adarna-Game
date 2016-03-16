@@ -347,6 +347,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!1 &360218726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 360218727}
+  - 212: {fileID: 360218729}
+  - 114: {fileID: 360218728}
+  m_Layer: 0
+  m_Name: Speech Bubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &360218727
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360218726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.08, y: 2.89, z: -0.110911526}
+  m_LocalScale: {x: 0.40919024, y: 0.40919024, z: 0.40919024}
+  m_Children: []
+  m_Father: {fileID: 946070039}
+  m_RootOrder: 1
+--- !u!114 &360218728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360218726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39083b95791559544822fb9bbf4435bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &360218729
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360218726}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1320190139
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3794a608d01b38c4b8e9b184d2f26f15, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -2242,19 +2312,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 471408, guid: 6a3df80671659fd4ca2d725358c5223b, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11432638, guid: 6a3df80671659fd4ca2d725358c5223b, type: 2}
       propertyPath: flowchart
       value: 
       objectReference: {fileID: 776278932}
-    - target: {fileID: 11432638, guid: 6a3df80671659fd4ca2d725358c5223b, type: 2}
-      propertyPath: pressToInteract
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a3df80671659fd4ca2d725358c5223b, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &946070039 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 471408, guid: 6a3df80671659fd4ca2d725358c5223b, type: 2}
+  m_PrefabInternal: {fileID: 946070038}
 --- !u!1 &1309014812
 GameObject:
   m_ObjectHideFlags: 0

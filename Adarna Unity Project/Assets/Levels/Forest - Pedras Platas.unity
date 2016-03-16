@@ -360,6 +360,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &416501489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 416501491}
+  - 114: {fileID: 416501490}
+  m_Layer: 0
+  m_Name: Tagapagsalaysay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &416501490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416501489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Tagapagsalaysay
+  nameColor: {r: 0, g: 0, b: 0, a: 1}
+  soundEffect: {fileID: 0}
+  profileSprite: {fileID: 0}
+  portraits: []
+  portraitsFace: 0
+  description: 
+--- !u!4 &416501491
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416501489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 60.085308, y: -0.8381223, z: 0.05078125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!114 &427827774 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a,
@@ -705,7 +751,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1748462622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.04, y: -1.78, z: 0}
+  m_LocalPosition: {x: 46.9, y: -1.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -721,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveIndex: 05000000
+  objectiveIndex: 0600000009000000
   isNPC: 0
   isObject: 1
 --- !u!4 &1853178333 stripped
@@ -819,6 +865,28 @@ GameObject:
   - 114: {fileID: 2049704024}
   - 114: {fileID: 2049704025}
   - 114: {fileID: 2049704026}
+  - 114: {fileID: 2049704041}
+  - 114: {fileID: 2049704043}
+  - 114: {fileID: 2049704042}
+  - 114: {fileID: 2049704044}
+  - 114: {fileID: 2049704047}
+  - 114: {fileID: 2049704049}
+  - 114: {fileID: 2049704050}
+  - 114: {fileID: 2049704052}
+  - 114: {fileID: 2049704051}
+  - 114: {fileID: 2049704055}
+  - 114: {fileID: 2049704054}
+  - 114: {fileID: 2049704053}
+  - 114: {fileID: 2049704056}
+  - 114: {fileID: 2049704058}
+  - 114: {fileID: 2049704057}
+  - 114: {fileID: 2049704059}
+  - 114: {fileID: 2049704060}
+  - 114: {fileID: 2049704062}
+  - 114: {fileID: 2049704061}
+  - 114: {fileID: 2049704063}
+  - 114: {fileID: 2049704065}
+  - 114: {fileID: 2049704064}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -839,18 +907,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -373.59268, y: -63.756805}
+  scrollPos: {x: -632.5785, y: -69.75183}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 400
+  blockViewHeight: 403
   zoom: 0.8340218
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
-    width: 1834.0181
+    width: 2464.3442
     height: 1315.3403
-  selectedBlock: {fileID: 2049704048}
+  selectedBlock: {fileID: 0}
   selectedCommands: []
   variables: []
   description: 
@@ -900,7 +968,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 468.33435
-    y: 198.76595
+    y: 199.96497
     width: 171
     height: 40
   itemId: 18
@@ -1293,7 +1361,7 @@ MonoBehaviour:
   callMode: 1
 --- !u!114 &2049704025
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2049704003}
@@ -1310,7 +1378,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &2049704026
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2049704003}
@@ -1338,7 +1406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 470.5715
+    x: 480.16357
     y: 272.5897
     width: 150
     height: 40
@@ -1636,8 +1704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 934.6855
-    y: 324.04248
+    x: 935.8846
+    y: 349.22168
     width: 125
     height: 40
   itemId: 86
@@ -1646,6 +1714,89 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 2049704026}
+--- !u!114 &2049704041
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 894.3402
+    y: 98.04918
+    width: 192
+    height: 40
+  itemId: 101
+  blockName: 'Reach: Pedras Platas (2)'
+  description: 
+  eventHandler: {fileID: 2049704044}
+  commandList:
+  - {fileID: 2049704043}
+  - {fileID: 2049704042}
+  - {fileID: 2049704047}
+  - {fileID: 2049704049}
+  - {fileID: 2049704050}
+  - {fileID: 2049704056}
+--- !u!114 &2049704042
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 103
+  errorMessage: 
+  indentLevel: 0
+  storyText: Maaga pa. Magtatago muna ako sa bato...
+  description: 
+  character: {fileID: 427827774}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2049704043
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 102
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 2049704048}
+  callMode: 1
+--- !u!114 &2049704044
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 2049704041}
+  message: 'Reach: Pedras Platas (2)'
 --- !u!114 &2049704045
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1680,6 +1831,21 @@ MonoBehaviour:
   targetFlowchart: {fileID: 2049704004}
   targetBlock: {fileID: 2049704027}
   callMode: 0
+--- !u!114 &2049704047
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 104
+  errorMessage: 
+  indentLevel: 0
+  duration: 3
 --- !u!114 &2049704048
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1703,3 +1869,385 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 2049704025}
+--- !u!114 &2049704049
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 105
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Makalipas ang ilang sandali\u2026dumating na ang Ibong Adarna."
+  description: 
+  character: {fileID: 416501490}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2049704050
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 106
+  errorMessage: 
+  indentLevel: 0
+  storyText: Ayan na siya, kailangan ko na maghanda...!
+  description: 
+  character: {fileID: 427827774}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2049704051
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 108
+  errorMessage: 
+  indentLevel: 0
+  storyText: Ano nga ba ulit kailangan kong gawin para manatiling gising?
+  description: 
+  character: {fileID: 427827774}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 0
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2049704052
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 1147.7524
+    y: 131.1066
+    width: 171
+    height: 40
+  itemId: 107
+  blockName: Thought Question (2)
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2049704051}
+  - {fileID: 2049704055}
+  - {fileID: 2049704054}
+  - {fileID: 2049704053}
+--- !u!114 &2049704053
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 111
+  errorMessage: 
+  indentLevel: 0
+  text: Itapon ang dayap
+  description: 
+  targetBlock: {fileID: 2049704063}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+--- !u!114 &2049704054
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 110
+  errorMessage: 
+  indentLevel: 0
+  text: Kainin ang dayap
+  description: 
+  targetBlock: {fileID: 2049704060}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+--- !u!114 &2049704055
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 109
+  errorMessage: 
+  indentLevel: 0
+  text: Sugatan ang palad at pigaan ng dayap
+  description: 
+  targetBlock: {fileID: 2049704058}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+--- !u!114 &2049704056
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 112
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 2049704004}
+  targetBlock: {fileID: 2049704052}
+  callMode: 0
+--- !u!114 &2049704057
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 114
+  errorMessage: 
+  indentLevel: 0
+  storyText: Oo tama!
+  description: 
+  character: {fileID: 427827774}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2049704058
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 994.43787
+    y: 228.25838
+    width: 271
+    height: 40
+  itemId: 113
+  blockName: Sugatan ang palad at pigaan ng dayap
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2049704057}
+  - {fileID: 2049704059}
+--- !u!114 &2049704059
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 115
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 2049704004}
+  targetBlock: {fileID: 2049704040}
+  callMode: 0
+--- !u!114 &2049704060
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 988.0841
+    y: 173.10394
+    width: 149
+    height: 40
+  itemId: 116
+  blockName: Kainin ang dayap
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2049704062}
+  - {fileID: 2049704061}
+--- !u!114 &2049704061
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 118
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 2049704004}
+  targetBlock: {fileID: 2049704052}
+  callMode: 0
+--- !u!114 &2049704062
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 117
+  errorMessage: 
+  indentLevel: 0
+  storyText: Dapat ko bang kainin ang dayap? Busog pa naman ako...
+  description: 
+  character: {fileID: 427827774}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2049704063
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 1037.1824
+    y: 282.21375
+    width: 151
+    height: 40
+  itemId: 119
+  blockName: Itapon ang dayap
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2049704065}
+  - {fileID: 2049704064}
+--- !u!114 &2049704064
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 121
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 2049704004}
+  targetBlock: {fileID: 2049704052}
+  callMode: 0
+--- !u!114 &2049704065
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049704003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 120
+  errorMessage: 
+  indentLevel: 0
+  storyText: Sayang naman kung itatapon ko lang...
+  description: 
+  character: {fileID: 427827774}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}

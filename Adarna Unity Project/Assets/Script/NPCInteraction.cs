@@ -26,11 +26,16 @@ public class NPCInteraction : MonoBehaviour {
 	//public bool isAchieved;
 
 	public string message;
+
+	public SpeechBubble bubble;
 	void Start () {
+		bubble = this.GetComponentInChildren<SpeechBubble> ();
+		//bubble = GameObject.Find(gameObject.name);
 		objectiveMapper = this.GetComponent<ObjectiveMapper>();
-		if(objectiveMapper != null)
+		if (objectiveMapper != null) {
 			anObjective = true;
-		else{
+
+		} else {
 			anObjective = false;
 			message = this.name;
 		}
@@ -46,6 +51,10 @@ public class NPCInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () { 
+		if (anObjective) {
+			if (objectiveMapper.checkIfCurrentNPC ())
+				bubble.showBubble ();
+		}
 		if(facingRight != player.facingRight){
 			GetComponent<CircleCollider2D>().offset = new Vector2(colliderOffsetX, colliderOffsetY);
 			toFlip = false;
@@ -71,6 +80,7 @@ public class NPCInteraction : MonoBehaviour {
 	}
 
 	void startDialogue(string toSend){
+		bubble.hideBubble ();
 		flowchart.SendFungusMessage(toSend);
 		//objectiveMapper.textBox.disableTextBox();
 	}
