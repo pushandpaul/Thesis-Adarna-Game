@@ -4,7 +4,9 @@ using System.Collections;
 public class ObjectiveMapper : MonoBehaviour {
 
 	private ObjectiveManager objectiveManager;
+	//public TextBoxManager textBox;
 	public int [] objectiveIndex;
+
 
 	public bool isNPC;
 	public bool isObject;
@@ -16,6 +18,7 @@ public class ObjectiveMapper : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
+		//textBox = objectiveManager.GetComponent<TextBoxManager>();
 		if(isNPC)
 			npc = this.GetComponent<NPCInteraction>();
 		else if(isObject)

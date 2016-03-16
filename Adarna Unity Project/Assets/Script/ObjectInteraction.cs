@@ -50,6 +50,7 @@ public class ObjectInteraction : MonoBehaviour {
 
 	void startDialogue(string toSend){
 		flowchart.SendFungusMessage(toSend);
+		//objectiveMapper.textBox.disableTextBox();
 	}
 
 	void OnTriggerEnter2D (Collider2D other){

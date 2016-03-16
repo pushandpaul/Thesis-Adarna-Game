@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ObjectiveManager : MonoBehaviour {
-	private static ObjectiveManager instance;
+	//private static ObjectiveManager _instance;
 
 	public Objective currentObjective;
 	public int currentObjectiveIndex;
@@ -12,12 +12,12 @@ public class ObjectiveManager : MonoBehaviour {
 	//public List<GameObject> destroyList;
 
 	void Awake(){
-		if(!instance)
-			instance = this;
-		else
-			Destroy(this);
-
-		DontDestroyOnLoad(this.gameObject);
+		if(FindObjectsOfType<ObjectiveManager>().Length > 1){
+			Destroy(this.gameObject);
+		}
+		else if(FindObjectsOfType<ObjectiveManager>().Length == 1){
+			DontDestroyOnLoad(this.gameObject);
+		}
 	}
 
 	void Start () {

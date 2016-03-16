@@ -725,6 +725,47 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &540933559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 540933561}
+  - 114: {fileID: 540933560}
+  m_Layer: 0
+  m_Name: Dialogue Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &540933560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 540933559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895fa2affa27bd64c9dd057b64e5f1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomCam: 1
+  centerCam: 1
+--- !u!4 &540933561
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 540933559}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 174.3122, y: -77.58724, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &600644010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,10 +1044,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1218580587 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-  m_PrefabInternal: {fileID: 1218580586}
 --- !u!114 &1218580588 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a,
@@ -1036,17 +1073,13 @@ GameObject:
   - 114: {fileID: 1380049934}
   - 114: {fileID: 1380049935}
   - 114: {fileID: 1380049904}
-  - 114: {fileID: 1380049909}
-  - 114: {fileID: 1380049908}
-  - 114: {fileID: 1380049906}
   - 114: {fileID: 1380049910}
   - 114: {fileID: 1380049905}
   - 114: {fileID: 1380049916}
   - 114: {fileID: 1380049911}
-  - 114: {fileID: 1380049914}
-  - 114: {fileID: 1380049913}
-  - 114: {fileID: 1380049912}
   - 114: {fileID: 1380049915}
+  - 114: {fileID: 1380049906}
+  - 114: {fileID: 1380049907}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1078,9 +1111,8 @@ MonoBehaviour:
     y: -473
     width: 1608.1115
     height: 1232.5684
-  selectedBlock: {fileID: 1380049933}
-  selectedCommands:
-  - {fileID: 1380049905}
+  selectedBlock: {fileID: 1380049927}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1180,8 +1212,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1380049909}
-  - {fileID: 1380049908}
   - {fileID: 1380049906}
 --- !u!114 &1380049905
 MonoBehaviour:
@@ -1202,7 +1232,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1380049906
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1380049899}
@@ -1211,15 +1241,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 92
+  itemId: 101
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: zoomCam
+  targetObject: {fileID: 540933559}
+  methodName: startDialogue
   delay: 0
---- !u!114 &1380049908
+--- !u!114 &1380049907
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1380049899}
@@ -1228,28 +1258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 91
+  itemId: 102
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: centerCam
-  delay: 0
---- !u!114 &1380049909
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380049899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 90
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1218580587}
-  methodName: disablePlayerMovement
+  targetObject: {fileID: 540933559}
+  methodName: endDialogue
   delay: 0
 --- !u!114 &1380049910
 MonoBehaviour:
@@ -1290,60 +1303,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1380049914}
-  - {fileID: 1380049913}
-  - {fileID: 1380049912}
---- !u!114 &1380049912
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380049899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 99
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1218580587}
-  methodName: enablePlayerMovement
-  delay: 0
---- !u!114 &1380049913
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380049899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 98
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: unzoomCam
-  delay: 0
---- !u!114 &1380049914
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380049899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 97
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: uncenterCam
-  delay: 0
+  - {fileID: 1380049907}
 --- !u!114 &1380049915
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1806,7 +1766,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456767767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60.9, y: 0.13, z: -0.609375}
+  m_LocalPosition: {x: 59.69, y: 0.13, z: -0.609375}
   m_LocalScale: {x: 4.2249947, y: 8.864766, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2219,7 +2179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 1380049900}
 --- !u!4 &2001930050
 Transform:
   m_ObjectHideFlags: 1

@@ -72,10 +72,12 @@ public class NPCInteraction : MonoBehaviour {
 
 	void startDialogue(string toSend){
 		flowchart.SendFungusMessage(toSend);
+		//objectiveMapper.textBox.disableTextBox();
 	}
 
 	public void endDialogue(){
 		transform.localScale = new Vector3(scaleX, scaleY, 1f);
+		//objectiveMapper.textBox.enableTextBox();
 	}
 
 	private void checkIfCurrent(){

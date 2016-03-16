@@ -424,10 +424,47 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &644826006 stripped
+--- !u!1 &738815477
 GameObject:
-  m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-  m_PrefabInternal: {fileID: 644826005}
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 738815479}
+  - 114: {fileID: 738815478}
+  m_Layer: 0
+  m_Name: Dialogue Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &738815478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738815477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895fa2affa27bd64c9dd057b64e5f1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomCam: 1
+  centerCam: 1
+--- !u!4 &738815479
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738815477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 174.3122, y: -77.58724, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!4 &961509131 stripped
 Transform:
   m_PrefabParentObject: {fileID: 403976, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
@@ -775,18 +812,13 @@ GameObject:
   - 114: {fileID: 2049704038}
   - 114: {fileID: 2049704040}
   - 114: {fileID: 2049704039}
-  - 114: {fileID: 2049704044}
-  - 114: {fileID: 2049704043}
-  - 114: {fileID: 2049704042}
-  - 114: {fileID: 2049704041}
   - 114: {fileID: 2049704046}
   - 114: {fileID: 2049704045}
   - 114: {fileID: 2049704007}
   - 114: {fileID: 2049704048}
-  - 114: {fileID: 2049704047}
-  - 114: {fileID: 2049704026}
-  - 114: {fileID: 2049704025}
   - 114: {fileID: 2049704024}
+  - 114: {fileID: 2049704025}
+  - 114: {fileID: 2049704026}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1261,7 +1293,7 @@ MonoBehaviour:
   callMode: 1
 --- !u!114 &2049704025
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2049704003}
@@ -1270,15 +1302,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 97
+  itemId: 99
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: zoomCam
+  targetObject: {fileID: 738815477}
+  methodName: startDialogue
   delay: 0
 --- !u!114 &2049704026
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2049704003}
@@ -1287,11 +1319,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 96
+  itemId: 100
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: centerCam
+  targetObject: {fileID: 738815477}
+  methodName: endDialogue
   delay: 0
 --- !u!114 &2049704027
 MonoBehaviour:
@@ -1604,7 +1636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 935.8845
+    x: 934.6855
     y: 324.04248
     width: 125
     height: 40
@@ -1613,78 +1645,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 2049704044}
-  - {fileID: 2049704043}
-  - {fileID: 2049704042}
-  - {fileID: 2049704041}
---- !u!114 &2049704041
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2049704003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 91
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: unzoomCam
-  delay: 0
---- !u!114 &2049704042
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2049704003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 90
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: uncenterCam
-  delay: 0
---- !u!114 &2049704043
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2049704003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 89
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 644826006}
-  methodName: endDialogue
-  delay: 0
---- !u!114 &2049704044
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2049704003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 88
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 644826006}
-  methodName: enablePlayerMovement
-  delay: 0
+  - {fileID: 2049704026}
 --- !u!114 &2049704045
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1719,23 +1680,6 @@ MonoBehaviour:
   targetFlowchart: {fileID: 2049704004}
   targetBlock: {fileID: 2049704027}
   callMode: 0
---- !u!114 &2049704047
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2049704003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 95
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 644826006}
-  methodName: disablePlayerMovement
-  delay: 0
 --- !u!114 &2049704048
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1758,6 +1702,4 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 2049704047}
-  - {fileID: 2049704026}
   - {fileID: 2049704025}

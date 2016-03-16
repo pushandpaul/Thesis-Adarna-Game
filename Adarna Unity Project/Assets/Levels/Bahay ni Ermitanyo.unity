@@ -89,10 +89,6 @@ NavMeshSettings:
 Transform:
   m_PrefabParentObject: {fileID: 478832, guid: bc631a84261d60e4785fe7220d1d506f, type: 2}
   m_PrefabInternal: {fileID: 1022117599}
---- !u!1 &84829426 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-  m_PrefabInternal: {fileID: 644826005}
 --- !u!1 &116985871
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,14 +205,11 @@ GameObject:
   - 114: {fileID: 551311869}
   - 114: {fileID: 551311891}
   - 114: {fileID: 551311892}
-  - 114: {fileID: 551311890}
-  - 114: {fileID: 551311894}
-  - 114: {fileID: 551311893}
   - 114: {fileID: 551311870}
   - 114: {fileID: 551311887}
-  - 114: {fileID: 551311897}
-  - 114: {fileID: 551311888}
   - 114: {fileID: 551311889}
+  - 114: {fileID: 551311888}
+  - 114: {fileID: 551311890}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -248,9 +241,8 @@ MonoBehaviour:
     y: -473
     width: 1606.1187
     height: 1232.5684
-  selectedBlock: {fileID: 551311887}
-  selectedCommands:
-  - {fileID: 551311888}
+  selectedBlock: {fileID: 551311868}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -301,7 +293,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Ayun ang bahay!
   description: 
-  character: {fileID: 0}
+  character: {fileID: 644826006}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -687,7 +679,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 515.258
-    y: 72.39377
+    y: 71.0239
     width: 132
     height: 40
   itemId: 80
@@ -695,7 +687,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 551311897}
   - {fileID: 551311888}
 --- !u!114 &551311888
 MonoBehaviour:
@@ -708,11 +699,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 91
+  itemId: 93
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 803209524}
-  methodName: zoomCam
+  targetObject: {fileID: 1197212257}
+  methodName: startDialogue
   delay: 0
 --- !u!114 &551311889
 MonoBehaviour:
@@ -742,11 +733,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 76
+  itemId: 94
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 84829426}
-  methodName: enablePlayerMovement
+  targetObject: {fileID: 1197212257}
+  methodName: endDialogue
   delay: 0
 --- !u!114 &551311891
 MonoBehaviour:
@@ -771,8 +762,6 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 551311890}
-  - {fileID: 551311894}
-  - {fileID: 551311893}
 --- !u!114 &551311892
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -790,57 +779,6 @@ MonoBehaviour:
   targetFlowchart: {fileID: 551311867}
   targetBlock: {fileID: 551311891}
   callMode: 0
---- !u!114 &551311893
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 79
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 803209524}
-  methodName: unzoomCam
-  delay: 0
---- !u!114 &551311894
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 78
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 803209524}
-  methodName: uncenterCam
-  delay: 0
---- !u!114 &551311897
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 89
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 84829426}
-  methodName: disablePlayerMovement
-  delay: 0
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -903,6 +841,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &644826006 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a,
+    type: 2}
+  m_PrefabInternal: {fileID: 644826005}
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
 --- !u!1 &803209524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1080,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1 &1197212257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1197212259}
+  - 114: {fileID: 1197212258}
+  m_Layer: 0
+  m_Name: Dialogue Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1197212258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197212257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895fa2affa27bd64c9dd057b64e5f1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomCam: 0
+  centerCam: 1
+--- !u!4 &1197212259
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197212257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 174.3122, y: -77.58724, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!1 &1507334755
 GameObject:
   m_ObjectHideFlags: 0

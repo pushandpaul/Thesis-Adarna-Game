@@ -225,10 +225,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 474284, guid: 5772b45966a01a944acfbd354f19618c, type: 2}
   m_PrefabInternal: {fileID: 1801020716}
---- !u!1 &84829426 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-  m_PrefabInternal: {fileID: 644826005}
 --- !u!114 &84829427 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a,
@@ -350,16 +346,12 @@ GameObject:
   - 114: {fileID: 429780783}
   - 114: {fileID: 429780720}
   - 114: {fileID: 429780719}
-  - 114: {fileID: 429780724}
-  - 114: {fileID: 429780723}
-  - 114: {fileID: 429780722}
   - 114: {fileID: 429780721}
-  - 114: {fileID: 429780730}
-  - 114: {fileID: 429780729}
-  - 114: {fileID: 429780728}
   - 114: {fileID: 429780727}
   - 114: {fileID: 429780726}
   - 114: {fileID: 429780725}
+  - 114: {fileID: 429780722}
+  - 114: {fileID: 429780723}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -391,7 +383,7 @@ MonoBehaviour:
     y: -473
     width: 1812.1135
     height: 1372.0847
-  selectedBlock: {fileID: 429780739}
+  selectedBlock: {fileID: 429780719}
   selectedCommands: []
   variables: []
   description: 
@@ -423,9 +415,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 429780730}
-  - {fileID: 429780729}
-  - {fileID: 429780728}
+  - {fileID: 429780723}
 --- !u!114 &429780720
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -448,8 +438,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 429780724}
-  - {fileID: 429780723}
   - {fileID: 429780722}
 --- !u!114 &429780721
 MonoBehaviour:
@@ -479,15 +467,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 90
+  itemId: 98
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: zoomCam
+  targetObject: {fileID: 1937974020}
+  methodName: startDialogue
   delay: 0
 --- !u!114 &429780723
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429780717}
@@ -496,28 +484,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 89
+  itemId: 99
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: centerCam
-  delay: 0
---- !u!114 &429780724
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 429780717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 88
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 84829426}
-  methodName: disablePlayerMovement
+  targetObject: {fileID: 1937974020}
+  methodName: endDialogue
   delay: 0
 --- !u!114 &429780725
 MonoBehaviour:
@@ -570,57 +541,6 @@ MonoBehaviour:
   targetFlowchart: {fileID: 0}
   targetBlock: {fileID: 429780719}
   callMode: 0
---- !u!114 &429780728
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 429780717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 94
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: unzoomCam
-  delay: 0
---- !u!114 &429780729
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 429780717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 93
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: uncenterCam
-  delay: 0
---- !u!114 &429780730
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 429780717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 92
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 84829426}
-  methodName: enablePlayerMovement
-  delay: 0
 --- !u!4 &429780734
 Transform:
   m_ObjectHideFlags: 0
@@ -1751,7 +1671,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &762603601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1764,7 +1684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRight: 0
-  nextLocation: Kwarto ng Hari
+  nextLocation: Castle - Bridge
 --- !u!61 &762603602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2121,6 +2041,47 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5772b45966a01a944acfbd354f19618c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1937974020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1937974022}
+  - 114: {fileID: 1937974021}
+  m_Layer: 0
+  m_Name: Dialogue Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1937974021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1937974020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895fa2affa27bd64c9dd057b64e5f1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomCam: 1
+  centerCam: 1
+--- !u!4 &1937974022
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1937974020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 174.3122, y: -77.58724, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!1 &2001930048
 GameObject:
   m_ObjectHideFlags: 1
@@ -2148,7 +2109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 429780718}
 --- !u!4 &2001930050
 Transform:
   m_ObjectHideFlags: 1

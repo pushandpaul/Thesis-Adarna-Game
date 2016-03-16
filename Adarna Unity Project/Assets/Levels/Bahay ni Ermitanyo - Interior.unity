@@ -197,10 +197,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!1 &84829426 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-  m_PrefabInternal: {fileID: 644826005}
 --- !u!1 &122376977
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +306,47 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 946070038}
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+--- !u!1 &353650744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 353650746}
+  - 114: {fileID: 353650745}
+  m_Layer: 0
+  m_Name: Dialogue Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &353650745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353650744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895fa2affa27bd64c9dd057b64e5f1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomCam: 0
+  centerCam: 1
+--- !u!4 &353650746
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353650744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 174.3122, y: -77.58724, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -459,13 +496,11 @@ GameObject:
   - 114: {fileID: 776278998}
   - 114: {fileID: 776279002}
   - 114: {fileID: 776278990}
-  - 114: {fileID: 776278954}
-  - 114: {fileID: 776278953}
   - 114: {fileID: 776278952}
   - 114: {fileID: 776279001}
-  - 114: {fileID: 776279005}
-  - 114: {fileID: 776279004}
   - 114: {fileID: 776279000}
+  - 114: {fileID: 776278953}
+  - 114: {fileID: 776278954}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -486,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -189.51508, y: -39.18775}
+  scrollPos: {x: -181.41345, y: -100.52879}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 404
@@ -497,9 +532,9 @@ MonoBehaviour:
     y: -473
     width: 1614.3098
     height: 1360.9751
-  selectedBlock: {fileID: 776278985}
+  selectedBlock: {fileID: 776279001}
   selectedCommands:
-  - {fileID: 776278996}
+  - {fileID: 776278954}
   variables: []
   description: 
   stepPause: 0
@@ -966,7 +1001,7 @@ MonoBehaviour:
   callMode: 1
 --- !u!114 &776278953
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 776278931}
@@ -975,15 +1010,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 126
+  itemId: 133
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: centerCam
+  targetObject: {fileID: 353650744}
+  methodName: startDialogue
   delay: 0
 --- !u!114 &776278954
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 776278931}
@@ -992,11 +1027,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 124
+  itemId: 134
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 84829426}
-  methodName: disablePlayerMovement
+  targetObject: {fileID: 353650744}
+  methodName: endDialogue
   delay: 0
 --- !u!114 &776278955
 MonoBehaviour:
@@ -1899,7 +1934,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 776278954}
   - {fileID: 776278953}
 --- !u!114 &776278991
 MonoBehaviour:
@@ -2153,8 +2187,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 776279005}
-  - {fileID: 776279004}
+  - {fileID: 776278954}
 --- !u!114 &776279002
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2171,40 +2204,6 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 321171342}
   methodName: endDialogue
-  delay: 0
---- !u!114 &776279004
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 776278931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 130
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 31907810}
-  methodName: uncenterCam
-  delay: 0
---- !u!114 &776279005
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 776278931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 129
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 84829426}
-  methodName: enablePlayerMovement
   delay: 0
 --- !u!1001 &946070038
 Prefab:
