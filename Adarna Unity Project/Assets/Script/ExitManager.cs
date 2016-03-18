@@ -7,13 +7,13 @@ public class ExitManager : MonoBehaviour {
 	public bool isRight;
 	public string nextLocation;
 
-	private ScreenFaderv2 screenFader;
+	private ScreenFader screenFader;
 
 	//public SceneStateHandler sceneStateHandler;
 
 	void Start(){
 		//sceneStateHandler = FindObjectOfType<SceneStateHandler>();
-		screenFader = FindObjectOfType<ScreenFaderv2>();
+		screenFader = FindObjectOfType<ScreenFader>();
 
 	}
 

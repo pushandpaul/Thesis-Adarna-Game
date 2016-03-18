@@ -81,8 +81,9 @@ public class NPCInteraction : MonoBehaviour {
 
 	void startDialogue(string toSend){
 		bubble.hideBubble ();
+		//flowchart.SendFungusMessage(toSend);
 		flowchart.SendFungusMessage(toSend);
-		//objectiveMapper.textBox.disableTextBox();
+			
 	}
 
 	public void endDialogue(){

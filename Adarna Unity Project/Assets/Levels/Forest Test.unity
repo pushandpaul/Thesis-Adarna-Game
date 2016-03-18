@@ -422,6 +422,10 @@ GameObject:
   - 114: {fileID: 429780725}
   - 114: {fileID: 429780722}
   - 114: {fileID: 429780723}
+  - 114: {fileID: 429780724}
+  - 114: {fileID: 429780728}
+  - 114: {fileID: 429780730}
+  - 114: {fileID: 429780729}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -442,18 +446,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -264.98108, y: 9.6605835}
+  scrollPos: {x: -290.78186, y: 5.183136}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.832001
+  zoom: 0.8320009
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
-    width: 1812.1135
+    width: 1896.0023
     height: 1372.0847
-  selectedBlock: {fileID: 429780719}
+  selectedBlock: {fileID: 429780771}
   selectedCommands: []
   variables: []
   description: 
@@ -545,7 +549,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &429780723
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429780717}
@@ -560,6 +564,30 @@ MonoBehaviour:
   targetObject: {fileID: 1937974020}
   methodName: endDialogue
   delay: 0
+--- !u!114 &429780724
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 969.38696
+    y: 186.6436
+    width: 167
+    height: 40
+  itemId: 100
+  blockName: 'Leproso: Generic'
+  description: 
+  eventHandler: {fileID: 429780728}
+  commandList:
+  - {fileID: 429780730}
+  - {fileID: 429780729}
 --- !u!114 &429780725
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -611,6 +639,53 @@ MonoBehaviour:
   targetFlowchart: {fileID: 0}
   targetBlock: {fileID: 429780719}
   callMode: 0
+--- !u!114 &429780728
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 429780724}
+  message: Leproso (Stand Still)
+--- !u!114 &429780729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 102
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 429780771}
+  callMode: 0
+--- !u!114 &429780730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429780717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 101
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 429780720}
+  callMode: 1
 --- !u!4 &429780734
 Transform:
   m_ObjectHideFlags: 0

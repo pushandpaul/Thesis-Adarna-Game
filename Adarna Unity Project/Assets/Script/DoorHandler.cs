@@ -9,20 +9,28 @@ public class DoorHandler : MonoBehaviour {
 
 	private bool playerInZone;
 	public bool waitForPress;
+
+	private ScreenFader screenFader;
 	// Use this for initialization
+	void Start(){
+		screenFader = FindObjectOfType<ScreenFader>();
+	}
+
 	void Update () {
 		if(waitForPress){
 			if(Input.GetKeyDown(KeyCode.W) && playerInZone){
 				LevelManager.isDoor = true;
 				LevelManager.doorIndex = thisDoorIndex;
-				SceneManager.LoadScene(nextLocation);
+				StartCoroutine(ChangeLevel());
+				//SceneManager.LoadScene(nextLocation);
 			}
 		}
 		else{
 			if(playerInZone){
 				LevelManager.isDoor = true;
 				LevelManager.doorIndex = thisDoorIndex;
-				SceneManager.LoadScene(nextLocation);
+				StartCoroutine(ChangeLevel());
+				//SceneManager.LoadScene(nextLocation);
 			}
 		}
 	}
@@ -41,5 +49,11 @@ public class DoorHandler : MonoBehaviour {
 			Debug.Log("Door Left");
 			playerInZone = false;
 		}
+	}
+
+	IEnumerator ChangeLevel(){
+		float fadeTime = screenFader.BeginFade(1);
+		yield return new WaitForSeconds(fadeTime);
+		SceneManager.LoadScene(nextLocation);
 	}
 }
