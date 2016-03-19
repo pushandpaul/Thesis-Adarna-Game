@@ -2,22 +2,23 @@
 using System.Collections;
 
 public class SpeechBubble : MonoBehaviour {
+	Transform[] allChildren;
 
-	// Use this for initialization
 	void Start () {
-		hideBubble ();
+		allChildren = GetComponentsInChildren<Transform> ();
+		displayBubble (false);
 	}
 
-	public void hideBubble() {
-		GetComponent<Renderer>().enabled = false;
+	public void displayBubble(bool check) {
+		foreach (Transform child in allChildren) {
+			setChildToActive (child);
+			child.GetComponent<Renderer>().enabled = check;
+		}
 	}
 
-	public void showBubble() {
-		GetComponent<Renderer>().enabled = true;
-	}
-
-	// Update is called once per frame
-	void Update () {
-	
+	private void setChildToActive(Transform child) {
+		if (!child.gameObject.activeInHierarchy) {
+			child.gameObject.SetActive (true);
+		}
 	}
 }
