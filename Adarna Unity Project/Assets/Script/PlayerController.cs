@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour {
 		shadowX = shadow.transform.position.x;
 		shadowY = shadow.transform.position.y;
 
+		moveSpeed += (Mathf.Abs(transform.localScale.x) % 0.5f) * 10;
+		Debug.Log("This is player speed: " + moveSpeed);
+
 		if(transform.localScale.x < 0)
 			facingRight = false;
 		else if(transform.localScale.x > 0)
