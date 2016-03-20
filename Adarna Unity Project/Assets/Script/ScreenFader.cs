@@ -22,7 +22,6 @@ public class ScreenFader : MonoBehaviour {
 	public float BeginFade(int direction){
 		Debug.Log("Begin Fade");
 		this.fadeDirection = direction;
-		//drawGUI();
 		return(fadeSpeed);
 	}
 

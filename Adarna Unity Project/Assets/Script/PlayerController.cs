@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour {
 	public float jumpHeight;
 
 	public bool canMove;
-	//public bool flipped;
 	public bool facingRight;
 
 	public Transform groundCheck;

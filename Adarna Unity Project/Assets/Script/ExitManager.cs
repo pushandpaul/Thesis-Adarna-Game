@@ -9,21 +9,15 @@ public class ExitManager : MonoBehaviour {
 
 	private ScreenFader screenFader;
 
-	//public SceneStateHandler sceneStateHandler;
-
 	void Start(){
-		//sceneStateHandler = FindObjectOfType<SceneStateHandler>();
 		screenFader = FindObjectOfType<ScreenFader>();
 	}
 
 	void OnTriggerEnter2D (Collider2D other){
-		//sceneStateHandler.saveCoordinates();
 		if(other.tag == "Player"){
 			LevelManager.isDoor = false;
 			LevelManager.exitInRight = isRight;
 			StartCoroutine(ChangeLevel());
-			//screenFader.endScene(nextLocation);
-			//SceneManager.LoadScene(nextLocation);
 		}
 	}
 	IEnumerator ChangeLevel(){
