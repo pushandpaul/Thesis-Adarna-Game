@@ -45,7 +45,7 @@ public class Objective : MonoBehaviour {
 	public ObjectiveManager manager {get; set;}
 	private TextBoxManager textBox;
 
-	void Start () {
+	void Start(){
 		//Collider2D thisCOllider = this.GetComponent<CircleCollider2D>();
 		manager = FindObjectOfType<ObjectiveManager>();
 		textBox = manager.GetComponent<TextBoxManager>();
@@ -87,40 +87,4 @@ public class Objective : MonoBehaviour {
 		Debug.Log("Display this to Text Box");
 		textBox.setText(nextObjective.Description);
 	}
-	/*private void onReach(){
-		if(this.OnReach.Contains(ActionOnReach.MarkAsAchieved)){
-			this.Status = ObjectiveStatus.Achieved;
-			Debug.Log("Achieved Objective: " + this.Name);
-		}
-			
-		if(this.OnReach.Contains(ActionOnReach.StartDialogue))
-			this.startDialogue();
-		if(nextObjective != null){
-			manager.currentObjective = this.nextObjective;
-			Debug.Log("This is the last Objective");
-		}
-			
-		manager.printCurrentObjective();
-	}
-
-	private void startDialogue(){
-		Debug.Log("Dialogue Started for " + this.Name);
-	}
-		
-	void OnTriggerEnter2D (Collider2D other){
-		Debug.Log("Triggered Objective: " + this.name);
-
-		if(other.tag == "Player" && this.manager.currentObjective.name == this.name){
-			Debug.Log("Collided with Player");
-			onReach();
-		}
-	}*/
-
-	/*----------Promosed Solution----------------
-
-	if(other.tag == "Player" && this.ObjectiveIndex == ObjectiveManager.currentObjectiveIndex)
-		ObjectiveManager.currentObjective.OnReach();
-
-		*/
-		
 }

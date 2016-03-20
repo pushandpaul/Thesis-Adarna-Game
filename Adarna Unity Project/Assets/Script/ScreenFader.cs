@@ -10,7 +10,6 @@ public class ScreenFader : MonoBehaviour {
 	private int fadeDirection = -1;
 
 	void OnGUI(){
-
 		//Debug.Log("Fading");
 		alpha += fadeDirection * fadeSpeed * Time.deltaTime;
 		alpha = Mathf.Clamp01(alpha);

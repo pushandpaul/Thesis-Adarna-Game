@@ -34,16 +34,13 @@ public class DoorHandler : MonoBehaviour {
 			}
 		}
 	}
-	
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D other){
 		if(other.tag == "Player"){
 			Debug.Log("Press W");
 			playerInZone = true;
 		}
-
 	}
-
 	void OnTriggerExit2D (Collider2D other){
 		if(other.tag == "Player"){
 			Debug.Log("Door Left");

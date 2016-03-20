@@ -66,14 +66,7 @@ public class PlayerController : MonoBehaviour {
 			Debug.Log("This is speed: " + anim.GetFloat("Speed"));
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
 		}
-
-
 		shadow.transform.position = new Vector3(shadow.transform.position.x, shadowY, 0f);
-		/*if(moveVelocity > 0)
-			Debug.Log("pangit mo paul");
-		else if(moveVelocity == 0)
-			Debug.Log("ganda ni clark");
-		*/
 		anim.SetBool("Ground", grounded);
 			
 		moveVelocity = 0f;

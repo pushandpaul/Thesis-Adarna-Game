@@ -14,7 +14,6 @@ public class ExitManager : MonoBehaviour {
 	void Start(){
 		//sceneStateHandler = FindObjectOfType<SceneStateHandler>();
 		screenFader = FindObjectOfType<ScreenFader>();
-
 	}
 
 	void OnTriggerEnter2D (Collider2D other){
@@ -27,7 +26,6 @@ public class ExitManager : MonoBehaviour {
 			//SceneManager.LoadScene(nextLocation);
 		}
 	}
-
 	IEnumerator ChangeLevel(){
 		float fadeTime = screenFader.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);

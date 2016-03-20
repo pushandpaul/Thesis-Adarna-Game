@@ -19,6 +19,7 @@ public class NPCInteraction : MonoBehaviour {
 
 	public bool facingRight;
 
+	public bool allowFlip = true;
 	private bool toFlip;
 
 	private ObjectiveMapper objectiveMapper;
@@ -28,6 +29,7 @@ public class NPCInteraction : MonoBehaviour {
 	public string message;
 
 	public SpeechBubble bubble;
+
 	void Start () {
 		bubble = this.GetComponentInChildren<SpeechBubble> ();
 		objectiveMapper = this.GetComponent<ObjectiveMapper>();
@@ -54,17 +56,21 @@ public class NPCInteraction : MonoBehaviour {
 			if (objectiveMapper.checkIfCurrent ())
 				bubble.displayBubble (true);
 		}
-		if(facingRight != player.facingRight){
-			GetComponent<CircleCollider2D>().offset = new Vector2(colliderOffsetX, colliderOffsetY);
-			toFlip = false;
-		}
-			
-		else if(facingRight == player.facingRight){
-			GetComponent<CircleCollider2D>().offset = new Vector2(-colliderOffsetX, colliderOffsetY);
-			toFlip = true;
-		}
-			
 
+		if(allowFlip){
+			if(facingRight != player.facingRight){
+				GetComponent<CircleCollider2D>().offset = new Vector2(colliderOffsetX, colliderOffsetY);
+				toFlip = false;
+			}
+
+			else if(facingRight == player.facingRight){
+				GetComponent<CircleCollider2D>().offset = new Vector2(-colliderOffsetX, colliderOffsetY);
+				toFlip = true;
+			}
+		}
+		else
+			toFlip = false;
+		
 		if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
 			if(toFlip){
 				transform.localScale = new Vector3(-scaleX, scaleY, 1f);
@@ -82,7 +88,6 @@ public class NPCInteraction : MonoBehaviour {
 		bubble.displayBubble (false);
 		//flowchart.SendFungusMessage(toSend);
 		flowchart.SendFungusMessage(toSend);
-			
 	}
 
 	public void endDialogue(){
@@ -97,7 +102,6 @@ public class NPCInteraction : MonoBehaviour {
 		Debug.Log(message);
 		startDialogue(message);
 	}
-		
 	void OnTriggerEnter2D (Collider2D other){
 		Debug.Log("Collided with " + gameObject.name);
 		if(other.tag == "Player"){
@@ -109,7 +113,6 @@ public class NPCInteraction : MonoBehaviour {
 				checkIfCurrent();
 		}
 	}
-	
 	void OnTriggerExit2D (Collider2D other){
 		if(other.tag == "Player"){
 			if(pressToInteract){
