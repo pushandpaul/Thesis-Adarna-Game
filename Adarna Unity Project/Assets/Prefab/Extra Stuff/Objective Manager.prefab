@@ -83,6 +83,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &152178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 454906}
+  - 114: {fileID: 11455614}
+  m_Layer: 0
+  m_Name: Dayap (MiniGame)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &152214
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +361,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 480576}
   m_RootOrder: 10
+--- !u!4 &454906
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.785217, y: -7.820981, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 480576}
+  m_RootOrder: 11
 --- !u!4 &456164
 Transform:
   m_ObjectHideFlags: 1
@@ -380,7 +408,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 480576}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!4 &480576
 Transform:
   m_ObjectHideFlags: 1
@@ -402,6 +430,7 @@ Transform:
   - {fileID: 401432}
   - {fileID: 462218}
   - {fileID: 432272}
+  - {fileID: 454906}
   - {fileID: 469784}
   - {fileID: 22457716}
   m_Father: {fileID: 0}
@@ -534,7 +563,7 @@ MonoBehaviour:
   Kind: 0
   Status: 0
   OnReach: 000000000100000002000000
-  nextObjective: {fileID: 11412622}
+  nextObjective: {fileID: 11455614}
   objectiveIndex: 0
 --- !u!114 &11426296
 MonoBehaviour:
@@ -627,6 +656,25 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &11455614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Dayap (MiniGame)
+  Description: Huwag hayaang makatulog si Don Juan sa awit ng Ibong Adarna! Pindutin
+    ang 'E' upang sugatan ang sarili at pahiran ng dayap.
+  Kind: 2
+  Status: 0
+  OnReach: 01000000
+  nextObjective: {fileID: 11412622}
+  objectiveIndex: 0
 --- !u!114 &11457262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -824,7 +872,7 @@ RectTransform:
   m_Children:
   - {fileID: 22429038}
   m_Father: {fileID: 480576}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

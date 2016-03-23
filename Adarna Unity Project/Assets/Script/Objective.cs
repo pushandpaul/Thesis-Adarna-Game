@@ -26,11 +26,6 @@ public class Objective : MonoBehaviour {
 	public string Name;
 	[Multiline(10)]
 	public string Description;
-	//[Multiline(10)]
-	//public string nextObjectiveDescription;
-
-	/*[Multiline(10)]
-	public string nextObjectiveDescription;*/
 
 	public ObjectiveType Kind;
 	public ObjectiveStatus Status;
@@ -39,23 +34,14 @@ public class Objective : MonoBehaviour {
 	public Objective nextObjective;
 	public int objectiveIndex;
 
-	//private Flowchart flowchart;
-	//public GameObject target;
-
 	public ObjectiveManager manager {get; set;}
 	private TextBoxManager textBox;
 
 	void Start(){
-		//Collider2D thisCOllider = this.GetComponent<CircleCollider2D>();
 		manager = FindObjectOfType<ObjectiveManager>();
 		textBox = manager.GetComponent<TextBoxManager>();
-		//flowchart = null;
-		//Debug.Log("" + this.manager.currentObjective.Name);
-
 	}
 	public void onReach(){
-		//if(this.Status == ObjectiveStatus.Achieved)
-
 		if(this.OnReach.Contains(ActionOnReach.MarkAsAchieved)){
 			this.Status = ObjectiveStatus.Achieved;
 			Debug.Log("Achieved Objective: " + this.name);
@@ -66,10 +52,7 @@ public class Objective : MonoBehaviour {
 		}
 		if(nextObjective != null){
 			manager.currentObjective = this.nextObjective;
-
-
 			if(nextObjective.OnReach.Contains(ActionOnReach.DisplayToTextBox)){
-				//textBox.setText(nextObjective.Description);
 				displayToTextbox();
 			}
 
@@ -79,8 +62,6 @@ public class Objective : MonoBehaviour {
 
 	private void startDialogue(){
 		Debug.Log("Dialogue Started");
-		//flowchart = FindObjectOfType<Flowchart>();
-		//flowchart.ExecuteBlock(this.name);
 	}
 
 	private void displayToTextbox(){
