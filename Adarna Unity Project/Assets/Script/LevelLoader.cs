@@ -16,22 +16,31 @@ public class LevelLoader : MonoBehaviour {
 		BahayNiErmitanyo = 8,
 		BahayNiErmitanyoInsecure = 9,
 		GreenToDarkForest = 10,
+		//Minigames
+		MinigameDayap = 11,
 	}
 
 	public LevelSelect Levels;
+	private ScreenFader screenFader;
 
-	public string nextScene;
+	public bool launchOnStart;
 	// Use this for initialization
 	void Start () {
-		int levelIndex = 0;
-		levelIndex = (int)this.Levels;
-		Debug.Log("" + levelIndex);
-		SceneManager.LoadScene(levelIndex);
+		screenFader = FindObjectOfType<ScreenFader>();
+		if(launchOnStart)
+			launchScene();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		/*if(nextScene != null)
-			SceneManager.LoadScene(nextScene);*/
+	public void launchScene(){
+		StartCoroutine(fadeLevel());
+	}
+
+	IEnumerator fadeLevel(){
+		int levelIndex = 0;
+		levelIndex = (int)this.Levels;
+		float fadeTime = screenFader.BeginFade(1);
+		yield return new WaitForSeconds(fadeTime);
+		Debug.Log("" + levelIndex);
+		SceneManager.LoadScene(levelIndex);
 	}
 }

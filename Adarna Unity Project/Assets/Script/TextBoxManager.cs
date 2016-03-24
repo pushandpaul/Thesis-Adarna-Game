@@ -11,6 +11,10 @@ public class TextBoxManager : MonoBehaviour {
 		this.theText.text = text;
 	}
 
+	public string getText(){
+		return this.theText.text;
+	}
+
 	public void enableTextBox(){
 		this.textBox.SetActive(true);
 	}

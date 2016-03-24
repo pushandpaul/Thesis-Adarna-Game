@@ -75,6 +75,11 @@ public class ObjectiveMapper : MonoBehaviour {
 
 	public void checkIfCurrent_misc(){
 		Debug.Log("Triggered misc objective");
+		if(checkIfCurrent()){
+			Debug.Log("This is the current objective");
+			objectiveManager.currentObjective.onReach();
+		}
+			
 	}
 	// Update is called once per frame
 }

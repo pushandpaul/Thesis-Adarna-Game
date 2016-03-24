@@ -52,10 +52,12 @@ public class Objective : MonoBehaviour {
 		}
 		if(nextObjective != null){
 			manager.currentObjective = this.nextObjective;
-			if(nextObjective.OnReach.Contains(ActionOnReach.DisplayToTextBox)){
-				displayToTextbox();
+			if(manager.currentObjective.OnReach.Contains(ActionOnReach.DisplayToTextBox)){
+				displayToTextBox();
 			}
-
+			else
+				textBox.disableTextBox();
+				
 			manager.currentObjectiveIndex = this.nextObjective.objectiveIndex;
 		}
 	}
@@ -64,8 +66,8 @@ public class Objective : MonoBehaviour {
 		Debug.Log("Dialogue Started");
 	}
 
-	private void displayToTextbox(){
-		Debug.Log("Display this to Text Box");
-		textBox.setText(nextObjective.Description);
+	private void displayToTextBox(){
+		textBox.enableTextBox();
+		textBox.setText(manager.currentObjective.Description);
 	}
 }

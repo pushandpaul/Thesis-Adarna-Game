@@ -8,6 +8,7 @@ public class ObjectiveManager : MonoBehaviour {
 	public Objective currentObjective;
 	public int currentObjectiveIndex;
 	private Objective[] allObjectives;
+	private TextBoxManager textBox;
 
 	//public List<GameObject> destroyList;
 
@@ -31,17 +32,25 @@ public class ObjectiveManager : MonoBehaviour {
 	void Start () {
 		//destroyList = new List<GameObject>();
 		allObjectives = this.GetComponentsInChildren<Objective>();
-
+		textBox = this.GetComponent<TextBoxManager>();
 
 		for(int i = 0; i < allObjectives.Length; i++)
 			allObjectives[i].objectiveIndex = i;
 
 		currentObjectiveIndex = currentObjective.objectiveIndex;
+
+		if(currentObjective.Description != "")
+			displayCurrentObjective();
+
 		this.printCurrentObjective();
 	}
 
 	public void printCurrentObjective(){
 		Debug.Log("This is the current objective " + currentObjective.Name);
+	}
+
+	public void displayCurrentObjective(){
+		textBox.setText(currentObjective.Description);
 	}
 
 	public void destroyGameObjects(){

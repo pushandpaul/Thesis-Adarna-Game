@@ -270,6 +270,8 @@ GameObject:
   - 224: {fileID: 22429038}
   - 222: {fileID: 22264662}
   - 114: {fileID: 11438842}
+  - 114: {fileID: 11485560}
+  - 114: {fileID: 11408978}
   m_Layer: 5
   m_Name: Objective Panel
   m_TagString: Untagged
@@ -416,7 +418,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.570606, y: 9, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 429098}
@@ -459,6 +461,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 480576}
   m_RootOrder: 2
+--- !u!114 &11408978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -405508275, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 20
+    m_Right: 20
+    m_Top: 10
+    m_Bottom: 10
+  m_ChildAlignment: 1
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 1
 --- !u!114 &11409972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -484,10 +506,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: END
-  Description: 
+  Description: THIS IS THE END!
   Kind: 0
   Status: 0
-  OnReach: 
+  OnReach: 02000000
   nextObjective: {fileID: 0}
   objectiveIndex: 0
 --- !u!114 &11414590
@@ -594,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78d200b4cd57df41a15fbec18def6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentObjective: {fileID: 11494704}
+  currentObjective: {fileID: 11424876}
   currentObjectiveIndex: 0
 --- !u!114 &11438842
 MonoBehaviour:
@@ -652,10 +674,10 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!114 &11455614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -672,7 +694,7 @@ MonoBehaviour:
     ang 'E' upang sugatan ang sarili at pahiran ng dayap.
   Kind: 2
   Status: 0
-  OnReach: 01000000
+  OnReach: 0100000002000000
   nextObjective: {fileID: 11412622}
   objectiveIndex: 0
 --- !u!114 &11457262
@@ -778,6 +800,19 @@ MonoBehaviour:
   OnReach: 000000000100000002000000
   nextObjective: {fileID: 11424876}
   objectiveIndex: 0
+--- !u!114 &11485560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
 --- !u!114 &11486682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -857,9 +892,9 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000038147, y: -28}
-  m_SizeDelta: {x: -181.20001, y: 30.700012}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000030517578, y: -22}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!224 &22457716
 RectTransform:
   m_ObjectHideFlags: 1
@@ -890,10 +925,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22429038}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -16.5}
-  m_SizeDelta: {x: -81, y: 19}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
 Prefab:

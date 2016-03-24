@@ -9,6 +9,8 @@ public class DayapMinigame : MonoBehaviour {
 	private Image bar;
 	private Timer timer;
 	private PlayerController player;
+	private ObjectiveMapper objectiveMapper;
+	private LevelLoader levelLoader;
 
 	public Flowchart flowchart;
 
@@ -29,8 +31,11 @@ public class DayapMinigame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerController>();
+		levelLoader = FindObjectOfType<LevelLoader>();
 		bar = barUI.GetComponent<Image>();
+		objectiveMapper = this.GetComponent<ObjectiveMapper>();
 		timer = FindObjectOfType<Timer>();
+
 		timer.startTimer();
 	}
 	
@@ -83,9 +88,14 @@ public class DayapMinigame : MonoBehaviour {
 		Debug.Log(message);
 		timer.stopTimer();
 		this.enabled = false;
-		if(success)
-			SceneManager.LoadScene("Forest - Pedras Platas");
-		else
-			SceneManager.LoadScene("(Minigame) Dayap");
+		if(success){
+			objectiveMapper.checkIfCurrent_misc();
+			levelLoader.Levels = LevelLoader.LevelSelect.ForestPedrasPlatas;
+		}
+			
+		else{
+			levelLoader.Levels = LevelLoader.LevelSelect.MinigameDayap;
+		}
+		levelLoader.launchScene();
 	}
 }
