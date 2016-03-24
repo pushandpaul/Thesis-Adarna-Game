@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using Fungus;
 
 public class DayapMinigame : MonoBehaviour {
-	public Image barUI;
+	public Bar barUI;
 	private Image bar;
 	private Timer timer;
 	private PlayerController player;
