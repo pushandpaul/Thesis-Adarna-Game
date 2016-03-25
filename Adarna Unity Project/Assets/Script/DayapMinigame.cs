@@ -12,6 +12,9 @@ public class DayapMinigame : MonoBehaviour {
 	private ObjectiveMapper objectiveMapper;
 	private LevelLoader levelLoader;
 
+	public Sprite dayap;
+	public ItemToGive itemToGive;
+
 	public Flowchart flowchart;
 
 	private float targetSize;
@@ -46,6 +49,8 @@ public class DayapMinigame : MonoBehaviour {
 				increaseSize();
 				dayapCount--;
 				player.GetComponentInChildren<Animator>().Play("Give Item");
+				if(itemToGive.GetComponent<SpriteRenderer>().sprite != dayap)
+					itemToGive.setItem(dayap);
 			}
 			else if(dayapCount == 0 && !dialoguePlayed){
 				flowchart.ExecuteBlock("Ubos na Dayap");

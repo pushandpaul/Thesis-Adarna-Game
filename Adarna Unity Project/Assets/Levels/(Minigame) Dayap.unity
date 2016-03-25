@@ -548,13 +548,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11499272, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: canMove
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &479182013 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11498516, guid: c030ba30e8be9a241aa1f4962c3a078a,
+    type: 2}
+  m_PrefabInternal: {fileID: 479182012}
+  m_Script: {fileID: 11500000, guid: 262304b4f6825754ab59878f7dceeb71, type: 3}
 --- !u!1 &602831447
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barUI: {fileID: 1137274991}
+  dayap: {fileID: 21300000, guid: f2cd86b98bbf90b48912a065d2dfb54e, type: 3}
+  itemToGive: {fileID: 479182013}
   flowchart: {fileID: 1509823653}
   addSize: 0.4
   defaultDuration: 0.04
@@ -1410,7 +1414,7 @@ Transform:
   m_RootOrder: 2
 --- !u!114 &1509823671
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1509823652}
