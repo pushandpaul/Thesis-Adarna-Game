@@ -21,7 +21,9 @@ public class Objective : MonoBehaviour {
 		StartDialogue = 0,
 		MarkAsAchieved = 1,
 		DisplayToTextBox = 2,
+		//IfPlayAnimation = 3,
 	}
+
 
 	public string Name;
 	[Multiline(10)]
@@ -36,6 +38,9 @@ public class Objective : MonoBehaviour {
 
 	public ObjectiveManager manager {get; set;}
 	private TextBoxManager textBox;
+
+	//public string AnimationName;
+	//public Animator animator;
 
 	void Start(){
 		manager = FindObjectOfType<ObjectiveManager>();
