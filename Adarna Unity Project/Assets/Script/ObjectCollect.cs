@@ -3,17 +3,19 @@ using System.Collections;
 
 public class ObjectCollect : MonoBehaviour {
 	private bool waitForPress;
-	// Use this for initialization
+	private ObjectData objectData;
+	private GameManager gameManager;
 	void Start () {
-	
+		gameManager = FindObjectOfType<GameManager>();
+		objectData = this.GetComponent<ObjectData>();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if(waitForPress && Input.GetKeyDown(KeyCode.E)){
 			Debug.Log("Collected: " + gameObject.name);
-			//gameObject.SetActive = false;
-			Destroy(gameObject);
+			objectData.destroyed = true;
+			gameManager.searchData(this.objectData,'s'); //saves object data to game manager, before the object is destroyed
+			Destroy(this.gameObject);
 		}
 			
 		else

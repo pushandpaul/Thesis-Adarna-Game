@@ -10,22 +10,28 @@ public class ObjectiveManager : MonoBehaviour {
 	private Objective[] allObjectives;
 	private TextBoxManager textBox;
 
+	public UIFader objectivePanelFader;
+	public int fadeDelay = 10;
+
 	//public List<GameObject> destroyList;
 
 	void Awake(){
-		/*if(FindObjectsOfType<ObjectiveManager>().Length > 1){
+		if(FindObjectsOfType<ObjectiveManager>().Length > 1){
 			Destroy(this.gameObject);
 		}
 		else if(FindObjectsOfType<ObjectiveManager>().Length == 1){
 			DontDestroyOnLoad(this.gameObject);
-		}*/
+		}
 
-		if(instance == null)
+		/*if(instance == null){
 			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+			
 		else if(instance != this)
 			Destroy(gameObject);
-		
-		DontDestroyOnLoad(gameObject);
+		*/
+
 			
 	}
 
@@ -33,7 +39,7 @@ public class ObjectiveManager : MonoBehaviour {
 		//destroyList = new List<GameObject>();
 		allObjectives = this.GetComponentsInChildren<Objective>();
 		textBox = this.GetComponent<TextBoxManager>();
-
+		//objectivePanelFader.FadeIn(fadeDelay);
 		for(int i = 0; i < allObjectives.Length; i++)
 			allObjectives[i].objectiveIndex = i;
 

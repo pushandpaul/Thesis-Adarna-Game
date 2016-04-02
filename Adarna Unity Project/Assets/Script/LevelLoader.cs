@@ -14,7 +14,7 @@ public class LevelLoader : MonoBehaviour {
 		Forest = 6,
 		ForestPedrasPlatas = 7,
 		BahayNiErmitanyo = 8,
-		BahayNiErmitanyoInsecure = 9,
+		BahayNiErmitanyoInterior = 9,
 		GreenToDarkForest = 10,
 		//Minigames
 		MinigameDayap = 11,
@@ -22,16 +22,24 @@ public class LevelLoader : MonoBehaviour {
 
 	public LevelSelect Levels;
 	private ScreenFader screenFader;
+	private GameManager gameManager;
+	private LevelManager levelManager;
 
 	public bool launchOnStart;
 	// Use this for initialization
 	void Start () {
 		screenFader = FindObjectOfType<ScreenFader>();
+		gameManager = FindObjectOfType<GameManager>();
+		levelManager = FindObjectOfType<LevelManager>();
 		if(launchOnStart)
 			launchScene();
 	}
 	
 	public void launchScene(){
+		if(levelManager != null){
+			if(FindObjectsOfType<ObjectData>().Length > 0)
+				gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
+		}
 		StartCoroutine(fadeLevel());
 	}
 

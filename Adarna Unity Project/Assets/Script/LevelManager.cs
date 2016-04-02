@@ -7,21 +7,39 @@ public class LevelManager : MonoBehaviour {
 	public static int doorIndex = 0;
 	//public static bool loadPlayerPos = false;
 
+	public string sceneName;
 	private PlayerPosition playerPos;
-	private GameObject[] door;
+	public DoorHandler[] door;
 
 	private PlayerController player;
 	private CameraController camera;
 	private Location location;
-	// Use this for initialization
+	private GameManager gameManager;
+	public ObjectData[] objectData;
+	void Awake(){
+		gameManager = FindObjectOfType<GameManager>();
+		objectData = FindObjectsOfType<ObjectData>();
+
+		if(gameManager != null && objectData.Length > 0){
+			gameManager.currentScene = sceneName;
+			gameManager.updateSceneList();	
+
+		}
+	}
 	void Start() {
+		if(objectData != null){
+			gameManager.loadCoordinates(objectData);
+		}
+			
+
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
+		//door = FindObjectsOfType<DoorHandler>();
 
 		if(playerPos == null ||!playerPos.loadThis){
-			if(isDoor && door.Length > 0){
+			if(isDoor && door != null){
 				player.transform.position = new Vector3(door[doorIndex].transform.position.x, location.playerSpawnY, location.playerSpawnZ);
 				camera.transform.position = new Vector3(door[doorIndex].transform.position.x, location.cameraSpawnY, location.cameraSpawnZ);
 			}

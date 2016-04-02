@@ -14,8 +14,6 @@ public class ObjectiveMapper : MonoBehaviour {
 	private NPCInteraction npc;
 	private ObjectInteraction objectiveHolder;
 
-	//private bool found;
-	// Use this for initialization
 	void Start () {
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		//textBox = objectiveManager.GetComponent<TextBoxManager>();

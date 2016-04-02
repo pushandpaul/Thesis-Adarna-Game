@@ -17,9 +17,6 @@ public class PlayerPosition : MonoBehaviour {
 	private CameraController camera;
 	private PlayerController player;
 	// Use this for initialization
-	void Awake(){
-		DontDestroyOnLoad(this);
-	}
 	public void saveInBetweenData(){
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();

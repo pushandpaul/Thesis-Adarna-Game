@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
+using System.Linq.Expressions;
+using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour {
 
@@ -7,15 +10,17 @@ public class DialogueController : MonoBehaviour {
 	private CameraController camera;
 	private ObjectiveManager objectiveManager;
 	private TextBoxManager objectiveTextBox;
+	private UIFader objectivePanelFader;
 
 	public bool zoomCam;
 	public bool centerCam;
-	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		objectiveTextBox = objectiveManager.GetComponent<TextBoxManager>();
+		this.objectivePanelFader = objectiveManager.objectivePanelFader;
+
 	}
 
 	public void startDialogue(){
@@ -25,7 +30,10 @@ public class DialogueController : MonoBehaviour {
 
 		if(zoomCam)
 			camera.zoomCam();
-		objectiveTextBox.disableTextBox();
+
+		objectivePanelFader.canvasGroup.alpha = 0;
+		//objectiveTextBox.disableTextBox();
+		//objectivePanelFader.FadeOut(0);
 
 	}
 
@@ -36,7 +44,12 @@ public class DialogueController : MonoBehaviour {
 
 		if(zoomCam)
 			camera.unzoomCam();
-		objectiveTextBox.enableTextBox();
-	}
 		
+		if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox) && !objectiveManager.currentObjective.textBoxDisplayed){
+			Debug.Log("Allowed fade in");
+			//objectiveTextBox.enableTextBox();
+			objectivePanelFader.FadeIn(objectiveManager.fadeDelay);
+			objectiveManager.currentObjective.textBoxDisplayed = true;
+		}
+	}
 }

@@ -38,12 +38,13 @@ public class Objective : MonoBehaviour {
 
 	public ObjectiveManager manager {get; set;}
 	private TextBoxManager textBox;
+	public bool textBoxDisplayed = false;
 
 	//public string AnimationName;
 	//public Animator animator;
 
 	void Start(){
-		manager = FindObjectOfType<ObjectiveManager>();
+		manager = GetComponentInParent<ObjectiveManager>();
 		textBox = manager.GetComponent<TextBoxManager>();
 	}
 	public void onReach(){

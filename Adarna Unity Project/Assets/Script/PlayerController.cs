@@ -87,19 +87,31 @@ public class PlayerController : MonoBehaviour {
 			transform.localScale = new Vector3(scaleX, scaleY, 0f);
 			camera.flipped = false;
 			facingRight = true;
+			//flipPlayer();
 		}
 			
 		else if(GetComponent<Rigidbody2D>().velocity.x < 0){
 			transform.localScale = new Vector3(-scaleX, scaleY, 0f);
 			camera.flipped = true;
 			facingRight = false;
+			//flipPlayer();
+
 		}
+
 	}
 
 	public void enablePlayerMovement(){
 		canMove = true;
 	}
 	public void disablePlayerMovement(){
+		//GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 		canMove = false;
+	}
+	public void flipPlayer(){
+		Debug.Log("Initial Scale" + transform.localScale.x);
+		transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y, 0f);
+		Debug.Log("Changed Scale" + transform.localScale.x);
+		camera.flipped = !camera.flipped;
+		facingRight = !facingRight;
 	}
 }

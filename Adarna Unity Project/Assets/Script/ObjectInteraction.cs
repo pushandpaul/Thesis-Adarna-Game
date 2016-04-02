@@ -10,6 +10,8 @@ public class ObjectInteraction : MonoBehaviour {
 
 	public PlayerController player;
 
+	public int panelFadeDelay;
+
 	private ObjectiveMapper objectiveMapper;
 	public bool anObjective;
 	//public bool isAchieved;
