@@ -60,7 +60,7 @@ public class LevelManager : MonoBehaviour {
 			Debug.Log("There is saved");
 
 			player.transform.position = new Vector3(playerPos.playerX, playerPos.playerY, playerPos.playerZ);
-			player.transform.localScale = new Vector3(playerPos.playerScale, playerPos.playerScale, 0f);
+			player.transform.localScale = new Vector3(playerPos.playerScale, player.transform.localScale.y, 0f);
 			camera.transform.position = new Vector3(playerPos.cameraX, playerPos.cameraY, playerPos.cameraZ);
 
 			playerPos.clearInBetweenData();

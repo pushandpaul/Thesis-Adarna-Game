@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 0
+  Levels: 8
   launchOnStart: 1
 --- !u!4 &268044221
 Transform:
@@ -173,12 +173,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &574282140 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11494704, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1123177160}
-  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
 --- !u!1001 &1123177160
 Prefab:
   m_ObjectHideFlags: 0
@@ -221,7 +215,7 @@ Prefab:
     - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: currentObjective
       value: 
-      objectReference: {fileID: 574282140}
+      objectReference: {fileID: 2043103436}
     - target: {fileID: 22485014, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -323,7 +317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1845581102
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,3 +361,9 @@ MonoBehaviour:
   sceneObjects: []
   currentSceneObj: {fileID: 0}
   currentScene: 
+--- !u!114 &2043103436 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11424876, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1123177160}
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}

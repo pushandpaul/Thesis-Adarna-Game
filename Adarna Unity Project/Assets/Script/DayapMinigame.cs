@@ -11,6 +11,7 @@ public class DayapMinigame : MonoBehaviour {
 	private PlayerController player;
 	private ObjectiveMapper objectiveMapper;
 	private LevelLoader levelLoader;
+	public Image[] dayapUI;
 
 	public Sprite dayap;
 	public ItemToGive itemToGive;
@@ -29,7 +30,7 @@ public class DayapMinigame : MonoBehaviour {
 
 	public bool toIncrease = true;
 
-	public float dayapCount = 7;
+	public int dayapCount = 7;
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +49,7 @@ public class DayapMinigame : MonoBehaviour {
 			if(dayapCount > 0 && Input.GetKeyDown(KeyCode.E)){
 				increaseSize();
 				dayapCount--;
+				dayapUI[dayapCount].GetComponent<UIFader>().FadeTo(1f, 0.5f);
 				player.GetComponentInChildren<Animator>().Play("Give Item");
 				if(itemToGive.GetComponent<SpriteRenderer>().sprite != dayap)
 					itemToGive.setItem(dayap);

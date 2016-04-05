@@ -48,7 +48,7 @@ public class DialogueController : MonoBehaviour {
 		if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox) && !objectiveManager.currentObjective.textBoxDisplayed){
 			Debug.Log("Allowed fade in");
 			//objectiveTextBox.enableTextBox();
-			objectivePanelFader.FadeIn(objectiveManager.fadeDelay);
+			objectivePanelFader.FadeIn(objectiveManager.fadeDelay, 0.6f, true);
 			objectiveManager.currentObjective.textBoxDisplayed = true;
 		}
 	}
