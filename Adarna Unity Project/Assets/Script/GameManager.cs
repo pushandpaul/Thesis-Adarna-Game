@@ -8,12 +8,19 @@ public class GameManager : MonoBehaviour {
 	public SceneObjects currentSceneObj;
 	public string currentScene = "";
 
+	//for future use
+	public Sprite[] heldItem;
+	public Sprite currentHeldItem;
+	public string playerIdleState;
+
 	private LevelManager levelManager;
 
 	void Awake () {
+		//playerIdleState = "Idle";
 		DontDestroyOnLoad(this);
 		sceneObjects = new List<SceneObjects>();
 	}
+
 
 	public void updateSceneList(){
 		bool found = false;

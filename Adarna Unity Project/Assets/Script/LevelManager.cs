@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour {
 	public DoorHandler[] door;
 
 	private PlayerController player;
+	private Animator playerAnimator;
 	private CameraController camera;
 	private Location location;
 	private GameManager gameManager;
@@ -27,7 +28,7 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 	void Start() {
-		if(objectData != null){
+		if(objectData.Length > 0){
 			gameManager.loadCoordinates(objectData);
 		}
 			
@@ -37,6 +38,11 @@ public class LevelManager : MonoBehaviour {
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
 		//door = FindObjectsOfType<DoorHandler>();
+
+		playerAnimator = player.GetComponentInChildren<Animator>();
+		Debug.Log("Attemp to play animation: '" + gameManager.playerIdleState + "' player state");
+		playerAnimator.Play(gameManager.playerIdleState);
+
 
 		if(playerPos == null ||!playerPos.loadThis){
 			if(isDoor && door != null){
@@ -66,7 +72,7 @@ public class LevelManager : MonoBehaviour {
 			playerPos.clearInBetweenData();
 		}
 	}
-
+		
 	public void savePosition(){
 		if(playerPos != null)
 			playerPos.saveInBetweenData();
