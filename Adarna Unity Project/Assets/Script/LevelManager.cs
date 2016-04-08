@@ -39,10 +39,6 @@ public class LevelManager : MonoBehaviour {
 		playerPos = FindObjectOfType<PlayerPosition>();
 		//door = FindObjectsOfType<DoorHandler>();
 
-		playerAnimator = player.GetComponentInChildren<Animator>();
-		Debug.Log("Attemp to play animation: '" + gameManager.playerIdleState + "' player state");
-		playerAnimator.Play(gameManager.playerIdleState);
-
 
 		if(playerPos == null ||!playerPos.loadThis){
 			if(isDoor && door != null){

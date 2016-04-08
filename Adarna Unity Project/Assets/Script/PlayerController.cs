@@ -28,10 +28,16 @@ public class PlayerController : MonoBehaviour {
 	public GameObject shadow;
 	private float shadowX;
 	private float shadowY;
+	private GameManager gameManager;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponentInChildren<Animator>();
 		camera = FindObjectOfType<CameraController>();
+		gameManager = FindObjectOfType<GameManager> ();
+		anim.Play (gameManager.currentScene);
+
+		ItemToGive item = FindObjectOfType<ItemToGive> ();
+		item.setItem (gameManager.currentHeldItem);
 
 		scaleX = Mathf.Abs(transform.localScale.x);
 		scaleY = transform.localScale.y;
@@ -45,6 +51,9 @@ public class PlayerController : MonoBehaviour {
 			facingRight = false;
 		else if(transform.localScale.x > 0)
 			facingRight = true;
+
+		Debug.Log ("Attempt to play animation: " + gameManager.playerIdleState + " player state.");
+		anim.Play (gameManager.playerIdleState);
 	}
 
 	void FixedUpdate (){
@@ -114,4 +123,10 @@ public class PlayerController : MonoBehaviour {
 		camera.flipped = !camera.flipped;
 		facingRight = !facingRight;
 	}
+
+	public void setPlayerSate(string state){
+		gameManager.playerIdleState = state;
+		anim.Play(gameManager.playerIdleState);
+	}
 }
+

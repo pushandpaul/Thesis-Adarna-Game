@@ -10,6 +10,8 @@ public class ItemToGive : MonoBehaviour {
 	}
 
 	public void setItem(Sprite item){
+		GameManager gameManager = FindObjectOfType<GameManager> ();
+		gameManager.currentHeldItem = item;
 		myRenderer.enabled = true;
 		myRenderer.sprite = item;
 	}

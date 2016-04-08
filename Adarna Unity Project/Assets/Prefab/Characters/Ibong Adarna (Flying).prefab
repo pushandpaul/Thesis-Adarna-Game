@@ -26,6 +26,7 @@ GameObject:
   - 4: {fileID: 422394}
   - 95: {fileID: 9542336}
   - 114: {fileID: 11497138}
+  - 114: {fileID: 11475730}
   m_Layer: 0
   m_Name: Ibong Adarna
   m_TagString: Untagged
@@ -137,6 +138,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 452440}
+  - 114: {fileID: 11460244}
+  - 114: {fileID: 11403060}
+  - 114: {fileID: 11408714}
+  - 58: {fileID: 5804450}
   m_Layer: 0
   m_Name: Ibong Adarna (Flying)
   m_TagString: Untagged
@@ -318,6 +323,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 450450}
   m_RootOrder: 5
+--- !u!58 &5804450
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174136}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 12.19, y: 8.39}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!95 &9542336
 Animator:
   serializedVersion: 3
@@ -328,13 +347,69 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ee7cc7a963e14c44dad257c535a203be, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11403060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f3e656763786345bcf7e03f2c3c74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11408714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 1
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  facingRight: 0
+  allowFlip: 1
+  anObjective: 0
+  message: 
+  bubble: {fileID: 0}
+--- !u!114 &11460244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveIndex: 0b000000
+  isNPC: 0
+  isObject: 1
+--- !u!114 &11475730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6eb37d0d262db74aa5a78beacb18768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {x: -3.2, y: -1.5, z: 0}
 --- !u!114 &11497138
 MonoBehaviour:
   m_ObjectHideFlags: 1

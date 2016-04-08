@@ -5,6 +5,9 @@ public class ObjectCollect : MonoBehaviour {
 	private bool waitForPress;
 	private ObjectData objectData;
 	private GameManager gameManager;
+	private ObjectiveMapper objectiveMapper;
+	private PlayerController playerController;
+
 	void Start () {
 		gameManager = FindObjectOfType<GameManager>();
 		objectData = this.GetComponent<ObjectData>();
@@ -12,10 +15,14 @@ public class ObjectCollect : MonoBehaviour {
 
 	void Update () {
 		if(waitForPress && Input.GetKeyDown(KeyCode.E)){
-			Debug.Log("Collected: " + gameObject.name);
-			objectData.destroyed = true;
-			gameManager.searchData(this.objectData,'s'); //saves object data to game manager, before the object is destroyed
-			Destroy(this.gameObject);
+			if (objectiveMapper.checkIfCurrent ()) {
+				carryItem ();
+				/*Debug.Log ("Collected: " + gameObject.name);
+				objectData.destroyed = true;
+				gameManager.searchData (this.objectData, 's'); //saves object data to game manager, before the object is destroyed
+				Destroy (this.gameObject);
+				playerController.setPlayerSate ("Carry Item (Idle)");*/
+			}
 		}
 			
 		else
@@ -29,4 +36,13 @@ public class ObjectCollect : MonoBehaviour {
 		if(other.tag == "Player")
 			waitForPress = false;
 	}
+
+	public void carryItem() {
+		Debug.Log ("Collected: " + gameObject.name);
+		objectData.destroyed = true;
+		gameManager.searchData (this.objectData, 's'); //saves object data to game manager, before the object is destroyed
+		Destroy (this.gameObject);
+		playerController.setPlayerSate ("Carry Item (Idle)");
+	}
+
 }
