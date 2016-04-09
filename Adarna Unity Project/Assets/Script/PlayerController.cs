@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 	private bool grounded;
 
 	private Animator anim;
+	public ItemToGive item;
 
 	private float scaleX;
 	private float scaleY;
@@ -34,10 +35,6 @@ public class PlayerController : MonoBehaviour {
 		anim = GetComponentInChildren<Animator>();
 		camera = FindObjectOfType<CameraController>();
 		gameManager = FindObjectOfType<GameManager> ();
-		anim.Play (gameManager.currentScene);
-
-		ItemToGive item = FindObjectOfType<ItemToGive> ();
-		item.setItem (gameManager.currentHeldItem);
 
 		scaleX = Mathf.Abs(transform.localScale.x);
 		scaleY = transform.localScale.y;
@@ -53,7 +50,11 @@ public class PlayerController : MonoBehaviour {
 			facingRight = true;
 
 		Debug.Log ("Attempt to play animation: " + gameManager.playerIdleState + " player state.");
+
 		anim.Play (gameManager.playerIdleState);
+		if(gameManager.currentHeldItem != null)
+			item.setItem(gameManager.currentHeldItem);
+
 	}
 
 	void FixedUpdate (){
@@ -126,7 +127,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void setPlayerSate(string state){
 		gameManager.playerIdleState = state;
-		anim.Play(gameManager.playerIdleState);
+		Debug.Log(gameManager.playerIdleState);
 	}
 }
 

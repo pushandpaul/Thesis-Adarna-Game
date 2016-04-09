@@ -12,6 +12,9 @@ public class DayapMinigame : MonoBehaviour {
 	private ObjectiveMapper objectiveMapper;
 	private LevelLoader levelLoader;
 	public Image[] dayapUI;
+	private ObjectiveManager objectiveManager;
+	private UIFader objectiveUIFader;
+
 
 	public Sprite dayap;
 	public ItemToGive itemToGive;
@@ -25,6 +28,8 @@ public class DayapMinigame : MonoBehaviour {
 	private bool success;
 	private bool dialoguePlayed;
 
+
+	private bool timerStarted = false;
 	public float defaultDuration;
 	public float changeDuration;
 
@@ -32,24 +37,33 @@ public class DayapMinigame : MonoBehaviour {
 
 	public int dayapCount = 7;
 
-	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerController>();
 		levelLoader = FindObjectOfType<LevelLoader>();
 		bar = barUI.GetComponent<Image>();
 		objectiveMapper = this.GetComponent<ObjectiveMapper>();
+		objectiveManager = FindObjectOfType<ObjectiveManager>();
+		objectiveUIFader = objectiveManager.objectivePanelFader;
 		timer = FindObjectOfType<Timer>();
 
-		timer.startTimer();
+		//timer.startTimer();
+		//endMiniGame("End on Start");
 	}
-	
-	// Update is called once per frame
 	void Update () {
+		if(objectiveUIFader.canvasGroup.alpha > 0)
+			return;
+		else if(objectiveUIFader.canvasGroup.alpha == 0 && !timerStarted){
+			startMiniGame();
+			timerStarted = true;
+		}
+
 		if(timer.checkIfOnGoing()){
 			if(dayapCount > 0 && Input.GetKeyDown(KeyCode.E)){
 				increaseSize();
 				dayapCount--;
 				dayapUI[dayapCount].GetComponent<UIFader>().FadeTo(1f, 0.5f);
+				//player.camera.zoomCam();
+				//player.camera.centerCam();
 				player.GetComponentInChildren<Animator>().Play("Give Item");
 				if(itemToGive.GetComponent<SpriteRenderer>().sprite != dayap)
 					itemToGive.setItem(dayap);
@@ -68,12 +82,12 @@ public class DayapMinigame : MonoBehaviour {
 			}
 			if(bar.fillAmount == 0f){
 				success = false;
-				endMinigame("Game Over");
+				endMiniGame("Game Over");
 			}
 		}
 		else{
 			success = true;
-			endMinigame("Success!");
+			endMiniGame("Success!");
 		}
 	}
 
@@ -90,7 +104,12 @@ public class DayapMinigame : MonoBehaviour {
 		this.targetSize = 0f;
 	}
 
-	private void endMinigame(string message){
+
+	private void startMiniGame(){
+		timer.startTimer();
+	}
+
+	private void endMiniGame(string message){
 		Debug.Log("Mingame Ends");
 		Debug.Log(message);
 		timer.stopTimer();
@@ -105,4 +124,6 @@ public class DayapMinigame : MonoBehaviour {
 		}
 		levelLoader.launchScene();
 	}
+
+
 }

@@ -12,6 +12,7 @@ public class ObjectiveManager : MonoBehaviour {
 
 	public UIFader objectivePanelFader;
 	public int fadeDelay = 10;
+	public float panelFaderSpeed = 0.6f;
 
 	//public List<GameObject> destroyList;
 
@@ -57,9 +58,5 @@ public class ObjectiveManager : MonoBehaviour {
 
 	public void displayCurrentObjective(){
 		textBox.setText(currentObjective.Description);
-	}
-
-	public void destroyGameObjects(){
-		
 	}
 }

@@ -5,8 +5,12 @@ public class MoveObject : MonoBehaviour {
 
 	//public Vector3 Current;
 	public Vector3 Target;
+	public float defaultDuration;
 
+	public GameObject defaultToTransform;
 	//duration is in seconds
+
+
 
 	public void moveToPositionDefault(float duration){ //uses value from the public variable Target (for animation event)
 		Debug.Log("Move to position: " + this.transform.localPosition);
@@ -17,17 +21,30 @@ public class MoveObject : MonoBehaviour {
 		StartCoroutine(startMoving(this.transform.localPosition, target, duration));
 	}
 
+	public void moveDefaultObject(){//moves object to default target using default duration
+		StartCoroutine(startMovingObject(defaultToTransform, defaultToTransform.transform.localPosition, Target, defaultDuration));
+	}
+		
+
 	IEnumerator startMoving(Vector3 current, Vector3 target, float duration){
 		float startTime = Time.time;
 		float endTime = startTime + duration;
-		//Debug.Log("Move position starting.");
 		while(Time.time <= endTime){
 			float t = (Time.time - startTime)/duration;
 			this.transform.localPosition = Vector3.Lerp(current, target, t);
 			//Debug.Log("Current position: " + this.transform.localPosition);
 			yield return null;
-
 		}
+	}
 
+	IEnumerator startMovingObject(GameObject toTransform, Vector3 current, Vector3 target, float duration){
+		float startTime = Time.time;
+		float endTime = startTime + duration;
+		while(Time.time <= endTime){
+			float t = (Time.time - startTime)/duration;
+			toTransform.transform.localPosition = Vector3.Lerp(current, target, t);
+			//Debug.Log("Current position: " + this.transform.localPosition);
+			yield return null;
+		}
 	}
 }

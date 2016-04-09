@@ -54,26 +54,6 @@ public class GameManager : MonoBehaviour {
 	public void saveCoordinates(ObjectData[] objectData){
 		bool found = false;
 		for(int i = 0; i < objectData.Length; i++){
-			/*foreach(ObjectDataReference objectDataRef in currentSceneObj.sceneObjectData){
-				if(objectDataRef.Name == objectData[i].Name){
-					found = true;
-					Debug.Log("Game object '" + objectData[i].Name + "' found.");
-					objectDataRef.Name = objectData[i].Name;
-					objectDataRef.coordinates = objectData[i].transform.position;
-					break;
-				}
-				found = false;
-			}
-			if(!found){
-				Debug.Log("Game object '" + objectData[i].Name + "' not found.");
-				GameObject container = new GameObject(objectData[i].Name);
-				container.transform.SetParent(currentSceneObj.transform);
-				ObjectDataReference tempData = container.AddComponent<ObjectDataReference>();
-				tempData.Name = objectData[i].Name;
-				tempData.coordinates = objectData[i].transform.position;
-				currentSceneObj.sceneObjectData.Add(tempData);
-				Debug.Log("'" + tempData.Name + "' is added to game data references list.");
-			}*/
 			searchData(objectData[i], 's');
 		}
 	}
@@ -81,23 +61,12 @@ public class GameManager : MonoBehaviour {
 	public void loadCoordinates(ObjectData[] objectData){
 		bool found = false;
 		for(int i = 0; i < objectData.Length; i++){
-			/*foreach(ObjectDataReference objectDataRef in currentSceneObj.sceneObjectData){
-				if(objectDataRef.Name == objectData[i].Name){
-					found = true;
-					objectData[i].transform.position = objectDataRef.coordinates;
-					Debug.Log("'" + objectData[i].Name + "' position is loaded.");
-					break;
-				}
-				found = false;
-			}
-			if(found = false)
-				Debug.Log("'" + objectData[i].Name+ "' is not found.");*/
 			searchData(objectData[i], 'l');
 		}
 
 	}
 
-	public bool searchData(ObjectData objectData, char command /*s - save; l - load; d- destroy; f - normal search*/){
+	public bool searchData(ObjectData objectData, char command /*s - save; l - load; f - normal search*/){
 		bool found = false;
 
 		foreach(ObjectDataReference objectDataRef in currentSceneObj.sceneObjectData){

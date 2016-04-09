@@ -39,7 +39,7 @@ public class Objective : MonoBehaviour {
 	public ObjectiveManager manager {get; set;}
 	private TextBoxManager textBox;
 	public bool textBoxDisplayed = false;
-
+	private UIFader uiFader;
 	//public string AnimationName;
 	//public Animator animator;
 

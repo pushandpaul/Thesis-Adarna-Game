@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 public class ObjectiveMapper : MonoBehaviour {
 
@@ -73,11 +76,15 @@ public class ObjectiveMapper : MonoBehaviour {
 
 	public void checkIfCurrent_misc(){
 		Debug.Log("Triggered misc objective");
+		UIFader uiFader = objectiveManager.objectivePanelFader;
+
 		if(checkIfCurrent()){
 			Debug.Log("This is the current objective");
 			objectiveManager.currentObjective.onReach();
+
+			if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox))
+				uiFader.FadeIn(objectiveManager.fadeDelay, objectiveManager.panelFaderSpeed, true);
 		}
 			
 	}
-	// Update is called once per frame
 }

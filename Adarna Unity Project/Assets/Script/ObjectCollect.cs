@@ -11,22 +11,24 @@ public class ObjectCollect : MonoBehaviour {
 	void Start () {
 		gameManager = FindObjectOfType<GameManager>();
 		objectData = this.GetComponent<ObjectData>();
+		objectiveMapper = this.GetComponent<ObjectiveMapper>();
+		playerController = FindObjectOfType<PlayerController>();
 	}
 
 	void Update () {
-		if(waitForPress && Input.GetKeyDown(KeyCode.E)){
+		/*if(waitForPress && Input.GetKeyDown(KeyCode.E)){
 			if (objectiveMapper.checkIfCurrent ()) {
 				carryItem ();
-				/*Debug.Log ("Collected: " + gameObject.name);
+				Debug.Log ("Collected: " + gameObject.name);
 				objectData.destroyed = true;
 				gameManager.searchData (this.objectData, 's'); //saves object data to game manager, before the object is destroyed
 				Destroy (this.gameObject);
-				playerController.setPlayerSate ("Carry Item (Idle)");*/
+				playerController.setPlayerSate ("Carry Item (Idle)");
 			}
 		}
 			
 		else
-			return;
+			return;*/
 	}
 	void OnTriggerEnter2D (Collider2D other){
 		if(other.tag == "Player")
@@ -39,8 +41,10 @@ public class ObjectCollect : MonoBehaviour {
 
 	public void carryItem() {
 		Debug.Log ("Collected: " + gameObject.name);
-		objectData.destroyed = true;
-		gameManager.searchData (this.objectData, 's'); //saves object data to game manager, before the object is destroyed
+		if(objectData != null){
+			objectData.destroyed = true;
+			gameManager.searchData (this.objectData, 's'); //saves object data to game manager, before the object is destroyed
+		}
 		Destroy (this.gameObject);
 		playerController.setPlayerSate ("Carry Item (Idle)");
 	}
