@@ -9,6 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 446580}
   - 212: {fileID: 21242474}
+  - 114: {fileID: 11491366}
+  - 61: {fileID: 6151154}
+  - 114: {fileID: 11429960}
   m_Layer: 0
   m_Name: Batis
   m_TagString: Untagged
@@ -303,6 +306,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!61 &6151154
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114950}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.0000038146973, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 6.35, y: 1.28}
 --- !u!114 &11422234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawnRightX: 0
-  playerSpawnLeftX: -3.7
+  playerSpawnLeftX: -5
   playerSpawnY: -2.27
   playerSpawnZ: 0
   playerScale: 0.5
@@ -328,6 +345,37 @@ MonoBehaviour:
   - {fileID: 442430}
   - {fileID: 478832}
   - {fileID: 418954}
+--- !u!114 &11429960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveIndex: 0e000000
+  isNPC: 0
+  isObject: 1
+--- !u!114 &11491366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587b8fea6c8083a4dacdf11e7b57277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 1
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  panelFadeDelay: 0
+  anObjective: 1
+  message: 
 --- !u!212 &21206898
 SpriteRenderer:
   m_ObjectHideFlags: 1
