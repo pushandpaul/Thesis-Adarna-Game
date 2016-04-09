@@ -14,6 +14,9 @@ public class ItemToGive : MonoBehaviour {
 	}
 
 	public void disableItem(){
+		GameManager gameManager = FindObjectOfType<GameManager> ();
+		gameManager.currentHeldItem = null;
+		Debug.Log ("Not holding any item now.");
 		SpriteRenderer myRenderer = this.GetComponent<SpriteRenderer>();
 		myRenderer.enabled = false;
 		//myRenderer.sprite = item;
