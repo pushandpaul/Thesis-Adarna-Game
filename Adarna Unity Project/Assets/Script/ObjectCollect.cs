@@ -46,7 +46,7 @@ public class ObjectCollect : MonoBehaviour {
 			gameManager.searchData (this.objectData, 's'); //saves object data to game manager, before the object is destroyed
 		}
 		Destroy (this.gameObject);
-		playerController.setPlayerSate ("Carry Item (Idle)");
+		//playerController.setPlayerSate ("Carry Item (Idle)");
 	}
 
 }

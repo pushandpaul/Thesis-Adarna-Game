@@ -227,6 +227,7 @@ GameObject:
   - 114: {fileID: 551311907}
   - 114: {fileID: 551311908}
   - 114: {fileID: 551311909}
+  - 114: {fileID: 551311910}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -260,7 +261,7 @@ MonoBehaviour:
     height: 1232.5684
   selectedBlock: {fileID: 551311893}
   selectedCommands:
-  - {fileID: 551311909}
+  - {fileID: 551311910}
   variables: []
   description: 
   stepPause: 0
@@ -824,6 +825,7 @@ MonoBehaviour:
   - {fileID: 551311900}
   - {fileID: 551311909}
   - {fileID: 551311899}
+  - {fileID: 551311910}
   - {fileID: 551311896}
   - {fileID: 551311897}
 --- !u!114 &551311894
@@ -979,7 +981,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &551311901
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551311866}
@@ -1007,7 +1009,7 @@ MonoBehaviour:
   - {fileID: 551311907}
 --- !u!114 &551311902
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551311866}
@@ -1020,7 +1022,7 @@ MonoBehaviour:
   message: 'Interact: Batis'
 --- !u!114 &551311903
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551311866}
@@ -1037,7 +1039,7 @@ MonoBehaviour:
   callMode: 1
 --- !u!114 &551311904
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551311866}
@@ -1062,7 +1064,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &551311905
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551311866}
@@ -1087,7 +1089,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &551311906
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551311866}
@@ -1105,7 +1107,7 @@ MonoBehaviour:
   time: 0
 --- !u!114 &551311907
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551311866}
@@ -1122,7 +1124,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &551311908
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551311866}
@@ -1137,7 +1139,7 @@ MonoBehaviour:
   duration: 1
 --- !u!114 &551311909
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551311866}
@@ -1150,6 +1152,50 @@ MonoBehaviour:
   errorMessage: 
   indentLevel: 0
   duration: 0.5
+--- !u!114 &551311910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 551311866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 173
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 644826010}
+  targetComponentAssemblyName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayerController
+  targetMethod: setPlayerSate
+  targetMethodText: 'setPlayerSate (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Carry Item (Idle)
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -1233,6 +1279,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 644826005}
   m_Script: {fileID: 11500000, guid: 90c65de9ab590754c966afcd0f7e899c, type: 3}
+--- !u!1 &644826010 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+  m_PrefabInternal: {fileID: 644826005}
 --- !u!1 &803209524
 GameObject:
   m_ObjectHideFlags: 0

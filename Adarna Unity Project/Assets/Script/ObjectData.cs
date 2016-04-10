@@ -9,4 +9,9 @@ public class ObjectData : MonoBehaviour {
 	void Awake () {
 		this.Name = this.name;
 	}
+
+	public void enableSprite(bool boolean) {
+		SpriteRenderer sr = this.GetComponent<SpriteRenderer>(); 
+		sr.enabled = boolean;
+	}
 }
