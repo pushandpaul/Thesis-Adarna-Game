@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour {
 	public static bool exitInRight = true;
@@ -32,16 +33,17 @@ public class LevelManager : MonoBehaviour {
 			gameManager.loadCoordinates(objectData);
 		}
 			
+		int j = 0;
+		int i = 0;
+		float xPosition = 0f;
 
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
-		//door = FindObjectsOfType<DoorHandler>();
-
 
 		if(playerPos == null ||!playerPos.loadThis){
-			if(isDoor && door != null){
+			if(isDoor && door.Length > 0){
 				player.transform.position = new Vector3(door[doorIndex].transform.position.x, location.playerSpawnY, location.playerSpawnZ);
 				camera.transform.position = new Vector3(door[doorIndex].transform.position.x, location.cameraSpawnY, location.cameraSpawnZ);
 			}
@@ -66,6 +68,20 @@ public class LevelManager : MonoBehaviour {
 			camera.transform.position = new Vector3(playerPos.cameraX, playerPos.cameraY, playerPos.cameraZ);
 
 			playerPos.clearInBetweenData();
+		}
+
+		if(gameManager.Followers != null){
+			foreach(GameObject follower in gameManager.Followers){
+				j += 3;
+				i += 2;
+				follower.GetComponent<FollowTarget>().setParameters(player.transform, 0, j, player.moveSpeed, player.transform.localScale);
+				if(player.transform.localScale.x < 0)
+					xPosition = player.transform.position.x + i;
+				else if(player.transform.localScale.x > 0)
+					xPosition = player.transform.position.x - i;
+				follower.transform.position = new Vector3(xPosition, follower.transform.position.y, follower.transform.position.z);
+				
+			}
 		}
 	}
 		

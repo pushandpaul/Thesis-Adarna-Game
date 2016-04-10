@@ -49,16 +49,17 @@ public class PlayerController : MonoBehaviour {
 		else if(transform.localScale.x > 0)
 			facingRight = true;
 
-		Debug.Log ("Attempt to play animation: " + gameManager.playerIdleState + " player state.");
+		if(gameManager != null){
+			Debug.Log ("Attempt to play animation: " + gameManager.playerIdleState + " player state.");
 
-		anim.Play (gameManager.playerIdleState);
-		if(gameManager.currentHeldItem != null)
-			item.setItem(gameManager.currentHeldItem);
-		if (gameManager.currentHeldItem == null) {
-			setPlayerSate ("Idle");
+			anim.Play (gameManager.playerIdleState);
+			if(gameManager.currentHeldItem != null)
+				item.setItem(gameManager.currentHeldItem);
+			if (gameManager.currentHeldItem == null) {
+				setPlayerSate ("Idle");
 
+			}
 		}
-
 	}
 
 	void FixedUpdate (){

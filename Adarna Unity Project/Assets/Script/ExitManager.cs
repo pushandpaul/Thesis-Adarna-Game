@@ -10,7 +10,7 @@ public class ExitManager : MonoBehaviour {
 	private LevelManager levelManager;
 	private GameManager gameManager;
 	private ScreenFader screenFader;
-
+	//public FollowTarget followers;
 
 	void Start(){
 		screenFader = FindObjectOfType<ScreenFader>();
@@ -24,8 +24,14 @@ public class ExitManager : MonoBehaviour {
 			LevelManager.exitInRight = isRight;
 			if(FindObjectsOfType<ObjectData>().Length > 0)
 				gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
+			if(FindObjectsOfType<FollowTarget>().Length > 0){
+				FollowTarget[] followers = FindObjectsOfType<FollowTarget>();
+				gameManager.findFollowers(followers);
+			}
+
 			StartCoroutine(ChangeLevel());
 		}
+
 	}
 	IEnumerator ChangeLevel(){
 		float fadeTime = screenFader.BeginFade(1);

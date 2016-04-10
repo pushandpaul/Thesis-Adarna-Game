@@ -226,6 +226,7 @@ GameObject:
   - 114: {fileID: 551311906}
   - 114: {fileID: 551311907}
   - 114: {fileID: 551311908}
+  - 114: {fileID: 551311909}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -257,8 +258,9 @@ MonoBehaviour:
     y: -473
     width: 1651.9484
     height: 1232.5684
-  selectedBlock: {fileID: 551311901}
-  selectedCommands: []
+  selectedBlock: {fileID: 551311893}
+  selectedCommands:
+  - {fileID: 551311909}
   variables: []
   description: 
   stepPause: 0
@@ -820,6 +822,7 @@ MonoBehaviour:
   - {fileID: 551311895}
   - {fileID: 551311898}
   - {fileID: 551311900}
+  - {fileID: 551311909}
   - {fileID: 551311899}
   - {fileID: 551311896}
   - {fileID: 551311897}
@@ -1132,6 +1135,21 @@ MonoBehaviour:
   errorMessage: 
   indentLevel: 0
   duration: 1
+--- !u!114 &551311909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 551311866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 144
+  errorMessage: 
+  indentLevel: 0
+  duration: 0.5
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -1483,8 +1501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895fa2affa27bd64c9dd057b64e5f1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomCam: 0
-  centerCam: 1
+  zoomCam: 1
+  centerCam: 0
 --- !u!4 &1197212259
 Transform:
   m_ObjectHideFlags: 0
@@ -1497,6 +1515,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!1 &1232251161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1232251165}
+  - 114: {fileID: 1232251164}
+  - 114: {fileID: 1232251163}
+  - 114: {fileID: 1232251162}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1232251162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232251161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ForceModuleActive: 0
+--- !u!114 &1232251163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232251161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1232251164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232251161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &1232251165
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232251161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
 --- !u!1 &1507334755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,7 +2027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21b266cf56114246b4842642ef54a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: Bahay ni Ermitanyo
   door:
   - {fileID: 1687973914}
   objectData: []

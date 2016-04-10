@@ -40,6 +40,10 @@ public class DoorHandler : MonoBehaviour {
 				LevelManager.doorIndex = thisDoorIndex;
 				if(FindObjectsOfType<ObjectData>().Length > 0)
 					gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
+				if(FindObjectsOfType<FollowTarget>().Length > 0){
+					FollowTarget[] followers = FindObjectsOfType<FollowTarget>();
+					gameManager.findFollowers(followers);
+				}
 				StartCoroutine(ChangeLevel());
 				//SceneManager.LoadScene(nextLocation);
 			}

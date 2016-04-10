@@ -39,6 +39,10 @@ public class LevelLoader : MonoBehaviour {
 		if(levelManager != null){
 			if(FindObjectsOfType<ObjectData>().Length > 0)
 				gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
+			if(FindObjectsOfType<FollowTarget>().Length > 0){
+				FollowTarget[] followers = FindObjectsOfType<FollowTarget>();
+				gameManager.findFollowers(followers);
+			}
 		}
 		StartCoroutine(fadeLevel());
 	}

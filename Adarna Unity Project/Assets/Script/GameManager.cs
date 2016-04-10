@@ -14,17 +14,18 @@ public class GameManager : MonoBehaviour {
 	public string playerIdleState;
 
 	private LevelManager levelManager;
+	public List <GameObject> Followers;
 
 	void Awake () {
 		//playerIdleState = "Idle";
 		DontDestroyOnLoad(this);
 		sceneObjects = new List<SceneObjects>();
+		Followers = new List<GameObject>();
 	}
 
 
 	public void updateSceneList(){
 		bool found = false;
-		//if()
 
 		foreach(SceneObjects sceneObject in sceneObjects){
 			if(currentScene == sceneObject.Name){
@@ -120,4 +121,17 @@ public class GameManager : MonoBehaviour {
 		return found;
 	}
 
+	public void findFollowers(FollowTarget[] follower){
+		Followers.Clear();
+		for(int i = 0; i < follower.Length; i++){
+			DontDestroyOnLoad(follower[i].gameObject);
+			Followers.Add(follower[i].gameObject);
+			}
+	}
+
+	public void removeFollowers(){
+		foreach(GameObject myFollower in Followers){
+			Destroy(myFollower);
+		}
+	}
 }
