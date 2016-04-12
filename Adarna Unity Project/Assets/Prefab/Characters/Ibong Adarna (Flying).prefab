@@ -144,6 +144,7 @@ GameObject:
   - 114: {fileID: 11434314}
   - 114: {fileID: 11461252}
   - 114: {fileID: 11405038}
+  - 114: {fileID: 11416346}
   m_Layer: 0
   m_Name: Ibong Adarna (Flying)
   m_TagString: Untagged
@@ -190,7 +191,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114356}
   m_LocalRotation: {x: 0.032764565, y: -0.025648769, z: -0.082248196, w: 0.9957429}
-  m_LocalPosition: {x: 12.5, y: 9.9, z: -0.1}
+  m_LocalPosition: {x: 12.5, y: 9.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 450450}
@@ -253,7 +254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166434}
   m_LocalRotation: {x: -0.026803238, y: 0.0045000026, z: 0.008812533, w: 0.99959177}
-  m_LocalPosition: {x: -0.17, y: -0.55, z: -7.09}
+  m_LocalPosition: {x: -0.17, y: -0.55, z: 0}
   m_LocalScale: {x: 0.97328925, y: 0.97328925, z: 0.97328925}
   m_Children:
   - {fileID: 422870}
@@ -271,7 +272,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.51436, y: 1.5197425, z: 7.091797}
+  m_LocalPosition: {x: 61.51436, y: 1.5197425, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 422394}
@@ -296,7 +297,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160204}
   m_LocalRotation: {x: 0.036399644, y: 0.0062069036, z: 0.24000917, w: 0.97006816}
-  m_LocalPosition: {x: -0.96, y: 0.51, z: -2.25}
+  m_LocalPosition: {x: -0.96, y: 0.51, z: 0}
   m_LocalScale: {x: 1.0187533, y: 1.0187532, z: 1.0187533}
   m_Children: []
   m_Father: {fileID: 450450}
@@ -308,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134474}
   m_LocalRotation: {x: 0.02679815, y: -0.0045277425, z: -0.009861539, w: 0.999582}
-  m_LocalPosition: {x: -0.40686563, y: 0.5383808, z: -0.00000048992337}
+  m_LocalPosition: {x: -0.40686563, y: 0.5383808, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 450450}
@@ -320,7 +321,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164726}
   m_LocalRotation: {x: 0.02679815, y: -0.0045277425, z: -0.009861539, w: 0.999582}
-  m_LocalPosition: {x: 0.5383808, y: 0.014384548, z: -0.00000048992337}
+  m_LocalPosition: {x: 0.5383808, y: 0.014384548, z: 0}
   m_LocalScale: {x: 1.0274439, y: 1.0274436, z: 1.0274438}
   m_Children: []
   m_Father: {fileID: 450450}
@@ -368,6 +369,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11405038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  destroyed: 0
+--- !u!114 &11416346
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

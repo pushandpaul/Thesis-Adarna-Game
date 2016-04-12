@@ -545,17 +545,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 452440, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11434314, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
       propertyPath: flowchart
       value: 
       objectReference: {fileID: 2049704004}
-    - target: {fileID: 11434314, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: player
-      value: 
+    - target: {fileID: 480150, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.79
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 480150, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480150, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.51
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11461252, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
+    - {fileID: 11405038, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
   m_IsPrefabParent: 0
 --- !u!95 &1081486142 stripped
@@ -567,19 +577,6 @@ Animator:
 GameObject:
   m_PrefabParentObject: {fileID: 174136, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
   m_PrefabInternal: {fileID: 1081486141}
---- !u!114 &1081486144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1081486143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 
-  destroyed: 0
 --- !u!1 &1315913232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,16 +1146,16 @@ MonoBehaviour:
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 297
-  zoom: 0.5475221
+  zoom: 0.6075221
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 2464.3442
     height: 1380.855
-  selectedBlock: {fileID: 2049704081}
+  selectedBlock: {fileID: 2049704070}
   selectedCommands:
-  - {fileID: 2049704088}
+  - {fileID: 2049704077}
   variables: []
   description: 
   stepPause: 0
@@ -2588,8 +2585,8 @@ MonoBehaviour:
   - {fileID: 2049704075}
   - {fileID: 2049704072}
   - {fileID: 2049704078}
-  - {fileID: 2049704090}
   - {fileID: 2049704076}
+  - {fileID: 2049704090}
   - {fileID: 2049704077}
   - {fileID: 2049704095}
   - {fileID: 2049704074}
@@ -2825,7 +2822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 710.6568
+    x: 708.8304
     y: 461.12115
     width: 183
     height: 40
@@ -3142,7 +3139,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2049704095
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2049704003}

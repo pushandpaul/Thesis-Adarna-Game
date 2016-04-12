@@ -56,10 +56,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 476876}
-  - 114: {fileID: 11470666}
   - 50: {fileID: 5029038}
   - 61: {fileID: 6106450}
-  - 114: {fileID: 11404100}
+  - 114: {fileID: 11470666}
   m_Layer: 9
   m_Name: Don Diego (Walking)
   m_TagString: Untagged
@@ -687,24 +686,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11404100
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: Don Diego
-  nameColor: {r: 0, g: 0, b: 0, a: 1}
-  soundEffect: {fileID: 0}
-  profileSprite: {fileID: 0}
-  portraits: []
-  portraitsFace: 0
-  description: 
 --- !u!114 &11470666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -716,11 +697,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c44957f9754454fa3b0a610c3aec74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  maxRange: 10
-  minRange: 3
-  isFollowing: 1
   speed: 5
+  maxDistance: 3
+  target: {fileID: 0}
+  isFollowing: 1
 --- !u!212 &21200848
 SpriteRenderer:
   m_ObjectHideFlags: 1

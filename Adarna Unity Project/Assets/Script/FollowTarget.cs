@@ -3,52 +3,71 @@ using System.Collections;
 
 public class FollowTarget : MonoBehaviour {
 
-	public Transform target;
-	public int maxRange;
-	public int minRange;
-	public bool isFollowing;
 	public float speed;
+	public float maxDistance;
+	public Transform target;
+	public bool isFollowing = true;
 
-	private float moveVelocity;
-	private float temp = 0f;
-	private Vector3 targetCoordinates;
-
+	private float relativeSpeed;
 	private Animator anim;
 	private float defaultScaleX;
+	private float walking = 0f;
 
 	void Awake(){
-		target = FindObjectOfType<PlayerController>().transform;
+
+		relativeSpeed = speed * maxDistance * 0.1f;
 		anim = this.GetComponentInChildren<Animator>();
-		transform.position = new Vector3(target.position.x + minRange, target.position.y, target.position.z);
+		target = FindObjectOfType<PlayerController>().transform;
 		defaultScaleX = Mathf.Abs(target.localScale.x);
-	}
-	void Update () {
-		
-		if(!isFollowing || target == null)
-			return;
-		if(Vector3.Distance(transform.position, target.position) >= minRange){
-			targetCoordinates = new Vector3(target.position.x, transform.position.y, transform.position.z);
-			transform.Translate((targetCoordinates - transform.position).normalized * speed * Time.deltaTime);
-			temp = 1f;
-			//this.GetComponent<Rigidbody2D>().velocity = target.GetComponent<Rigidbody2D>().velocity;
-			if(target.localScale.x < 0)
-				transform.localScale = new Vector3(-(defaultScaleX), transform.localScale.y, transform.localScale.z);
-			else if(target.localScale.x > 0)
-				transform.localScale =  new Vector3(defaultScaleX, transform.localScale.y, transform.localScale.z);
-		}
-		else
-			temp = 0f;
-		anim.SetFloat("Speed" , temp);
-		//Debug.Log("Current follow speed" + temp);
-			
+
 	}
 
-	public void setParameters(Transform target, int maxRange, int minRange, float speed, Vector3 scale){
-		this.target = target;
-		this.maxRange = maxRange;
-		this.minRange = minRange;
+	void FixedUpdate () {
+		Vector3 targetCoordinates = new Vector3(target.position.x, transform.position.y, transform.position.z);
+		float temp = 0f;
+
+
+		if(!isFollowing)
+			return;
+
+		float x = transform.position.x;
+		float currentDistance = Vector3.Distance(transform.position, target.position);
+		//Debug.Log("Current Distance to the player: " + currentDistance);
+
+		if((int) currentDistance > (int) maxDistance){
+			//x = Mathf.Lerp(x, target.position.x, Time.deltaTime*relativeSpeed);
+
+			//transform.Translate((targetCoordinates - transform.position).normalized * speed * Time.deltaTime);
+			if(target.localScale.x > 0){
+				x = Mathf.Lerp(x, target.position.x - maxDistance, Time.deltaTime*speed);
+				transform.localScale = new Vector3(defaultScaleX, transform.localScale.y, transform.localScale.z);
+			}
+				
+			else if(target.localScale.x < 0){
+				x = Mathf.Lerp(x, target.position.x + maxDistance, Time.deltaTime*speed);
+				transform.localScale = new Vector3(-defaultScaleX, transform.localScale.y, transform.localScale.z);
+			}
+				
+			walking = 1f;
+		}
+		else{
+			//transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+			walking = 0f;
+		} 
+			
+		transform.position = new Vector3(x, transform.position.y, transform.position.z);
+		anim.SetFloat("Speed", walking);
+	}
+
+
+	void LateUpdate(){
+		//anim.SetFloat("Speed", walking);
+	}
+	public void thisConstructor(float speed, float distance, Transform target, Vector3 defaultScale){
 		this.speed = speed;
-		this.transform.localScale = scale;
-		this.defaultScaleX = Mathf.Abs(scale.x);
+		this.maxDistance = distance;
+		this.target = target;
+		transform.localScale = defaultScale;
+		this.defaultScaleX = Mathf.Abs(defaultScale.x);
 	}
 }
