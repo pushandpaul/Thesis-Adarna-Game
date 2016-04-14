@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour {
 		}
 			
 
-		if(Input.GetKey(KeyCode.A))
+		else if(Input.GetKey(KeyCode.A))
 			moveVelocity = -moveSpeed;{
 		}
 

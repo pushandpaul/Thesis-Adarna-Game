@@ -74,12 +74,14 @@ public class LevelManager : MonoBehaviour {
 			foreach(GameObject follower in gameManager.Followers){
 				j += 3;
 				i += 2;
+				Debug.Log(player.transform.localScale.ToString());
 				follower.GetComponent<FollowTarget>().thisConstructor(player.moveSpeed, j, player.transform, player.transform.localScale);
 				if(player.transform.localScale.x < 0)
 					xPosition = player.transform.position.x + i;
 				else if(player.transform.localScale.x > 0)
 					xPosition = player.transform.position.x - i;
 				follower.transform.position = new Vector3(xPosition, follower.transform.position.y, follower.transform.position.z);
+
 				
 			}
 		}
