@@ -18,10 +18,10 @@ public class LevelManager : MonoBehaviour {
 	private Location location;
 	private GameManager gameManager;
 	public ObjectData[] objectData;
+
 	void Awake(){
 		gameManager = FindObjectOfType<GameManager>();
 		objectData = FindObjectsOfType<ObjectData>();
-
 		if(gameManager != null && objectData.Length > 0){
 			gameManager.currentScene = sceneName;
 			gameManager.updateSceneList();	
@@ -36,11 +36,20 @@ public class LevelManager : MonoBehaviour {
 		int j = 0;
 		int i = 0;
 		float xPosition = 0f;
+		Light playerLight; 
 
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
+		playerLight = player.GetComponentInChildren<Light>();
+
+		changeTimeOfDay(gameManager.timeOfDay);
+
+		if(gameManager.timeOfDay == 'd' || location.isInterior){
+			playerLight.intensity = 0f;
+		}
+		//fadeTimeOfDay('n', 20f);
 
 		if(playerPos == null ||!playerPos.loadThis){
 			if(isDoor && door.Length > 0){
@@ -54,7 +63,7 @@ public class LevelManager : MonoBehaviour {
 				}
 				else{
 					player.transform.position = new Vector3(location.playerSpawnRightX, location.playerSpawnY, location.playerSpawnZ);
-					player.transform.localScale = new Vector3(-player.transform.localScale.x, player.transform.localScale.y, 0f);
+					player.transform.localScale = new Vector3(-player.transform.localScale.x, player.transform.localScale.y, 1f);
 					camera.transform.position = new Vector3(location.cameraSpawnRightX, location.cameraSpawnY, location.cameraSpawnZ);
 					camera.flipped = true;
 				}
@@ -64,7 +73,7 @@ public class LevelManager : MonoBehaviour {
 			Debug.Log("There is saved");
 
 			player.transform.position = new Vector3(playerPos.playerX, playerPos.playerY, playerPos.playerZ);
-			player.transform.localScale = new Vector3(playerPos.playerScale, player.transform.localScale.y, 0f);
+			player.transform.localScale = new Vector3(playerPos.playerScale, player.transform.localScale.y, 1f);
 			camera.transform.position = new Vector3(playerPos.cameraX, playerPos.cameraY, playerPos.cameraZ);
 
 			playerPos.clearInBetweenData();
@@ -81,8 +90,6 @@ public class LevelManager : MonoBehaviour {
 				else if(player.transform.localScale.x > 0)
 					xPosition = player.transform.position.x - i;
 				follower.transform.position = new Vector3(xPosition, follower.transform.position.y, follower.transform.position.z);
-
-				
 			}
 		}
 	}
@@ -91,4 +98,51 @@ public class LevelManager : MonoBehaviour {
 		if(playerPos != null)
 			playerPos.saveInBetweenData();
 	}
+
+	public void changeTimeOfDay(char timeOfDay){
+		LightController globalLight;
+		GameObject globaLightHolder;
+
+		globaLightHolder = GameObject.FindWithTag("Global Light");
+
+		if(globaLightHolder != null){
+			globalLight = globaLightHolder.GetComponent<LightController>();
+			if(timeOfDay == 'd'){
+				globalLight.setLightIntensity(1.8f);
+				Debug.Log("Global Light Intensity adjusted to day time");
+			}
+			/*else if(timeOfDay == 'n' && location.isInterior){
+				globalLight.setLightIntensity(0f);
+			}
+			else if(timeOfDay == 'n' && !location.isInterior){
+				globalLight.setLightIntensity(0.5f);
+			}*/
+			else if(timeOfDay == 'n'){
+				globalLight.setLightIntensity(0f);
+				Debug.Log("Global Light Intensity adjusted to night time");
+			}
+				
+		}
+	}
+
+	/*public void fadeTimeOfDay(char targetTimeOfDay, float duration){
+		LightController globalLight;
+		GameObject globaLightHolder;
+		float targetLightIntensity = 0f;
+
+		globaLightHolder = GameObject.FindWithTag("Global Light");
+		if(globaLightHolder != null){
+			globalLight = globaLightHolder.GetComponent<LightController>();
+			if(targetTimeOfDay == 'd'){
+				targetLightIntensity  = 1.8f;
+			}
+			else if(targetTimeOfDay == 'n' && location.isInterior){
+				targetLightIntensity = 0f;
+			}
+			else if(targetTimeOfDay == 'n' && !location.isInterior){
+				targetLightIntensity = 0.8f;
+			}
+			globalLight.fadeLightIntensity(targetLightIntensity, duration);
+		}
+	}*/
 }

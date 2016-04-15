@@ -15,4 +15,6 @@ public class Location : MonoBehaviour {
 	public float cameraSpawnZ;
 
 	public Transform[] parallaxLayers;
+
+	public bool isInterior;
 }

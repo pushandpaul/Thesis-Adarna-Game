@@ -251,8 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21b266cf56114246b4842642ef54a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
   door:
   - {fileID: 655838636}
+  objectData: []
 --- !u!1 &228237634
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
 --- !u!1 &655838633
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,11 +380,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 655838633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.47, y: 0.49, z: 0}
-  m_LocalScale: {x: 5.9924445, y: 8.631638, z: 4.4803314}
+  m_LocalPosition: {x: 0.69285804, y: 0.29285717, z: 0}
+  m_LocalScale: {x: 4.280318, y: 6.1654553, z: 3.2002368}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1654567829}
+  m_RootOrder: 2
 --- !u!114 &655838636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +398,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoorIndex: 0
   nextLocation: Castle - Bridge
-  defaultSpawnRight: 0
   waitForPress: 1
 --- !u!1001 &1218580586
 Prefab:
@@ -1011,6 +1012,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11422636, guid: ede09832929ee294592479e181d60b7d, type: 2}
+      propertyPath: isInterior
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ede09832929ee294592479e181d60b7d, type: 2}
   m_IsPrefabParent: 0
@@ -1052,11 +1057,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456767767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89, y: 0.13, z: -0.609375}
-  m_LocalScale: {x: 4.2249947, y: 8.864766, z: 1}
+  m_LocalPosition: {x: 36.07143, y: 0.035714284, z: -0.43526787}
+  m_LocalScale: {x: 3.0178535, y: 6.331976, z: 0.71428573}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1654567829}
+  m_RootOrder: 0
 --- !u!114 &1456767770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,6 +1075,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 1
   nextLocation: Castle - Throne Room
+--- !u!1 &1654567828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1654567829}
+  m_Layer: 0
+  m_Name: Exits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1654567829
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1654567828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.5, y: 0.08, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_Children:
+  - {fileID: 1456767769}
+  - {fileID: 1759552099}
+  - {fileID: 655838635}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &1759552097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,11 +1143,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1759552097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: 0.13, z: -0.609375}
-  m_LocalScale: {x: 4.2249947, y: 8.864766, z: 1}
+  m_LocalPosition: {x: -38.214287, y: 0.035714284, z: -0.43526787}
+  m_LocalScale: {x: 3.0178535, y: 6.331976, z: 0.71428573}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1654567829}
+  m_RootOrder: 1
 --- !u!114 &1759552100
 MonoBehaviour:
   m_ObjectHideFlags: 0

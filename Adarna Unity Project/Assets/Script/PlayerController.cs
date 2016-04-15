@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 
 	private float scaleX;
 	private float scaleY;
+	private float scaleZ;
 
 	private bool waitForPress;
 
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour {
 
 		scaleX = Mathf.Abs(transform.localScale.x);
 		scaleY = transform.localScale.y;
+		scaleZ = transform.localScale.z;
 		shadowX = shadow.transform.position.x;
 		shadowY = shadow.transform.position.y;
 
@@ -99,14 +101,14 @@ public class PlayerController : MonoBehaviour {
 		//Flip
 
 		if(GetComponent<Rigidbody2D>().velocity.x > 0){
-			transform.localScale = new Vector3(scaleX, scaleY, 0f);
+			transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
 			camera.flipped = false;
 			facingRight = true;
 			//flipPlayer();
 		}
 			
 		else if(GetComponent<Rigidbody2D>().velocity.x < 0){
-			transform.localScale = new Vector3(-scaleX, scaleY, 0f);
+			transform.localScale = new Vector3(-scaleX, scaleY, scaleZ);
 			camera.flipped = true;
 			facingRight = false;
 			//flipPlayer();

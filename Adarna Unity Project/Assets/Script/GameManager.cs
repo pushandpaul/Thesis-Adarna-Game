@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 	public List <SceneObjects> sceneObjects;
 	public SceneObjects currentSceneObj;
 	public string currentScene = "";
+	public char timeOfDay = 'd'; //d - day, n - night
 
 	//for future use
 	public Sprite[] heldItem;
