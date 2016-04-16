@@ -5,9 +5,13 @@ using System.Collections.Generic;
 public class ObjectiveManager : MonoBehaviour {
 	private static ObjectiveManager instance = null;
 
+	public GameObject[] objectiveParts;
+	public int currentPartIndex;
+	private GameObject currentPart;
+
+	private Objective[] Objectives;
 	public Objective currentObjective;
 	public int currentObjectiveIndex;
-	private Objective[] allObjectives;
 	private TextBoxManager textBox;
 
 	public UIFader objectivePanelFader;
@@ -32,24 +36,19 @@ public class ObjectiveManager : MonoBehaviour {
 		else if(instance != this)
 			Destroy(gameObject);
 		*/
-
-			
 	}
 
 	void Start () {
-		//destroyList = new List<GameObject>();
-		allObjectives = this.GetComponentsInChildren<Objective>();
 		textBox = this.GetComponent<TextBoxManager>();
-		//objectivePanelFader.FadeIn(fadeDelay);
-		for(int i = 0; i < allObjectives.Length; i++)
-			allObjectives[i].objectiveIndex = i;
+		setPartObjectives();
+	
+		if(currentObjective != null){
+			if(currentObjective.Description != "")
+				displayCurrentObjective();
 
-		currentObjectiveIndex = currentObjective.objectiveIndex;
+			this.printCurrentObjective();
+		}
 
-		if(currentObjective.Description != "")
-			displayCurrentObjective();
-
-		this.printCurrentObjective();
 	}
 
 	public void printCurrentObjective(){
@@ -58,5 +57,37 @@ public class ObjectiveManager : MonoBehaviour {
 
 	public void displayCurrentObjective(){
 		textBox.setText(currentObjective.Description);
+	}
+
+	public void setPartObjectives(){
+		currentPart = objectiveParts[currentPartIndex];
+		Objectives = currentPart.GetComponentsInChildren<Objective>();
+		bool found = false;
+
+		if(Objectives.Length > 0){
+			Debug.Log("There are objectives in Part " + currentPartIndex + ".");
+			for(int i = 0; i < Objectives.Length; i++){
+				Objectives[i].objectiveIndex = i;
+				if(currentObjective == Objectives[i]){
+					currentObjectiveIndex = currentObjective.objectiveIndex;
+					Debug.Log("Current objective found in the current part.");
+					found = true;
+				}
+			}
+			if(!found){
+				Debug.Log("Current objective not found in the current part.");
+				currentObjective = Objectives[0];
+				currentObjective.objectiveIndex = 0;
+			}
+		}
+		else{
+			currentObjective = null;
+			Debug.Log("There are no objectives in Part " + currentPartIndex + ".");
+		}
+	}
+
+	public void nextPart(){
+		currentPartIndex++;
+		setPartObjectives();
 	}
 }

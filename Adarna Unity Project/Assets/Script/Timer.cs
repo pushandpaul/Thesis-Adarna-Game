@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Timer : MonoBehaviour {
 
-
 	public float timeInSecs;
 	private int tempTime;
 	private bool start;
@@ -19,9 +18,10 @@ public class Timer : MonoBehaviour {
 			isOnGoing = false;
 	}
 
-	public void startTimer(){
+	public void startTimer(float timeInSecs){
 		start = true;
 		isOnGoing = true;
+		this.timeInSecs = timeInSecs;
 		Debug.Log("Timer Started");
 	}
 

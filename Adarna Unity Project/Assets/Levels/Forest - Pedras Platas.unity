@@ -649,6 +649,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11460244, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
+      propertyPath: objectivePartIndex.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 452440, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 61.51436
@@ -696,6 +700,10 @@ Prefab:
     - target: {fileID: 480150, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 11460244, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
+      propertyPath: objectivePartIndex.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11461252, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
@@ -964,6 +972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveIndex: 0600000009000000
+  objectivePartIndex: 0100000001000000
   isNPC: 0
   isObject: 1
 --- !u!4 &1853178333 stripped
@@ -978,8 +987,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1906597291}
-  - 114: {fileID: 1906597292}
   - 58: {fileID: 1906597293}
+  - 114: {fileID: 1906597292}
   - 114: {fileID: 1906597294}
   - 114: {fileID: 1906597295}
   - 114: {fileID: 1906597296}
@@ -1015,6 +1024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveIndex: 0f000000
+  objectivePartIndex: 01000000
   isNPC: 0
   isObject: 1
 --- !u!58 &1906597293
@@ -2718,10 +2728,10 @@ MonoBehaviour:
   commandList:
   - {fileID: 2049704075}
   - {fileID: 2049704072}
-  - {fileID: 2049704078}
   - {fileID: 2049704076}
-  - {fileID: 2049704090}
+  - {fileID: 2049704078}
   - {fileID: 2049704077}
+  - {fileID: 2049704090}
   - {fileID: 2049704095}
   - {fileID: 2049704074}
   - {fileID: 2049704079}
@@ -3164,7 +3174,7 @@ MonoBehaviour:
   itemId: 155
   errorMessage: 
   indentLevel: 0
-  duration: 0.5
+  duration: 1
 --- !u!114 &2049704091
 MonoBehaviour:
   m_ObjectHideFlags: 2

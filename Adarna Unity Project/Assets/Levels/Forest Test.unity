@@ -2075,6 +2075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveIndex: 04000000
+  objectivePartIndex: 01000000
   isNPC: 0
   isObject: 1
 --- !u!1 &1508380268
@@ -2134,6 +2135,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11410620, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
+      propertyPath: objectivePartIndex.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483576, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
+      propertyPath: objectivePartIndex.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 413962, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
       propertyPath: m_LocalPosition.x
       value: 29.5
@@ -2166,7 +2175,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11410620, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
+      propertyPath: objectivePartIndex.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483576, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
+      propertyPath: objectivePartIndex.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 21279458, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2cc53c6efbb269947842cf7cbf0d6bba, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1801020716

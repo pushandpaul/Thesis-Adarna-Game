@@ -9,7 +9,7 @@ public class ObjectiveMapper : MonoBehaviour {
 	private ObjectiveManager objectiveManager;
 	//public TextBoxManager textBox;
 	public int [] objectiveIndex;
-
+	public int [] objectivePartIndex;
 
 	public bool isNPC;
 	public bool isObject;
@@ -29,7 +29,7 @@ public class ObjectiveMapper : MonoBehaviour {
 	public void checkIfCurrent_npc(){
 		for(int i = 0; i < objectiveIndex.Length; i++){
 			Debug.Log("Entered Objective Checker Loop");
-			if(objectiveManager.currentObjectiveIndex == objectiveIndex[i]){
+			if(objectiveManager.currentPartIndex == objectivePartIndex[i] && objectiveManager.currentObjectiveIndex == objectiveIndex[i]){
 				npc.message = objectiveManager.currentObjective.Name;
 				Debug.Log("Sendmessage " + npc.message);
 				objectiveManager.currentObjective.onReach();
@@ -47,7 +47,7 @@ public class ObjectiveMapper : MonoBehaviour {
 		
 	public bool checkIfCurrent() {
 		for (int i = 0; i < objectiveIndex.Length; i++) {
-			if (objectiveManager.currentObjectiveIndex == objectiveIndex [i]) {
+			if (objectiveManager.currentPartIndex == objectivePartIndex[i] && objectiveManager.currentObjectiveIndex == objectiveIndex [i]) {
 				return true;
 				break;
 			} 	
@@ -58,7 +58,7 @@ public class ObjectiveMapper : MonoBehaviour {
 	public void checkIfCurrent_object(){
 		for(int i = 0; i < objectiveIndex.Length; i++){
 			Debug.Log("Entered Objective Checker Loop");
-			if(objectiveManager.currentObjectiveIndex == objectiveIndex[i]){
+			if(objectiveManager.currentPartIndex == objectivePartIndex[i] && objectiveManager.currentObjectiveIndex == objectiveIndex[i]){
 				objectiveHolder.message = objectiveManager.currentObjective.Name;
 				Debug.Log("Sendmessage " + objectiveHolder.message);
 				objectiveManager.currentObjective.onReach();
@@ -69,9 +69,7 @@ public class ObjectiveMapper : MonoBehaviour {
 			else{
 				objectiveHolder.message = "";
 			}
-
 		}
-		
 	}
 
 	public void checkIfCurrent_misc(){

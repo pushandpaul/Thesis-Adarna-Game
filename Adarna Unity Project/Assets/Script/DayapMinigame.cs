@@ -15,7 +15,6 @@ public class DayapMinigame : MonoBehaviour {
 	private ObjectiveManager objectiveManager;
 	private UIFader objectiveUIFader;
 
-
 	public Sprite dayap;
 	public ItemToGive itemToGive;
 
@@ -28,8 +27,8 @@ public class DayapMinigame : MonoBehaviour {
 	private bool success;
 	private bool dialoguePlayed;
 
-
 	private bool timerStarted = false;
+	public float timerDuration;
 	public float defaultDuration;
 	public float changeDuration;
 
@@ -106,7 +105,7 @@ public class DayapMinigame : MonoBehaviour {
 
 
 	private void startMiniGame(){
-		timer.startTimer();
+		timer.startTimer(timerDuration);
 	}
 
 	private void endMiniGame(string message){

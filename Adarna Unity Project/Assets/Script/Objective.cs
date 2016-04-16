@@ -21,12 +21,15 @@ public class Objective : MonoBehaviour {
 		StartDialogue = 0,
 		MarkAsAchieved = 1,
 		DisplayToTextBox = 2,
+		LoadScene = 3,
+		LoadNextPart = 4,
 		//IfPlayAnimation = 3,
 	}
 
 
 	public string Name;
 	[Multiline(10)]
+
 	public string Description;
 
 	public ObjectiveType Kind;

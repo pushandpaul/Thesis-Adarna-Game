@@ -245,7 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveIndex: 00000000
+  objectiveIndex: 0000000000000000
+  objectivePartIndex: 0100000002000000
   isNPC: 0
   isObject: 1
 --- !u!114 &182380761
@@ -358,6 +359,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11489538, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: objectivePartIndex.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 486774, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 18.21
@@ -389,6 +394,10 @@ Prefab:
     - target: {fileID: 486774, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489538, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: objectivePartIndex.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
@@ -579,6 +588,9 @@ GameObject:
   - 114: {fileID: 1185855756}
   - 114: {fileID: 1185855758}
   - 114: {fileID: 1185855744}
+  - 114: {fileID: 1185855745}
+  - 114: {fileID: 1185855748}
+  - 114: {fileID: 1185855757}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -609,9 +621,10 @@ MonoBehaviour:
     x: -350
     y: -473
     width: 1879.6472
-    height: 1320.0698
-  selectedBlock: {fileID: 0}
-  selectedCommands: []
+    height: 1383.223
+  selectedBlock: {fileID: 1185855745}
+  selectedCommands:
+  - {fileID: 1185855757}
   variables: []
   description: 
   stepPause: 0
@@ -1263,6 +1276,29 @@ MonoBehaviour:
   targetObject: {fileID: 1119734199}
   methodName: endDialogue
   delay: 0
+--- !u!114 &1185855745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185855714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 926.32776
+    y: 363.66577
+    width: 120
+    height: 40
+  itemId: 129
+  blockName: Temp
+  description: 
+  eventHandler: {fileID: 1185855748}
+  commandList:
+  - {fileID: 1185855757}
 --- !u!114 &1185855746
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1313,6 +1349,19 @@ MonoBehaviour:
   fadeWhenDone: 1
   waitForClick: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &1185855748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185855714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1185855745}
+  message: Temp
 --- !u!114 &1185855749
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1468,6 +1517,31 @@ MonoBehaviour:
   targetFlowchart: {fileID: 0}
   targetBlock: {fileID: 1185855765}
   callMode: 1
+--- !u!114 &1185855757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185855714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 130
+  errorMessage: 
+  indentLevel: 0
+  storyText: This is a temp trigger for part 2
+  description: 
+  character: {fileID: 182380764}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
 --- !u!114 &1185855758
 MonoBehaviour:
   m_ObjectHideFlags: 2

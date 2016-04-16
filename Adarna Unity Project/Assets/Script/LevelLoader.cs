@@ -22,20 +22,30 @@ public class LevelLoader : MonoBehaviour {
 
 	public LevelSelect Levels;
 	private ScreenFader screenFader;
-	private GameManager gameManager;
-	private LevelManager levelManager;
+	//private GameManager gameManager;
+	//private LevelManager levelManager;
 
 	public bool launchOnStart;
 	// Use this for initialization
 	void Start () {
 		screenFader = FindObjectOfType<ScreenFader>();
-		gameManager = FindObjectOfType<GameManager>();
-		levelManager = FindObjectOfType<LevelManager>();
 		if(launchOnStart)
 			launchScene();
 	}
 	
 	public void launchScene(){
+		saveBeforeUnload();
+		StartCoroutine(fadeLevelByList());
+	}
+
+	public void launcSceneByName(string sceneName){
+		saveBeforeUnload();
+		StartCoroutine(fadeLevelByName(sceneName));
+	}
+
+	private void saveBeforeUnload(){
+		LevelManager levelManager = FindObjectOfType<LevelManager>();
+		GameManager gameManager = FindObjectOfType<GameManager>();
 		if(levelManager != null){
 			if(FindObjectsOfType<ObjectData>().Length > 0)
 				gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
@@ -44,15 +54,20 @@ public class LevelLoader : MonoBehaviour {
 				gameManager.findFollowers(followers);
 			}
 		}
-		StartCoroutine(fadeLevel());
 	}
 
-	IEnumerator fadeLevel(){
+	IEnumerator fadeLevelByList(){
 		int levelIndex = 0;
 		levelIndex = (int)this.Levels;
 		float fadeTime = screenFader.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
 		Debug.Log("" + levelIndex);
 		SceneManager.LoadScene(levelIndex);
+	}
+
+	IEnumerator fadeLevelByName(string sceneName){
+		float fadeTime = screenFader.BeginFade(1);
+		yield return new WaitForSeconds(fadeTime);
+		SceneManager.LoadScene(sceneName);
 	}
 }
