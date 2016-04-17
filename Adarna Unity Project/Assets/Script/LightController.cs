@@ -4,9 +4,11 @@ using System.Collections;
 public class LightController : MonoBehaviour {
 
 	private Light light;
+	public float lightIntensity;
 
 	void Start(){
 		light = this.GetComponent<Light>();
+		lightIntensity = light.intensity;
 	}
 
 	public void setLightIntensity(float intensity){

@@ -17,4 +17,12 @@ public class SaveAndDestroy : MonoBehaviour {
 		}
 		Destroy(myGameObject);
 	}
+
+	public void saveNowDestroyLater(GameObject myGameObject){
+		ObjectData objectData = this.GetComponent<ObjectData>();
+		if(objectData != null){
+			objectData.destroyed = true;
+			gameManager.searchData(objectData, 's');
+		}
+	}
 }

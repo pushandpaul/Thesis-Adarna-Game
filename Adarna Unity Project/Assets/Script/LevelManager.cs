@@ -29,27 +29,29 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 	void Start() {
-		if(objectData.Length > 0){
-			gameManager.loadCoordinates(objectData);
-		}
-			
+		
 		int j = 0;
 		int i = 0;
 		float xPosition = 0f;
 		Light playerLight; 
-
+	
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
 		playerLight = player.GetComponentInChildren<Light>();
 
+		//Level Initialization
+		if(objectData.Length > 0){
+			gameManager.loadCoordinates(objectData);
+		}
+
 		changeTimeOfDay(gameManager.timeOfDay);
 
+		//Player Initialization
 		if(gameManager.timeOfDay == 'd' || location.isInterior){
 			playerLight.intensity = 0f;
 		}
-		//fadeTimeOfDay('n', 20f);
 
 		if(playerPos == null ||!playerPos.loadThis){
 			if(isDoor && door.Length > 0){
@@ -79,6 +81,7 @@ public class LevelManager : MonoBehaviour {
 			playerPos.clearInBetweenData();
 		}
 
+		//Follower Initialization
 		if(gameManager.Followers != null){
 			foreach(GameObject follower in gameManager.Followers){
 				j += 3;
@@ -107,21 +110,14 @@ public class LevelManager : MonoBehaviour {
 
 		if(globaLightHolder != null){
 			globalLight = globaLightHolder.GetComponent<LightController>();
-			if(timeOfDay == 'd'){
+			if(timeOfDay == 'd' && globalLight.lightIntensity != 1.8f){
 				globalLight.setLightIntensity(1.8f);
 				Debug.Log("Global Light Intensity adjusted to day time");
 			}
-			/*else if(timeOfDay == 'n' && location.isInterior){
-				globalLight.setLightIntensity(0f);
-			}
-			else if(timeOfDay == 'n' && !location.isInterior){
-				globalLight.setLightIntensity(0.5f);
-			}*/
-			else if(timeOfDay == 'n'){
+			else if(timeOfDay == 'n' && globalLight.lightIntensity != 0f){
 				globalLight.setLightIntensity(0f);
 				Debug.Log("Global Light Intensity adjusted to night time");
 			}
-				
 		}
 	}
 
