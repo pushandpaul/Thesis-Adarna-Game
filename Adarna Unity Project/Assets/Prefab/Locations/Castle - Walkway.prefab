@@ -156,9 +156,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 489256}
   - 212: {fileID: 21277854}
-  m_Layer: 0
+  - 60: {fileID: 6028120}
+  m_Layer: 8
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -351,6 +352,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 457822}
   m_RootOrder: 6
+--- !u!60 &6028120
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167284}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 4774b01bd0202ab498145f1217b12d19, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -0.42}
+  m_Points:
+    m_Paths:
+    - - {x: -3.420742, y: 1.8011111}
+      - {x: 4.0955906, y: -1.5965675}
+      - {x: -3.5236778, y: -1.5293461}
 --- !u!61 &6178818
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -454,6 +472,8 @@ MonoBehaviour:
   cameraSpawnY: 0.16
   cameraSpawnZ: -4.5
   parallaxLayers: []
+  isInterior: 1
+  size: 0
 --- !u!212 &21212558
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -27,9 +27,6 @@ public class PlayerController : MonoBehaviour {
 	public CameraController camera;
 	private float defaultCamOffset;
 
-	public GameObject shadow;
-	private float shadowX;
-	private float shadowY;
 	private GameManager gameManager;
 	// Use this for initialization
 	void Start () {
@@ -40,8 +37,6 @@ public class PlayerController : MonoBehaviour {
 		scaleX = Mathf.Abs(transform.localScale.x);
 		scaleY = transform.localScale.y;
 		scaleZ = transform.localScale.z;
-		shadowX = shadow.transform.position.x;
-		shadowY = shadow.transform.position.y;
 
 		moveSpeed += (Mathf.Abs(transform.localScale.x) % 0.5f) * 10;
 		Debug.Log("This is player speed: " + moveSpeed);
@@ -82,14 +77,14 @@ public class PlayerController : MonoBehaviour {
 			Debug.Log("This is speed: " + anim.GetFloat("Speed"));
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
 		}
-		shadow.transform.position = new Vector3(shadow.transform.position.x, shadowY, 0f);
+
+		//shadow.position = new Vector3(shadow.position.x, shadowY, 0f);
 		anim.SetBool("Ground", grounded);
 			
 		moveVelocity = 0f;
 		if(Input.GetKey(KeyCode.D)){
 			moveVelocity = moveSpeed;
 		}
-			
 
 		else if(Input.GetKey(KeyCode.A))
 			moveVelocity = -moveSpeed;{

@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403574}
   - 212: {fileID: 21250316}
+  - 114: {fileID: 11493204}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -285,7 +286,7 @@ GameObject:
   m_Layer: 0
   m_Name: Ground Check
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -453,8 +454,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -1.86, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 1.46, y: -1.81, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 444380}
   - {fileID: 473250}
@@ -571,7 +572,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.64, z: 0}
+  m_LocalPosition: {x: 0, y: -3.7, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 424588}
@@ -727,6 +728,19 @@ MonoBehaviour:
   Target: {x: 1.51, y: -3.36, z: 0}
   defaultDuration: 0.5
   defaultToTransform: {fileID: 403574}
+--- !u!114 &11493204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6f931334eb18d4ea0c1ba9e3f1d831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 444380}
+  shadowMaxDistance: 20
 --- !u!114 &11498516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -760,7 +774,7 @@ MonoBehaviour:
     m_Bits: 256
   item: {fileID: 11498516}
   camera: {fileID: 0}
-  shadow: {fileID: 111406}
+  shadow: {fileID: 403574}
 --- !u!212 &21204208
 SpriteRenderer:
   m_ObjectHideFlags: 1
