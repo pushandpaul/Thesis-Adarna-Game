@@ -43,8 +43,6 @@ public class Objective : MonoBehaviour {
 	private TextBoxManager textBox;
 	public bool textBoxDisplayed = false;
 	private UIFader uiFader;
-	//public string AnimationName;
-	//public Animator animator;
 
 	void Start(){
 		manager = GetComponentInParent<ObjectiveManager>();

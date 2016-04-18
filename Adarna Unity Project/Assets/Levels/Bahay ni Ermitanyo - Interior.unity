@@ -196,7 +196,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &43627063
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ Transform:
   m_LocalScale: {x: 4.2249947, y: 8.864766, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &228237634
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ Transform:
   m_LocalScale: {x: 24.50802, y: 11.454939, z: 1.01}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &321171342 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 194146, guid: 6a3df80671659fd4ca2d725358c5223b, type: 2}
@@ -404,7 +404,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -535,7 +535,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 1
 --- !u!114 &776278932 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11430050, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
@@ -637,7 +637,7 @@ Transform:
   - {fileID: 837642837}
   - {fileID: 2102013118}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!114 &925208924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,7 +944,7 @@ Prefab:
     - target: {fileID: 11430050, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 1002026680}
+      objectReference: {fileID: 1002026712}
     - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
       propertyPath: commandList.Array.data[3]
       value: 
@@ -1786,14 +1786,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 182
+  itemId: 183
   errorMessage: 
   indentLevel: 0
   targetObject: {fileID: 2102013117}
-  targetComponentAssemblyName: PunchMoveObject, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
+  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: PunchMoveObject
+  targetComponentText: MoveObject
   targetMethod: punchMove
   targetMethodText: 'punchMove (Vector3): Void'
   methodParameters:
@@ -2018,7 +2018,7 @@ Transform:
   m_LocalScale: {x: 0.8978154, y: 7.535054, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!1001 &1371138917
 Prefab:
   m_ObjectHideFlags: 0
@@ -2147,7 +2147,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!114 &1752344199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2201,7 +2201,7 @@ Transform:
   m_LocalScale: {x: 86.34965, y: 13.555277, z: 1.01}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &2001930048
 GameObject:
   m_ObjectHideFlags: 1
@@ -2241,7 +2241,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!1 &2102013117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,6 +2254,7 @@ GameObject:
   - 114: {fileID: 2102013119}
   - 114: {fileID: 2102013121}
   - 114: {fileID: 2102013122}
+  - 114: {fileID: 2102013123}
   m_Layer: 0
   m_Name: Item in Cage
   m_TagString: Untagged
@@ -2340,3 +2341,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b35fade0b8ac0438c89c6f1a98b1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2102013123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2102013117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6eb37d0d262db74aa5a78beacb18768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {x: 0, y: 0, z: 0}
+  defaultDuration: 0
+  defaultToTransform: {fileID: 0}

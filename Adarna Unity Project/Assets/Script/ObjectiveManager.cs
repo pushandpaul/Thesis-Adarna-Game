@@ -78,6 +78,7 @@ public class ObjectiveManager : MonoBehaviour {
 				Debug.Log("Current objective not found in the current part.");
 				currentObjective = Objectives[0];
 				currentObjective.objectiveIndex = 0;
+				currentObjectiveIndex = currentObjective.objectiveIndex;
 			}
 		}
 		else{

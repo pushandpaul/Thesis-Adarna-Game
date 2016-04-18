@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	public void flipPlayer(){
 		Debug.Log("Initial Scale" + transform.localScale.x);
-		transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y, 0f);
+		transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y, 1f);
 		Debug.Log("Changed Scale" + transform.localScale.x);
 		camera.flipped = !camera.flipped;
 		facingRight = !facingRight;

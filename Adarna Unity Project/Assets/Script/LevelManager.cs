@@ -33,13 +33,13 @@ public class LevelManager : MonoBehaviour {
 		int j = 0;
 		int i = 0;
 		float xPosition = 0f;
-		Light playerLight; 
+		GameObject[] LightHolder; 
 	
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
-		playerLight = player.GetComponentInChildren<Light>();
+		LightHolder = GameObject.FindGameObjectsWithTag("Character Light");
 
 		//Level Initialization
 		if(objectData.Length > 0){
@@ -48,11 +48,12 @@ public class LevelManager : MonoBehaviour {
 
 		changeTimeOfDay(gameManager.timeOfDay);
 
-		//Player Initialization
 		if(gameManager.timeOfDay == 'd' || location.isInterior){
-			playerLight.intensity = 0f;
+			foreach(GameObject lightHolder in LightHolder)
+				lightHolder.GetComponent<Light>().intensity = 0f;
 		}
 
+		//Player Initialization
 		if(playerPos == null ||!playerPos.loadThis){
 			if(isDoor && door.Length > 0){
 				player.transform.position = new Vector3(door[doorIndex].transform.position.x, location.playerSpawnY, location.playerSpawnZ);

@@ -215,7 +215,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1001 &102059016
 Prefab:
   m_ObjectHideFlags: 0
@@ -417,7 +417,7 @@ Transform:
   m_LocalScale: {x: 101.383064, y: 13.555277, z: 1.01}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!212 &228237637
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -537,7 +537,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
@@ -642,25 +642,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 403976, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
   m_PrefabInternal: {fileID: 102059016}
---- !u!1001 &1081486141
+--- !u!95 &1081486142 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9542336, guid: 6a9c89fb9f1d36a418c34898946b2aeb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1293102627}
+--- !u!1 &1081486143 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 174136, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
+  m_PrefabInternal: {fileID: 1293102627}
+--- !u!1001 &1293102627
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11460244, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: partObjective.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11460244, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: objectivePartIndex.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11460244, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: partObjective.Array.data[0].objectives.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 452440, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 61.51436
@@ -691,50 +688,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 452440, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11434314, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
       propertyPath: flowchart
       value: 
       objectReference: {fileID: 2049704004}
-    - target: {fileID: 480150, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 480150, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 480150, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 11460244, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: objectivePartIndex.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11460244, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: partObjective.Array.data[0].part
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11460244, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-      propertyPath: partObjective.Array.data[0].objectives.Array.data[0]
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11461252, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-    - {fileID: 11405038, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
   m_IsPrefabParent: 0
---- !u!95 &1081486142 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 9542336, guid: 6a9c89fb9f1d36a418c34898946b2aeb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1081486141}
---- !u!1 &1081486143 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 174136, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
-  m_PrefabInternal: {fileID: 1081486141}
 --- !u!1 &1315913232
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +845,7 @@ GameObject:
   - 4: {fileID: 1682931737}
   - 114: {fileID: 1682931736}
   m_Layer: 0
-  m_Name: Level manager
+  m_Name: Level Manager
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -914,7 +876,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
 --- !u!1 &1748462622
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,8 +952,6 @@ MonoBehaviour:
   partObjective:
   - part: 1
     objectives: 0600000009000000
-  objectiveIndex: 0600000009000000
-  objectivePartIndex: 0100000001000000
   isNPC: 0
   isObject: 1
 --- !u!4 &1853178333 stripped
@@ -1045,8 +1005,6 @@ MonoBehaviour:
   partObjective:
   - part: 1
     objectives: 0f000000
-  objectiveIndex: 0f000000
-  objectivePartIndex: 01000000
   isNPC: 0
   isObject: 1
 --- !u!58 &1906597293
@@ -1188,7 +1146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &2049704003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,16 +1270,16 @@ MonoBehaviour:
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 297
-  zoom: 0.6075221
+  zoom: 0.72752196
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 2464.3442
     height: 1380.855
-  selectedBlock: {fileID: 2049704070}
+  selectedBlock: {fileID: 2049704041}
   selectedCommands:
-  - {fileID: 2049704077}
+  - {fileID: 2049704069}
   variables: []
   description: 
   stepPause: 0
@@ -1743,7 +1701,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &2049704024
 MonoBehaviour:
   m_ObjectHideFlags: 2

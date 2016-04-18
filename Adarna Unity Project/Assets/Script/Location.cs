@@ -17,4 +17,5 @@ public class Location : MonoBehaviour {
 	public Transform[] parallaxLayers;
 
 	public bool isInterior;
+	public char size; //s - small, m - medium, l - large
 }

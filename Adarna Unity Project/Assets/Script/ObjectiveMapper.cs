@@ -31,55 +31,8 @@ public class ObjectiveMapper : MonoBehaviour {
 			objectiveHolder = this.GetComponent<ObjectInteraction>();
 	}
 
-	public void checkIfCurrent_npc(){
-		bool found = false;
-		/*for(int i = 0; i < objectiveIndex.Length; i++){
-			Debug.Log("Entered Objective Checker Loop");
-			if(objectiveManager.currentPartIndex == objectivePartIndex[i] && objectiveManager.currentObjectiveIndex == objectiveIndex[i]){
-				npc.message = objectiveManager.currentObjective.Name;
-				Debug.Log("Sendmessage " + npc.message);
-				objectiveManager.currentObjective.onReach();
-				break;
-				//objectiveHolder.isAchieved = false;
-			}
-			else{
-				npc.message = npc.name;
-				//npc.pressToInteract = true;
-				//found = false;
-			}
-				
-		}*/
-
-		for(int i = 0; i < partObjective.Length; i++){
-			if(partObjective[i].part == objectiveManager.currentPartIndex){
-				foreach(int objectiveIndex in partObjective[i].objectives){
-					if(objectiveIndex == objectiveManager.currentObjectiveIndex){
-						npc.message = objectiveManager.currentObjective.Name;
-						Debug.Log("Sendmessage " + npc.message);
-						objectiveManager.currentObjective.onReach();
-						found = true;
-						break;
-					}
-					else{
-						npc.message = npc.name;
-						found = false;
-					}
-				}
-			}
-			if(found)
-				break;
-		}
-	}
-		
 	public bool checkIfCurrent() {
 		bool found = false;
-		/*for (int i = 0; i < objectiveIndex.Length; i++) {
-			if (objectiveManager.currentPartIndex == objectivePartIndex[i] && objectiveManager.currentObjectiveIndex == objectiveIndex [i]) {
-				return true;
-				break;
-			} 	
-		}*/
-
 		for(int i = 0; i < partObjective.Length; i++){
 			if(partObjective[i].part == objectiveManager.currentPartIndex){
 				foreach(int objectiveIndex in partObjective[i].objectives){
@@ -96,23 +49,33 @@ public class ObjectiveMapper : MonoBehaviour {
 		return false;
 	}
 
+	public void checkIfCurrent_npc(){
+		bool found = false;
+		for(int i = 0; i < partObjective.Length; i++){
+			if(partObjective[i].part == objectiveManager.currentPartIndex){
+				foreach(int objectiveIndex in partObjective[i].objectives){
+					if(objectiveIndex == objectiveManager.currentObjectiveIndex){
+						npc.message = objectiveManager.currentObjective.Name;
+						Debug.Log("Sendmessage " + npc.message);
+						objectiveManager.currentObjective.onReach();
+						found = true;
+						break;
+					}
+					else{
+						found = false;
+					}
+				}
+			}
+			if(found)
+				break;
+		}
+		if(!found)
+			npc.message = npc.name;
+			
+	}
+
 	public void checkIfCurrent_object(){
 		bool found = false;
-		/*for(int i = 0; i < objectiveIndex.Length; i++){
-			Debug.Log("Entered Objective Checker Loop");
-			if(objectiveManager.currentPartIndex == objectivePartIndex[i] && objectiveManager.currentObjectiveIndex == objectiveIndex[i]){
-				objectiveHolder.message = objectiveManager.currentObjective.Name;
-				Debug.Log("Sendmessage " + objectiveHolder.message);
-				objectiveManager.currentObjective.onReach();
-				//found = true;
-				//objectiveHolder.isAchieved = true;
-				break;
-			}
-			else{
-				objectiveHolder.message = "";
-			}
-		}*/
-
 		for(int i = 0; i < partObjective.Length; i++){
 			if(partObjective[i].part == objectiveManager.currentPartIndex){
 				foreach(int objectiveIndex in partObjective[i].objectives){
@@ -124,15 +87,15 @@ public class ObjectiveMapper : MonoBehaviour {
 						break;
 					}
 					else{
-						objectiveHolder.message = "";
 						found = false;
 					}
 				}
 			}
 			if(found)
-				break;
+				break;	
 		}
-
+		if(!found)
+			objectiveHolder.message = "";
 	}
 
 	public void checkIfCurrent_misc(){
