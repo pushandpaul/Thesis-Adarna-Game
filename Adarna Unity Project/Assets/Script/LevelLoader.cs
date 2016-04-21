@@ -61,7 +61,7 @@ public class LevelLoader : MonoBehaviour {
 		levelIndex = (int)this.Levels;
 		float fadeTime = screenFader.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
-		Debug.Log("" + levelIndex);
+		//Debug.Log("" + levelIndex);
 		SceneManager.LoadScene(levelIndex);
 	}
 

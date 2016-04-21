@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask whatIsGround;
 	private bool grounded;
 
-	private Animator anim;
+	public Animator anim;
 	public ItemToGive item;
 
 	private float scaleX;
@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		moveVelocity = 0f;
+
 		if(!canMove){
 			anim.SetFloat("Speed", 0);
 			anim.SetBool("Ground", true);
@@ -74,14 +76,9 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if(Input.GetKeyDown(KeyCode.Space) && grounded){
-			Debug.Log("This is speed: " + anim.GetFloat("Speed"));
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
 		}
-
-		//shadow.position = new Vector3(shadow.position.x, shadowY, 0f);
-		anim.SetBool("Ground", grounded);
 			
-		moveVelocity = 0f;
 		if(Input.GetKey(KeyCode.D)){
 			moveVelocity = moveSpeed;
 		}
@@ -90,8 +87,14 @@ public class PlayerController : MonoBehaviour {
 			moveVelocity = -moveSpeed;{
 		}
 
-		anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
 		GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+
+		if(anim != null){
+			anim.SetBool("Ground", grounded);
+			anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+		}
+		else
+			anim = GetComponentInChildren<Animator>();
 
 		//Flip
 
@@ -111,7 +114,6 @@ public class PlayerController : MonoBehaviour {
 		}
 
 	}
-
 	public void enablePlayerMovement(){
 		canMove = true;
 	}
@@ -131,6 +133,10 @@ public class PlayerController : MonoBehaviour {
 		gameManager.playerIdleState = state;
 		Debug.Log(gameManager.playerIdleState);
 		anim.Play (state);
+	}
+
+	public void Init(){
+		//Initialize Here (Add in the future);
 	}
 }
 

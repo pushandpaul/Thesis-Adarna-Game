@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour {
 	private LevelManager levelManager;
 	public List <GameObject> Followers;
 
+	public Transform[] playableCharacters;
+	public string currentCharacterName;
+
 	void Awake () {
 		//playerIdleState = "Idle";
 		DontDestroyOnLoad(this);

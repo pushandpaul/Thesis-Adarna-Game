@@ -5,6 +5,7 @@ public class ShadowController : MonoBehaviour {
 
 	public Transform owner;
 	public float shadowMaxDistance = 20f;
+	private Vector3 initialPosition;
 	private Vector3 calculatedMaxDistance;
 	private float newShadowY;
 	public float slopeOffset = 0.3f;
@@ -27,8 +28,9 @@ public class ShadowController : MonoBehaviour {
 	void UpdateY(){
 		newShadowY = myLineCast.point.y;
 		//add an offset if there is a slope
+
 		if(myLineCast.collider.tag == ("Ground Slope"))
-			newShadowY += slopeOffset;
+				newShadowY += slopeOffset;
 		//check if raycast hits the ground, if not the position will be at max
 		if(!hitGround)
 			newShadowY = calculatedMaxDistance.y;

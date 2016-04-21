@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+//Local class serves as initialization of the level and connection to the global class - Game Manager
+
 public class LevelManager : MonoBehaviour {
 	public static bool exitInRight = true;
 	public static bool isDoor;
@@ -96,11 +98,9 @@ public class LevelManager : MonoBehaviour {
 				follower.transform.position = new Vector3(xPosition, follower.transform.position.y, follower.transform.position.z);
 			}
 		}
-	}
-		
-	public void savePosition(){
-		if(playerPos != null)
-			playerPos.saveInBetweenData();
+
+		//Change character avatar
+		instantChangePlayer(gameManager.currentCharacterName);
 	}
 
 	public void changeTimeOfDay(char timeOfDay){
@@ -122,24 +122,34 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	/*public void fadeTimeOfDay(char targetTimeOfDay, float duration){
-		LightController globalLight;
-		GameObject globaLightHolder;
-		float targetLightIntensity = 0f;
-
-		globaLightHolder = GameObject.FindWithTag("Global Light");
-		if(globaLightHolder != null){
-			globalLight = globaLightHolder.GetComponent<LightController>();
-			if(targetTimeOfDay == 'd'){
-				targetLightIntensity  = 1.8f;
-			}
-			else if(targetTimeOfDay == 'n' && location.isInterior){
-				targetLightIntensity = 0f;
-			}
-			else if(targetTimeOfDay == 'n' && !location.isInterior){
-				targetLightIntensity = 0.8f;
-			}
-			globalLight.fadeLightIntensity(targetLightIntensity, duration);
+	public void changePlayer(Transform newPlayer){
+		if(newPlayer.tag == "Playable Character"){
+			PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
+			playerSwitch.actualSwitch(newPlayer);
 		}
-	}*/
+
+		else
+			Debug.Log("Character trying to switch is not playable.");
+	}
+
+	void instantChangePlayer(string newPlayerName){
+		PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
+		Transform newPlayer = null;
+		if(newPlayerName != "Default"){
+			foreach(Transform playableCharacter in gameManager.playableCharacters){
+				if(newPlayerName == playableCharacter.name){
+					newPlayer = (Transform) Instantiate(playableCharacter, player.transform.position, player.transform.rotation);
+					newPlayer.name = newPlayerName;
+					playerSwitch.instantSwitch(newPlayer);
+					break;
+				}
+			}
+		}
+	}
+
+	public void savePosition(){
+		if(playerPos != null)
+			playerPos.saveInBetweenData();
+	}
+		
 }
