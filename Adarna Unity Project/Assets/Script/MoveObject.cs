@@ -42,6 +42,7 @@ public class MoveObject : MonoBehaviour {
 	IEnumerator startMovingObject(Transform toTransform, Vector3 current, Vector3 target, float duration){
 		float startTime = Time.time;
 		float endTime = startTime + duration;
+
 		while(Time.time <= endTime){
 			float t = (Time.time - startTime)/duration;
 			toTransform.localPosition = Vector3.Lerp(current, target, t);

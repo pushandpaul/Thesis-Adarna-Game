@@ -19,7 +19,8 @@ public class ShadowController : MonoBehaviour {
 	}
 
 	void DrawRaycast(){
-		calculatedMaxDistance = transform.position - new Vector3(0, shadowMaxDistance, 0);
+		//calculatedMaxDistance = transform.position - (new Vector3(0, shadowMaxDistance, 0));
+		calculatedMaxDistance = owner.position - (new Vector3(0, shadowMaxDistance, 0));
 		Debug.DrawLine(owner.position, calculatedMaxDistance, Color.green);
 		myLineCast = Physics2D.Linecast(owner.position, calculatedMaxDistance, 1 << LayerMask.NameToLayer("Ground"));
 		hitGround = myLineCast;
@@ -35,6 +36,6 @@ public class ShadowController : MonoBehaviour {
 		if(!hitGround)
 			newShadowY = calculatedMaxDistance.y;
 
-		transform.position = new Vector3(transform.position.x, newShadowY, transform.position.z);
+		transform.position = new Vector3(transform.position.x, newShadowY, 0f);
 	}
 }
