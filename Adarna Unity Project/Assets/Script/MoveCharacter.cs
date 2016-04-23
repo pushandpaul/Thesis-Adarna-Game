@@ -7,6 +7,7 @@ public class MoveCharacter : MonoBehaviour {
 	float defaultSpeed = 7f;
 
 	public void moveCharacter(Transform character, Vector3 targetPosition){
+		//character = GameObject.Find (character.name).transform;
 		float duration = Mathf.Abs(targetPosition.x - character.position.x)/defaultSpeed;
 		StartCoroutine(startMoving(character, character.position, targetPosition, duration));
 	}

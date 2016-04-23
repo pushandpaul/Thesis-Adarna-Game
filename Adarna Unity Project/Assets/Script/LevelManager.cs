@@ -123,6 +123,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void changePlayer(Transform newPlayer){
+		newPlayer = GameObject.Find (newPlayer.name).transform;
 		if(newPlayer.tag == "Playable Character"){
 			PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 			playerSwitch.actualSwitch(newPlayer);

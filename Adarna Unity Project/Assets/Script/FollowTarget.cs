@@ -73,4 +73,8 @@ public class FollowTarget : MonoBehaviour {
 		this.distanceLimit = distance;
 		this.target = target;
 	}
+
+	public void setIsFollowing(bool boolean){
+		isFollowing = boolean;
+	}
 }

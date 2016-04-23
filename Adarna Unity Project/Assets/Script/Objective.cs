@@ -57,6 +57,10 @@ public class Objective : MonoBehaviour {
 		if(this.OnReach.Contains(ActionOnReach.StartDialogue)){
 			startDialogue();
 		}
+
+		if (this.OnReach.Contains (ActionOnReach.LoadNextPart)) {
+			manager.nextPart ();
+		}
 		if(nextObjective != null){
 			manager.currentObjective = this.nextObjective;
 			if(manager.currentObjective.OnReach.Contains(ActionOnReach.DisplayToTextBox)){

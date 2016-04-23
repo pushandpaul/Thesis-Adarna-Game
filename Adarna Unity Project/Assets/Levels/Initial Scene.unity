@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 6
+  Levels: 8
   launchOnStart: 1
 --- !u!4 &268044221
 Transform:
@@ -254,6 +254,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1340513551 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11463610, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1409442319}
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
 --- !u!1 &1397337089
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,14 +340,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 22429038, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
+    - target: {fileID: 11494704, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: Kind
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 22429038, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 11416682, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: nextObjective
+      value: 
+      objectReference: {fileID: 1409442320}
+    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: currentObjective
+      value: 
+      objectReference: {fileID: 1340513551}
     - target: {fileID: 22485014, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -362,20 +372,20 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-      propertyPath: currentObjective
-      value: 
-      objectReference: {fileID: 1496656408}
-    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-      propertyPath: currentPartIndex
-      value: 2
+    - target: {fileID: 22429038, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22429038, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1496656408 stripped
+--- !u!114 &1409442320 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11424876, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+  m_PrefabParentObject: {fileID: 11494704, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
     type: 2}
   m_PrefabInternal: {fileID: 1409442319}
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
@@ -431,4 +441,4 @@ MonoBehaviour:
   Followers: []
   playableCharacters:
   - {fileID: 464092, guid: 2cfc46874f419094091439df920ebc6a, type: 2}
-  currentCharacterName: Don Pedro
+  currentCharacterName: Default

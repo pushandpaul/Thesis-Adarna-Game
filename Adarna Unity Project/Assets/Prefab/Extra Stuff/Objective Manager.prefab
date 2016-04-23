@@ -16,6 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &113618
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 470482}
+  - 114: {fileID: 11416682}
+  m_Layer: 0
+  m_Name: 'Start: Narrative (2)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &113920
 GameObject:
   m_ObjectHideFlags: 1
@@ -90,6 +106,22 @@ GameObject:
   - 114: {fileID: 11426296}
   m_Layer: 0
   m_Name: 'Talk: Leproso'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &126414
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 480790}
+  - 114: {fileID: 11403592}
+  m_Layer: 0
+  m_Name: 'Start: Narrative'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +204,7 @@ GameObject:
   - 4: {fileID: 427338}
   - 114: {fileID: 11494704}
   m_Layer: 0
-  m_Name: 'Start: Narrative'
+  m_Name: 'Interact: Don Juan'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +253,7 @@ GameObject:
   - 4: {fileID: 469784}
   - 114: {fileID: 11412622}
   m_Layer: 0
-  m_Name: END
+  m_Name: 'End: Part 1'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,8 +500,8 @@ Transform:
   m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 470110}
-  m_RootOrder: 0
+  m_Father: {fileID: 455044}
+  m_RootOrder: 1
 --- !u!4 &431606
 Transform:
   m_ObjectHideFlags: 1
@@ -576,6 +608,8 @@ Transform:
   m_LocalPosition: {x: -4.977099, y: -0.36602533, z: 1.1015625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 470482}
+  - {fileID: 427338}
   - {fileID: 469174}
   m_Father: {fileID: 480576}
   m_RootOrder: 3
@@ -638,7 +672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!4 &469784
 Transform:
   m_ObjectHideFlags: 1
@@ -661,7 +695,7 @@ Transform:
   m_LocalPosition: {x: -4.977099, y: -0.36602533, z: 1.1015625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 427338}
+  - {fileID: 480790}
   - {fileID: 496214}
   - {fileID: 418280}
   - {fileID: 490116}
@@ -681,6 +715,18 @@ Transform:
   - {fileID: 469784}
   m_Father: {fileID: 480576}
   m_RootOrder: 2
+--- !u!4 &470482
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455044}
+  m_RootOrder: 0
 --- !u!4 &480576
 Transform:
   m_ObjectHideFlags: 1
@@ -696,6 +742,18 @@ Transform:
   - {fileID: 470110}
   - {fileID: 455044}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &480790
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
   m_RootOrder: 0
 --- !u!4 &490116
 Transform:
@@ -740,6 +798,25 @@ MonoBehaviour:
   nextObjective: {fileID: 11454484}
   objectiveIndex: 0
   textBoxDisplayed: 0
+--- !u!114 &11403592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Start: Narrative'
+  Description: 
+  Kind: 0
+  Status: 0
+  OnReach: 0100000000000000
+  nextObjective: {fileID: 11414590}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
 --- !u!114 &11408978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -771,10 +848,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: END
-  Description: THIS IS THE END!
+  Name: 'End: Part 1'
+  Description: 
   Kind: 0
-  Status: 0
+  Status: 1
   OnReach: 0200000004000000
   nextObjective: {fileID: 0}
   objectiveIndex: 0
@@ -819,6 +896,25 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &11416682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Start: Narrative (2)'
+  Description: Bumalik sa palasyo.
+  Kind: 0
+  Status: 0
+  OnReach: 010000000000000002000000
+  nextObjective: {fileID: 11494704}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
 --- !u!114 &11419016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -929,8 +1025,8 @@ MonoBehaviour:
   Description: Bumalik sa bahay ng Ermitanyo.
   Kind: 1
   Status: 0
-  OnReach: 000000000100000002000000
-  nextObjective: {fileID: 11412622}
+  OnReach: 00000000010000000200000004000000
+  nextObjective: {fileID: 0}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11438758
@@ -949,7 +1045,7 @@ MonoBehaviour:
   - {fileID: 182564}
   - {fileID: 116170}
   currentPartIndex: 1
-  currentObjective: {fileID: 11414590}
+  currentObjective: {fileID: 11484342}
   currentObjectiveIndex: 0
   objectivePanelFader: {fileID: 11444632}
   fadeDelay: 10
@@ -1232,12 +1328,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Start: Narrative'
-  Description: 
-  Kind: 0
+  Name: 'Interact: Don Juan'
+  Description: Kausapin si Don Juan.
+  Kind: 1
   Status: 0
-  OnReach: 0100000000000000
-  nextObjective: {fileID: 11414590}
+  OnReach: 010000000000000002000000
+  nextObjective: {fileID: 0}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11498434

@@ -90,5 +90,12 @@ public class ObjectiveManager : MonoBehaviour {
 	public void nextPart(){
 		currentPartIndex++;
 		setPartObjectives();
+
+		if(currentObjective != null){
+			if(currentObjective.Description != "")
+				displayCurrentObjective();
+
+			this.printCurrentObjective();
+		}
 	}
 }
