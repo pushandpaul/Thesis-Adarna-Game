@@ -52,9 +52,9 @@ public class FollowTarget : MonoBehaviour {
 		anim.SetFloat("Speed", distanceFromLimit);
 
 		if(currentDistance >= distanceLimit && tempScale != transform.localScale.x){
-			Debug.Log("Position before flip: " + transform.position.ToString());
+			//Debug.Log("Position before flip: " + transform.position.ToString());
 			transform.localScale = new Vector3(tempScale, transform.localScale.y, transform.localScale.z);
-			Debug.Log("Position after flip: " + transform.position.ToString());
+			//Debug.Log("Position after flip: " + transform.position.ToString());
 		}
 
 	}

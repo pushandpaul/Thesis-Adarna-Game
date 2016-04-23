@@ -26,10 +26,10 @@ public class DialogueController : MonoBehaviour {
 	public void startDialogue(){
 		player.disablePlayerMovement();
 		if(centerCam)
-			camera.centerCam();
+			camera.centerCam(centerCam);
 
 		if(zoomCam)
-			camera.zoomCam();
+			camera.controlZoom(zoomCam);
 
 		objectivePanelFader.canvasGroup.alpha = 0;
 		//objectiveTextBox.disableTextBox();
@@ -40,10 +40,10 @@ public class DialogueController : MonoBehaviour {
 	public void endDialogue(){
 		player.enablePlayerMovement();
 		if(centerCam)
-			camera.uncenterCam();
+			camera.centerCam(false);
 
 		if(zoomCam)
-			camera.unzoomCam();
+			camera.controlZoom(false);
 		
 		if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox) && !objectiveManager.currentObjective.textBoxDisplayed){
 			Debug.Log("Allowed fade in");

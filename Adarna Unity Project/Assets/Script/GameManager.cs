@@ -25,8 +25,7 @@ public class GameManager : MonoBehaviour {
 		sceneObjects = new List<SceneObjects>();
 		Followers = new List<GameObject>();
 	}
-
-
+		
 	public void updateSceneList(){
 		bool found = false;
 
@@ -136,5 +135,18 @@ public class GameManager : MonoBehaviour {
 		foreach(GameObject myFollower in Followers){
 			Destroy(myFollower);
 		}
+	}
+
+	public bool removeFollower(string Name){
+		foreach(GameObject myFollower in Followers){
+			if(myFollower.name == Name){
+				myFollower.GetComponent<FollowTarget>().enabled = false;
+				Followers.Remove(myFollower);
+				Destroy(myFollower);
+				return true;
+				break;
+			}
+		}
+		return false;
 	}
 }

@@ -31,17 +31,11 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 	void Start() {
-		
-		int j = 0;
-		int i = 0;
-		float xPosition = 0f;
-		GameObject[] LightHolder; 
 	
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
-		LightHolder = GameObject.FindGameObjectsWithTag("Character Light");
 
 		//Level Initialization
 		if(objectData.Length > 0){
@@ -49,11 +43,7 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		changeTimeOfDay(gameManager.timeOfDay);
-
-		if(gameManager.timeOfDay == 'd' || location.isInterior){
-			foreach(GameObject lightHolder in LightHolder)
-				lightHolder.GetComponent<Light>().intensity = 0f;
-		}
+		characterLightSwitch();
 
 		//Player Initialization
 		if(playerPos == null ||!playerPos.loadThis){
@@ -85,22 +75,15 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		//Follower Initialization
-		if(gameManager.Followers != null){
-			foreach(GameObject follower in gameManager.Followers){
-				j += 3;
-				i += 2;
-				Debug.Log(player.transform.localScale.ToString());
-				follower.GetComponent<FollowTarget>().thisConstructor(player.moveSpeed, j, player.transform, player.transform.localScale);
-				if(player.transform.localScale.x < 0)
-					xPosition = player.transform.position.x + i;
-				else if(player.transform.localScale.x > 0)
-					xPosition = player.transform.position.x - i;
-				follower.transform.position = new Vector3(xPosition, follower.transform.position.y, follower.transform.position.z);
-			}
-		}
+		setFollowerPositions();
 
 		//Change character avatar
 		instantChangePlayer(gameManager.currentCharacterName);
+	}
+
+	public void unclonedInstace(GameObject toInstantiate, Vector3 position){
+		GameObject spawedObject = (GameObject)Instantiate(toInstantiate, position, Quaternion.Euler(0,0,0));
+		spawedObject.name = toInstantiate.name;
 	}
 
 	public void changeTimeOfDay(char timeOfDay){
@@ -122,8 +105,21 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	public void changePlayer(Transform newPlayer){
-		newPlayer = GameObject.Find (newPlayer.name).transform;
+	void characterLightSwitch(){
+		GameObject[] LightHolder = GameObject.FindGameObjectsWithTag("Character Light");
+		if(gameManager.timeOfDay == 'd' || location.isInterior){
+			foreach(GameObject lightHolder in LightHolder)
+				lightHolder.GetComponent<Light>().intensity = 0f;
+		}
+		else if(gameManager.timeOfDay == 'n'){
+			foreach(GameObject lightHolder in LightHolder)
+				lightHolder.GetComponent<Light>().intensity = 0f;
+		}
+	}
+
+	public void changePlayer(Transform newPlayer, bool inScene){
+		if(!inScene)
+			newPlayer = GameObject.Find (newPlayer.name).transform;
 		if(newPlayer.tag == "Playable Character"){
 			PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 			playerSwitch.actualSwitch(newPlayer);
@@ -133,10 +129,22 @@ public class LevelManager : MonoBehaviour {
 			Debug.Log("Character trying to switch is not playable.");
 	}
 
+	public void changePlayer(Transform newPlayer, bool inScene, Transform holderTransfer){
+		if(!inScene)
+			newPlayer = GameObject.Find (newPlayer.name).transform;
+		if(newPlayer.tag == "Playable Character"){
+			PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
+			playerSwitch.actualSwitch(newPlayer, holderTransfer);
+		}
+
+		else
+			Debug.Log("Character trying to switch is not playable.");
+	}
+
 	void instantChangePlayer(string newPlayerName){
 		PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 		Transform newPlayer = null;
-		if(newPlayerName != "Default"){
+		if(newPlayerName != "Don Juan"){
 			foreach(Transform playableCharacter in gameManager.playableCharacters){
 				if(newPlayerName == playableCharacter.name){
 					newPlayer = (Transform) Instantiate(playableCharacter, player.transform.position, player.transform.rotation);
@@ -151,6 +159,41 @@ public class LevelManager : MonoBehaviour {
 	public void savePosition(){
 		if(playerPos != null)
 			playerPos.saveInBetweenData();
+	}
+
+	void setFollowerPositions(){
+		int j = 0;
+		int i = 0;
+		float xPosition = 0f;
+		if(gameManager.Followers != null){
+			foreach(GameObject follower in gameManager.Followers){
+				j += 3;
+				i += 2;
+				Debug.Log(player.transform.localScale.ToString());
+				follower.GetComponent<FollowTarget>().thisConstructor(player.moveSpeed, j, player.transform, player.transform.localScale);
+				if(player.transform.localScale.x < 0)
+					xPosition = player.transform.position.x + i;
+				else if(player.transform.localScale.x > 0)
+					xPosition = player.transform.position.x - i;
+				follower.transform.position = new Vector3(xPosition, follower.transform.position.y, follower.transform.position.z);
+			}
+		}
+	}
+
+	void setFollowerDistances(){
+		int i = 0;
+		if(gameManager.Followers != null){
+			foreach(GameObject follower in gameManager.Followers){
+				i += 3;
+				follower.GetComponent<FollowTarget>().distanceLimit = i;
+			}
+		}
+	}
+
+	public void removeFollower(GameObject follower){
+		if(gameManager.removeFollower(follower.name))
+			setFollowerDistances();
+			
 	}
 		
 }

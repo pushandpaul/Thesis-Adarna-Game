@@ -79,18 +79,14 @@ public class CameraController : MonoBehaviour {
 		transform.position = new Vector3(x,y, transform.position.z);
 	}
 
-	public void centerCam(){
-		isCenter = true;
+	public void controlZoom(bool isZoomed){
+		this.isZoomed = isZoomed;
 	}
 
-	public void uncenterCam(){
-		isCenter = false;
+	public void controlZoom(float zoomSize){
+		this.zoomSize = zoomSize;
 	}
-
-	public void zoomCam(){
-		isZoomed =  true;
-	}
-	public void unzoomCam(){
-		isZoomed =  false;
+	public void centerCam(bool isCenter){
+		this.isCenter = isCenter;
 	}
 }
