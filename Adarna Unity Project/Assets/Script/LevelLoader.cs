@@ -46,13 +46,11 @@ public class LevelLoader : MonoBehaviour {
 	private void saveBeforeUnload(){
 		LevelManager levelManager = FindObjectOfType<LevelManager>();
 		GameManager gameManager = FindObjectOfType<GameManager>();
+		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
 		if(levelManager != null){
 			if(FindObjectsOfType<ObjectData>().Length > 0)
 				gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
-			if(FindObjectsOfType<FollowTarget>().Length > 0){
-				FollowTarget[] followers = FindObjectsOfType<FollowTarget>();
-				gameManager.findFollowers(followers);
-			}
+			followerManager.updateFollowerList();
 		}
 	}
 

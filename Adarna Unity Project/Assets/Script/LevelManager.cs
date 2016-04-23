@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour {
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
-
+		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
 		//Level Initialization
 		if(objectData.Length > 0){
 			gameManager.loadCoordinates(objectData);
@@ -74,9 +74,8 @@ public class LevelManager : MonoBehaviour {
 			playerPos.clearInBetweenData();
 		}
 
-		//Follower Initialization
-		setFollowerPositions();
-
+		if(followerManager != null)
+			followerManager.setActiveFollowers();
 		//Change character avatar
 		instantChangePlayer(gameManager.currentCharacterName);
 	}
@@ -160,40 +159,4 @@ public class LevelManager : MonoBehaviour {
 		if(playerPos != null)
 			playerPos.saveInBetweenData();
 	}
-
-	void setFollowerPositions(){
-		int j = 0;
-		int i = 0;
-		float xPosition = 0f;
-		if(gameManager.Followers != null){
-			foreach(GameObject follower in gameManager.Followers){
-				j += 3;
-				i += 2;
-				Debug.Log(player.transform.localScale.ToString());
-				follower.GetComponent<FollowTarget>().thisConstructor(player.moveSpeed, j, player.transform, player.transform.localScale);
-				if(player.transform.localScale.x < 0)
-					xPosition = player.transform.position.x + i;
-				else if(player.transform.localScale.x > 0)
-					xPosition = player.transform.position.x - i;
-				follower.transform.position = new Vector3(xPosition, follower.transform.position.y, follower.transform.position.z);
-			}
-		}
-	}
-
-	void setFollowerDistances(){
-		int i = 0;
-		if(gameManager.Followers != null){
-			foreach(GameObject follower in gameManager.Followers){
-				i += 3;
-				follower.GetComponent<FollowTarget>().distanceLimit = i;
-			}
-		}
-	}
-
-	public void removeFollower(GameObject follower){
-		if(gameManager.removeFollower(follower.name))
-			setFollowerDistances();
-			
-	}
-		
 }

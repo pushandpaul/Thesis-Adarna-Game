@@ -19,15 +19,13 @@ public class ExitManager : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other){
+		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
 		if(other.tag == "Player"){
 			LevelManager.isDoor = false;
 			LevelManager.exitInRight = isRight;
 			if(FindObjectsOfType<ObjectData>().Length > 0)
 				gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
-			if(FindObjectsOfType<FollowTarget>().Length > 0){
-				FollowTarget[] followers = FindObjectsOfType<FollowTarget>();
-				gameManager.findFollowers(followers);
-			}
+			followerManager.updateFollowerList();
 
 			StartCoroutine(ChangeLevel());
 		}

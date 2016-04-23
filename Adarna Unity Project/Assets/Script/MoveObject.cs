@@ -10,8 +10,8 @@ public class MoveObject : MonoBehaviour {
 	public Transform defaultToTransform;
 	//duration is in seconds
 
-	public void punchMove(Vector3 moveTo){
-		this.transform.localPosition = moveTo;
+	public void punchMove(Vector3 moveTo, Transform toMove){
+		toMove.position = moveTo;
 	}
 
 	public void moveToPositionDefault(float duration){ //uses value from the public variable Target (for animation event)

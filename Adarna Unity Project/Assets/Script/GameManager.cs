@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour {
 	public string playerIdleState;
 
 	private LevelManager levelManager;
-	public List <GameObject> Followers;
+	public List <FollowTarget> Followers;
+	public List <string> FollowerNames;
 
 	public Transform[] playableCharacters;
 	public string currentCharacterName;
@@ -23,7 +24,12 @@ public class GameManager : MonoBehaviour {
 		//playerIdleState = "Idle";
 		DontDestroyOnLoad(this);
 		sceneObjects = new List<SceneObjects>();
-		Followers = new List<GameObject>();
+		//Followers = new List<FollowTarget>();
+		FollowerNames = new List<string>();
+
+		foreach(FollowTarget follower in Followers){
+			FollowerNames.Add(follower.name);
+		}
 	}
 		
 	public void updateSceneList(){
@@ -123,7 +129,7 @@ public class GameManager : MonoBehaviour {
 		return found;
 	}
 
-	public void findFollowers(FollowTarget[] follower){
+	/*public void findFollowers(FollowTarget[] follower){
 		Followers.Clear();
 		for(int i = 0; i < follower.Length; i++){
 			DontDestroyOnLoad(follower[i].gameObject);
@@ -132,13 +138,13 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void removeFollowers(){
-		foreach(GameObject myFollower in Followers){
+		foreach(FollowTarget myFollower in Followers){
 			Destroy(myFollower);
 		}
 	}
 
 	public bool removeFollower(string Name){
-		foreach(GameObject myFollower in Followers){
+		foreach(FollowTarget myFollower in Followers){
 			if(myFollower.name == Name){
 				myFollower.GetComponent<FollowTarget>().enabled = false;
 				Followers.Remove(myFollower);
@@ -148,5 +154,5 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 		return false;
-	}
+	}*/
 }
