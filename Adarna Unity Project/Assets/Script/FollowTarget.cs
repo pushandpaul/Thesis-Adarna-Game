@@ -14,10 +14,12 @@ public class FollowTarget : MonoBehaviour {
 	private float reachBeforeFlip;
 
 	private Animator anim;
+	private NPCInteraction npc;
 
 	void Awake () {
 		target = FindObjectOfType<PlayerController>().transform;
 		anim = transform.GetComponentInChildren<Animator>();
+		npc = GetComponent<NPCInteraction>();
 		defaultScaleX = Mathf.Abs(target.localScale.x);
 		tempScale = defaultScaleX;
 	}
@@ -41,10 +43,12 @@ public class FollowTarget : MonoBehaviour {
 			if(target.localScale.x > 0){
 				tempDistanceLimit = -distanceLimit;
 				tempScale = defaultScaleX;
+				npc.facingRight = true;
 			}
 			else if(target.localScale.x < 0){
 				tempDistanceLimit = distanceLimit;
 				tempScale = -defaultScaleX;
+				npc.facingRight = false;
 			}
 			Follow(tempDistanceLimit);
 		}

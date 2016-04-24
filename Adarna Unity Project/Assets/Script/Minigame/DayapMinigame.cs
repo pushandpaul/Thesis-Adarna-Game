@@ -63,7 +63,7 @@ public class DayapMinigame : MonoBehaviour {
 				dayapUI[dayapCount].GetComponent<UIFader>().FadeTo(1f, 0.5f);
 				//player.camera.zoomCam();
 				//player.camera.centerCam();
-				player.GetComponentInChildren<Animator>().Play("Give Item");
+				player.GetComponentInChildren<Animator>().Play("Sugatan Sarili with Dayap");
 				if(itemToGive.GetComponent<SpriteRenderer>().sprite != dayap)
 					itemToGive.setItem(dayap);
 			}

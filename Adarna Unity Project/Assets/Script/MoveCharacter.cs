@@ -18,16 +18,17 @@ public class MoveCharacter : MonoBehaviour {
 		bool animatorFound = false;
 		Animator anim = character.GetComponentInChildren<Animator>();
 
-		if(anim != null)
+		if (anim != null)
 			animatorFound = true;
 		else
 			animatorFound = false;
 		
 		while(Time.time <= endTime){
-			if(animatorFound)
-				anim.SetFloat("Speed", Mathf.Abs(target.x - character.localPosition.x));
 			float t = (Time.time - startTime)/duration;
 			character.position = Vector3.Lerp(current, target, t);
+			if (animatorFound) {
+				anim.SetFloat ("Speed", (int) Mathf.Abs (target.x - character.localPosition.x));
+			}
 			yield return null;
 		}
 	}
