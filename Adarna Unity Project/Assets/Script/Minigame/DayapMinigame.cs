@@ -61,11 +61,10 @@ public class DayapMinigame : MonoBehaviour {
 				increaseSize();
 				dayapCount--;
 				dayapUI[dayapCount].GetComponent<UIFader>().FadeTo(1f, 0.5f);
-				//player.camera.zoomCam();
-				//player.camera.centerCam();
+				player.camera.zoomInZoomOut(2.5f, 3, true);
 				player.GetComponentInChildren<Animator>().Play("Sugatan Sarili with Dayap");
-				if(itemToGive.GetComponent<SpriteRenderer>().sprite != dayap)
-					itemToGive.setItem(dayap);
+				//if(itemToGive.GetComponent<SpriteRenderer>().sprite != dayap)
+					//itemToGive.setItem(dayap);
 			}
 			else if(dayapCount == 0 && !dialoguePlayed){
 				flowchart.ExecuteBlock("Ubos na Dayap");

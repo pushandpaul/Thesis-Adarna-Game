@@ -11,6 +11,7 @@ public class DialogueController : MonoBehaviour {
 	private ObjectiveManager objectiveManager;
 	private TextBoxManager objectiveTextBox;
 	private UIFader objectivePanelFader;
+	private FollowTarget[] followers;
 
 	public bool zoomCam;
 	public bool centerCam;
@@ -20,10 +21,18 @@ public class DialogueController : MonoBehaviour {
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		objectiveTextBox = objectiveManager.GetComponent<TextBoxManager>();
 		this.objectivePanelFader = objectiveManager.objectivePanelFader;
-
 	}
 
 	public void startDialogue(){
+		followers = FindObjectsOfType<FollowTarget>();
+
+		if(followers != null || followers.Length > 0){
+			foreach(FollowTarget follower in followers){
+				follower.isFollowing = false;
+				follower.anim.SetFloat("Speed", 0f);
+			}
+		}
+			
 		player.disablePlayerMovement();
 		if(centerCam)
 			camera.centerCam(centerCam);
@@ -39,6 +48,15 @@ public class DialogueController : MonoBehaviour {
 
 	public void endDialogue(){
 		player.enablePlayerMovement();
+
+		followers = FindObjectsOfType<FollowTarget>();
+
+		if(followers != null || followers.Length > 0){
+			foreach(FollowTarget follower in followers){
+				follower.isFollowing = true;
+			}
+		}
+
 		if(centerCam)
 			camera.centerCam(false);
 

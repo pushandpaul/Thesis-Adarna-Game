@@ -89,4 +89,17 @@ public class CameraController : MonoBehaviour {
 	public void centerCam(bool isCenter){
 		this.isCenter = isCenter;
 	}
+
+	public void zoomInZoomOut(float zoomSize, int delay, bool isCenter){
+		this.zoomSize = zoomSize;
+		StartCoroutine(startZoomUnzoom(delay, isCenter));
+	}
+
+	IEnumerator startZoomUnzoom(int delay, bool isCenter){
+		controlZoom(true);
+		centerCam(isCenter);
+		yield return new WaitForSeconds(delay);
+		controlZoom(false);
+		centerCam(!isCenter);
+	}
 }

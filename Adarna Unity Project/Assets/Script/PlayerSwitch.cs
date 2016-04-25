@@ -6,6 +6,8 @@ public class PlayerSwitch : MonoBehaviour {
 	private PlayerController playerHolder;
 	public Transform characterContainer;
 
+	private bool toInitialize = false;
+
 	public void actualSwitch(Transform newPlayer){ 
 		//camera follows another player, previous player stays in the scene - used for instances of actual switching players
 		playerHolder = FindObjectOfType<PlayerController>();
@@ -16,8 +18,11 @@ public class PlayerSwitch : MonoBehaviour {
 
 		currentPlayer.transform.parent = characterHolder;
 		currentPlayer.transform.localPosition = Vector3.zero;
+		currentPlayer.tag = "Playable Character";
+		currentPlayer.transform.SetAsFirstSibling();
 		holderTransform.position = new Vector3(newPlayer.position.x, holderTransform.position.y, holderTransform.position.z);
 
+		toInitialize = false;
 		Switch(newPlayer, currentPlayer);
 	}
 
@@ -30,8 +35,11 @@ public class PlayerSwitch : MonoBehaviour {
 		holderTransfer.position = holderTransform.position;
 		currentPlayer.transform.parent = holderTransfer;
 		currentPlayer.transform.localPosition = Vector3.zero;
+		currentPlayer.tag = "Playable Character";
+		currentPlayer.transform.SetAsFirstSibling();
 		holderTransform.position = new Vector3(newPlayer.position.x, holderTransform.position.y, holderTransform.position.z);
 
+		toInitialize = false;
 		Switch(newPlayer, currentPlayer);
 	}
 
@@ -42,11 +50,13 @@ public class PlayerSwitch : MonoBehaviour {
 
 		Destroy(currentPlayer);
 
+		toInitialize = true;
 		Switch(newPlayer, currentPlayer);
 	}
 
 	void Switch(Transform newPlayer, GameObject currentPlayer){
 		Vector3 backupHolderScale = playerHolder.transform.localScale;
+		Debug.Log(backupHolderScale);
 		GameManager gameManager = FindObjectOfType<GameManager>();
 		SpriteRenderer[] Current = currentPlayer.GetComponentsInChildren<SpriteRenderer>(true);
 		SpriteRenderer[] New = newPlayer.GetComponentsInChildren<SpriteRenderer>(true);
@@ -63,17 +73,20 @@ public class PlayerSwitch : MonoBehaviour {
 		playerHolder.anim.SetBool("Ground", true);
 
 		playerHolder.anim = newPlayer.GetComponent<Animator>();
+		playerHolder.item = newPlayer.GetComponentInChildren<ItemToGive>(true);
 
 		if(newPlayer.parent != null){
 			if(newPlayer.parent.localScale.x > 0){
 				playerHolder.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
-				backupHolderScale = new Vector3(Mathf.Abs(backupHolderScale.x), backupHolderScale.y, backupHolderScale.z);
+				if(!toInitialize)
+					backupHolderScale = new Vector3(Mathf.Abs(backupHolderScale.x), backupHolderScale.y, backupHolderScale.z);
 				Debug.Log("New player scale is greater than 0");
 			}
 
 			else if(newPlayer.parent.localScale.x < 0){
 				playerHolder.transform.localScale = new Vector3(-0.5f, 0.5f, 1f);
-				backupHolderScale = new Vector3(-(Mathf.Abs(backupHolderScale.x)), backupHolderScale.y, backupHolderScale.z);
+				if(!toInitialize)
+					backupHolderScale = new Vector3(-(Mathf.Abs(backupHolderScale.x)), backupHolderScale.y, backupHolderScale.z);
 				Debug.Log("New player scale is less than 0");
 			}
 		}
@@ -87,7 +100,7 @@ public class PlayerSwitch : MonoBehaviour {
 		newPlayer.tag = "Character Controlling";
 
 		playerHolder.transform.localScale = backupHolderScale;
-
+		playerHolder.initState();
 		gameManager.currentCharacterName = newPlayer.name;
 	}
 }

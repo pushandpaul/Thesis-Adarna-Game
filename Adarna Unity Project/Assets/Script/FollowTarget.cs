@@ -5,7 +5,9 @@ public class FollowTarget : MonoBehaviour {
 
 	public Transform target;
 	public float speed = 5f;
+	public bool grounded = true;
 	public float distanceLimit;
+	private float distanceFromLimit;
 	public bool isFollowing = true;
 
 	private float defaultScaleX;
@@ -13,7 +15,7 @@ public class FollowTarget : MonoBehaviour {
 	private bool allowFlip;
 	private float reachBeforeFlip;
 
-	private Animator anim;
+	public Animator anim;
 	private NPCInteraction npc;
 
 	void Awake () {
@@ -26,15 +28,16 @@ public class FollowTarget : MonoBehaviour {
 		
 	void FixedUpdate () {
 		float tempDistanceLimit = 0f;
-		float distanceFromLimit = 0f;
+		distanceFromLimit = 0f;
 		float currentDistance = 0f;
 
 		distanceFromLimit = Mathf.Abs(target.position.x - transform.position.x) - distanceLimit;
 		currentDistance = Mathf.Abs(target.position.x - transform.position.x);
 
-		if(!isFollowing)
+		if(!isFollowing){
 			return;
-
+		}
+			
 		if (distanceFromLimit < 0.1f){
 			//allowFlip = true;
 		}
@@ -54,6 +57,7 @@ public class FollowTarget : MonoBehaviour {
 		}
 
 		anim.SetFloat("Speed", distanceFromLimit);
+		anim.SetBool("Ground", grounded);
 
 		if(currentDistance >= distanceLimit && tempScale != transform.localScale.x){
 			//Debug.Log("Position before flip: " + transform.position.ToString());

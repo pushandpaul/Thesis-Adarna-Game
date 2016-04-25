@@ -11,6 +11,7 @@ public class ItemToGive : MonoBehaviour {
 		SpriteRenderer myRenderer = this.GetComponent<SpriteRenderer>();
 		myRenderer.enabled = true;
 		myRenderer.sprite = item;
+		Debug.Log("This is my item: " + myRenderer.sprite.name);
 	}
 
 	public void disableItem(){

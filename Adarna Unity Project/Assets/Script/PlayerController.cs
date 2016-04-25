@@ -30,9 +30,10 @@ public class PlayerController : MonoBehaviour {
 	private GameManager gameManager;
 	// Use this for initialization
 	void Start () {
-		anim = GetComponentInChildren<Animator>();
 		camera = FindObjectOfType<CameraController>();
 		gameManager = FindObjectOfType<GameManager> ();
+		anim = GetComponentInChildren<Animator>();
+		//item = GetComponentInChildren<ItemToGive>(true);
 
 		scaleX = Mathf.Abs(transform.localScale.x);
 		scaleY = transform.localScale.y;
@@ -46,17 +47,7 @@ public class PlayerController : MonoBehaviour {
 		else if(transform.localScale.x > 0)
 			facingRight = true;
 
-		if(gameManager != null){
-			Debug.Log ("Attempt to play animation: " + gameManager.playerIdleState + " player state.");
-
-			anim.Play (gameManager.playerIdleState);
-			if(gameManager.currentHeldItem != null)
-				item.setItem(gameManager.currentHeldItem);
-			if (gameManager.currentHeldItem == null) {
-				setPlayerSate ("Idle");
-
-			}
-		}
+		initState();
 	}
 
 	void FixedUpdate (){
@@ -135,8 +126,18 @@ public class PlayerController : MonoBehaviour {
 		anim.Play (state);
 	}
 
-	public void Init(){
-		//Initialize Here (Add in the future);
+	public void initState(){
+		if(gameManager != null){
+			Debug.Log ("Attempt to play animation: " + gameManager.playerIdleState + " player state.");
+
+			anim.Play (gameManager.playerIdleState);
+			if(gameManager.currentHeldItem != null)
+				item.setItem(gameManager.currentHeldItem);
+			if (gameManager.currentHeldItem == null) {
+				setPlayerSate ("Idle");
+
+			}
+		}
 	}
 }
 

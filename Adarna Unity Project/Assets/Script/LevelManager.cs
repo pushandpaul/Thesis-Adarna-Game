@@ -146,7 +146,9 @@ public class LevelManager : MonoBehaviour {
 		if(newPlayerName != "Don Juan"){
 			foreach(Transform playableCharacter in gameManager.playableCharacters){
 				if(newPlayerName == playableCharacter.name){
-					newPlayer = (Transform) Instantiate(playableCharacter, player.transform.position, player.transform.rotation);
+					newPlayer = GameObject.Find(newPlayerName).transform;
+					newPlayer.position = player.transform.position;
+					//(Transform) Instantiate(playableCharacter, player.transform.position, player.transform.rotation);
 					newPlayer.name = newPlayerName;
 					playerSwitch.instantSwitch(newPlayer);
 					break;

@@ -84,7 +84,7 @@ public class NPCInteraction : MonoBehaviour {
 		}
 	}
 
-	public void flipCharacter(bool _facingRight) {
+	/*public void flipCharacter(bool _facingRight) {
 		if(facingRight != _facingRight){
 			Debug.Log ("FACING RIGHT != _FACING RIGHT");
 			GetComponent<CircleCollider2D>().offset = new Vector2(colliderOffsetX, colliderOffsetY);
@@ -100,7 +100,7 @@ public class NPCInteraction : MonoBehaviour {
 			//facingPlayer == true;
 		} else
 			transform.localScale = new Vector3(scaleX, scaleY, 1f);
-	}
+	}*/
 
 	void startDialogue(string toSend){
 		bubble.displayBubble (false);
