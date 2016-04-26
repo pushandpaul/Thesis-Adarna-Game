@@ -140,6 +140,37 @@ public class LevelManager : MonoBehaviour {
 			Debug.Log("Character trying to switch is not playable.");
 	}
 
+	public void changeVersion(Transform newPlayer, GameObject currentVersion, bool inScene, bool isNPC, Transform holderTransfer) {
+		if (!inScene)
+			newPlayer = GameObject.Find (newPlayer.name).transform;
+		//ChangePlayerVersion changePlayerVersion = FindObjectOfType<ChangePlayerVersion> ();
+		//changePlayerVersion.actualSwitch (newPlayer, currentVersion, holderTransfer);
+
+		Destroy(currentVersion);
+
+		float scaleX = newPlayer.localScale.x;
+		float scaleY = newPlayer.localScale.y;
+		float rotationZ = 360 - newPlayer.rotation.eulerAngles.z;
+		newPlayer.parent = holderTransfer;
+		newPlayer.localPosition = Vector3.zero;
+
+		if(holderTransfer.localScale.x < 0)
+			newPlayer.localScale = new Vector3(-scaleX, scaleY, 1f);
+		else 
+			newPlayer.localScale = new Vector3(scaleX, scaleY, 1f);
+			
+		if (newPlayer.localRotation.z > 0)
+			newPlayer.localRotation = Quaternion.Euler (0, 0, -rotationZ);
+		else if (newPlayer.localRotation.z < 0)
+			newPlayer.localRotation = Quaternion.Euler (0, 0, rotationZ);
+		if (isNPC) {
+			SpriteRenderer[] New = newPlayer.GetComponentsInChildren<SpriteRenderer> (true);
+			foreach (SpriteRenderer _new in New) {
+				_new.sortingLayerName = "NPC";
+			}
+		}
+	}
+
 	void instantChangePlayer(string newPlayerName){
 		PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 		Transform newPlayer = null;
