@@ -53,8 +53,12 @@ public class NPCInteraction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () { 
 		if (anObjective) {
-			if (objectiveMapper.checkIfCurrent ())
-				bubble.displayBubble (true);
+			if (objectiveMapper.checkIfCurrent ()) {
+				if (Camera.main.WorldToViewportPoint (bubble.transform.position).x < 0 ||
+				   Camera.main.WorldToViewportPoint (bubble.transform.position).x > 1) {
+					bubble.displayBubble (true);
+				}
+			}
 		}
 
 		if(allowFlip){

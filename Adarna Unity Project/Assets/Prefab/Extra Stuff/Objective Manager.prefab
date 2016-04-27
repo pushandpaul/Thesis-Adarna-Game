@@ -16,6 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &112552
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 475588}
+  - 114: {fileID: 11497030}
+  m_Layer: 0
+  m_Name: 'Start: Narrative (Forest)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &113618
 GameObject:
   m_ObjectHideFlags: 1
@@ -73,7 +89,7 @@ GameObject:
   - 4: {fileID: 496214}
   - 114: {fileID: 11414590}
   m_Layer: 0
-  m_Name: 'Talk: Haring Fernando'
+  m_Name: 'Talk: Haring Fernando (2-1)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +285,7 @@ GameObject:
   - 4: {fileID: 431606}
   - 114: {fileID: 11419016}
   m_Layer: 0
-  m_Name: 'Start: Narrative (Forest)'
+  m_Name: 'Start: Narrative (Near Berbanya)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,6 +454,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &193856
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 410116}
+  - 114: {fileID: 11449822}
+  m_Layer: 0
+  m_Name: 'Talk: Haring Fernando'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &195552
 GameObject:
   m_ObjectHideFlags: 1
@@ -454,6 +486,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &410116
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.78924, y: 4.280689, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
+  m_RootOrder: 1
 --- !u!4 &412490
 Transform:
   m_ObjectHideFlags: 1
@@ -512,8 +556,8 @@ Transform:
   m_LocalPosition: {x: 23.762316, y: -7.4549556, z: -1.1015625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 470110}
-  m_RootOrder: 4
+  m_Father: {fileID: 455044}
+  m_RootOrder: 2
 --- !u!4 &432272
 Transform:
   m_ObjectHideFlags: 1
@@ -610,6 +654,8 @@ Transform:
   m_Children:
   - {fileID: 470482}
   - {fileID: 427338}
+  - {fileID: 431606}
+  - {fileID: 496214}
   - {fileID: 469174}
   m_Father: {fileID: 480576}
   m_RootOrder: 3
@@ -672,7 +718,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!4 &469784
 Transform:
   m_ObjectHideFlags: 1
@@ -696,10 +742,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480790}
-  - {fileID: 496214}
+  - {fileID: 410116}
   - {fileID: 418280}
   - {fileID: 490116}
-  - {fileID: 431606}
+  - {fileID: 475588}
   - {fileID: 456164}
   - {fileID: 412490}
   - {fileID: 468076}
@@ -727,6 +773,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 455044}
   m_RootOrder: 0
+--- !u!4 &475588
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.762316, y: -7.4549556, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
+  m_RootOrder: 4
 --- !u!4 &480576
 Transform:
   m_ObjectHideFlags: 1
@@ -777,8 +835,8 @@ Transform:
   m_LocalPosition: {x: 16.78924, y: 4.280689, z: -1.1015625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 470110}
-  m_RootOrder: 1
+  m_Father: {fileID: 455044}
+  m_RootOrder: 3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -814,7 +872,7 @@ MonoBehaviour:
   Kind: 0
   Status: 0
   OnReach: 0100000000000000
-  nextObjective: {fileID: 11414590}
+  nextObjective: {fileID: 11449822}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11408978
@@ -867,12 +925,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Talk: Haring Fernando'
-  Description: Magpaalam kay Haring Fernando
+  Name: 'Talk: Haring Fernando (2-1)'
+  Description: Puntahan at kausapin si Haring Fernando sa kanyang kwarto.
   Kind: 1
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 11473872}
+  nextObjective: {fileID: 0}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11415462
@@ -926,12 +984,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Start: Narrative (Forest)'
+  Name: 'Start: Narrative (Near Berbanya)'
   Description: 
   Kind: 0
   Status: 0
   OnReach: 0000000001000000
-  nextObjective: {fileID: 11426296}
+  nextObjective: {fileID: 11414590}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11421438
@@ -1044,8 +1102,8 @@ MonoBehaviour:
   - {fileID: 174688}
   - {fileID: 182564}
   - {fileID: 116170}
-  currentPartIndex: 1
-  currentObjective: {fileID: 11463610}
+  currentPartIndex: 2
+  currentObjective: {fileID: 11424876}
   currentObjectiveIndex: 0
   objectivePanelFader: {fileID: 11444632}
   fadeDelay: 10
@@ -1089,6 +1147,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 0}
+--- !u!114 &11449822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Talk: Haring Fernando'
+  Description: Magpaalam kay Haring Fernando
+  Kind: 1
+  Status: 0
+  OnReach: 010000000000000002000000
+  nextObjective: {fileID: 11473872}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
 --- !u!114 &11451784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1266,7 +1343,7 @@ MonoBehaviour:
   Kind: 0
   Status: 0
   OnReach: 0000000001000000
-  nextObjective: {fileID: 11419016}
+  nextObjective: {fileID: 11497030}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11484342
@@ -1333,7 +1410,26 @@ MonoBehaviour:
   Kind: 1
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 0}
+  nextObjective: {fileID: 11419016}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
+--- !u!114 &11497030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Start: Narrative (Forest)'
+  Description: 
+  Kind: 0
+  Status: 0
+  OnReach: 0000000001000000
+  nextObjective: {fileID: 11426296}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11498434
