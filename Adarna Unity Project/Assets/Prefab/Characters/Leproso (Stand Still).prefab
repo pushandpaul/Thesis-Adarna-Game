@@ -50,6 +50,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &147250
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 417816}
+  - 114: {fileID: 11472784}
+  - 212: {fileID: 21254362}
+  m_Layer: 0
+  m_Name: Item Hold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &147872
 GameObject:
   m_ObjectHideFlags: 1
@@ -106,6 +123,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421216}
+  - 95: {fileID: 9533264}
   m_Layer: 0
   m_Name: Leproso
   m_TagString: Untagged
@@ -298,6 +316,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 450620}
   m_RootOrder: 1
+--- !u!4 &417816
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147250}
+  m_LocalRotation: {x: -0.0033964063, y: -0.008038462, z: 0.3891896, w: 0.92111635}
+  m_LocalPosition: {x: -0.54, y: -0.64, z: 3.09}
+  m_LocalScale: {x: 1.0963001, y: 1.0987567, z: 2.187183}
+  m_Children: []
+  m_Father: {fileID: 464122}
+  m_RootOrder: 0
 --- !u!4 &421216
 Transform:
   m_ObjectHideFlags: 1
@@ -413,7 +443,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.81397694, y: -0.8772542, z: 0}
   m_LocalScale: {x: 0.9885158, y: 0.9885158, z: 0.9885158}
-  m_Children: []
+  m_Children:
+  - {fileID: 417816}
   m_Father: {fileID: 442298}
   m_RootOrder: 0
 --- !u!4 &469088
@@ -454,6 +485,23 @@ CircleCollider2D:
   m_Offset: {x: -1.6, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &9533264
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db217251b4673b247a5aabb0fdec5598, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &9592290
 Animator:
   serializedVersion: 3
@@ -547,6 +595,17 @@ MonoBehaviour:
   portraits: []
   portraitsFace: 0
   description: 
+--- !u!114 &11472784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262304b4f6825754ab59878f7dceeb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11480140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -863,6 +922,36 @@ SpriteRenderer:
   m_SortingLayerID: -1497232989
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: c911f507a8c202f428f0ba2fafd94c79, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!212 &21254362
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147250}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 942188871
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

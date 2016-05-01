@@ -10,6 +10,10 @@ public class MoveObject : MonoBehaviour {
 	public Transform defaultToTransform;
 	//duration is in seconds
 
+	public void changeSortingLayer(SpriteRenderer sprite, string sortingLayer) {
+		sprite.sortingLayerName = sortingLayer;
+	}
+
 	public void punchMove(Vector3 moveTo, Transform toMove){
 		toMove.position = moveTo;
 	}
