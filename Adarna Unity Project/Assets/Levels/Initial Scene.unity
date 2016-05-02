@@ -132,6 +132,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1845581103}
   m_RootOrder: 0
+--- !u!1 &233058208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 233058209}
+  m_Layer: 0
+  m_Name: Scene List (Object Data)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &233058209
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233058208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1845581103}
+  m_RootOrder: 3
 --- !u!1 &268044219
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,9 +200,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &312219060 stripped
+--- !u!114 &381622878 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11424876, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+  m_PrefabParentObject: {fileID: 11484342, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
     type: 2}
   m_PrefabInternal: {fileID: 1409442319}
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
@@ -347,7 +374,7 @@ Prefab:
     - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: currentObjective
       value: 
-      objectReference: {fileID: 312219060}
+      objectReference: {fileID: 381622878}
     - target: {fileID: 22485014, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -402,12 +429,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845581102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.494482, y: 6.371732, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 93312227}
   - {fileID: 845975490}
   - {fileID: 1397337090}
+  - {fileID: 233058209}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!114 &1845581104
@@ -422,15 +450,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneObjects: []
+  sceneObjsHolder: {fileID: 233058209}
   currentSceneObj: {fileID: 0}
   currentScene: 
   timeOfDay: 100
   heldItem: []
   currentHeldItem: {fileID: 0}
   playerIdleState: Idle
-  Followers:
-  - {fileID: 11470666, guid: 5558aa40da511e54bac2e4e0113e7173, type: 2}
-  - {fileID: 11465722, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
+  Followers: []
   FollowerNames: []
   playableCharacters:
   - {fileID: 464092, guid: 2cfc46874f419094091439df920ebc6a, type: 2}

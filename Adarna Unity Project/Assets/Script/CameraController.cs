@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour {
 	private Vector3 _max;
 
 	public float defaultXOffset;
-	public float flippedXOffset;
+	private float flippedXOffset;
 	public float defaultYOffset;
 	public float changedYOffset;
 	private float xOffset;
@@ -36,6 +36,8 @@ public class CameraController : MonoBehaviour {
 		_min = bounds.bounds.min;
 		_max = bounds.bounds.max;
 		defaultCamSize = camera.orthographicSize;
+
+		flippedXOffset = -defaultXOffset;
 	
 		Debug.Log("This is the camera's size: " + defaultCamSize);
 
@@ -43,6 +45,11 @@ public class CameraController : MonoBehaviour {
 	void FixedUpdate () {
 		var x = transform.position.x;
 		var y = transform.position.y;
+
+		if(player.transform.localScale.x > 0)
+			flipped = false;
+		else if(player.transform.localScale.x < 0)
+			flipped = true;
 
 		if(!flipped && !isCenter)
 			xOffset = defaultXOffset;

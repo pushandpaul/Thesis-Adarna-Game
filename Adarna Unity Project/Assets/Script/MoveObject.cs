@@ -15,7 +15,7 @@ public class MoveObject : MonoBehaviour {
 	}
 
 	public void punchMove(Vector3 moveTo, Transform toMove){
-		toMove.position = moveTo;
+		toMove.localPosition = moveTo;
 	}
 
 	public void moveToPositionDefault(float duration){ //uses value from the public variable Target (for animation event)

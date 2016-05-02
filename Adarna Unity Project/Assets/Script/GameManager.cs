@@ -5,8 +5,10 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
 
 	public List <SceneObjects> sceneObjects;
+	public Transform sceneObjsHolder;
 	public SceneObjects currentSceneObj;
 	public string currentScene = "";
+
 	public char timeOfDay = 'd'; //d - day, n - night
 
 	public Sprite[] heldItem;
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour {
 		if(!found){
 			Debug.Log("Current scene not found in the list.");
 			GameObject container = new GameObject(currentScene);
-			container.transform.SetParent(this.transform);
+			container.transform.SetParent(this.sceneObjsHolder);
 			currentSceneObj = container.AddComponent<SceneObjects>();
 			currentSceneObj.Name = currentScene;
 			sceneObjects.Add(currentSceneObj);
@@ -89,6 +91,12 @@ public class GameManager : MonoBehaviour {
 					objectDataRef.Name = objectData.Name;
 					objectDataRef.coordinates = objectData.transform.position;
 					objectDataRef.destroyed = objectData.destroyed;
+
+					if(objectData.transform.parent != null)
+						objectDataRef.parentName = objectData.transform.parent.name;
+					else
+						objectDataRef.parentName = "";
+					
 					Debug.Log("'" + objectData.Name + "' position is saved.");
 					break;
 				case 'l':
@@ -97,6 +105,14 @@ public class GameManager : MonoBehaviour {
 					else{
 						objectData.transform.position = objectDataRef.coordinates;
 						Debug.Log("'" + objectData.Name + "' position is loaded.");
+						if(objectDataRef.parentName != ""){
+							objectData.transform.parent = GameObject.Find(objectDataRef.parentName).transform;
+							Debug.Log("'" + objectData.Name + "' parent has found.");
+						}
+						else{
+							objectData.transform.parent = null;
+							Debug.Log("'" + objectData.Name + "' has no parent.");
+						}
 					}
 					break;
 				case 'f':
@@ -117,6 +133,12 @@ public class GameManager : MonoBehaviour {
 				tempData.Name = objectData.Name;
 				tempData.coordinates = objectData.transform.position;
 				tempData.destroyed = objectData.destroyed;
+
+				if(objectData.transform.parent != null)
+					tempData.parentName = objectData.transform.parent.name;
+				else
+					tempData.parentName = "";
+
 				currentSceneObj.sceneObjectData.Add(tempData);
 				Debug.Log("'" + tempData.Name + "' is added to game data references list.");
 				break;

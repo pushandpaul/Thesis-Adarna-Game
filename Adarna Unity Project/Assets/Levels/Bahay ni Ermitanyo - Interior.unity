@@ -122,7 +122,6 @@ MonoBehaviour:
   smoothing: {x: 2, y: 2}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
-  flippedXOffset: -5
   defaultYOffset: 1
   changedYOffset: 1
   zoomSize: 3.5
@@ -485,10 +484,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 644826005}
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
---- !u!1 &644826007 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 193276, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-  m_PrefabInternal: {fileID: 644826005}
 --- !u!1 &644826008 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
@@ -681,6 +676,14 @@ Prefab:
       propertyPath: commandList.Array.size
       value: 49
       objectReference: {fileID: 0}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499446, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: methodParameters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 467082, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -860,7 +863,7 @@ Prefab:
     - target: {fileID: 11450796, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
       propertyPath: targetObject
       value: 
-      objectReference: {fileID: 644826007}
+      objectReference: {fileID: 644826010}
     - target: {fileID: 11439198, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
       propertyPath: targetObject
       value: 
@@ -904,7 +907,7 @@ Prefab:
     - target: {fileID: 11422690, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
       propertyPath: targetObject
       value: 
-      objectReference: {fileID: 644826007}
+      objectReference: {fileID: 644826010}
     - target: {fileID: 11408320, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
       propertyPath: targetObject
       value: 
@@ -1060,7 +1063,7 @@ Prefab:
     - target: {fileID: 11430050, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
       propertyPath: selectedBlock
       value: 
-      objectReference: {fileID: 1002026717}
+      objectReference: {fileID: 1002026698}
     - target: {fileID: 11453608, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
       propertyPath: duration
       value: 1.2
@@ -1121,7 +1124,117 @@ Prefab:
       propertyPath: commandList.Array.data[33]
       value: 
       objectReference: {fileID: 1002026674}
-    m_RemovedComponents: []
+    - target: {fileID: 11450796, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: targetComponentAssemblyName
+      value: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400918, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: methodParameters.Array.data[0].objValue.vector3Value.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400918, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: methodParameters.Array.data[0].objValue.vector3Value.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: nodeRect.y
+      value: 181.60347
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499446, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499446, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: targetMethod
+      value: setItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499446, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: targetMethodText
+      value: 'setItem (Sprite): Void'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499446, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: methodParameters.Array.data[0].objValue.typeAssemblyname
+      value: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499446, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: methodParameters.Array.data[0].objValue.typeFullname
+      value: UnityEngine.Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1002026691}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[8]
+      value: 
+      objectReference: {fileID: 1002026694}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[9]
+      value: 
+      objectReference: {fileID: 1002026690}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[10]
+      value: 
+      objectReference: {fileID: 1002026689}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[11]
+      value: 
+      objectReference: {fileID: 1002026688}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[12]
+      value: 
+      objectReference: {fileID: 1002026687}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[13]
+      value: 
+      objectReference: {fileID: 1002026686}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[14]
+      value: 
+      objectReference: {fileID: 1002026685}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[15]
+      value: 
+      objectReference: {fileID: 1002026684}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[16]
+      value: 
+      objectReference: {fileID: 1002026683}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[17]
+      value: 
+      objectReference: {fileID: 1002026683}
+    - target: {fileID: 11499446, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: methodParameters.Array.data[0].objValue.spriteValue
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e32cacaa6a8be64192328898cec4313,
+        type: 3}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 1002026692}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[6]
+      value: 
+      objectReference: {fileID: 1002026695}
+    - target: {fileID: 11430050, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: selectedCommands.Array.data[0]
+      value: 
+      objectReference: {fileID: 1002026695}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1002026697}
+    - target: {fileID: 11428336, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1002026696}
+    - target: {fileID: 11422690, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+      propertyPath: targetComponentAssemblyName
+      value: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11401312, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1002026674 stripped
@@ -1178,9 +1291,118 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1002026673}
   m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
---- !u!114 &1002026717 stripped
+--- !u!114 &1002026683 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11427334, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+  m_PrefabParentObject: {fileID: 11468392, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+--- !u!114 &1002026684 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11479362, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+--- !u!114 &1002026685 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11466414, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+--- !u!114 &1002026686 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11430908, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+--- !u!114 &1002026687 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11445382, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+--- !u!114 &1002026688 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11438592, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+--- !u!114 &1002026689 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400918, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+--- !u!114 &1002026690 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11449448, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+--- !u!114 &1002026691 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11455560, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+--- !u!114 &1002026692 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11499446, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+--- !u!1 &1002026693 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 142980, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+--- !u!114 &1002026694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002026693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 206
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1262484973}
+  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ItemToGive
+  targetMethod: disableItem
+  targetMethodText: 'disableItem (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1002026695 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11439198, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+--- !u!114 &1002026696 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11450796, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+--- !u!114 &1002026697 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11486526, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1002026673}
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+--- !u!114 &1002026698 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11464482, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
     type: 2}
   m_PrefabInternal: {fileID: 1002026673}
   m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
@@ -1306,6 +1528,10 @@ Prefab:
     - target: {fileID: 475814, guid: 6a3df80671659fd4ca2d725358c5223b, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21212464, guid: 6a3df80671659fd4ca2d725358c5223b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a3df80671659fd4ca2d725358c5223b, type: 2}
@@ -1833,7 +2059,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2102013117}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 1.05, y: 0.23, z: 0}
+  m_LocalPosition: {x: 1.02, y: -6.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925208923}
