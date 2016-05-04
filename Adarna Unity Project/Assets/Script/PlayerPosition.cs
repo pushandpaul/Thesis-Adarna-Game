@@ -1,51 +1,70 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerPosition : MonoBehaviour {
 
-	public float playerX;
-	public float playerY;
-	public float playerZ;
-	public float playerScale;
-
-	public float cameraX;
-	public float cameraY;
-	public float cameraZ;
-
-	public bool loadThis = false;
-
 	private CameraController camera;
 	private PlayerController player;
-	// Use this for initialization
-	public void saveInBetweenData(){
-		player = FindObjectOfType<PlayerController>();
-		camera = FindObjectOfType<CameraController>();
-		playerX = player.transform.position.x;
 
-		playerY = player.transform.position.y;
-		playerZ = player.transform.position.z;
-		playerScale = player.transform.localScale.x;
-
-		cameraX = camera.transform.position.x;
-		cameraY = camera.transform.position.y;
-		cameraZ = camera.transform.position.z;
-
-		this.loadThis = true;
+	[System.Serializable]
+	class PositionRef{
+		public string sceneName;
+		public Vector3 playerPos;
+		public Vector3 cameraPos;
 	}
 
-	public void clearInBetweenData(){
+	private List <PositionRef> positionRefs;
+
+	void Start(){
+		positionRefs = new List<PositionRef>();
+	}
+
+	public void Save(){
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
+		string currentScene = FindObjectOfType<LevelManager>().sceneName;
+		PositionRef tempRef = new PositionRef();
+		bool found = false;
+		if(positionRefs.Count > 0){
+			foreach(PositionRef positionRef in positionRefs){
+				if(positionRef.sceneName == currentScene){
+					positionRef.playerPos = player.transform.position;
+					positionRef.cameraPos = camera.transform.position;
+					Debug.Log("Scene exists in the list. Save position for scene '" + currentScene + "'.");
+					found = true;
+					break;
+				}
+			}
+		}
 
-		playerX = 0f;
-		playerY = 0f;
-		playerZ = 0f;
-		playerScale = 0f;
+		if(!found){
+			tempRef.sceneName = currentScene;
+			tempRef.playerPos = player.transform.position;
+			tempRef.cameraPos = camera.transform.position;
+			Debug.Log("Scene does not exist in the list. Save position for scene '" + currentScene + "' will be created.");
+			positionRefs.Add(tempRef);
+		}
+	}
 
-		cameraX = 0f;
-		cameraY = 0f;
-		cameraZ = 0f;
+	public bool Load(){
+		player = FindObjectOfType<PlayerController>();
+		camera = FindObjectOfType<CameraController>();
+		string currentScene = FindObjectOfType<LevelManager>().sceneName;
+		bool found = false;
 
-		this.loadThis = false;
+		if(positionRefs.Count > 0){
+			foreach(PositionRef positionRef in positionRefs){
+				if(positionRef.sceneName == currentScene){
+					player.transform.position = positionRef.playerPos;
+					camera.transform.position = positionRef.cameraPos;
+					positionRefs.Remove(positionRef);
+					found = true;
+					Debug.Log("Saved position for scene '" + currentScene + "' is loaded");
+					break;
+				}
+			}
+		}
+		return found;
 	}
 }

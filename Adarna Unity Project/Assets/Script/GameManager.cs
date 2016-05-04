@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 	public Sprite[] heldItem;
 	public Sprite currentHeldItem;
 	public string playerIdleState;
+	public float playerSpeed = 5f;
 
 	private LevelManager levelManager;
 	public List <FollowTarget> Followers;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour {
 
 	public Transform[] playableCharacters;
 	public string currentCharacterName;
+	public string defaultCharacterName = "Don Juan";
 
 	void Awake () {
 		//playerIdleState = "Idle";
@@ -81,7 +83,7 @@ public class GameManager : MonoBehaviour {
 		bool found = false;
 
 		foreach(ObjectDataReference objectDataRef in currentSceneObj.sceneObjectData){
-			if(objectDataRef.Name == objectData.Name){
+			if(objectDataRef.Name.Replace("(Ref)", "") == objectData.Name){
 				found = true;
 
 				switch(command){
@@ -106,7 +108,8 @@ public class GameManager : MonoBehaviour {
 						objectData.transform.position = objectDataRef.coordinates;
 						Debug.Log("'" + objectData.Name + "' position is loaded.");
 						if(objectDataRef.parentName != ""){
-							objectData.transform.parent = GameObject.Find(objectDataRef.parentName).transform;
+							if(objectData.transform.parent.name != objectDataRef.parentName)
+								objectData.transform.parent = GameObject.Find(objectDataRef.parentName).transform;
 							Debug.Log("'" + objectData.Name + "' parent has found.");
 						}
 						else{
@@ -127,10 +130,11 @@ public class GameManager : MonoBehaviour {
 			switch(command){
 			case 's':
 				Debug.Log("Save Command: Game object '" + objectData.Name + "' not found.");
-				GameObject container = new GameObject(objectData.Name);
+				GameObject container = new GameObject();
 				container.transform.SetParent(currentSceneObj.transform);
 				ObjectDataReference tempData = container.AddComponent<ObjectDataReference>();
-				tempData.Name = objectData.Name;
+				tempData.Name = "(Ref)" + objectData.Name;
+				container.name = tempData.Name;
 				tempData.coordinates = objectData.transform.position;
 				tempData.destroyed = objectData.destroyed;
 

@@ -43,10 +43,9 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		changeTimeOfDay(gameManager.timeOfDay);
-		characterLightSwitch();
 
 		//Player Initialization
-		if(playerPos == null ||!playerPos.loadThis){
+		if(!playerPos.Load()){
 			if(isDoor && door.Length > 0){
 				player.transform.position = new Vector3(door[doorIndex].transform.position.x, location.playerSpawnY, location.playerSpawnZ);
 				camera.transform.position = new Vector3(door[doorIndex].transform.position.x, location.cameraSpawnY, location.cameraSpawnZ);
@@ -64,15 +63,6 @@ public class LevelManager : MonoBehaviour {
 				}
 			}
 		}
-		else if(playerPos.loadThis){
-			Debug.Log("There is saved");
-
-			player.transform.position = new Vector3(playerPos.playerX, playerPos.playerY, playerPos.playerZ);
-			player.transform.localScale = new Vector3(playerPos.playerScale, player.transform.localScale.y, 1f);
-			camera.transform.position = new Vector3(playerPos.cameraX, playerPos.cameraY, playerPos.cameraZ);
-
-			playerPos.clearInBetweenData();
-		}
 
 		if(followerManager != null)
 			followerManager.setActiveFollowers();
@@ -88,31 +78,28 @@ public class LevelManager : MonoBehaviour {
 	public void changeTimeOfDay(char timeOfDay){
 		LightController globalLight;
 		GameObject globaLightHolder;
+		GameObject[] characterLight = GameObject.FindGameObjectsWithTag("Character Light");
 
 		globaLightHolder = GameObject.FindWithTag("Global Light");
 
 		if(globaLightHolder != null){
 			globalLight = globaLightHolder.GetComponent<LightController>();
-			if(timeOfDay == 'd' && globalLight.lightIntensity != 1.8f){
+			if(timeOfDay == 'd'){
 				globalLight.setLightIntensity(1.8f);
 				Debug.Log("Global Light Intensity adjusted to day time");
+				foreach(GameObject lightHolder in characterLight)
+					lightHolder.GetComponent<Light>().intensity = 0f;
 			}
-			else if(timeOfDay == 'n' && globalLight.lightIntensity != 0f){
+			else if(timeOfDay == 'n'){
 				globalLight.setLightIntensity(0f);
 				Debug.Log("Global Light Intensity adjusted to night time");
+				foreach(GameObject lightHolder in characterLight){
+					if(location.isInterior)
+						lightHolder.GetComponent<Light>().intensity = 0f;
+					else
+						lightHolder.GetComponent<Light>().intensity = 1.8f;
+				}
 			}
-		}
-	}
-
-	void characterLightSwitch(){
-		GameObject[] LightHolder = GameObject.FindGameObjectsWithTag("Character Light");
-		if(gameManager.timeOfDay == 'd' || location.isInterior){
-			foreach(GameObject lightHolder in LightHolder)
-				lightHolder.GetComponent<Light>().intensity = 0f;
-		}
-		else if(gameManager.timeOfDay == 'n'){
-			foreach(GameObject lightHolder in LightHolder)
-				lightHolder.GetComponent<Light>().intensity = 0f;
 		}
 	}
 
@@ -135,9 +122,12 @@ public class LevelManager : MonoBehaviour {
 			PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 			playerSwitch.actualSwitch(newPlayer, holderTransfer);
 		}
-
 		else
 			Debug.Log("Character trying to switch is not playable.");
+	}
+
+	public void changePlayerLater(string newPlayer){
+		gameManager.currentCharacterName = newPlayer;
 	}
 
 	public void changeVersion(Transform newPlayer, GameObject currentVersion, bool inScene, bool isNPC, Transform holderTransfer) {
@@ -174,11 +164,16 @@ public class LevelManager : MonoBehaviour {
 	void instantChangePlayer(string newPlayerName){
 		PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 		Transform newPlayer = null;
-		if(newPlayerName != "Don Juan"){
+		if(newPlayerName != gameManager.defaultCharacterName){
 			foreach(Transform playableCharacter in gameManager.playableCharacters){
 				if(newPlayerName == playableCharacter.name){
 					newPlayer = GameObject.Find(newPlayerName).transform;
-					newPlayer.position = player.transform.position;
+					if(playerSwitch.routine == 'a')
+						newPlayer.position = player.transform.position;
+					else if(playerSwitch.routine == 'b'){
+						player.transform.position = newPlayer.position;
+						camera.transform.position = player.transform.position;
+					}
 					//(Transform) Instantiate(playableCharacter, player.transform.position, player.transform.rotation);
 					newPlayer.name = newPlayerName;
 					playerSwitch.instantSwitch(newPlayer);
@@ -188,8 +183,16 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	public void savePosition(){
-		if(playerPos != null)
-			playerPos.saveInBetweenData();
+	public void setSwitchRoutine(char routine){ 
+		/*
+		 * routine 'a' - sets the position of the new player to the player holder r
+		 * routine 'b' - sets the position of the player holder to the new player
+		*/
+		PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
+		playerSwitch.routine = routine;
+	}
+
+	public void savePlayerPosition(){
+		playerPos.Save();
 	}
 }

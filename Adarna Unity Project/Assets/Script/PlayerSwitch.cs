@@ -6,6 +6,11 @@ public class PlayerSwitch : MonoBehaviour {
 	private PlayerController playerHolder;
 	public Transform characterContainer;
 
+	public char routine = 'a';
+	/*
+	* routine 'a' - sets the position of the new player to the player holder r
+	* routine 'b' - sets the position of the player holder to the new player
+	*/
 	private bool toInitialize = false;
 
 	public void actualSwitch(Transform newPlayer){ 
@@ -51,6 +56,7 @@ public class PlayerSwitch : MonoBehaviour {
 		Destroy(currentPlayer);
 
 		toInitialize = true;
+		routine = 'a';
 		Switch(newPlayer, currentPlayer);
 	}
 

@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour {
 		scaleY = transform.localScale.y;
 		scaleZ = transform.localScale.z;
 
+		if(gameManager != null)
+			moveSpeed = gameManager.playerSpeed;
 		moveSpeed += (Mathf.Abs(transform.localScale.x) % 0.5f) * 10;
 		Debug.Log("This is player speed: " + moveSpeed);
 
@@ -135,6 +137,18 @@ public class PlayerController : MonoBehaviour {
 
 			}
 		}
+	}
+
+	public void setSpeed(float speed){
+		moveSpeed = speed;
+		moveSpeed += (Mathf.Abs(transform.localScale.x) % 0.5f) * 10;
+		gameManager.playerSpeed = speed;
+	}
+
+	public void revertSpeed(){
+		moveSpeed = 5f;
+		moveSpeed += (Mathf.Abs(transform.localScale.x) % 0.5f) * 10;
+		gameManager.playerSpeed = 5f;
 	}
 }
 
