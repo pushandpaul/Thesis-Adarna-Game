@@ -132,10 +132,9 @@ public class PlayerController : MonoBehaviour {
 			anim.Play (gameManager.playerIdleState);
 			if(gameManager.currentHeldItem != null)
 				item.setItem(gameManager.currentHeldItem);
-			if (gameManager.currentHeldItem == null) {
+			/*if (gameManager.currentHeldItem == null) {
 				setPlayerSate ("Idle");
-
-			}
+			}*/
 		}
 	}
 

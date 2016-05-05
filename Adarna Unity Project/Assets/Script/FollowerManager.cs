@@ -82,6 +82,16 @@ public class FollowerManager : MonoBehaviour {
 		}
 	}
 
+	public void removeFollowers(bool isDestroyed){	
+		foreach (FollowTarget activeFollower in activeFollowers) {
+			activeFollower.enabled = false;
+			if (isDestroyed)
+				Destroy (activeFollower);
+		}
+
+		activeFollowers.Clear ();
+	}
+
 	void removeUnactives(List <FollowTarget> unactiveFollowers){
 		foreach(FollowTarget unactiveFollower in unactiveFollowers){
 			Destroy(unactiveFollower.gameObject);

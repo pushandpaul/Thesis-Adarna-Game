@@ -38,9 +38,15 @@ public class LevelLoader : MonoBehaviour {
 		StartCoroutine(fadeLevelByList());
 	}
 
-	public void launcScene(string sceneName){
+	public void launchScene(string sceneName){
 		saveBeforeUnload();
 		StartCoroutine(fadeLevelByName(sceneName));
+	}
+
+	public void reloadScene(){
+		GameManager gameManager = FindObjectOfType<GameManager>();
+		saveBeforeUnload ();
+		StartCoroutine(fadeLevelByName(gameManager.currentScene));
 	}
 
 	private void saveBeforeUnload(){

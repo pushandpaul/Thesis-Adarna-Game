@@ -32,6 +32,12 @@ public class MoveCharacter : MonoBehaviour {
 		StartCoroutine(startMoving(character, character.position, targetPosition, duration));
 	}
 
+	public void moveCharacter(Transform character, Vector3 targetPosition, float speed){
+		//character = GameObject.Find (character.name).transform;
+		float duration = Mathf.Abs(targetPosition.x - character.position.x)/speed;
+		StartCoroutine(startMoving(character, character.position, targetPosition, duration));
+	}
+
 	IEnumerator startMoving(Transform character, Vector3 current, Vector3 target, float duration){
 		float startTime = Time.time;
 		float endTime = startTime + duration;

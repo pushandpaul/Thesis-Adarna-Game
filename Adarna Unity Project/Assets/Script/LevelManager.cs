@@ -172,7 +172,7 @@ public class LevelManager : MonoBehaviour {
 						newPlayer.position = player.transform.position;
 					else if(playerSwitch.routine == 'b'){
 						player.transform.position = newPlayer.position;
-						camera.transform.position = player.transform.position;
+						camera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, camera.transform.position.z);
 					}
 					//(Transform) Instantiate(playableCharacter, player.transform.position, player.transform.rotation);
 					newPlayer.name = newPlayerName;
@@ -183,16 +183,28 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	public void setSwitchRoutine(char routine){ 
+	public void setSpawnDirection(bool isRight) {
+		if (isRight) {
+			exitInRight = false;
+		} else
+			exitInRight = true;	
+	}
+
+	public void setSwitchRoutine(string routine){ 
 		/*
-		 * routine 'a' - sets the position of the new player to the player holder r
+		 * routine 'a' - sets the position of the new player to the player holder
 		 * routine 'b' - sets the position of the player holder to the new player
 		*/
+		char[] myRoutine = routine.ToCharArray();
 		PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
-		playerSwitch.routine = routine;
+		playerSwitch.routine = myRoutine[0];
 	}
 
 	public void savePlayerPosition(){
 		playerPos.Save();
+	}
+
+	public void clearHeldItem(){
+		gameManager.currentHeldItem = null;
 	}
 }

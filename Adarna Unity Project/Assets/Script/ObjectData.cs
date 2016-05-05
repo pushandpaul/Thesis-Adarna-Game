@@ -14,4 +14,10 @@ public class ObjectData : MonoBehaviour {
 		SpriteRenderer sr = this.GetComponent<SpriteRenderer>(); 
 		sr.enabled = boolean;
 	}
+
+	public void DestroyMe(){
+		//this.enabled = isActive;
+		//this.enabled = isActive;
+		Destroy(this);
+	}
 }
