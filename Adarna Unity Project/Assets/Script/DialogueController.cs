@@ -15,6 +15,8 @@ public class DialogueController : MonoBehaviour {
 
 	public bool zoomCam;
 	public bool centerCam;
+
+	public static bool inDialogue;
 	void Start () {
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
@@ -25,7 +27,7 @@ public class DialogueController : MonoBehaviour {
 
 	public void startDialogue(){
 		followers = FindObjectsOfType<FollowTarget>();
-
+		inDialogue = true;
 		if(followers != null || followers.Length > 0){
 			foreach(FollowTarget follower in followers){
 				follower.isFollowing = false;
@@ -48,9 +50,8 @@ public class DialogueController : MonoBehaviour {
 
 	public void endDialogue(){
 		player.enablePlayerMovement();
-
 		followers = FindObjectsOfType<FollowTarget>();
-
+		inDialogue = false;
 		if(followers != null || followers.Length > 0){
 			foreach(FollowTarget follower in followers){
 				follower.isFollowing = true;

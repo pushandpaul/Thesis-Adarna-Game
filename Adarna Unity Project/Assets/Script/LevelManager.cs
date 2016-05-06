@@ -31,12 +31,13 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 	void Start() {
-	
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
 		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
+		MatchTransform [] ToMatch = FindObjectsOfType<MatchTransform>();
+		bool allowMatch = false;
 		//Level Initialization
 		if(objectData.Length > 0){
 			gameManager.loadCoordinates(objectData);
@@ -64,10 +65,27 @@ public class LevelManager : MonoBehaviour {
 			}
 		}
 
+		//Change player avatar
+		instantChangePlayer(gameManager.currentCharacterName);
+
+		//Follower Initialization
 		if(followerManager != null)
 			followerManager.setActiveFollowers();
-		//Change character avatar
-		instantChangePlayer(gameManager.currentCharacterName);
+
+		//Match transforms (scales for now)
+		if(ToMatch != null && ToMatch.Length > 0){
+			foreach(MatchTransform toMatch in ToMatch){
+				if(toMatch.GetComponent<FollowTarget>() != null){
+					if(!toMatch.GetComponent<FollowTarget>().enabled)
+						allowMatch = true;
+				}
+				else
+					allowMatch = true;
+				if(allowMatch){
+					toMatch.scale();
+				}
+			}
+		}
 	}
 
 	public void unclonedInstace(GameObject toInstantiate, Vector3 position){

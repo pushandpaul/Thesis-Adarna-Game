@@ -74,17 +74,18 @@ public class NPCInteraction : MonoBehaviour {
 		}
 		else
 			toFlip = false;
-		
-		if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
-			if(toFlip){
-				transform.localScale = new Vector3(-scaleX, scaleY, 1f);
-				//facingPlayer == true;
+		if(!DialogueController.inDialogue){
+			if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
+				if(toFlip){
+					transform.localScale = new Vector3(-scaleX, scaleY, 1f);
+					//facingPlayer == true;
+				}
+
+				else
+					transform.localScale = new Vector3(scaleX, scaleY, 1f);
+				Debug.Log ("Interacted with NPC " + gameObject.name);
+				checkIfCurrent();
 			}
-				
-			else
-				transform.localScale = new Vector3(scaleX, scaleY, 1f);
-			Debug.Log ("Interacted with NPC " + gameObject.name);
-			checkIfCurrent();
 		}
 	}
 
@@ -129,7 +130,7 @@ public class NPCInteraction : MonoBehaviour {
 				Debug.Log ("Interact");
 				waitForPress = true;
 			}
-			else
+			else if(!pressToInteract && !DialogueController.inDialogue)
 				checkIfCurrent();
 		}
 	}

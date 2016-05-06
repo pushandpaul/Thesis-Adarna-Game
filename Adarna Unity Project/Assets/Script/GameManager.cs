@@ -66,7 +66,12 @@ public class GameManager : MonoBehaviour {
 
 	public void saveCoordinates(ObjectData[] objectData){
 		bool found = false;
+
 		for(int i = 0; i < objectData.Length; i++){
+			if(objectData[i].GetComponent<FollowTarget>() != null){
+				if(objectData[i].GetComponent<FollowTarget>().enabled)
+					return;
+			}
 			searchData(objectData[i], 's');
 		}
 	}
@@ -81,7 +86,7 @@ public class GameManager : MonoBehaviour {
 
 	public bool searchData(ObjectData objectData, char command /*s - save; l - load; f - normal search*/){
 		bool found = false;
-
+		
 		foreach(ObjectDataReference objectDataRef in currentSceneObj.sceneObjectData){
 			if(objectDataRef.Name.Replace("(Ref)", "") == objectData.Name){
 				found = true;
@@ -92,6 +97,7 @@ public class GameManager : MonoBehaviour {
 					Debug.Log("Save Command: Game object '" + objectData.Name + "' found.");
 					objectDataRef.Name = objectData.Name;
 					objectDataRef.coordinates = objectData.transform.position;
+					//objectDataRef.scale = objectData.transform.localScale;
 					objectDataRef.destroyed = objectData.destroyed;
 
 					if(objectData.transform.parent != null)
@@ -106,6 +112,7 @@ public class GameManager : MonoBehaviour {
 						Destroy(objectData.gameObject);
 					else{
 						objectData.transform.position = objectDataRef.coordinates;
+						//objectData.transform.localScale = objectDataRef.scale;
 						Debug.Log("'" + objectData.Name + "' position is loaded.");
 						if(objectDataRef.parentName != ""){
 							if(objectData.transform.parent.name != objectDataRef.parentName)
@@ -136,6 +143,7 @@ public class GameManager : MonoBehaviour {
 				tempData.Name = "(Ref)" + objectData.Name;
 				container.name = tempData.Name;
 				tempData.coordinates = objectData.transform.position;
+				//tempData.scale = objectData.transform.localScale;
 				tempData.destroyed = objectData.destroyed;
 
 				if(objectData.transform.parent != null)

@@ -32,15 +32,16 @@ public class ObjectInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
-			Debug.Log ("Interacted with Object " + gameObject.name);
-			checkIfCurrent();
+		if(!DialogueController.inDialogue){
+			if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
+				Debug.Log ("Interacted with Object " + gameObject.name);
+				checkIfCurrent();
+			}
 		}
-			
 	}
 
 	private void checkIfCurrent(){
-		if(anObjective){
+		if(anObjective && !DialogueController.inDialogue){
 			objectiveMapper.checkIfCurrent_object();
 		}
 		if(message != ""){
