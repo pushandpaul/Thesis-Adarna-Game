@@ -13,7 +13,7 @@ public class SaveAndDestroy : MonoBehaviour {
 		ObjectData objectData = this.GetComponent<ObjectData>();
 		if(objectData != null){
 			objectData.destroyed = true;
-			gameManager.searchData(objectData, 's');
+			gameManager.searchObjectData(objectData, 's');
 		}
 		Destroy(myGameObject);
 	}
@@ -22,7 +22,7 @@ public class SaveAndDestroy : MonoBehaviour {
 		ObjectData objectData = this.GetComponent<ObjectData>();
 		if(objectData != null){
 			objectData.destroyed = true;
-			gameManager.searchData(objectData, 's');
+			gameManager.searchObjectData(objectData, 's');
 		}
 	}
 }

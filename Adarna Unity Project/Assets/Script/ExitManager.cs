@@ -23,10 +23,7 @@ public class ExitManager : MonoBehaviour {
 		if(other.tag == "Player"){
 			LevelManager.isDoor = false;
 			LevelManager.exitInRight = isRight;
-			if(FindObjectsOfType<ObjectData>().Length > 0)
-				gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
-			followerManager.updateFollowerList();
-
+			levelManager.onLevelExit();
 			StartCoroutine(ChangeLevel());
 		}
 

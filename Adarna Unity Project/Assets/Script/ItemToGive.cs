@@ -5,7 +5,9 @@ public class ItemToGive : MonoBehaviour {
 
 	public void setItem(Sprite item){
 		GameManager gameManager = FindObjectOfType<GameManager> ();
-		gameManager.currentHeldItem = item;
+		if(transform.root.GetComponent<PlayerController>() != null){
+			gameManager.currentHeldItem = item;
+		}
 		SpriteRenderer myRenderer = this.GetComponent<SpriteRenderer>();
 		myRenderer.enabled = true;
 		myRenderer.sprite = item;
@@ -19,5 +21,9 @@ public class ItemToGive : MonoBehaviour {
 		SpriteRenderer myRenderer = this.GetComponent<SpriteRenderer>();
 		myRenderer.enabled = false;
 		//myRenderer.sprite = item;
+	}
+
+	public Sprite getItem(){
+		return this.GetComponent<SpriteRenderer>().sprite;
 	}
 }

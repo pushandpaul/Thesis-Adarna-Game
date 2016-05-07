@@ -9,6 +9,21 @@ public class GameManager : MonoBehaviour {
 	public SceneObjects currentSceneObj;
 	public string currentScene = "";
 
+	[System.Serializable]
+	public class SavedCharData{
+		public string Name;
+		public int stateHashID;
+		public Sprite heldItem;
+
+		public SavedCharData(string Name, int stateHashID, Sprite heldItem){
+			this.Name = Name;
+			this.stateHashID = stateHashID;
+			this.heldItem = heldItem;
+		}
+	}
+
+	public List <SavedCharData> characters;
+
 	public char timeOfDay = 'd'; //d - day, n - night
 
 	public Sprite[] heldItem;
@@ -26,11 +41,12 @@ public class GameManager : MonoBehaviour {
 
 	void Awake () {
 		//playerIdleState = "Idle";
+		Debug.Log(Animator.StringToHash("(Don Pedro) Carry Item Idle"));
 		DontDestroyOnLoad(this);
 		sceneObjects = new List<SceneObjects>();
 		//Followers = new List<FollowTarget>();
 		FollowerNames = new List<string>();
-
+		characters = new List<SavedCharData>();
 		foreach(FollowTarget follower in Followers){
 			FollowerNames.Add(follower.name);
 		}
@@ -72,19 +88,19 @@ public class GameManager : MonoBehaviour {
 				if(objectData[i].GetComponent<FollowTarget>().enabled)
 					return;
 			}
-			searchData(objectData[i], 's');
+			searchObjectData(objectData[i], 's');
 		}
 	}
 
 	public void loadCoordinates(ObjectData[] objectData){
 		bool found = false;
 		for(int i = 0; i < objectData.Length; i++){
-			searchData(objectData[i], 'l');
+			searchObjectData(objectData[i], 'l');
 		}
 
 	}
 
-	public bool searchData(ObjectData objectData, char command /*s - save; l - load; f - normal search*/){
+	public bool searchObjectData(ObjectData objectData, char command /*s - save; l - load; f - normal search*/){
 		bool found = false;
 		
 		foreach(ObjectDataReference objectDataRef in currentSceneObj.sceneObjectData){
@@ -161,6 +177,60 @@ public class GameManager : MonoBehaviour {
 		}
 	
 		return found;
+	}
+
+	public void saveCharData(CharacterData[] characterData){
+		int tempHashID = 0;
+		bool found = false;
+		foreach(CharacterData charData in characterData){
+			for(int i = 0; i < characters.Count; i++){
+				if(charData.name == characters[i].Name){
+					Debug.Log("Character data for '" + charData.name + "' found in the list.");
+					Debug.Log("Saving character data for '" + charData.name + "'.");
+					if(charData.anim != null)
+						tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
+					else
+						tempHashID = 0;
+					characters[i] = new SavedCharData(charData.name, tempHashID, charData.item.getItem());
+					found = true;
+					break;
+				}
+			}
+
+			if(!found){
+				Debug.Log("No character data for '" + charData.name + "' found in the list. Saved character data will be created.");
+				Debug.Log("Saving character data for '" + charData.name + "'.");
+				if(charData.anim != null)
+					tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
+				else
+					tempHashID = 0;
+				characters.Add(new SavedCharData(charData.name, tempHashID, charData.item.getItem()));
+			}
+		}
+	}
+
+	public void loadCharData(CharacterData[] characterData){
+		bool found = false;
+
+		foreach(CharacterData charData in characterData){
+			foreach(SavedCharData character in characters){
+				if(charData.name == character.Name && charData.name != currentCharacterName){
+					Debug.Log("Character '" + charData.name + "' is found in the character data list.");
+					found = true;
+					if(character.stateHashID != 0){
+						Debug.Log("Character '" + charData.name + "' animation ID '" + character.stateHashID + "' will be played.");
+						charData.anim.Play(character.stateHashID);
+					}
+					else
+						Debug.Log("Character '" + charData.name + "' animator component does not exist.");
+					if(character.heldItem != null)
+						charData.item.setItem(character.heldItem);
+					break;
+				}
+				else
+					Debug.Log("Character may be the player or data not saved.");
+			}
+		}
 	}
 
 	/*public void findFollowers(FollowTarget[] follower){

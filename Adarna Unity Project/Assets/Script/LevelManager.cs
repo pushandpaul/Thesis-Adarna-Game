@@ -68,6 +68,9 @@ public class LevelManager : MonoBehaviour {
 		//Change player avatar
 		instantChangePlayer(gameManager.currentCharacterName);
 
+		//Initialization of character states
+		gameManager.loadCharData(FindObjectsOfType<CharacterData>());
+
 		//Follower Initialization
 		if(followerManager != null)
 			followerManager.setActiveFollowers();
@@ -86,6 +89,15 @@ public class LevelManager : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public void onLevelExit(){
+		Debug.Log("Exiting level.");
+		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
+		if(FindObjectsOfType<ObjectData>().Length > 0)
+			gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
+		followerManager.updateFollowerList();
+		gameManager.saveCharData(FindObjectsOfType<CharacterData>());
 	}
 
 	public void unclonedInstace(GameObject toInstantiate, Vector3 position){

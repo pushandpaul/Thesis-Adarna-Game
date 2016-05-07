@@ -27,8 +27,7 @@ public class DoorHandler : MonoBehaviour {
 				//LevelManager.exitInRight = defaultSpawnLeft;
 				LevelManager.isDoor = true;
 				LevelManager.doorIndex = thisDoorIndex;
-				if(FindObjectsOfType<ObjectData>().Length > 0)
-					gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
+				levelManager.onLevelExit();
 				StartCoroutine(ChangeLevel());
 				//SceneManager.LoadScene(nextLocation);
 			}
@@ -38,10 +37,7 @@ public class DoorHandler : MonoBehaviour {
 				//LevelManager.exitInRight = defaultSpawnLeft;
 				LevelManager.isDoor = true;
 				LevelManager.doorIndex = thisDoorIndex;
-				if(FindObjectsOfType<ObjectData>().Length > 0)
-					gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
-				FollowerManager followerManager = FindObjectOfType<FollowerManager>();
-				followerManager.updateFollowerList();
+				levelManager.onLevelExit();
 				StartCoroutine(ChangeLevel());
 				//SceneManager.LoadScene(nextLocation);
 			}
