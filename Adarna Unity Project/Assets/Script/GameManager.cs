@@ -9,9 +9,21 @@ public class GameManager : MonoBehaviour {
 	public SceneObjects currentSceneObj;
 	public string currentScene = "";
 
+	public char timeOfDay = 'd'; //d - day, n - night
+
+	//public Sprite[] heldItem;
+	public Sprite currentHeldItem; 
+	public string playerIdleState;
+	public float playerSpeed = 5f;
+
+	private LevelManager levelManager;
+	public List <FollowTarget> Followers;
+	public List <string> FollowerNames;
+
 	[System.Serializable]
 	public class SavedCharData{
 		public string Name;
+		public string state;
 		public int stateHashID;
 		public Sprite heldItem;
 
@@ -24,17 +36,6 @@ public class GameManager : MonoBehaviour {
 
 	public List <SavedCharData> characters;
 
-	public char timeOfDay = 'd'; //d - day, n - night
-
-	public Sprite[] heldItem;
-	public Sprite currentHeldItem;
-	public string playerIdleState;
-	public float playerSpeed = 5f;
-
-	private LevelManager levelManager;
-	public List <FollowTarget> Followers;
-	public List <string> FollowerNames;
-
 	public Transform[] playableCharacters;
 	public string currentCharacterName;
 	public string defaultCharacterName = "Don Juan";
@@ -46,9 +47,15 @@ public class GameManager : MonoBehaviour {
 		sceneObjects = new List<SceneObjects>();
 		//Followers = new List<FollowTarget>();
 		FollowerNames = new List<string>();
-		characters = new List<SavedCharData>();
+		//characters = new List<SavedCharData>();
 		foreach(FollowTarget follower in Followers){
 			FollowerNames.Add(follower.name);
+		}
+
+		foreach(SavedCharData character in characters){
+			if(character.state != null && character.state != ""){
+				character.stateHashID = Animator.StringToHash(character.state);
+			}
 		}
 	}
 		
