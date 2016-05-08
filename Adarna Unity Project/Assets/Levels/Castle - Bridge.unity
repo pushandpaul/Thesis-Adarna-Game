@@ -141,7 +141,6 @@ MonoBehaviour:
   smoothing: {x: 2, y: 2}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
-  flippedXOffset: -5
   defaultYOffset: 1
   changedYOffset: 1
   zoomSize: 3.5
@@ -1644,7 +1643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 2035288498}
+  selectedFlowchart: {fileID: 11432002, guid: 3edec95ab410250448620d33e0430764, type: 2}
 --- !u!4 &2001930050
 Transform:
   m_ObjectHideFlags: 1
@@ -1739,611 +1738,64 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 411616, guid: 15f37ab2cd5f7d34eb0d16b07c2a3fbb, type: 2}
   m_PrefabInternal: {fileID: 89987322}
---- !u!1 &2035288497
-GameObject:
+--- !u!1001 &2034297303
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 142980, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2035288517}
-  - 114: {fileID: 2035288498}
-  - 114: {fileID: 2035288516}
-  - 114: {fileID: 2035288515}
-  - 114: {fileID: 2035288514}
-  - 114: {fileID: 2035288513}
-  - 114: {fileID: 2035288512}
-  - 114: {fileID: 2035288511}
-  - 114: {fileID: 2035288510}
-  - 114: {fileID: 2035288509}
-  - 114: {fileID: 2035288508}
-  - 114: {fileID: 2035288507}
-  - 114: {fileID: 2035288506}
-  - 114: {fileID: 2035288505}
-  - 114: {fileID: 2035288504}
-  - 114: {fileID: 2035288503}
-  - 114: {fileID: 2035288502}
-  - 114: {fileID: 2035288500}
-  - 114: {fileID: 2035288501}
-  - 114: {fileID: 2035288499}
-  - 114: {fileID: 2035288518}
-  - 114: {fileID: 2035288519}
-  - 114: {fileID: 2035288520}
-  - 114: {fileID: 2035288522}
-  - 114: {fileID: 2035288521}
-  - 114: {fileID: 2035288523}
-  m_Layer: 0
-  m_Name: Flowchart
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2035288498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11430050, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1.0
-  scrollPos: {x: 0, y: 0}
-  variablesScrollPos: {x: 0, y: 0}
-  variablesExpanded: 1
-  blockViewHeight: 400
-  zoom: 0.68402195
-  scrollViewRect:
-    serializedVersion: 2
-    x: -350
-    y: -473
-    width: 1468.7872
-    height: 1232.5684
-  selectedBlock: {fileID: 2035288500}
-  selectedCommands:
-  - {fileID: 2035288499}
-  variables: []
-  description: 
-  stepPause: 0
-  colorCommands: 1
-  hideComponents: 1
-  saveSelection: 1
-  localizationId: 
-  hideCommands: []
---- !u!114 &2035288499
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 20
-  errorMessage: 
-  indentLevel: 0
-  storyText: O Birheng Maria, gabayan niyo po ako at bigyang tulong sa paghanap sa
-    Ibong Adarna, at ang aking mga kapatid.
-  description: 
-  character: {fileID: 1218580587}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &2035288500
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11427334, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 519.78723
-    y: 170.80243
-    width: 199
-    height: 40
-  itemId: 18
-  blockName: 'Start: Monologue (Bridge)'
-  description: 
-  eventHandler: {fileID: 2035288501}
-  commandList:
-  - {fileID: 2035288520}
-  - {fileID: 2035288499}
-  - {fileID: 2035288521}
---- !u!114 &2035288501
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11466630, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 2035288500}
-  message: 'Start: Monologue (Bridge)'
---- !u!114 &2035288502
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11482676, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 17
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 2035288507}
-  callMode: 0
---- !u!114 &2035288503
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11465062, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 16
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 2035288507}
-  callMode: 0
---- !u!114 &2035288504
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11481472, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 15
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: disablePlayerMovement
-  delay: 0
---- !u!114 &2035288505
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11415072, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 2035288516}
-  message: Bert
---- !u!114 &2035288506
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11465912, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 14
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: enablePlayerMovement
-  delay: 0
---- !u!114 &2035288507
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11482810, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 146.2243
-    y: 319.56842
-    width: 151
-    height: 40
-  itemId: 13
-  blockName: End Conversation
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 2035288506}
---- !u!114 &2035288508
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11411090, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 12
-  errorMessage: 
-  indentLevel: 0
-  storyText: But why!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &2035288509
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11404096, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 10
-  errorMessage: 
-  indentLevel: 0
-  text: No
-  description: 
-  targetBlock: {fileID: 2035288510}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
---- !u!114 &2035288510
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11400390, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 54.47416
-    y: 207.71431
-    width: 120
-    height: 40
-  itemId: 9
-  blockName: No
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 2035288508}
-  - {fileID: 2035288502}
---- !u!114 &2035288511
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11453800, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 7
-  errorMessage: 
-  indentLevel: 0
-  storyText: You picked yes!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &2035288512
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11441268, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 259.16718
-    y: 207.71432
-    width: 120
-    height: 40
-  itemId: 6
-  blockName: Yes
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 2035288511}
-  - {fileID: 2035288503}
---- !u!114 &2035288513
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11472716, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 5
-  errorMessage: 
-  indentLevel: 0
-  text: Yes
-  description: 
-  targetBlock: {fileID: 2035288512}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
---- !u!114 &2035288514
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11414062, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 2
-  errorMessage: 
-  indentLevel: 0
-  storyText: Bert for short!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &2035288515
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11418834, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 1
-  errorMessage: 
-  indentLevel: 0
-  storyText: Hi I'm Berto!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &2035288516
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11433304, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 157.5927
-    y: 107.64438
-    width: 128
-    height: 40
-  itemId: 0
-  blockName: Bert Dialogue
-  description: 
-  eventHandler: {fileID: 2035288505}
-  commandList:
-  - {fileID: 2035288504}
-  - {fileID: 2035288515}
-  - {fileID: 2035288514}
-  - {fileID: 2035288513}
-  - {fileID: 2035288509}
---- !u!4 &2035288517
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 467082, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
---- !u!114 &2035288518
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 552.2249
-    y: 83.55623
-    width: 132
-    height: 40
-  itemId: 21
-  blockName: Start Dialogue
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 2035288519}
---- !u!114 &2035288519
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 22
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1247766606}
-  methodName: startDialogue
-  delay: 0
---- !u!114 &2035288520
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 23
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 2035288498}
-  targetBlock: {fileID: 2035288518}
-  callMode: 1
---- !u!114 &2035288521
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 25
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 2035288498}
-  targetBlock: {fileID: 2035288522}
-  callMode: 0
---- !u!114 &2035288522
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 556.69904
-    y: 243.5076
-    width: 125
-    height: 40
-  itemId: 24
-  blockName: End Dialogue
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 2035288523}
---- !u!114 &2035288523
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035288497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 26
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1247766606}
-  methodName: endDialogue
-  delay: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 418512, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418512, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418512, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418512, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418512, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418512, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418512, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 418512, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453806, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1218580587}
+    - target: {fileID: 11450636, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1247766606}
+    - target: {fileID: 11428866, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1247766606}
+    - target: {fileID: 179872, guid: 3edec95ab410250448620d33e0430764, type: 2}
+      propertyPath: m_Name
+      value: Flowchart
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3edec95ab410250448620d33e0430764, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2040485276
 GameObject:
   m_ObjectHideFlags: 0

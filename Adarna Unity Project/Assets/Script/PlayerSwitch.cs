@@ -37,7 +37,7 @@ public class PlayerSwitch : MonoBehaviour {
 		holderTransform.position = new Vector3(newPlayer.position.x, holderTransform.position.y, holderTransform.position.z);
 
 		toInitialize = false;
-		Switch(newPlayer, currentPlayer, this.switchType);
+		Switch(newPlayer, currentPlayer);
 	}
 
 	public void actualSwitch(Transform newPlayer, Transform holderTransfer){//specifies holder in which the previous player will be placed
@@ -56,7 +56,7 @@ public class PlayerSwitch : MonoBehaviour {
 		holderTransform.position = new Vector3(newPlayer.position.x, holderTransform.position.y, holderTransform.position.z);
 
 		toInitialize = false;
-		Switch(newPlayer, currentPlayer, this.switchType);
+		Switch(newPlayer, currentPlayer);
 	}
 
 	public void instantSwitch(Transform newPlayer){
@@ -70,10 +70,10 @@ public class PlayerSwitch : MonoBehaviour {
 
 		toInitialize = true;
 		routine = 'a';
-		Switch(newPlayer, currentPlayer, this.switchType);
+		Switch(newPlayer, currentPlayer);
 	}
 
-	void Switch(Transform newPlayer, GameObject currentPlayer, string switchType){
+	void Switch(Transform newPlayer, GameObject currentPlayer){
 		Vector3 backupHolderScale = playerHolder.transform.localScale;
 		Debug.Log(backupHolderScale);
 		GameManager gameManager = FindObjectOfType<GameManager>();

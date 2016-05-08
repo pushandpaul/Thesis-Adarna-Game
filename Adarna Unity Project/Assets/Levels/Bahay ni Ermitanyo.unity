@@ -204,6 +204,106 @@ SpriteRenderer:
   m_Color: {r: 0.4, g: 0.6627451, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &401101768
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 499480, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499480, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499480, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499480, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499480, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499480, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 499480, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 499480, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 145872, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: m_Name
+      value: Flowchart
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419882, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 644826006}
+    - target: {fileID: 11405340, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1197212257}
+    - target: {fileID: 11456676, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1197212257}
+    - target: {fileID: 11415558, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 644826006}
+    - target: {fileID: 11469592, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 644826007}
+    - target: {fileID: 11409582, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1537280316}
+    - target: {fileID: 11444284, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 644826008}
+    - target: {fileID: 11483106, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 644826006}
+    - target: {fileID: 11444252, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 644826006}
+    - target: {fileID: 11429014, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 644826007}
+    - target: {fileID: 11489220, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 644826010}
+    - target: {fileID: 11430084, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+      propertyPath: selectedBlock
+      value: 
+      objectReference: {fileID: 401101769}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8f1481a0d4a65574480f53aa1543c92c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &401101769 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400722, guid: 8f1481a0d4a65574480f53aa1543c92c,
+    type: 2}
+  m_PrefabInternal: {fileID: 401101768}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!4 &507644078 stripped
 Transform:
   m_PrefabParentObject: {fileID: 442430, guid: bc631a84261d60e4785fe7220d1d506f, type: 2}
@@ -251,1024 +351,12 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!1 &551311866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 142980, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 551311886}
-  - 114: {fileID: 551311867}
-  - 114: {fileID: 551311885}
-  - 114: {fileID: 551311884}
-  - 114: {fileID: 551311883}
-  - 114: {fileID: 551311882}
-  - 114: {fileID: 551311881}
-  - 114: {fileID: 551311880}
-  - 114: {fileID: 551311879}
-  - 114: {fileID: 551311878}
-  - 114: {fileID: 551311877}
-  - 114: {fileID: 551311876}
-  - 114: {fileID: 551311875}
-  - 114: {fileID: 551311874}
-  - 114: {fileID: 551311873}
-  - 114: {fileID: 551311872}
-  - 114: {fileID: 551311871}
-  - 114: {fileID: 551311868}
-  - 114: {fileID: 551311869}
-  - 114: {fileID: 551311891}
-  - 114: {fileID: 551311892}
-  - 114: {fileID: 551311870}
-  - 114: {fileID: 551311887}
-  - 114: {fileID: 551311889}
-  - 114: {fileID: 551311888}
-  - 114: {fileID: 551311890}
-  - 114: {fileID: 551311893}
-  - 114: {fileID: 551311894}
-  - 114: {fileID: 551311895}
-  - 114: {fileID: 551311896}
-  - 114: {fileID: 551311897}
-  - 114: {fileID: 551311898}
-  - 114: {fileID: 551311900}
-  - 114: {fileID: 551311899}
-  - 114: {fileID: 551311901}
-  - 114: {fileID: 551311902}
-  - 114: {fileID: 551311903}
-  - 114: {fileID: 551311905}
-  - 114: {fileID: 551311904}
-  - 114: {fileID: 551311906}
-  - 114: {fileID: 551311907}
-  - 114: {fileID: 551311910}
-  - 114: {fileID: 551311908}
-  - 114: {fileID: 551311909}
-  m_Layer: 0
-  m_Name: Flowchart
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &551311867
+--- !u!114 &551311867 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11430050, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
+  m_PrefabParentObject: {fileID: 11430084, guid: 8f1481a0d4a65574480f53aa1543c92c,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabInternal: {fileID: 401101768}
   m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1.0
-  scrollPos: {x: -181.59229, y: 10.933769}
-  variablesScrollPos: {x: 0, y: 0}
-  variablesExpanded: 1
-  blockViewHeight: 400
-  zoom: 0.9100001
-  scrollViewRect:
-    serializedVersion: 2
-    x: -350
-    y: -473
-    width: 1654.469
-    height: 1232.5684
-  selectedBlock: {fileID: 551311901}
-  selectedCommands: []
-  variables: []
-  description: 
-  stepPause: 0
-  colorCommands: 1
-  hideComponents: 1
-  saveSelection: 1
-  localizationId: 
-  hideCommands: []
---- !u!114 &551311868
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11427334, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 479.1593
-    y: 159.306
-    width: 206
-    height: 40
-  itemId: 18
-  blockName: 'Reach: Bahay ni Ermitanyo'
-  description: 
-  eventHandler: {fileID: 551311870}
-  commandList:
-  - {fileID: 551311889}
-  - {fileID: 551311869}
-  - {fileID: 551311892}
---- !u!114 &551311869
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 19
-  errorMessage: 
-  indentLevel: 0
-  storyText: Ayun ang bahay!
-  description: 
-  character: {fileID: 644826006}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &551311870
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 551311868}
-  message: 'Reach: Bahay ni Ermitanyo'
---- !u!114 &551311871
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11482676, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 17
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 551311876}
-  callMode: 0
---- !u!114 &551311872
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11465062, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 16
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 551311876}
-  callMode: 0
---- !u!114 &551311873
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11481472, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 15
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: disablePlayerMovement
-  delay: 0
---- !u!114 &551311874
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11415072, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 551311885}
-  message: Bert
---- !u!114 &551311875
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11465912, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 14
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: enablePlayerMovement
-  delay: 0
---- !u!114 &551311876
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11482810, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 146.2243
-    y: 319.56842
-    width: 151
-    height: 40
-  itemId: 13
-  blockName: End Conversation
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 551311875}
---- !u!114 &551311877
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11411090, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 12
-  errorMessage: 
-  indentLevel: 0
-  storyText: But why!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &551311878
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11404096, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 10
-  errorMessage: 
-  indentLevel: 0
-  text: No
-  description: 
-  targetBlock: {fileID: 551311879}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
---- !u!114 &551311879
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11400390, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 54.47416
-    y: 207.71431
-    width: 120
-    height: 40
-  itemId: 9
-  blockName: No
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 551311877}
-  - {fileID: 551311871}
---- !u!114 &551311880
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11453800, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 7
-  errorMessage: 
-  indentLevel: 0
-  storyText: You picked yes!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &551311881
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11441268, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 259.16718
-    y: 207.71432
-    width: 120
-    height: 40
-  itemId: 6
-  blockName: Yes
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 551311880}
-  - {fileID: 551311872}
---- !u!114 &551311882
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11472716, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 5
-  errorMessage: 
-  indentLevel: 0
-  text: Yes
-  description: 
-  targetBlock: {fileID: 551311881}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
---- !u!114 &551311883
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11414062, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 2
-  errorMessage: 
-  indentLevel: 0
-  storyText: Bert for short!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &551311884
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11418834, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 1
-  errorMessage: 
-  indentLevel: 0
-  storyText: Hi I'm Berto!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &551311885
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11433304, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 157.5927
-    y: 107.64438
-    width: 128
-    height: 40
-  itemId: 0
-  blockName: Bert Dialogue
-  description: 
-  eventHandler: {fileID: 551311874}
-  commandList:
-  - {fileID: 551311873}
-  - {fileID: 551311884}
-  - {fileID: 551311883}
-  - {fileID: 551311882}
-  - {fileID: 551311878}
---- !u!4 &551311886
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 467082, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
---- !u!114 &551311887
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 515.258
-    y: 71.0239
-    width: 132
-    height: 40
-  itemId: 80
-  blockName: Start Dialogue
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 551311888}
---- !u!114 &551311888
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 93
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1197212257}
-  methodName: startDialogue
-  delay: 0
---- !u!114 &551311889
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 92
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 551311887}
-  callMode: 1
---- !u!114 &551311890
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 94
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1197212257}
-  methodName: endDialogue
-  delay: 0
---- !u!114 &551311891
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 519.78723
-    y: 241.27052
-    width: 125
-    height: 40
-  itemId: 74
-  blockName: End Dialogue
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 551311890}
---- !u!114 &551311892
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 75
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 551311867}
-  targetBlock: {fileID: 551311891}
-  callMode: 0
---- !u!114 &551311893
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 764.46893
-    y: 78.79225
-    width: 140
-    height: 40
-  itemId: 95
-  blockName: 'Interact: Banga'
-  description: 
-  eventHandler: {fileID: 551311894}
-  commandList:
-  - {fileID: 551311895}
-  - {fileID: 551311900}
-  - {fileID: 551311898}
-  - {fileID: 551311899}
-  - {fileID: 551311909}
-  - {fileID: 551311910}
-  - {fileID: 551311896}
-  - {fileID: 551311897}
---- !u!114 &551311894
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 551311893}
-  message: 'Interact: Banga'
---- !u!114 &551311895
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 96
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 551311887}
-  callMode: 1
---- !u!114 &551311896
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 97
-  errorMessage: 
-  indentLevel: 0
-  storyText: Sandali, kailangan mapuno ko muna ng tubig ang banga...
-  description: 
-  character: {fileID: 644826006}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &551311897
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 98
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 551311867}
-  targetBlock: {fileID: 551311891}
-  callMode: 0
---- !u!114 &551311898
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 134
-  errorMessage: 
-  indentLevel: 0
-  animator: {fileID: 644826007}
-  stateName: Pickup Item (Low)
-  layer: -1
-  time: 0
---- !u!114 &551311899
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 136
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1537280316}
-  methodName: carryItem
-  delay: 0.5
---- !u!114 &551311900
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 135
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 644826008}
-  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: ItemToGive
-  targetMethod: setItem
-  targetMethodText: 'setItem (Sprite): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      typeFullname: UnityEngine.Sprite
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 21300000, guid: 377cb6d47ae0c254ea196c97ef6111c9, type: 3}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &551311901
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 760.3593
-    y: 141.80595
-    width: 132
-    height: 40
-  itemId: 137
-  blockName: 'Interact: Batis'
-  description: 
-  eventHandler: {fileID: 551311902}
-  commandList:
-  - {fileID: 551311903}
-  - {fileID: 551311905}
-  - {fileID: 551311906}
-  - {fileID: 551311908}
-  - {fileID: 551311904}
-  - {fileID: 551311907}
---- !u!114 &551311902
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 551311901}
-  message: 'Interact: Batis'
---- !u!114 &551311903
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 138
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 551311887}
-  callMode: 1
---- !u!114 &551311904
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 140
-  errorMessage: 
-  indentLevel: 0
-  storyText: Kailagan ko nang mailigtas ang aking mga kapatid.
-  description: 
-  character: {fileID: 644826006}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &551311905
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 139
-  errorMessage: 
-  indentLevel: 0
-  storyText: Eto, may batis! Pwede ako kumuha ng tubig dito.
-  description: 
-  character: {fileID: 644826006}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &551311906
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 141
-  errorMessage: 
-  indentLevel: 0
-  animator: {fileID: 644826007}
-  stateName: Pickup Item (Low)
-  layer: -1
-  time: 0
---- !u!114 &551311907
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 142
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 551311867}
-  targetBlock: {fileID: 551311891}
-  callMode: 0
---- !u!114 &551311908
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 174
-  errorMessage: 
-  indentLevel: 0
-  duration: 1
---- !u!114 &551311909
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 175
-  errorMessage: 
-  indentLevel: 0
-  duration: 1
---- !u!114 &551311910
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551311866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 173
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 644826010}
-  targetComponentAssemblyName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: PlayerController
-  targetMethod: setPlayerSate
-  targetMethodText: 'setPlayerSate (String): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.String
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: Carry Item (Idle)
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!1001 &579294689
 Prefab:
   m_ObjectHideFlags: 0

@@ -81,6 +81,8 @@ public class LevelManager : MonoBehaviour {
 				if(toMatch.GetComponent<FollowTarget>() != null){
 					if(!toMatch.GetComponent<FollowTarget>().enabled)
 						allowMatch = true;
+					else
+						allowMatch = false;
 				}
 				else
 					allowMatch = true;
