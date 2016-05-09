@@ -402,6 +402,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &175350
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 441746}
+  - 114: {fileID: 11403952}
+  m_Layer: 0
+  m_Name: 'Start: Narrative (5)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &179620
 GameObject:
   m_ObjectHideFlags: 1
@@ -459,7 +475,7 @@ GameObject:
   - 4: {fileID: 482610}
   - 114: {fileID: 11464692}
   m_Layer: 0
-  m_Name: 'Start: Narrative (5)'
+  m_Name: 'Start: Narrative (6)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,6 +686,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470110}
   m_RootOrder: 8
+--- !u!4 &441746
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455044}
+  m_RootOrder: 6
 --- !u!4 &444666
 Transform:
   m_ObjectHideFlags: 1
@@ -722,6 +750,7 @@ Transform:
   - {fileID: 455914}
   - {fileID: 489924}
   - {fileID: 471002}
+  - {fileID: 441746}
   - {fileID: 482610}
   - {fileID: 496214}
   - {fileID: 469174}
@@ -798,7 +827,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!4 &469784
 Transform:
   m_ObjectHideFlags: 1
@@ -916,7 +945,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!4 &489924
 Transform:
   m_ObjectHideFlags: 1
@@ -952,7 +981,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -989,6 +1018,25 @@ MonoBehaviour:
   Status: 0
   OnReach: 0100000000000000
   nextObjective: {fileID: 11449822}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
+--- !u!114 &11403952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Start: Narrative (5)'
+  Description: 
+  Kind: 0
+  Status: 0
+  OnReach: 0100000000000000
+  nextObjective: {fileID: 11464692}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11408978
@@ -1218,8 +1266,8 @@ MonoBehaviour:
   - {fileID: 174688}
   - {fileID: 182564}
   - {fileID: 116170}
-  currentPartIndex: 1
-  currentObjective: {fileID: 11484342}
+  currentPartIndex: 2
+  currentObjective: {fileID: 11418612}
   currentObjectiveIndex: 0
   objectivePanelFader: {fileID: 11444632}
   fadeDelay: 10
@@ -1397,7 +1445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Start: Narrative (5)'
+  Name: 'Start: Narrative (6)'
   Description: 
   Kind: 0
   Status: 0
@@ -1478,7 +1526,7 @@ MonoBehaviour:
   Kind: 0
   Status: 0
   OnReach: 0100000000000000
-  nextObjective: {fileID: 11464692}
+  nextObjective: {fileID: 11403952}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11479864
