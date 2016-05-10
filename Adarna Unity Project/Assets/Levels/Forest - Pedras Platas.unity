@@ -719,7 +719,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448148, guid: 2dde3925c3bb0f74b823f7e49456c106, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2dde3925c3bb0f74b823f7e49456c106, type: 2}
@@ -1034,6 +1034,7 @@ GameObject:
   - 114: {fileID: 532386746}
   - 114: {fileID: 532386745}
   - 114: {fileID: 532386744}
+  - 114: {fileID: 532386936}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1082,8 +1083,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 728.71545
-    y: 514.54553
+    x: 730.4396
+    y: 512.8214
     width: 161
     height: 40
   itemId: 174
@@ -6815,6 +6816,7 @@ MonoBehaviour:
   - {fileID: 532386897}
   - {fileID: 532386819}
   - {fileID: 532386878}
+  - {fileID: 532386936}
   - {fileID: 532386817}
   - {fileID: 532386896}
   - {fileID: 532386895}
@@ -7589,6 +7591,84 @@ MonoBehaviour:
   - {fileID: 532386933}
   - {fileID: 532386932}
   - {fileID: 532386928}
+--- !u!114 &532386936
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532386704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 330
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1584473682}
+  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveObject
+  targetMethod: moveToPosition
+  targetMethodText: 'moveToPosition (Transform, Vector3, Single): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1293102629}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: -3.2, y: -1.5, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Single
+      intValue: 0
+      boolValue: 0
+      floatValue: 3
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &644826006 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
@@ -8033,18 +8113,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 452440, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11434314, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
       propertyPath: flowchart
       value: 
       objectReference: {fileID: 2049704004}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11475730, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1293102628 stripped
 Transform:
   m_PrefabParentObject: {fileID: 452440, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
+  m_PrefabInternal: {fileID: 1293102627}
+--- !u!4 &1293102629 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 422394, guid: 6a9c89fb9f1d36a418c34898946b2aeb, type: 2}
   m_PrefabInternal: {fileID: 1293102627}
 --- !u!1 &1315913232
 GameObject:
@@ -8871,20 +8956,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -518.1509, y: -270.50977}
+  scrollPos: {x: -425.04745, y: -99.92786}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 352
-  zoom: 0.64
+  zoom: 0.46000004
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 2464.3442
     height: 1672.7627
-  selectedBlock: {fileID: 532386777}
+  selectedBlock: {fileID: 532386706}
   selectedCommands:
-  - {fileID: 532386766}
+  - {fileID: 532386739}
   variables: []
   description: 
   stepPause: 0
@@ -8931,8 +9016,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1906597291}
-  - {fileID: 1293102628}
   - {fileID: 685794021}
+  - {fileID: 1293102628}
   - {fileID: 1134703564}
   - {fileID: 109497857}
   m_Father: {fileID: 0}

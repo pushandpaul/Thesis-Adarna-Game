@@ -34,6 +34,11 @@ public class MoveObject : MonoBehaviour {
 		StartCoroutine(startMoving(this.transform.localPosition, target, duration));
 	}
 
+	public void moveToPosition(Transform toMove , Vector3 target, float duration){//can be called in other functions with custom parameters
+		Debug.Log("Moving");
+		StartCoroutine(startMovingObject(toMove, toMove.localPosition, target, duration));
+	}
+
 	public void moveDefaultObject(){//moves object to default target using default duration
 		StartCoroutine(startMovingObject(defaultToTransform, defaultToTransform.localPosition, Target, defaultDuration));
 	}

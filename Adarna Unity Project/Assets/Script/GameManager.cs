@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour {
 						objectData.transform.position = objectDataRef.coordinates;
 						//objectData.transform.localScale = objectDataRef.scale;
 						Debug.Log("'" + objectData.Name + "' position is loaded.");
-						if(objectDataRef.parentName != ""){
+						if(objectDataRef.parentName != "" && objectDataRef.parentName != null){
 							if(objectData.transform.parent.name != objectDataRef.parentName)
 								objectData.transform.parent = GameObject.Find(objectDataRef.parentName).transform;
 							Debug.Log("'" + objectData.Name + "' parent has found.");

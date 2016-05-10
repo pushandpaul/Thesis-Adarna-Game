@@ -18,6 +18,9 @@ public class LevelLoader : MonoBehaviour {
 		GreenToDarkForest = 10,
 		//Minigames
 		MinigameDayap = 11,
+		DarkForest = 12,
+		KwartoNiAdarna = 13,
+		KwartoNiDonJuan = 14,
 	}
 
 	public LevelSelect Levels;

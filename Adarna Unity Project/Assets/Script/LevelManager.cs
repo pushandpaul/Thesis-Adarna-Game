@@ -21,6 +21,15 @@ public class LevelManager : MonoBehaviour {
 	private GameManager gameManager;
 	public ObjectData[] objectData;
 
+	[System.Serializable]
+	public class StructObjectRef{
+		public Vector3 coordinates;
+		public Vector3 scale;
+		public string Name;
+		public bool destroyed;
+		public string parentName;
+	}
+
 	void Awake(){
 		gameManager = FindObjectOfType<GameManager>();
 		objectData = FindObjectsOfType<ObjectData>();
@@ -43,7 +52,7 @@ public class LevelManager : MonoBehaviour {
 			gameManager.loadCoordinates(objectData);
 		}
 
-		changeTimeOfDay(gameManager.timeOfDay);
+		changeTimeOfDay(gameManager.timeOfDay.ToString());
 
 		//Player Initialization
 		if(!playerPos.Load()){
@@ -107,22 +116,23 @@ public class LevelManager : MonoBehaviour {
 		spawedObject.name = toInstantiate.name;
 	}
 
-	public void changeTimeOfDay(char timeOfDay){
+	public void changeTimeOfDay(string timeOfDay){
 		LightController globalLight;
 		GameObject globaLightHolder;
 		GameObject[] characterLight = GameObject.FindGameObjectsWithTag("Character Light");
+		char[] myTimeOfDay = timeOfDay.ToCharArray();
 
 		globaLightHolder = GameObject.FindWithTag("Global Light");
 
 		if(globaLightHolder != null){
 			globalLight = globaLightHolder.GetComponent<LightController>();
-			if(timeOfDay == 'd'){
+			if(myTimeOfDay[0] == 'd'){
 				globalLight.setLightIntensity(1.8f);
 				Debug.Log("Global Light Intensity adjusted to day time");
 				foreach(GameObject lightHolder in characterLight)
 					lightHolder.GetComponent<Light>().intensity = 0f;
 			}
-			else if(timeOfDay == 'n'){
+			else if(myTimeOfDay[0] == 'n'){
 				globalLight.setLightIntensity(0f);
 				Debug.Log("Global Light Intensity adjusted to night time");
 				foreach(GameObject lightHolder in characterLight){
@@ -238,5 +248,53 @@ public class LevelManager : MonoBehaviour {
 
 	public void clearHeldItem(){
 		gameManager.currentHeldItem = null;
+	}
+
+	public void setObjectReference(string sceneName, string objectName, Vector3 position, bool destroyed){
+		ObjectDataReference[] objectDataRefs;
+		SceneObjects tempSceneObject;
+		GameObject objectRefContainer;
+		ObjectDataReference objectRef;
+		bool sceneFound = false;
+		bool objectFound = false;
+
+		foreach(SceneObjects sceneObject in gameManager.sceneObjects){
+			if (sceneName == sceneObject.name) {
+				Debug.Log ("Scene found in the list");
+				objectDataRefs = sceneObject.GetComponentsInChildren<ObjectDataReference> ();
+				foreach (ObjectDataReference objectDataRef in objectDataRefs) {
+					if (objectName == objectDataRef.Name.Replace ("(Ref)", "")) {
+						objectDataRef.Init (position, destroyed);
+						objectFound = true;
+						break;
+					} else
+						objectFound = false;
+				}
+				if(!objectFound){
+					objectRefContainer = new GameObject ("(Ref)" + objectName);
+					objectRef = objectRefContainer.AddComponent<ObjectDataReference> ();
+					objectRef.transform.SetParent (sceneObject.transform);
+					objectRef.Init (position,destroyed);
+					sceneObject.sceneObjectData.Add (objectRef);
+				}
+				sceneFound = true;
+				break;
+			}
+		}
+		if(!sceneFound){
+			Debug.Log("Scene not found in the list.");
+			GameObject container = new GameObject(sceneName);
+			container.transform.SetParent(gameManager.sceneObjsHolder);
+			tempSceneObject = container.AddComponent<SceneObjects>();
+			tempSceneObject.Name = sceneName;
+			gameManager.sceneObjects.Add(tempSceneObject);
+			Debug.Log("'" + tempSceneObject.Name + "' added to the scene list.");
+
+			objectRefContainer = new GameObject ("(Ref)" + objectName);
+			objectRef = objectRefContainer.AddComponent<ObjectDataReference> ();
+			objectRef.transform.SetParent (tempSceneObject.transform);
+			objectRef.Init (position,destroyed);
+			tempSceneObject.sceneObjectData.Add (objectRef);
+		}
 	}
 }

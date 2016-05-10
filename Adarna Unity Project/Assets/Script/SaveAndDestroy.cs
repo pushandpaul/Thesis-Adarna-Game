@@ -10,7 +10,7 @@ public class SaveAndDestroy : MonoBehaviour {
 		gameManager = FindObjectOfType<GameManager>();
 	}
 	public void saveAndDestroy(GameObject myGameObject){
-		ObjectData objectData = this.GetComponent<ObjectData>();
+		ObjectData objectData = myGameObject.GetComponent<ObjectData>();
 		if(objectData != null){
 			objectData.destroyed = true;
 			gameManager.searchObjectData(objectData, 's');
@@ -19,7 +19,7 @@ public class SaveAndDestroy : MonoBehaviour {
 	}
 
 	public void saveNowDestroyLater(GameObject myGameObject){
-		ObjectData objectData = this.GetComponent<ObjectData>();
+		ObjectData objectData = myGameObject.GetComponent<ObjectData>();
 		if(objectData != null){
 			objectData.destroyed = true;
 			gameManager.searchObjectData(objectData, 's');
