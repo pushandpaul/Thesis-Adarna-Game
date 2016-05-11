@@ -4,7 +4,8 @@ using System.Collections;
 public class MoveCharacter : MonoBehaviour {
 
 	//default character speed 7f/sec
-	float defaultSpeed = 7f;
+	private float defaultSpeed = 7f;
+	private bool grounded = true;
 
 	public void flipCharacter(Transform character, string direction){
 		NPCInteraction npc = GetComponent<NPCInteraction>();
@@ -45,16 +46,20 @@ public class MoveCharacter : MonoBehaviour {
 		Animator anim = character.GetComponentInChildren<Animator>();
 		Vector3 distance; 
 
-		if (anim != null)
+		if (anim != null){
 			animatorFound = true;
+			Debug.Log(anim.name);
+		}
+			
 		else
 			animatorFound = false;
-		
+
 		while(Time.time <= endTime){
 			float t = (Time.time - startTime)/duration;
 			character.position = Vector3.Lerp(current, target, t);
 			if (animatorFound) {
 				anim.SetFloat ("Speed", (int)Mathf.Abs (target.x - character.position.x));
+				anim.SetBool("Ground", grounded);
 			}
 			yield return null;
 		}

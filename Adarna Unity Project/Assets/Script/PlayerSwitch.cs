@@ -63,10 +63,19 @@ public class PlayerSwitch : MonoBehaviour {
 		//changes player in an instant and destroys the previous one - used for persistence of the "new player"
 		playerHolder = FindObjectOfType<PlayerController>();
 		GameObject currentPlayer = GameObject.FindGameObjectWithTag("Character Controlling");
+		GameObject currentPlayerDump = GameObject.FindGameObjectWithTag("Default Player Dump");
 
 		switchType = "instant";
 
-		Destroy(currentPlayer);
+		if(currentPlayerDump != null){
+			currentPlayerDump.transform.localScale = playerHolder.transform.localScale;
+			currentPlayer.transform.parent = currentPlayerDump.transform;
+			currentPlayer.transform.localPosition = Vector3.zero;
+			currentPlayer.transform.SetAsFirstSibling();
+			currentPlayerDump.tag = "Playable Character";
+		}
+		else	
+			Destroy(currentPlayer);
 
 		toInitialize = true;
 		routine = 'a';
@@ -97,6 +106,7 @@ public class PlayerSwitch : MonoBehaviour {
 		if(newPlayer.parent != null){
 			if(newPlayer.parent.localScale.x > 0){
 				playerHolder.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+				newPlayer.parent.localScale = new Vector3(0.5f, 0.5f, 1f);
 				if(!toInitialize)
 					backupHolderScale = new Vector3(Mathf.Abs(backupHolderScale.x), backupHolderScale.y, backupHolderScale.z);
 				Debug.Log("New player scale is greater than 0");
@@ -104,6 +114,7 @@ public class PlayerSwitch : MonoBehaviour {
 
 			else if(newPlayer.parent.localScale.x < 0){
 				playerHolder.transform.localScale = new Vector3(-0.5f, 0.5f, 1f);
+				newPlayer.parent.localScale = new Vector3(-0.5f, 0.5f, 1f);
 				if(!toInitialize)
 					backupHolderScale = new Vector3(-(Mathf.Abs(backupHolderScale.x)), backupHolderScale.y, backupHolderScale.z);
 				Debug.Log("New player scale is less than 0");

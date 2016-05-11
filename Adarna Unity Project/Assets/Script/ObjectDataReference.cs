@@ -8,6 +8,7 @@ public class ObjectDataReference : MonoBehaviour {
 	public string Name;
 	public bool destroyed;
 	public string parentName;
+	public bool setParent = true;
 	void Awake () {
 		this.Name = this.name;
 	}
@@ -15,6 +16,7 @@ public class ObjectDataReference : MonoBehaviour {
 	public void Init(Vector3 coordinates, bool destroyed){
 		this.coordinates = coordinates;
 		this.destroyed = destroyed;
+		this.setParent = false;
 	}
 	public void Init(Vector3 coordinates, bool destroyed, string parentName){
 		this.coordinates = coordinates;

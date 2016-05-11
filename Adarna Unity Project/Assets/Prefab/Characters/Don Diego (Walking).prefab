@@ -98,7 +98,7 @@ GameObject:
   - 114: {fileID: 11412272}
   m_Layer: 9
   m_Name: Don Diego (Walking)
-  m_TagString: Playable Character
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -371,10 +371,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 477562}
   - 95: {fileID: 9541810}
-  - 114: {fileID: 11494490}
+  - 114: {fileID: 11446164}
   m_Layer: 0
   m_Name: Don Diego
-  m_TagString: Untagged
+  m_TagString: Playable Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -561,7 +561,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174816}
-  m_LocalRotation: {x: 0, y: 0, z: 0.39016697, w: 0.9207441}
+  m_LocalRotation: {x: 0, y: 0, z: 0.038630236, w: 0.9992536}
   m_LocalPosition: {x: 0.20015457, y: -1.012469, z: 0}
   m_LocalScale: {x: 0.94748574, y: 0.9474855, z: 0.9474855}
   m_Children:
@@ -713,7 +713,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109194}
-  m_LocalRotation: {x: 0, y: 0, z: -0.49059036, w: 0.8713904}
+  m_LocalRotation: {x: 0, y: 0, z: -0.036170986, w: 0.99934566}
   m_LocalPosition: {x: -0.033443645, y: -0.8350002, z: 0}
   m_LocalScale: {x: 1.0270944, y: 1.0270945, z: 1.0270945}
   m_Children:
@@ -726,7 +726,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111070}
-  m_LocalRotation: {x: 0, y: 0, z: 0.2736274, w: 0.9618358}
+  m_LocalRotation: {x: 0, y: 0, z: -0.007975979, w: 0.99996823}
   m_LocalPosition: {x: -0.5754538, y: 0.63550377, z: 0}
   m_LocalScale: {x: 0.9632132, y: 0.96321315, z: 0.96321315}
   m_Children:
@@ -740,7 +740,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.127323, y: 3.16, z: 0}
+  m_LocalPosition: {x: -6.127323, y: -9.389999, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 477562}
@@ -818,7 +818,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149568}
-  m_LocalRotation: {x: 0, y: 0, z: 0.11566721, w: 0.99328804}
+  m_LocalRotation: {x: 0, y: 0, z: 0.019102346, w: 0.99981755}
   m_LocalPosition: {x: -0.07618981, y: -0.9091384, z: 0}
   m_LocalScale: {x: 0.9950591, y: 0.995059, z: 0.995059}
   m_Children:
@@ -831,7 +831,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199892}
-  m_LocalRotation: {x: 0, y: 0, z: -0.4196795, w: 0.90767246}
+  m_LocalRotation: {x: 0, y: 0, z: -0.058603346, w: 0.9982814}
   m_LocalPosition: {x: 0.00838216, y: -0.819, z: 0}
   m_LocalScale: {x: 1.0252475, y: 1.0252475, z: 1.0252475}
   m_Children:
@@ -1035,6 +1035,19 @@ MonoBehaviour:
   portraits: []
   portraitsFace: 0
   description: 
+--- !u!114 &11446164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bff06d1c5a4f344087e864f688666c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &11449430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1097,19 +1110,6 @@ MonoBehaviour:
   grounded: 1
   distanceLimit: 3
   isFollowing: 0
-  anim: {fileID: 0}
---- !u!114 &11494490
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bff06d1c5a4f344087e864f688666c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 0}
   anim: {fileID: 0}
 --- !u!114 &11495434
 MonoBehaviour:

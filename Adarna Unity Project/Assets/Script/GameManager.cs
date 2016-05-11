@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour {
 		sceneObjects = new List<SceneObjects>();
 		//Followers = new List<FollowTarget>();
 		FollowerNames = new List<string>();
-		//characters = new List<SavedCharData>();
+		if(characters.Count == 0)
+			characters = new List<SavedCharData>();
 		foreach(FollowTarget follower in Followers){
 			FollowerNames.Add(follower.name);
 		}
@@ -57,6 +58,8 @@ public class GameManager : MonoBehaviour {
 				character.stateHashID = Animator.StringToHash(character.state);
 			}
 		}
+
+		//resetCharData("Don Pedro");
 	}
 		
 	public void updateSceneList(){
@@ -137,15 +140,15 @@ public class GameManager : MonoBehaviour {
 						objectData.transform.position = objectDataRef.coordinates;
 						//objectData.transform.localScale = objectDataRef.scale;
 						Debug.Log("'" + objectData.Name + "' position is loaded.");
-						if(objectDataRef.parentName != "" && objectDataRef.parentName != null){
+						if(objectDataRef.parentName != "" && objectDataRef.parentName != null && objectDataRef.parentName != "NA"){
 							if(objectData.transform.parent.name != objectDataRef.parentName)
 								objectData.transform.parent = GameObject.Find(objectDataRef.parentName).transform;
 							Debug.Log("'" + objectData.Name + "' parent has found.");
 						}
-						else{
+						/*else{
 							objectData.transform.parent = null;
 							Debug.Log("'" + objectData.Name + "' has no parent.");
-						}
+						}*/
 					}
 					break;
 				case 'f':
@@ -190,28 +193,32 @@ public class GameManager : MonoBehaviour {
 		int tempHashID = 0;
 		bool found = false;
 		foreach(CharacterData charData in characterData){
-			for(int i = 0; i < characters.Count; i++){
-				if(charData.name == characters[i].Name){
-					Debug.Log("Character data for '" + charData.name + "' found in the list.");
+			found = false;
+			Debug.Log(charData.name);
+			if(charData.allowSave){
+				for(int i = 0; i < characters.Count; i++){
+					if(charData.name == characters[i].Name){
+						Debug.Log("Character data for '" + charData.name + "' found in the list.");
+						Debug.Log("Saving character data for '" + charData.name + "'.");
+						if(charData.anim != null)
+							tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
+						else
+							tempHashID = 0;
+						characters[i] = new SavedCharData(charData.name, tempHashID, charData.item.getItem());
+						found = true;
+						break;
+					}
+				}
+
+				if(!found){
+					Debug.Log("No character data for '" + charData.name + "' found in the list. Saved character data will be created.");
 					Debug.Log("Saving character data for '" + charData.name + "'.");
 					if(charData.anim != null)
 						tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
 					else
 						tempHashID = 0;
-					characters[i] = new SavedCharData(charData.name, tempHashID, charData.item.getItem());
-					found = true;
-					break;
+					characters.Add(new SavedCharData(charData.name, tempHashID, charData.item.getItem()));
 				}
-			}
-
-			if(!found){
-				Debug.Log("No character data for '" + charData.name + "' found in the list. Saved character data will be created.");
-				Debug.Log("Saving character data for '" + charData.name + "'.");
-				if(charData.anim != null)
-					tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
-				else
-					tempHashID = 0;
-				characters.Add(new SavedCharData(charData.name, tempHashID, charData.item.getItem()));
 			}
 		}
 	}
@@ -220,10 +227,11 @@ public class GameManager : MonoBehaviour {
 		bool found = false;
 
 		foreach(CharacterData charData in characterData){
+			//found = false;
 			foreach(SavedCharData character in characters){
 				if(charData.name == character.Name && charData.name != currentCharacterName){
 					Debug.Log("Character '" + charData.name + "' is found in the character data list.");
-					found = true;
+					//found = true;
 					if(character.stateHashID != 0){
 						Debug.Log("Character '" + charData.name + "' animation ID '" + character.stateHashID + "' will be played.");
 						charData.anim.Play(character.stateHashID);
@@ -237,6 +245,24 @@ public class GameManager : MonoBehaviour {
 				else
 					Debug.Log("Character may be the player or data not saved.");
 			}
+		}
+	}
+
+	public void resetCharData(CharacterData characterData){
+		foreach(SavedCharData character in characters){
+			if(characterData.name == character.Name){
+				characters.Remove(character);
+				characterData.allowSave = false;
+				//characterData.enabled = false;
+				//Destroy(characterData);
+				break;
+			}
+		}
+	}
+
+	public void resetCharsData(CharacterData[] charactersData){
+		foreach(CharacterData charData in charactersData){
+			resetCharData(charData);
 		}
 	}
 

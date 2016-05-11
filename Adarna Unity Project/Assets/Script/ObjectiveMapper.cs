@@ -23,8 +23,11 @@ public class ObjectiveMapper : MonoBehaviour {
 	private NPCInteraction npc;
 	private ObjectInteraction objectiveHolder;
 
-	void Start () {
+	void Awake(){
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
+	}
+	void Start () {
+		
 		if(isNPC)
 			npc = this.GetComponent<NPCInteraction>();
 		else if(isObject)

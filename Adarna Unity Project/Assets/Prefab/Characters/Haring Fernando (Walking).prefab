@@ -202,9 +202,11 @@ GameObject:
   - 4: {fileID: 491414}
   - 61: {fileID: 6131220}
   - 58: {fileID: 5815798}
+  - 50: {fileID: 5076662}
   - 114: {fileID: 11450314}
   - 114: {fileID: 11497342}
-  - 114: {fileID: 11436160}
+  - 114: {fileID: 11452206}
+  - 114: {fileID: 11419554}
   m_Layer: 0
   m_Name: Haring Fernando (Walking)
   m_TagString: Untagged
@@ -595,8 +597,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0166667, y: 0, z: 0}
-  m_LocalScale: {x: 1.6666666, y: 1.6666666, z: 1}
+  m_LocalPosition: {x: 0.018000126, y: -0.10000038, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 479158}
   - {fileID: 410918}
@@ -611,7 +613,7 @@ Transform:
   m_GameObject: {fileID: 158954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: -9.4, z: -0.11425781}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 480580}
   m_Father: {fileID: 0}
@@ -641,6 +643,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 479158}
   m_RootOrder: 4
+--- !u!50 &5076662
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158954}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &5815798
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -668,7 +687,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2.03, y: 6.4}
+  m_Size: {x: 2.92, y: 7.1}
 --- !u!95 &9517818
 Animator:
   serializedVersion: 3
@@ -686,7 +705,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11436160
+--- !u!114 &11419554
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -717,6 +736,21 @@ MonoBehaviour:
   portraits: []
   portraitsFace: 0
   description: 
+--- !u!114 &11452206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8773c06e426b734ba19bc4716d21af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asBasis: {fileID: 0}
+  isAbsoluteScale: 0
+  matchOnStart: 0
+  matchPlayer: 1
 --- !u!114 &11497342
 MonoBehaviour:
   m_ObjectHideFlags: 1

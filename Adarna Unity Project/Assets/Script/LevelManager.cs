@@ -103,12 +103,16 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void onLevelExit(){
+		
 		Debug.Log("Exiting level.");
 		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
+		CharacterData[] charactersData = FindObjectsOfType<CharacterData>();
+
 		if(FindObjectsOfType<ObjectData>().Length > 0)
 			gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
 		followerManager.updateFollowerList();
-		gameManager.saveCharData(FindObjectsOfType<CharacterData>());
+
+		gameManager.saveCharData(charactersData);
 	}
 
 	public void unclonedInstace(GameObject toInstantiate, Vector3 position){
@@ -191,10 +195,10 @@ public class LevelManager : MonoBehaviour {
 		else 
 			newPlayer.localScale = new Vector3(scaleX, scaleY, 1f);
 			
-		if (newPlayer.localRotation.z > 0)
+		/*if (newPlayer.localRotation.z > 0)
 			newPlayer.localRotation = Quaternion.Euler (0, 0, -rotationZ);
 		else if (newPlayer.localRotation.z < 0)
-			newPlayer.localRotation = Quaternion.Euler (0, 0, rotationZ);
+			newPlayer.localRotation = Quaternion.Euler (0, 0, rotationZ);*/
 		if (isNPC) {
 			SpriteRenderer[] New = newPlayer.GetComponentsInChildren<SpriteRenderer> (true);
 			foreach (SpriteRenderer _new in New) {
@@ -250,6 +254,10 @@ public class LevelManager : MonoBehaviour {
 		gameManager.currentHeldItem = null;
 	}
 
+	public void _setObjectReference(string objectName, Vector3 position, bool destroyed){
+		setObjectReference(gameManager.currentScene, objectName, position, destroyed);
+	}
+
 	public void setObjectReference(string sceneName, string objectName, Vector3 position, bool destroyed){
 		ObjectDataReference[] objectDataRefs;
 		SceneObjects tempSceneObject;
@@ -296,5 +304,29 @@ public class LevelManager : MonoBehaviour {
 			objectRef.Init (position,destroyed);
 			tempSceneObject.sceneObjectData.Add (objectRef);
 		}
+	}
+
+	public void removeObjectReference(string sceneName, string objectName){
+		ObjectDataReference[] objectDataRefs;
+		foreach(SceneObjects sceneObject in gameManager.sceneObjects){
+			if(sceneName == sceneObject.name){
+				objectDataRefs = sceneObject.GetComponentsInChildren<ObjectDataReference>();
+				foreach(ObjectDataReference objectDataRef in objectDataRefs){
+					if(objectName == objectDataRef.Name.Replace("(Ref)", "")){
+						Destroy(objectDataRef.gameObject);
+						break;
+					}
+				}
+				break;
+			}
+		}
+	}
+
+	public void resetCharData(CharacterData characterData){
+		gameManager.resetCharData(characterData);
+	}
+
+	public void resetCharsData(CharacterData[] charactersData){
+		gameManager.resetCharsData(charactersData);
 	}
 }

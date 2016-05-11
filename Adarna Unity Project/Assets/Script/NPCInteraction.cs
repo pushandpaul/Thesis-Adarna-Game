@@ -30,9 +30,16 @@ public class NPCInteraction : MonoBehaviour {
 
 	public SpeechBubble bubble;
 
-	void Start () {
-		bubble = this.GetComponentInChildren<SpeechBubble> ();
+	void Awake(){
 		objectiveMapper = this.GetComponent<ObjectiveMapper>();
+	}
+
+	void Start () {
+		if(bubble == null){
+			bubble = this.GetComponentInChildren<SpeechBubble> ();
+		}
+		//bubble = this.GetComponentInChildren<SpeechBubble> ();
+		//objectiveMapper = this.GetComponent<ObjectiveMapper>();
 		if (objectiveMapper != null) {
 			anObjective = true;
 

@@ -74,6 +74,7 @@ GameObject:
   - 4: {fileID: 409186}
   - 114: {fileID: 11467236}
   - 58: {fileID: 5823594}
+  - 114: {fileID: 11458012}
   m_Layer: 0
   m_Name: Container Trigger
   m_TagString: Untagged
@@ -108,9 +109,7 @@ GameObject:
   - 212: {fileID: 21222954}
   - 61: {fileID: 6115152}
   - 50: {fileID: 5021966}
-  - 58: {fileID: 5886824}
-  - 114: {fileID: 11401058}
-  - 114: {fileID: 11415338}
+  - 114: {fileID: 11448914}
   m_Layer: 9
   m_Name: Character Container
   m_TagString: Playable Character
@@ -143,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8395157, y: -0.67733574, z: 0.10289352}
+  m_LocalPosition: {x: 0, y: 0, z: 0.10289352}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 448148}
@@ -207,7 +206,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.955553, y: -2.2784, z: 0}
+  m_LocalPosition: {x: 4.53, y: -9.06, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 409186}
@@ -267,23 +266,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 1.9, y: 0.31}
-  serializedVersion: 2
-  m_Radius: 1.92
---- !u!58 &5886824
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 184616}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.75
+  m_Radius: 3
 --- !u!61 &6115152
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -348,7 +333,7 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11401058
+--- !u!114 &11448914
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -356,20 +341,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 184616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Script: {fileID: 11500000, guid: d8773c06e426b734ba19bc4716d21af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partObjective:
-  - part: 2
-    objectives: 01000000
-  isNPC: 1
-  isObject: 0
---- !u!114 &11415338
+  asBasis: {fileID: 0}
+  isAbsoluteScale: 1
+  matchOnStart: 0
+  matchPlayer: 1
+--- !u!114 &11458012
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 184616}
+  m_GameObject: {fileID: 164884}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
@@ -382,14 +366,14 @@ MonoBehaviour:
   allowFlip: 1
   anObjective: 0
   message: 
-  bubble: {fileID: 0}
+  bubble: {fileID: 11495702}
 --- !u!114 &11467236
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164884}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
   m_Name: 

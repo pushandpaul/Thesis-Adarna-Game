@@ -5,8 +5,9 @@ public class CharacterData : MonoBehaviour {
 
 	public ItemToGive item;
 	public Animator anim;
+	public bool allowSave = true;
 
-	void Start () {
+	void Awake () {
 		anim = GetComponent<Animator>();
 		item = GetComponentInChildren<ItemToGive>(true);
 	}
