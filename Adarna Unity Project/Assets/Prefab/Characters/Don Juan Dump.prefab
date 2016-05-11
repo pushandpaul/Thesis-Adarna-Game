@@ -12,6 +12,20 @@ GameObject:
   - 61: {fileID: 6128774}
   - 50: {fileID: 5015258}
   - 114: {fileID: 11496822}
+  - 58: {fileID: 5834470}
+  - 114: {fileID: 11494284}
+  - 114: {fileID: 11400288}
+  - 114: {fileID: 11488850}
+  - 58: {fileID: 5880780}
+  - 114: {fileID: 11433740}
+  - 114: {fileID: 11470406}
+  - 114: {fileID: 11453014}
+  - 114: {fileID: 11473492}
+  - 58: {fileID: 5867650}
+  - 114: {fileID: 11442118}
+  - 114: {fileID: 11425338}
+  - 114: {fileID: 11471380}
+  - 114: {fileID: 11425134}
   m_Layer: 9
   m_Name: Don Juan Dump
   m_TagString: Default Player Dump
@@ -206,7 +220,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.21, y: -10.44, z: 0}
+  m_LocalPosition: {x: 1.49, y: -9.11, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 430968}
@@ -269,6 +283,48 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!58 &5834470
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 2.64, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
+--- !u!58 &5867650
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 2.64, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
+--- !u!58 &5880780
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 2.64, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!61 &6128774
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -333,6 +389,25 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11400288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 1
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  facingRight: 0
+  allowFlip: 1
+  anObjective: 0
+  message: 
+  bubble: {fileID: 0}
 --- !u!114 &11401244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,6 +419,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39083b95791559544822fb9bbf4435bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11425134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  destroyed: 0
+--- !u!114 &11425338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 1
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  facingRight: 0
+  allowFlip: 1
+  anObjective: 0
+  message: 
+  bubble: {fileID: 0}
+--- !u!114 &11433740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partObjective:
+  - part: 3
+    objectives: 03000000
+  isNPC: 1
+  isObject: 0
 --- !u!114 &11439356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -377,6 +500,124 @@ MonoBehaviour:
   partObjective:
   - part: 2
     objectives: 01000000
+  isNPC: 1
+  isObject: 0
+--- !u!114 &11442118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partObjective:
+  - part: 3
+    objectives: 03000000
+  isNPC: 1
+  isObject: 0
+--- !u!114 &11453014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Don Juan
+  nameColor: {r: 0, g: 0, b: 0, a: 1}
+  soundEffect: {fileID: 0}
+  profileSprite: {fileID: 0}
+  portraits: []
+  portraitsFace: 0
+  description: 
+--- !u!114 &11470406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 1
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  facingRight: 0
+  allowFlip: 1
+  anObjective: 0
+  message: 
+  bubble: {fileID: 0}
+--- !u!114 &11471380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Don Juan
+  nameColor: {r: 0, g: 0, b: 0, a: 1}
+  soundEffect: {fileID: 0}
+  profileSprite: {fileID: 0}
+  portraits: []
+  portraitsFace: 0
+  description: 
+--- !u!114 &11473492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  destroyed: 0
+--- !u!114 &11488850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Don Juan
+  nameColor: {r: 0, g: 0, b: 0, a: 1}
+  soundEffect: {fileID: 0}
+  profileSprite: {fileID: 0}
+  portraits: []
+  portraitsFace: 0
+  description: 
+--- !u!114 &11494284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partObjective:
+  - part: 3
+    objectives: 05000000
   isNPC: 1
   isObject: 0
 --- !u!114 &11496822

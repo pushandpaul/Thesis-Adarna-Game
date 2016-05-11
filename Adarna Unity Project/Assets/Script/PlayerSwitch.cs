@@ -56,6 +56,8 @@ public class PlayerSwitch : MonoBehaviour {
 		holderTransform.position = new Vector3(newPlayer.position.x, holderTransform.position.y, holderTransform.position.z);
 
 		toInitialize = false;
+		Debug.Log ("New Player: " + newPlayer.name);
+		Debug.Log ("Current Player: " + currentPlayer.name);
 		Switch(newPlayer, currentPlayer);
 	}
 
@@ -72,7 +74,7 @@ public class PlayerSwitch : MonoBehaviour {
 			currentPlayer.transform.parent = currentPlayerDump.transform;
 			currentPlayer.transform.localPosition = Vector3.zero;
 			currentPlayer.transform.SetAsFirstSibling();
-			currentPlayerDump.tag = "Playable Character";
+			currentPlayer.tag = "Playable Character";
 		}
 		else	
 			Destroy(currentPlayer);
