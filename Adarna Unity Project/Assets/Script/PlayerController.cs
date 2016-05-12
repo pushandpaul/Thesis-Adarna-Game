@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 
 	public bool canMove;
 	public bool facingRight;
+	public bool allowFlip = true;
 
 	public Transform groundCheck;
 	public float groundCheckRadius;
@@ -44,11 +45,6 @@ public class PlayerController : MonoBehaviour {
 		moveSpeed += (Mathf.Abs(transform.localScale.x) % 0.5f) * 10;
 		Debug.Log("This is player speed: " + moveSpeed);
 
-		if(transform.localScale.x < 0)
-			facingRight = false;
-		else if(transform.localScale.x > 0)
-			facingRight = true;
-
 		initState();
 	}
 
@@ -61,13 +57,18 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		moveVelocity = 0f;
 
+		if(transform.localScale.x < 0)
+			facingRight = false;
+		else if(transform.localScale.x > 0)
+			facingRight = true;
+
 		if(!canMove){
 			anim.SetFloat("Speed", 0);
 			anim.SetBool("Ground", true);
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 			return;
 		}
-
+			
 		if(Input.GetKeyDown(KeyCode.Space) && grounded){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
 		}
@@ -90,18 +91,19 @@ public class PlayerController : MonoBehaviour {
 			anim = GetComponentInChildren<Animator>();
 
 		//Flip
+		if(allowFlip){
+			if(GetComponent<Rigidbody2D>().velocity.x > 0){
+				transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
+				//facingRight = true;
+				//flipPlayer();
+			}
 
-		if(GetComponent<Rigidbody2D>().velocity.x > 0){
-			transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
-			facingRight = true;
-			//flipPlayer();
-		}
-			
-		else if(GetComponent<Rigidbody2D>().velocity.x < 0){
-			transform.localScale = new Vector3(-scaleX, scaleY, scaleZ);
-			facingRight = false;
-			//flipPlayer();
+			else if(GetComponent<Rigidbody2D>().velocity.x < 0){
+				transform.localScale = new Vector3(-scaleX, scaleY, scaleZ);
+				//facingRight = false;
+				//flipPlayer();
 
+			}
 		}
 
 	}

@@ -21,6 +21,9 @@ public class LevelLoader : MonoBehaviour {
 		DarkForest = 12,
 		KwartoNiAdarna = 13,
 		KwartoNiDonJuan = 14,
+		Castle2ndFloor = 15,
+		DarkToGreenForest = 16,
+		DownhillForest = 17,
 	}
 
 	public LevelSelect Levels;

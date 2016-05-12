@@ -57,18 +57,18 @@ public class LevelManager : MonoBehaviour {
 		//Player Initialization
 		if(!playerPos.Load()){
 			if(isDoor && door.Length > 0){
-				player.transform.position = new Vector3(door[doorIndex].transform.position.x, location.playerSpawnY, location.playerSpawnZ);
-				camera.transform.position = new Vector3(door[doorIndex].transform.position.x, location.cameraSpawnY, location.cameraSpawnZ);
+				player.transform.position = new Vector3(door[doorIndex].transform.position.x, location.playerSpawnRightY, location.playerSpawnZ);
+				camera.transform.position = new Vector3(door[doorIndex].transform.position.x, location.cameraSpawnRightY, location.cameraSpawnZ);
 			}
 			else if(!isDoor){
 				if(exitInRight){
-					player.transform.position = new Vector3(location.playerSpawnLeftX, location.playerSpawnY, location.playerSpawnZ);
-					camera.transform.position = new Vector3(location.cameraSpawnLeftX, location.cameraSpawnY, location.cameraSpawnZ);
+					player.transform.position = new Vector3(location.playerSpawnLeftX, location.playerSpawnLeftY, location.playerSpawnZ);
+					camera.transform.position = new Vector3(location.cameraSpawnLeftX, location.cameraSpawnLeftY, location.cameraSpawnZ);
 				}
 				else{
-					player.transform.position = new Vector3(location.playerSpawnRightX, location.playerSpawnY, location.playerSpawnZ);
+					player.transform.position = new Vector3(location.playerSpawnRightX, location.playerSpawnRightY, location.playerSpawnZ);
 					player.transform.localScale = new Vector3(-player.transform.localScale.x, player.transform.localScale.y, 1f);
-					camera.transform.position = new Vector3(location.cameraSpawnRightX, location.cameraSpawnY, location.cameraSpawnZ);
+					camera.transform.position = new Vector3(location.cameraSpawnRightX, location.cameraSpawnRightY, location.cameraSpawnZ);
 					camera.flipped = true;
 				}
 			}
@@ -147,6 +147,8 @@ public class LevelManager : MonoBehaviour {
 				}
 			}
 		}
+
+		gameManager.timeOfDay = myTimeOfDay[0];
 	}
 
 	public void changePlayer(Transform newPlayer, bool inScene){
@@ -320,6 +322,16 @@ public class LevelManager : MonoBehaviour {
 				break;
 			}
 		}
+	}
+
+	public void setCharData(CharacterData characterData, string state){
+		characterData.saveThis = true;
+		characterData.Init(state);
+	}
+
+	public void setCharData(CharacterData characterData, string state, Sprite itemHeld){
+		characterData.saveThis = true;
+		characterData.Init(state, itemHeld);
 	}
 
 	public void resetCharData(CharacterData characterData){

@@ -8,22 +8,15 @@ public class MoveCharacter : MonoBehaviour {
 	private bool grounded = true;
 
 	public void flipCharacter(Transform character, string direction){
-		NPCInteraction npc = GetComponent<NPCInteraction>();
-		bool npcFacingRight = false;
 
 		if(direction == "r"){
 			character.localScale = new Vector3(Mathf.Abs(character.localScale.x), character.localScale.y, character.localScale.z);
-			npcFacingRight = true;
 			Debug.Log("Flipped to the right.");
 		}
 		else if(direction == "l"){
 			character.localScale = new Vector3(-(Mathf.Abs(character.localScale.x)), character.localScale.y, character.localScale.z);
-			npcFacingRight = false;
-			Debug.Log("Flipped to the left.");
-		}
 
-		if(npc != null){
-			npc.facingRight = npcFacingRight;
+			Debug.Log("Flipped to the left.");
 		}
 	}
 
@@ -44,7 +37,8 @@ public class MoveCharacter : MonoBehaviour {
 		float endTime = startTime + duration;
 		bool animatorFound = false;
 		Animator anim = character.GetComponentInChildren<Animator>();
-		Vector3 distance; 
+		PlayerController player = character.GetComponent<PlayerController>();
+		Vector3 distance = new Vector3(); 
 
 		if (anim != null){
 			animatorFound = true;
@@ -57,11 +51,20 @@ public class MoveCharacter : MonoBehaviour {
 		while(Time.time <= endTime){
 			float t = (Time.time - startTime)/duration;
 			character.position = Vector3.Lerp(current, target, t);
+			if(player != null)
+				player.allowFlip = false;
 			if (animatorFound) {
-				anim.SetFloat ("Speed", (int)Mathf.Abs (target.x - character.position.x));
+				anim.SetFloat ("Speed", Mathf.Abs (target.x - character.position.x));
 				anim.SetBool("Ground", grounded);
 			}
 			yield return null;
 		}
+
+		if(player != null){
+			player.allowFlip = true;
+		}
+			
+		if(animatorFound)
+			anim.SetFloat ("Speed", 0);
 	}
 }

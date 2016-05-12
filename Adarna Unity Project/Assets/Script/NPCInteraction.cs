@@ -14,13 +14,15 @@ public class NPCInteraction : MonoBehaviour {
 	private float colliderOffsetX;
 	private float colliderOffsetY;
 
-	private float scaleX;
-	private float scaleY;
+	public bool onlyTrigger = false;
+	public Transform toTransform;
 
 	public bool facingRight;
+	public bool standardFacing;
 
 	public bool allowFlip = true;
 	private bool toFlip;
+	private Vector3 backupScale;
 
 	private ObjectiveMapper objectiveMapper;
 	public bool anObjective;
@@ -32,6 +34,11 @@ public class NPCInteraction : MonoBehaviour {
 
 	void Awake(){
 		objectiveMapper = this.GetComponent<ObjectiveMapper>();
+		if(onlyTrigger){
+			toTransform = transform.parent;
+		}
+		else
+			toTransform = transform;;
 	}
 
 	void Start () {
@@ -50,8 +57,6 @@ public class NPCInteraction : MonoBehaviour {
 		flowchart = FindObjectOfType<Flowchart>();
 
 		player = FindObjectOfType<PlayerController>();
-		scaleX = transform.localScale.x;
-		scaleY = transform.localScale.y;
 		colliderOffsetX = this.GetComponent<CircleCollider2D>().offset.x;
 		colliderOffsetY = this.GetComponent<CircleCollider2D>().offset.y;
 
@@ -59,6 +64,7 @@ public class NPCInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () { 
+
 		if (anObjective) {
 			if (objectiveMapper.checkIfCurrent ()) {
 				if (Camera.main.WorldToViewportPoint (bubble.transform.position).x < 0 ||
@@ -67,6 +73,14 @@ public class NPCInteraction : MonoBehaviour {
 				}
 			}
 		}
+
+		if(standardFacing){
+			if(toTransform.localScale.x > 0)
+				facingRight = true;
+			else if(toTransform.localScale.x < 0)
+				facingRight = false;
+		}
+			
 
 		if(allowFlip){
 			if(facingRight != player.facingRight){
@@ -83,13 +97,14 @@ public class NPCInteraction : MonoBehaviour {
 			toFlip = false;
 		if(!DialogueController.inDialogue){
 			if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
+				backupScale = toTransform.localScale;
 				if(toFlip){
-					transform.localScale = new Vector3(-scaleX, scaleY, 1f);
+					toTransform.localScale = new Vector3(-backupScale.x, backupScale.y, backupScale.z);
 					//facingPlayer == true;
 				}
 
 				else
-					transform.localScale = new Vector3(scaleX, scaleY, 1f);
+					toTransform.localScale = new Vector3(backupScale.x, backupScale.y, backupScale.z);
 				Debug.Log ("Interacted with NPC " + gameObject.name);
 				checkIfCurrent();
 			}
@@ -120,7 +135,7 @@ public class NPCInteraction : MonoBehaviour {
 	}
 
 	public void endDialogue(){
-		transform.localScale = new Vector3(scaleX, scaleY, 1f);
+		toTransform.localScale = backupScale;
 	}
 
 	private void checkIfCurrent(){

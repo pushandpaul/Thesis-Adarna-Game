@@ -192,6 +192,7 @@ public class GameManager : MonoBehaviour {
 	public void saveCharData(CharacterData[] characterData){
 		int tempHashID = 0;
 		bool found = false;
+		Sprite itemHeld = new Sprite();
 		foreach(CharacterData charData in characterData){
 			found = false;
 			Debug.Log(charData.name);
@@ -200,11 +201,23 @@ public class GameManager : MonoBehaviour {
 					if(charData.name == characters[i].Name){
 						Debug.Log("Character data for '" + charData.name + "' found in the list.");
 						Debug.Log("Saving character data for '" + charData.name + "'.");
-						if(charData.anim != null)
-							tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
-						else
-							tempHashID = 0;
-						characters[i] = new SavedCharData(charData.name, tempHashID, charData.item.getItem());
+						if(charData.saveThis){
+							if(charData.anim != null)
+								tempHashID = charData.stateHashID;
+							else
+								tempHashID = 0;
+							itemHeld = charData.heldItem;
+						}
+								
+						else{
+							if(charData.anim != null)
+								tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
+							else
+								tempHashID = 0;
+							itemHeld = charData.item.getItem();
+						}
+								
+						characters[i] = new SavedCharData(charData.name, tempHashID, itemHeld);
 						found = true;
 						break;
 					}
@@ -213,11 +226,22 @@ public class GameManager : MonoBehaviour {
 				if(!found){
 					Debug.Log("No character data for '" + charData.name + "' found in the list. Saved character data will be created.");
 					Debug.Log("Saving character data for '" + charData.name + "'.");
-					if(charData.anim != null)
-						tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
-					else
-						tempHashID = 0;
-					characters.Add(new SavedCharData(charData.name, tempHashID, charData.item.getItem()));
+					if(charData.saveThis){
+						if(charData.anim != null)
+							tempHashID = charData.stateHashID;
+						else
+							tempHashID = 0;
+						itemHeld = charData.heldItem;
+					}
+
+					else{
+						if(charData.anim != null)
+							tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
+						else
+							tempHashID = 0;
+						itemHeld = charData.item.getItem();
+					}
+					characters.Add(new SavedCharData(charData.name, tempHashID, itemHeld));
 				}
 			}
 		}

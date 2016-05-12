@@ -446,6 +446,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a87e4595c45ef94e9791a13ab47b767, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &608815645 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11488850, guid: 2a87e4595c45ef94e9791a13ab47b767,
+    type: 2}
+  m_PrefabInternal: {fileID: 608815644}
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -625,7 +631,6 @@ GameObject:
   - 114: {fileID: 745093193}
   - 114: {fileID: 745093192}
   - 114: {fileID: 745093191}
-  - 114: {fileID: 745093190}
   - 114: {fileID: 745093189}
   - 114: {fileID: 745093188}
   - 114: {fileID: 745093187}
@@ -2539,24 +2544,6 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 745093185}
---- !u!114 &745093190
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11426086, guid: b27b97066c86db54f8f9b358cc9014b4,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 745093117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 120
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: endDialogue
-  delay: 0
 --- !u!114 &745093191
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2598,7 +2585,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 745093190}
   - {fileID: 745093186}
 --- !u!114 &745093193
 MonoBehaviour:
@@ -2617,7 +2603,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Maraming salamat po!
   description: 
-  character: {fileID: 0}
+  character: {fileID: 608815645}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2643,7 +2629,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Oh siya, mauna ka na at palalim na ang gabi. Padating na ang ibon\u2026"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 321171345}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2688,7 +2674,7 @@ MonoBehaviour:
   storyText: 'Pagkatapos, gamitin mo ang gintong sintas na ito para hulihin ang Ibong
     Adarna. '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 321171345}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2715,7 +2701,7 @@ MonoBehaviour:
   storyText: 'Pagkatapos kumanta ng ibon, magbabawas ito. Siguraduhin mong huwag kang
     mapatakan nito. Kung hindi, magiging bato ka. '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 321171345}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2742,7 +2728,7 @@ MonoBehaviour:
   storyText: Gamitin mo ang pitong dayap na ibinigay ko sayo. Sa bawat kanta ng ibon,
     sugatan mo ang palad mo at pigaan mo ng dayap. Mananatili kang gising sa sakit.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 321171345}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2770,7 +2756,7 @@ MonoBehaviour:
     ang kulay ng Ibong Adarna. Mag-ingat ka, Don Juan, sapagkat nakakaantok ang mga
     awit ng ibon. '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 321171345}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2797,7 +2783,7 @@ MonoBehaviour:
   storyText: 'Naalala mo ang nadaanan mong magandang puno? Yung makinang? Doon nakatira
     ang Ibong Adarna. Umuuwi ang ibon tuwing hatinggabi at kumakanta ito. '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 321171345}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2823,7 +2809,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Pasensya na po kayo.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 608815645}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2849,7 +2835,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Hindi mo naintindihan? Sige, uulitin ko para sayo.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 321171345}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2895,8 +2881,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 621.5744
-    y: 298.31613
+    x: 618.2075
+    y: 296.6327
     width: 120
     height: 40
   itemId: 104
@@ -2978,7 +2964,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'Naiintindihan mo ba? '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 321171345}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3691,7 +3677,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Mamaya na tayo {color=yellow} magniig/mag-usap {/color}. Kumain ka muna.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 321171345}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4137,20 +4123,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -193.89447, y: -58.175446}
+  scrollPos: {x: -93.02051, y: -23.088852}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 374
-  zoom: 0.6840219
+  zoom: 0.5940219
   scrollViewRect:
     serializedVersion: 2
     x: -361.18542
     y: -473
     width: 1820.6249
     height: 1363.8989
-  selectedBlock: {fileID: 745093166}
-  selectedCommands:
-  - {fileID: 745093127}
+  selectedBlock: {fileID: 745093183}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -4591,19 +4576,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481898, guid: 5eb68f8d6266be0408f1d7a50745c76d, type: 2}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11430180, guid: 5eb68f8d6266be0408f1d7a50745c76d, type: 2}
-      propertyPath: playerSpawnLeftX
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 21270582, guid: 5eb68f8d6266be0408f1d7a50745c76d, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21223412, guid: 5eb68f8d6266be0408f1d7a50745c76d, type: 2}
-      propertyPath: m_Enabled
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5eb68f8d6266be0408f1d7a50745c76d, type: 2}

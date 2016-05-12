@@ -250,22 +250,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 198816, guid: a4f6397f9fbb3c7449e24047570f07a4, type: 2}
-      propertyPath: m_Name
-      value: BG
-      objectReference: {fileID: 0}
-    - target: {fileID: 21264800, guid: a4f6397f9fbb3c7449e24047570f07a4, type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1067694563
-      objectReference: {fileID: 0}
-    - target: {fileID: 21294148, guid: a4f6397f9fbb3c7449e24047570f07a4, type: 2}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 21241936, guid: a4f6397f9fbb3c7449e24047570f07a4, type: 2}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4f6397f9fbb3c7449e24047570f07a4, type: 2}
   m_IsPrefabParent: 0
@@ -334,7 +318,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 356.90912
-    y: 114.36363
+    y: 110.954544
     width: 190
     height: 40
   itemId: 0
@@ -876,7 +860,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &72471189
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72471169}
@@ -889,7 +873,7 @@ MonoBehaviour:
   message: 'Start: Narrative (3-5)'
 --- !u!114 &72471190
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72471169}
@@ -900,8 +884,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 369.31818
-    y: 51.136368
+    x: 370.45453
+    y: 52.272728
     width: 173
     height: 40
   itemId: 118
@@ -915,7 +899,7 @@ MonoBehaviour:
   - {fileID: 72471191}
 --- !u!114 &72471191
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72471169}
@@ -932,7 +916,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &72471192
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72471169}
@@ -949,7 +933,7 @@ MonoBehaviour:
   callMode: 1
 --- !u!114 &72471193
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72471169}
@@ -1027,7 +1011,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &72471194
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72471169}
@@ -1088,7 +1072,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &72471195
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72471169}
@@ -1103,7 +1087,7 @@ MonoBehaviour:
   duration: 0.5
 --- !u!114 &72471196
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72471169}
@@ -1281,6 +1265,63 @@ SpriteRenderer:
   m_Color: {r: 0.4, g: 0.6627451, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &365971325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 365971326}
+  - 61: {fileID: 365971328}
+  - 114: {fileID: 365971327}
+  m_Layer: 0
+  m_Name: Return
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &365971326
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 365971325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.87, y: 1.4624425, z: -1.7109375}
+  m_LocalScale: {x: 4.2249947, y: 8.864766, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1913243863}
+  m_RootOrder: 1
+--- !u!114 &365971327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 365971325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12ea1d5afa71c949a814f6cb5023a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisDoorIndex: 3
+  nextLocation: Castle - 2nd Floor
+  waitForPress: 0
+--- !u!61 &365971328
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 365971325}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!1001 &375883977
 Prefab:
   m_ObjectHideFlags: 0
@@ -1375,7 +1416,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 481804, guid: 2a87e4595c45ef94e9791a13ab47b767, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.49
+      value: 4.13
       objectReference: {fileID: 0}
     - target: {fileID: 481804, guid: 2a87e4595c45ef94e9791a13ab47b767, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2217,7 +2258,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1705037629
 Transform:
   m_ObjectHideFlags: 0
@@ -2454,7 +2495,10 @@ MonoBehaviour:
   pressToInteract: 1
   flowchart: {fileID: 0}
   player: {fileID: 0}
+  onlyTrigger: 0
+  toTransform: {fileID: 0}
   facingRight: 1
+  standardFacing: 0
   allowFlip: 1
   anObjective: 0
   message: 
@@ -2498,6 +2542,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1705037629}
+  - {fileID: 365971326}
   m_Father: {fileID: 0}
   m_RootOrder: 9
 --- !u!1 &2001930048
