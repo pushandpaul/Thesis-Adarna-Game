@@ -71,12 +71,13 @@ public class FollowerManager : MonoBehaviour {
 			activeFollowers.Add(follower);
 	}
 
-	public void removeFollower(FollowTarget follower){
+	public void removeFollower(FollowTarget follower, bool isDestroyed){
 		foreach(FollowTarget activeFollower in activeFollowers){
 			if(activeFollower == follower){
 				activeFollower.enabled = false;
 				activeFollowers.Remove(activeFollower);
-				Destroy(follower.gameObject);
+				if(isDestroyed)
+					Destroy(follower.gameObject);
 				break;
 			}
 		}

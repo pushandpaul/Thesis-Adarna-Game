@@ -11,7 +11,7 @@ public class DialogueController : MonoBehaviour {
 	private ObjectiveManager objectiveManager;
 	private TextBoxManager objectiveTextBox;
 	private UIFader objectivePanelFader;
-	private FollowTarget[] followers;
+	private FollowerManager followerManager;
 
 	public bool zoomCam;
 	public bool centerCam;
@@ -22,18 +22,20 @@ public class DialogueController : MonoBehaviour {
 		camera = FindObjectOfType<CameraController>();
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		objectiveTextBox = objectiveManager.GetComponent<TextBoxManager>();
+		followerManager = FindObjectOfType<FollowerManager> ();
 		this.objectivePanelFader = objectiveManager.objectivePanelFader;
 	}
 
 	public void startDialogue(){
-		followers = FindObjectsOfType<FollowTarget>();
 		inDialogue = true;
-		if(followers != null || followers.Length > 0){
-			foreach(FollowTarget follower in followers){
-				follower.isFollowing = false;
-				follower.anim.SetFloat("Speed", 0f);
+
+		foreach(FollowTarget follower in followerManager.activeFollowers){
+			follower.isFollowing = false;
+			if(follower.anim != null){
+				follower.anim.SetFloat ("Speed", 0f);
 			}
 		}
+
 			
 		player.disablePlayerMovement();
 		if(centerCam)
@@ -50,14 +52,14 @@ public class DialogueController : MonoBehaviour {
 
 	public void endDialogue(){
 		player.enablePlayerMovement();
-		followers = FindObjectsOfType<FollowTarget>();
 		inDialogue = false;
-		if(followers != null || followers.Length > 0){
-			foreach(FollowTarget follower in followers){
-				follower.isFollowing = true;
+
+		foreach(FollowTarget follower in followerManager.activeFollowers){
+			follower.isFollowing = true;
+			if(follower.anim != null){
+				follower.anim.SetFloat ("Speed", 0f);
 			}
 		}
-
 		if(centerCam)
 			camera.centerCam(false);
 

@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &109034
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 413058}
+  - 114: {fileID: 11482750}
+  m_Layer: 0
+  m_Name: 'Start: Narrative (3)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &110524
 GameObject:
   m_ObjectHideFlags: 1
@@ -381,7 +397,7 @@ GameObject:
   - 4: {fileID: 489924}
   - 114: {fileID: 11488272}
   m_Layer: 0
-  m_Name: 'Start: Narrative (3)'
+  m_Name: 'Start: Narrative (4)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -492,7 +508,7 @@ GameObject:
   - 4: {fileID: 441746}
   - 114: {fileID: 11403952}
   m_Layer: 0
-  m_Name: 'Start: Narrative (5)'
+  m_Name: 'Start: Narrative (6)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -603,7 +619,7 @@ GameObject:
   - 4: {fileID: 482610}
   - 114: {fileID: 11464692}
   m_Layer: 0
-  m_Name: 'Start: Narrative (6)'
+  m_Name: 'Start: Narrative (7)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +751,7 @@ GameObject:
   - 4: {fileID: 471002}
   - 114: {fileID: 11476842}
   m_Layer: 0
-  m_Name: 'Start: Narrative (4)'
+  m_Name: 'Start: Narrative (5)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,6 +821,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428408}
   m_RootOrder: 11
+--- !u!4 &413058
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 455044}
+  m_RootOrder: 4
 --- !u!4 &413072
 Transform:
   m_ObjectHideFlags: 1
@@ -960,7 +988,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!4 &444666
 Transform:
   m_ObjectHideFlags: 1
@@ -1011,6 +1039,7 @@ Transform:
   - {fileID: 487588}
   - {fileID: 431606}
   - {fileID: 455914}
+  - {fileID: 413058}
   - {fileID: 489924}
   - {fileID: 471002}
   - {fileID: 441746}
@@ -1179,7 +1208,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &475588
 Transform:
   m_ObjectHideFlags: 1
@@ -1268,7 +1297,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!4 &484568
 Transform:
   m_ObjectHideFlags: 1
@@ -1304,7 +1333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &490116
 Transform:
   m_ObjectHideFlags: 1
@@ -1328,7 +1357,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455044}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1728,8 +1757,8 @@ MonoBehaviour:
   - {fileID: 182564}
   - {fileID: 116170}
   - {fileID: 188206}
-  currentPartIndex: 3
-  currentObjective: {fileID: 11434810}
+  currentPartIndex: 2
+  currentObjective: {fileID: 11482750}
   currentObjectiveIndex: 0
   objectivePanelFader: {fileID: 11444632}
   fadeDelay: 10
@@ -1842,10 +1871,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 'Start: Narrative (3-6)'
-  Description: 
+  Description: Bumalik sa Kwarto ng Ibong Adarna.
   Kind: 0
   Status: 0
-  OnReach: 0100000000000000
+  OnReach: 010000000000000002000000
   nextObjective: {fileID: 11420904}
   objectiveIndex: 0
   textBoxDisplayed: 0
@@ -2086,6 +2115,25 @@ MonoBehaviour:
   nextObjective: {fileID: 11497030}
   objectiveIndex: 0
   textBoxDisplayed: 0
+--- !u!114 &11482750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Start: Narrative (3)'
+  Description: 
+  Kind: 0
+  Status: 0
+  OnReach: 0100000000000000
+  nextObjective: {fileID: 11488272}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
 --- !u!114 &11484342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2145,7 +2193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Start: Narrative (3)'
+  Name: 'Start: Narrative (4)'
   Description: 
   Kind: 0
   Status: 0
@@ -2207,7 +2255,7 @@ MonoBehaviour:
   Kind: 1
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 11488272}
+  nextObjective: {fileID: 11482750}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11497030

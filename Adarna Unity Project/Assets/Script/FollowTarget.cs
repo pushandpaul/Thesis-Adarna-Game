@@ -18,7 +18,7 @@ public class FollowTarget : MonoBehaviour {
 	public Animator anim;
 	private NPCInteraction npc;
 
-	void Awake () {
+	void Start () {
 		target = FindObjectOfType<PlayerController>().transform;
 		anim = transform.GetComponentInChildren<Animator>();
 		npc = GetComponent<NPCInteraction>();
@@ -46,12 +46,12 @@ public class FollowTarget : MonoBehaviour {
 			if(target.localScale.x > 0){
 				tempDistanceLimit = -distanceLimit;
 				tempScale = defaultScaleX;
-				npc.facingRight = true;
+				//npc.facingRight = true;
 			}
 			else if(target.localScale.x < 0){
 				tempDistanceLimit = distanceLimit;
 				tempScale = -defaultScaleX;
-				npc.facingRight = false;
+				//npc.facingRight = false;
 			}
 			Follow(tempDistanceLimit);
 		}

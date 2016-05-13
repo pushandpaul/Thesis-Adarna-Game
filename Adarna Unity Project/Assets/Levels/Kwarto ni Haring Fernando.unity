@@ -275,7 +275,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1001 &105851410
 Prefab:
   m_ObjectHideFlags: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   - part: 1
     objectives: 00000000
   - part: 2
-    objectives: 07000000
+    objectives: 08000000
   isNPC: 0
   isObject: 1
 --- !u!114 &182380761
@@ -429,7 +429,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1094390404}
     m_Modifications:
     - target: {fileID: 481804, guid: 2a87e4595c45ef94e9791a13ab47b767, type: 2}
       propertyPath: m_LocalPosition.x
@@ -461,11 +461,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481804, guid: 2a87e4595c45ef94e9791a13ab47b767, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a87e4595c45ef94e9791a13ab47b767, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &224060767 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 481804, guid: 2a87e4595c45ef94e9791a13ab47b767, type: 2}
+  m_PrefabInternal: {fileID: 224060766}
 --- !u!1 &228237634
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,13 +511,13 @@ Transform:
   m_LocalScale: {x: 35.3, y: 9.912335, z: 1.01}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1001 &298880182
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1094390404}
     m_Modifications:
     - target: {fileID: 486774, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -545,39 +549,39 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 486774, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 421966, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.13834177
+      value: -0.0045674713
       objectReference: {fileID: 0}
     - target: {fileID: 421966, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9903846
+      value: 0.9999896
       objectReference: {fileID: 0}
     - target: {fileID: 468364, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.36837286
+      value: 0.032869056
       objectReference: {fileID: 0}
     - target: {fileID: 468364, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9296782
+      value: 0.99945974
       objectReference: {fileID: 0}
     - target: {fileID: 465504, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.8017052
+      value: -0.027864957
       objectReference: {fileID: 0}
     - target: {fileID: 465504, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.5977197
+      value: 0.9996117
       objectReference: {fileID: 0}
     - target: {fileID: 499220, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.32801843
+      value: 0.002949613
       objectReference: {fileID: 0}
     - target: {fileID: 499220, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.94467133
+      value: 0.99999565
       objectReference: {fileID: 0}
     - target: {fileID: 462476, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -614,6 +618,10 @@ Prefab:
 Animator:
   m_PrefabParentObject: {fileID: 9572250, guid: 5949bd820b5f80643b942016c1bff13a,
     type: 2}
+  m_PrefabInternal: {fileID: 298880182}
+--- !u!4 &298880184 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 486774, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
   m_PrefabInternal: {fileID: 298880182}
 --- !u!114 &359568269 stripped
 MonoBehaviour:
@@ -734,7 +742,7 @@ Transform:
   - {fileID: 182380763}
   - {fileID: 1717889633}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
 --- !u!1 &817521071
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,8 +769,8 @@ Transform:
   m_LocalPosition: {x: 2.528118, y: -3.530779, z: -0.23828125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 2066046978}
+  m_RootOrder: 1
 --- !u!114 &817521073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +824,7 @@ Transform:
   - {fileID: 1258224539}
   - {fileID: 381024905}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 14
 --- !u!1 &1089438486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,6 +1065,14 @@ GameObject:
   - 114: {fileID: 1089438718}
   - 114: {fileID: 1089438717}
   - 114: {fileID: 1089438619}
+  - 114: {fileID: 1089438720}
+  - 114: {fileID: 1089438721}
+  - 114: {fileID: 1089438722}
+  - 114: {fileID: 1089438723}
+  - 114: {fileID: 1089438724}
+  - 114: {fileID: 1089438725}
+  - 114: {fileID: 1089438726}
+  - 114: {fileID: 1089438727}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1077,19 +1093,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -375.48145, y: -86.747444}
+  scrollPos: {x: -448.1642, y: -193.4962}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 360
-  zoom: 0.7939127
+  zoom: 0.9139125
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 2043.0483
     height: 2184.8127
-  selectedBlock: {fileID: 1089438716}
-  selectedCommands: []
+  selectedBlock: {fileID: 1089438488}
+  selectedCommands:
+  - {fileID: 1089438518}
   variables: []
   description: 
   stepPause: 0
@@ -1122,6 +1139,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1089438531}
   commandList:
   - {fileID: 1089438528}
+  - {fileID: 1089438722}
   - {fileID: 1089438527}
   - {fileID: 1089438526}
   - {fileID: 1089438525}
@@ -1133,8 +1151,8 @@ MonoBehaviour:
   - {fileID: 1089438519}
   - {fileID: 1089438518}
   - {fileID: 1089438517}
-  - {fileID: 1089438516}
   - {fileID: 1089438515}
+  - {fileID: 1089438516}
   - {fileID: 1089438514}
   - {fileID: 1089438513}
   - {fileID: 1089438512}
@@ -1142,10 +1160,12 @@ MonoBehaviour:
   - {fileID: 1089438510}
   - {fileID: 1089438509}
   - {fileID: 1089438508}
+  - {fileID: 1089438723}
   - {fileID: 1089438507}
   - {fileID: 1089438506}
   - {fileID: 1089438505}
   - {fileID: 1089438504}
+  - {fileID: 1089438724}
   - {fileID: 1089438503}
   - {fileID: 1089438502}
   - {fileID: 1089438501}
@@ -2026,7 +2046,7 @@ MonoBehaviour:
   itemId: 159
   errorMessage: 
   indentLevel: 0
-  duration: 1
+  duration: 0.5
 --- !u!114 &1089438517
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2101,7 +2121,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 15, y: -1.11, z: 0}
+      vector3Value: {x: 16.5, y: -1.11, z: 0}
     variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
@@ -3004,7 +3024,9 @@ MonoBehaviour:
   - {fileID: 1089438554}
   - {fileID: 1089438536}
   - {fileID: 1089438534}
+  - {fileID: 1089438725}
   - {fileID: 1089438535}
+  - {fileID: 1089438726}
   - {fileID: 1089438533}
   - {fileID: 1089438532}
   - {fileID: 1089438713}
@@ -4546,7 +4568,7 @@ MonoBehaviour:
   - {fileID: 1089438540}
 --- !u!114 &1089438619
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1089438486}
@@ -5290,8 +5312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 657.6866
-    y: 356.30743
+    x: 656.266
+    y: 352.04556
     width: 210
     height: 40
   itemId: 168
@@ -5306,6 +5328,8 @@ MonoBehaviour:
   - {fileID: 1089438643}
   - {fileID: 1089438644}
   - {fileID: 1089438642}
+  - {fileID: 1089438721}
+  - {fileID: 1089438720}
   - {fileID: 1089438641}
   - {fileID: 1089438640}
   - {fileID: 1089438639}
@@ -6338,7 +6362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
 --- !u!114 &1089438696
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6358,7 +6382,7 @@ MonoBehaviour:
     width: 161
     height: 40
   itemId: 289
-  blockName: 'Start: Narrative (6)'
+  blockName: 'Start: Narrative (7)'
   description: 
   eventHandler: {fileID: 1089438697}
   commandList:
@@ -6378,7 +6402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1089438696}
-  message: 'Start: Narrative (6)'
+  message: 'Start: Narrative (7)'
 --- !u!114 &1089438698
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6604,7 +6628,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 18.5, y: -1.11, z: 0}
+      vector3Value: {x: 18, y: -1.11, z: 0}
     variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
@@ -6787,7 +6811,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1089438486}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
@@ -6827,7 +6851,7 @@ MonoBehaviour:
       intValue: 0
       boolValue: 0
       floatValue: 0
-      stringValue: Player
+      stringValue: Reyna Valeriana (Walking)
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
@@ -6852,7 +6876,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 19, y: -2.14, z: 0}
+      vector3Value: {x: -0.35, y: -2.14, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -7242,6 +7266,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1089438719}
   commandList:
   - {fileID: 1089438718}
+  - {fileID: 1089438727}
   - {fileID: 1089438619}
   - {fileID: 1089438717}
 --- !u!114 &1089438717
@@ -7291,6 +7316,480 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1089438716}
   message: 'Start: Narrative (3-8)'
+--- !u!114 &1089438720
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 313
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 105851411}
+  targetComponentAssemblyName: MoveCharacter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveCharacter
+  targetMethod: flipCharacter
+  targetMethodText: 'flipCharacter (Transform, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1218580588}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: l
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1089438721
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 314
+  errorMessage: 
+  indentLevel: 0
+  duration: 0.5
+--- !u!114 &1089438722
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 315
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 105851411}
+  targetComponentAssemblyName: MoveCharacter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveCharacter
+  targetMethod: moveCharacter
+  targetMethodText: 'moveCharacter (Transform, Vector3): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1218580588}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 17, y: -1.11, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1089438723
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 316
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 105851411}
+  targetComponentAssemblyName: MoveCharacter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveCharacter
+  targetMethod: flipCharacter
+  targetMethodText: 'flipCharacter (Transform, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1446976198}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: l
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1089438724
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 317
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 105851411}
+  targetComponentAssemblyName: MoveCharacter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveCharacter
+  targetMethod: flipCharacter
+  targetMethodText: 'flipCharacter (Transform, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1446976198}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: r
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1089438725
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 318
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 105851411}
+  targetComponentAssemblyName: MoveCharacter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveCharacter
+  targetMethod: flipCharacter
+  targetMethodText: 'flipCharacter (Transform, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1446976198}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: r
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1089438726
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 319
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 105851411}
+  targetComponentAssemblyName: MoveCharacter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveCharacter
+  targetMethod: flipCharacter
+  targetMethodText: 'flipCharacter (Transform, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1218580588}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: r
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1089438727
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 352
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1124809387}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: removeObjectReference
+  targetMethodText: 'removeObjectReference (String, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Kwarto ni Ibong Adarna
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Don Juan Dump
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!1 &1094390403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1094390404}
+  m_Layer: 0
+  m_Name: Characters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1094390404
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094390403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224060767}
+  - {fileID: 298880184}
+  - {fileID: 2084672130}
+  - {fileID: 1191593617}
+  - {fileID: 1289872913}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!1 &1119734199
 GameObject:
   m_ObjectHideFlags: 0
@@ -7330,8 +7829,8 @@ Transform:
   m_LocalPosition: {x: 174.3122, y: -77.58724, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 2066046978}
+  m_RootOrder: 0
 --- !u!1 &1124809387
 GameObject:
   m_ObjectHideFlags: 0
@@ -7373,7 +7872,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
 --- !u!1 &1125760605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7414,7 +7913,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 3
 --- !u!1 &1191593615
 GameObject:
   m_ObjectHideFlags: 0
@@ -7459,8 +7958,8 @@ Transform:
   m_LocalPosition: {x: 9.426465, y: -0.6139635, z: -1.4785156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 1094390404}
+  m_RootOrder: 3
 --- !u!1001 &1218580586
 Prefab:
   m_ObjectHideFlags: 0
@@ -7498,7 +7997,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11499272, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: camera
@@ -7797,6 +8296,84 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1258224538}
   m_Script: {fileID: 11500000, guid: 7bff06d1c5a4f344087e864f688666c7, type: 3}
+--- !u!1001 &1289872912
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1094390404}
+    m_Modifications:
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.0048828125
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21279278, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1320190139
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172044, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_Offset.x
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172044, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172044, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_Size.x
+      value: 2.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172044, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+      propertyPath: m_Size.y
+      value: 7.65
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1289872913 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 433388, guid: db9362f1d9c00c1409fb75956b3c1d60, type: 2}
+  m_PrefabInternal: {fileID: 1289872912}
 --- !u!1 &1309014812
 GameObject:
   m_ObjectHideFlags: 0
@@ -7838,24 +8415,11 @@ Transform:
   m_LocalScale: {x: 0.8978154, y: 7.535054, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
 --- !u!1 &1373314817 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 166110, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
   m_PrefabInternal: {fileID: 298880182}
---- !u!114 &1373314818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1373314817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 
-  destroyed: 0
 --- !u!1001 &1446976197
 Prefab:
   m_ObjectHideFlags: 0
@@ -8071,7 +8635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partObjective:
   - part: 3
-    objectives: 08000000
+    objectives: 09000000
   isNPC: 0
   isObject: 1
 --- !u!114 &1717889631
@@ -8190,17 +8754,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 1
 --- !u!1001 &1892356112
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1094390404}
     m_Modifications:
     - target: {fileID: 491414, guid: 93ab2d9fa8bc9df4982e2565baaa1927, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: -0.39999962
       objectReference: {fileID: 0}
     - target: {fileID: 491414, guid: 93ab2d9fa8bc9df4982e2565baaa1927, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8228,7 +8792,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 491414, guid: 93ab2d9fa8bc9df4982e2565baaa1927, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5076662, guid: 93ab2d9fa8bc9df4982e2565baaa1927, type: 2}
       propertyPath: m_Constraints
@@ -8286,7 +8850,7 @@ Transform:
   m_Children:
   - {fileID: 1635798128}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 9
 --- !u!1 &1985268990
 GameObject:
   m_ObjectHideFlags: 0
@@ -8353,7 +8917,36 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 15
+--- !u!1 &2066046977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2066046978}
+  m_Layer: 0
+  m_Name: Utilities
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2066046978
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2066046977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1119734201}
+  - {fileID: 817521072}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
 --- !u!4 &2084672130 stripped
 Transform:
   m_PrefabParentObject: {fileID: 491414, guid: 93ab2d9fa8bc9df4982e2565baaa1927, type: 2}
