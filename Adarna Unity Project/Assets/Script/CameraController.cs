@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour {
 
 	public Vector2 margin;
 	public Vector2 smoothing;
+	public Vector2 lerpSpeed;
 
 	public BoxCollider2D bounds;
 
@@ -27,6 +28,13 @@ public class CameraController : MonoBehaviour {
 	public bool flipped;
 	public bool isCenter;
 	public bool isZoomed;
+
+	void Awake(){
+		if(lerpSpeed.x == 0)
+			lerpSpeed.x = 1f;
+		if(lerpSpeed.y == 0)
+			lerpSpeed.y = 4f;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -70,10 +78,10 @@ public class CameraController : MonoBehaviour {
 			
 		if(isFollowing){
 			if(Mathf.Abs(x - (player.transform.position.x + xOffset)) > margin.x){
-				x = Mathf.Lerp(x, player.transform.position.x + xOffset, smoothing.x = Time.deltaTime);
+				x = Mathf.Lerp(x, player.transform.position.x + xOffset, smoothing.x = Time.deltaTime * lerpSpeed.x);
 			}
 			if(Mathf.Abs(y - (player.transform.position.y + yOffset)) > margin.y){
-				y = Mathf.Lerp(y, player.transform.position.y + yOffset, smoothing.y = Time.deltaTime);
+				y = Mathf.Lerp(y, player.transform.position.y + yOffset, smoothing.y = Time.deltaTime * lerpSpeed.y);
 			}
 		}
 

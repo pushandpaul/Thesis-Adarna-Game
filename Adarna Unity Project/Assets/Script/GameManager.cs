@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour {
 		bool found = false;
 		
 		foreach(ObjectDataReference objectDataRef in currentSceneObj.sceneObjectData){
+			Debug.Log("Found object data reference" + objectDataRef.name);
 			if(objectDataRef.Name.Replace("(Ref)", "") == objectData.Name){
 				found = true;
 

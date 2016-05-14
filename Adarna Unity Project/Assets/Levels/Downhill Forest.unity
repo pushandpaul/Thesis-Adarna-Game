@@ -136,6 +136,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
+  lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 1.8
@@ -418,6 +419,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7e66c477583484c4db68d9546d77642e, type: 2}
+    - target: {fileID: 116140, guid: 3a997bfeb503bc64a834d4ea2dabeb91, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a997bfeb503bc64a834d4ea2dabeb91, type: 2}
   m_IsPrefabParent: 0
@@ -429,6 +434,33 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 438322, guid: 3a997bfeb503bc64a834d4ea2dabeb91, type: 2}
   m_PrefabInternal: {fileID: 356108058}
+--- !u!1 &390960766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 390960767}
+  m_Layer: 0
+  m_Name: Out of The Screen Ref
+  m_TagString: Out of the Screen
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &390960767
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 390960766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.12, y: -33.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
 --- !u!1001 &620974959
 Prefab:
   m_ObjectHideFlags: 0
@@ -897,7 +929,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1365983637
 Transform:
   m_ObjectHideFlags: 0

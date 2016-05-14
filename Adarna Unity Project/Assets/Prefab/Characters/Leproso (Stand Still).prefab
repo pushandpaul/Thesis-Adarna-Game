@@ -191,8 +191,6 @@ GameObject:
   - 114: {fileID: 11480140}
   - 114: {fileID: 11457954}
   - 114: {fileID: 11483576}
-  - 114: {fileID: 11410620}
-  - 114: {fileID: 11488234}
   m_Layer: 0
   m_Name: Leproso (Stand Still)
   m_TagString: NPC
@@ -552,20 +550,6 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11410620
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partObjective: []
-  isNPC: 1
-  isObject: 0
 --- !u!114 &11442140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -620,7 +604,10 @@ MonoBehaviour:
   pressToInteract: 1
   flowchart: {fileID: 0}
   player: {fileID: 0}
+  onlyTrigger: 0
+  toTransform: {fileID: 0}
   facingRight: 0
+  standardFacing: 0
   allowFlip: 1
   anObjective: 0
   message: 
@@ -639,20 +626,6 @@ MonoBehaviour:
   partObjective:
   - part: 1
     objectives: 05000000
-  isNPC: 1
-  isObject: 0
---- !u!114 &11488234
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partObjective: []
   isNPC: 1
   isObject: 0
 --- !u!212 &21200808

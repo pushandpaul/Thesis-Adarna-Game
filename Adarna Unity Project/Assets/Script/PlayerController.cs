@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float jumpHeight;
 
 	public bool canMove;
+	public bool canJump = true;
 	public bool facingRight;
 	public bool allowFlip = true;
 
@@ -69,7 +70,7 @@ public class PlayerController : MonoBehaviour {
 			return;
 		}
 			
-		if(Input.GetKeyDown(KeyCode.Space) && grounded){
+		if(Input.GetKeyDown(KeyCode.Space) && grounded && canJump){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
 		}
 			
@@ -113,6 +114,10 @@ public class PlayerController : MonoBehaviour {
 	public void disablePlayerMovement(){
 		//GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 		canMove = false;
+	}
+
+	public void setCanJump(bool canJump){
+		this.canJump = canJump;
 	}
 	public void flipPlayer(){
 		Debug.Log("Initial Scale" + transform.localScale.x);

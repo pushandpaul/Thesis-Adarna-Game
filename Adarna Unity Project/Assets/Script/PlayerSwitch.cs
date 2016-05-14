@@ -29,7 +29,7 @@ public class PlayerSwitch : MonoBehaviour {
 		GameObject currentPlayer = GameObject.FindGameObjectWithTag("Character Controlling");
 
 		switchType = "actual";
-
+		characterHolder.localScale = playerHolder.transform.localScale;
 		currentPlayer.transform.parent = characterHolder;
 		currentPlayer.transform.localPosition = Vector3.zero;
 		currentPlayer.tag = "Playable Character";
@@ -49,6 +49,7 @@ public class PlayerSwitch : MonoBehaviour {
 		switchType = "actual";
 
 		holderTransfer.position = holderTransform.position;
+		holderTransfer.localScale = playerHolder.transform.localScale;
 		currentPlayer.transform.parent = holderTransfer;
 		currentPlayer.transform.localPosition = Vector3.zero;
 		currentPlayer.tag = "Playable Character";

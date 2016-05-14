@@ -200,6 +200,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
+  lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 1.8
@@ -551,66 +552,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 421966, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.0045674713
-      objectReference: {fileID: 0}
-    - target: {fileID: 421966, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999896
-      objectReference: {fileID: 0}
-    - target: {fileID: 468364, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.032869056
-      objectReference: {fileID: 0}
-    - target: {fileID: 468364, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.99945974
-      objectReference: {fileID: 0}
-    - target: {fileID: 465504, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.027864957
-      objectReference: {fileID: 0}
-    - target: {fileID: 465504, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9996117
-      objectReference: {fileID: 0}
-    - target: {fileID: 499220, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.002949613
-      objectReference: {fileID: 0}
-    - target: {fileID: 499220, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.99999565
-      objectReference: {fileID: 0}
-    - target: {fileID: 462476, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -2.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 462476, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 490338, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.52670574
-      objectReference: {fileID: 0}
-    - target: {fileID: 490338, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.8500477
-      objectReference: {fileID: 0}
-    - target: {fileID: 498948, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.18839186
-      objectReference: {fileID: 0}
-    - target: {fileID: 498948, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.982094
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489538, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
-      propertyPath: partObjective.Array.data[1].objectives.Array.data[1]
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
   m_IsPrefabParent: 0
@@ -824,7 +765,7 @@ Transform:
   - {fileID: 1258224539}
   - {fileID: 381024905}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1 &1089438486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1014,7 @@ GameObject:
   - 114: {fileID: 1089438725}
   - 114: {fileID: 1089438726}
   - 114: {fileID: 1089438727}
+  - 114: {fileID: 1089438728}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1093,20 +1035,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -448.1642, y: -193.4962}
+  scrollPos: {x: -325.99704, y: -924.87085}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 360
-  zoom: 0.9139125
+  zoom: 0.6139126
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 2043.0483
     height: 2184.8127
-  selectedBlock: {fileID: 1089438488}
+  selectedBlock: {fileID: 1089438556}
   selectedCommands:
-  - {fileID: 1089438518}
+  - {fileID: 1089438728}
   variables: []
   description: 
   stepPause: 0
@@ -3038,6 +2980,7 @@ MonoBehaviour:
   - {fileID: 1089438710}
   - {fileID: 1089438712}
   - {fileID: 1089438714}
+  - {fileID: 1089438728}
   - {fileID: 1089438537}
 --- !u!114 &1089438557
 MonoBehaviour:
@@ -7758,6 +7701,50 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1089438728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 353
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1124809387}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: changeTimeOfDay
+  targetMethodText: 'changeTimeOfDay (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: d
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &1094390403
 GameObject:
   m_ObjectHideFlags: 0
@@ -7789,7 +7776,7 @@ Transform:
   - {fileID: 1191593617}
   - {fileID: 1289872913}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1 &1119734199
 GameObject:
   m_ObjectHideFlags: 0
@@ -8529,6 +8516,33 @@ Animator:
   m_PrefabParentObject: {fileID: 9541810, guid: 5558aa40da511e54bac2e4e0113e7173,
     type: 2}
   m_PrefabInternal: {fileID: 1446976197}
+--- !u!1 &1532545738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1532545739}
+  m_Layer: 0
+  m_Name: Out of The Screen Ref
+  m_TagString: Out of the Screen
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1532545739
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1532545738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.12, y: -9.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
 --- !u!1 &1635798125
 GameObject:
   m_ObjectHideFlags: 0
@@ -8635,7 +8649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partObjective:
   - part: 3
-    objectives: 09000000
+    objectives: 08000000
   isNPC: 0
   isObject: 1
 --- !u!114 &1717889631

@@ -85,6 +85,33 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &52977074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 52977075}
+  m_Layer: 0
+  m_Name: Out of The Screen Ref
+  m_TagString: Out of the Screen
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &52977075
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52977074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.12, y: -9.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
 --- !u!4 &61373869 stripped
 Transform:
   m_PrefabParentObject: {fileID: 478832, guid: bc631a84261d60e4785fe7220d1d506f, type: 2}
@@ -421,7 +448,7 @@ Transform:
   - {fileID: 1100246206}
   - {fileID: 1687973913}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -539,7 +566,7 @@ Transform:
   - {fileID: 737824887}
   - {fileID: 527595626}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!1001 &737824886
 Prefab:
   m_ObjectHideFlags: 0
@@ -622,6 +649,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
+  lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 116985872}
   defaultXOffset: 5
   defaultYOffset: 2.2

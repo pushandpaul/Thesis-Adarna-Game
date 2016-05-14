@@ -139,9 +139,9 @@ MonoBehaviour:
   camera: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
+  lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
-  flippedXOffset: -5
   defaultYOffset: 2.2
   changedYOffset: 1
   zoomSize: 3.5
@@ -361,6 +361,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b00318d76a2144e8252eb01510d9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &720698537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 720698538}
+  m_Layer: 0
+  m_Name: Out of The Screen Ref
+  m_TagString: Out of the Screen
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &720698538
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720698537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.12, y: -9.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!4 &961509131 stripped
 Transform:
   m_PrefabParentObject: {fileID: 403976, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
@@ -394,6 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCharacter: {fileID: 0}
   characterContainer: {fileID: 448148, guid: 2dde3925c3bb0f74b823f7e49456c106, type: 2}
+  routine: 97
 --- !u!4 &1337843055
 Transform:
   m_ObjectHideFlags: 0

@@ -740,7 +740,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.127323, y: -9.389999, z: 0}
+  m_LocalPosition: {x: -2.2, y: -12.48, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 477562}
@@ -887,7 +887,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120776}
   m_UseAutoMass: 0
-  m_Mass: 4.68
+  m_Mass: 16
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1048,6 +1048,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   anim: {fileID: 0}
+  allowSave: 1
+  saveThis: 0
+  stateHashID: 0
+  heldItem: {fileID: 0}
+  state: 
 --- !u!114 &11449430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1076,7 +1081,10 @@ MonoBehaviour:
   pressToInteract: 1
   flowchart: {fileID: 0}
   player: {fileID: 0}
+  onlyTrigger: 0
+  toTransform: {fileID: 0}
   facingRight: 0
+  standardFacing: 0
   allowFlip: 1
   anObjective: 0
   message: 

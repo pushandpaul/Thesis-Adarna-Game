@@ -140,6 +140,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
+  lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 1.8
@@ -216,6 +217,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &49471155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 49471156}
+  m_Layer: 0
+  m_Name: Out of The Screen Ref
+  m_TagString: Out of the Screen
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &49471156
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49471155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.12, y: -9.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
 --- !u!4 &64829163 stripped
 Transform:
   m_PrefabParentObject: {fileID: 444144, guid: 5772b45966a01a944acfbd354f19618c, type: 2}
@@ -510,9 +538,7 @@ GameObject:
   - 114: {fileID: 640105037}
   - 114: {fileID: 640105036}
   - 114: {fileID: 640105035}
-  - 114: {fileID: 640105033}
   - 114: {fileID: 640105034}
-  - 114: {fileID: 640105032}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -533,20 +559,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -91.53415, y: 7.0628357}
+  scrollPos: {x: -9.466217, y: 169.91373}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.5320011
+  zoom: 0.50200117
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 1896.0023
     height: 1372.0847
-  selectedBlock: {fileID: 640105033}
-  selectedCommands:
-  - {fileID: 640105032}
+  selectedBlock: {fileID: 0}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -555,92 +580,6 @@ MonoBehaviour:
   saveSelection: 1
   localizationId: 
   hideCommands: []
---- !u!114 &640105032
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11484762, guid: eb975063d13ed5d41bb3f722ee34da08,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 640105030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 122
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1508380268}
-  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: LevelManager
-  targetMethod: setCharData
-  targetMethodText: 'setCharData (CharacterData, String): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: CharacterData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      typeFullname: CharacterData
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 1249693396}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  - objValue:
-      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.String
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: (Don Pedro) Carry Item Idle
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &640105033
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11401746, guid: eb975063d13ed5d41bb3f722ee34da08,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 640105030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 850.1793
-    y: 356.8463
-    width: 120
-    height: 40
-  itemId: 121
-  blockName: New Block
-  description: 
-  eventHandler: {fileID: 640105034}
-  commandList:
-  - {fileID: 640105032}
 --- !u!114 &640105034
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -653,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentBlock: {fileID: 640105033}
+  parentBlock: {fileID: 0}
 --- !u!114 &640105035
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1368,7 +1307,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 840.95984
-    y: 115.940636
+    y: 114.332924
     width: 125
     height: 40
   itemId: 87
@@ -2660,7 +2599,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11499272, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: camera
@@ -2724,7 +2663,7 @@ Transform:
   - {fileID: 1249693395}
   - {fileID: 1957889639}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1 &1136915464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,7 +2748,7 @@ Transform:
   - {fileID: 1136915467}
   - {fileID: 762603603}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!4 &1161362161 stripped
 Transform:
   m_PrefabParentObject: {fileID: 447280, guid: 5772b45966a01a944acfbd354f19618c, type: 2}
@@ -2859,10 +2798,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 21210022, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
   m_IsPrefabParent: 0
@@ -2870,12 +2805,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 406846, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
   m_PrefabInternal: {fileID: 1249693394}
---- !u!114 &1249693396 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11430704, guid: e8b0fe1258153184b867ab768308e96d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1249693394}
-  m_Script: {fileID: 11500000, guid: 7bff06d1c5a4f344087e864f688666c7, type: 3}
 --- !u!1 &1274112544
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,10 @@ public class MoveObject : MonoBehaviour {
 		toMove.localPosition = moveTo;
 	}
 
+	public void moveOut(Transform toMove){
+		matchPosition(toMove, GameObject.FindGameObjectWithTag("Out of the Screen").transform);
+	}
+
 	public void matchPosition(Transform toMove, Transform toMatch){
 		toMove.position = toMatch.position;
 	}
@@ -25,6 +29,11 @@ public class MoveObject : MonoBehaviour {
 	public void matchScale(Transform toScale, Transform toMatch){
 		toScale.localScale = toMatch.localScale;
 	}
+
+	public void setParent(Transform myChild, Transform newParent){
+		myChild.SetParent(newParent);
+	}
+
 	public void moveToPositionDefault(float duration){ //uses value from the public variable Target (for animation event)
 		Debug.Log("Move to position: " + this.transform.localPosition);
 		StartCoroutine(startMoving(this.transform.localPosition, Target, duration));

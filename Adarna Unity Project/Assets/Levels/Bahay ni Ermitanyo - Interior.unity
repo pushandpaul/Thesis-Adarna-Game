@@ -120,6 +120,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
+  lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 1
@@ -700,6 +701,7 @@ GameObject:
   - 114: {fileID: 745093123}
   - 114: {fileID: 745093122}
   - 114: {fileID: 745093121}
+  - 114: {fileID: 745093118}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -707,6 +709,50 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &745093118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745093117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 230
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 755765039}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: changeTimeOfDay
+  targetMethodText: 'changeTimeOfDay (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: n
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &745093121
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1928,8 +1974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 850.4326
-    y: 275.16254
+    x: 848.74915
+    y: 273.4791
     width: 174
     height: 40
   itemId: 155
@@ -2923,6 +2969,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 745093194}
   - {fileID: 745093193}
+  - {fileID: 745093118}
   - {fileID: 745093191}
 --- !u!114 &745093206
 MonoBehaviour:
@@ -3714,7 +3761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 502.3323
+    x: 498.96542
     y: 157.46829
     width: 172
     height: 40
@@ -4134,8 +4181,9 @@ MonoBehaviour:
     y: -473
     width: 1820.6249
     height: 1363.8989
-  selectedBlock: {fileID: 745093183}
-  selectedCommands: []
+  selectedBlock: {fileID: 745093205}
+  selectedCommands:
+  - {fileID: 745093118}
   variables: []
   description: 
   stepPause: 0
@@ -4312,6 +4360,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   destroyed: 0
+--- !u!1 &1020292923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1020292924}
+  m_Layer: 0
+  m_Name: Out of The Screen Ref
+  m_TagString: Out of the Screen
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1020292924
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020292923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.52, y: -9.82, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
 --- !u!1001 &1262484971
 Prefab:
   m_ObjectHideFlags: 0

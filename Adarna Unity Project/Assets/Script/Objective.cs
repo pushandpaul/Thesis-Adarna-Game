@@ -26,11 +26,10 @@ public class Objective : MonoBehaviour {
 		//IfPlayAnimation = 3,
 	}
 
-
 	public string Name;
 	[Multiline(10)]
-
 	public string Description;
+	public LevelLoader.LevelSelect objectiveLocation;
 
 	public ObjectiveType Kind;
 	public ObjectiveStatus Status;

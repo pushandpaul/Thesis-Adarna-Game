@@ -139,6 +139,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
+  lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 2.2
@@ -509,12 +510,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 199534883}
   m_Script: {fileID: 11500000, guid: 37c44957f9754454fa3b0a610c3aec74, type: 3}
---- !u!114 &199534886 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11419298, guid: 5558aa40da511e54bac2e4e0113e7173,
-    type: 2}
-  m_PrefabInternal: {fileID: 199534883}
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
 --- !u!95 &199534887 stripped
 Animator:
   m_PrefabParentObject: {fileID: 9541810, guid: 5558aa40da511e54bac2e4e0113e7173,
@@ -919,6 +914,33 @@ Transform:
   - {fileID: 2049704023}
   m_Father: {fileID: 0}
   m_RootOrder: 15
+--- !u!1 &419653343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 419653344}
+  m_Layer: 0
+  m_Name: Out of The Screen Ref
+  m_TagString: Out of the Screen
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &419653344
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 419653343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.12, y: -9.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
 --- !u!114 &427827774 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11458134, guid: c030ba30e8be9a241aa1f4962c3a078a,
@@ -1165,16 +1187,14 @@ GameObject:
   - 114: {fileID: 532386760}
   - 114: {fileID: 532386759}
   - 114: {fileID: 532386758}
-  - 114: {fileID: 532386757}
   - 114: {fileID: 532386756}
-  - 114: {fileID: 532386755}
   - 114: {fileID: 532386746}
-  - 114: {fileID: 532386744}
   - 114: {fileID: 532386795}
   - 114: {fileID: 532386794}
   - 114: {fileID: 532386793}
   - 114: {fileID: 532386791}
   - 114: {fileID: 532386790}
+  - 114: {fileID: 532386744}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2413,13 +2433,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 532386704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 367
+  itemId: 373
   errorMessage: 
   indentLevel: 0
-  duration: 0.5
+  targetObject: {fileID: 1584473682}
+  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveObject
+  targetMethod: setParent
+  targetMethodText: 'setParent (Transform, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1134703562}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1134703564}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &532386745
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2467,7 +2533,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386746
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -2685,70 +2751,9 @@ MonoBehaviour:
   stateName: Kaway
   layer: -1
   time: 0
---- !u!114 &532386755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 532386704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 365
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1584473682}
-  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: MoveObject
-  targetMethod: punchMove
-  targetMethodText: 'punchMove (Vector3, Transform): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      typeFullname: UnityEngine.Vector3
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 50, y: -2.27, z: 0}
-    variableKey: 
-  - objValue:
-      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      typeFullname: UnityEngine.Transform
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 1748462625}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &532386756
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -2771,36 +2776,9 @@ MonoBehaviour:
   fadeWhenDone: 1
   waitForClick: 1
   setSayDialog: {fileID: 0}
---- !u!114 &532386757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 532386704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 363
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1134703565}
-  targetComponentAssemblyName: ObjectData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: ObjectData
-  targetMethod: DestroyMe
-  targetMethodText: 'DestroyMe (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &532386758
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -2827,7 +2805,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386759
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -2854,7 +2832,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386760
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -2898,7 +2876,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386761
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -2913,7 +2891,7 @@ MonoBehaviour:
   duration: 3
 --- !u!114 &532386762
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3318,7 +3296,7 @@ MonoBehaviour:
   - {fileID: 532386775}
 --- !u!114 &532386778
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3333,7 +3311,7 @@ MonoBehaviour:
   duration: 6
 --- !u!114 &532386779
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3411,7 +3389,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386780
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3426,7 +3404,7 @@ MonoBehaviour:
   duration: 1
 --- !u!114 &532386781
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3487,7 +3465,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386782
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3502,7 +3480,7 @@ MonoBehaviour:
   duration: 1
 --- !u!114 &532386783
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3529,7 +3507,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &532386784
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3544,7 +3522,7 @@ MonoBehaviour:
   duration: 1
 --- !u!114 &532386785
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3569,7 +3547,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &532386786
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3594,7 +3572,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &532386787
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3638,7 +3616,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386788
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3653,7 +3631,7 @@ MonoBehaviour:
   duration: 1
 --- !u!114 &532386789
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3671,7 +3649,7 @@ MonoBehaviour:
   time: 0
 --- !u!114 &532386790
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3732,7 +3710,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386791
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3758,7 +3736,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &532386793
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3773,7 +3751,7 @@ MonoBehaviour:
   duration: 2
 --- !u!114 &532386794
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -3800,7 +3778,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &532386795
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -5414,7 +5392,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Umuwi na tayo\u2026"
   description: 
-  character: {fileID: 1849675910}
+  character: {fileID: 1966276219}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5440,7 +5418,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Mukhang {color=\"yellow\"} gulapay/bulagta {/color} na siya\u2026"
   description: 
-  character: {fileID: 199534886}
+  character: {fileID: 727695590}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5466,7 +5444,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Sipain na natin siya, Diego!
   description: 
-  character: {fileID: 1849675910}
+  character: {fileID: 1966276219}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -8112,8 +8090,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 724.16583
-    y: 686.3867
+    x: 732.4011
+    y: 686.4298
     width: 161
     height: 40
   itemId: 337
@@ -8137,17 +8115,15 @@ MonoBehaviour:
   - {fileID: 532386762}
   - {fileID: 532386761}
   - {fileID: 532386760}
+  - {fileID: 532386744}
   - {fileID: 532386759}
   - {fileID: 532386758}
-  - {fileID: 532386757}
   - {fileID: 532386756}
-  - {fileID: 532386755}
   - {fileID: 532386746}
-  - {fileID: 532386744}
   - {fileID: 532386945}
 --- !u!114 &532386945
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -8164,7 +8140,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386946
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -8915,10 +8891,6 @@ Animator:
 Transform:
   m_PrefabParentObject: {fileID: 458828, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
   m_PrefabInternal: {fileID: 1134703561}
---- !u!1 &1134703565 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100560, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
-  m_PrefabInternal: {fileID: 1134703561}
 --- !u!1 &1146023066
 GameObject:
   m_ObjectHideFlags: 0
@@ -9430,7 +9402,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1413184504}
   m_LocalRotation: {x: -0.026803238, y: 0.0045000026, z: 0.008812533, w: 0.99959177}
-  m_LocalPosition: {x: -0.17, y: -0.55, z: 0}
+  m_LocalPosition: {x: -0.01, y: 0.01, z: -0.03}
   m_LocalScale: {x: 0.97328925, y: 0.97328925, z: 0.97328925}
   m_Children:
   - {fileID: 1049217599}
@@ -9631,7 +9603,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 431242, guid: 2e5ef09f74c42564ca3ed898dd9ba216, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e5ef09f74c42564ca3ed898dd9ba216, type: 2}
@@ -9875,7 +9847,6 @@ GameObject:
   - 58: {fileID: 1748462624}
   - 114: {fileID: 1748462623}
   - 114: {fileID: 1748462626}
-  - 114: {fileID: 1748462627}
   m_Layer: 0
   m_Name: Pedras Platas Trigger
   m_TagString: Untagged
@@ -9944,19 +9915,6 @@ MonoBehaviour:
     objectives: 000000000500000006000000
   isNPC: 0
   isObject: 1
---- !u!114 &1748462627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1748462622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 
-  destroyed: 0
 --- !u!1 &1826785133
 GameObject:
   m_ObjectHideFlags: 0
@@ -10030,12 +9988,6 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 409574, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
   m_PrefabInternal: {fileID: 1599206130}
---- !u!114 &1849675910 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11418542, guid: e8b0fe1258153184b867ab768308e96d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1599206130}
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
 --- !u!95 &1849675911 stripped
 Animator:
   m_PrefabParentObject: {fileID: 9547242, guid: e8b0fe1258153184b867ab768308e96d,
@@ -10458,11 +10410,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -503.72336, y: -483.11777}
+  scrollPos: {x: -519.0605, y: -402.97427}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 352
-  zoom: 0.9699996
+  blockViewHeight: 356
+  zoom: 0.7299997
   scrollViewRect:
     serializedVersion: 2
     x: -350
@@ -10470,7 +10422,8 @@ MonoBehaviour:
     width: 2464.3442
     height: 1672.7627
   selectedBlock: {fileID: 532386944}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 532386744}
   variables: []
   description: 
   stepPause: 0

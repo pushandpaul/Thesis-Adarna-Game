@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 //Local class serves as initialization of the level and connection to the global class - Game Manager
 
@@ -47,6 +48,7 @@ public class LevelManager : MonoBehaviour {
 		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
 		MatchTransform [] ToMatch = FindObjectsOfType<MatchTransform>();
 		bool allowMatch = false;
+
 		//Level Initialization
 		if(objectData.Length > 0){
 			gameManager.loadCoordinates(objectData);
@@ -308,13 +310,18 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+	public void _removeObjectDataReference(string objectName){
+		removeObjectReference(gameManager.currentScene, objectName);
+	}
+
 	public void removeObjectReference(string sceneName, string objectName){
-		ObjectDataReference[] objectDataRefs;
+		List <ObjectDataReference> objectDataRefs;
 		foreach(SceneObjects sceneObject in gameManager.sceneObjects){
 			if(sceneName == sceneObject.name){
-				objectDataRefs = sceneObject.GetComponentsInChildren<ObjectDataReference>();
+				objectDataRefs = sceneObject.GetComponentsInChildren<ObjectDataReference>().ToList();
 				foreach(ObjectDataReference objectDataRef in objectDataRefs){
 					if(objectName == objectDataRef.Name.Replace("(Ref)", "")){
+						sceneObject.sceneObjectData.Remove(objectDataRef);
 						Destroy(objectDataRef.gameObject);
 						break;
 					}
