@@ -6,6 +6,7 @@ public class ObjectData : MonoBehaviour {
 	//public Vector3 coordinates;
 	public string Name;
 	public bool destroyed;
+	public bool persistLookDirection;
 	void Awake () {
 		this.Name = this.name;
 	}

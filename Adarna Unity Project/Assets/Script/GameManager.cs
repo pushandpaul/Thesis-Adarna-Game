@@ -124,7 +124,12 @@ public class GameManager : MonoBehaviour {
 					Debug.Log("Save Command: Game object '" + objectData.Name + "' found.");
 					objectDataRef.Name = objectData.Name;
 					objectDataRef.coordinates = objectData.transform.position;
-					//objectDataRef.scale = objectData.transform.localScale;
+					if(objectData.persistLookDirection){
+						if(objectData.transform.localScale.x > 0)
+							objectDataRef.lookRight = true;
+						else if(objectData.transform.localScale.x < 0)
+							objectDataRef.lookRight = false;
+					}
 					objectDataRef.destroyed = objectData.destroyed;
 
 					if(objectData.transform.parent != null)
@@ -139,7 +144,13 @@ public class GameManager : MonoBehaviour {
 						Destroy(objectData.gameObject);
 					else{
 						objectData.transform.position = objectDataRef.coordinates;
-						//objectData.transform.localScale = objectDataRef.scale;
+						if(objectData.persistLookDirection){
+							Vector3 tempScale = objectData.transform.localScale;
+							if(objectDataRef.lookRight)
+								objectData.transform.localScale = new Vector3(Mathf.Abs(tempScale.x), tempScale.y, tempScale.z);
+							else
+								objectData.transform.localScale = new Vector3(-Mathf.Abs(tempScale.x), tempScale.y, tempScale.z);
+						}
 						Debug.Log("'" + objectData.Name + "' position is loaded.");
 						if(objectDataRef.parentName != "" && objectDataRef.parentName != null && objectDataRef.parentName != "NA"){
 							if(objectData.transform.parent.name != objectDataRef.parentName)

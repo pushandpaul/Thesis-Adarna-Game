@@ -22,6 +22,7 @@ public class CameraController : MonoBehaviour {
 	private float yOffset;
 
 	public float zoomSize;
+	public bool overrideZoom;
 	private float defaultCamSize;
 
 	public bool isFollowing;
@@ -67,13 +68,15 @@ public class CameraController : MonoBehaviour {
 			xOffset = 0;
 		}
 
-		if(isZoomed){
-			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, zoomSize, Time.deltaTime);
-			yOffset = changedYOffset;
+		if(!overrideZoom){
+			if(isZoomed){
+				camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, zoomSize, Time.deltaTime);
+				yOffset = changedYOffset;
 			}
-		else{
-			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, defaultCamSize, Time.deltaTime);
-			yOffset = defaultYOffset;
+			else{
+				camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, defaultCamSize, Time.deltaTime);
+				yOffset = defaultYOffset;
+			}
 		}
 			
 		if(isFollowing){
@@ -92,6 +95,10 @@ public class CameraController : MonoBehaviour {
 		y = Mathf.Clamp(y, _min.y + GetComponent<Camera>().orthographicSize, _max.y - GetComponent<Camera>().orthographicSize);
 
 		transform.position = new Vector3(x,y, transform.position.z);
+	}
+
+	public void setZoomSize(float zoomSize){
+		this.zoomSize = zoomSize;
 	}
 
 	public void controlZoom(bool isZoomed){

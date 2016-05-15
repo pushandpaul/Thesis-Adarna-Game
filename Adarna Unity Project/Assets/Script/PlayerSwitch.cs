@@ -66,15 +66,20 @@ public class PlayerSwitch : MonoBehaviour {
 		//changes player in an instant and destroys the previous one - used for persistence of the "new player"
 		playerHolder = FindObjectOfType<PlayerController>();
 		GameObject currentPlayer = GameObject.FindGameObjectWithTag("Character Controlling");
-		GameObject currentPlayerDump = GameObject.FindGameObjectWithTag("Default Player Dump");
+		Transform currentPlayerDump = GameObject.FindGameObjectWithTag("Default Player Dump").transform;
+		Vector3 dumpScale = currentPlayerDump.localScale;
 
 		switchType = "instant";
 
 		if(currentPlayerDump != null){
-			currentPlayerDump.transform.localScale = playerHolder.transform.localScale;
-			currentPlayer.transform.parent = currentPlayerDump.transform;
+			currentPlayerDump.localScale = playerHolder.transform.localScale;
+			currentPlayer.transform.parent = currentPlayerDump;
 			currentPlayer.transform.localPosition = Vector3.zero;
 			currentPlayer.transform.SetAsFirstSibling();
+			if(dumpScale.x > 0)
+				currentPlayerDump.localScale = new Vector3(Mathf.Abs(currentPlayerDump.localScale.x), currentPlayerDump.localScale.y, currentPlayerDump.localScale.z);
+			else if(dumpScale.x < 0)
+				currentPlayerDump.localScale = new Vector3(-Mathf.Abs(currentPlayerDump.localScale.x), currentPlayerDump.localScale.y, currentPlayerDump.localScale.z);
 			currentPlayer.tag = "Playable Character";
 		}
 		else	

@@ -24,6 +24,7 @@ public class LevelLoader : MonoBehaviour {
 		Castle2ndFloor = 15,
 		DarkToGreenForest = 16,
 		DownhillForest = 17,
+		BerbanyaToArmenya = 18,
 	}
 
 	public LevelSelect Levels;

@@ -44,15 +44,16 @@ public class MoveCharacter : MonoBehaviour {
 			animatorFound = true;
 			Debug.Log(anim.name);
 		}
-			
 		else
 			animatorFound = false;
+		if(player != null){
+			player.allowFlip = false;
+			player.canJump = false;
+		}
 
 		while(Time.time <= endTime){
 			float t = (Time.time - startTime)/duration;
 			character.position = Vector3.Lerp(current, target, t);
-			if(player != null)
-				player.allowFlip = false;
 			if (animatorFound) {
 				anim.SetFloat ("Speed", Mathf.Abs (target.x - character.position.x));
 				anim.SetBool("Ground", grounded);
@@ -62,6 +63,7 @@ public class MoveCharacter : MonoBehaviour {
 
 		if(player != null){
 			player.allowFlip = true;
+			player.canJump = true;
 		}
 			
 		if(animatorFound)

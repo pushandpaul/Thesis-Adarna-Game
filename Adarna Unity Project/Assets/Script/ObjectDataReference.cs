@@ -4,7 +4,7 @@ using System.Collections;
 public class ObjectDataReference : MonoBehaviour {
 
 	public Vector3 coordinates;
-	public Vector3 scale;
+	public bool lookRight;
 	public string Name;
 	public bool destroyed;
 	public string parentName;

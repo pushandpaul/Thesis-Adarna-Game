@@ -126,6 +126,8 @@ public class LevelManager : MonoBehaviour {
 		LightController globalLight;
 		GameObject globaLightHolder;
 		GameObject[] characterLight = GameObject.FindGameObjectsWithTag("Character Light");
+		GameObject[] nightSprites = GameObject.FindGameObjectsWithTag("Night Sprite");
+		GameObject[] nightLights = GameObject.FindGameObjectsWithTag("Night Light");
 		char[] myTimeOfDay = timeOfDay.ToCharArray();
 
 		globaLightHolder = GameObject.FindWithTag("Global Light");
@@ -137,6 +139,12 @@ public class LevelManager : MonoBehaviour {
 				Debug.Log("Global Light Intensity adjusted to day time");
 				foreach(GameObject lightHolder in characterLight)
 					lightHolder.GetComponent<Light>().intensity = 0f;
+				foreach(GameObject nightSprite in nightSprites){
+					nightSprite.GetComponent<SpriteRenderer>().enabled = false;
+				}
+				foreach(GameObject nightLight in nightLights){
+					nightLight.GetComponent<Light>().enabled = false;
+				}
 			}
 			else if(myTimeOfDay[0] == 'n'){
 				globalLight.setLightIntensity(0f);
@@ -146,6 +154,12 @@ public class LevelManager : MonoBehaviour {
 						lightHolder.GetComponent<Light>().intensity = 0f;
 					else
 						lightHolder.GetComponent<Light>().intensity = 1.8f;
+				}
+				foreach(GameObject nightSprite in nightSprites){
+					nightSprite.GetComponent<SpriteRenderer>().enabled = true;
+				}
+				foreach(GameObject nightLight in nightLights){
+					nightLight.GetComponent<Light>().enabled = true;
 				}
 			}
 		}
