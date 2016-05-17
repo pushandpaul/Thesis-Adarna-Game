@@ -105,9 +105,11 @@ public class CameraController : MonoBehaviour {
 		this.isZoomed = isZoomed;
 	}
 
-	public void controlZoom(float zoomSize){
-		this.zoomSize = zoomSize;
+	public void forceZoom(float targetZoom, float duration){
+		this.overrideZoom = true;
+		StartCoroutine(startForceZoom(camera.orthographicSize, targetZoom, duration));
 	}
+		
 	public void centerCam(bool isCenter){
 		this.isCenter = isCenter;
 	}
@@ -123,5 +125,16 @@ public class CameraController : MonoBehaviour {
 		yield return new WaitForSeconds(delay);
 		controlZoom(false);
 		centerCam(!isCenter);
+	}
+	IEnumerator startForceZoom(float currentZoom, float targetZoom, float duration){
+		float startTime = Time.time;
+		float endTime = startTime + duration;
+
+		while(Time.time <= endTime){
+			float t = (Time.time - startTime)/duration;
+			camera.orthographicSize = Mathf.Lerp(currentZoom, targetZoom, t);
+			yield return new WaitForFixedUpdate();
+		}
+		//this.overrideZoom = false;
 	}
 }

@@ -25,6 +25,8 @@ public class LevelLoader : MonoBehaviour {
 		DarkToGreenForest = 16,
 		DownhillForest = 17,
 		BerbanyaToArmenya = 18,
+		ArmenyaForestNiJuan = 19,
+		ArmenyaFallsBridge = 20,
 	}
 
 	public LevelSelect Levels;

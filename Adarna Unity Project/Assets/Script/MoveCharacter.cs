@@ -58,6 +58,7 @@ public class MoveCharacter : MonoBehaviour {
 				anim.SetFloat ("Speed", Mathf.Abs (target.x - character.position.x));
 				anim.SetBool("Ground", grounded);
 			}
+			//yield return new WaitForFixedUpdate();
 			yield return null;
 		}
 

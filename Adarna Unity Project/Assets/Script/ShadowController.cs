@@ -28,16 +28,9 @@ public class ShadowController : MonoBehaviour {
 
 	void UpdateY(){
 		newShadowY = myLineCast.point.y;
-		//add an offset if there is a slope
-
-
-		if(hitGround){
-			if(myLineCast.collider.tag == ("Ground Slope"))
-				newShadowY += slopeOffset;
-		}
-
+	
 		//check if raycast hits the ground, if not the position will be at max
-		else if(!hitGround)
+		if(!hitGround)
 			newShadowY = calculatedMaxDistance.y;
 
 		transform.position = new Vector3(transform.position.x, newShadowY, 0f);

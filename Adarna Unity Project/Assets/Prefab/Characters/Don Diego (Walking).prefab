@@ -89,13 +89,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 476876}
   - 50: {fileID: 5029038}
-  - 61: {fileID: 6106450}
   - 114: {fileID: 11470666}
   - 114: {fileID: 11419298}
-  - 58: {fileID: 5808628}
-  - 114: {fileID: 11459708}
   - 114: {fileID: 11466636}
   - 114: {fileID: 11412272}
+  - 58: {fileID: 5893634}
+  - 61: {fileID: 6170750}
   m_Layer: 9
   m_Name: Don Diego (Walking)
   m_TagString: Untagged
@@ -740,7 +739,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.127323, y: -9.389999, z: 0}
+  m_LocalPosition: {x: -2.494646, y: -0.13999939, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 477562}
@@ -896,7 +895,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &5808628
+--- !u!58 &5893634
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -905,12 +904,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.02, y: 0}
+  m_Offset: {x: -0.13, y: -2.25}
   serializedVersion: 2
-  m_Radius: 3
---- !u!61 &6106450
+  m_Radius: 1.2
+--- !u!61 &6170750
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -921,9 +920,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.03, y: 0.27}
+  m_Offset: {x: -0.11, y: 0.84}
   serializedVersion: 2
-  m_Size: {x: 2.92, y: 7.07}
+  m_Size: {x: 2.35, y: 6}
 --- !u!95 &9506518
 Animator:
   serializedVersion: 3
@@ -1068,28 +1067,6 @@ MonoBehaviour:
   owner: {fileID: 477562}
   shadowMaxDistance: 20
   slopeOffset: 0.3
---- !u!114 &11459708
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressToInteract: 1
-  flowchart: {fileID: 0}
-  player: {fileID: 0}
-  onlyTrigger: 0
-  toTransform: {fileID: 0}
-  facingRight: 0
-  standardFacing: 0
-  allowFlip: 1
-  anObjective: 0
-  message: 
-  bubble: {fileID: 0}
 --- !u!114 &11466636
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -63,6 +63,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &108300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 433324}
+  - 108: {fileID: 10848058}
+  m_Layer: 0
+  m_Name: Point light
+  m_TagString: Character Light
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &111042
 GameObject:
   m_ObjectHideFlags: 1
@@ -247,13 +263,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 491414}
-  - 61: {fileID: 6131220}
-  - 58: {fileID: 5815798}
   - 50: {fileID: 5076662}
   - 114: {fileID: 11450314}
-  - 114: {fileID: 11497342}
   - 114: {fileID: 11452206}
   - 114: {fileID: 11419554}
+  - 61: {fileID: 6184280}
+  - 58: {fileID: 5826076}
   m_Layer: 0
   m_Name: Haring Fernando (Walking)
   m_TagString: Untagged
@@ -306,6 +321,21 @@ GameObject:
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &167462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 483288}
+  m_Layer: 0
+  m_Name: Ground Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -513,6 +543,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 442632}
   m_RootOrder: 0
+--- !u!4 &433324
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1, y: 0.3, z: -2.3857422}
+  m_LocalScale: {x: 2.6666667, y: 2.6666667, z: 1}
+  m_Children: []
+  m_Father: {fileID: 491414}
+  m_RootOrder: 2
 --- !u!4 &435082
 Transform:
   m_ObjectHideFlags: 1
@@ -536,7 +578,7 @@ Transform:
   m_LocalScale: {x: 2.6666667, y: 2.6666667, z: 1}
   m_Children: []
   m_Father: {fileID: 491414}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!4 &440576
 Transform:
   m_ObjectHideFlags: 1
@@ -623,7 +665,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 491414}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!4 &456122
 Transform:
   m_ObjectHideFlags: 1
@@ -718,6 +760,18 @@ Transform:
   - {fileID: 424030}
   m_Father: {fileID: 491414}
   m_RootOrder: 0
+--- !u!4 &483288
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16, y: -3.78, z: 0.11425781}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 491414}
+  m_RootOrder: 1
 --- !u!4 &491414
 Transform:
   m_ObjectHideFlags: 1
@@ -725,10 +779,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -9.4, z: -0.11425781}
+  m_LocalPosition: {x: -0.39999962, y: -9.4, z: -0.11425781}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 480580}
+  - {fileID: 483288}
+  - {fileID: 433324}
   - {fileID: 455510}
   - {fileID: 438686}
   m_Father: {fileID: 0}
@@ -775,7 +831,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5815798
+--- !u!58 &5826076
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -784,12 +840,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 3.25, y: 0}
+  m_Offset: {x: -0.05, y: -2.11}
   serializedVersion: 2
-  m_Radius: 2
---- !u!61 &6131220
+  m_Radius: 1.46
+--- !u!61 &6184280
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -797,12 +853,12 @@ BoxCollider2D:
   m_GameObject: {fileID: 158954}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 4774b01bd0202ab498145f1217b12d19, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01, y: 0.84}
   serializedVersion: 2
-  m_Size: {x: 2.92, y: 7.1}
+  m_Size: {x: 2.78, y: 6}
 --- !u!95 &9517818
 Animator:
   serializedVersion: 3
@@ -820,6 +876,39 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!108 &10848058
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108300}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2
+  m_Range: 8
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 1
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
 --- !u!108 &10883948
 Light:
   m_ObjectHideFlags: 1
@@ -866,6 +955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   destroyed: 0
+  persistLookDirection: 0
 --- !u!114 &11441792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -911,30 +1001,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asBasis: {fileID: 0}
   isAbsoluteScale: 0
+  isOriginalScale: 0
   matchOnStart: 0
   matchPlayer: 1
---- !u!114 &11497342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressToInteract: 1
-  flowchart: {fileID: 0}
-  player: {fileID: 0}
-  onlyTrigger: 0
-  toTransform: {fileID: 0}
-  facingRight: 1
-  standardFacing: 1
-  allowFlip: 1
-  anObjective: 0
-  message: 
-  bubble: {fileID: 0}
 --- !u!212 &21203280
 SpriteRenderer:
   m_ObjectHideFlags: 1

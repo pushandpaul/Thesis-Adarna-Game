@@ -9,12 +9,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 481804}
   - 212: {fileID: 21210590}
-  - 61: {fileID: 6128774}
   - 50: {fileID: 5015258}
   - 114: {fileID: 11496822}
   - 114: {fileID: 11488850}
   - 114: {fileID: 11425134}
   - 114: {fileID: 11407862}
+  - 61: {fileID: 6114592}
+  - 58: {fileID: 5875736}
   m_Layer: 9
   m_Name: Don Juan Dump
   m_TagString: Default Player Dump
@@ -197,7 +198,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.13, y: -9.11, z: 0}
+  m_LocalPosition: {x: 1.46, y: -9.26, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 486460}
@@ -272,7 +273,21 @@ CircleCollider2D:
   m_Offset: {x: 2.64, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
---- !u!61 &6128774
+--- !u!58 &5875736
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111144}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -2.08}
+  serializedVersion: 2
+  m_Radius: 1.2
+--- !u!61 &6114592
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -283,9 +298,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.84}
   serializedVersion: 2
-  m_Size: {x: 2.35, y: 6.6}
+  m_Size: {x: 2.35, y: 6}
 --- !u!95 &9576344
 Animator:
   serializedVersion: 3
