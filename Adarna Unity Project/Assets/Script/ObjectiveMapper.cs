@@ -112,6 +112,5 @@ public class ObjectiveMapper : MonoBehaviour {
 			if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox))
 				uiFader.FadeIn(objectiveManager.fadeDelay, objectiveManager.panelFaderSpeed, true);
 		}
-			
 	}
 }

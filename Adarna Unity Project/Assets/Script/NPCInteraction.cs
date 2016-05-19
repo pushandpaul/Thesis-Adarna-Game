@@ -95,19 +95,17 @@ public class NPCInteraction : MonoBehaviour {
 		}
 		else
 			toFlip = false;
-		if(!DialogueController.inDialogue){
-			if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
-				backupScale = toTransform.localScale;
-				if(toFlip){
-					toTransform.localScale = new Vector3(-backupScale.x, backupScale.y, backupScale.z);
+		if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
+			backupScale = toTransform.localScale;
+			if(toFlip){
+				toTransform.localScale = new Vector3(-backupScale.x, backupScale.y, backupScale.z);
 					//facingPlayer == true;
-				}
-
-				else
-					toTransform.localScale = new Vector3(backupScale.x, backupScale.y, backupScale.z);
-				Debug.Log ("Interacted with NPC " + gameObject.name);
-				checkIfCurrent();
 			}
+
+			else
+				toTransform.localScale = new Vector3(backupScale.x, backupScale.y, backupScale.z);
+			Debug.Log ("Interacted with NPC " + gameObject.name);
+			checkIfCurrent();
 		}
 	}
 
@@ -138,7 +136,7 @@ public class NPCInteraction : MonoBehaviour {
 		toTransform.localScale = backupScale;
 	}
 
-	private void checkIfCurrent(){
+	void checkIfCurrent(){
 		if(anObjective){
 			objectiveMapper.checkIfCurrent_npc();
 		}
@@ -152,7 +150,7 @@ public class NPCInteraction : MonoBehaviour {
 				Debug.Log ("Interact");
 				waitForPress = true;
 			}
-			else if(!pressToInteract && !DialogueController.inDialogue)
+			else if(!pressToInteract)
 				checkIfCurrent();
 		}
 	}
@@ -163,4 +161,11 @@ public class NPCInteraction : MonoBehaviour {
 			}
 		}
 	}
+
+	/*IEnumerator checkIfInDialogue(){
+		Debug.Log("Waiting until dialogue is over.");
+		//yield return new WaitWhile(DialogueController.inDialogue);
+		Debug.Log("Dialogue is over. Checking if this is the current objective.");
+		checkIfCurrent();
+	}*/
 }

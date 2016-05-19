@@ -16,7 +16,7 @@ public class LevelLoader : MonoBehaviour {
 		BahayNiErmitanyo = 8,
 		BahayNiErmitanyoInterior = 9,
 		GreenToDarkForest = 10,
-		//Minigames
+		//Minigame
 		MinigameDayap = 11,
 		DarkForest = 12,
 		KwartoNiAdarna = 13,
@@ -27,6 +27,8 @@ public class LevelLoader : MonoBehaviour {
 		BerbanyaToArmenya = 18,
 		ArmenyaForestNiJuan = 19,
 		ArmenyaFallsBridge = 20,
+		ForestToMountain = 21,
+		MountaintTop = 22,
 	}
 
 	public LevelSelect Levels;

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour {
 	public PlayerController player;
@@ -17,13 +18,16 @@ public class CameraController : MonoBehaviour {
 	public float defaultXOffset;
 	private float flippedXOffset;
 	public float defaultYOffset;
-	public float changedYOffset;
+	//public float changedYOffset;
 	private float xOffset;
 	private float yOffset;
 
+	[FormerlySerializedAs("zoomSize")]
+	[SerializeField]
+	public float defaultZoomSize;
 	public float zoomSize;
-	public bool overrideZoom;
-	private float defaultCamSize;
+	public float defaultCamSize;
+	public float defaultZoomDuration = 2f;
 
 	public bool isFollowing;
 	public bool flipped;
@@ -44,12 +48,11 @@ public class CameraController : MonoBehaviour {
 
 		_min = bounds.bounds.min;
 		_max = bounds.bounds.max;
+
 		defaultCamSize = camera.orthographicSize;
+		zoomSize = defaultZoomSize;
 
 		flippedXOffset = -defaultXOffset;
-	
-		Debug.Log("This is the camera's size: " + defaultCamSize);
-
 	}
 	void FixedUpdate () {
 		var x = transform.position.x;
@@ -68,17 +71,8 @@ public class CameraController : MonoBehaviour {
 			xOffset = 0;
 		}
 
-		if(!overrideZoom){
-			if(isZoomed){
-				camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, zoomSize, Time.deltaTime);
-				yOffset = changedYOffset;
-			}
-			else{
-				camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, defaultCamSize, Time.deltaTime);
-				yOffset = defaultYOffset;
-			}
-		}
-			
+		yOffset = ((defaultYOffset * camera.orthographicSize)/defaultCamSize);
+
 		if(isFollowing){
 			if(Mathf.Abs(x - (player.transform.position.x + xOffset)) > margin.x){
 				x = Mathf.Lerp(x, player.transform.position.x + xOffset, smoothing.x = Time.deltaTime * lerpSpeed.x);
@@ -87,9 +81,7 @@ public class CameraController : MonoBehaviour {
 				y = Mathf.Lerp(y, player.transform.position.y + yOffset, smoothing.y = Time.deltaTime * lerpSpeed.y);
 			}
 		}
-
-
-
+			
 		var cameraHalfWidth = GetComponent<Camera>().orthographicSize * ((float)Screen.width / Screen.height);﻿
 		x = Mathf.Clamp(x, _min.x + cameraHalfWidth, _max.x - cameraHalfWidth);
 		y = Mathf.Clamp(y, _min.y + GetComponent<Camera>().orthographicSize, _max.y - GetComponent<Camera>().orthographicSize);
@@ -101,13 +93,20 @@ public class CameraController : MonoBehaviour {
 		this.zoomSize = zoomSize;
 	}
 
-	public void controlZoom(bool isZoomed){
-		this.isZoomed = isZoomed;
+	public void resetZoomSize(){
+		this.zoomSize = defaultZoomSize;
 	}
 
-	public void forceZoom(float targetZoom, float duration){
-		this.overrideZoom = true;
-		StartCoroutine(startForceZoom(camera.orthographicSize, targetZoom, duration));
+	public void Zoom(){
+		StartCoroutine(startZoom(camera.orthographicSize, zoomSize, defaultZoomDuration));
+	}
+
+	public void Zoom(float targetZoom){
+		StartCoroutine(startZoom(camera.orthographicSize, targetZoom, defaultZoomDuration));
+	}
+
+	public void Zoom(float targetZoom, float duration){
+		StartCoroutine(startZoom(camera.orthographicSize, targetZoom, duration));
 	}
 		
 	public void centerCam(bool isCenter){
@@ -119,15 +118,8 @@ public class CameraController : MonoBehaviour {
 		StartCoroutine(startZoomUnzoom(delay, isCenter));
 	}
 
-	IEnumerator startZoomUnzoom(int delay, bool isCenter){
-		controlZoom(true);
-		centerCam(isCenter);
-		yield return new WaitForSeconds(delay);
-		controlZoom(false);
-		centerCam(!isCenter);
-	}
-	IEnumerator startForceZoom(float currentZoom, float targetZoom, float duration){
-		float startTime = Time.time;
+	IEnumerator startZoom(float currentZoom, float targetZoom, float duration){
+		float startTime = Time.time ;
 		float endTime = startTime + duration;
 
 		while(Time.time <= endTime){
@@ -135,6 +127,16 @@ public class CameraController : MonoBehaviour {
 			camera.orthographicSize = Mathf.Lerp(currentZoom, targetZoom, t);
 			yield return new WaitForFixedUpdate();
 		}
-		//this.overrideZoom = false;
 	}
+
+	IEnumerator startZoomUnzoom(int delay, bool isCenter){
+		if(isCenter)
+			centerCam(true);
+		
+		Zoom(zoomSize, defaultZoomDuration);
+		yield return new WaitForSeconds(delay);
+		Zoom(zoomSize, defaultZoomDuration);
+		centerCam(false);
+	}
+
 }

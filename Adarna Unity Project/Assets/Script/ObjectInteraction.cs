@@ -32,16 +32,14 @@ public class ObjectInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!DialogueController.inDialogue){
-			if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
-				Debug.Log ("Interacted with Object " + gameObject.name);
-				checkIfCurrent();
-			}
+		if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
+			Debug.Log ("Interacted with Object " + gameObject.name);
+			checkIfCurrent();
 		}
 	}
 
 	private void checkIfCurrent(){
-		if(anObjective && !DialogueController.inDialogue){
+		if(anObjective){
 			objectiveMapper.checkIfCurrent_object();
 		}
 		if(message != ""){
@@ -74,6 +72,12 @@ public class ObjectInteraction : MonoBehaviour {
 				waitForPress = false;
 			}
 		}
-			
 	}
+
+	/*IEnumerator checkIfInDialogue(){
+		Debug.Log("Waiting until dialogue is over.");
+		yield return new WaitWhile(DialogueController.inDialogue);
+		Debug.Log("Dialogue is over. Checking if this is the current objective.");
+		checkIfCurrent();
+	}*/
 }

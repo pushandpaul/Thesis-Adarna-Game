@@ -6,6 +6,9 @@ public class DoorHandler : MonoBehaviour {
 
 	public int thisDoorIndex;
 	public string nextLocation;
+	public bool doorPlacementUp = true;
+
+	private KeyCode openDoorButton;
 
 	//public bool defaultSpawnLeft = true;
 	private bool playerInZone;
@@ -19,11 +22,16 @@ public class DoorHandler : MonoBehaviour {
 		screenFader = FindObjectOfType<ScreenFader>();
 		levelManager = FindObjectOfType<LevelManager>();
 		gameManager = FindObjectOfType<GameManager>();
+
+		if(doorPlacementUp)
+			openDoorButton = KeyCode.W;
+		else
+			openDoorButton = KeyCode.E;
 	}
 
 	void Update () {
 		if(waitForPress){
-			if(Input.GetKeyDown(KeyCode.W) && playerInZone){
+			if(Input.GetKeyDown(openDoorButton) && playerInZone){
 				//LevelManager.exitInRight = defaultSpawnLeft;
 				LevelManager.isDoor = true;
 				LevelManager.doorIndex = thisDoorIndex;

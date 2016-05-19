@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using UnityEngine.UI;
@@ -12,6 +13,9 @@ public class DialogueController : MonoBehaviour {
 	private TextBoxManager objectiveTextBox;
 	private UIFader objectivePanelFader;
 	private FollowerManager followerManager;
+
+	private ObjectInteraction[] objectsInteraction;
+	private NPCInteraction[] npcsInteraction;
 
 	public bool zoomCam;
 	public bool centerCam;
@@ -28,6 +32,7 @@ public class DialogueController : MonoBehaviour {
 
 	public void startDialogue(){
 		inDialogue = true;
+		enableInteraction(false);
 
 		foreach(FollowTarget follower in followerManager.activeFollowers){
 			follower.isFollowing = false;
@@ -35,14 +40,13 @@ public class DialogueController : MonoBehaviour {
 				follower.anim.SetFloat ("Speed", 0f);
 			}
 		}
-
 			
 		player.disablePlayerMovement();
 		if(centerCam)
 			camera.centerCam(centerCam);
 
 		if(zoomCam)
-			camera.controlZoom(zoomCam);
+			camera.Zoom();
 
 		objectivePanelFader.canvasGroup.alpha = 0;
 		//objectiveTextBox.disableTextBox();
@@ -53,6 +57,7 @@ public class DialogueController : MonoBehaviour {
 	public void endDialogue(){
 		player.enablePlayerMovement();
 		inDialogue = false;
+		enableInteraction(true);
 
 		foreach(FollowTarget follower in followerManager.activeFollowers){
 			follower.isFollowing = true;
@@ -64,13 +69,26 @@ public class DialogueController : MonoBehaviour {
 			camera.centerCam(false);
 
 		if(zoomCam)
-			camera.controlZoom(false);
+			camera.Zoom(camera.defaultCamSize);
 		
 		if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox) && !objectiveManager.currentObjective.textBoxDisplayed){
 			Debug.Log("Allowed fade in");
 			//objectiveTextBox.enableTextBox();
 			objectivePanelFader.FadeIn(objectiveManager.fadeDelay, objectiveManager.panelFaderSpeed, true);
 			objectiveManager.currentObjective.textBoxDisplayed = true;
+		}
+	}
+
+	void enableInteraction(bool enable){
+		npcsInteraction = FindObjectsOfType<NPCInteraction>();
+		objectsInteraction = FindObjectsOfType<ObjectInteraction>();
+
+		foreach(NPCInteraction npcInteraction in npcsInteraction){
+			npcInteraction.GetComponent<Collider2D>().enabled = enable;
+		}
+
+		foreach(ObjectInteraction objectInteraction in objectsInteraction){
+			objectInteraction.GetComponent<Collider2D>().enabled = enable;
 		}
 	}
 }
