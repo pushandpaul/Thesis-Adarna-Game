@@ -142,9 +142,10 @@ MonoBehaviour:
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 1.8
-  changedYOffset: 1
+  defaultZoomSize: 3.5
   zoomSize: 3.5
-  overrideZoom: 0
+  initialCamSize: 0
+  defaultZoomDuration: 2
   isFollowing: 1
   flipped: 0
   isCenter: 0
@@ -958,6 +959,8 @@ GameObject:
   - 114: {fileID: 1089438731}
   - 114: {fileID: 1089438729}
   - 114: {fileID: 1089438732}
+  - 114: {fileID: 1089438733}
+  - 114: {fileID: 1089438734}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -978,20 +981,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -27.657166, y: -92.91165}
+  scrollPos: {x: -469.23093, y: -12.49585}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 360
-  zoom: 0.52391255
+  zoom: 0.69999987
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 2043.0483
     height: 2184.8127
-  selectedBlock: {fileID: 1089438730}
+  selectedBlock: {fileID: 1089438488}
   selectedCommands:
-  - {fileID: 1089438732}
+  - {fileID: 1089438734}
   variables: []
   description: 
   stepPause: 0
@@ -1041,6 +1044,7 @@ MonoBehaviour:
   - {fileID: 1089438514}
   - {fileID: 1089438513}
   - {fileID: 1089438512}
+  - {fileID: 1089438734}
   - {fileID: 1089438511}
   - {fileID: 1089438510}
   - {fileID: 1089438509}
@@ -2921,9 +2925,9 @@ MonoBehaviour:
   - {fileID: 1089438709}
   - {fileID: 1089438711}
   - {fileID: 1089438710}
-  - {fileID: 1089438712}
   - {fileID: 1089438714}
   - {fileID: 1089438728}
+  - {fileID: 1089438712}
   - {fileID: 1089438537}
 --- !u!114 &1089438557
 MonoBehaviour:
@@ -6667,7 +6671,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 22.67, y: -0.35, z: 0}
+      vector3Value: {x: 18.26, y: -0.35, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -6763,7 +6767,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: -0.35, y: -2.14, z: 0}
+      vector3Value: {x: 22.3, y: -2.14, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -6859,7 +6863,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 19, y: -2.14, z: 0}
+      vector3Value: {x: 27, y: -2.14, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -6955,7 +6959,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 21, y: -2.14, z: 0}
+      vector3Value: {x: 24, y: -2.14, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -7009,7 +7013,7 @@ MonoBehaviour:
       intValue: 0
       boolValue: 0
       floatValue: 0
-      stringValue: Castle - Throne Room
+      stringValue: Kwarto ni Don Juan
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
@@ -7068,7 +7072,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       typeFullname: System.Boolean
       intValue: 0
-      boolValue: 1
+      boolValue: 0
       floatValue: 0
       stringValue: 
       colorValue: {r: 0, g: 0, b: 0, a: 0}
@@ -7154,6 +7158,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1089438718}
   - {fileID: 1089438727}
+  - {fileID: 1089438733}
   - {fileID: 1089438619}
   - {fileID: 1089438717}
 --- !u!114 &1089438717
@@ -7742,7 +7747,7 @@ MonoBehaviour:
   parentBlock: {fileID: 1089438730}
 --- !u!114 &1089438732
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1089438486}
@@ -7801,6 +7806,128 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1089438733
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 357
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1124809387}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: changeTimeOfDay
+  targetMethodText: 'changeTimeOfDay (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: d
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1089438734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089438486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 358
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1119734199}
+  targetComponentAssemblyName: SpriteController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SpriteController
+  targetMethod: changeColor
+  targetMethodText: 'changeColor (SpriteRenderer, Color, Single): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.SpriteRenderer, UnityEngine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      typeFullname: UnityEngine.SpriteRenderer
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1258224543}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Color, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Color
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0.4852941, g: 0.4852941, b: 0.4852941, a: 1}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Single
+      intValue: 0
+      boolValue: 0
+      floatValue: 1
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &1094390403
 GameObject:
   m_ObjectHideFlags: 0
@@ -7842,6 +7969,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1119734201}
   - 114: {fileID: 1119734200}
+  - 114: {fileID: 1119734202}
   m_Layer: 0
   m_Name: Dialogue Controller
   m_TagString: Untagged
@@ -7874,6 +8002,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2066046978}
   m_RootOrder: 0
+--- !u!114 &1119734202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1119734199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9145e326cbb3e40ac38cf442ec10fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1124809387
 GameObject:
   m_ObjectHideFlags: 0
@@ -8339,6 +8478,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1258224538}
   m_Script: {fileID: 11500000, guid: 7bff06d1c5a4f344087e864f688666c7, type: 3}
+--- !u!212 &1258224543 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 21210022, guid: e8b0fe1258153184b867ab768308e96d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1258224538}
 --- !u!1001 &1281981535
 Prefab:
   m_ObjectHideFlags: 0

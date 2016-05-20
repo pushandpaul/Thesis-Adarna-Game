@@ -139,8 +139,10 @@ MonoBehaviour:
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 1.8
-  changedYOffset: 1
+  defaultZoomSize: 3.5
   zoomSize: 3.5
+  initialCamSize: 0
+  defaultZoomDuration: 2
   isFollowing: 1
   flipped: 0
   isCenter: 0
@@ -1145,8 +1147,9 @@ MonoBehaviour:
     y: -481.24994
     width: 1639.8188
     height: 1133.4209
-  selectedBlock: {fileID: 1036713428}
-  selectedCommands: []
+  selectedBlock: {fileID: 1036713547}
+  selectedCommands:
+  - {fileID: 1036713518}
   variables: []
   description: 
   stepPause: 0
@@ -1279,8 +1282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 400.0997
-    y: -48.601944
+    x: 401.4155
+    y: -49.917732
     width: 173
     height: 40
   itemId: 105
@@ -8161,7 +8164,7 @@ MonoBehaviour:
   time: 0
 --- !u!114 &1036713551
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036713375}
@@ -8179,7 +8182,7 @@ MonoBehaviour:
   time: 0
 --- !u!114 &1036713552
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036713375}
@@ -8240,7 +8243,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1036713553
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036713375}
@@ -8255,7 +8258,7 @@ MonoBehaviour:
   duration: 2
 --- !u!114 &1036713554
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036713375}
@@ -8273,7 +8276,7 @@ MonoBehaviour:
   time: 0
 --- !u!114 &1036713555
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036713375}
@@ -9408,6 +9411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoorIndex: 0
   nextLocation: Castle - 2nd Floor
+  doorPlacementUp: 1
   waitForPress: 0
 --- !u!61 &1635798127
 BoxCollider2D:

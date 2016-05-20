@@ -143,9 +143,10 @@ MonoBehaviour:
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 2.2
-  changedYOffset: 1
+  defaultZoomSize: 3.5
   zoomSize: 3.5
-  overrideZoom: 0
+  initialCamSize: 0
+  defaultZoomDuration: 2
   isFollowing: 1
   flipped: 0
   isCenter: 0
@@ -432,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRight: 0
-  nextLocation: Forest Test
+  nextLocation: Castle - Bridge to Forest
 --- !u!61 &118009224
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1197,6 +1198,9 @@ GameObject:
   - 114: {fileID: 532386790}
   - 114: {fileID: 532386744}
   - 114: {fileID: 532386755}
+  - 114: {fileID: 532386757}
+  - 114: {fileID: 532386792}
+  - 114: {fileID: 532386938}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1262,6 +1266,7 @@ MonoBehaviour:
   - {fileID: 532386736}
   - {fileID: 532386735}
   - {fileID: 532386734}
+  - {fileID: 532386757}
   - {fileID: 532386733}
   - {fileID: 532386732}
   - {fileID: 532386731}
@@ -2428,7 +2433,7 @@ MonoBehaviour:
   message: 'Start: Narrative (2)'
 --- !u!114 &532386744
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -2754,7 +2759,7 @@ MonoBehaviour:
   time: 0
 --- !u!114 &532386755
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
@@ -2821,6 +2826,50 @@ MonoBehaviour:
   fadeWhenDone: 1
   waitForClick: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &532386757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532386704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 375
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 31907810}
+  targetComponentAssemblyName: CameraController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraController
+  targetMethod: centerCam
+  targetMethodText: 'centerCam (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &532386758
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3779,6 +3828,50 @@ MonoBehaviour:
   fadeWhenDone: 1
   waitForClick: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &532386792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532386704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 376
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1134703565}
+  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ItemToGive
+  targetMethod: setItem
+  targetMethodText: 'setItem (Sprite): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Sprite
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 21300000, guid: 45262230639ce48429ab2105204097e1, type: 3}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &532386793
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5321,7 +5414,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
@@ -5563,7 +5656,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 727.7087
-    y: 571.96704
+    y: 573.3369
     width: 157
     height: 40
   itemId: 209
@@ -5581,7 +5674,10 @@ MonoBehaviour:
   - {fileID: 532386842}
   - {fileID: 532386827}
   - {fileID: 532386841}
+  - {fileID: 532386755}
+  - {fileID: 532386839}
   - {fileID: 532386826}
+  - {fileID: 532386792}
   - {fileID: 532386840}
   - {fileID: 532386823}
   - {fileID: 532386822}
@@ -5589,10 +5685,9 @@ MonoBehaviour:
   - {fileID: 532386824}
   - {fileID: 532386825}
   - {fileID: 532386845}
-  - {fileID: 532386839}
   - {fileID: 532386831}
+  - {fileID: 532386938}
   - {fileID: 532386834}
-  - {fileID: 532386755}
   - {fileID: 532386838}
   - {fileID: 532386833}
   - {fileID: 532386828}
@@ -7834,6 +7929,33 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &532386938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532386704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 377
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1134703565}
+  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ItemToGive
+  targetMethod: disableItem
+  targetMethodText: 'disableItem (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &532386939
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8883,6 +9005,10 @@ Animator:
 --- !u!4 &1134703564 stripped
 Transform:
   m_PrefabParentObject: {fileID: 458828, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
+  m_PrefabInternal: {fileID: 1134703561}
+--- !u!1 &1134703565 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 179706, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
   m_PrefabInternal: {fileID: 1134703561}
 --- !u!1 &1146023066
 GameObject:
@@ -10410,7 +10536,7 @@ MonoBehaviour:
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 356
-  zoom: 0.7299997
+  zoom: 0.63999975
   scrollViewRect:
     serializedVersion: 2
     x: -350
@@ -10419,6 +10545,7 @@ MonoBehaviour:
     height: 1672.7627
   selectedBlock: {fileID: 532386850}
   selectedCommands:
+  - {fileID: 532386839}
   - {fileID: 532386755}
   variables: []
   description: 
