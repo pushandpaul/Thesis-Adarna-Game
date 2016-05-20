@@ -26,7 +26,8 @@ public class CameraController : MonoBehaviour {
 	[SerializeField]
 	public float defaultZoomSize;
 	public float zoomSize;
-	public float defaultCamSize;
+	private float defaultCamSize = 5f;
+	public float initialCamSize;
 	public float defaultZoomDuration = 2f;
 
 	public bool isFollowing;
@@ -39,6 +40,7 @@ public class CameraController : MonoBehaviour {
 			lerpSpeed.x = 1f;
 		if(lerpSpeed.y == 0)
 			lerpSpeed.y = 4f;
+		
 	}
 
 	// Use this for initialization
@@ -49,8 +51,8 @@ public class CameraController : MonoBehaviour {
 		_min = bounds.bounds.min;
 		_max = bounds.bounds.max;
 
-		defaultCamSize = camera.orthographicSize;
 		zoomSize = defaultZoomSize;
+		initialCamSize = camera.orthographicSize;
 
 		flippedXOffset = -defaultXOffset;
 	}

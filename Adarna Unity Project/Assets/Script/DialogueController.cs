@@ -69,7 +69,7 @@ public class DialogueController : MonoBehaviour {
 			camera.centerCam(false);
 
 		if(zoomCam)
-			camera.Zoom(camera.defaultCamSize);
+			camera.Zoom(camera.initialCamSize);
 		
 		if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox) && !objectiveManager.currentObjective.textBoxDisplayed){
 			Debug.Log("Allowed fade in");

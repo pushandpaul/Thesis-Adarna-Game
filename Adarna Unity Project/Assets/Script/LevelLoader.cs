@@ -29,6 +29,7 @@ public class LevelLoader : MonoBehaviour {
 		ArmenyaFallsBridge = 20,
 		ForestToMountain = 21,
 		MountaintTop = 22,
+		MountainToForest = 23,
 	}
 
 	public LevelSelect Levels;

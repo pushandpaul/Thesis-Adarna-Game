@@ -29,10 +29,10 @@ public class CameraTrigger : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		if(revertOnTriggerExit && other.tag == "Player"){
 			if(useCamDefaults){
-				camera.Zoom(camera.defaultCamSize);
+				camera.Zoom(camera.initialCamSize);
 			}
 			else
-				camera.Zoom(camera.defaultCamSize, revertDuration);
+				camera.Zoom(camera.initialCamSize, revertDuration);
 		}
 	}
 }
