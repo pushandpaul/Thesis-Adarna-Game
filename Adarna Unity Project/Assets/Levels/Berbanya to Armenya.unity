@@ -178,12 +178,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   camera: {fileID: 0}
+  followThis: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
   lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
-  defaultYOffset: 2.5
+  defaultYOffset: 1.8
   defaultZoomSize: 3.5
   zoomSize: 3.5
   initialCamSize: 0
@@ -701,7 +702,7 @@ GameObject:
   - 61: {fileID: 762603602}
   - 114: {fileID: 762603601}
   m_Layer: 0
-  m_Name: Left Exit
+  m_Name: Return
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -715,11 +716,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 762603600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4581ab7be42b65d40bc26778e865fa1c, type: 3}
+  m_Script: {fileID: 11500000, guid: f12ea1d5afa71c949a814f6cb5023a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRight: 0
+  thisDoorIndex: 0
   nextLocation: Mountaintop
+  doorPlacementUp: 1
+  waitForPress: 0
 --- !u!61 &762603602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -894,7 +897,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1136915464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.1, y: 0.3454013, z: -1.7070312}
+  m_LocalPosition: {x: 97.54, y: 0.3454013, z: -1.7070312}
   m_LocalScale: {x: 4.2249947, y: 8.864766, z: 1}
   m_Children: []
   m_Father: {fileID: 1158384221}

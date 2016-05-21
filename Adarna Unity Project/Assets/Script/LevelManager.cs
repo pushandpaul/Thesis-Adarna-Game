@@ -213,10 +213,10 @@ public class LevelManager : MonoBehaviour {
 		else 
 			newPlayer.localScale = new Vector3(scaleX, scaleY, 1f);
 			
-		/*if (newPlayer.localRotation.z > 0)
+		if (newPlayer.localRotation.z > 0)
 			newPlayer.localRotation = Quaternion.Euler (0, 0, -rotationZ);
 		else if (newPlayer.localRotation.z < 0)
-			newPlayer.localRotation = Quaternion.Euler (0, 0, rotationZ);*/
+			newPlayer.localRotation = Quaternion.Euler (0, 0, rotationZ);
 		if (isNPC) {
 			SpriteRenderer[] New = newPlayer.GetComponentsInChildren<SpriteRenderer> (true);
 			foreach (SpriteRenderer _new in New) {

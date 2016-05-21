@@ -31,6 +31,7 @@ public class SpriteController : MonoBehaviour {
 	}
 
 	public void changeColor(SpriteRenderer mySprite, Color color, float duration){
+		color = new Color(color.r, color.g, color.b, color.a = 255f);
 		StartCoroutine(startChangeColor(mySprite, mySprite.color, color, duration));
 	}
 

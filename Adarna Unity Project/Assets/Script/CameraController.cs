@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 public class CameraController : MonoBehaviour {
 	public PlayerController player;
 	public Camera camera;
+	public Transform followThis;
 
 	public Vector2 margin;
 	public Vector2 smoothing;
@@ -48,6 +49,10 @@ public class CameraController : MonoBehaviour {
 		player = FindObjectOfType<PlayerController>();
 		camera = this.GetComponent<Camera>();
 
+		if(followThis == null){
+			setPlayerAsFollowing();
+		}
+
 		_min = bounds.bounds.min;
 		_max = bounds.bounds.max;
 
@@ -60,9 +65,9 @@ public class CameraController : MonoBehaviour {
 		var x = transform.position.x;
 		var y = transform.position.y;
 
-		if(player.transform.localScale.x > 0)
+		if(followThis.localScale.x > 0)
 			flipped = false;
-		else if(player.transform.localScale.x < 0)
+		else if(followThis.localScale.x < 0)
 			flipped = true;
 
 		if(!flipped && !isCenter)
@@ -73,14 +78,15 @@ public class CameraController : MonoBehaviour {
 			xOffset = 0;
 		}
 
-		yOffset = ((defaultYOffset * camera.orthographicSize)/defaultCamSize);
+		//yOffset = ((defaultYOffset * camera.orthographicSize)/defaultCamSize);
+		yOffset = (camera.orthographicSize - defaultCamSize) + defaultYOffset;
 
 		if(isFollowing){
-			if(Mathf.Abs(x - (player.transform.position.x + xOffset)) > margin.x){
-				x = Mathf.Lerp(x, player.transform.position.x + xOffset, smoothing.x = Time.deltaTime * lerpSpeed.x);
+			if(Mathf.Abs(x - (followThis.position.x + xOffset)) > margin.x){
+				x = Mathf.Lerp(x, followThis.position.x + xOffset, smoothing.x = Time.deltaTime * lerpSpeed.x);
 			}
-			if(Mathf.Abs(y - (player.transform.position.y + yOffset)) > margin.y){
-				y = Mathf.Lerp(y, player.transform.position.y + yOffset, smoothing.y = Time.deltaTime * lerpSpeed.y);
+			if(Mathf.Abs(y - (followThis.position.y + yOffset)) > margin.y){
+				y = Mathf.Lerp(y, followThis.position.y + yOffset, smoothing.y = Time.deltaTime * lerpSpeed.y);
 			}
 		}
 			
@@ -89,6 +95,14 @@ public class CameraController : MonoBehaviour {
 		y = Mathf.Clamp(y, _min.y + GetComponent<Camera>().orthographicSize, _max.y - GetComponent<Camera>().orthographicSize);
 
 		transform.position = new Vector3(x,y, transform.position.z);
+	}
+
+	public void setFollowing(Transform followThis){
+		this.followThis = followThis;
+	}
+
+	public void setPlayerAsFollowing(){
+		this.followThis = player.transform;
 	}
 
 	public void setZoomSize(float zoomSize){

@@ -136,12 +136,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   camera: {fileID: 0}
+  followThis: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
   lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
-  defaultYOffset: 2.5
+  defaultYOffset: 1.8
   defaultZoomSize: 3.5
   zoomSize: 3.5
   initialCamSize: 0
@@ -212,7 +213,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 31907810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.67, z: -4.5}
+  m_LocalPosition: {x: 2.1, y: 0.67, z: -4.5}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -332,8 +333,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228237634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.9, y: 5.6, z: 0}
-  m_LocalScale: {x: 145.05739, y: 22.44199, z: 1.3102127}
+  m_LocalPosition: {x: 57, y: 4.1, z: 0}
+  m_LocalScale: {x: 129.05618, y: 19.0757, z: 1.3102127}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -406,9 +407,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 11433012, guid: 0505d2a77466f204ba2dfc1d59ea4675, type: 2}
-      propertyPath: cameraSpawnZ
-      value: -4.5
+    - target: {fileID: 493156, guid: 0505d2a77466f204ba2dfc1d59ea4675, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 147.32137
+      objectReference: {fileID: 0}
+    - target: {fileID: 493156, guid: 0505d2a77466f204ba2dfc1d59ea4675, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0505d2a77466f204ba2dfc1d59ea4675, type: 2}
@@ -1980,7 +1985,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &401019847
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 401019800}
@@ -2058,7 +2063,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &401019848
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 401019800}
@@ -2273,7 +2278,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -4.58
       objectReference: {fileID: 0}
     - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2402,7 +2407,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042532522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.05, y: -1.75, z: 0.10861739}
+  m_LocalPosition: {x: -6.12, y: -1.75, z: 0.10861739}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2483,7 +2488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRight: 1
-  nextLocation: Forest - Pedras Platas
+  nextLocation: Armenya - Falls Bridge
 --- !u!61 &1136915466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2505,7 +2510,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1136915464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 118, y: 0.3454013, z: -1.7070312}
+  m_LocalPosition: {x: 106.3, y: 0.3454013, z: -1.7070312}
   m_LocalScale: {x: 4.2249947, y: 8.864766, z: 1}
   m_Children: []
   m_Father: {fileID: 1158384221}

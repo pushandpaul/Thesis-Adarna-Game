@@ -26,7 +26,7 @@ public class DoorHandler : MonoBehaviour {
 		if(doorPlacementUp)
 			openDoorButton = KeyCode.W;
 		else
-			openDoorButton = KeyCode.E;
+			openDoorButton = KeyCode.S;
 	}
 
 	void Update () {
@@ -53,7 +53,7 @@ public class DoorHandler : MonoBehaviour {
 	}
 	void OnTriggerEnter2D (Collider2D other){
 		if(other.tag == "Player"){
-			Debug.Log("Press W");
+			Debug.Log("Press " + openDoorButton);
 			playerInZone = true;
 		}
 	}
