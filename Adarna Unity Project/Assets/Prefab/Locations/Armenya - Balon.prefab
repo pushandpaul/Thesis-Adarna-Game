@@ -31,7 +31,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &121142
 GameObject:
   m_ObjectHideFlags: 1
@@ -185,6 +185,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 408630}
   - 212: {fileID: 21209854}
+  - 58: {fileID: 5847790}
+  - 114: {fileID: 11457848}
+  - 114: {fileID: 11465242}
   m_Layer: 0
   m_Name: Balon
   m_TagString: Untagged
@@ -199,8 +202,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.8, y: -7.6, z: 0}
-  m_LocalScale: {x: 1.1867492, y: 1.1867492, z: 0.7911662}
+  m_LocalPosition: {x: 9.8, y: -8.6, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 440144}
   m_RootOrder: 3
@@ -347,6 +350,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 440144}
   m_RootOrder: 2
+--- !u!58 &5847790
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197228}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 2.6
 --- !u!61 &6131928
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -361,6 +378,39 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11457848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587b8fea6c8083a4dacdf11e7b57277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 1
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  panelFadeDelay: 0
+  anObjective: 0
+  message: 
+--- !u!114 &11465242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partObjective:
+  - part: 4
+    objectives: 03000000
+  isNPC: 0
+  isObject: 1
 --- !u!114 &11477912
 MonoBehaviour:
   m_ObjectHideFlags: 1

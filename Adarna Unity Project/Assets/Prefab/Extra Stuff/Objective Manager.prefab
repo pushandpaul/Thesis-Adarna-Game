@@ -175,6 +175,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &120336
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 411034}
+  - 114: {fileID: 11491254}
+  m_Layer: 0
+  m_Name: 'Start: Narrative (4-1)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &122884
 GameObject:
   m_ObjectHideFlags: 1
@@ -217,7 +233,7 @@ GameObject:
   - 4: {fileID: 480790}
   - 114: {fileID: 11403592}
   m_Layer: 0
-  m_Name: 'Start: Narrative (4-1)'
+  m_Name: 'Interact: Balon (4-1)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,6 +284,22 @@ GameObject:
   - 114: {fileID: 11486682}
   m_Layer: 5
   m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &133694
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 479678}
+  - 114: {fileID: 11414550}
+  m_Layer: 0
+  m_Name: 'Start: Narrative (4-2)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,6 +932,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428408}
   m_RootOrder: 1
+--- !u!4 &411034
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120336}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
+  m_RootOrder: 0
 --- !u!4 &412490
 Transform:
   m_ObjectHideFlags: 1
@@ -1210,8 +1254,10 @@ Transform:
   m_LocalPosition: {x: -4.977099, y: -0.36602533, z: 1.1015625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 480790}
+  - {fileID: 411034}
   - {fileID: 427338}
+  - {fileID: 479678}
+  - {fileID: 480790}
   m_Father: {fileID: 480576}
   m_RootOrder: 5
 --- !u!4 &470482
@@ -1286,6 +1332,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428408}
   m_RootOrder: 0
+--- !u!4 &479678
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
+  m_RootOrder: 2
 --- !u!4 &480500
 Transform:
   m_ObjectHideFlags: 1
@@ -1327,7 +1385,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470110}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!4 &481188
 Transform:
   m_ObjectHideFlags: 1
@@ -1533,13 +1591,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Start: Narrative (4-1)'
-  Description: 
-  objectiveLocation: 19
+  Name: 'Interact: Balon (4-1)'
+  Description: Suriin ang balon.
+  objectiveLocation: 24
   Kind: 0
   Status: 0
-  OnReach: 0100000000000000
-  nextObjective: {fileID: 11494704}
+  OnReach: 010000000000000002000000
+  nextObjective: {fileID: 0}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11403952
@@ -1662,6 +1720,26 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
+--- !u!114 &11414550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Start: Narrative (4-2)'
+  Description: 
+  objectiveLocation: 19
+  Kind: 0
+  Status: 0
+  OnReach: 0100000000000000
+  nextObjective: {fileID: 11403592}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
 --- !u!114 &11414590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2001,7 +2079,7 @@ MonoBehaviour:
   - {fileID: 116170}
   - {fileID: 188206}
   - {fileID: 182564}
-  currentPartIndex: 3
+  currentPartIndex: 2
   currentObjective: {fileID: 11418612}
   currentObjectiveIndex: 0
   objectivePanelFader: {fileID: 11444632}
@@ -2501,6 +2579,26 @@ MonoBehaviour:
   nextObjective: {fileID: 11422338}
   objectiveIndex: 0
   textBoxDisplayed: 0
+--- !u!114 &11491254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Start: Narrative (4-1)'
+  Description: 
+  objectiveLocation: 19
+  Kind: 0
+  Status: 0
+  OnReach: 0100000000000000
+  nextObjective: {fileID: 11494704}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
 --- !u!114 &11493476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2538,7 +2636,7 @@ MonoBehaviour:
   Kind: 1
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 0}
+  nextObjective: {fileID: 11414550}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11495302
