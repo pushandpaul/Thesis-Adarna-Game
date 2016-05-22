@@ -23,7 +23,8 @@ public class ExitManager : MonoBehaviour {
 		if(other.tag == "Player"){
 			LevelManager.isDoor = false;
 			LevelManager.exitInRight = isRight;
-			levelManager.onLevelExit();
+			if(levelManager != null)
+				levelManager.onLevelExit();
 			StartCoroutine(ChangeLevel());
 		}
 

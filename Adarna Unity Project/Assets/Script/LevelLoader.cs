@@ -31,6 +31,8 @@ public class LevelLoader : MonoBehaviour {
 		Mountaintop = 22,
 		MountainToForest = 23,
 		ArmenyaBalon = 24,
+		//Minigame
+		MinigameBalon = 25,
 	}
 
 	public LevelSelect Levels;

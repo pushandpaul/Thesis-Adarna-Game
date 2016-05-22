@@ -21,6 +21,7 @@ public class BalonMinigame : MonoBehaviour {
 	public float targetPosition;
 
 	public Transform character;
+	private Animator characterAnim;
 	public Transform cameraTransform;
 
 	private float _y;
@@ -54,7 +55,8 @@ public class BalonMinigame : MonoBehaviour {
 		else if(_y >= endPosition && !goingDown){
 			goalReached();
 		}
-
+			
+		characterAnim.SetFloat("Speed",Mathf.Abs(_y - targetPosition));
 		character.position = new Vector3(character.position.x, _y, character.position.z);
 	}
 
@@ -71,10 +73,10 @@ public class BalonMinigame : MonoBehaviour {
 	void goalReached(){
 		//character.GetComponent<Animator>().Play("Climbing Idle");
 		Debug.Log("Goal Reached!");
+		targetPosition = endPosition;
 		isGoalReached = true;
 		isDragged = false;
 		allowMove = false;
-
 	}
 
 
@@ -93,6 +95,8 @@ public class BalonMinigame : MonoBehaviour {
 		}
 
 		character.position = new Vector3(character.position.x, startPosition, character.position.z);
+		characterAnim = character.GetComponentInChildren<Animator>();
+		characterAnim.Play("Gapang sa Balon Idle");
 		cameraTransform.position = new Vector3(cameraTransform.position.x, startPosition, cameraTransform.position.z);
 		targetPosition = startPosition;
 	}
