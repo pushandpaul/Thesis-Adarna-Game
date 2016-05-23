@@ -33,6 +33,8 @@ public class LevelLoader : MonoBehaviour {
 		ArmenyaBalon = 24,
 		//Minigame
 		MinigameBalon = 25,
+		ArmenyaIlalimNgBalon = 26,
+		ArmenyaCastleWalkway = 27,
 	}
 
 	public LevelSelect Levels;

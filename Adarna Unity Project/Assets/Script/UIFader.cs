@@ -6,7 +6,7 @@ public class UIFader : MonoBehaviour {
 
 	public CanvasGroup canvasGroup;
 
-	void Start(){
+	void Awake(){
 		this.canvasGroup = GetComponent<CanvasGroup>();
 	}
 
