@@ -151,7 +151,7 @@ public class CameraController : MonoBehaviour {
 		
 		Zoom(zoomSize, defaultZoomDuration);
 		yield return new WaitForSeconds(delay);
-		Zoom(zoomSize, defaultZoomDuration);
+		Zoom(initialCamSize, defaultZoomDuration);
 		centerCam(false);
 	}
 
