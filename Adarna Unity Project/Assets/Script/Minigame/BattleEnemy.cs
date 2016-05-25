@@ -1,0 +1,89 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class BattleEnemy : MonoBehaviour {
+	
+	private BattleStateMachine battleStateMachine;
+	public Stats_BattleEnemy stats;
+	private BattlePlayer player;
+
+	public bool inDefense;
+
+	void Awake(){
+		battleStateMachine = FindObjectOfType<BattleStateMachine>();
+		stats.currentHP = stats.baseHP;
+		player = battleStateMachine.player;
+	}
+
+	public void StartTurn(){
+		Debug.Log("Enemy Turn");
+		inDefense = false;
+		ExcecuteAI();
+	}
+
+	void ExcecuteAI(){
+		Stats_BattleEnemy.CommandAndChance chosenCommand = new Stats_BattleEnemy.CommandAndChance();
+		float movesTotalChance = 0;
+		float randomPoint = 0;
+
+		foreach(Stats_BattleEnemy.CommandAndChance command in stats.commandsAndChance){
+			movesTotalChance += command.chance;
+		}
+
+		randomPoint = Random.value * movesTotalChance;
+		Debug.Log("Enemy move total chance is: " + movesTotalChance);
+		Debug.Log("Random enemy value is: " + randomPoint);
+
+		foreach(Stats_BattleEnemy.CommandAndChance command in stats.commandsAndChance){
+			if(randomPoint < command.chance){
+				chosenCommand = command;
+				break;
+			}
+			else
+				randomPoint -= command.chance;
+		}
+
+		if(chosenCommand.move == Stats_BattleEnemy.Moves.Attack){
+			Attack();
+		}
+		else if(chosenCommand.move == Stats_BattleEnemy.Moves.Defend){
+			Defend();
+		}
+		else if(chosenCommand.move == Stats_BattleEnemy.Moves.Heal){
+			Heal();
+		}
+	}
+
+	void Attack(){
+		Debug.Log("Enemy attacked!");
+		player.DecreaseHP(battleStateMachine.ComputeDamage(stats.accuracy, stats.criticalChance, stats.critAdditionPercent, stats.attack, player.inDefense, player.stats.defense));
+		EndTurn();
+	}
+
+	void Defend(){
+		inDefense = true;
+		Debug.Log("Enemy defended!");
+		EndTurn();
+	}
+
+	void Heal(){
+		Debug.Log("Enemy healed!");
+		EndTurn();
+	}
+
+	public void DecreaseHP(int damage){
+		stats.currentHP -= damage;
+		return;
+	}
+
+	void EndTurn(){
+		Debug.Log("Enemy turn has ended.");
+		if(player.stats.currentHP <= 0){
+			player.stats.currentHP = 0;
+			battleStateMachine.currentState = BattleStateMachine.BattleStates.LOSE;
+		}
+			
+		else
+			battleStateMachine.currentState = BattleStateMachine.BattleStates.PLAYERCHOICE;
+	}
+}

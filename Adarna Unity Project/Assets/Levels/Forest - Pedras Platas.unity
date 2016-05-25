@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   camera: {fileID: 0}
+  followThis: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
   lerpSpeed: {x: 0, y: 0}
@@ -1083,6 +1084,7 @@ GameObject:
   - 114: {fileID: 532386757}
   - 114: {fileID: 532386792}
   - 114: {fileID: 532386938}
+  - 114: {fileID: 532386947}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3415,7 +3417,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 70, y: -2.27, z: 0}
+      vector3Value: {x: 100, y: -2.27, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -3428,7 +3430,7 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 109497857}
+      objectValue: {fileID: 1748462625}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -8080,7 +8082,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 732.4011
-    y: 686.4298
+    y: 678.6173
     width: 161
     height: 40
   itemId: 337
@@ -8089,6 +8091,7 @@ MonoBehaviour:
   eventHandler: {fileID: 532386943}
   commandList:
   - {fileID: 532386946}
+  - {fileID: 532386781}
   - {fileID: 532386789}
   - {fileID: 532386788}
   - {fileID: 532386787}
@@ -8097,7 +8100,7 @@ MonoBehaviour:
   - {fileID: 532386784}
   - {fileID: 532386783}
   - {fileID: 532386782}
-  - {fileID: 532386781}
+  - {fileID: 532386947}
   - {fileID: 532386780}
   - {fileID: 532386779}
   - {fileID: 532386778}
@@ -8144,6 +8147,67 @@ MonoBehaviour:
   targetFlowchart: {fileID: 0}
   targetBlock: {fileID: 532386741}
   callMode: 1
+--- !u!114 &532386947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532386704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 378
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1584473682}
+  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveObject
+  targetMethod: punchMove
+  targetMethodText: 'punchMove (Vector3, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 70, y: -2.27, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 109497857}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &644826006 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
@@ -10015,7 +10079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -349.1974, y: -302.9742}
+  scrollPos: {x: -403.88492, y: -306.0992}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 356
@@ -10026,9 +10090,9 @@ MonoBehaviour:
     y: -473
     width: 2464.3442
     height: 1672.7627
-  selectedBlock: {fileID: 532386850}
+  selectedBlock: {fileID: 532386944}
   selectedCommands:
-  - {fileID: 532386826}
+  - {fileID: 532386781}
   variables: []
   description: 
   stepPause: 0
