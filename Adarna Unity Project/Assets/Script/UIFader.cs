@@ -39,6 +39,7 @@ public class UIFader : MonoBehaviour {
 			//Debug.Log("Fading out with delay");
 			canvasGroup.alpha -= Time.deltaTime*duration;
 			yield return null;
+			//yield return new WaitForFixedUpdate();
 		}
 		canvasGroup.interactable = false;
 	}

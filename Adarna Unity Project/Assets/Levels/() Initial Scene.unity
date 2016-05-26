@@ -107,13 +107,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268044219}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Levels: 8
-  launchOnStart: 1
+  launchOnStart: 0
 --- !u!4 &268044221
 Transform:
   m_ObjectHideFlags: 0
@@ -183,9 +183,17 @@ Prefab:
       value: 
       objectReference: {fileID: 11465722, guid: e8b0fe1258153184b867ab768308e96d,
         type: 2}
+    - target: {fileID: 11460278, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &307318456 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 195336, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+  m_PrefabInternal: {fileID: 307318455}
 --- !u!1001 &390548512
 Prefab:
   m_ObjectHideFlags: 0
@@ -231,35 +239,221 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22485014, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22485014, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22485014, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 22485014, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -16.765327
       objectReference: {fileID: 0}
     - target: {fileID: 22485014, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 13.530655
       objectReference: {fileID: 0}
     - target: {fileID: 22429038, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -760
       objectReference: {fileID: 0}
     - target: {fileID: 22429038, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 33.530655
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415462, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415462, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_ReferenceResolution.y
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1185815018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1185815020}
+  - 114: {fileID: 1185815019}
+  - 114: {fileID: 1185815023}
+  - 114: {fileID: 1185815022}
+  - 114: {fileID: 1185815021}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1185815019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185815018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1.0
+  scrollPos: {x: 0, y: 0}
+  variablesScrollPos: {x: 0, y: 0}
+  variablesExpanded: 1
+  blockViewHeight: 400
+  zoom: 1
+  scrollViewRect:
+    serializedVersion: 2
+    x: -350
+    y: -350
+    width: 920
+    height: 840
+  selectedBlock: {fileID: 1185815023}
+  selectedCommands:
+  - {fileID: 1185815021}
+  variables: []
+  description: 
+  stepPause: 0
+  colorCommands: 1
+  hideComponents: 1
+  saveSelection: 1
+  localizationId: 
+  hideCommands: []
+--- !u!4 &1185815020
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185815018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 310.19424, y: 87.24556, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+--- !u!114 &1185815021
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185815018}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 307318456}
+  targetComponentAssemblyName: UIFader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: UIFader
+  targetMethod: FadeIn
+  targetMethodText: 'FadeIn (Int32, Single, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Single
+      intValue: 0
+      boolValue: 0
+      floatValue: 0.1
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1185815022
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185815018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1185815023}
+--- !u!114 &1185815023
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185815018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 50
+    y: 50
+    width: 120
+    height: 40
+  itemId: 0
+  blockName: New Block
+  description: 
+  eventHandler: {fileID: 1185815022}
+  commandList:
+  - {fileID: 1185815021}
 --- !u!1 &1230498670
 GameObject:
   m_ObjectHideFlags: 1
@@ -287,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 1185815019}
 --- !u!4 &1230498672
 Transform:
   m_ObjectHideFlags: 1

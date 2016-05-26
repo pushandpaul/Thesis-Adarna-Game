@@ -27,9 +27,9 @@ public class BattlePlayer : MonoBehaviour {
 	}
 
 	public void StartTurn(){
+		Debug.Log("-------------------------------------------------");
 		Debug.Log("Player Turn");
 		inDefense = false;
-
 		foreach(Button commandButton in commandButtons){
 			if(commandButton != strongAttackButton)
 				commandButton.interactable = true;
@@ -67,6 +67,9 @@ public class BattlePlayer : MonoBehaviour {
 
 	public void DecreaseHP(int damage){
 		stats.currentHP -= damage;
+		if(stats.currentHP < 0){
+			stats.currentHP = 0;
+		}
 		currentHPTextBox.text = "" + stats.currentHP;
 		return;
 	}
@@ -78,8 +81,7 @@ public class BattlePlayer : MonoBehaviour {
 			commandButton.interactable = false;
 		}
 
-		if(enemy.stats.currentHP <= 0){
-			enemy.stats.currentHP = 0;
+		if(enemy.stats.currentHP == 0){
 			battleStateMachine.currentState = BattleStateMachine.BattleStates.WIN;
 		}
 			

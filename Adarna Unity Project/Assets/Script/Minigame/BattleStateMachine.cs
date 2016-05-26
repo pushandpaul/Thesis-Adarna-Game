@@ -18,6 +18,8 @@ public class BattleStateMachine : MonoBehaviour {
 
 	private bool executedPlayerTurn;
 	private bool executedEnemyTurn;
+	private bool executedWin;
+	private bool executedLose;
 
 	void Start () {
 		currentState = BattleStates.START;
@@ -46,10 +48,12 @@ public class BattleStateMachine : MonoBehaviour {
 			}
 			break;
 		case (BattleStates.LOSE):
-			Debug.Log("You Lose");
+			if(!executedLose)
+				Lose();
 			break;
 		case (BattleStates.WIN):
-			Debug.Log("You Win");
+			if(!executedWin)
+				Win();
 			break;
 		}
 	}
@@ -94,6 +98,15 @@ public class BattleStateMachine : MonoBehaviour {
 		damage = Mathf.RoundToInt(damageFloat);
 
 		return damage;
+	}
 
+	void Win(){
+		executedWin = true;
+		Debug.Log("You Win");
+	}
+
+	void Lose(){
+		executedLose = true;
+		Debug.Log("You Lose");
 	}
 }

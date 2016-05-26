@@ -31,8 +31,8 @@ public class BattleEnemy : MonoBehaviour {
 		}
 
 		randomPoint = Random.value * movesTotalChance;
-		Debug.Log("Enemy move total chance is: " + movesTotalChance);
-		Debug.Log("Random enemy value is: " + randomPoint);
+		//Debug.Log("Enemy move total chance is: " + movesTotalChance);
+		//Debug.Log("Random enemy value is: " + randomPoint);
 
 		foreach(Stats_BattleEnemy.CommandAndChance command in stats.commandsAndChance){
 			if(randomPoint < command.chance){
@@ -73,13 +73,15 @@ public class BattleEnemy : MonoBehaviour {
 
 	public void DecreaseHP(int damage){
 		stats.currentHP -= damage;
+		if(stats.currentHP < 0){
+			stats.currentHP = 0;
+		}
 		return;
 	}
 
 	void EndTurn(){
 		Debug.Log("Enemy turn has ended.");
-		if(player.stats.currentHP <= 0){
-			player.stats.currentHP = 0;
+		if(player.stats.currentHP == 0){
 			battleStateMachine.currentState = BattleStateMachine.BattleStates.LOSE;
 		}
 			
