@@ -11,14 +11,17 @@ public class UIFader : MonoBehaviour {
 	}
 
 	public void FadeIn(int outDelay, float duration, bool autoFadeOut){
+		StopAllCoroutines();
 		StartCoroutine(InFade(outDelay, duration, autoFadeOut));
 	}
 
 	public void FadeOut(int delay, float duration){
+		StopAllCoroutines();
 		StartCoroutine(OutFade(delay, duration));
 	}
 
 	public void FadeTo(float duration, float target){
+		StopAllCoroutines();
 		StartCoroutine(ToFade(duration, canvasGroup.alpha, target));
 	}
 
