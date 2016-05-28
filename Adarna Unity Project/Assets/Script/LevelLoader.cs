@@ -36,6 +36,7 @@ public class LevelLoader : MonoBehaviour {
 		ArmenyaIlalimNgBalon = 26,
 		ArmenyaCastleWalkway = 27,
 		ArmenyaHallway = 28,
+		ArmenyaBalcony = 29,
 	}
 
 	public LevelSelect Levels;
