@@ -9,7 +9,7 @@ public class BattleEnemy : MonoBehaviour {
 
 	public bool inDefense;
 
-	void Awake(){
+	void Start(){
 		battleStateMachine = FindObjectOfType<BattleStateMachine>();
 		stats.currentHP = stats.baseHP;
 		player = battleStateMachine.player;

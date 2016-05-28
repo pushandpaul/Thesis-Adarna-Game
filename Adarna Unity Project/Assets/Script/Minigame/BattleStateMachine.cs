@@ -16,17 +16,17 @@ public class BattleStateMachine : MonoBehaviour {
 	public BattleEnemy enemy;
 	public BattlePlayer player;
 
+	public bool battleOnGoing;
 	private bool executedPlayerTurn;
 	private bool executedEnemyTurn;
 	private bool executedWin;
 	private bool executedLose;
 
-	void Start () {
-		currentState = BattleStates.START;
-	}
-	
-
 	void Update () {
+
+		if(!battleOnGoing)
+			return;
+		
 		switch(currentState){
 
 		case (BattleStates.START):
@@ -56,6 +56,11 @@ public class BattleStateMachine : MonoBehaviour {
 				Win();
 			break;
 		}
+	}
+
+	public void Begin() {
+		currentState = BattleStates.START;
+		battleOnGoing = true;
 	}
 
 	public int ComputeDamage(int accuracy, int criticalChance, float critAdditionPercent, float attack, bool targetInDefense, float targetDefense){

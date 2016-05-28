@@ -12,7 +12,8 @@ public class SlideshowController : MonoBehaviour{
 	public UIFader backUIFader;
 	private Image slideShowHolder;
 
-	public float transitionDuration;
+	[Tooltip("Transition duration in seconds")]
+	public float transitionDuration = 2;
 	public int fadeOutDelay;
 
 	void Awake(){
@@ -21,6 +22,8 @@ public class SlideshowController : MonoBehaviour{
 
 		backUIFader = BackUIFaderGO.GetComponent<UIFader>();
 		slideShowHolder = slideshowHolderGO.GetComponent<Image>();
+
+		transitionDuration = 1/transitionDuration;
 	}
 
 	public void Begin(SlideshowImages images){

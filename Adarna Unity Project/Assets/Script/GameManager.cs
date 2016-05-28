@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour {
 	public string currentCharacterName;
 	public string defaultCharacterName = "Don Juan";
 
+	public BattleSetup.EnemyType battleEnemyType;
+	public BattleSetup.Stage battleStage;
+
 	void Awake () {
 		//playerIdleState = "Idle";
 		Debug.Log(Animator.StringToHash("(Don Pedro) Carry Item Idle"));

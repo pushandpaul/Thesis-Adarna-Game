@@ -35,6 +35,7 @@ public class LevelLoader : MonoBehaviour {
 		MinigameBalon = 25,
 		ArmenyaIlalimNgBalon = 26,
 		ArmenyaCastleWalkway = 27,
+		ArmenyaHallway = 28,
 	}
 
 	public LevelSelect Levels;
@@ -58,6 +59,13 @@ public class LevelLoader : MonoBehaviour {
 	public void launchScene(string sceneName){
 		saveBeforeUnload();
 		StartCoroutine(fadeLevelByName(sceneName));
+	}
+
+	public void launchBattleScene(BattleSetup.EnemyType enemyType, BattleSetup.Stage stage){
+		GameManager gameManager = FindObjectOfType<GameManager>();
+		gameManager.battleEnemyType = enemyType;
+		gameManager.battleStage = stage;
+		//Launch scene
 	}
 
 	public void reloadScene(){

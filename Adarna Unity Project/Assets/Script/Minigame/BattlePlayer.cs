@@ -18,12 +18,16 @@ public class BattlePlayer : MonoBehaviour {
 	public Text currentHPTextBox;
 	public Text baseHPTextBox;
 
-	void Awake(){
+	void Start(){
 		battleStateMachine = FindObjectOfType<BattleStateMachine>();
 		baseHPTextBox.text = "/" + stats.baseHP;
 		stats.currentHP = stats.baseHP;
 		currentHPTextBox.text = "" + stats.currentHP;
 		enemy = battleStateMachine.enemy;
+
+		foreach(Button commandButton in commandButtons){
+			commandButton.interactable = false;
+		}
 	}
 
 	public void StartTurn(){

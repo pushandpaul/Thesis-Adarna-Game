@@ -134,6 +134,12 @@ public class CameraController : MonoBehaviour {
 		StartCoroutine(startZoomUnzoom(delay, isCenter));
 	}
 
+	public void Init(BoxCollider2D bounds){
+		this.bounds = bounds;
+		_min = bounds.bounds.min;
+		_max = bounds.bounds.max;
+	}
+
 	IEnumerator startZoom(float currentZoom, float targetZoom, float duration){
 		float startTime = Time.time ;
 		float endTime = startTime + duration;
