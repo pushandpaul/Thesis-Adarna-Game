@@ -236,6 +236,8 @@ GameObject:
   - 61: {fileID: 6116836}
   - 58: {fileID: 5850142}
   - 114: {fileID: 11441672}
+  - 114: {fileID: 11495248}
+  - 114: {fileID: 11416444}
   m_Layer: 9
   m_Name: Higante (Walking)
   m_TagString: Untagged
@@ -618,7 +620,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.99, y: -13.15, z: 0}
+  m_LocalPosition: {x: 4.94, y: 2.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426216}
@@ -956,6 +958,33 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11416444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e853682e687fe49a93105eb35c2d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+    name: 
+    currentHP: 0
+    baseHP: 220
+    attack: 20
+    defense: 50
+    accuracy: 40
+    criticalChance: 20
+    critAdditionPercent: 50
+    commandsAndChance:
+    - move: 0
+      chance: 100
+      animationClips:
+      - {fileID: 7400000, guid: 287c046c09662284d9b175b41b3596e5, type: 2}
+      - {fileID: 7400000, guid: 2fa9104d38042fe4992244adb3b93171, type: 2}
+  inDefense: 0
 --- !u!114 &11441672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -999,6 +1028,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39083b95791559544822fb9bbf4435bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11495248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  destroyed: 0
+  persistLookDirection: 0
 --- !u!212 &21204304
 SpriteRenderer:
   m_ObjectHideFlags: 1

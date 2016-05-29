@@ -37,6 +37,8 @@ public class LevelLoader : MonoBehaviour {
 		ArmenyaCastleWalkway = 27,
 		ArmenyaHallway = 28,
 		ArmenyaBalcony = 29,
+		//Minigame
+		MinigameBattle = 30,
 	}
 
 	public LevelSelect Levels;
@@ -64,9 +66,14 @@ public class LevelLoader : MonoBehaviour {
 
 	public void launchBattleScene(BattleSetup.EnemyType enemyType, BattleSetup.Stage stage){
 		GameManager gameManager = FindObjectOfType<GameManager>();
+		LevelManager levelManager = FindObjectOfType<LevelManager>();
+
 		gameManager.battleEnemyType = enemyType;
 		gameManager.battleStage = stage;
-		//Launch scene
+
+		levelManager.savePlayerPosition();
+
+		launchScene("(Minigame) Battle");
 	}
 
 	public void reloadScene(){

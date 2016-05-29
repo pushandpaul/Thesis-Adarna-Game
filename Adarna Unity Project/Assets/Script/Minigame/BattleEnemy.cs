@@ -7,12 +7,18 @@ public class BattleEnemy : MonoBehaviour {
 	public Stats_BattleEnemy stats;
 	private BattlePlayer player;
 
+	private Animator anim;
+
 	public bool inDefense;
 
 	void Start(){
 		battleStateMachine = FindObjectOfType<BattleStateMachine>();
-		stats.currentHP = stats.baseHP;
-		player = battleStateMachine.player;
+		anim = GetComponentInChildren<Animator>();
+
+		if(battleStateMachine != null){
+			stats.currentHP = stats.baseHP;
+			player = battleStateMachine.player;
+		}
 	}
 
 	public void StartTurn(){
@@ -56,8 +62,7 @@ public class BattleEnemy : MonoBehaviour {
 
 	void Attack(){
 		Debug.Log("Enemy attacked!");
-		player.DecreaseHP(battleStateMachine.ComputeDamage(stats.accuracy, stats.criticalChance, stats.critAdditionPercent, stats.attack, player.inDefense, player.stats.defense));
-		EndTurn();
+		StartCoroutine(StartAttackAnim(Stats_BattleEnemy.Moves.Attack, getRandomAnimClip(Stats_BattleEnemy.Moves.Attack)));
 	}
 
 	void Defend(){
@@ -88,4 +93,36 @@ public class BattleEnemy : MonoBehaviour {
 		else
 			battleStateMachine.currentState = BattleStateMachine.BattleStates.PLAYERCHOICE;
 	}
+
+	AnimationClip getRandomAnimClip(Stats_BattleEnemy.Moves move){
+		AnimationClip randomizedMoveClip = new AnimationClip();
+		int randomizedAnimIndex = 0;
+
+		foreach(Stats_BattleEnemy.CommandAndChance commandAndChance in stats.commandsAndChance){
+			if(move == commandAndChance.move){
+				randomizedAnimIndex = Random.Range(0, commandAndChance.animationClips.Length);
+				randomizedMoveClip = commandAndChance.animationClips[randomizedAnimIndex];
+				break;
+			}
+		}
+
+		return randomizedMoveClip;
+	}
+
+	IEnumerator StartAttackAnim(Stats_BattleEnemy.Moves attackMove, AnimationClip moveAnimation){
+		string animationName = "";
+		float attackPower = 0f;
+		int computedDamage = 0;
+
+		if(attackMove == Stats_BattleEnemy.Moves.Attack){
+			attackPower = stats.attack;
+			animationName = moveAnimation.name;
+		}
+
+		anim.Play(animationName);
+		yield return new WaitForSeconds(moveAnimation.length);
+		player.DecreaseHP(battleStateMachine.ComputeDamage(stats.accuracy, stats.criticalChance, stats.critAdditionPercent, attackPower, player.inDefense, player.stats.defense));
+		EndTurn();
+	}
+
 }

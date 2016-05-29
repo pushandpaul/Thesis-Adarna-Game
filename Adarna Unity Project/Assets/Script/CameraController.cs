@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour {
 	public PlayerController player;
 	public Camera camera;
 	public Transform followThis;
+	private Transform initialFollowThis;
 
 	public Vector2 margin;
 	public Vector2 smoothing;
@@ -29,6 +30,7 @@ public class CameraController : MonoBehaviour {
 	public float zoomSize;
 	private float defaultCamSize = 5f;
 	public float initialCamSize;
+	[Tooltip("In seconds.")]
 	public float defaultZoomDuration = 2f;
 
 	public bool isFollowing;
@@ -37,6 +39,7 @@ public class CameraController : MonoBehaviour {
 	public bool isZoomed;
 
 	void Awake(){
+		initialFollowThis = followThis;
 		if(lerpSpeed.x == 0)
 			lerpSpeed.x = 1f;
 		if(lerpSpeed.y == 0)
@@ -103,6 +106,10 @@ public class CameraController : MonoBehaviour {
 
 	public void setPlayerAsFollowing(){
 		this.followThis = player.transform;
+	}
+
+	public void revertFollowing(){
+		this.followThis = initialFollowThis;
 	}
 
 	public void setZoomSize(float zoomSize){

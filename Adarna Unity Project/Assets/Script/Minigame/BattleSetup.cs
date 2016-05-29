@@ -17,7 +17,7 @@ public class BattleSetup : MonoBehaviour {
 	public class EnemyPrefab{
 		public EnemyType type;
 		public GameObject prefab;
-		public Vector3 position;
+		public float yPosition;
 	}
 
 	[System.Serializable]
@@ -30,11 +30,13 @@ public class BattleSetup : MonoBehaviour {
 	public BoxCollider2D mediumCameraBounds;
 	public BoxCollider2D largeCameraBounds;
 
+	public Transform playerBattlePosition;
+	public Transform enemyBattlePosition;
+
 	public EnemyPrefab[] enemyPrefabs;
 	public BattleStagePrefab[] battleStagePrefabs;
 
 	private BattleStateMachine battleStateMachine;
-	private CameraController camera;
 	private GameManager gameManager;
 
 	void Awake(){		
@@ -42,12 +44,21 @@ public class BattleSetup : MonoBehaviour {
 		battleStateMachine = FindObjectOfType<BattleStateMachine>();
 		if(gameManager != null)
 			Init(gameManager.battleEnemyType, gameManager.battleStage);
+		Init(EnemyType.Higante, Stage.ArmenyaCastle);
 
 	}
 	public void Init(EnemyType enemyType, Stage stage){
+
+		GameObject enemyContainer;
+		Vector3 enemyPosition = Vector3.zero;
+
 		foreach(EnemyPrefab enemyPrefab in enemyPrefabs){
 			if(enemyType.ToString() == enemyPrefab.type.ToString()){
 				//Instantiate enemy
+				enemyPosition = new Vector3(enemyBattlePosition.position.x, enemyPrefab.yPosition, enemyBattlePosition.position.z);
+				enemyContainer = (GameObject) Instantiate(enemyPrefab.prefab, enemyPosition, Quaternion.identity);
+				battleStateMachine.enemy = enemyContainer.GetComponent<BattleEnemy>();
+
 				Debug.Log("Found enemy type: " + enemyPrefab.type.ToString());
 				break;
 			}
