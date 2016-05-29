@@ -26,7 +26,7 @@ public class FollowTarget : MonoBehaviour {
 		tempScale = defaultScaleX;
 	}
 		
-	void FixedUpdate () {
+	void Update () {
 		float tempDistanceLimit = 0f;
 		distanceFromLimit = 0f;
 		float currentDistance = 0f;
