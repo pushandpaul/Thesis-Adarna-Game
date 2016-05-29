@@ -13,7 +13,7 @@ public class ShadowController : MonoBehaviour {
 	private RaycastHit2D myLineCast;
 	private bool hitGround = false;
 
-	void Update(){
+	void LateUpdate(){
 		DrawRaycast();
 		UpdateY();
 	}
