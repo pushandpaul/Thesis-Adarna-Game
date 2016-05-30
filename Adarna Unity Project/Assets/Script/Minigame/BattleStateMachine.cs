@@ -131,6 +131,14 @@ public class BattleStateMachine : MonoBehaviour {
 	}
 
 	public void endBattleButtonClick(){
-			
+		LevelLoader levelLoader = FindObjectOfType<LevelLoader> ();
+		ObjectiveMapper objectiveMapper = GetComponentInChildren<ObjectiveMapper> ();
+		if(executedWin){
+			levelLoader.launchPrevScene ();
+			objectiveMapper.checkIfCurrent_misc ();
+		}
+		else if(executedLose){
+			levelLoader.launchScene ("(Minigame) Battle");
+		}
 	}
 }

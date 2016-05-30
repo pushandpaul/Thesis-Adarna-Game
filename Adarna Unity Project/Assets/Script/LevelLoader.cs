@@ -82,6 +82,11 @@ public class LevelLoader : MonoBehaviour {
 		StartCoroutine(fadeLevelByName(gameManager.currentScene));
 	}
 
+	public void launchPrevScene(){
+		GameManager gameManager = FindObjectOfType<GameManager> ();
+		launchScene (gameManager.prevScene);
+	}
+
 	private void saveBeforeUnload(){
 		LevelManager levelManager = FindObjectOfType<LevelManager>();
 		if(levelManager != null){

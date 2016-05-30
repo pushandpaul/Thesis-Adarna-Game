@@ -44,7 +44,7 @@ public class BattleSetup : MonoBehaviour {
 		battleStateMachine = FindObjectOfType<BattleStateMachine>();
 		if(gameManager != null)
 			Init(gameManager.battleEnemyType, gameManager.battleStage);
-		Init(EnemyType.Higante, Stage.ArmenyaCastle);
+		//Init(EnemyType.Higante, Stage.ArmenyaCastle);
 
 	}
 	public void Init(EnemyType enemyType, Stage stage){

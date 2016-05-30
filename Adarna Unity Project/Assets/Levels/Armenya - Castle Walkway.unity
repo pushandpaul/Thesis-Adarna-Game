@@ -376,8 +376,8 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11463452, guid: b40b3cdc5978d7544b7dbd19996a9d32, type: 2}
-      propertyPath: partObjective.Array.data[0].objectives.Array.data[0]
-      value: 7
+      propertyPath: partObjective.Array.data[0].objectives.Array.data[1]
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b40b3cdc5978d7544b7dbd19996a9d32, type: 2}
@@ -581,20 +581,12 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 154696, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
   m_PrefabInternal: {fileID: 447252734}
---- !u!114 &447252736
+--- !u!114 &447252737 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 447252735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 
-  destroyed: 0
-  persistLookDirection: 0
+  m_PrefabParentObject: {fileID: 11441672, guid: 73c8883b19a16304a9b82b57de04cf27,
+    type: 2}
+  m_PrefabInternal: {fileID: 447252734}
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
 --- !u!1 &540933559
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +670,7 @@ Transform:
   m_LocalScale: {x: 4.280318, y: 6.1654553, z: 3.2002368}
   m_Children: []
   m_Father: {fileID: 1654567829}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &655838636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +725,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 743284525}
+  - 114: {fileID: 743284526}
   m_Layer: 0
   m_Name: Utilities
   m_TagString: Untagged
@@ -751,8 +744,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 540933561}
+  - {fileID: 969719413}
   m_Father: {fileID: 0}
   m_RootOrder: 14
+--- !u!114 &743284526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743284524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levels: 0
+  launchOnStart: 0
 --- !u!1001 &912218960
 Prefab:
   m_ObjectHideFlags: 0
@@ -849,6 +856,87 @@ GameObject:
 GameObject:
   m_PrefabParentObject: {fileID: 176134, guid: 2e5ef09f74c42564ca3ed898dd9ba216, type: 2}
   m_PrefabInternal: {fileID: 968080029}
+--- !u!1 &969719412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 969719413}
+  - 114: {fileID: 969719414}
+  m_Layer: 0
+  m_Name: Save & Destroy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &969719413
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969719412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.668587, y: -3.8200834, z: 0.22851562}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 743284525}
+  m_RootOrder: 1
+--- !u!114 &969719414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969719412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057a51fe6ffc28b4cb60e489ffa0b578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1012548590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1012548592}
+  - 61: {fileID: 1012548591}
+  m_Layer: 0
+  m_Name: Dead End Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1012548591
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1012548590}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 2b0610b3986160840bf94a4a5d516305, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 9.5}
+--- !u!4 &1012548592
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1012548590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 69.81, y: -0.44, z: -4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
 --- !u!4 &1128885226 stripped
 Transform:
   m_PrefabParentObject: {fileID: 481390, guid: b40b3cdc5978d7544b7dbd19996a9d32, type: 2}
@@ -1029,7 +1117,7 @@ GameObject:
   - 61: {fileID: 1456767768}
   - 114: {fileID: 1456767770}
   m_Layer: 0
-  m_Name: Right Exit
+  m_Name: Left Exit
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1056,7 +1144,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456767767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.9, y: 0.035714284, z: -0.43526787}
+  m_LocalPosition: {x: -34.55, y: 0.035714284, z: -0.43526787}
   m_LocalScale: {x: 3.0178535, y: 6.331976, z: 0.71428573}
   m_Children: []
   m_Father: {fileID: 1654567829}
@@ -1072,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4581ab7be42b65d40bc26778e865fa1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRight: 1
+  isRight: 0
   nextLocation: Armenya - Hallway
 --- !u!1001 &1578200885
 Prefab:
@@ -1146,66 +1234,9 @@ Transform:
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children:
   - {fileID: 1456767769}
-  - {fileID: 1759552099}
   - {fileID: 655838635}
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!1 &1759552097
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1759552099}
-  - 61: {fileID: 1759552098}
-  - 114: {fileID: 1759552100}
-  m_Layer: 0
-  m_Name: Left Exit
-  m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &1759552098
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1759552097}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1759552099
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1759552097}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.6, y: 0.035714284, z: -0.43526787}
-  m_LocalScale: {x: 3.0178535, y: 6.331976, z: 0.71428573}
-  m_Children: []
-  m_Father: {fileID: 1654567829}
-  m_RootOrder: 1
---- !u!114 &1759552100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1759552097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4581ab7be42b65d40bc26778e865fa1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRight: 0
-  nextLocation: Castle - 2nd Floor
 --- !u!1001 &1761585828
 Prefab:
   m_ObjectHideFlags: 0
@@ -1308,6 +1339,28 @@ GameObject:
   - 114: {fileID: 1792214944}
   - 114: {fileID: 1792214945}
   - 114: {fileID: 1792214946}
+  - 114: {fileID: 1792214947}
+  - 114: {fileID: 1792214948}
+  - 114: {fileID: 1792214949}
+  - 114: {fileID: 1792214950}
+  - 114: {fileID: 1792214951}
+  - 114: {fileID: 1792214952}
+  - 114: {fileID: 1792214953}
+  - 114: {fileID: 1792214958}
+  - 114: {fileID: 1792214957}
+  - 114: {fileID: 1792214956}
+  - 114: {fileID: 1792214955}
+  - 114: {fileID: 1792214954}
+  - 114: {fileID: 1792214959}
+  - 114: {fileID: 1792214960}
+  - 114: {fileID: 1792214961}
+  - 114: {fileID: 1792214962}
+  - 114: {fileID: 1792214963}
+  - 114: {fileID: 1792214964}
+  - 114: {fileID: 1792214965}
+  - 114: {fileID: 1792214966}
+  - 114: {fileID: 1792214967}
+  - 114: {fileID: 1792214968}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1426,8 +1479,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 444.4286
-    y: 137.1428
+    x: 443
+    y: 138.57138
     width: 190
     height: 40
   itemId: 10
@@ -1465,6 +1518,14 @@ MonoBehaviour:
   - {fileID: 1792214945}
   - {fileID: 1792214935}
   - {fileID: 1792214934}
+  - {fileID: 1792214947}
+  - {fileID: 1792214948}
+  - {fileID: 1792214949}
+  - {fileID: 1792214950}
+  - {fileID: 1792214951}
+  - {fileID: 1792214952}
+  - {fileID: 1792214959}
+  - {fileID: 1792214968}
   - {fileID: 1792214900}
 --- !u!114 &1792214904
 MonoBehaviour:
@@ -1693,12 +1754,13 @@ MonoBehaviour:
   scrollViewRect:
     serializedVersion: 2
     x: -350
-    y: -350
+    y: -351.4286
     width: 1705.2856
-    height: 1005.71423
-  selectedBlock: {fileID: 1792214903}
+    height: 1059.9999
+  selectedBlock: {fileID: 1792214911}
   selectedCommands:
-  - {fileID: 1792214940}
+  - {fileID: 1792214909}
+  - {fileID: 1792214906}
   variables: []
   description: 
   stepPause: 0
@@ -2678,7 +2740,7 @@ MonoBehaviour:
   duration: 0.5
 --- !u!114 &1792214946
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792214897}
@@ -2691,6 +2753,604 @@ MonoBehaviour:
   errorMessage: 
   indentLevel: 0
   duration: 1
+--- !u!114 &1792214947
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 47
+  errorMessage: 
+  indentLevel: 0
+  storyText: 'Aba, may tao! '
+  description: 
+  character: {fileID: 447252737}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214948
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 48
+  errorMessage: 
+  indentLevel: 0
+  storyText: Mabuti at nandito ka upang may {color="yellow"}masisila/mapapatay{/color}
+    ako!
+  description: 
+  character: {fileID: 447252737}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214949
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 49
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Tignan mo nga naman, di na pala kailangang mamundok pa, dahil saking
+    bahay \rna lalapit ang {color=\"yellow\"}pindan/laman{/color}.\r\n"
+  description: 
+  character: {fileID: 447252737}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214950
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 50
+  errorMessage: 
+  indentLevel: 0
+  storyText: Salamat at makakakain na rin ako!
+  description: 
+  character: {fileID: 447252737}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214951
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 51
+  errorMessage: 
+  indentLevel: 0
+  storyText: 'Manahimik ka, higante! Hindi mo ako mapapatay! '
+  description: 
+  character: {fileID: 1218580587}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214952
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 52
+  errorMessage: 
+  indentLevel: 0
+  storyText: Puro ka {color="yellow"}angay-angay/ingay{/color}, lumaban ka kung lalaban,
+    at ikaw ang mamamatay!
+  description: 
+  character: {fileID: 1218580587}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214953
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 439.99988
+    y: 197.1428
+    width: 190
+    height: 40
+  itemId: 53
+  blockName: 'Talk: Donya Juana (4-2)'
+  description: 
+  eventHandler: {fileID: 1792214958}
+  commandList:
+  - {fileID: 1792214957}
+  - {fileID: 1792214955}
+  - {fileID: 1792214960}
+  - {fileID: 1792214954}
+  - {fileID: 1792214962}
+  - {fileID: 1792214961}
+  - {fileID: 1792214963}
+  - {fileID: 1792214964}
+  - {fileID: 1792214965}
+  - {fileID: 1792214966}
+  - {fileID: 1792214967}
+  - {fileID: 1792214956}
+--- !u!114 &1792214954
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 57
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Sinta ko, hindi ko maaaring iwan ang bunso kong si Leonora na kasama
+    ko sa \rbalong ito.\r\n"
+  description: 
+  character: {fileID: 167701667}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214955
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 56
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Prinsesa kong minamahal, nahirapan man ako at napagod, ikaw naman \rang
+    katumbas. \r\n"
+  description: 
+  character: {fileID: 1218580587}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214956
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 55
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1792214912}
+  callMode: 0
+--- !u!114 &1792214957
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 54
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1792214913}
+  callMode: 1
+--- !u!114 &1792214958
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1792214953}
+  message: 'Talk: Donya Juana (4-2)'
+--- !u!114 &1792214959
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 58
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 969719412}
+  targetComponentAssemblyName: SaveAndDestroy, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SaveAndDestroy
+  targetMethod: saveNowDestroyLater
+  targetMethodText: 'saveNowDestroyLater (GameObject): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.GameObject, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.GameObject
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 447252735}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1792214960
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 59
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Malaya ka na, Donya Juana! Kung kaya\u2019t halika na at umalis na tayo
+    sa balong \rito. Isasama kita sa kaharian ng aking ama...\r\n"
+  description: 
+  character: {fileID: 1218580587}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214961
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 60
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Ngunit, mahal ko, dapat kang mag-ingat dahil tinatangkilik si Leonora
+    ng isang \rserpyenteng {color=\"yellow\"}palamara/taksil{/color}.\r\n"
+  description: 
+  character: {fileID: 167701667}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214962
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 61
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Nakikita mo ba ang palasyo na \u2018yon? Andun siya! Puntahan mo siya
+    at sunduin, \rsabihin mo na gusto ko siyang makausap\u2026\r\n"
+  description: 
+  character: {fileID: 167701667}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214963
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 62
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Donya Juana\u2026 \u2018wag ka mag-alala, ako ang bahala sa pagsundo
+    sa iyong bunso."
+  description: 
+  character: {fileID: 1218580587}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214964
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 63
+  errorMessage: 
+  indentLevel: 0
+  storyText: "O, Don Juan, matapos mong patayin ang higante, muli mong haharapin ang
+    \risa pang nilalang! \r\n"
+  description: 
+  character: {fileID: 167701667}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214965
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 64
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Don Juan, paano kung mamatay ka? Hindi ko malalaman ang mangyayari sayo
+    \rhabang nililigtas mo si Leonora\u2026\r\n"
+  description: 
+  character: {fileID: 167701667}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214966
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 65
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Aking prinsesa, ibibigay ko ang lahat ng aking lakas para matulungan
+    ka, \rmahamak kung mapahamak!\r\n"
+  description: 
+  character: {fileID: 1218580587}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214967
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 66
+  errorMessage: 
+  indentLevel: 0
+  storyText: Di tayo papabayaan ng Inang Birhen.
+  description: 
+  character: {fileID: 1218580587}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1792214968
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 67
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 743284524}
+  targetComponentAssemblyName: LevelLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelLoader
+  targetMethod: launchBattleScene
+  targetMethodText: 'launchBattleScene (EnemyType, Stage): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: BattleSetup+EnemyType, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: BattleSetup+EnemyType
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: BattleSetup+Stage, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: BattleSetup+Stage
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &1803943808
 GameObject:
   m_ObjectHideFlags: 0

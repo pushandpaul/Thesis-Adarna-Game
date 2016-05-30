@@ -114,7 +114,9 @@ public class LevelManager : MonoBehaviour {
 			gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
 		followerManager.updateFollowerList();
 
+		gameManager.prevScene = gameManager.currentScene;
 		gameManager.saveCharData(charactersData);
+
 	}
 
 	public void unclonedInstace(GameObject toInstantiate, Vector3 position){
