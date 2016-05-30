@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public Transform sceneObjsHolder;
 	public SceneObjects currentSceneObj;
 	public string currentScene = "";
+	public string prevScene;
 
 	public char timeOfDay = 'd'; //d - day, n - night
 

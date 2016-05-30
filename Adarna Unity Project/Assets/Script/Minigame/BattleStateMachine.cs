@@ -22,6 +22,10 @@ public class BattleStateMachine : MonoBehaviour {
 	private bool executedWin;
 	private bool executedLose;
 
+	public CanvasGroup endBattlePanel;
+	public Text endBattlePrompt;
+	public Button endBattleButton;
+
 	void Update () {
 
 		if(!battleOnGoing)
@@ -107,11 +111,26 @@ public class BattleStateMachine : MonoBehaviour {
 
 	void Win(){
 		executedWin = true;
+		setEndBattlePanelMsg("Wagi!", "Tumuloy");
 		Debug.Log("You Win");
+
 	}
 
 	void Lose(){
 		executedLose = true;
+		setEndBattlePanelMsg("Talo", "Ulitin");
 		Debug.Log("You Lose");
+	}
+
+	void setEndBattlePanelMsg(string promptText, string buttonText){
+		endBattlePanel.blocksRaycasts = true;
+		endBattlePanel.alpha = 1;
+		endBattlePanel.interactable = true;
+		endBattlePrompt.text = promptText;
+		endBattleButton.GetComponentInChildren<Text>().text = buttonText;
+	}
+
+	public void endBattleButtonClick(){
+			
 	}
 }

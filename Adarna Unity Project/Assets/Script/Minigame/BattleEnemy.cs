@@ -114,6 +114,8 @@ public class BattleEnemy : MonoBehaviour {
 		float attackPower = 0f;
 		int computedDamage = 0;
 
+		yield return new WaitForSeconds(1);
+
 		if(attackMove == Stats_BattleEnemy.Moves.Attack){
 			attackPower = stats.attack;
 			animationName = moveAnimation.name;
