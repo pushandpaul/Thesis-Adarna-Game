@@ -39,6 +39,8 @@ public class CameraController : MonoBehaviour {
 	public bool isZoomed;
 
 	void Awake(){
+		camera = this.GetComponent<Camera>();
+
 		initialFollowThis = followThis;
 		if(lerpSpeed.x == 0)
 			lerpSpeed.x = 1f;
@@ -50,7 +52,6 @@ public class CameraController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerController>();
-		camera = this.GetComponent<Camera>();
 
 		if(followThis == null){
 			setPlayerAsFollowing();

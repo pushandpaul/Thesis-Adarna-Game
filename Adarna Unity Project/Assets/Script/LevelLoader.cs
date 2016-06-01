@@ -63,15 +63,27 @@ public class LevelLoader : MonoBehaviour {
 		saveBeforeUnload();
 		StartCoroutine(fadeLevelByName(sceneName));
 	}
-
+		
 	public void launchBattleScene(BattleSetup.EnemyType enemyType, BattleSetup.Stage stage){
 		GameManager gameManager = FindObjectOfType<GameManager>();
 		LevelManager levelManager = FindObjectOfType<LevelManager>();
 
-		gameManager.battleEnemyType = enemyType;
-		gameManager.battleStage = stage;
+		gameManager.setBattleInit (enemyType, stage, 0);
 
-		levelManager.savePlayerPosition();
+		if(levelManager != null)
+			levelManager.savePlayerPosition();
+
+		launchScene("(Minigame) Battle");
+	}
+
+	public void launchBattleScene(BattleSetup.EnemyType enemyType, BattleSetup.Stage stage, int enemyBaseHP){
+		GameManager gameManager = FindObjectOfType<GameManager>();
+		LevelManager levelManager = FindObjectOfType<LevelManager>();
+
+		gameManager.setBattleInit (enemyType, stage, enemyBaseHP);
+
+		if(levelManager != null)
+			levelManager.savePlayerPosition();
 
 		launchScene("(Minigame) Battle");
 	}

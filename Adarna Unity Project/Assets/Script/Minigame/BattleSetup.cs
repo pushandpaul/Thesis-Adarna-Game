@@ -18,6 +18,7 @@ public class BattleSetup : MonoBehaviour {
 		public EnemyType type;
 		public GameObject prefab;
 		public float yPosition;
+		public Stats_BattleEnemy stats;
 	}
 
 	[System.Serializable]
@@ -43,28 +44,57 @@ public class BattleSetup : MonoBehaviour {
 		gameManager = FindObjectOfType<GameManager>();
 		battleStateMachine = FindObjectOfType<BattleStateMachine>();
 		if(gameManager != null)
-			Init(gameManager.battleEnemyType, gameManager.battleStage);
-		//Init(EnemyType.Higante, Stage.ArmenyaCastle);
+			Init(gameManager.battleData.enemyType, gameManager.battleData.stage, gameManager.battleData.enemyBaseHP);
 
+		//Init(EnemyType.Serpyente, Stage.ArmenyaCastle, 0);
 	}
-	public void Init(EnemyType enemyType, Stage stage){
 
-		GameObject enemyContainer;
+	public void Init(EnemyType enemyType, Stage stage, int enemyBaseHP){
+
+		GameObject enemyAvatar;
 		Vector3 enemyPosition = Vector3.zero;
+		CameraController camera = FindObjectOfType<CameraController> ();
+		float cameraSize = 0f;
+
+		BattleEnemy enemy = battleStateMachine.enemy;
 
 		foreach(EnemyPrefab enemyPrefab in enemyPrefabs){
 			if(enemyType.ToString() == enemyPrefab.type.ToString()){
+				Debug.Log("Found enemy type: " + enemyPrefab.type.ToString());
 				//Instantiate enemy
 				enemyPosition = new Vector3(enemyBattlePosition.position.x, enemyPrefab.yPosition, enemyBattlePosition.position.z);
-				enemyContainer = (GameObject) Instantiate(enemyPrefab.prefab, enemyPosition, Quaternion.identity);
-				battleStateMachine.enemy = enemyContainer.GetComponent<BattleEnemy>();
+				enemyAvatar = (GameObject) Instantiate(enemyPrefab.prefab, enemyPosition, Quaternion.identity);
 
-				Debug.Log("Found enemy type: " + enemyPrefab.type.ToString());
+				enemy.stats = enemyPrefab.stats;
+				if (enemyBaseHP > 0)
+					enemy.stats.baseHP = enemyBaseHP;
+				enemy.enabled = true;
+				enemy.anim = enemyAvatar.GetComponentInChildren<Animator> ();
+
+				switch(enemy.stats.size){
+				case (Stats_BattleEnemy.Size.Small): 
+					cameraSize = 5f;
+					break;
+				case (Stats_BattleEnemy.Size.Medium):
+					cameraSize = 6f;
+					break;
+				case (Stats_BattleEnemy.Size.Large):
+					cameraSize = 7f;
+					break;
+				case (Stats_BattleEnemy.Size.ExtraLarge):
+					cameraSize = 8f;
+					break;
+				}
+
+				camera.camera.orthographicSize = cameraSize;
+				camera.initialCamSize = cameraSize;
+
 				break;
 			}
 		}
 
 		foreach(BattleStagePrefab battleStagePrefab in battleStagePrefabs){
+			//Instantiate Stage
 			if(stage.ToString() == battleStagePrefab.stage.ToString()){
 				Instantiate(battleStagePrefab.prefab, Vector3.zero, Quaternion.identity);
 				Debug.Log("Found stage: " + battleStagePrefab.stage.ToString());

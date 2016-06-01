@@ -12,6 +12,9 @@ public class Stats_BattleEnemy{
 	public float attack;
 	public float defense;
 
+	[Tooltip("Special power, used in magic or spells (if exists).")]
+	public float special;
+
 	[Tooltip("Chance that the enemy will hit the player (in %).")]
 	public int accuracy; 
 
@@ -27,6 +30,13 @@ public class Stats_BattleEnemy{
 		Heal,
 	}
 
+	public enum Size{
+		Small,
+		Medium,
+		Large,
+		ExtraLarge,
+	}
+
 	[System.Serializable]
 	public class CommandAndChance{
 		public Moves move;
@@ -35,5 +45,7 @@ public class Stats_BattleEnemy{
 
 	}
 
+	public Size size;
 	public CommandAndChance[] commandsAndChance;
+
 }

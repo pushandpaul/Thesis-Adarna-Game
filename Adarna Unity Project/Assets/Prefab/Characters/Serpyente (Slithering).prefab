@@ -58,6 +58,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 451602}
+  - 95: {fileID: 9544322}
   m_Layer: 0
   m_Name: Serpyente
   m_TagString: Untagged
@@ -221,7 +222,6 @@ GameObject:
   - 58: {fileID: 5805074}
   - 114: {fileID: 11458430}
   - 114: {fileID: 11453480}
-  - 114: {fileID: 11463828}
   m_Layer: 0
   m_Name: Serpyente (Slithering)
   m_TagString: Untagged
@@ -444,8 +444,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.77, y: -7.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.94, y: 1.08, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 451602}
   - {fileID: 451604}
@@ -460,7 +460,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13, y: 0.23, z: -2.5}
+  m_LocalPosition: {x: -1.73, y: 0.23000002, z: -2.5}
   m_LocalScale: {x: 1.45, y: 1.45, z: 1}
   m_Children: []
   m_Father: {fileID: 401480}
@@ -547,7 +547,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.23, y: -4.89, z: 0}
+  m_LocalPosition: {x: -0.6300001, y: -4.89, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 401480}
@@ -622,7 +622,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.48, y: -3.46, z: 0}
+  m_LocalPosition: {x: -2.413, y: -3.453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 451602}
@@ -634,7 +634,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8600001, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442390}
@@ -656,7 +656,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.17, y: 7.19, z: 3.7304614}
+  m_LocalPosition: {x: -0.69000006, y: 7.19, z: 3.7304614}
   m_LocalScale: {x: 0.23668669, y: 0.112806134, z: 1}
   m_Children:
   - {fileID: 407434}
@@ -746,7 +746,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -1.47, z: 0}
+  m_LocalPosition: {x: 0.15, y: -1.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 451602}
@@ -815,7 +815,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.47, y: -0.87}
+  m_Offset: {x: -0.59, y: -0.87}
   serializedVersion: 2
   m_Radius: 3.84
 --- !u!61 &6134024
@@ -829,7 +829,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.49, y: 1.8}
+  m_Offset: {x: -0.55, y: 1.8}
   serializedVersion: 2
   m_Size: {x: 7.83, y: 8}
 --- !u!95 &9537740
@@ -842,6 +842,23 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 836f35f207da0df49881c90ebf10c83e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9544322
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90068c8ac6c78084983bd324a920cdd1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -939,28 +956,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39083b95791559544822fb9bbf4435bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11463828
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e853682e687fe49a93105eb35c2d10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats:
-    name: Serpyente
-    currentHP: 0
-    baseHP: 0
-    attack: 0
-    defense: 0
-    accuracy: 0
-    criticalChance: 0
-    critAdditionPercent: 0
-    commandsAndChance: []
-  inDefense: 0
 --- !u!212 &21202282
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1436,7 +1431,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1320190139
-  m_SortingOrder: 14
+  m_SortingOrder: 15
   m_Sprite: {fileID: 21300028, guid: 768289f2be0c3c34aaa897cd29e9af40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1556,7 +1551,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1320190139
-  m_SortingOrder: -1
+  m_SortingOrder: 14
   m_Sprite: {fileID: 21300030, guid: 768289f2be0c3c34aaa897cd29e9af40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

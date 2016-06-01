@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour {
 			this.heldItem = heldItem;
 		}
 	}
+		
+	public struct BattleData{
+		public BattleSetup.EnemyType enemyType;
+		public BattleSetup.Stage stage;
+		public int enemyBaseHP;
+	}
 
 	public List <SavedCharData> characters;
 
@@ -41,8 +47,7 @@ public class GameManager : MonoBehaviour {
 	public string currentCharacterName;
 	public string defaultCharacterName = "Don Juan";
 
-	public BattleSetup.EnemyType battleEnemyType;
-	public BattleSetup.Stage battleStage;
+	public BattleData battleData;
 
 	void Awake () {
 		//playerIdleState = "Idle";
@@ -304,6 +309,12 @@ public class GameManager : MonoBehaviour {
 		foreach(CharacterData charData in charactersData){
 			resetCharData(charData);
 		}
+	}
+
+	public void setBattleInit(BattleSetup.EnemyType enemyType, BattleSetup.Stage stage, int enemyBaseHP){
+		battleData.enemyType = enemyType;
+		battleData.stage = stage;
+		battleData.enemyBaseHP = enemyBaseHP;
 	}
 
 	/*public void findFollowers(FollowTarget[] follower){

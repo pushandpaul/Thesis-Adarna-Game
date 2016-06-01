@@ -229,6 +229,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 220917094}
   m_RootOrder: 0
+--- !u!1 &50461573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 50461575}
+  - 114: {fileID: 50461574}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &50461574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50461573}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e853682e687fe49a93105eb35c2d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+    name: 
+    currentHP: 0
+    baseHP: 0
+    attack: 0
+    defense: 0
+    special: 0
+    accuracy: 0
+    criticalChance: 0
+    critAdditionPercent: 0
+    size: 0
+    commandsAndChance: []
+  inDefense: 0
+--- !u!4 &50461575
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50461573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.60347813, y: -20.571394, z: -1.9375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1 &70239689
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +304,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70239689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.88, y: 0, z: 0}
+  m_LocalPosition: {x: -6.37, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 220917094}
@@ -313,7 +365,7 @@ Transform:
   m_LocalScale: {x: 81.04971, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &94060366
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +647,7 @@ Transform:
   - {fileID: 1225776241}
   - {fileID: 1624576236}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &220917093
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +679,7 @@ Transform:
   - {fileID: 70239690}
   - {fileID: 330113036}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &239202840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1062,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 330113035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.94, y: 0, z: 0}
+  m_LocalPosition: {x: 5.83, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 220917094}
@@ -1416,14 +1468,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 441197020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.88, y: -1.81, z: 0}
+  m_LocalPosition: {x: -6.37, y: -1.81, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 1454481036}
   - {fileID: 997637102}
   - {fileID: 609527381}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &599281878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,7 +1637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &668986847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,7 +2671,7 @@ Transform:
   m_LocalScale: {x: 1.0290381, y: 1.0290381, z: 1.0290381}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &1299812796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,7 +2684,7 @@ GameObject:
   - 114: {fileID: 1299812799}
   - 114: {fileID: 1299812800}
   m_Layer: 0
-  m_Name: Battle State Machine
+  m_Name: Battle Setup and State Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2649,7 +2701,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1299812798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2662,7 +2714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  enemy: {fileID: 0}
+  enemy: {fileID: 50461574}
   player: {fileID: 441197021}
   battleOnGoing: 1
   endBattlePanel: {fileID: 1196027231}
@@ -2682,6 +2734,8 @@ MonoBehaviour:
   partObjective:
   - part: 4
     objectives: 08000000
+  - part: 5
+    objectives: 030000000500000009000000
   isNPC: 0
   isObject: 0
 --- !u!114 &1299812800
@@ -2704,6 +2758,50 @@ MonoBehaviour:
   - type: 0
     prefab: {fileID: 154696, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
     yPosition: 2.7
+    stats:
+      name: Higante
+      currentHP: 0
+      baseHP: 220
+      attack: 20
+      defense: 50
+      special: 0
+      accuracy: 40
+      criticalChance: 20
+      critAdditionPercent: 50
+      size: 3
+      commandsAndChance:
+      - move: 0
+        chance: 100
+        animationClips:
+        - {fileID: 7400000, guid: 287c046c09662284d9b175b41b3596e5, type: 2}
+        - {fileID: 7400000, guid: 2fa9104d38042fe4992244adb3b93171, type: 2}
+  - type: 1
+    prefab: {fileID: 140940, guid: a48868b0004400e46a4534753588e5c7, type: 2}
+    yPosition: 1.08
+    stats:
+      name: Serpyente
+      currentHP: 0
+      baseHP: 130
+      attack: 20
+      defense: 50
+      special: 20
+      accuracy: 60
+      criticalChance: 10
+      critAdditionPercent: 50
+      size: 2
+      commandsAndChance:
+      - move: 0
+        chance: 60
+        animationClips:
+        - {fileID: 7400000, guid: da16c91d3ebf1f1499f8b7a80da2e371, type: 2}
+      - move: 1
+        chance: 20
+        animationClips:
+        - {fileID: 7400000, guid: 07d3eab204953b443ad38f28dfdeff2d, type: 2}
+      - move: 3
+        chance: 20
+        animationClips:
+        - {fileID: 7400000, guid: bd2696d2bc1d0ed408a6d47c6d52908d, type: 2}
   battleStagePrefabs:
   - stage: 0
     prefab: {fileID: 153628, guid: 47e971257e7e2d647a6722bd498a3ea4, type: 2}
@@ -3430,52 +3528,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1001 &1835638543
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 436084, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 436084, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 436084, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 436084, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 436084, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 436084, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 436084, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 436084, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 154696, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 73c8883b19a16304a9b82b57de04cf27, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1913456197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,7 +3808,7 @@ RectTransform:
   - {fileID: 1209571794}
   - {fileID: 1196027228}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

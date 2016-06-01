@@ -47,7 +47,7 @@ GameObject:
   - 114: {fileID: 11427610}
   - 58: {fileID: 5855154}
   - 61: {fileID: 6136618}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Donya Leonora (Walking)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,9 +175,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450714}
+  - 95: {fileID: 9567538}
   m_Layer: 0
   m_Name: Donya Leonora
-  m_TagString: Untagged
+  m_TagString: Playable Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,8 +457,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -1.84, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalPosition: {x: 3.2, y: -0.13, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 450714}
   - {fileID: 495458}
@@ -533,7 +534,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172792}
-  m_LocalRotation: {x: 0, y: 0, z: 0.033987444, w: 0.99942225}
+  m_LocalRotation: {x: 0, y: 0, z: 0.033987265, w: 0.99942225}
   m_LocalPosition: {x: -0.33499876, y: 0.85999966, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -687,7 +688,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144574}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.1122668, w: 0.99367815}
   m_LocalPosition: {x: 0.5216678, y: 0.861667, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -700,7 +701,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119224}
-  m_LocalRotation: {x: 0, y: 0, z: -0.019434337, w: 0.9998111}
+  m_LocalRotation: {x: 0, y: 0, z: -0.019434754, w: 0.9998111}
   m_LocalPosition: {x: -0.3691383, y: -0.9070172, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -773,7 +774,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -830,6 +831,23 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 836f35f207da0df49881c90ebf10c83e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9567538
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142208}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4ddb3e207dadf24c948a8190745ea3e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -978,7 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partObjective:
   - part: 5
-    objectives: 01000000
+    objectives: 0100000002000000
   isNPC: 1
   isObject: 0
 --- !u!114 &11492554
@@ -995,7 +1013,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 5
   grounded: 1
-  distanceLimit: 0
+  distanceLimit: 3
   isFollowing: 0
   anim: {fileID: 0}
 --- !u!212 &21210318

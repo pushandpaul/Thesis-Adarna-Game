@@ -7,13 +7,13 @@ public class BattleEnemy : MonoBehaviour {
 	public Stats_BattleEnemy stats;
 	private BattlePlayer player;
 
-	private Animator anim;
+	[System.NonSerialized]
+	public Animator anim;
 
 	public bool inDefense;
 
 	void Start(){
 		battleStateMachine = FindObjectOfType<BattleStateMachine>();
-		anim = GetComponentInChildren<Animator>();
 
 		if(battleStateMachine != null){
 			stats.currentHP = stats.baseHP;
@@ -52,6 +52,10 @@ public class BattleEnemy : MonoBehaviour {
 		if(chosenCommand.move == Stats_BattleEnemy.Moves.Attack){
 			Attack();
 		}
+
+		else if(chosenCommand.move == Stats_BattleEnemy.Moves.StrongAttack){
+			StrongAttack ();
+		}
 		else if(chosenCommand.move == Stats_BattleEnemy.Moves.Defend){
 			Defend();
 		}
@@ -65,6 +69,11 @@ public class BattleEnemy : MonoBehaviour {
 		StartCoroutine(StartAttackAnim(Stats_BattleEnemy.Moves.Attack, getRandomAnimClip(Stats_BattleEnemy.Moves.Attack)));
 	}
 
+	void StrongAttack(){
+		Debug.Log ("Enemy used strong attack!");
+		StartCoroutine(StartAttackAnim(Stats_BattleEnemy.Moves.StrongAttack, getRandomAnimClip(Stats_BattleEnemy.Moves.StrongAttack)));
+	}
+
 	void Defend(){
 		inDefense = true;
 		Debug.Log("Enemy defended!");
@@ -73,7 +82,15 @@ public class BattleEnemy : MonoBehaviour {
 
 	void Heal(){
 		Debug.Log("Enemy healed!");
-		EndTurn();
+		StartCoroutine(StartSpecialMoveAnim(Stats_BattleEnemy.Moves.Heal, getRandomAnimClip(Stats_BattleEnemy.Moves.Heal)));
+	}
+
+	public void IncreaseHP(int addHP){
+		stats.currentHP += addHP;
+		if(stats.currentHP > stats.baseHP){
+			stats.currentHP = stats.baseHP;
+		}
+		return;
 	}
 
 	public void DecreaseHP(int damage){
@@ -121,10 +138,36 @@ public class BattleEnemy : MonoBehaviour {
 			animationName = moveAnimation.name;
 		}
 
+		else  if(attackMove == Stats_BattleEnemy.Moves.StrongAttack){
+			attackPower = stats.attack * 2;
+			animationName = moveAnimation.name;
+		}
+
 		anim.Play(animationName);
 		yield return new WaitForSeconds(moveAnimation.length);
 		player.DecreaseHP(battleStateMachine.ComputeDamage(stats.accuracy, stats.criticalChance, stats.critAdditionPercent, attackPower, player.inDefense, player.stats.defense));
 		EndTurn();
+	}
+
+	IEnumerator StartSpecialMoveAnim(Stats_BattleEnemy.Moves move, AnimationClip moveAnimation){
+		string animationName = "";
+		bool increaseHP = false;
+
+		yield return new WaitForSeconds(1);
+
+		if(move == Stats_BattleEnemy.Moves.Heal){
+			animationName = moveAnimation.name;
+			increaseHP = true;
+		}
+
+		anim.Play (animationName);
+		yield return new WaitForSeconds(moveAnimation.length);
+
+		if(increaseHP){
+			IncreaseHP((int)stats.special);
+		}
+
+		EndTurn ();
 	}
 
 }
