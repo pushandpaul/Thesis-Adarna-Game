@@ -28,6 +28,7 @@ GameObject:
   - 114: {fileID: 11443606}
   - 58: {fileID: 5823970}
   - 114: {fileID: 11420998}
+  - 114: {fileID: 11483468}
   m_Layer: 0
   m_Name: Tagapagsilbi (Still)
   m_TagString: Untagged
@@ -464,7 +465,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.12, y: -1.72, z: -0.609375}
+  m_LocalPosition: {x: 5.164431, y: -9.001053, z: -0.609375}
   m_LocalScale: {x: 4.2249947, y: 8.864766, z: 1}
   m_Children:
   - {fileID: 472610}
@@ -718,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveIndex: 02000000
+  partObjective: []
   isNPC: 1
   isObject: 0
 --- !u!114 &11424326
@@ -764,11 +765,28 @@ MonoBehaviour:
   pressToInteract: 1
   flowchart: {fileID: 0}
   player: {fileID: 0}
+  onlyTrigger: 0
+  toTransform: {fileID: 0}
   facingRight: 1
+  standardFacing: 0
   allowFlip: 1
   anObjective: 0
   message: 
   bubble: {fileID: 0}
+--- !u!114 &11483468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  destroyed: 0
+  persistLookDirection: 0
 --- !u!212 &21202284
 SpriteRenderer:
   m_ObjectHideFlags: 1

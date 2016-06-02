@@ -42,7 +42,7 @@ GameObject:
   - 4: {fileID: 456060}
   - 114: {fileID: 11432082}
   m_Layer: 0
-  m_Name: 'Start: Narrative (5-5)'
+  m_Name: 'Start: Narrative (5-6)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,6 +155,22 @@ GameObject:
   - 114: {fileID: 11418612}
   m_Layer: 0
   m_Name: 'Start: Narrative (3-10)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &115698
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 425622}
+  - 114: {fileID: 11493810}
+  m_Layer: 0
+  m_Name: 'Talk: Don Pedro (5-1)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1007,6 +1023,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &183114
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400258}
+  - 114: {fileID: 11497720}
+  m_Layer: 0
+  m_Name: 'Start: Narrative (5-5)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &183310
 GameObject:
   m_ObjectHideFlags: 1
@@ -1033,7 +1065,7 @@ GameObject:
   - 4: {fileID: 488892}
   - 114: {fileID: 11489106}
   m_Layer: 0
-  m_Name: 'Talk: Don Pedro (5-1)'
+  m_Name: 'Talk: Don Pedro (5-2)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1263,6 +1295,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 453082}
   m_RootOrder: 6
+--- !u!4 &400258
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
+  m_RootOrder: 10
 --- !u!4 &401310
 Transform:
   m_ObjectHideFlags: 1
@@ -1418,6 +1462,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 497332}
+  m_RootOrder: 13
+--- !u!4 &425622
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
   m_RootOrder: 13
 --- !u!4 &427338
 Transform:
@@ -1669,7 +1725,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470110}
-  m_RootOrder: 10
+  m_RootOrder: 15
 --- !u!4 &456452
 Transform:
   m_ObjectHideFlags: 1
@@ -1798,11 +1854,13 @@ Transform:
   - {fileID: 442702}
   - {fileID: 462884}
   - {fileID: 479678}
-  - {fileID: 456060}
+  - {fileID: 400258}
   - {fileID: 471310}
   - {fileID: 433902}
-  - {fileID: 488892}
+  - {fileID: 425622}
   - {fileID: 456452}
+  - {fileID: 456060}
+  - {fileID: 488892}
   m_Father: {fileID: 480576}
   m_RootOrder: 6
 --- !u!4 &470482
@@ -2099,7 +2157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470110}
-  m_RootOrder: 13
+  m_RootOrder: 16
 --- !u!4 &489924
 Transform:
   m_ObjectHideFlags: 1
@@ -2503,7 +2561,7 @@ MonoBehaviour:
   Kind: 2
   Status: 0
   OnReach: 0100000000000000
-  nextObjective: {fileID: 11432082}
+  nextObjective: {fileID: 11497720}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11414590
@@ -2899,13 +2957,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Start: Narrative (5-5)'
+  Name: 'Start: Narrative (5-6)'
   Description: 
   objectiveLocation: 28
   Kind: 0
   Status: 0
   OnReach: 0100000000000000
-  nextObjective: {fileID: 11429220}
+  nextObjective: {fileID: 11489106}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11434810
@@ -3109,7 +3167,7 @@ MonoBehaviour:
   Kind: 1
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 0}
+  nextObjective: {fileID: 11432082}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11448388
@@ -3638,13 +3696,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Talk: Don Pedro (5-1)'
-  Description: Kausapin si Don Pedro.
-  objectiveLocation: 24
+  Name: 'Talk: Don Pedro (5-2)'
+  Description: Salubungin sina Don Pedro.
+  objectiveLocation: 1
   Kind: 1
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 11446634}
+  nextObjective: {fileID: 0}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11490088
@@ -3685,6 +3743,26 @@ MonoBehaviour:
   Status: 0
   OnReach: 0100000000000000
   nextObjective: {fileID: 11408580}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
+--- !u!114 &11493810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Talk: Don Pedro (5-1)'
+  Description: Kausapin si Don Pedro.
+  objectiveLocation: 24
+  Kind: 1
+  Status: 0
+  OnReach: 010000000000000002000000
+  nextObjective: {fileID: 11446634}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11494704
@@ -3744,7 +3822,7 @@ MonoBehaviour:
   Kind: 1
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 11489106}
+  nextObjective: {fileID: 11493810}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11496638
@@ -3765,6 +3843,26 @@ MonoBehaviour:
   Status: 0
   OnReach: 010000000000000002000000
   nextObjective: {fileID: 11448388}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
+--- !u!114 &11497720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Start: Narrative (5-5)'
+  Description: 
+  objectiveLocation: 28
+  Kind: 0
+  Status: 0
+  OnReach: 0100000000000000
+  nextObjective: {fileID: 11429220}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!222 &22256590
