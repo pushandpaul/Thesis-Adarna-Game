@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
 	public List <FollowTarget> Followers;
 	public List <string> FollowerNames;
 
+	public bool spawnIsRight;
+
 	[System.Serializable]
 	public class SavedCharData{
 		public string Name;
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour {
 
 	void Awake () {
 		//playerIdleState = "Idle";
-		Debug.Log(Animator.StringToHash("(Don Pedro) Carry Item Idle"));
+		//Debug.Log(Animator.StringToHash("(Don Pedro) Carry Item Idle"));
 		DontDestroyOnLoad(this);
 		sceneObjects = new List<SceneObjects>();
 		//Followers = new List<FollowTarget>();
@@ -69,6 +71,8 @@ public class GameManager : MonoBehaviour {
 		}
 
 		//resetCharData("Don Pedro");
+		LevelManager.exitInRight = !spawnIsRight;
+		//LevelManager.setSpawnDirection (spawnIsRight);
 	}
 		
 	public void updateSceneList(){
@@ -77,7 +81,7 @@ public class GameManager : MonoBehaviour {
 		foreach(SceneObjects sceneObject in sceneObjects){
 			if(currentScene == sceneObject.Name){
 				found = true;
-				Debug.Log("Current scene found in the list");
+				//Debug.Log("Current scene found in the list");
 				currentSceneObj = sceneObject;
 				break;
 			}
@@ -85,13 +89,13 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if(!found){
-			Debug.Log("Current scene not found in the list.");
+			//Debug.Log("Current scene not found in the list.");
 			GameObject container = new GameObject(currentScene);
 			container.transform.SetParent(this.sceneObjsHolder);
 			currentSceneObj = container.AddComponent<SceneObjects>();
 			currentSceneObj.Name = currentScene;
 			sceneObjects.Add(currentSceneObj);
-			Debug.Log("'" + currentSceneObj.Name + "' added to the scene list.");
+			//Debug.Log("'" + currentSceneObj.Name + "' added to the scene list.");
 		}
 
 		foreach(SceneObjects sceneObject in sceneObjects){
@@ -123,14 +127,14 @@ public class GameManager : MonoBehaviour {
 		bool found = false;
 		
 		foreach(ObjectDataReference objectDataRef in currentSceneObj.sceneObjectData){
-			Debug.Log("Found object data reference" + objectDataRef.name);
+			//Debug.Log("Found object data reference" + objectDataRef.name);
 			if(objectDataRef.Name.Replace("(Ref)", "") == objectData.Name){
 				found = true;
 
 				switch(command){
 
 				case 's': 
-					Debug.Log("Save Command: Game object '" + objectData.Name + "' found.");
+					//Debug.Log("Save Command: Game object '" + objectData.Name + "' found.");
 					objectDataRef.Name = objectData.Name;
 					objectDataRef.coordinates = objectData.transform.position;
 					if(objectData.persistLookDirection){
@@ -146,7 +150,7 @@ public class GameManager : MonoBehaviour {
 					else
 						objectDataRef.parentName = "";
 					
-					Debug.Log("'" + objectData.Name + "' position is saved.");
+					//Debug.Log("'" + objectData.Name + "' position is saved.");
 					break;
 				case 'l':
 					if(objectDataRef.destroyed)
@@ -160,11 +164,11 @@ public class GameManager : MonoBehaviour {
 							else
 								objectData.transform.localScale = new Vector3(-Mathf.Abs(tempScale.x), tempScale.y, tempScale.z);
 						}
-						Debug.Log("'" + objectData.Name + "' position is loaded.");
+						//Debug.Log("'" + objectData.Name + "' position is loaded.");
 						if(objectDataRef.parentName != "" && objectDataRef.parentName != null && objectDataRef.parentName != "NA"){
 							if(objectData.transform.parent.name != objectDataRef.parentName)
 								objectData.transform.parent = GameObject.Find(objectDataRef.parentName).transform;
-							Debug.Log("'" + objectData.Name + "' parent has found.");
+							//Debug.Log("'" + objectData.Name + "' parent has found.");
 						}
 						/*else{
 							objectData.transform.parent = null;
@@ -173,7 +177,7 @@ public class GameManager : MonoBehaviour {
 					}
 					break;
 				case 'f':
-					Debug.Log("Search Command: Game object '" + objectData.Name + "' found.");
+					//Debug.Log("Search Command: Game object '" + objectData.Name + "' found.");
 					break;
 				}
 				break;
@@ -183,7 +187,7 @@ public class GameManager : MonoBehaviour {
 		if(!found){
 			switch(command){
 			case 's':
-				Debug.Log("Save Command: Game object '" + objectData.Name + "' not found.");
+				//Debug.Log("Save Command: Game object '" + objectData.Name + "' not found.");
 				GameObject container = new GameObject();
 				container.transform.SetParent(currentSceneObj.transform);
 				ObjectDataReference tempData = container.AddComponent<ObjectDataReference>();
@@ -199,10 +203,10 @@ public class GameManager : MonoBehaviour {
 					tempData.parentName = "";
 
 				currentSceneObj.sceneObjectData.Add(tempData);
-				Debug.Log("'" + tempData.Name + "' is added to game data references list.");
+				//Debug.Log("'" + tempData.Name + "' is added to game data references list.");
 				break;
 			case 'l':
-				Debug.Log("Load Command: Game object '" + objectData.Name + "' not found.");
+				//Debug.Log("Load Command: Game object '" + objectData.Name + "' not found.");
 				break;
 			}
 		}
@@ -220,8 +224,8 @@ public class GameManager : MonoBehaviour {
 			if(charData.allowSave){
 				for(int i = 0; i < characters.Count; i++){
 					if(charData.name == characters[i].Name){
-						Debug.Log("Character data for '" + charData.name + "' found in the list.");
-						Debug.Log("Saving character data for '" + charData.name + "'.");
+						//Debug.Log("Character data for '" + charData.name + "' found in the list.");
+						//Debug.Log("Saving character data for '" + charData.name + "'.");
 						if(charData.saveThis){
 							if(charData.anim != null)
 								tempHashID = charData.stateHashID;
@@ -245,8 +249,8 @@ public class GameManager : MonoBehaviour {
 				}
 
 				if(!found){
-					Debug.Log("No character data for '" + charData.name + "' found in the list. Saved character data will be created.");
-					Debug.Log("Saving character data for '" + charData.name + "'.");
+					//Debug.Log("No character data for '" + charData.name + "' found in the list. Saved character data will be created.");
+					//Debug.Log("Saving character data for '" + charData.name + "'.");
 					if(charData.saveThis){
 						if(charData.anim != null)
 							tempHashID = charData.stateHashID;
@@ -275,20 +279,20 @@ public class GameManager : MonoBehaviour {
 			//found = false;
 			foreach(SavedCharData character in characters){
 				if(charData.name == character.Name && charData.name != currentCharacterName){
-					Debug.Log("Character '" + charData.name + "' is found in the character data list.");
+					//Debug.Log("Character '" + charData.name + "' is found in the character data list.");
 					//found = true;
 					if(character.stateHashID != 0){
-						Debug.Log("Character '" + charData.name + "' animation ID '" + character.stateHashID + "' will be played.");
+						//Debug.Log("Character '" + charData.name + "' animation ID '" + character.stateHashID + "' will be played.");
 						charData.anim.Play(character.stateHashID);
 					}
 					else
-						Debug.Log("Character '" + charData.name + "' animator component does not exist.");
+						//Debug.Log("Character '" + charData.name + "' animator component does not exist.");
 					if(character.heldItem != null)
 						charData.item.setItem(character.heldItem);
 					break;
 				}
-				else
-					Debug.Log("Character may be the player or data not saved.");
+				//else
+					//Debug.Log("Character may be the player or data not saved.");
 			}
 		}
 	}

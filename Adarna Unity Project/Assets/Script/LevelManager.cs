@@ -37,8 +37,10 @@ public class LevelManager : MonoBehaviour {
 		if(gameManager != null && objectData.Length > 0){
 			gameManager.currentScene = sceneName;
 			gameManager.updateSceneList();	
-
 		}
+
+
+
 	}
 	void Start() {
 		player = FindObjectOfType<PlayerController>();
@@ -58,9 +60,13 @@ public class LevelManager : MonoBehaviour {
 
 		//Player Initialization
 		if(!playerPos.Load()){
+			Debug.Log ("There is no saved position for the player.");
 			if(isDoor && door.Length > 0){
 				player.transform.position = new Vector3(door[doorIndex].transform.position.x, location.playerSpawnRightY, location.playerSpawnZ);
 				camera.transform.position = new Vector3(door[doorIndex].transform.position.x, location.cameraSpawnRightY, location.cameraSpawnZ);
+			}
+			else if(isDoor && door.Length == 0){
+				isDoor = false;
 			}
 			else if(!isDoor){
 				if(exitInRight){
@@ -75,6 +81,9 @@ public class LevelManager : MonoBehaviour {
 				}
 			}
 		}
+
+		else
+			Debug.Log ("There is saved position for the player.");
 
 		//Change player avatar
 		instantChangePlayer(gameManager.currentCharacterName);
@@ -252,8 +261,13 @@ public class LevelManager : MonoBehaviour {
 	public void setSpawnDirection(bool isRight) {
 		if (isRight) {
 			exitInRight = false;
-		} else
+			Debug.Log ("Spawn set to right");
+		} else{
 			exitInRight = true;	
+			Debug.Log ("Spawn set to left");
+		}
+			
+		
 	}
 
 	public void setSwitchRoutine(string routine){ 
