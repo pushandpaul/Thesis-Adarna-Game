@@ -38,9 +38,7 @@ public class LevelManager : MonoBehaviour {
 			gameManager.currentScene = sceneName;
 			gameManager.updateSceneList();	
 		}
-
-
-
+		FindObjectOfType<DoorAndExitController>().Init();
 	}
 	void Start() {
 		player = FindObjectOfType<PlayerController>();
@@ -125,7 +123,6 @@ public class LevelManager : MonoBehaviour {
 
 		gameManager.prevScene = gameManager.currentScene;
 		gameManager.saveCharData(charactersData);
-
 	}
 
 	public void unclonedInstace(GameObject toInstantiate, Vector3 position){

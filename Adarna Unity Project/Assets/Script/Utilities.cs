@@ -32,4 +32,30 @@ public class Utilities : MonoBehaviour {
 			BackUIFader.GetComponent<UIFader> ().FadeOut(delay, duration);
 		}
 	}
+
+	public void setExitAccess(GameObject exit, bool isOpen){
+		bool isDoor = false;
+		bool anExit = false;
+
+		if(exit.GetComponent<ExitManager>() != null){
+			anExit = true;
+			isDoor = false;
+		}
+
+		else if(exit.GetComponent<DoorHandler>() != null){
+			anExit = true;
+			isDoor = true;
+		}
+
+		if(anExit)
+			FindObjectOfType<DoorAndExitController>().SetExitAccess(exit.name, isOpen, isDoor);
+	}
+
+	public void setExitAccess(string exitName, bool isOpen, bool isDoor){
+		FindObjectOfType<DoorAndExitController>().SetExitAccess(exitName, isOpen, isDoor);
+	}
+		
+	public void setExitAccess(string sceneName, string exitName, bool isOpen, bool isDoor){
+		FindObjectOfType<DoorAndExitController>().SetExitAccess(sceneName, exitName, isOpen, isDoor);
+	}
 }

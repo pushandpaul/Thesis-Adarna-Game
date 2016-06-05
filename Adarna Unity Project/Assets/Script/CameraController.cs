@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour {
@@ -7,6 +8,13 @@ public class CameraController : MonoBehaviour {
 	public Camera camera;
 	public Transform followThis;
 	private Transform initialFollowThis;
+
+	private List<SpriteRenderer> foregrounds;
+	private SpriteController spriteController;
+	private Location location;
+
+	private float foregroundAlphaOrig;
+	private float foregroundAlphaZoomed;
 
 	public Vector2 margin;
 	public Vector2 smoothing;
@@ -39,13 +47,33 @@ public class CameraController : MonoBehaviour {
 	public bool isZoomed;
 
 	void Awake(){
+
 		camera = this.GetComponent<Camera>();
+		foregrounds = new List<SpriteRenderer>();
 
 		initialFollowThis = followThis;
+
+		spriteController = FindObjectOfType<SpriteController>();
+		if(spriteController == null)
+			spriteController = gameObject.AddComponent<SpriteController>();
+		location = FindObjectOfType<Location>();
+
+		if(location != null){
+			foreach(SpriteRenderer layer in location.GetComponentsInChildren<SpriteRenderer>()){
+				if(layer.transform.position.z < -2 && layer.sortingLayerName == "Foreground"){
+					foregrounds.Add(layer);
+				}
+			}
+		}
+			
+		foregroundAlphaZoomed = 100f;
+		foregroundAlphaOrig = 255f;
+
 		if(lerpSpeed.x == 0)
 			lerpSpeed.x = 1f;
 		if(lerpSpeed.y == 0)
 			lerpSpeed.y = 4f;
+		
 		
 	}
 
@@ -148,10 +176,28 @@ public class CameraController : MonoBehaviour {
 		_max = bounds.bounds.max;
 	}
 
+	void fadeForegrounds(float currentZoom, float targetZoom, float duration){
+		Color tempColor;
+		if(targetZoom < currentZoom){
+			foreach(SpriteRenderer foreground in foregrounds){
+				tempColor = new Color(foreground.color.r, foreground.color.g, foreground.color.b, .5f);
+				spriteController.changeColor(foreground, tempColor, duration);
+			}
+		}
+		else if(targetZoom >= currentZoom){
+			foreach(SpriteRenderer foreground in foregrounds){
+				tempColor = new Color(foreground.color.r, foreground.color.g, foreground.color.b, 1f);
+				spriteController.changeColor(foreground, tempColor, duration);
+			}
+		}
+	}
+
 	IEnumerator startZoom(float currentZoom, float targetZoom, float duration){
 		float startTime = Time.time ;
 		float endTime = startTime + duration;
 
+		//fadeForegrounds(currentZoom, targetZoom, duration);
+			
 		while(Time.time <= endTime){
 			float t = (Time.time - startTime)/duration;
 			camera.orthographicSize = Mathf.Lerp(currentZoom, targetZoom, t);

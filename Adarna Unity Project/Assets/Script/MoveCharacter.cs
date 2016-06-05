@@ -11,12 +11,12 @@ public class MoveCharacter : MonoBehaviour {
 
 		if(direction == "r"){
 			character.localScale = new Vector3(Mathf.Abs(character.localScale.x), character.localScale.y, character.localScale.z);
-			Debug.Log("Flipped to the right.");
+			//Debug.Log("Flipped to the right.");
 		}
 		else if(direction == "l"){
 			character.localScale = new Vector3(-(Mathf.Abs(character.localScale.x)), character.localScale.y, character.localScale.z);
 
-			Debug.Log("Flipped to the left.");
+			//Debug.Log("Flipped to the left.");
 		}
 	}
 

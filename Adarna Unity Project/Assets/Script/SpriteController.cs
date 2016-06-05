@@ -19,6 +19,12 @@ public class SpriteController : MonoBehaviour {
 		mySprite.color = color;
 	}
 
+	public void changeColors(SpriteRenderer[] mySprites, Color color, float duration){
+		foreach(SpriteRenderer myRenderer in mySprites){
+			changeColor(myRenderer, color, duration);
+		}
+	}
+
 	public void changeColors(GameObject spriteSource, Color color, float duration){
 		SpriteRenderer mySpriteRenderer = spriteSource.GetComponent<SpriteRenderer>();
 		SpriteRenderer[] mySpriteRenderers = spriteSource.GetComponentsInChildren<SpriteRenderer>(true);
@@ -31,7 +37,7 @@ public class SpriteController : MonoBehaviour {
 	}
 
 	public void changeColor(SpriteRenderer mySprite, Color color, float duration){
-		color = new Color(color.r, color.g, color.b, color.a = 255f);
+		color = new Color(color.r, color.g, color.b, color.a);
 		StartCoroutine(startChangeColor(mySprite, mySprite.color, color, duration));
 	}
 

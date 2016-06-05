@@ -7,6 +7,8 @@ public class DoorHandler : MonoBehaviour {
 	public int thisDoorIndex;
 	public string nextLocation;
 	public bool doorPlacementUp = true;
+	public bool isOpen = true;
+	public bool closedMessageDisplayed = false;
 
 	private KeyCode openDoorButton;
 
@@ -30,6 +32,15 @@ public class DoorHandler : MonoBehaviour {
 	}
 
 	void Update () {
+		if(!isOpen){
+			if(!closedMessageDisplayed && playerInZone){
+				Debug.Log("Door closed.");
+				//Add Narrative.
+				closedMessageDisplayed = true;
+			}
+			return;
+		}
+
 		if(waitForPress){
 			if(Input.GetKeyDown(openDoorButton) && playerInZone){
 				//LevelManager.exitInRight = defaultSpawnLeft;
@@ -51,6 +62,10 @@ public class DoorHandler : MonoBehaviour {
 			}
 		}
 	}
+
+	public void setIsOpen(bool isOpen){
+		this.isOpen = isOpen;
+	}
 	void OnTriggerEnter2D (Collider2D other){
 		if(other.tag == "Player"){
 			Debug.Log("Press " + openDoorButton);
@@ -61,6 +76,7 @@ public class DoorHandler : MonoBehaviour {
 		if(other.tag == "Player"){
 			Debug.Log("Door Left");
 			playerInZone = false;
+			closedMessageDisplayed = false;
 		}
 	}
 

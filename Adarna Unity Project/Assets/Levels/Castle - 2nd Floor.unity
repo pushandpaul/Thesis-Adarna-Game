@@ -132,14 +132,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   camera: {fileID: 0}
+  followThis: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
   lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 1.8
-  changedYOffset: 1
+  defaultZoomSize: 3.5
   zoomSize: 3.5
+  initialCamSize: 0
+  defaultZoomDuration: 2
   isFollowing: 1
   flipped: 0
   isCenter: 0
@@ -341,6 +344,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoorIndex: 3
   nextLocation: Kwarto ni Don Juan
+  doorPlacementUp: 1
+  isOpen: 1
+  closedMessageDisplayed: 0
   waitForPress: 1
 --- !u!61 &265347190
 BoxCollider2D:
@@ -569,6 +575,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoorIndex: 0
   nextLocation: Kwarto ni Ibong Adarna
+  doorPlacementUp: 1
+  isOpen: 0
+  closedMessageDisplayed: 0
   waitForPress: 1
 --- !u!1001 &685797486
 Prefab:
@@ -888,6 +897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 1
   nextLocation: Castle - Walkway
+  isOpen: 1
 --- !u!1 &1467781580
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +940,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoorIndex: 3
   nextLocation: Kwarto ni Don Juan
+  doorPlacementUp: 1
+  isOpen: 1
+  closedMessageDisplayed: 0
   waitForPress: 1
 --- !u!61 &1467781583
 BoxCollider2D:
@@ -1033,6 +1046,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoorIndex: 3
   nextLocation: Kwarto ni Don Juan
+  doorPlacementUp: 1
+  isOpen: 1
+  closedMessageDisplayed: 0
   waitForPress: 1
 --- !u!61 &1647552844
 BoxCollider2D:
@@ -1134,6 +1150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 1
   nextLocation: Kwarto ni Ibong Adarna
+  isOpen: 1
 --- !u!1001 &1761585828
 Prefab:
   m_ObjectHideFlags: 0

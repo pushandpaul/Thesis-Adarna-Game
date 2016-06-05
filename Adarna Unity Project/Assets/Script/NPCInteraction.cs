@@ -26,7 +26,6 @@ public class NPCInteraction : MonoBehaviour {
 
 	private ObjectiveMapper objectiveMapper;
 	public bool anObjective;
-	//public bool isAchieved;
 
 	public string message;
 
@@ -60,19 +59,23 @@ public class NPCInteraction : MonoBehaviour {
 		colliderOffsetX = this.GetComponent<CircleCollider2D>().offset.x;
 		colliderOffsetY = this.GetComponent<CircleCollider2D>().offset.y;
 
+		if(anObjective){
+			StartCoroutine(displaySpeechBubble());
+		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () { 
 
-		if (anObjective) {
+		/*if (anObjective) {
 			if (objectiveMapper.checkIfCurrent ()) {
 				if (Camera.main.WorldToViewportPoint (bubble.transform.position).x < 0 ||
 				   Camera.main.WorldToViewportPoint (bubble.transform.position).x > 1) {
 					bubble.displayBubble (true);
 				}
 			}
-		}
+		}*/
 
 		if(standardFacing){
 			if(toTransform.localScale.x > 0)
@@ -162,10 +165,23 @@ public class NPCInteraction : MonoBehaviour {
 		}
 	}
 
-	/*IEnumerator checkIfInDialogue(){
-		Debug.Log("Waiting until dialogue is over.");
-		//yield return new WaitWhile(DialogueController.inDialogue);
-		Debug.Log("Dialogue is over. Checking if this is the current objective.");
-		checkIfCurrent();
-	}*/
+	IEnumerator displaySpeechBubble(){
+		bool temp = true;
+		bool displayed = false;
+		while(temp){
+			if(objectiveMapper.checkIfCurrent() && !DialogueController.inDialogue){
+				if(!displayed){
+					bubble.displayBubble (true);
+					displayed = true;
+				}
+			}
+			else{
+				if(displayed){
+					bubble.displayBubble (false);
+					displayed = false;
+				}
+			}
+			yield return null;
+		}
+	}
 }
