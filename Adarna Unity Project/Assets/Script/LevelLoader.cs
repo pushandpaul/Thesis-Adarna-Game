@@ -39,6 +39,7 @@ public class LevelLoader : MonoBehaviour {
 		ArmenyaBalcony = 29,
 		//Minigame
 		MinigameBattle = 30,
+		ArmenyaBatis = 31,
 	}
 
 	public LevelSelect Levels;

@@ -33,6 +33,11 @@ public class DialogueController : MonoBehaviour {
 	public void startDialogue(){
 		inDialogue = true;
 		enableInteraction(false);
+		DoorHandler[] doors = FindObjectsOfType<DoorHandler>();
+
+		foreach(DoorHandler door in doors){
+			door.isOpen = false;
+		}
 
 		foreach(FollowTarget follower in followerManager.activeFollowers){
 			follower.isFollowing = false;
@@ -58,7 +63,12 @@ public class DialogueController : MonoBehaviour {
 		player.enablePlayerMovement();
 		inDialogue = false;
 		enableInteraction(true);
+		DoorHandler[] doors = FindObjectsOfType<DoorHandler>();
 
+		foreach(DoorHandler door in doors){
+			door.isOpen = true;
+		}
+			
 		foreach(FollowTarget follower in followerManager.activeFollowers){
 			follower.isFollowing = true;
 			if(follower.anim != null){
