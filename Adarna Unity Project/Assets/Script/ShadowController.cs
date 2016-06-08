@@ -12,10 +12,23 @@ public class ShadowController : MonoBehaviour {
 
 	private RaycastHit2D myLineCast;
 	private bool hitGround = false;
+	public bool isStatic = false;
+
+	void Start(){
+		initialPosition = transform.localPosition;
+	}
 
 	void LateUpdate(){
+		if(isStatic && transform.localPosition != initialPosition){
+			transform.localPosition = initialPosition;
+			return;
+		}
 		DrawRaycast();
 		UpdateY();
+	}
+
+	public void setIsStatic(bool isStatic){
+		this.isStatic = isStatic;
 	}
 
 	void DrawRaycast(){

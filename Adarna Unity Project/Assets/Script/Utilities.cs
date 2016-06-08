@@ -58,4 +58,8 @@ public class Utilities : MonoBehaviour {
 	public void setExitAccess(string sceneName, string exitName, bool isOpen, bool isDoor){
 		FindObjectOfType<DoorAndExitController>().SetExitAccess(sceneName, exitName, isOpen, isDoor);
 	}
+
+	public void setCharacterKinematic(Rigidbody2D myRigidBody, bool allow){
+		myRigidBody.isKinematic = allow;
+	}
 }

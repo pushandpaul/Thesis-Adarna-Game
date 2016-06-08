@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 31
+  Levels: 26
   launchOnStart: 1
 --- !u!4 &268044221
 Transform:
@@ -133,6 +133,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: Followers.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 422660, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -194,8 +198,18 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: spawnIsRight
-      value: 0
+      propertyPath: Followers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11470666, guid: 5558aa40da511e54bac2e4e0113e7173,
+        type: 2}
+    - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: Followers.Array.data[1]
+      value: 
+      objectReference: {fileID: 11465722, guid: e8b0fe1258153184b867ab768308e96d,
+        type: 2}
+    - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: currentCharacterName
+      value: Lobo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
@@ -604,6 +618,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: objectivePanelFader
+      value: 
+      objectReference: {fileID: 307318458}
     - target: {fileID: 11457262, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: textBox
       value: 
@@ -613,13 +631,9 @@ Prefab:
       value: 
       objectReference: {fileID: 307318456}
     - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-      propertyPath: objectivePanelFader
-      value: 
-      objectReference: {fileID: 307318458}
-    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: currentObjective
       value: 
-      objectReference: {fileID: 1303412532}
+      objectReference: {fileID: 1606270700}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
   m_IsPrefabParent: 0
@@ -663,9 +677,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!114 &1303412532 stripped
+--- !u!114 &1606270700 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11481560, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+  m_PrefabParentObject: {fileID: 11407156, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
     type: 2}
   m_PrefabInternal: {fileID: 1207977156}
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}

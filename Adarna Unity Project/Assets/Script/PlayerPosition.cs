@@ -67,4 +67,8 @@ public class PlayerPosition : MonoBehaviour {
 		}
 		return found;
 	}
+
+	/*public void setIsKinematic(bool allow){
+		this.GetComponent<Rigidbody2D> ().isKinematic = allow;
+	}*/
 }

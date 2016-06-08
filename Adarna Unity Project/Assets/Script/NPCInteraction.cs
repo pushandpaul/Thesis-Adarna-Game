@@ -171,12 +171,14 @@ public class NPCInteraction : MonoBehaviour {
 		while(temp){
 			if(objectiveMapper.checkIfCurrent() && !DialogueController.inDialogue){
 				if(!displayed){
+					Debug.Log ("Bubble is displayed.");
 					bubble.displayBubble (true);
 					displayed = true;
 				}
 			}
 			else{
 				if(displayed){
+					Debug.Log ("Bubble is not displayed.");
 					bubble.displayBubble (false);
 					displayed = false;
 				}

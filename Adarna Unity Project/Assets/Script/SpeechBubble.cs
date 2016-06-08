@@ -4,14 +4,14 @@ using System.Collections;
 public class SpeechBubble : MonoBehaviour {
 	Transform[] allChildren;
 
-	void Start () {
-		allChildren = GetComponentsInChildren<Transform> ();
+	void Awake () {
+		allChildren = GetComponentsInChildren<Transform> (true);
 		displayBubble (false);
 	}
 
 	public void displayBubble(bool check) {
 		foreach (Transform child in allChildren) {
-			setChildToActive (child);
+			//setChildToActive (child);
 			child.GetComponent<Renderer>().enabled = check;
 		}
 	}

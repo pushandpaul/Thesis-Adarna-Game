@@ -215,7 +215,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &68680103
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!114 &143988072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +447,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!1 &228237634
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +489,7 @@ Transform:
   m_LocalScale: {x: 75.75722, y: 12.442662, z: 1.01}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &272372977 stripped
 Transform:
   m_PrefabParentObject: {fileID: 482386, guid: 1e2de7fda9825f844ac0150ec9e2c6e9, type: 2}
@@ -538,7 +538,58 @@ Transform:
   - {fileID: 1855179145}
   - {fileID: 1144475402}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
+--- !u!1001 &348643328
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 36.57123
+      objectReference: {fileID: 0}
+    - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10.420343
+      objectReference: {fileID: 0}
+    - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!95 &348643329 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9527032, guid: 93e849530f8a6b44a9ebddb722077c7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 348643328}
+--- !u!1 &348643330 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 148598, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+  m_PrefabInternal: {fileID: 348643328}
 --- !u!1001 &447252734
 Prefab:
   m_ObjectHideFlags: 0
@@ -689,6 +740,8 @@ MonoBehaviour:
   thisDoorIndex: 0
   nextLocation: Armenya - Ilalim ng Balon
   doorPlacementUp: 1
+  isOpen: 1
+  closedMessageDisplayed: 0
   waitForPress: 1
 --- !u!4 &692920424 stripped
 Transform:
@@ -720,7 +773,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
 --- !u!1 &743284524
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +803,7 @@ Transform:
   - {fileID: 540933561}
   - {fileID: 969719413}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
 --- !u!114 &743284526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,7 +993,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!4 &1128885226 stripped
 Transform:
   m_PrefabParentObject: {fileID: 481390, guid: b40b3cdc5978d7544b7dbd19996a9d32, type: 2}
@@ -1052,6 +1105,10 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_PrefabInternal: {fileID: 1218580586}
+--- !u!1 &1218580589 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+  m_PrefabInternal: {fileID: 1218580586}
 --- !u!1 &1292079227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1166,57 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
+--- !u!1001 &1302902935
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 473714, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 27.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 473714, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 473714, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473714, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473714, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473714, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473714, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 473714, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428032, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: partObjective.Array.data[0].objectives.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1302902936 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132958, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+  m_PrefabInternal: {fileID: 1302902935}
 --- !u!1 &1456767767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 0
   nextLocation: Armenya - Hallway
+  isOpen: 1
 --- !u!1001 &1578200885
 Prefab:
   m_ObjectHideFlags: 0
@@ -1240,7 +1348,7 @@ Transform:
   - {fileID: 1456767769}
   - {fileID: 655838635}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1001 &1761585828
 Prefab:
   m_ObjectHideFlags: 0
@@ -1371,6 +1479,16 @@ GameObject:
   - 114: {fileID: 1792214970}
   - 114: {fileID: 1792214969}
   - 114: {fileID: 1792214971}
+  - 114: {fileID: 1792214973}
+  - 114: {fileID: 1792214972}
+  - 114: {fileID: 1792214975}
+  - 114: {fileID: 1792214974}
+  - 114: {fileID: 1792214984}
+  - 114: {fileID: 1792214983}
+  - 114: {fileID: 1792214979}
+  - 114: {fileID: 1792214978}
+  - 114: {fileID: 1792214977}
+  - 114: {fileID: 1792214976}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1760,16 +1878,16 @@ MonoBehaviour:
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 326
-  zoom: 0.79000014
+  zoom: 0.69836956
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -351.4286
     width: 1705.2856
-    height: 1059.9999
-  selectedBlock: {fileID: 1792214911}
+    height: 1155.9308
+  selectedBlock: {fileID: 1792214973}
   selectedCommands:
-  - {fileID: 1792214937}
+  - {fileID: 1792214979}
   variables: []
   description: 
   stepPause: 0
@@ -1789,7 +1907,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!114 &1792214916
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3362,7 +3480,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1792214969
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792214897}
@@ -3375,7 +3493,7 @@ MonoBehaviour:
   message: 'Talk: Donya Juana (5-1)'
 --- !u!114 &1792214970
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792214897}
@@ -3392,7 +3510,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1792214971
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792214897}
@@ -3434,9 +3552,296 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1792214972
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1792214973}
+  message: 'Find: Bottle (6-2)'
+--- !u!114 &1792214973
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 467.3913
+    y: 311.00436
+    width: 148
+    height: 40
+  itemId: 82
+  blockName: 'Find: Bottle (6-2)'
+  description: 
+  eventHandler: {fileID: 1792214972}
+  commandList:
+  - {fileID: 1792214975}
+  - {fileID: 1792214984}
+  - {fileID: 1792214983}
+  - {fileID: 1792214979}
+  - {fileID: 1792214978}
+  - {fileID: 1792214977}
+  - {fileID: 1792214976}
+  - {fileID: 1792214974}
+--- !u!114 &1792214974
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 84
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1792214912}
+  callMode: 0
+--- !u!114 &1792214975
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 83
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1792214913}
+  callMode: 1
+--- !u!114 &1792214976
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 714
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 68680103}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: setObjectReference
+  targetMethodText: 'setObjectReference (String, String, Vector3, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Armenya - Balcony
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Bottle
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 7, y: -2.16, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1792214977
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 713
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1218580589}
+  targetComponentAssemblyName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayerController
+  targetMethod: setPlayerSate
+  targetMethodText: 'setPlayerSate (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: (Lobo) Carry Item Idle
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1792214978
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 712
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 348643330}
+  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ItemToGive
+  targetMethod: setItem
+  targetMethodText: 'setItem (Sprite): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Sprite
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 21300000, guid: cc9c083c7716a354eb6ce6276d464427, type: 3}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1792214979
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 711
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1302902936}
+  targetComponentAssemblyName: ObjectCollect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ObjectCollect
+  targetMethod: carryItem
+  targetMethodText: 'carryItem (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &1792214980
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792214897}
@@ -3461,7 +3866,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1792214981
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792214897}
@@ -3478,7 +3883,7 @@ MonoBehaviour:
   callMode: 1
 --- !u!114 &1792214982
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792214897}
@@ -3502,6 +3907,39 @@ MonoBehaviour:
   - {fileID: 1792214980}
   - {fileID: 1792214971}
   - {fileID: 1792214970}
+--- !u!114 &1792214983
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 710
+  errorMessage: 
+  indentLevel: 0
+  duration: 1.5
+--- !u!114 &1792214984
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 709
+  errorMessage: 
+  indentLevel: 0
+  animator: {fileID: 348643329}
+  stateName: (Lobo) Pickup Item (Low)
+  layer: -1
+  time: 0
 --- !u!1 &1803943808
 GameObject:
   m_ObjectHideFlags: 0
@@ -3575,7 +4013,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1805596804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,7 +4042,7 @@ Transform:
   - {fileID: 1761585829}
   - {fileID: 2091647361}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1001 &1855179144
 Prefab:
   m_ObjectHideFlags: 0
@@ -3690,7 +4128,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1001 &2076750788
 Prefab:
   m_ObjectHideFlags: 0
