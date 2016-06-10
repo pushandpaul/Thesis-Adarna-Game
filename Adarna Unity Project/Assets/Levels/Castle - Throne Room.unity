@@ -956,6 +956,11 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 150180, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_PrefabInternal: {fileID: 1218580586}
+--- !u!50 &1218580590 stripped
+Rigidbody2D:
+  m_PrefabParentObject: {fileID: 5030200, guid: c030ba30e8be9a241aa1f4962c3a078a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1218580586}
 --- !u!114 &1380049900 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99,
@@ -1216,6 +1221,7 @@ Transform:
   m_Children:
   - {fileID: 919183786}
   - {fileID: 2015900867}
+  - {fileID: 1971132002}
   m_Father: {fileID: 0}
   m_RootOrder: 9
 --- !u!1001 &1580143679
@@ -1582,6 +1588,83 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1959184191}
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+--- !u!1 &1971132001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1971132002}
+  - 58: {fileID: 1971132005}
+  - 114: {fileID: 1971132004}
+  - 114: {fileID: 1971132003}
+  m_Layer: 0
+  m_Name: Castle - Throne Room Trigger (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1971132002
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971132001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.72, y: -2.55, z: -0.025910795}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1516206288}
+  m_RootOrder: 2
+--- !u!114 &1971132003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971132001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partObjective:
+  - part: 6
+    objectives: 0f000000
+  isNPC: 0
+  isObject: 1
+--- !u!114 &1971132004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971132001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587b8fea6c8083a4dacdf11e7b57277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 0
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  panelFadeDelay: 0
+  anObjective: 0
+  message: 
+--- !u!58 &1971132005
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971132001}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!1001 &1983429311
 Prefab:
   m_ObjectHideFlags: 0
@@ -1756,7 +1839,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
       propertyPath: selectedCommands.Array.size
-      value: 35
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 497366, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1829,10 +1912,10 @@ Prefab:
     - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
       propertyPath: selectedBlock
       value: 
-      objectReference: {fileID: 2057993254}
+      objectReference: {fileID: 2057993314}
     - target: {fileID: 11431152, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
       propertyPath: nodeRect.x
-      value: 447.6112
+      value: 450.24277
       objectReference: {fileID: 0}
     - target: {fileID: 11431152, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
       propertyPath: nodeRect.y
@@ -1872,12 +1955,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
       propertyPath: blockViewHeight
-      value: 346
+      value: 349
       objectReference: {fileID: 0}
     - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 2057993255}
+      objectReference: {fileID: 2057993315}
     - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
       propertyPath: selectedCommands.Array.data[1]
       value: 
@@ -1944,6 +2027,70 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
       propertyPath: selectedCommands.Array.data[16]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[17]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[18]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[19]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[20]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[21]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[22]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[23]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[24]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[25]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[26]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[27]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[28]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[29]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[30]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[31]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409232, guid: c3d5a230efacea34cbf3b95d2210ba99, type: 2}
+      propertyPath: selectedCommands.Array.data[32]
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2852,7 +2999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 425.48343
+    x: 420.22028
     y: 42.36026
     width: 210
     height: 40
@@ -4179,7 +4326,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2057993313
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2057993253}
@@ -4290,6 +4437,320 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &2057993314
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 444.90454
+    y: 156.83392
+    width: 173
+    height: 40
+  itemId: 698
+  blockName: 'Start: Narrative (6-5)'
+  description: 
+  eventHandler: {fileID: 2057993350}
+  commandList:
+  - {fileID: 2057993349}
+  - {fileID: 2057993316}
+  - {fileID: 2057993317}
+  - {fileID: 2057993318}
+  - {fileID: 2057993319}
+  - {fileID: 2057993320}
+  - {fileID: 2057993321}
+  - {fileID: 2057993322}
+  - {fileID: 2057993315}
+--- !u!114 &2057993315
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 733
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 2057993251}
+  callMode: 0
+--- !u!114 &2057993316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 734
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1767367957}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: setCharacterKinematic
+  targetMethodText: 'setCharacterKinematic (Rigidbody2D, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Rigidbody2D, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Rigidbody2D
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1218580590}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2057993317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 735
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Nasaan ka na kaya, Don Juan? Walang araw na \u2018di ikaw ang aking
+    {color=\"yellow\"}pita/samo{/color}. \rAno na ang nangyari sa pangako mo sa\u2019kin?
+    \r\n"
+  description: 
+  character: {fileID: 886383656}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2057993318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 736
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Humingi ako ng pitong taon sa iyong ama, dahil ayoko talagang makasal
+    kay Don \r\nPedro kahit {color=\"yellow\"}mautas/mapatay{/color} ako. \r\n"
+  description: 
+  character: {fileID: 886383656}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2057993319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 737
+  errorMessage: 
+  indentLevel: 0
+  storyText: 'Hindi mo ba naririnig ang aking {color="yellow"}himutok/hinaing{/color}
+    dahil gusto kita makasama? '
+  description: 
+  character: {fileID: 886383656}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2057993320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 738
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Sana dumating ka para matapos na ang aking {color=\"yellow\"}hilahil/dalamhati{/color},
+    dusa\u2026"
+  description: 
+  character: {fileID: 886383656}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2057993321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 739
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Ngunit kahit anong sabihin ni Donya Leonora ay \u2018di na maririnig
+    ni Don Juan dahil pinagpalit na siya nito kay Maria Blanca...\r\n"
+  description: 
+  character: {fileID: 1930967212}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2057993322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 740
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 68680103}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: changePlayerLater
+  targetMethodText: 'changePlayerLater (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Don Juan
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2057993349
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 699
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 2057993252}
+  callMode: 1
+--- !u!114 &2057993350
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057993253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 2057993314}
+  message: 'Start: Narrative (6-5)'
 --- !u!1001 &2091688788
 Prefab:
   m_ObjectHideFlags: 0

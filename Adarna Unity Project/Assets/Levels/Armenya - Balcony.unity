@@ -164,6 +164,7 @@ GameObject:
   - 114: {fileID: 18090789}
   - 114: {fileID: 18090783}
   - 114: {fileID: 18090797}
+  - 114: {fileID: 18090798}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -397,9 +398,8 @@ MonoBehaviour:
     y: -351.2195
     width: 1664.7789
     height: 1293.1182
-  selectedBlock: {fileID: 18090796}
-  selectedCommands:
-  - {fileID: 18090792}
+  selectedBlock: {fileID: 18090780}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 461.39233
-    y: 379.11386
+    y: 377.84802
     width: 131
     height: 40
   itemId: 234
@@ -1647,6 +1647,7 @@ MonoBehaviour:
   - {fileID: 18090787}
   - {fileID: 18090786}
   - {fileID: 18090785}
+  - {fileID: 18090798}
   - {fileID: 18090784}
   - {fileID: 18090781}
 --- !u!114 &18090781
@@ -1825,7 +1826,7 @@ MonoBehaviour:
   itemId: 710
   errorMessage: 
   indentLevel: 0
-  duration: 1.5
+  duration: 1
 --- !u!114 &18090788
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2054,8 +2055,8 @@ MonoBehaviour:
   - {fileID: 18090792}
   - {fileID: 18090791}
   - {fileID: 18090790}
-  - {fileID: 18090789}
   - {fileID: 18090797}
+  - {fileID: 18090789}
 --- !u!114 &18090797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2081,6 +2082,21 @@ MonoBehaviour:
   fadeWhenDone: 1
   waitForClick: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &18090798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18090725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 726
+  errorMessage: 
+  indentLevel: 0
+  duration: 1
 --- !u!1 &31907810
 GameObject:
   m_ObjectHideFlags: 0

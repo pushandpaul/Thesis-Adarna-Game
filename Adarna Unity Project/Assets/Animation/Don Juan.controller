@@ -1339,6 +1339,29 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
+--- !u!1102 &110212700
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sleep on Ground
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 0d613633ae6e4674ca378576f6997d3d, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
 --- !u!1102 &110213154
 AnimatorState:
   serializedVersion: 5
@@ -1359,6 +1382,29 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 5bc876af5b4d9c140afb10bdcc2e2e47, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+--- !u!1102 &110214748
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Stand From Ground
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 034eaffd106d3614bafb59f875808cff, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1525,6 +1571,29 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_Motion: {fileID: 7400000, guid: cae841dc9b7a9ab4cb8b638d4e00dbc1, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+--- !u!1102 &110231042
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sleep on Ground Idle
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 4a208ec71ce9e88488db6a53076f0ffe, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2481,7 +2550,7 @@ AnimatorStateMachine:
     m_Position: {x: 504, y: -36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110277166}
-    m_Position: {x: 360, y: 204, z: 0}
+    m_Position: {x: 372, y: 216, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110296742}
     m_Position: {x: 372, y: 264, z: 0}
@@ -2541,7 +2610,7 @@ AnimatorStateMachine:
     m_Position: {x: 120, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110293546}
-    m_Position: {x: -192, y: 132, z: 0}
+    m_Position: {x: 744, y: 528, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110227986}
     m_Position: {x: 48, y: 132, z: 0}
@@ -2566,6 +2635,15 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 110220764}
     m_Position: {x: 744, y: 660, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110212700}
+    m_Position: {x: 779, y: 725, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110231042}
+    m_Position: {x: 814, y: 790, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110214748}
+    m_Position: {x: 849, y: 855, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

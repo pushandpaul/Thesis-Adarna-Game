@@ -1182,6 +1182,10 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
   m_PrefabInternal: {fileID: 1022926342}
+--- !u!1 &1022926344 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 118812, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+  m_PrefabInternal: {fileID: 1022926342}
 --- !u!1001 &1030142446
 Prefab:
   m_ObjectHideFlags: 0
@@ -1599,6 +1603,7 @@ GameObject:
   - 114: {fileID: 1152808216}
   - 114: {fileID: 1152808220}
   - 114: {fileID: 1152808221}
+  - 114: {fileID: 1152808222}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1664,20 +1669,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: 210.68237, y: -760.3386}
+  scrollPos: {x: 430.68243, y: -457.83862}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 320
-  zoom: 0.66999984
+  zoom: 0.39999992
   scrollViewRect:
     serializedVersion: 2
     x: -562.926
     y: -382.95453
     width: 2705.0168
     height: 1917.0962
-  selectedBlock: {fileID: 1152808219}
-  selectedCommands:
-  - {fileID: 1152808216}
+  selectedBlock: {fileID: 0}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -9226,6 +9230,7 @@ MonoBehaviour:
   - {fileID: 1152808216}
   - {fileID: 1152808220}
   - {fileID: 1152808221}
+  - {fileID: 1152808222}
   - {fileID: 1152808215}
 --- !u!114 &1152808220
 MonoBehaviour:
@@ -9260,6 +9265,50 @@ MonoBehaviour:
   errorMessage: 
   indentLevel: 0
   duration: 3
+--- !u!114 &1152808222
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 724
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 290846655}
+  targetComponentAssemblyName: SaveAndDestroy, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SaveAndDestroy
+  targetMethod: saveNowDestroyLater
+  targetMethodText: 'saveNowDestroyLater (GameObject): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.GameObject, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.GameObject
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 1022926344}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &1158384220
 GameObject:
   m_ObjectHideFlags: 0

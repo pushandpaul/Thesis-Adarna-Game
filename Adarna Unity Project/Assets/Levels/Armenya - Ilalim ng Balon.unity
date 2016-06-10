@@ -639,6 +639,8 @@ GameObject:
   - 114: {fileID: 539214628}
   - 114: {fileID: 539214629}
   - 114: {fileID: 539214633}
+  - 114: {fileID: 539214634}
+  - 114: {fileID: 539214635}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1023,11 +1025,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: 131.38489, y: -244.23659}
+  scrollPos: {x: -161.98837, y: -128.47351}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 325
-  zoom: 0.52000016
+  zoom: 0.87999994
   scrollViewRect:
     serializedVersion: 2
     x: -368.17657
@@ -1035,8 +1037,7 @@ MonoBehaviour:
     width: 1730.9373
     height: 1485.0967
   selectedBlock: {fileID: 539214596}
-  selectedCommands:
-  - {fileID: 539214633}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1886,6 +1887,7 @@ MonoBehaviour:
   - {fileID: 539214568}
   - {fileID: 539214569}
   - {fileID: 539214572}
+  - {fileID: 539214635}
   - {fileID: 539214575}
   - {fileID: 539214574}
   - {fileID: 539214573}
@@ -1927,7 +1929,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 16, y: -1.86, z: 0}
+      vector3Value: {x: 18, y: -1.86, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -2061,6 +2063,7 @@ MonoBehaviour:
   - {fileID: 539214581}
   - {fileID: 539214582}
   - {fileID: 539214583}
+  - {fileID: 539214634}
   - {fileID: 539214584}
   - {fileID: 539214585}
   - {fileID: 539214579}
@@ -2130,7 +2133,7 @@ MonoBehaviour:
   itemId: 709
   errorMessage: 
   indentLevel: 0
-  duration: 1.5
+  duration: 1
 --- !u!114 &539214582
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2555,7 +2558,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 456.60617
-    y: 371.6375
+    y: 372.77386
     width: 173
     height: 40
   itemId: 715
@@ -2581,7 +2584,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 447.85324
-    y: 428.9546
+    y: 431.22733
     width: 190
     height: 40
   itemId: 726
@@ -3136,7 +3139,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 461.51086
-    y: 565.14417
+    y: 563.82837
     width: 159
     height: 40
   itemId: 742
@@ -3727,7 +3730,7 @@ MonoBehaviour:
   - {fileID: 539214627}
 --- !u!114 &539214633
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 539214535}
@@ -3747,6 +3750,82 @@ MonoBehaviour:
   targetMethod: disableItem
   targetMethodText: 'disableItem (): Void'
   methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &539214634
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 539214535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 770
+  errorMessage: 
+  indentLevel: 0
+  duration: 1
+--- !u!114 &539214635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 539214535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 771
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1088340402}
+  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveObject
+  targetMethod: punchMove
+  targetMethodText: 'punchMove (Vector3, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 55, y: -2.5, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1216078615}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -4419,7 +4498,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1216078613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.91, y: -2.58, z: 0}
+  m_LocalPosition: {x: 27.73, y: -10.44, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

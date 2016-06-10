@@ -37,7 +37,11 @@ public class FollowTarget : MonoBehaviour {
 		if(!isFollowing){
 			return;
 		}
-			
+
+		if(currentDistance >= distanceLimit && tempScale != transform.localScale.x){
+			transform.localScale = new Vector3(target.localScale.x, transform.localScale.y, transform.localScale.z);
+		}
+
 		if (distanceFromLimit < 0.1f){
 			//allowFlip = true;
 		}
@@ -59,11 +63,7 @@ public class FollowTarget : MonoBehaviour {
 		anim.SetFloat("Speed", distanceFromLimit);
 		anim.SetBool("Ground", grounded);
 
-		if(currentDistance >= distanceLimit && tempScale != transform.localScale.x){
-			//Debug.Log("Position before flip: " + transform.position.ToString());
-			transform.localScale = new Vector3(tempScale, transform.localScale.y, transform.localScale.z);
-			//Debug.Log("Position after flip: " + transform.position.ToString());
-		}
+
 
 	}
 
