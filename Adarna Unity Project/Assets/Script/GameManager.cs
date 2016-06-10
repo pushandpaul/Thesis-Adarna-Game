@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour {
 
 	//public Sprite[] heldItem;
 	public Sprite currentHeldItem; 
-	public string playerIdleState;
+	public int initPlayerIdleStateHash;
+	public int playerIdleState;
+	public string playerIdleState_string;
 	public float playerSpeed = 5f;
 
 	private LevelManager levelManager;
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour {
 	public BattleData battleData;
 
 	void Awake () {
-		//playerIdleState = "Idle";
+		initPlayerIdleStateHash = Animator.StringToHash(playerIdleState_string);
 		//Debug.Log(Animator.StringToHash("(Don Pedro) Carry Item Idle"));
 		DontDestroyOnLoad(this);
 		sceneObjects = new List<SceneObjects>();
@@ -285,7 +287,7 @@ public class GameManager : MonoBehaviour {
 						//Debug.Log("Character '" + charData.name + "' animation ID '" + character.stateHashID + "' will be played.");
 						charData.anim.Play(character.stateHashID);
 					}
-					else
+					//else
 						//Debug.Log("Character '" + charData.name + "' animator component does not exist.");
 					if(character.heldItem != null)
 						charData.item.setItem(character.heldItem);

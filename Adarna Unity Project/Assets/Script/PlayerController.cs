@@ -126,9 +126,14 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void setPlayerSate(string state){
-		gameManager.playerIdleState = state;
-		Debug.Log(gameManager.playerIdleState);
+		gameManager.playerIdleState = Animator.StringToHash(state);
+		//Debug.Log(gameManager.playerIdleState);
 		anim.Play (state);
+	}
+
+	public void setPlayerState(int stateHash){
+		gameManager.playerIdleState = stateHash;
+		anim.Play (stateHash);
 	}
 
 	public void initState(){

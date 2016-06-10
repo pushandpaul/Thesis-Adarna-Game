@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   camera: {fileID: 0}
+  followThis: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
   lerpSpeed: {x: 0, y: 0}
@@ -1763,6 +1764,8 @@ MonoBehaviour:
   thisDoorIndex: 3
   nextLocation: Castle - 2nd Floor
   doorPlacementUp: 1
+  isOpen: 1
+  closedMessageDisplayed: 0
   waitForPress: 0
 --- !u!61 &365971328
 BoxCollider2D:
@@ -2625,6 +2628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 0
   nextLocation: Kwarto ni Ibong Adarna
+  isOpen: 1
 --- !u!61 &1705037631
 BoxCollider2D:
   m_ObjectHideFlags: 0

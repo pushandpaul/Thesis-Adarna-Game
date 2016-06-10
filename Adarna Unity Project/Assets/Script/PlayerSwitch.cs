@@ -141,5 +141,6 @@ public class PlayerSwitch : MonoBehaviour {
 		if(switchType == "instant")
 			playerHolder.initState();
 		gameManager.currentCharacterName = newPlayer.name;
+		gameManager.initPlayerIdleStateHash = playerHolder.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
 	}
 }

@@ -8,6 +8,8 @@ public class ObjectCollect : MonoBehaviour {
 	private ObjectiveMapper objectiveMapper;
 	private PlayerController playerController;
 
+	public bool includedInMassCollect = false;
+
 	void Start () {
 		gameManager = FindObjectOfType<GameManager>();
 		objectData = this.GetComponent<ObjectData>();
@@ -16,19 +18,12 @@ public class ObjectCollect : MonoBehaviour {
 	}
 
 	void Update () {
-		/*if(waitForPress && Input.GetKeyDown(KeyCode.E)){
-			if (objectiveMapper.checkIfCurrent ()) {
-				carryItem ();
-				Debug.Log ("Collected: " + gameObject.name);
-				objectData.destroyed = true;
-				gameManager.searchData (this.objectData, 's'); //saves object data to game manager, before the object is destroyed
-				Destroy (this.gameObject);
-				playerController.setPlayerSate ("Carry Item (Idle)");
-			}
+
+		if(!includedInMassCollect)
+			return;
+		if(waitForPress && Input.GetKeyDown(KeyCode.E)){
+			FindObjectOfType<ItemCollectionManager>().Collect(gameObject);
 		}
-			
-		else
-			return;*/
 	}
 	void OnTriggerEnter2D (Collider2D other){
 		if(other.tag == "Player")
