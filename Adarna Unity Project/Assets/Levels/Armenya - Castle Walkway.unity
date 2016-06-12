@@ -1174,6 +1174,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11428032, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: partObjective.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428032, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: partObjective.Array.data[0].objectives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 473714, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
       propertyPath: m_LocalPosition.x
       value: 27.58
@@ -1209,6 +1217,18 @@ Prefab:
     - target: {fileID: 11428032, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
       propertyPath: partObjective.Array.data[0].objectives.Array.data[0]
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 132958, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: m_Name
+      value: Bottle 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467670, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: includedInMassCollect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428032, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
+      propertyPath: partObjective.Array.data[0].part
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 314b6f11c24f3f749a8e20c6db3c93d5, type: 2}
@@ -1887,7 +1907,8 @@ MonoBehaviour:
     width: 1705.2856
     height: 1155.9308
   selectedBlock: {fileID: 1792214973}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1792214976}
   variables: []
   description: 
   stepPause: 0

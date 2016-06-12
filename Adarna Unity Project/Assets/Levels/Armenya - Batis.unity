@@ -330,7 +330,6 @@ GameObject:
   - 114: {fileID: 180859120}
   - 114: {fileID: 180859121}
   - 114: {fileID: 180859123}
-  - 114: {fileID: 180859122}
   - 114: {fileID: 180859124}
   - 114: {fileID: 180859125}
   - 114: {fileID: 180859126}
@@ -340,6 +339,10 @@ GameObject:
   - 114: {fileID: 180859130}
   - 114: {fileID: 180859131}
   - 114: {fileID: 180859132}
+  - 114: {fileID: 180859134}
+  - 114: {fileID: 180859135}
+  - 114: {fileID: 180859136}
+  - 114: {fileID: 180859122}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -590,6 +593,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 180859098}
   - {fileID: 180859091}
+  - {fileID: 180859122}
   - {fileID: 180859092}
   - {fileID: 180859093}
   - {fileID: 180859105}
@@ -600,6 +604,7 @@ MonoBehaviour:
   - {fileID: 180859108}
   - {fileID: 180859110}
   - {fileID: 180859121}
+  - {fileID: 180859134}
   - {fileID: 180859109}
   - {fileID: 180859128}
   - {fileID: 180859112}
@@ -613,14 +618,15 @@ MonoBehaviour:
   - {fileID: 180859119}
   - {fileID: 180859120}
   - {fileID: 180859123}
-  - {fileID: 180859131}
-  - {fileID: 180859122}
+  - {fileID: 180859132}
   - {fileID: 180859124}
   - {fileID: 180859125}
+  - {fileID: 180859131}
   - {fileID: 180859126}
   - {fileID: 180859127}
   - {fileID: 180859130}
-  - {fileID: 180859132}
+  - {fileID: 180859136}
+  - {fileID: 180859135}
   - {fileID: 180859095}
 --- !u!114 &180859101
 MonoBehaviour:
@@ -693,7 +699,7 @@ MonoBehaviour:
     height: 1155.9308
   selectedBlock: {fileID: 180859100}
   selectedCommands:
-  - {fileID: 180859132}
+  - {fileID: 180859122}
   variables: []
   description: 
   stepPause: 0
@@ -1396,7 +1402,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 30, y: -1.86, z: 0}
+      vector3Value: {x: -40, y: -1.86, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -1483,26 +1489,43 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &180859122
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 180859090}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 30
+  itemId: 436
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 31907810}
-  targetComponentAssemblyName: CameraController, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
+  targetObject: {fileID: 1289372278}
+  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: CameraController
-  targetMethod: resetZoomSize
-  targetMethodText: 'resetZoomSize (): Void'
-  methodParameters: []
+  targetComponentText: ItemToGive
+  targetMethod: setItem
+  targetMethodText: 'setItem (Sprite): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Sprite
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 21300000, guid: 71e292b61c635fd48b67e5e4f5ca26fe, type: 3}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -1522,7 +1545,7 @@ MonoBehaviour:
   itemId: 29
   errorMessage: 
   indentLevel: 0
-  duration: 3
+  duration: 5
 --- !u!114 &180859124
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1697,7 +1720,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &180859128
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 180859090}
@@ -1758,7 +1781,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &180859129
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 180859090}
@@ -1819,7 +1842,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &180859130
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 180859090}
@@ -1880,7 +1903,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &180859131
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 180859090}
@@ -1941,7 +1964,51 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &180859132
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180859090}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 41
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: _removeObjectDataReference
+  targetMethodText: '_removeObjectDataReference (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Tagabantay (Walking)
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &180859134
+MonoBehaviour:
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 180859090}
@@ -1950,21 +2017,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 39
+  itemId: 42
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 1566442615}
-  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
+  targetObject: {fileID: 1289372277}
+  targetComponentAssemblyName: ShadowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: MoveObject
-  targetMethod: punchMove
-  targetMethodText: 'punchMove (Vector3, Transform): Void'
+  targetComponentText: ShadowController
+  targetMethod: setIsStatic
+  targetMethodText: 'setIsStatic (Boolean): Void'
   methodParameters:
   - objValue:
-      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      typeFullname: UnityEngine.Vector3
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &180859135
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180859090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 43
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1289372277}
+  targetComponentAssemblyName: ShadowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ShadowController
+  targetMethod: setIsStatic
+  targetMethodText: 'setIsStatic (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
       intValue: 0
       boolValue: 0
       floatValue: 0
@@ -1976,23 +2087,6 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: -8, y: -10, z: 0}
-    variableKey: 
-  - objValue:
-      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      typeFullname: UnityEngine.Transform
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 1006494241}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
   saveReturnValue: 0
@@ -2000,6 +2094,21 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &180859136
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180859090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 44
+  errorMessage: 
+  indentLevel: 0
+  duration: 2
 --- !u!1 &228237634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,7 +2360,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 441716, guid: 5911bbcb0d1a99d43add8bffe10007c7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 73.03
+      value: 74.42
       objectReference: {fileID: 0}
     - target: {fileID: 441716, guid: 5911bbcb0d1a99d43add8bffe10007c7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2279,7 +2388,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 441716, guid: 5911bbcb0d1a99d43add8bffe10007c7, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 154866, guid: 5911bbcb0d1a99d43add8bffe10007c7, type: 2}
       propertyPath: m_Name
@@ -2606,7 +2715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partObjective:
   - part: 6
-    objectives: 05000000
+    objectives: 03000000
   isNPC: 0
   isObject: 1
 --- !u!114 &846686902
@@ -2830,6 +2939,66 @@ Prefab:
     - target: {fileID: 119468, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 427846, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.045274027
+      objectReference: {fileID: 0}
+    - target: {fileID: 427846, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9989747
+      objectReference: {fileID: 0}
+    - target: {fileID: 476246, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.06746419
+      objectReference: {fileID: 0}
+    - target: {fileID: 476246, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99772173
+      objectReference: {fileID: 0}
+    - target: {fileID: 404592, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.3151438
+      objectReference: {fileID: 0}
+    - target: {fileID: 404592, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9490439
+      objectReference: {fileID: 0}
+    - target: {fileID: 490118, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.26346892
+      objectReference: {fileID: 0}
+    - target: {fileID: 490118, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9646679
+      objectReference: {fileID: 0}
+    - target: {fileID: 459940, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.003706207
+      objectReference: {fileID: 0}
+    - target: {fileID: 459940, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999932
+      objectReference: {fileID: 0}
+    - target: {fileID: 430156, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.19417691
+      objectReference: {fileID: 0}
+    - target: {fileID: 430156, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.98096657
+      objectReference: {fileID: 0}
+    - target: {fileID: 490620, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.21621127
+      objectReference: {fileID: 0}
+    - target: {fileID: 490620, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9763466
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860032, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
+      propertyPath: m_Offset.y
+      value: -2.99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08deed17fdd180c4b990401555276fd1, type: 2}
@@ -3398,6 +3567,14 @@ Animator:
   m_PrefabParentObject: {fileID: 9527032, guid: 93e849530f8a6b44a9ebddb722077c7c,
     type: 2}
   m_PrefabInternal: {fileID: 1289372275}
+--- !u!1 &1289372277 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110150, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+  m_PrefabInternal: {fileID: 1289372275}
+--- !u!1 &1289372278 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 148598, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+  m_PrefabInternal: {fileID: 1289372275}
 --- !u!1 &1379407160
 GameObject:
   m_ObjectHideFlags: 0
@@ -3525,7 +3702,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1550555057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.62, y: -2.18, z: -0.015249079}
+  m_LocalPosition: {x: 70.11, y: -2.18, z: -0.015249079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3543,7 +3720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partObjective:
   - part: 6
-    objectives: 06000000
+    objectives: 04000000
   isNPC: 0
   isObject: 1
 --- !u!1001 &1566442613

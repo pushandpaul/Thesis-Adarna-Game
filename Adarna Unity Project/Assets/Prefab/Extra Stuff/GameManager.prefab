@@ -114,7 +114,7 @@ GameObject:
   - 114: {fileID: 11469596}
   - 225: {fileID: 22520192}
   m_Layer: 5
-  m_Name: Item Collect Counter
+  m_Name: Item Collect Counters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -346,8 +346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsToCollect: []
-  counterHolder: {fileID: 0}
-  counterPrefab: {fileID: 0}
+  counterHolder: {fileID: 22487964}
+  counterPrefab: {fileID: 22453534, guid: 9ae2a04c71a2e5142b9f263e003393cf, type: 2}
+  itemIconPrefab: {fileID: 22418772, guid: cde4c3ffcce8ce94bb67f7224f94f2f9, type: 2}
 --- !u!114 &11405266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -405,7 +406,7 @@ MonoBehaviour:
   playerSpeed: 5
   Followers: []
   FollowerNames: []
-  spawnIsRight: 0
+  spawnIsRight: 1
   characters: []
   playableCharacters:
   - {fileID: 409574, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
@@ -413,6 +414,7 @@ MonoBehaviour:
   - {fileID: 477562, guid: 5558aa40da511e54bac2e4e0113e7173, type: 2}
   - {fileID: 480580, guid: 93ab2d9fa8bc9df4982e2565baaa1927, type: 2}
   - {fileID: 439134, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+  - {fileID: 450714, guid: 9a1f76b1d6a1ee34bb683eb6a4a1caa1, type: 2}
   currentCharacterName: Don Juan
   defaultCharacterName: Don Juan
 --- !u!114 &11420684
@@ -671,9 +673,9 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_Spacing: 6.79
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
 --- !u!114 &11485546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -685,7 +687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partObjective: []
+  partObjective:
+  - part: 6
+    objectives: 01000000
   isNPC: 0
   isObject: 0
 --- !u!114 &11485574
@@ -922,7 +926,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -49, y: -50}
+  m_AnchoredPosition: {x: -33.5, y: -44.7}
   m_SizeDelta: {x: 0, y: 55}
   m_Pivot: {x: 1, y: 1}
 --- !u!224 &22490180

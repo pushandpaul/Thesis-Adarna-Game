@@ -7,7 +7,6 @@ public class SlideshowController : MonoBehaviour{
 	Sprite[] slideshowImages;
 	Sprite currentImage;
 	int currentImageIndex = 0;
-	public int initialImageIndex = 0;
 
 	public UIFader backUIFader;
 	private Image slideShowHolder;
@@ -28,12 +27,20 @@ public class SlideshowController : MonoBehaviour{
 
 	public void Begin(SlideshowImages images){
 		slideshowImages = images.images;
-		currentImage = slideshowImages[initialImageIndex];
+		currentImage = slideshowImages[0];
+		currentImageIndex = 0;
+		TransitionImage(false);
+	}
+
+	public void Begin(SlideshowImages images, int startingIndex){
+		slideshowImages = images.images;
+		currentImage = slideshowImages[startingIndex];
+		currentImageIndex = startingIndex;
 		TransitionImage(false);
 	}
 
 	public void Next(){
-		currentImageIndex ++;
+		currentImageIndex++;
 		if(currentImageIndex < slideshowImages.Length){
 			currentImage = slideshowImages[currentImageIndex];
 			TransitionImage(false);

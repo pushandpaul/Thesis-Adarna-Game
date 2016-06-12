@@ -484,7 +484,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11465242, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
       propertyPath: partObjective.Array.data[2].objectives.Array.data[0]
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
@@ -1145,11 +1145,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 19.425297
+      value: 56.73
       objectReference: {fileID: 0}
     - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.744487
+      value: -9.53
       objectReference: {fileID: 0}
     - target: {fileID: 444656, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1175,6 +1175,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5890326, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473720, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: isFollowing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457870, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
+      propertyPath: bubble
+      value: 
+      objectReference: {fileID: 1022926345}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
   m_IsPrefabParent: 0
@@ -1186,6 +1198,12 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 118812, guid: 93e849530f8a6b44a9ebddb722077c7c, type: 2}
   m_PrefabInternal: {fileID: 1022926342}
+--- !u!114 &1022926345 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11477104, guid: 93e849530f8a6b44a9ebddb722077c7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1022926342}
+  m_Script: {fileID: 11500000, guid: 39083b95791559544822fb9bbf4435bc, type: 3}
 --- !u!1001 &1030142446
 Prefab:
   m_ObjectHideFlags: 0
@@ -1595,15 +1613,15 @@ GameObject:
   - 114: {fileID: 1152808211}
   - 114: {fileID: 1152808210}
   - 114: {fileID: 1152808213}
-  - 114: {fileID: 1152808219}
-  - 114: {fileID: 1152808218}
-  - 114: {fileID: 1152808215}
-  - 114: {fileID: 1152808214}
-  - 114: {fileID: 1152808217}
-  - 114: {fileID: 1152808216}
-  - 114: {fileID: 1152808220}
-  - 114: {fileID: 1152808221}
-  - 114: {fileID: 1152808222}
+  - 114: {fileID: 1152808224}
+  - 114: {fileID: 1152808223}
+  - 114: {fileID: 1152808231}
+  - 114: {fileID: 1152808230}
+  - 114: {fileID: 1152808229}
+  - 114: {fileID: 1152808228}
+  - 114: {fileID: 1152808227}
+  - 114: {fileID: 1152808226}
+  - 114: {fileID: 1152808225}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1669,18 +1687,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: 430.68243, y: -457.83862}
+  scrollPos: {x: 50.37213, y: -843.1942}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 320
-  zoom: 0.39999992
+  zoom: 0.8499997
   scrollViewRect:
     serializedVersion: 2
     x: -562.926
     y: -382.95453
     width: 2705.0168
-    height: 1917.0962
-  selectedBlock: {fileID: 0}
+    height: 1999.6782
+  selectedBlock: {fileID: 1152808224}
   selectedCommands: []
   variables: []
   description: 
@@ -9105,7 +9123,7 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1152808214
+--- !u!114 &1152808223
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
@@ -9116,94 +9134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1152808219}
+  parentBlock: {fileID: 1152808224}
   message: 'Interact: Lobo (6-2)'
---- !u!114 &1152808215
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1152807984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 719
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 1152807985}
-  callMode: 0
---- !u!114 &1152808216
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1152807984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 721
-  errorMessage: 
-  indentLevel: 0
-  storyText: "Dahil sayo, madali tayong \r{color=\"yellow\"}nakayao/nakaalis{/color}
-    sa balon! Hanggang sa muli! \r\n"
-  description: 
-  character: {fileID: 1030142447}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &1152808217
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1152807984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 720
-  errorMessage: 
-  indentLevel: 0
-  storyText: 'Maraming salamat, aking kaibigang lobo! '
-  description: 
-  character: {fileID: 1030142447}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &1152808218
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1152807984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 716
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 1152807986}
-  callMode: 1
---- !u!114 &1152808219
+--- !u!114 &1152808224
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
@@ -9216,56 +9149,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 307.97125
-    y: 1094.1416
+    x: 307.86325
+    y: 1088.4885
     width: 164
     height: 40
-  itemId: 715
+  itemId: 725
   blockName: 'Interact: Lobo (6-2)'
   description: 
-  eventHandler: {fileID: 1152808214}
+  eventHandler: {fileID: 1152808223}
   commandList:
-  - {fileID: 1152808218}
-  - {fileID: 1152808217}
-  - {fileID: 1152808216}
-  - {fileID: 1152808220}
-  - {fileID: 1152808221}
-  - {fileID: 1152808222}
-  - {fileID: 1152808215}
---- !u!114 &1152808220
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1152807984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 722
-  errorMessage: 
-  indentLevel: 0
-  animator: {fileID: 1030142449}
-  stateName: Kaway
-  layer: -1
-  time: 0
---- !u!114 &1152808221
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1152807984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 723
-  errorMessage: 
-  indentLevel: 0
-  duration: 3
---- !u!114 &1152808222
+  - {fileID: 1152808231}
+  - {fileID: 1152808229}
+  - {fileID: 1152808228}
+  - {fileID: 1152808227}
+  - {fileID: 1152808226}
+  - {fileID: 1152808225}
+  - {fileID: 1152808230}
+--- !u!114 &1152808225
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
@@ -9276,7 +9176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 724
+  itemId: 732
   errorMessage: 
   indentLevel: 0
   targetObject: {fileID: 290846655}
@@ -9309,6 +9209,124 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1152808226
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 731
+  errorMessage: 
+  indentLevel: 0
+  duration: 3
+--- !u!114 &1152808227
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 730
+  errorMessage: 
+  indentLevel: 0
+  animator: {fileID: 1030142449}
+  stateName: Kaway
+  layer: -1
+  time: 0
+--- !u!114 &1152808228
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 729
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Dahil sayo, madali tayong \r{color=\"yellow\"}nakayao/nakaalis{/color}
+    sa balon! Hanggang sa muli! \r\n"
+  description: 
+  character: {fileID: 1030142447}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1152808229
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 728
+  errorMessage: 
+  indentLevel: 0
+  storyText: 'Maraming salamat, aking kaibigang lobo! '
+  description: 
+  character: {fileID: 1030142447}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1152808230
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 727
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1152807985}
+  callMode: 0
+--- !u!114 &1152808231
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 726
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1152807986}
+  callMode: 1
 --- !u!1 &1158384220
 GameObject:
   m_ObjectHideFlags: 0

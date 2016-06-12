@@ -62,4 +62,8 @@ public class Utilities : MonoBehaviour {
 	public void setCharacterKinematic(Rigidbody2D myRigidBody, bool allow){
 		myRigidBody.isKinematic = allow;
 	}
+
+	public void addToCollect(string Name, bool carryItem, AnimationClip collectAnimation, Sprite icon){
+		FindObjectOfType<ItemCollectionManager> ().AddToCollect (Name, carryItem, collectAnimation, icon);
+	}
 }
