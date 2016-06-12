@@ -174,8 +174,13 @@ public class ItemCollectionManager : MonoBehaviour {
 			player.setPlayerState(gameManager.initPlayerIdleStateHash);
 		}
 			
-		else
-			player.setPlayerState(anim.GetCurrentAnimatorStateInfo(0).shortNameHash);		
+		else{
+			while(Animator.StringToHash(itemToCollect.collectAnimation.name) == anim.GetCurrentAnimatorStateInfo(0).shortNameHash){
+				yield return null;
+			}
+			player.setPlayerState(anim.GetCurrentAnimatorStateInfo(0).shortNameHash);
+		}
+					
 	}
 
 	IEnumerator DelayDestroyItem(ItemToGive playerItem, GameObject item){

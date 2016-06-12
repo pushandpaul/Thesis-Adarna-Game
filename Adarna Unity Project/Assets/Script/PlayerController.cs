@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour {
 			Debug.Log ("Attempt to play animation: " + gameManager.playerIdleState + " player state.");
 
 			anim.Play (gameManager.playerIdleState);
-			if(gameManager.currentHeldItem != null)
+			if(gameManager.currentHeldItem != null && item != null)
 				item.setItem(gameManager.currentHeldItem);
 			/*if (gameManager.currentHeldItem == null) {
 				setPlayerSate ("Idle");

@@ -19,8 +19,10 @@ public class ShadowController : MonoBehaviour {
 	}
 
 	void LateUpdate(){
-		if(isStatic && transform.localPosition != initialPosition){
-			transform.localPosition = initialPosition;
+		if(isStatic){
+			if(transform.localPosition != initialPosition){
+				transform.localPosition = initialPosition;
+			}
 			return;
 		}
 		DrawRaycast();

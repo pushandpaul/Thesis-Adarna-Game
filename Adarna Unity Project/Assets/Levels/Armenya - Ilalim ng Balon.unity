@@ -4660,7 +4660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_Name
@@ -4669,6 +4669,10 @@ Prefab:
     - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_LocalScale.x
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
@@ -4972,8 +4976,6 @@ GameObject:
   - 212: {fileID: 1216078614}
   - 114: {fileID: 1216078619}
   - 114: {fileID: 1216078618}
-  - 114: {fileID: 1216078617}
-  - 114: {fileID: 1216078616}
   - 58: {fileID: 1216078620}
   m_Layer: 0
   m_Name: Bottle 1
@@ -5024,39 +5026,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
---- !u!114 &1216078616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1216078613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partObjective:
-  - part: 6
-    objectives: 01000000
-  isNPC: 0
-  isObject: 1
---- !u!114 &1216078617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1216078613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 587b8fea6c8083a4dacdf11e7b57277f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressToInteract: 1
-  flowchart: {fileID: 0}
-  player: {fileID: 0}
-  panelFadeDelay: 0
-  anObjective: 0
-  message: 
 --- !u!114 &1216078618
 MonoBehaviour:
   m_ObjectHideFlags: 0
