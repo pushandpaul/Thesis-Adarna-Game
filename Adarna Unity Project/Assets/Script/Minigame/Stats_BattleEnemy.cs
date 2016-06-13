@@ -40,9 +40,9 @@ public class Stats_BattleEnemy{
 	[System.Serializable]
 	public class CommandAndChance{
 		public Moves move;
+		public string moveName;
 		public int chance;
 		public AnimationClip[] animationClips;
-
 	}
 
 	public Size size;

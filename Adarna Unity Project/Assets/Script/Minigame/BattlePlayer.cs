@@ -30,6 +30,7 @@ public class BattlePlayer : MonoBehaviour {
 	[System.Serializable]
 	public class MoveAnimation{
 		public MoveSet type;
+		public string Name;
 		public AnimationClip animation;
 	}
 

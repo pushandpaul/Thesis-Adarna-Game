@@ -167,6 +167,7 @@ GameObject:
   - 114: {fileID: 18090790}
   - 114: {fileID: 18090800}
   - 114: {fileID: 18090799}
+  - 114: {fileID: 18090801}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -393,16 +394,16 @@ MonoBehaviour:
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 312
-  zoom: 0.67000026
+  zoom: 0.66175056
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -351.2195
     width: 1664.7789
     height: 1293.1182
-  selectedBlock: {fileID: 18090741}
+  selectedBlock: {fileID: 18090796}
   selectedCommands:
-  - {fileID: 18090775}
+  - {fileID: 18090793}
   variables: []
   description: 
   stepPause: 0
@@ -1970,7 +1971,7 @@ MonoBehaviour:
   itemId: 720
   errorMessage: 
   indentLevel: 0
-  duration: 1.5
+  duration: 0.75
 --- !u!114 &18090794
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2030,9 +2031,10 @@ MonoBehaviour:
   commandList:
   - {fileID: 18090795}
   - {fileID: 18090794}
-  - {fileID: 18090793}
+  - {fileID: 18090801}
   - {fileID: 18090792}
   - {fileID: 18090791}
+  - {fileID: 18090793}
   - {fileID: 18090790}
   - {fileID: 18090797}
   - {fileID: 18090789}
@@ -2198,6 +2200,21 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &18090801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18090725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 730
+  errorMessage: 
+  indentLevel: 0
+  duration: 0.5
 --- !u!1 &31907810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,7 +2697,7 @@ Transform:
   - {fileID: 1572232330}
   - {fileID: 471842288}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
 --- !u!1 &540933559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,7 +3151,7 @@ Transform:
   - {fileID: 332178821}
   - {fileID: 1446367412}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
 --- !u!1 &1144475401
 GameObject:
   m_ObjectHideFlags: 0
