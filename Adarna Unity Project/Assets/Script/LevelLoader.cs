@@ -43,6 +43,8 @@ public class LevelLoader : MonoBehaviour {
 		ForestToArmenya = 32,
 		ReynoBahayNiErmits = 33,
 		ReynoGenericForest = 34,
+		ReynoBanyoNgPrinsesa = 35,
+		ReynoAgilaDropoff = 36,
 	}
 
 	public LevelSelect Levels;
