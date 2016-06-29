@@ -8,6 +8,7 @@ public class RespawnPoint : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
 			respawnManager.respawnPosition = this.transform.position;
+			respawnManager.storedFaceDirection = other.transform.localScale.x;
 		}
 	}
 }
