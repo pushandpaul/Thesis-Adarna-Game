@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   camera: {fileID: 0}
+  followThis: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
   lerpSpeed: {x: 0, y: 0}
@@ -391,6 +392,14 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
   m_IsPrefabParent: 0
@@ -497,6 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 0
   nextLocation: Dark Forest
+  isOpen: 1
 --- !u!61 &762603602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -671,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 1
   nextLocation: Forest to Mountain
+  isOpen: 1
 --- !u!61 &1136915466
 BoxCollider2D:
   m_ObjectHideFlags: 0

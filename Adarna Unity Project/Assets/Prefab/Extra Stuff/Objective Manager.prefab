@@ -318,6 +318,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &118556
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 469368}
+  - 114: {fileID: 11462572}
+  m_Layer: 0
+  m_Name: 'Reach: Maze'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &119006
 GameObject:
   m_ObjectHideFlags: 1
@@ -1005,6 +1021,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &156434
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400844}
+  - 114: {fileID: 11464996}
+  m_Layer: 0
+  m_Name: 'Start: Narrative (7-3)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &157286
 GameObject:
   m_ObjectHideFlags: 1
@@ -1222,7 +1254,7 @@ GameObject:
   - 4: {fileID: 401078}
   - 114: {fileID: 11414540}
   m_Layer: 0
-  m_Name: 'Reach: Maze'
+  m_Name: 'Reach: Agila Flying'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1492,7 +1524,7 @@ GameObject:
   - 4: {fileID: 460616}
   - 114: {fileID: 11431762}
   m_Layer: 0
-  m_Name: 'Interact: Maze'
+  m_Name: 'Start: Narrative (7-2)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1681,6 +1713,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 401232}
   m_RootOrder: 10
+--- !u!4 &400844
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
+  m_RootOrder: 9
 --- !u!4 &401078
 Transform:
   m_ObjectHideFlags: 1
@@ -1692,7 +1736,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470110}
-  m_RootOrder: 4
+  m_RootOrder: 8
 --- !u!4 &401232
 Transform:
   m_ObjectHideFlags: 1
@@ -2453,6 +2497,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470110}
   m_RootOrder: 2
+--- !u!4 &469368
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.762316, y: -7.4549556, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
+  m_RootOrder: 4
 --- !u!4 &470110
 Transform:
   m_ObjectHideFlags: 1
@@ -2467,10 +2523,12 @@ Transform:
   - {fileID: 450770}
   - {fileID: 469154}
   - {fileID: 411648}
-  - {fileID: 401078}
+  - {fileID: 469368}
   - {fileID: 460616}
   - {fileID: 451634}
   - {fileID: 470490}
+  - {fileID: 401078}
+  - {fileID: 400844}
   m_Father: {fileID: 480576}
   m_RootOrder: 7
 --- !u!4 &470482
@@ -3299,13 +3357,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Reach: Maze'
+  Name: 'Reach: Agila Flying'
   Description: 
   objectiveLocation: 7
   Kind: 0
   Status: 0
   OnReach: 0000000001000000
-  nextObjective: {fileID: 11431762}
+  nextObjective: {fileID: 11464996}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11414550
@@ -3720,7 +3778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Interact: Maze'
+  Name: 'Start: Narrative (7-2)'
   Description: "Hanapin ang tamang daan sa loob ng \u201Cmaze\u201D ng kabundukan
     at kagubatan upang makarating sa susunod na Ermitanyo."
   objectiveLocation: 39
@@ -3871,7 +3929,7 @@ MonoBehaviour:
   - {fileID: 176710}
   - {fileID: 182564}
   currentPartIndex: 7
-  currentObjective: {fileID: 11407156}
+  currentObjective: {fileID: 11431762}
   currentObjectiveIndex: 0
   objectivePanelFader: {fileID: 0}
   fadeDelay: 10
@@ -4231,6 +4289,26 @@ MonoBehaviour:
   nextObjective: {fileID: 11447356}
   objectiveIndex: 0
   textBoxDisplayed: 0
+--- !u!114 &11462572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Reach: Maze'
+  Description: 
+  objectiveLocation: 7
+  Kind: 0
+  Status: 0
+  OnReach: 0000000001000000
+  nextObjective: {fileID: 11431762}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
 --- !u!114 &11462574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4330,6 +4408,27 @@ MonoBehaviour:
   Status: 0
   OnReach: 010000000000000002000000
   nextObjective: {fileID: 11420588}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
+--- !u!114 &11464996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Start: Narrative (7-3)'
+  Description: Huwag hayaang malaglag ang agila! Pindutin ang 'E' para taasan ang
+    lipad!
+  objectiveLocation: 26
+  Kind: 0
+  Status: 0
+  OnReach: 010000000000000002000000
+  nextObjective: {fileID: 0}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11467142
@@ -4530,7 +4629,7 @@ MonoBehaviour:
   Kind: 1
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 0}
+  nextObjective: {fileID: 11414540}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11478888

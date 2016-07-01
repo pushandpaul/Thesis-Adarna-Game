@@ -7,6 +7,7 @@ public class RespawnManager : MonoBehaviour {
 	public float storedFaceDirection;
 
 	private PlayerController player;
+	public Transform toRespawn;
 	private MoveObject mover;
 
 	public enum RespawnRoutine{
@@ -16,11 +17,14 @@ public class RespawnManager : MonoBehaviour {
 	public RespawnRoutine respawnRoutine;
 
 	void Awake(){
-		player = FindObjectOfType<PlayerController>();
+		player = FindObjectOfType<PlayerController> ();
+		if(toRespawn == null){
+			toRespawn = player.transform;
+		}
 		mover = FindObjectOfType<MoveObject>();
 	}
 
-	void FadeAndRespawnf(){
+	public void FadeAndRespawnf(){
 		StartCoroutine(StartFadeAndSpawn());
 	}
 
@@ -41,14 +45,15 @@ public class RespawnManager : MonoBehaviour {
 		CameraController camera = FindObjectOfType<CameraController>();
 
 		fader.FadeIn(1, 2f, true);
-		player.canMove = false;
+		if(player != null)
+			player.canMove = false;
 
 		while(faderCanvasGroup.alpha != 1){
 			yield return null;
 		}
 
-		mover.punchMove(respawnPosition, player.transform);
-		player.transform.localScale = new Vector3 (storedFaceDirection, player.transform.localScale.y, player.transform.localScale.z);
+		mover.punchMove(respawnPosition, toRespawn);
+		toRespawn.localScale = new Vector3 (storedFaceDirection, toRespawn.localScale.y, toRespawn.localScale.z);
 		mover.punchMove(new Vector3(respawnPosition.x, respawnPosition.y, camera.transform.position.z), camera.transform);
 
 
@@ -56,6 +61,7 @@ public class RespawnManager : MonoBehaviour {
 			yield return null;
 		}
 
-		player.canMove = true;
+		if(player != null)
+			player.canMove = true;
 	}
 }
