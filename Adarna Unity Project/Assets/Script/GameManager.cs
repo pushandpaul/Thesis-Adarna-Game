@@ -72,6 +72,10 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 
+		foreach(Transform playableCharacter in playableCharacters){
+			playableCharacter.GetComponent<Animator> ().SetBool ("Ground", true);
+		}
+
 		//resetCharData("Don Pedro");
 		LevelManager.exitInRight = !spawnIsRight;
 		//LevelManager.setSpawnDirection (spawnIsRight);

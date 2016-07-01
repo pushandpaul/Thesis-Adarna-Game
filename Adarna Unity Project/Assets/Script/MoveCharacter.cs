@@ -23,7 +23,7 @@ public class MoveCharacter : MonoBehaviour {
 	public void moveCharacter(Transform character, Vector3 targetPosition){
 		//character = GameObject.Find (character.name).transform;
 		float duration = Mathf.Abs(targetPosition.x - character.position.x)/defaultSpeed;
-		StartCoroutine(startMoving(character, character.position, targetPosition, duration));
+		StartCoroutine(startMoving(character, character.position, targetPosition, false, Vector3.zero, duration));
 	}
 
 	public float _moveCharacter(Transform character, Vector3 targetPosition, float speed){
@@ -34,10 +34,44 @@ public class MoveCharacter : MonoBehaviour {
 	public void moveCharacter(Transform character, Vector3 targetPosition, float speed){
 		//character = GameObject.Find (character.name).transform;
 		float duration = Mathf.Abs(targetPosition.x - character.position.x)/speed;
-		StartCoroutine(startMoving(character, character.position, targetPosition, duration));
+		StartCoroutine(startMoving(character, character.position, targetPosition, false, Vector3.zero, duration));
 	}
 
-	IEnumerator startMoving(Transform character, Vector3 current, Vector3 target, float duration){
+
+	public void moveCharacter(Transform character, float pointsToMoveX, float targetPositionY, bool moveTowards, bool allowFlip, bool revertOrigScale, float duration){
+
+		Vector3 targetPosition = Vector3.zero;
+		Vector3 originalScale = character.localScale;
+
+		if(moveTowards){
+			if(character.localScale.x < 0){
+				targetPosition = new Vector3(character.position.x - pointsToMoveX, targetPositionY, character.position.z);
+			}
+			else if(character.localScale.x > 0){
+				targetPosition = new Vector3(character.position.x + pointsToMoveX, targetPositionY, character.position.z);
+			}
+		}
+		else{
+			if(character.localScale.x < 0){
+				targetPosition = new Vector3(character.position.x + pointsToMoveX, targetPositionY, character.position.z);
+				if(allowFlip){
+					flipCharacter (character, "r");
+				}
+			}
+			else if(character.localScale.x > 0){
+				Debug.Log ("Move to left");
+				targetPosition = new Vector3(character.position.x - pointsToMoveX, targetPositionY, character.position.z);
+				if(allowFlip){
+					flipCharacter (character, "l");
+				}
+			}
+		}
+
+		StartCoroutine(startMoving(character, character.position, targetPosition, revertOrigScale, originalScale, duration));
+
+	}
+
+	IEnumerator startMoving(Transform character, Vector3 current, Vector3 target, bool revertOrigScale, Vector3 originalScale, float duration){
 		float startTime = Time.time;
 		float endTime = startTime + duration;
 		bool animatorFound = false;
@@ -65,6 +99,10 @@ public class MoveCharacter : MonoBehaviour {
 			}
 			//yield return new WaitForFixedUpdate();
 			yield return null;
+		}
+
+		if(revertOrigScale && character.localScale != originalScale){
+			character.localScale = originalScale;
 		}
 
 		if(player != null){
