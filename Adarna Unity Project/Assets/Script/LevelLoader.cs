@@ -51,6 +51,13 @@ public class LevelLoader : MonoBehaviour {
 		ReynoMaze = 39,
 		//Minigame
 		MinigameAgila = 40,
+		ReynoCastleThrone = 41,
+		ReynoCastleHallway = 42,
+		ReynGardenHallway = 43,
+		ReynoPrinsesaHallway = 44,
+		ReynoKwartoNgHari = 45,
+		ReynoBalcony = 46,
+		ReynoMazeEntrance = 47,
 	}
 
 	public LevelSelect Levels;

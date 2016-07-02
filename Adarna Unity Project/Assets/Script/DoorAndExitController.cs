@@ -108,11 +108,11 @@ public class DoorAndExitController : MonoBehaviour {
 		ExitData tempExitData;
 
 		foreach(ExitManager currentExit in currentExits){
-			tempExits.Add(new ExitData(currentExit.name, false));
+			tempExits.Add(new ExitData(currentExit.name, currentExit.isOpen, false));
 		}
 
 		foreach(DoorHandler currentDoor in currentDoors){
-			tempExits.Add(new ExitData(currentDoor.name, true));
+			tempExits.Add(new ExitData(currentDoor.name, currentDoor.isOpen, true));
 		}
 
 		foreach(ExitData _tempExit in tempExits){
