@@ -112,27 +112,8 @@ public class NPCInteraction : MonoBehaviour {
 		}
 	}
 
-	/*public void flipCharacter(bool _facingRight) {
-		if(facingRight != _facingRight){
-			Debug.Log ("FACING RIGHT != _FACING RIGHT");
-			GetComponent<CircleCollider2D>().offset = new Vector2(colliderOffsetX, colliderOffsetY);
-			toFlip = true;
-		} else if(facingRight == _facingRight){
-			Debug.Log ("FACING RIGHT == _FACING RIGHT");
-			GetComponent<CircleCollider2D>().offset = new Vector2(-colliderOffsetX, colliderOffsetY);
-			toFlip = false;
-		}
-
-		if(!facingRight){
-			transform.localScale = new Vector3(-scaleX, scaleY, 1f);
-			//facingPlayer == true;
-		} else
-			transform.localScale = new Vector3(scaleX, scaleY, 1f);
-	}*/
-
 	void startDialogue(string toSend){
-		bubble.displayBubble (false);
-		flowchart.SendFungusMessage(toSend);
+		StartCoroutine(startingDialogue(toSend));
 	}
 
 	public void endDialogue(){
@@ -185,5 +166,34 @@ public class NPCInteraction : MonoBehaviour {
 			}
 			yield return null;
 		}
+	}
+
+	IEnumerator startingDialogue(string toSend){
+		MoveCharacter moveCharacter = FindObjectOfType<MoveCharacter>();
+		PlayerController player = FindObjectOfType<PlayerController>();
+		Animator playerAnim = player.GetComponentInChildren<Animator>();
+		float myColliderOffset= this.GetComponent<CircleCollider2D>().offset.x;
+		float myDiameter = (2 * this.GetComponent<CircleCollider2D>().radius);
+
+		if(myColliderOffset < 0){
+			myDiameter *= -1;
+		}
+
+		Vector3 targetPosition = new Vector3(this.transform.position.x + ( myColliderOffset + myDiameter), player.transform.position.y, player.transform.position.z);
+
+		Debug.Log(targetPosition);
+
+		player.canMove = false;
+		player.canJump = false;
+		bubble.displayBubble (false);
+
+		//May use in movecharacter in the future
+		while(player.transform.position != targetPosition){
+			player.transform.position = Vector3.MoveTowards(player.transform.position, targetPosition, Time.deltaTime * 4f);
+			playerAnim.SetFloat("Speed", Vector3.Distance(player.transform.position, targetPosition));
+			yield return null;
+		}
+
+		flowchart.SendFungusMessage(toSend);
 	}
 }

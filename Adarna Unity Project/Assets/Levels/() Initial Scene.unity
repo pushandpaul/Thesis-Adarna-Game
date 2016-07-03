@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 36
-  launchOnStart: 1
+  Levels: 0
+  launchOnStart: 0
 --- !u!4 &268044221
 Transform:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ Prefab:
       objectReference: {fileID: 307318458}
     - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: currentPartIndex
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: currentObjective
@@ -214,7 +214,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!114 &282122659 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11415592, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+  m_PrefabParentObject: {fileID: 11422338, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
     type: 2}
   m_PrefabInternal: {fileID: 282122658}
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
@@ -385,7 +385,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: currentCharacterName
-      value: Agila
+      value: Don Juan
       objectReference: {fileID: 0}
     - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: playerIdleState_string
@@ -486,6 +486,7 @@ GameObject:
   - 114: {fileID: 2063628295}
   - 114: {fileID: 2063628294}
   - 81: {fileID: 2063628293}
+  - 114: {fileID: 2063628289}
   m_Layer: 0
   m_Name: Test Flowchart
   m_TagString: Untagged
@@ -493,6 +494,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2063628289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eda577e5377faf40a3ac20ca67e738a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonString: 
 --- !u!81 &2063628293
 AudioListener:
   m_ObjectHideFlags: 0

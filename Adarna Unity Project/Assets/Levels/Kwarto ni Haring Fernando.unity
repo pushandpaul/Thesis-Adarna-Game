@@ -762,7 +762,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1089438695}
   - 114: {fileID: 1089438487}
-  - 114: {fileID: 1089438683}
   - 114: {fileID: 1089438679}
   - 114: {fileID: 1089438678}
   - 114: {fileID: 1089438677}
@@ -794,7 +793,6 @@ GameObject:
   - 114: {fileID: 1089438653}
   - 114: {fileID: 1089438530}
   - 114: {fileID: 1089438491}
-  - 114: {fileID: 1089438651}
   - 114: {fileID: 1089438488}
   - 114: {fileID: 1089438531}
   - 114: {fileID: 1089438528}
@@ -986,7 +984,6 @@ GameObject:
   - 114: {fileID: 1089438726}
   - 114: {fileID: 1089438727}
   - 114: {fileID: 1089438728}
-  - 114: {fileID: 1089438731}
   - 114: {fileID: 1089438733}
   - 114: {fileID: 1089438734}
   - 114: {fileID: 1089438735}
@@ -5270,20 +5267,6 @@ MonoBehaviour:
   - {fileID: 1089438639}
   - {fileID: 1089438638}
   - {fileID: 1089438633}
---- !u!114 &1089438651
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11456860, guid: 0394d566590b0ff4f807c6e0a64b8046,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1089438486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 0}
-  message: Temp
 --- !u!114 &1089438653
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5898,20 +5881,6 @@ MonoBehaviour:
   - {fileID: 1089438672}
   - {fileID: 1089438671}
   - {fileID: 1089438668}
---- !u!114 &1089438683
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11450554, guid: 0394d566590b0ff4f807c6e0a64b8046,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1089438486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 0}
-  message: Bert
 --- !u!4 &1089438695
 Transform:
   m_ObjectHideFlags: 0
@@ -7365,18 +7334,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1089438731
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1089438486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 0}
 --- !u!114 &1089438733
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8828,6 +8785,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1309014814}
   - 58: {fileID: 1309014813}
+  - 114: {fileID: 1309014815}
   m_Layer: 0
   m_Name: Dead End
   m_TagString: Untagged
@@ -8861,6 +8819,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!114 &1309014815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309014812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39174d65666337b4d991bb73d75457c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1373314817 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 166110, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}

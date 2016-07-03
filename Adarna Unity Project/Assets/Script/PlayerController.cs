@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using LitJson;
 
 public class PlayerController : MonoBehaviour {
 

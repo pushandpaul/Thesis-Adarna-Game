@@ -9,7 +9,7 @@ public class MatchTransform : MonoBehaviour {
 	public bool matchOnStart;
 	public bool matchPlayer;
 
-	void Start(){
+	void Awake(){
 		if(matchPlayer)
 			asBasis = FindObjectOfType<PlayerController>().transform;
 	}
