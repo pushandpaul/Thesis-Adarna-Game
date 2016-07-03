@@ -241,7 +241,11 @@ public class GameManager : MonoBehaviour {
 								tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
 							else
 								tempHashID = 0;
-							itemHeld = charData.item.getItem();
+							if(charData.item != null){
+								itemHeld = charData.item.getItem();
+							}
+							else 
+								itemHeld = null;
 						}
 								
 						characters[i] = new SavedCharData(charData.name, tempHashID, itemHeld);
@@ -266,7 +270,11 @@ public class GameManager : MonoBehaviour {
 							tempHashID = charData.anim.GetCurrentAnimatorStateInfo(0).shortNameHash;
 						else
 							tempHashID = 0;
-						itemHeld = charData.item.getItem();
+						if(charData.item != null){
+							itemHeld = charData.item.getItem();
+						}
+						else 
+							itemHeld = null;
 					}
 					characters.Add(new SavedCharData(charData.name, tempHashID, itemHeld));
 				}

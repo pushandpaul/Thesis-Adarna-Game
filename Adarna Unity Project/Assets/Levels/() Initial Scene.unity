@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 47
+  Levels: 36
   launchOnStart: 1
 --- !u!4 &268044221
 Transform:
@@ -177,17 +177,47 @@ Prefab:
       propertyPath: objectivePanelFader
       value: 
       objectReference: {fileID: 307318458}
-    - target: {fileID: 11407156, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-      propertyPath: nextObjective
+    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: currentPartIndex
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: currentObjective
       value: 
-      objectReference: {fileID: 2030681209}
+      objectReference: {fileID: 282122659}
+    - target: {fileID: 459308, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 474954, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 415522, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 456580, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 444674, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 466118, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &282122659 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 470110, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+--- !u!114 &282122659 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11415592, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+    type: 2}
   m_PrefabInternal: {fileID: 282122658}
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
 --- !u!114 &307318456 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11405266, guid: 04bcb44ab02be294cb8952acd44601b9,
@@ -293,10 +323,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11440800, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: currentExitsInScene.exits.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 422660, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -329,38 +355,47 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: currentCharacterName
-      value: Olikornyo
-      objectReference: {fileID: 0}
     - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -16.228374
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 12.456749
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22411596, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: -760
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22411596, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 32.45675
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: currentCharacterName
+      value: Agila
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: playerIdleState_string
+      value: (Agila) Idle with Nakasakay
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414266, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: currentHeldItem
+      value: 
+      objectReference: {fileID: 21300000, guid: 13b3d7e2b156fd149a52d7dd6f2ff1b2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
   m_IsPrefabParent: 0
@@ -435,55 +470,6 @@ Transform:
   - {fileID: 1121945661}
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!1 &2030681207
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 108738, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2030681208}
-  - 114: {fileID: 2030681209}
-  m_Layer: 0
-  m_Name: 'Talk: Haring Salermo (8-2)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2030681208
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 474954, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2030681207}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 282122659}
-  m_RootOrder: 3
---- !u!114 &2030681209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11407156, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2030681207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 'Talk: Haring Salermo (8-2)'
-  Description: Kausapin ang hari sa kanyang kwarto.
-  objectiveLocation: 26
-  Kind: 0
-  Status: 0
-  OnReach: 010000000000000002000000
-  nextObjective: {fileID: 0}
-  objectiveIndex: 0
-  textBoxDisplayed: 0
 --- !u!1 &2063628288
 GameObject:
   m_ObjectHideFlags: 0

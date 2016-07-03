@@ -400,9 +400,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 483036}
+  - 114: {fileID: 11480574}
+  - 95: {fileID: 9538738}
   m_Layer: 0
   m_Name: Haring Salermo
-  m_TagString: Untagged
+  m_TagString: Playable Character
   m_Icon: {fileID: -2663371497217273435, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,7 +613,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.71, y: -8.96, z: 0}
+  m_LocalPosition: {x: 14.46, y: -8.25, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 483036}
@@ -1051,6 +1053,23 @@ BoxCollider2D:
   m_Offset: {x: -0.1, y: 1.12}
   serializedVersion: 2
   m_Size: {x: 3.11, y: 6.48}
+--- !u!95 &9538738
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161122}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96e511ba362ba9d40a5f6d0af8c82912, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &9598988
 Animator:
   serializedVersion: 3
@@ -1159,7 +1178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partObjective:
   - part: 8
-    objectives: 0200000003000000
+    objectives: 030000000400000006000000
   isNPC: 1
   isObject: 0
 --- !u!114 &11480418
@@ -1180,6 +1199,24 @@ MonoBehaviour:
   portraits: []
   portraitsFace: 0
   description: 
+--- !u!114 &11480574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bff06d1c5a4f344087e864f688666c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  anim: {fileID: 0}
+  allowSave: 1
+  saveThis: 0
+  stateHashID: 0
+  heldItem: {fileID: 0}
+  state: 
 --- !u!114 &11488502
 MonoBehaviour:
   m_ObjectHideFlags: 1

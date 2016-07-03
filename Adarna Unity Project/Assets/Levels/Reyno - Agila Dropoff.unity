@@ -1005,6 +1005,7 @@ GameObject:
   - 114: {fileID: 1633076998}
   - 114: {fileID: 1633076999}
   - 114: {fileID: 1633077000}
+  - 114: {fileID: 1633077001}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1250,9 +1251,8 @@ MonoBehaviour:
   itemId: 305
   errorMessage: 
   indentLevel: 0
-  storyText: 'Asahan mong pagsapit ng ika-apat na oras ng madaling araw, tiyak na
-    darating ang hinahanap mong prinsesa. Tatlo silang magkakapatid ngunit ang pinakamaganda
-    ay ang mabait na si Dona Maria. '
+  storyText: Asahan mong pagsapit ng ika-apat na oras ng madaling araw, tiyak na darating
+    ang hinahanap mong prinsesa.
   description: 
   character: {fileID: 672965563}
   portrait: {fileID: 0}
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   itemId: 313
   errorMessage: 
   indentLevel: 0
-  animator: {fileID: 0}
+  animator: {fileID: 1754500816}
   stateName: (Agila) Idle with Nakasakay
   layer: -1
   time: 0
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   itemId: 314
   errorMessage: 
   indentLevel: 0
-  animator: {fileID: 0}
+  animator: {fileID: 1754500816}
   stateName: (Agila) Idle
   layer: -1
   time: 0
@@ -1620,7 +1620,7 @@ MonoBehaviour:
       typeFullname: System.Single
       intValue: 0
       boolValue: 0
-      floatValue: 10
+      floatValue: 20
       stringValue: 
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
@@ -1705,7 +1705,7 @@ MonoBehaviour:
       typeFullname: System.Single
       intValue: 0
       boolValue: 0
-      floatValue: 5
+      floatValue: 4
       stringValue: 
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
@@ -1721,6 +1721,32 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1633077001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1633076983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 317
+  errorMessage: 
+  indentLevel: 0
+  storyText: 'Tatlo silang magkakapatid ngunit ang pinakamaganda ay ang mabait na
+    si Dona Maria. '
+  description: 
+  character: {fileID: 672965563}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
 --- !u!114 &1633077067
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2047,6 +2073,7 @@ MonoBehaviour:
   - {fileID: 1633076988}
   - {fileID: 1633077069}
   - {fileID: 1633076989}
+  - {fileID: 1633077001}
   - {fileID: 1633076990}
   - {fileID: 1633076991}
   - {fileID: 1633076993}
@@ -2162,7 +2189,7 @@ MonoBehaviour:
     height: 1163.2374
   selectedBlock: {fileID: 1633077075}
   selectedCommands:
-  - {fileID: 1633077000}
+  - {fileID: 1633076990}
   variables: []
   description: 
   stepPause: 0
@@ -2279,6 +2306,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 396cb3f2792170b419e6a8e8fbb4850c, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &1754500816 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9507734, guid: 396cb3f2792170b419e6a8e8fbb4850c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1754500815}
 --- !u!1 &1759552097
 GameObject:
   m_ObjectHideFlags: 0
