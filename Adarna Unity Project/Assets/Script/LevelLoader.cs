@@ -58,6 +58,8 @@ public class LevelLoader : MonoBehaviour {
 		ReynoKwartoNgHari = 45,
 		ReynoBalcony = 46,
 		ReynoMazeEntrance = 47,
+		ReynoLabasNgPalasyo = 48,
+		ReynoTrigo = 49,
 	}
 
 	public LevelSelect Levels;

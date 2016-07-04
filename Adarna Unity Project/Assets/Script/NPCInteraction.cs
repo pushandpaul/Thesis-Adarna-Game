@@ -53,7 +53,14 @@ public class NPCInteraction : MonoBehaviour {
 			anObjective = false;
 			message = this.name;
 		}
-		flowchart = FindObjectOfType<Flowchart>();
+
+		foreach(Flowchart _flowchart in FindObjectsOfType<Flowchart>()){
+			if(_flowchart.tag != "Global Flowchart"){
+				flowchart = _flowchart;
+			}
+		}
+
+		//flowchart = FindObjectOfType<Flowchart>();
 
 		player = FindObjectOfType<PlayerController>();
 		colliderOffsetX = this.GetComponent<CircleCollider2D>().offset.x;
@@ -172,14 +179,23 @@ public class NPCInteraction : MonoBehaviour {
 		MoveCharacter moveCharacter = FindObjectOfType<MoveCharacter>();
 		PlayerController player = FindObjectOfType<PlayerController>();
 		Animator playerAnim = player.GetComponentInChildren<Animator>();
-		float myColliderOffset= this.GetComponent<CircleCollider2D>().offset.x;
-		float myDiameter = (2 * this.GetComponent<CircleCollider2D>().radius);
 
-		if(myColliderOffset < 0){
-			myDiameter *= -1;
+		CircleCollider2D myCollider = this.GetComponent<CircleCollider2D>();
+		float myColliderRadius = myCollider.radius;
+		float targetDistance = 0f;
+
+		if(!onlyTrigger){
+			myColliderRadius *= Mathf.Abs(transform.localScale.x);
+		}
+		else
+			myColliderRadius *= Mathf.Abs(transform.parent.localScale.x);
+
+		targetDistance = Mathf.Abs(myCollider.offset.x) + myColliderRadius + (player.GetComponent<BoxCollider2D>().size.x * Mathf.Abs(player.transform.localScale.x)/2); 
+		if(player.transform.localScale.x > 0){
+			targetDistance *= -1;
 		}
 
-		Vector3 targetPosition = new Vector3(this.transform.position.x + ( myColliderOffset + myDiameter), player.transform.position.y, player.transform.position.z);
+		Vector3 targetPosition = new Vector3(this.transform.position.x + targetDistance, player.transform.position.y, player.transform.position.z);
 
 		Debug.Log(targetPosition);
 

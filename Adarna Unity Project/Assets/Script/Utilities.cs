@@ -66,4 +66,8 @@ public class Utilities : MonoBehaviour {
 	public void addToCollect(string Name, bool carryItem, AnimationClip collectAnimation, Sprite icon){
 		FindObjectOfType<ItemCollectionManager> ().AddToCollect (Name, carryItem, collectAnimation, icon);
 	}
+
+	public void activateTalasalitaan (string salita){
+		FindObjectOfType<TalasalitaanManager>().ActivateTalasalitaan(salita);
+	}
 }

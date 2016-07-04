@@ -888,6 +888,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 684292370}
   - 61: {fileID: 684292369}
+  - 114: {fileID: 684292371}
   m_Layer: 0
   m_Name: Dead End
   m_TagString: Untagged
@@ -921,6 +922,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &684292371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684292368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39174d65666337b4d991bb73d75457c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &717120598 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 138596, guid: 921e681d5b3a6a048aeb949dd3c47439, type: 2}
@@ -1386,6 +1398,7 @@ GameObject:
   - 114: {fileID: 998850509}
   - 114: {fileID: 998850510}
   - 114: {fileID: 998850511}
+  - 114: {fileID: 998850512}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1486,6 +1499,7 @@ MonoBehaviour:
   - {fileID: 998850442}
   - {fileID: 998850500}
   - {fileID: 998850441}
+  - {fileID: 998850512}
   - {fileID: 998850445}
   - {fileID: 998850446}
   - {fileID: 998850449}
@@ -2277,7 +2291,7 @@ MonoBehaviour:
     height: 1163.2374
   selectedBlock: {fileID: 998850375}
   selectedCommands:
-  - {fileID: 998850477}
+  - {fileID: 998850422}
   variables: []
   description: 
   stepPause: 0
@@ -5160,7 +5174,7 @@ MonoBehaviour:
   duration: 0.5
 --- !u!114 &998850494
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5221,7 +5235,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850495
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5265,7 +5279,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850496
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5309,7 +5323,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850497
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5324,7 +5338,7 @@ MonoBehaviour:
   duration: 2
 --- !u!114 &998850498
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5342,7 +5356,7 @@ MonoBehaviour:
   time: 0
 --- !u!114 &998850499
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5386,7 +5400,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850500
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5401,7 +5415,7 @@ MonoBehaviour:
   duration: 1
 --- !u!114 &998850501
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5479,7 +5493,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850502
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5494,7 +5508,7 @@ MonoBehaviour:
   duration: 2
 --- !u!114 &998850503
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5519,7 +5533,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &998850504
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5534,7 +5548,7 @@ MonoBehaviour:
   duration: 1
 --- !u!114 &998850505
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5552,7 +5566,7 @@ MonoBehaviour:
   time: 0
 --- !u!114 &998850506
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5596,7 +5610,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850507
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5623,7 +5637,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850508
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5667,7 +5681,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850509
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5711,7 +5725,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850510
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5755,7 +5769,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &998850511
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998850374}
@@ -5797,6 +5811,24 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &998850512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998850374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 439
+  errorMessage: 
+  indentLevel: 0
+  animator: {fileID: 203288471}
+  stateName: (Donya Maria - Towel) Idle
+  layer: -1
+  time: 0
 --- !u!1 &1022071313
 GameObject:
   m_ObjectHideFlags: 0

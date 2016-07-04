@@ -118,14 +118,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   camera: {fileID: 0}
+  followThis: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
   lerpSpeed: {x: 0, y: 0}
   bounds: {fileID: 228237635}
   defaultXOffset: 5
   defaultYOffset: 1
-  changedYOffset: 1
+  defaultZoomSize: 3.5
   zoomSize: 3.5
+  initialCamSize: 0
+  defaultZoomDuration: 2
   isFollowing: 1
   flipped: 0
   isCenter: 0
@@ -285,6 +288,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisDoorIndex: 0
   nextLocation: Bahay ni Ermitanyo
+  doorPlacementUp: 1
+  isOpen: 1
+  closedMessageDisplayed: 0
   waitForPress: 0
 --- !u!61 &122376979
 BoxCollider2D:
@@ -4347,6 +4353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f3e656763786345bcf7e03f2c3c74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  includedInMassCollect: 0
 --- !u!114 &925208925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4360,6 +4367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   destroyed: 0
+  persistLookDirection: 0
 --- !u!1 &1020292923
 GameObject:
   m_ObjectHideFlags: 0
@@ -4581,6 +4589,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1309014814}
   - 58: {fileID: 1309014813}
+  - 114: {fileID: 1309014815}
   m_Layer: 0
   m_Name: Dead End
   m_TagString: Untagged
@@ -4614,6 +4623,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &1309014815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309014812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39174d65666337b4d991bb73d75457c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1371138917
 Prefab:
   m_ObjectHideFlags: 0
@@ -5089,3 +5109,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   destroyed: 0
+  persistLookDirection: 0

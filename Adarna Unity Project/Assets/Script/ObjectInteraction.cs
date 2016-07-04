@@ -26,7 +26,13 @@ public class ObjectInteraction : MonoBehaviour {
 			anObjective = false;
 		}
 
-		flowchart = FindObjectOfType<Flowchart>();
+		foreach(Flowchart _flowchart in FindObjectsOfType<Flowchart>()){
+			if(_flowchart.tag != "Global Flowchart"){
+				flowchart = _flowchart;
+			}
+		}
+
+		//flowchart = FindObjectOfType<Flowchart>();
 		player = FindObjectOfType<PlayerController>();
 	}
 	

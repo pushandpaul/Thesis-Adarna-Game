@@ -155,6 +155,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &165784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 415908}
+  - 114: {fileID: 11420962}
+  m_Layer: 0
+  m_Name: Global Flowchart
+  m_TagString: Global Flowchart
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &166642
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +180,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 422660}
   - 114: {fileID: 11414266}
+  - 114: {fileID: 11430086}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -253,7 +270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422660}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &402076
 Transform:
   m_ObjectHideFlags: 1
@@ -265,7 +282,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422660}
-  m_RootOrder: 5
+  m_RootOrder: 6
+--- !u!4 &415908
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 422660}
+  m_RootOrder: 0
 --- !u!4 &422660
 Transform:
   m_ObjectHideFlags: 1
@@ -276,6 +305,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 415908}
   - {fileID: 473434}
   - {fileID: 423242}
   - {fileID: 400274}
@@ -297,7 +327,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422660}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &473434
 Transform:
   m_ObjectHideFlags: 1
@@ -309,7 +339,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422660}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &478478
 Transform:
   m_ObjectHideFlags: 1
@@ -321,7 +351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422660}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &496366
 Transform:
   m_ObjectHideFlags: 1
@@ -333,7 +363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422660}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &11402864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -399,10 +429,10 @@ MonoBehaviour:
   currentScene: 
   prevScene: 
   timeOfDay: 100
-  currentHeldItem: {fileID: 0}
+  currentHeldItem: {fileID: 21300000, guid: 13b3d7e2b156fd149a52d7dd6f2ff1b2, type: 3}
   initPlayerIdleStateHash: 0
   playerIdleState: 0
-  playerIdleState_string: Idle
+  playerIdleState_string: (Agila) Idle with Nakasakay
   playerSpeed: 5
   Followers: []
   FollowerNames: []
@@ -420,7 +450,7 @@ MonoBehaviour:
   - {fileID: 459858, guid: 396cb3f2792170b419e6a8e8fbb4850c, type: 2}
   - {fileID: 494200, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
   - {fileID: 483036, guid: 18d755645851b9442b6efc1f61a1a3eb, type: 2}
-  currentCharacterName: Don Juan
+  currentCharacterName: Agila
   defaultCharacterName: Don Juan
 --- !u!114 &11420684
 MonoBehaviour:
@@ -462,6 +492,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!114 &11420962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1.0
+  scrollPos: {x: 0, y: 0}
+  variablesScrollPos: {x: 0, y: 0}
+  variablesExpanded: 1
+  blockViewHeight: 400
+  zoom: 1
+  scrollViewRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  selectedBlock: {fileID: 0}
+  selectedCommands: []
+  variables: []
+  description: 
+  stepPause: 0
+  colorCommands: 1
+  hideComponents: 1
+  saveSelection: 1
+  localizationId: 
+  hideCommands: []
 --- !u!114 &11424598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -475,6 +538,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &11430086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b6b0497e677f34bafe089de956d3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talasalitaanList:
+    talasalitaan: []
+  talasalitaanJsonPath: \StreamingAssets\Text\test.json
 --- !u!114 &11437672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -842,7 +919,7 @@ RectTransform:
   - {fileID: 22411596}
   - {fileID: 22487964}
   m_Father: {fileID: 422660}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -947,7 +1024,7 @@ RectTransform:
   - {fileID: 22450702}
   - {fileID: 22481850}
   m_Father: {fileID: 422660}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

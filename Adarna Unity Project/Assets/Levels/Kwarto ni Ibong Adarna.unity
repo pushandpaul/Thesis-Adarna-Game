@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   camera: {fileID: 0}
+  followThis: {fileID: 0}
   margin: {x: 1, y: 0}
   smoothing: {x: 2, y: 2}
   lerpSpeed: {x: 0, y: 0}
@@ -513,6 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 1
   nextLocation: Kwarto ni Don Juan
+  isOpen: 1
 --- !u!61 &385387628
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9167,6 +9169,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1309014814}
   - 58: {fileID: 1309014813}
+  - 114: {fileID: 1309014815}
   m_Layer: 0
   m_Name: Dead End
   m_TagString: Untagged
@@ -9200,6 +9203,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!114 &1309014815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309014812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39174d65666337b4d991bb73d75457c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1321066031
 Prefab:
   m_ObjectHideFlags: 0
@@ -9412,6 +9426,8 @@ MonoBehaviour:
   thisDoorIndex: 0
   nextLocation: Castle - 2nd Floor
   doorPlacementUp: 1
+  isOpen: 1
+  closedMessageDisplayed: 0
   waitForPress: 0
 --- !u!61 &1635798127
 BoxCollider2D:
@@ -9527,6 +9543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 1
   nextLocation: Castle - Walkway
+  isOpen: 1
 --- !u!61 &1705037631
 BoxCollider2D:
   m_ObjectHideFlags: 0
