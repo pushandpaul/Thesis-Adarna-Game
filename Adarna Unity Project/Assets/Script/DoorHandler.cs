@@ -16,19 +16,25 @@ public class DoorHandler : MonoBehaviour {
 	private bool playerInZone;
 	public bool waitForPress;
 
-	private ScreenFader screenFader;
 	private LevelManager levelManager;
 	private GameManager gameManager;
-	// Use this for initialization
-	void Start(){
-		screenFader = FindObjectOfType<ScreenFader>();
+	private LevelLoader levelLoader;
+
+	void Awake(){
 		levelManager = FindObjectOfType<LevelManager>();
 		gameManager = FindObjectOfType<GameManager>();
+		levelLoader = FindObjectOfType<LevelLoader>();
+
+		if(levelLoader == null){
+			levelLoader = this.gameObject.AddComponent<LevelLoader>();
+			levelLoader.Init();
+		}
 
 		if(doorPlacementUp)
 			openDoorButton = KeyCode.W;
 		else
 			openDoorButton = KeyCode.S;
+
 	}
 
 	void Update () {
@@ -46,9 +52,7 @@ public class DoorHandler : MonoBehaviour {
 				//LevelManager.exitInRight = defaultSpawnLeft;
 				LevelManager.isDoor = true;
 				LevelManager.doorIndex = thisDoorIndex;
-				levelManager.onLevelExit();
-				StartCoroutine(ChangeLevel());
-				//SceneManager.LoadScene(nextLocation);
+				levelLoader.launchScene(nextLocation);
 			}
 		}
 		else{
@@ -56,9 +60,7 @@ public class DoorHandler : MonoBehaviour {
 				//LevelManager.exitInRight = defaultSpawnLeft;
 				LevelManager.isDoor = true;
 				LevelManager.doorIndex = thisDoorIndex;
-				levelManager.onLevelExit();
-				StartCoroutine(ChangeLevel());
-				//SceneManager.LoadScene(nextLocation);
+				levelLoader.launchScene(nextLocation);
 			}
 		}
 	}
@@ -78,11 +80,5 @@ public class DoorHandler : MonoBehaviour {
 			playerInZone = false;
 			closedMessageDisplayed = false;
 		}
-	}
-
-	IEnumerator ChangeLevel(){
-		float fadeTime = screenFader.BeginFade(1);
-		yield return new WaitForSeconds(fadeTime);
-		SceneManager.LoadScene(nextLocation);
 	}
 }

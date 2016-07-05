@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour {
 		//resetCharData("Don Pedro");
 		LevelManager.exitInRight = !spawnIsRight;
 		//LevelManager.setSpawnDirection (spawnIsRight);
+
 	}
 		
 	public void updateSceneList(){

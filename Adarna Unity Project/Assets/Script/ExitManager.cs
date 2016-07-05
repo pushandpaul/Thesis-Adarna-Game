@@ -10,11 +10,9 @@ public class ExitManager : MonoBehaviour {
 
 	private LevelManager levelManager;
 	private GameManager gameManager;
-	private ScreenFader screenFader;
 	//public FollowTarget followers;
 
-	void Start(){
-		screenFader = FindObjectOfType<ScreenFader>();
+	void Awake(){
 		levelManager = FindObjectOfType<LevelManager>();
 		gameManager = FindObjectOfType<GameManager>();
 	}
@@ -22,6 +20,12 @@ public class ExitManager : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other){
 		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
 		MoveCharacter moveCharacter = FindObjectOfType<MoveCharacter>();
+		LevelLoader levelLoader = FindObjectOfType<LevelLoader>();
+
+		if(levelLoader == null){
+			levelLoader = this.gameObject.AddComponent<LevelLoader>();
+			//levelLoader.Init();
+		}
 
 		Vector3 playerPositionWhenClosed = new Vector3();
 		string playerFlipDirection = "";
@@ -30,9 +34,7 @@ public class ExitManager : MonoBehaviour {
 			if(isOpen){
 				LevelManager.isDoor = false;
 				LevelManager.exitInRight = isRight;
-				if(levelManager != null)
-					levelManager.onLevelExit();
-				StartCoroutine(ChangeLevel());
+				levelLoader.launchScene(nextLocation);
 			}
 			else{
 				Debug.Log("Exit closed!");
@@ -58,11 +60,5 @@ public class ExitManager : MonoBehaviour {
 
 	public void setIsOpen(bool isOpen){
 		this.isOpen = isOpen;
-	}
-
-	IEnumerator ChangeLevel(){
-		float fadeTime = screenFader.BeginFade(1);
-		yield return new WaitForSeconds(fadeTime);
-		SceneManager.LoadScene(nextLocation);
 	}
 }

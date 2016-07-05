@@ -11,21 +11,19 @@ public class UIFader : MonoBehaviour {
 	}
 
 	public void FadeIn(int outDelay, float duration, bool autoFadeOut){
-		StopAllCoroutines();
 		StartCoroutine(InFade(outDelay, duration, autoFadeOut));
 	}
 
 	public void FadeOut(int delay, float duration){
-		StopAllCoroutines();
 		StartCoroutine(OutFade(delay, duration));
 	}
 
 	public void FadeTo(float duration, float target){
-		StopAllCoroutines();
 		StartCoroutine(ToFade(duration, canvasGroup.alpha, target));
 	}
 
 	IEnumerator InFade(int outDelay, float duration, bool autoFadeOut){
+		canvasGroup.gameObject.SetActive(true);
 		while(canvasGroup.alpha < 1){
 			canvasGroup.alpha += Time.deltaTime*duration;
 			//Debug.Log("Fading in");
@@ -48,7 +46,6 @@ public class UIFader : MonoBehaviour {
 	}
 
 	IEnumerator ToFade(float duration, float initial, float target){
-
 		if(initial > target){
 			while(canvasGroup.alpha > target){
 				canvasGroup.alpha -= Time.deltaTime*duration;

@@ -23,6 +23,7 @@ public class Objective : MonoBehaviour {
 		DisplayToTextBox = 2,
 		LoadScene = 3,
 		LoadNextPart = 4,
+		LoadAssessment = 5,
 		//IfPlayAnimation = 3,
 	}
 
@@ -60,13 +61,15 @@ public class Objective : MonoBehaviour {
 		if (this.OnReach.Contains (ActionOnReach.LoadNextPart)) {
 			manager.nextPart ();
 		}
+
+		if(this.OnReach.Contains(ActionOnReach.LoadAssessment)){
+			loadAssessment();
+		}
 		if(nextObjective != null){
 			manager.currentObjective = this.nextObjective;
 			if(manager.currentObjective.OnReach.Contains(ActionOnReach.DisplayToTextBox)){
 				displayToTextBox();
 			}
-			else
-				textBox.disableTextBox();
 				
 			manager.currentObjectiveIndex = this.nextObjective.objectiveIndex;
 		}
@@ -77,7 +80,28 @@ public class Objective : MonoBehaviour {
 	}
 
 	private void displayToTextBox(){
-		textBox.enableTextBox();
 		textBox.setText(manager.currentObjective.Description);
+	}
+
+	private void loadAssessment(){
+		StartCoroutine(startLoadAssesssment());
+	}
+
+	IEnumerator startLoadAssesssment(){
+		LevelLoader levelLoader = FindObjectOfType<LevelLoader>();
+
+		while(!DialogueController.inDialogue){
+			yield return null;
+		}
+
+		while(DialogueController.inDialogue){
+			yield return null;
+		}
+
+		yield return new WaitForSeconds(1);
+
+		if(levelLoader != null){
+			levelLoader.launchScene("() Assessment");
+		}
 	}
 }
