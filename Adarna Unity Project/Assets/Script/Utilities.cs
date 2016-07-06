@@ -68,6 +68,13 @@ public class Utilities : MonoBehaviour {
 	}
 
 	public void activateTalasalitaan (string salita){
-		FindObjectOfType<TalasalitaanManager>().ActivateTalasalitaan(salita);
+		FindObjectOfType<TalasalitaanManager>().Activate(salita);
+	}
+
+	public void activateTalasalitaanInPart(string salita){
+		FindObjectOfType<TalasalitaanManager>().ActivateInPart(salita);
+	}
+	public void activateTalasalitaanInPart(int part, string salita){
+		FindObjectOfType<TalasalitaanManager>().ActivateInPart(salita, part);
 	}
 }

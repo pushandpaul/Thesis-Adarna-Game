@@ -35,6 +35,9 @@ public class DialogueController : MonoBehaviour {
 		enableInteraction(false);
 		DoorHandler[] doors = FindObjectsOfType<DoorHandler>();
 
+		StopAllCoroutines();
+		StartCoroutine(fadeObjectivePanel());
+
 		foreach(DoorHandler door in doors){
 			door.isOpen = false;
 		}
@@ -52,11 +55,6 @@ public class DialogueController : MonoBehaviour {
 
 		if(zoomCam)
 			camera.Zoom();
-
-		objectivePanelFader.canvasGroup.alpha = 0;
-		//objectiveTextBox.disableTextBox();
-		//objectivePanelFader.FadeOut(0);
-
 	}
 
 	public void endDialogue(){
@@ -80,13 +78,6 @@ public class DialogueController : MonoBehaviour {
 
 		if(zoomCam)
 			camera.Zoom(camera.initialCamSize);
-		
-		if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox) && !objectiveManager.currentObjective.textBoxDisplayed){
-			Debug.Log("Allowed fade in");
-			//objectiveTextBox.enableTextBox();
-			objectivePanelFader.FadeIn(objectiveManager.fadeDelay, objectiveManager.panelFaderSpeed, true);
-			objectiveManager.currentObjective.textBoxDisplayed = true;
-		}
 	}
 
 	void enableInteraction(bool enable){
@@ -99,6 +90,19 @@ public class DialogueController : MonoBehaviour {
 
 		foreach(ObjectInteraction objectInteraction in objectsInteraction){
 			objectInteraction.GetComponent<Collider2D>().enabled = enable;
+		}
+	}
+
+	IEnumerator fadeObjectivePanel(){
+		objectivePanelFader.canvasGroup.alpha = 0;
+
+		while(DialogueController.inDialogue){
+			yield return null;
+		}
+
+		if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox)){
+			objectiveManager.currentObjective.displayToTextBox();
+			objectivePanelFader.FadeIn(objectiveManager.fadeDelay, objectiveManager.panelFaderSpeed, true);
 		}
 	}
 }

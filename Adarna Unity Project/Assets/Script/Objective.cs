@@ -67,10 +67,6 @@ public class Objective : MonoBehaviour {
 		}
 		if(nextObjective != null){
 			manager.currentObjective = this.nextObjective;
-			if(manager.currentObjective.OnReach.Contains(ActionOnReach.DisplayToTextBox)){
-				displayToTextBox();
-			}
-				
 			manager.currentObjectiveIndex = this.nextObjective.objectiveIndex;
 		}
 	}
@@ -79,7 +75,7 @@ public class Objective : MonoBehaviour {
 		Debug.Log("Dialogue Started");
 	}
 
-	private void displayToTextBox(){
+	public void displayToTextBox(){
 		textBox.setText(manager.currentObjective.Description);
 	}
 

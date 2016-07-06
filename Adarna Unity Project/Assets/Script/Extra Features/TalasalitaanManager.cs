@@ -26,23 +26,53 @@ public class TalasalitaanManager : MonoBehaviour {
 		string jsonString = File.ReadAllText(Application.dataPath + talasalitaanJsonPath);
 
 		partDataList = JsonUtility.FromJson<PartDataList>(jsonString);
-
-		ActivateTalasalitaan("salita1");
 	}
 
-	public void ActivateTalasalitaan(string salita){
-		//SearchTalasalitaan(salita).activated = true;
+	private void Activate(Talasalitaan talasalitaan){
+		if(talasalitaan != null){
+			Debug.Log("Found talasalitaan '" + talasalitaan.salita + "'.");
+			talasalitaan.activated = true;
+		}
 	}
 
-	public Talasalitaan SearchTalasalitaan(string salita){
-		/*foreach(Talasalitaan talasalitaan in talasalitaanList.talasalitaan){
-			if(salita == talasalitaan.salita){
+	public void Activate(string salita){
+		Activate(Search(salita));
+	}
+
+	public void ActivateInPart(string salita, int index){
+		Activate(SearchInPart(salita, index));
+	}
+
+	public void ActivateInPart(string salita){
+		Activate(SearchInPart(salita));
+	} 
+
+
+	public Talasalitaan Search(string salita){
+		foreach(PartData partData in partDataList.partsData){
+			foreach(Talasalitaan talasalitaan in partData.talasalitaans){
+				if(talasalitaan.salita.ToLower() == salita.ToLower()){
+					return talasalitaan;
+				}
+			}
+		}
+		return null;
+	}
+
+	public Talasalitaan SearchInPart(string salita){
+		return SearchInPart(salita, FindObjectOfType<ObjectiveManager>().currentPartIndex);
+	}
+
+
+	public Talasalitaan SearchInPart(string salita, int index){
+		foreach(Talasalitaan talasalitaan in partDataList.partsData[index].talasalitaans){
+			if(talasalitaan.salita.ToLower() == salita.ToLower()){
 				return talasalitaan;
 			}
 		}
-		return null;*/
 		return null;
 	}
+
 
 	public void RewriteJson(){
 		string jsonString = JsonUtility.ToJson(partDataList);

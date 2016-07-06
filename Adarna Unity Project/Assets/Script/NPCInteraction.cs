@@ -69,7 +69,6 @@ public class NPCInteraction : MonoBehaviour {
 		if(anObjective){
 			StartCoroutine(displaySpeechBubble());
 		}
-
 	}
 	
 	// Update is called once per frame
@@ -183,6 +182,7 @@ public class NPCInteraction : MonoBehaviour {
 		CircleCollider2D myCollider = this.GetComponent<CircleCollider2D>();
 		float myColliderRadius = myCollider.radius;
 		float targetDistance = 0f;
+
 
 		if(!onlyTrigger){
 			myColliderRadius *= Mathf.Abs(transform.localScale.x);
