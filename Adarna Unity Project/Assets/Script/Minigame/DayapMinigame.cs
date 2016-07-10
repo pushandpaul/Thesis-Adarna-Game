@@ -14,6 +14,7 @@ public class DayapMinigame : MonoBehaviour {
 	public Image[] dayapUI;
 	private ObjectiveManager objectiveManager;
 	private UIFader objectiveUIFader;
+	private GenericMinigameManger minigameManager;
 
 	public Sprite dayap;
 	public ItemToGive itemToGive;
@@ -44,14 +45,20 @@ public class DayapMinigame : MonoBehaviour {
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		objectiveUIFader = objectiveManager.objectivePanelFader;
 		timer = FindObjectOfType<Timer>();
+		minigameManager = GetComponent<GenericMinigameManger>();
+
+		player.canMove = false;
+		player.canJump = false;
 
 		//timer.startTimer();
 		//endMiniGame("End on Start");
 	}
 	void Update () {
-		if(objectiveUIFader.canvasGroup.alpha > 0)
+
+		if(!minigameManager.checkCanStart()){
 			return;
-		else if(objectiveUIFader.canvasGroup.alpha == 0 && !timerStarted){
+		}
+		else if(minigameManager.checkCanStart() && !timerStarted){
 			startMiniGame();
 			timerStarted = true;
 		}

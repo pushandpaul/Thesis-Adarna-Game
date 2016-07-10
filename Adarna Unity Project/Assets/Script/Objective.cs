@@ -66,8 +66,12 @@ public class Objective : MonoBehaviour {
 			loadAssessment();
 		}
 		if(nextObjective != null){
+			
 			manager.currentObjective = this.nextObjective;
 			manager.currentObjectiveIndex = this.nextObjective.objectiveIndex;
+			if(!this.OnReach.Contains(ActionOnReach.StartDialogue) && manager.currentObjective.OnReach.Contains(ActionOnReach.DisplayToTextBox)){
+				manager.currentObjective.displayToTextBox();
+			}
 		}
 	}
 

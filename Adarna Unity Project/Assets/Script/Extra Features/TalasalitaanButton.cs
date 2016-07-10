@@ -9,9 +9,13 @@ public class TalasalitaanButton : MonoBehaviour {
 	public Button button;
 	private Transform halimbawaUI;
 	private TalasalitaanManager talasalitaanManager;
+	private Talasalitaan talasalitaaMatch;
 
 	public string halimbawa;
-	public int clicks = 0;
+	public bool inHalimbawa = false;
+
+	public bool newlyActivated;
+	public GameObject notif;
 
 	void Awake(){
 		salitaUI.text = "????";
@@ -20,21 +24,27 @@ public class TalasalitaanButton : MonoBehaviour {
 		halimbawaUI = talasalitaanManager.halimbawaUI;
 	}
 
-	public void SetTexts(string salita, string kasingKahulugan, string halimbawa){
-		salitaUI.text = salita;
-		kasingKahuluganUI.text = kasingKahulugan;
-		this.halimbawa = halimbawa;
+	public void Init(Talasalitaan talasalitaan){
+		talasalitaaMatch = talasalitaan;
+		salitaUI.text = talasalitaan.salita;
+		kasingKahuluganUI.text = talasalitaan.kasingKahulugan;
+		halimbawa = talasalitaan.halimbawa;
+		newlyActivated = talasalitaan.newlyActivated;
+
+		notif.SetActive(newlyActivated);
 	}
 
 	public void ShowExample(){
+		talasalitaaMatch.newlyActivated = false;
+		notif.SetActive(false);
 
 		foreach(TalasalitaanButton talasalitaanButton in talasalitaanManager.talasalitaanBtns){
 			if(talasalitaanButton != this){
-				talasalitaanButton.clicks = 0;
+				talasalitaanButton.inHalimbawa = false;
 			}
 		}
 
-		if(clicks == 0){
+		if(!inHalimbawa){
 			if(!halimbawaUI.gameObject.activeSelf)
 				halimbawaUI.gameObject.SetActive(true);
 
@@ -45,15 +55,13 @@ public class TalasalitaanButton : MonoBehaviour {
 				halimbawaUI.SetSiblingIndex(this.transform.GetSiblingIndex());
 
 			talasalitaanManager.halimbawaUIText.text = halimbawa;
+			inHalimbawa = true;
 		}
 
-		else if (clicks == 1){
+		else if (inHalimbawa){
 			halimbawaUI.gameObject.SetActive(false);
-			clicks = 0;
+			inHalimbawa = false;
 		}
-
-		clicks++;
-
 	}
 
 	public void playAudio(){

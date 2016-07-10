@@ -30,19 +30,22 @@ public class UIFader : MonoBehaviour {
 			yield return null;
 		}
 		canvasGroup.interactable = true;
+		canvasGroup.blocksRaycasts = true;
 		if(autoFadeOut)
 			StartCoroutine(OutFade(outDelay, duration));
 	}
 
 	IEnumerator OutFade(int delay , float duration){
 		yield return new WaitForSeconds(delay);
+
+		canvasGroup.interactable = false;
 		while(canvasGroup.alpha > 0){
 			//Debug.Log("Fading out with delay");
 			canvasGroup.alpha -= Time.deltaTime*duration;
 			yield return null;
 			//yield return new WaitForFixedUpdate();
 		}
-		canvasGroup.interactable = false;
+		canvasGroup.blocksRaycasts = false;
 	}
 
 	IEnumerator ToFade(float duration, float initial, float target){

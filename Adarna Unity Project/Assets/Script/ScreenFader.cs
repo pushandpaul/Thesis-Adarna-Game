@@ -6,7 +6,7 @@ public class ScreenFader : MonoBehaviour {
 	public float fadeSpeed = 0.8f;
 
 	private int drawDepth = -1000;
-	private float alpha = 1.0f;
+	public float alpha = 1.0f;
 	private int fadeDirection = -1;
 
 	void OnGUI(){

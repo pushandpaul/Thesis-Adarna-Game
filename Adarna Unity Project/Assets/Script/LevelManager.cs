@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour {
 		FindObjectOfType<DoorAndExitController>().Init();
 	}
 	void Start() {
+
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
@@ -296,7 +297,7 @@ public class LevelManager : MonoBehaviour {
 		ObjectDataReference objectRef;
 		bool sceneFound = false;
 		bool objectFound = false;
-
+		Debug.Log(gameManager.sceneObjects.Count);
 		foreach(SceneObjects sceneObject in gameManager.sceneObjects){
 			if (sceneName == sceneObject.name) {
 				Debug.Log ("Scene found in the list");

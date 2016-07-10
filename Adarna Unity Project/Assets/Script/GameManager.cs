@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
+	private ObjectiveManager objectiveManager;
+
 	public List <SceneObjects> sceneObjects;
 	public Transform sceneObjsHolder;
 	public SceneObjects currentSceneObj;
@@ -19,7 +21,7 @@ public class GameManager : MonoBehaviour {
 	public string playerIdleState_string;
 	public float playerSpeed = 5f;
 
-	private LevelManager levelManager;
+	public LevelManager tempLevelManager;
 	public List <FollowTarget> Followers;
 	public List <string> FollowerNames;
 
@@ -53,7 +55,19 @@ public class GameManager : MonoBehaviour {
 
 	public BattleData battleData;
 
+	public bool isPaused;
+	public Camera blurredCam;
+
+	public bool pauseRan = false;
+
+	public UIFader mainHUD;
+	public Sprite[] heldItems;
+	public MySaveGame mySaveGame;
+
+	public GameObject pauseMenu;
+
 	void Awake () {
+		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		initPlayerIdleStateHash = Animator.StringToHash(playerIdleState_string);
 		//Debug.Log(Animator.StringToHash("(Don Pedro) Carry Item Idle"));
 		DontDestroyOnLoad(this);
@@ -73,19 +87,30 @@ public class GameManager : MonoBehaviour {
 		}
 
 		//resetCharData("Don Pedro");
+		//SaveGameSystem.DeleteSaveGame("MySaveGame");
 		LevelManager.exitInRight = !spawnIsRight;
 		//LevelManager.setSpawnDirection (spawnIsRight);
-
 	}
-		
+
+	void Start(){
+		loadData();
+	}
+
 	public void updateSceneList(){
+		updateSceneList(currentScene, true);
+	}
+
+	private void updateSceneList(string newScene, bool setAsCurrent){
 		bool found = false;
 
 		foreach(SceneObjects sceneObject in sceneObjects){
-			if(currentScene == sceneObject.Name){
+			if(newScene == sceneObject.Name){
 				found = true;
 				//Debug.Log("Current scene found in the list");
-				currentSceneObj = sceneObject;
+				if(setAsCurrent){
+					currentSceneObj = sceneObject;
+				}
+
 				break;
 			}
 			found = false;
@@ -93,11 +118,13 @@ public class GameManager : MonoBehaviour {
 
 		if(!found){
 			//Debug.Log("Current scene not found in the list.");
-			GameObject container = new GameObject(currentScene);
+			GameObject container = new GameObject(newScene);
 			container.transform.SetParent(this.sceneObjsHolder);
-			currentSceneObj = container.AddComponent<SceneObjects>();
-			currentSceneObj.Name = currentScene;
-			sceneObjects.Add(currentSceneObj);
+			SceneObjects tempSceneObj = container.AddComponent<SceneObjects>();
+			tempSceneObj.Name = newScene;
+			sceneObjects.Add(tempSceneObj);
+			if(setAsCurrent)
+				currentSceneObj = tempSceneObj;
 			//Debug.Log("'" + currentSceneObj.Name + "' added to the scene list.");
 		}
 
@@ -223,7 +250,7 @@ public class GameManager : MonoBehaviour {
 		Sprite itemHeld = new Sprite();
 		foreach(CharacterData charData in characterData){
 			found = false;
-			Debug.Log(charData.name);
+			//Debug.Log(charData.name);
 			if(charData.allowSave){
 				for(int i = 0; i < characters.Count; i++){
 					if(charData.name == characters[i].Name){
@@ -332,30 +359,122 @@ public class GameManager : MonoBehaviour {
 		battleData.enemyBaseHP = enemyBaseHP;
 	}
 
-	/*public void findFollowers(FollowTarget[] follower){
-		Followers.Clear();
-		for(int i = 0; i < follower.Length; i++){
-			DontDestroyOnLoad(follower[i].gameObject);
-			Followers.Add(follower[i].gameObject);
+	Sprite searchSpriteInList(string spriteName){
+		foreach(Sprite sprite in heldItems){
+			if(sprite.name == spriteName){
+				return sprite;
+			}		
+		}
+		return null;
+	} 
+	public void feedDataAndSave(){
+		List<Save_CharData> save_charData = new List<Save_CharData>();
+		List<Save_SceneObjects> save_sceneObjects = new List<Save_SceneObjects>();
+		List<Save_ObjectData> save_objectsData = new List<Save_ObjectData>();
+
+		string spriteName = "";
+
+		if(currentHeldItem != null){
+			spriteName = currentHeldItem.name;
+		}
+		else
+			spriteName = "";
+
+		Save_PlayerData save_playerData = new Save_PlayerData(currentCharacterName, playerIdleState, spriteName);
+
+		foreach(SavedCharData character in characters){
+			if(character.heldItem != null){
+				spriteName = character.heldItem.name;
 			}
+			else
+				spriteName = "";
+
+			save_charData.Add(new Save_CharData(character.Name, character.stateHashID, spriteName));
+		}
+
+		foreach(SceneObjects sceneObject in sceneObjects){
+			save_objectsData = new List<Save_ObjectData>();
+			foreach(ObjectDataReference objectData in sceneObject.sceneObjectData){
+				save_objectsData.Add(new Save_ObjectData(objectData.Name, objectData.coordinates.x, objectData.coordinates.y, 
+					objectData.coordinates.z, objectData.parentName, objectData.destroyed));
+			}
+			save_sceneObjects.Add(new Save_SceneObjects(sceneObject.Name, save_objectsData));
+
+			foreach(Save_SceneObjects save_sceneObject in save_sceneObjects){
+				foreach(Save_ObjectData temp in save_sceneObject.objectsData){
+					Debug.Log(temp.Name);
+				}
+			}
+		}
+			
+		if(currentHeldItem != null){
+			spriteName = currentHeldItem.name;
+		}
+		else
+			spriteName = "";
+		
+		SaveGameSystem.SaveGame(new MySaveGame(objectiveManager.currentPartIndex, save_playerData, save_charData, save_sceneObjects), "MySaveGame");
 	}
 
-	public void removeFollowers(){
-		foreach(FollowTarget myFollower in Followers){
-			Destroy(myFollower);
+	public void loadData(){
+		Vector3 temp = Vector3.zero;
+		mySaveGame = SaveGameSystem.LoadGame("MySaveGame") as MySaveGame;
+		//SaveGameSystem.DeleteSaveGame("MySaveGame");
+
+		if(mySaveGame != null){
+			objectiveManager.currentPartIndex = mySaveGame.partIndex;
+			objectiveManager.setPartObjectives();
+			currentCharacterName = mySaveGame.playerData.Name;
+			playerIdleState = mySaveGame.playerData.stateHashID;
+			currentHeldItem = searchSpriteInList(mySaveGame.playerData.heldItemName);
+
+			foreach(Save_CharData charData in mySaveGame.charData){
+				characters.Add(new SavedCharData(charData.Name, charData.stateHashID, searchSpriteInList(charData.heldSpriteName)));
+			}
+
+			foreach(Save_SceneObjects sceneObject in mySaveGame.sceneObjects){
+				foreach(Save_ObjectData objectData in sceneObject.objectsData){
+					temp = new Vector3(objectData.positionX, objectData.positionY, objectData.positionZ);
+					tempLevelManager.setObjectReference(sceneObject.sceneName, objectData.Name, temp, objectData.isDestroyed);
+				}
+			}
 		}
 	}
 
-	public bool removeFollower(string Name){
-		foreach(FollowTarget myFollower in Followers){
-			if(myFollower.name == Name){
-				myFollower.GetComponent<FollowTarget>().enabled = false;
-				Followers.Remove(myFollower);
-				Destroy(myFollower);
-				return true;
-				break;
+	public void deleteSavedData(){
+		SaveGameSystem.DeleteSaveGame("MySaveGame");
+	}
+
+	public void pause(bool isPaused){
+		this.isPaused = isPaused;
+		PlayerController player = FindObjectOfType<PlayerController>();
+		GameObject[] HUDs = GameObject.FindGameObjectsWithTag("HUD");
+
+
+		if(isPaused){
+			foreach(GameObject HUD in HUDs){
+				HUD.GetComponent<CanvasGroup>().alpha = 0f;
+				HUD.GetComponent<CanvasGroup>().interactable = false;
 			}
+
+			Time.timeScale = 0f;
 		}
-		return false;
-	}*/
+		else{
+			foreach(GameObject HUD in HUDs){
+				HUD.GetComponent<CanvasGroup>().alpha = 1f;
+				HUD.GetComponent<CanvasGroup>().interactable = true;
+			}
+
+			Time.timeScale = 1f;
+		}
+			
+		if(player != null){
+			player.canMove = !isPaused;
+			player.canJump = !isPaused;
+		}
+	}
+
+	public void close(){
+		Application.Quit();
+	}
 }

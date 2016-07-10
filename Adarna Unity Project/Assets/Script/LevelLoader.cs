@@ -124,7 +124,7 @@ public class LevelLoader : MonoBehaviour {
 
 	private void saveBeforeUnload(){
 		LevelManager levelManager = FindObjectOfType<LevelManager>();
-		if(levelManager != null){
+		if(levelManager != null && levelManager.tag != "Ignore"){
 			levelManager.onLevelExit();
 		}
 	}

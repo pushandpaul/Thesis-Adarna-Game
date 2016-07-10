@@ -10,6 +10,7 @@ public class DialogueController : MonoBehaviour {
 	private PlayerController player;
 	private CameraController camera;
 	private ObjectiveManager objectiveManager;
+	private GameManager gameManager;
 	private TextBoxManager objectiveTextBox;
 	private UIFader objectivePanelFader;
 	private FollowerManager followerManager;
@@ -27,6 +28,7 @@ public class DialogueController : MonoBehaviour {
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		objectiveTextBox = objectiveManager.GetComponent<TextBoxManager>();
 		followerManager = FindObjectOfType<FollowerManager> ();
+		gameManager = FindObjectOfType<GameManager>();
 		this.objectivePanelFader = objectiveManager.objectivePanelFader;
 	}
 
@@ -50,6 +52,7 @@ public class DialogueController : MonoBehaviour {
 		}
 			
 		player.disablePlayerMovement();
+		player.setCanJump(false);
 		if(centerCam)
 			camera.centerCam(centerCam);
 
@@ -59,6 +62,7 @@ public class DialogueController : MonoBehaviour {
 
 	public void endDialogue(){
 		player.enablePlayerMovement();
+		player.setCanJump(true);
 		inDialogue = false;
 		enableInteraction(true);
 		DoorHandler[] doors = FindObjectsOfType<DoorHandler>();
@@ -94,7 +98,7 @@ public class DialogueController : MonoBehaviour {
 	}
 
 	IEnumerator fadeObjectivePanel(){
-		objectivePanelFader.canvasGroup.alpha = 0;
+		gameManager.mainHUD.FadeOut(0, 5f);
 
 		while(DialogueController.inDialogue){
 			yield return null;
@@ -104,5 +108,10 @@ public class DialogueController : MonoBehaviour {
 			objectiveManager.currentObjective.displayToTextBox();
 			objectivePanelFader.FadeIn(objectiveManager.fadeDelay, objectiveManager.panelFaderSpeed, true);
 		}
+		else{
+			objectivePanelFader.canvasGroup.alpha = 0f;
+		}
+
+		gameManager.mainHUD.FadeIn(0, 5f, false);
 	}
 }
