@@ -98,7 +98,8 @@ public class DialogueController : MonoBehaviour {
 	}
 
 	IEnumerator fadeObjectivePanel(){
-		gameManager.mainHUD.FadeOut(0, 5f);
+		gameManager.mainHUD.canvasGroup.interactable = false;
+		gameManager.mainHUD.canvasGroup.alpha = 0f;
 
 		while(DialogueController.inDialogue){
 			yield return null;
@@ -111,7 +112,8 @@ public class DialogueController : MonoBehaviour {
 		else{
 			objectivePanelFader.canvasGroup.alpha = 0f;
 		}
-
-		gameManager.mainHUD.FadeIn(0, 5f, false);
+			
+		gameManager.mainHUD.canvasGroup.alpha = 1f;
+		gameManager.mainHUD.canvasGroup.interactable = true;
 	}
 }

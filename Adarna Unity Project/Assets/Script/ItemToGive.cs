@@ -23,6 +23,11 @@ public class ItemToGive : MonoBehaviour {
 		//myRenderer.sprite = item;
 	}
 
+	public void clearItem(){
+		SpriteRenderer myRender = this.GetComponent<SpriteRenderer> ();	
+		myRender.sprite = null;
+	}
+
 	public Sprite getItem(){
 		return this.GetComponent<SpriteRenderer>().sprite;
 	}

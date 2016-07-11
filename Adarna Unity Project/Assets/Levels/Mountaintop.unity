@@ -490,6 +490,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 290846656}
+  - 114: {fileID: 290846657}
+  - 114: {fileID: 290846658}
   m_Layer: 0
   m_Name: Utilities
   m_TagString: Untagged
@@ -510,6 +512,31 @@ Transform:
   - {fileID: 1937974022}
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!114 &290846657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 290846655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levels: 0
+  launchOnStart: 0
+--- !u!114 &290846658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 290846655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa01ccb98e548d041b038431ee3ac81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackUIFader: {fileID: 0}
 --- !u!4 &428069101 stripped
 Transform:
   m_PrefabParentObject: {fileID: 473696, guid: 9b93bb6c428dda84a8b9e8d7610e48d0, type: 2}
@@ -692,6 +719,20 @@ GameObject:
   - 114: {fileID: 998950277}
   - 114: {fileID: 998950278}
   - 114: {fileID: 998950279}
+  - 114: {fileID: 998950289}
+  - 114: {fileID: 998950288}
+  - 114: {fileID: 998950287}
+  - 114: {fileID: 998950286}
+  - 114: {fileID: 998950285}
+  - 114: {fileID: 998950281}
+  - 114: {fileID: 998950280}
+  - 114: {fileID: 998950283}
+  - 114: {fileID: 998950284}
+  - 114: {fileID: 998950290}
+  - 114: {fileID: 998950291}
+  - 114: {fileID: 998950282}
+  - 114: {fileID: 998950292}
+  - 114: {fileID: 998950293}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -723,19 +764,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: 162.33295, y: 139.7801}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.49000046
   scrollViewRect:
     serializedVersion: 2
     x: -393
-    y: -365
+    y: -379.57373
     width: 1560
-    height: 902
-  selectedBlock: {fileID: 998950267}
-  selectedCommands: []
+    height: 967.8688
+  selectedBlock: {fileID: 998950289}
+  selectedCommands:
+  - {fileID: 998950291}
   variables: []
   description: 
   stepPause: 0
@@ -850,7 +892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 339
+    x: 339.4015
     y: 86
     width: 180
     height: 40
@@ -1149,6 +1191,433 @@ MonoBehaviour:
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
       objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &998950280
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 998950289}
+  message: 'Start: Narrative (0-3)'
+--- !u!114 &998950281
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 362
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 998950265}
+  targetBlock: {fileID: 998950266}
+  callMode: 0
+--- !u!114 &998950282
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 367
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: _removeObjectDataReference
+  targetMethodText: '_removeObjectDataReference (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Kabayo (Strutting)
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &998950283
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 363
+  errorMessage: 
+  indentLevel: 0
+  animator: {fileID: 1839810874}
+  stateName: (Kabayo) Dying
+  layer: -1
+  time: 0
+--- !u!114 &998950284
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 364
+  errorMessage: 
+  indentLevel: 0
+  duration: 3
+--- !u!114 &998950285
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 358
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Naku, paano ba yan, wala na ang kabayo ko \rat malayo-layo pa ang lalakbayin
+    ko\u2026\n"
+  description: 
+  character: {fileID: 1249693396}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &998950286
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 357
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 143448138}
+  targetComponentAssemblyName: MoveCharacter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveCharacter
+  targetMethod: flipCharacter
+  targetMethodText: 'flipCharacter (Transform, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1030142447}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: l
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &998950287
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 356
+  errorMessage: 
+  indentLevel: 0
+  storyText: '...!'
+  description: 
+  character: {fileID: 1249693396}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &998950288
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 355
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 998950265}
+  targetBlock: {fileID: 998950267}
+  callMode: 1
+--- !u!114 &998950289
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 346.36047
+    y: 26.548706
+    width: 173
+    height: 40
+  itemId: 354
+  blockName: 'Start: Narrative (0-3)'
+  description: 
+  eventHandler: {fileID: 998950280}
+  commandList:
+  - {fileID: 998950288}
+  - {fileID: 998950287}
+  - {fileID: 998950286}
+  - {fileID: 998950283}
+  - {fileID: 998950284}
+  - {fileID: 998950285}
+  - {fileID: 998950290}
+  - {fileID: 998950291}
+  - {fileID: 998950282}
+  - {fileID: 998950293}
+  - {fileID: 998950292}
+  - {fileID: 998950281}
+--- !u!114 &998950290
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 365
+  errorMessage: 
+  indentLevel: 0
+  storyText: " \u2018Di bale, lalakarin ko na lang.\r"
+  description: 
+  character: {fileID: 1249693396}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &998950291
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 366
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1133634700}
+  targetComponentAssemblyName: FollowerManager, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: FollowerManager
+  targetMethod: removeFollower
+  targetMethodText: 'removeFollower (FollowTarget, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: FollowTarget, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: FollowTarget
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1839810872}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &998950292
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 368
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 290846655}
+  targetComponentAssemblyName: LevelLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelLoader
+  targetMethod: 
+  targetMethodText: 
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: 
+  showInherited: 0
+  callMode: 0
+--- !u!114 &998950293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 369
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: resetCharData
+  targetMethodText: 'resetCharData (CharacterData): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: CharacterData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: CharacterData
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1839810875}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -1626,6 +2095,194 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 429702, guid: 9b93bb6c428dda84a8b9e8d7610e48d0, type: 2}
   m_PrefabInternal: {fileID: 1591723828}
+--- !u!1001 &1839810871
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -14.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 474048, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7557147
+      objectReference: {fileID: 0}
+    - target: {fileID: 455736, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9513829
+      objectReference: {fileID: 0}
+    - target: {fileID: 436370, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9628494
+      objectReference: {fileID: 0}
+    - target: {fileID: 410132, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.460859
+      objectReference: {fileID: 0}
+    - target: {fileID: 410132, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8874734
+      objectReference: {fileID: 0}
+    - target: {fileID: 474048, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.654901
+      objectReference: {fileID: 0}
+    - target: {fileID: 455736, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.3080109
+      objectReference: {fileID: 0}
+    - target: {fileID: 436370, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.27003923
+      objectReference: {fileID: 0}
+    - target: {fileID: 412370, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.0030499808
+      objectReference: {fileID: 0}
+    - target: {fileID: 412370, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999954
+      objectReference: {fileID: 0}
+    - target: {fileID: 485502, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485502, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 491414, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.7219185
+      objectReference: {fileID: 0}
+    - target: {fileID: 491414, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.69197816
+      objectReference: {fileID: 0}
+    - target: {fileID: 485094, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.01890511
+      objectReference: {fileID: 0}
+    - target: {fileID: 485094, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9998213
+      objectReference: {fileID: 0}
+    - target: {fileID: 480252, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.2351387
+      objectReference: {fileID: 0}
+    - target: {fileID: 480252, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9719619
+      objectReference: {fileID: 0}
+    - target: {fileID: 479994, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.026456956
+      objectReference: {fileID: 0}
+    - target: {fileID: 479994, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99965
+      objectReference: {fileID: 0}
+    - target: {fileID: 454358, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.21735021
+      objectReference: {fileID: 0}
+    - target: {fileID: 454358, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.97609377
+      objectReference: {fileID: 0}
+    - target: {fileID: 493656, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.1931445
+      objectReference: {fileID: 0}
+    - target: {fileID: 493656, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9811704
+      objectReference: {fileID: 0}
+    - target: {fileID: 401896, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.132771
+      objectReference: {fileID: 0}
+    - target: {fileID: 401896, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99114674
+      objectReference: {fileID: 0}
+    - target: {fileID: 480312, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.18467867
+      objectReference: {fileID: 0}
+    - target: {fileID: 480312, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.982799
+      objectReference: {fileID: 0}
+    - target: {fileID: 408088, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.018084425
+      objectReference: {fileID: 0}
+    - target: {fileID: 408088, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.00005814454
+      objectReference: {fileID: 0}
+    - target: {fileID: 408088, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.0032009047
+      objectReference: {fileID: 0}
+    - target: {fileID: 408088, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99983144
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11452686, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &1839810872 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11442040, guid: 16b56de22e6cef643b438aa5f9102129,
+    type: 2}
+  m_PrefabInternal: {fileID: 1839810871}
+  m_Script: {fileID: 11500000, guid: 37c44957f9754454fa3b0a610c3aec74, type: 3}
+--- !u!95 &1839810874 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9539594, guid: 16b56de22e6cef643b438aa5f9102129,
+    type: 2}
+  m_PrefabInternal: {fileID: 1839810871}
+--- !u!114 &1839810875 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11420786, guid: 16b56de22e6cef643b438aa5f9102129,
+    type: 2}
+  m_PrefabInternal: {fileID: 1839810871}
+  m_Script: {fileID: 11500000, guid: 7bff06d1c5a4f344087e864f688666c7, type: 3}
 --- !u!1 &1937974020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,6 +2465,8 @@ MonoBehaviour:
   partObjective:
   - part: 3
     objectives: 0b000000
+  - part: 0
+    objectives: 06000000
   isNPC: 0
   isObject: 1
 --- !u!114 &2005103018
