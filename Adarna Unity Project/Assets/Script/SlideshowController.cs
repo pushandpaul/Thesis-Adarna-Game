@@ -10,6 +10,7 @@ public class SlideshowController : MonoBehaviour{
 
 	public UIFader backUIFader;
 	private Image slideShowHolder;
+	private GameManager gameManager;
 
 	[Tooltip("Transition duration in seconds")]
 	public float transitionDuration = 2;
@@ -18,6 +19,7 @@ public class SlideshowController : MonoBehaviour{
 	void Awake(){
 		GameObject BackUIFaderGO = GameObject.FindGameObjectWithTag("Back UI Fader");
 		GameObject slideshowHolderGO = GameObject.FindGameObjectWithTag("Slideshow Holder");
+		gameManager = FindObjectOfType<GameManager> ();
 
 		backUIFader = BackUIFaderGO.GetComponent<UIFader>();
 		slideShowHolder = slideshowHolderGO.GetComponent<Image>();
@@ -25,14 +27,18 @@ public class SlideshowController : MonoBehaviour{
 		transitionDuration = 1/transitionDuration;
 	}
 
-	public void Begin(SlideshowImages images){
+	public void Begin(SlideshowImages images, bool enableHUD, bool enablePause){
+		gameManager.setHUDs (enableHUD);
+		gameManager.setPauseMenu (enablePause);
 		slideshowImages = images.images;
 		currentImage = slideshowImages[0];
 		currentImageIndex = 0;
 		TransitionImage(false);
 	}
 
-	public void Begin(SlideshowImages images, int startingIndex){
+	public void Begin(SlideshowImages images, int startingIndex, bool enablePause, bool enableHUD){
+		gameManager.setHUDs (enableHUD);
+		gameManager.setPauseMenu (enablePause);
 		slideshowImages = images.images;
 		currentImage = slideshowImages[startingIndex];
 		currentImageIndex = startingIndex;
@@ -55,6 +61,7 @@ public class SlideshowController : MonoBehaviour{
 
 	void TransitionImage(bool toEnd){
 		StopAllCoroutines();
+		backUIFader.StopAllCoroutines ();
 		StartCoroutine(StartTransition(toEnd));
 	}
 
@@ -68,7 +75,11 @@ public class SlideshowController : MonoBehaviour{
 			slideShowHolder.enabled = true;
 			slideShowHolder.sprite = currentImage;
 		}
-		else
+		else{
 			slideShowHolder.enabled = false;
+			gameManager.setHUDs (true);
+			gameManager.setPauseMenu (true);
+		}
+			
 	}
 }

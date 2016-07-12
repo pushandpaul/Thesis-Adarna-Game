@@ -5,6 +5,7 @@ public class DeadEndHandler : MonoBehaviour {
 	private Vector2 savedVelocity;
 
 	void OnCollisionEnter2D(Collision2D coll){
+		
 		Animator playerAnim = new Animator();
 		if(coll.gameObject.tag == "Player"){
 			StartCoroutine(waitForReverse(coll.transform));

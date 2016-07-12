@@ -17,8 +17,15 @@ public class ObjectInteraction : MonoBehaviour {
 	//public bool isAchieved;
 
 	public string message;
+	public string origMessage;
 	// Use this for initialization
 	void Start () {
+
+		if(message == ""){
+			message = this.name;
+		}
+
+		origMessage = message;
 		objectiveMapper = this.GetComponent<ObjectiveMapper>();
 		if(objectiveMapper != null)
 			anObjective = true;

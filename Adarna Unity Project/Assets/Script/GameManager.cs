@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour {
 	public Sprite[] heldItems;
 	public MySaveGame mySaveGame;
 
+	public GameObject[] HUDs;
 	public GameObject pauseMenu;
 
 	void Awake () {
@@ -447,24 +448,14 @@ public class GameManager : MonoBehaviour {
 
 	public void pause(bool isPaused){
 		this.isPaused = isPaused;
-		PlayerController player = FindObjectOfType<PlayerController>();
-		GameObject[] HUDs = GameObject.FindGameObjectsWithTag("HUD");
-
+		PlayerController player = FindObjectOfType<PlayerController> ();
 
 		if(isPaused){
-			foreach(GameObject HUD in HUDs){
-				HUD.GetComponent<CanvasGroup>().alpha = 0f;
-				HUD.GetComponent<CanvasGroup>().interactable = false;
-			}
-
+			hideHUDs(false);
 			Time.timeScale = 0f;
 		}
 		else{
-			foreach(GameObject HUD in HUDs){
-				HUD.GetComponent<CanvasGroup>().alpha = 1f;
-				HUD.GetComponent<CanvasGroup>().interactable = true;
-			}
-
+			hideHUDs (true);
 			Time.timeScale = 1f;
 		}
 			
@@ -472,6 +463,41 @@ public class GameManager : MonoBehaviour {
 			player.canMove = !isPaused;
 			player.canJump = !isPaused;
 		}
+	}
+
+	public void setHUD(GameObject HUD, bool enable){
+		HUD.SetActive(enable);
+	}
+
+
+	public void setHUDs(bool enable){
+		if(HUDs == null || HUDs.Length == 0){
+			HUDs = GameObject.FindGameObjectsWithTag ("HUD");
+		}
+		foreach(GameObject HUD in HUDs){
+			setHUD (HUD, enable);
+		}
+	}
+
+	public void hideHUD(CanvasGroup HUD, bool show){
+		if (show)
+			HUD.alpha = 1f;
+		else
+			HUD.alpha = 0f;
+		HUD.interactable = show;
+	}
+
+	public void hideHUDs(bool show){
+		if(HUDs == null || HUDs.Length == 0){
+			HUDs = GameObject.FindGameObjectsWithTag ("HUD");
+		}
+		foreach(GameObject HUD in HUDs){
+			hideHUD (HUD.GetComponent<CanvasGroup> (), show);
+		}
+	}
+
+	public void setPauseMenu(bool enable){
+		pauseMenu.GetComponent<PauseMenu> ().enabled = enable;
 	}
 
 	public void close(){

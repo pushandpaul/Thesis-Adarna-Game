@@ -92,6 +92,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11434152, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: OnReach.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 480576, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -124,10 +128,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-      propertyPath: objectivePanelFader
-      value: 
-      objectReference: {fileID: 307318458}
     - target: {fileID: 11457262, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: textBox
       value: 
@@ -137,9 +137,21 @@ Prefab:
       value: 
       objectReference: {fileID: 307318456}
     - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: objectivePanelFader
+      value: 
+      objectReference: {fileID: 307318458}
+    - target: {fileID: 11434152, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: OnReach.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434152, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: nextObjective
+      value: 
+      objectReference: {fileID: 1294354969}
+    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: currentObjective
       value: 
-      objectReference: {fileID: 1224694180}
+      objectReference: {fileID: 1341677554}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
   m_IsPrefabParent: 0
@@ -170,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 0
+  Levels: 22
   launchOnStart: 1
 --- !u!4 &268044221
 Transform:
@@ -242,6 +254,10 @@ MonoBehaviour:
   sceneName: 
   door: []
   objectData: []
+--- !u!4 &677880167 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 422660, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+  m_PrefabInternal: {fileID: 1294082644}
 --- !u!1 &1121945659
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +291,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b0d9c938e330f7841b62fb6cfddc86cb, type: 3}
   - {fileID: 21300000, guid: 2a197f264f38d4648bff35a897fc38fd, type: 3}
   - {fileID: 21300000, guid: 44074d63726ca7b4c8d2b88d8bd51e52, type: 3}
+  - {fileID: 21300000, guid: 5f4ccbabd17c27f4ba04725a21dbd979, type: 3}
+  - {fileID: 21300000, guid: 39b1c4392e706d14ca2ce289218da11a, type: 3}
+  - {fileID: 21300000, guid: 17cc54c47fa22e44d91fefd0d2751f06, type: 3}
+  - {fileID: 21300000, guid: 9b6ec05ef321096429eee5ddeebee8f2, type: 3}
+  - {fileID: 21300000, guid: d54605af45d5b514db14aedbd7d5929e, type: 3}
 --- !u!4 &1121945661
 Transform:
   m_ObjectHideFlags: 0
@@ -287,12 +308,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1984248753}
   m_RootOrder: 1
---- !u!114 &1224694180 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11445998, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
-    type: 2}
-  m_PrefabInternal: {fileID: 180959607}
-  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
 --- !u!1 &1230498670
 GameObject:
   m_ObjectHideFlags: 1
@@ -320,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 2063628301}
+  selectedFlowchart: {fileID: 1367242668}
 --- !u!4 &1230498672
 Transform:
   m_ObjectHideFlags: 1
@@ -376,14 +391,6 @@ Prefab:
       propertyPath: tempLevelManager
       value: 
       objectReference: {fileID: 575944040}
-    - target: {fileID: 22468636, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22468636, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 22480714, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -392,37 +399,13 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 169754, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: m_AnchorMin.y
+    - target: {fileID: 22468636, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+    - target: {fileID: 22468636, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -18.703959
-      objectReference: {fileID: 0}
-    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 23.407917
-      objectReference: {fileID: 0}
-    - target: {fileID: 22411596, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: -720
-      objectReference: {fileID: 0}
-    - target: {fileID: 22411596, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 37.407917
       objectReference: {fileID: 0}
     - target: {fileID: 22497636, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
@@ -450,335 +433,870 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22471012, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 41.1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22462048, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411596, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411596, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22406026, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22406026, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22406026, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22406026, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -13.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22406026, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22406026, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22401962, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22401962, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22401962, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22401962, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22401962, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22401962, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22449666, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22449666, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22449666, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22449666, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -76.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22449666, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22449666, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22431842, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22431842, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22431842, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22431842, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -108
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22431842, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22431842, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22489216, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22489216, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22489216, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22489216, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -138.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22489216, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22489216, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22479292, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22479292, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22479292, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22479292, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -169
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22479292, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22479292, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22404410, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22404410, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22404410, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22404410, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -200.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22404410, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22404410, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476908, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476908, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476908, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476908, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -232
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476908, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476908, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22484560, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22484560, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22484560, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22484560, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -263.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22484560, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22484560, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490890, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490890, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490890, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490890, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490890, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490890, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22440522, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22440522, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22440522, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22440522, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -326.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22440522, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22440522, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22422096, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22422096, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22422096, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22422096, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -358
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22422096, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22422096, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22452534, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22452534, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22452534, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22452534, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -389.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22452534, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22452534, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22456334, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 403
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22497242, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 110.09174
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22535106, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 188016, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420962, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: selectedBlock
+      value: 
+      objectReference: {fileID: 1367242673}
+    - target: {fileID: 11420962, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+      propertyPath: selectedCommands.Array.data[0]
+      value: 
+      objectReference: {fileID: 1367242677}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1294354969 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11479960, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+    type: 2}
+  m_PrefabInternal: {fileID: 180959607}
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+--- !u!114 &1341677554 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11438416, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+    type: 2}
+  m_PrefabInternal: {fileID: 180959607}
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+--- !u!1 &1367242666 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165784, guid: 04bcb44ab02be294cb8952acd44601b9, type: 2}
+  m_PrefabInternal: {fileID: 1294082644}
+--- !u!114 &1367242667
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 35
+    y: 127
+    width: 120
+    height: 40
+  itemId: 0
+  blockName: Exit 1
+  description: 
+  eventHandler: {fileID: 1367242669}
+  commandList:
+  - {fileID: 1367242679}
+  - {fileID: 1367242676}
+--- !u!114 &1367242668 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11420962, guid: 04bcb44ab02be294cb8952acd44601b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1294082644}
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+--- !u!114 &1367242669
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1367242667}
+  message: Exit 1
+--- !u!114 &1367242670
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 352
+    y: 119
+    width: 120
+    height: 40
+  itemId: 1
+  blockName: Exit 3
+  description: 
+  eventHandler: {fileID: 1367242671}
+  commandList:
+  - {fileID: 1367242680}
+  - {fileID: 1367242678}
+--- !u!114 &1367242671
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1367242670}
+  message: Exit 3
+--- !u!114 &1367242672
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1367242673}
+  message: Exit 2
+--- !u!114 &1367242673
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 186
+    y: 124
+    width: 120
+    height: 40
+  itemId: 2
+  blockName: Exit 2
+  description: 
+  eventHandler: {fileID: 1367242672}
+  commandList:
+  - {fileID: 1367242681}
+  - {fileID: 1367242677}
+--- !u!114 &1367242675
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 190
+    y: 21
+    width: 120
+    height: 40
+  itemId: 8
+  blockName: Start
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1367242682}
+--- !u!114 &1367242676
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 4
+  errorMessage: 
+  indentLevel: 0
+  storyText: Hindi ata ako dapat pumunta rito...
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1367242677
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 6
+  errorMessage: 
+  indentLevel: 0
+  storyText: Mali ang aking pinupuntahan.
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1367242678
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 7
+  errorMessage: 
+  indentLevel: 0
+  storyText: May kailangan akong unahin dito...
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &1367242679
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 9
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1367242675}
+  callMode: 1
+--- !u!114 &1367242680
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 11
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1367242675}
+  callMode: 1
+--- !u!114 &1367242681
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1367242675}
+  callMode: 1
+--- !u!114 &1367242682
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 12
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1367242666}
+  targetComponentAssemblyName: FungusController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: FungusController
+  targetMethod: SetPlayerAsCharacter
+  targetMethodText: 'SetPlayerAsCharacter (Character): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: Fungus.Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: Fungus.Character
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1614005131}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1367242683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5cb2117674ce1419ee54c545b089da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1367242684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 15
+  errorMessage: 
+  indentLevel: 0
+  storyText: Sarado ang Pinto
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1367242685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 14
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1367242675}
+  callMode: 1
+--- !u!114 &1367242686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 136
+    y: 229
+    width: 120
+    height: 40
+  itemId: 13
+  blockName: Door 1
+  description: 
+  eventHandler: {fileID: 1367242691}
+  commandList:
+  - {fileID: 1367242685}
+  - {fileID: 1367242684}
+--- !u!114 &1367242687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1367242690}
+  message: Door 2
+--- !u!114 &1367242688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 18
+  errorMessage: 
+  indentLevel: 0
+  storyText: '''Di ako pwede pumasok dito.'
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1367242689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 17
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1367242675}
+  callMode: 1
+--- !u!114 &1367242690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 270
+    y: 230
+    width: 120
+    height: 40
+  itemId: 16
+  blockName: Door 2
+  description: 
+  eventHandler: {fileID: 1367242687}
+  commandList:
+  - {fileID: 1367242689}
+  - {fileID: 1367242688}
+--- !u!114 &1367242691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367242666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1367242686}
+  message: Door 1
 --- !u!1 &1614005130
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +1307,7 @@ GameObject:
   - 4: {fileID: 1614005132}
   - 114: {fileID: 1614005131}
   m_Layer: 0
-  m_Name: Tagapagsalaysay
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,8 +1341,8 @@ Transform:
   m_LocalPosition: {x: 219.5, y: 123.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 677880167}
+  m_RootOrder: 11
 --- !u!1 &1741413943
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +1438,24 @@ GameObject:
   - 114: {fileID: 2063628304}
   - 114: {fileID: 2063628302}
   - 114: {fileID: 2063628298}
+  - 114: {fileID: 2063628307}
+  - 114: {fileID: 2063628308}
+  - 114: {fileID: 2063628306}
+  - 114: {fileID: 2063628309}
+  - 114: {fileID: 2063628312}
+  - 114: {fileID: 2063628311}
+  - 114: {fileID: 2063628310}
+  - 114: {fileID: 2063628314}
+  - 114: {fileID: 2063628313}
+  - 114: {fileID: 2063628317}
+  - 114: {fileID: 2063628316}
+  - 114: {fileID: 2063628315}
+  - 114: {fileID: 2063628323}
+  - 114: {fileID: 2063628322}
+  - 114: {fileID: 2063628321}
+  - 114: {fileID: 2063628320}
+  - 114: {fileID: 2063628319}
+  - 114: {fileID: 2063628318}
   m_Layer: 0
   m_Name: Test Flowchart
   m_TagString: Untagged
@@ -929,7 +1465,7 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &2063628289
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -955,7 +1491,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2063628290
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -980,7 +1516,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2063628291
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1007,7 +1543,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628292
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1143,7 +1679,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2063628298
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1186,7 +1722,7 @@ MonoBehaviour:
   targetComponentFullname: UnityEngine.Component[]
   targetComponentText: SlideshowController
   targetMethod: Begin
-  targetMethodText: 'Begin (SlideshowImages, Int32): Void'
+  targetMethodText: 'Begin (SlideshowImages, Boolean, Boolean): Void'
   methodParameters:
   - objValue:
       typeAssemblyname: SlideshowImages, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1206,11 +1742,28 @@ MonoBehaviour:
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
   - objValue:
-      typeAssemblyname: System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral,
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Int32
-      intValue: 1
+      typeFullname: System.Boolean
+      intValue: 0
       boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
       floatValue: 0
       stringValue: 
       colorValue: {r: 0, g: 0, b: 0, a: 0}
@@ -1240,7 +1793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 49
+    x: 50.030914
     y: 49
     width: 120
     height: 40
@@ -1260,8 +1813,26 @@ MonoBehaviour:
   - {fileID: 2063628292}
   - {fileID: 2063628305}
   - {fileID: 2063628304}
-  - {fileID: 2063628302}
+  - {fileID: 2063628307}
   - {fileID: 2063628298}
+  - {fileID: 2063628302}
+  - {fileID: 2063628308}
+  - {fileID: 2063628306}
+  - {fileID: 2063628309}
+  - {fileID: 2063628312}
+  - {fileID: 2063628311}
+  - {fileID: 2063628310}
+  - {fileID: 2063628314}
+  - {fileID: 2063628313}
+  - {fileID: 2063628317}
+  - {fileID: 2063628316}
+  - {fileID: 2063628315}
+  - {fileID: 2063628323}
+  - {fileID: 2063628322}
+  - {fileID: 2063628321}
+  - {fileID: 2063628320}
+  - {fileID: 2063628319}
+  - {fileID: 2063628318}
 --- !u!114 &2063628301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,8 +1848,8 @@ MonoBehaviour:
   scrollPos: {x: 243.95602, y: 5.494507}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 348
-  zoom: 1
+  blockViewHeight: 344
+  zoom: 0.97
   scrollViewRect:
     serializedVersion: 2
     x: -357.9011
@@ -1286,8 +1857,7 @@ MonoBehaviour:
     width: 958
     height: 935.5055
   selectedBlock: {fileID: 2063628300}
-  selectedCommands:
-  - {fileID: 2063628298}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1298,7 +1868,7 @@ MonoBehaviour:
   hideCommands: []
 --- !u!114 &2063628302
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1337,7 +1907,7 @@ Transform:
   m_RootOrder: 5
 --- !u!114 &2063628304
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1362,7 +1932,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2063628305
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1372,6 +1942,474 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 11
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1741413943}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SlideshowController
+  targetMethod: Next
+  targetMethodText: 'Next (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628306
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 17
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Mabuting \rmag-aruga ang mag-asawa kaya naman lumaki silang mabubuting
+    tao. \r"
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628307
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 15
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1741413943}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SlideshowController
+  targetMethod: Next
+  targetMethodText: 'Next (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628308
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 16
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Sila ang mga anak nina Haring Fernando at Donya Valeriana. \n"
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628309
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 18
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Naniniwala ang kanilang ama na kahit mayaman sila ay kailangan nilang
+    mag-aral para lumaki silang matatalino. \r"
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628310
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 21
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Pinili ng tatlong magkakapatid na mamuno sa kaharian.\r"
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628311
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 20
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Dumating ang oras kung saan kailangan nilang mamili kung pamumuno o
+    \rpagpapari. "
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628312
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 19
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1741413943}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SlideshowController
+  targetMethod: Next
+  targetMethodText: 'Next (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628313
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 23
+  errorMessage: 
+  indentLevel: 0
+  storyText: Sinanay ang mga prinsipeng humawak ng patalim at naging mahusay sila
+    sa paggamit nito...
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628314
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 22
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1741413943}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SlideshowController
+  targetMethod: Next
+  targetMethodText: 'Next (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628315
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 26
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Walang kaguluhan \rat puno ng saya ang mga naglilingkod sa kaharian
+    sapagkat mabuti ang mag-asawa. \r"
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628316
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 25
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Nanatiling mapayapa at masagana ang kaharian ng Berbanya. \n"
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628317
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 24
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1741413943}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SlideshowController
+  targetMethod: Next
+  targetMethodText: 'Next (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628318
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 32
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Gayunpaman, dininig din ng Diyos ang hiling ng hari at nakahanap sila
+    ng maggagamot.\r"
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628319
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 31
+  errorMessage: 
+  indentLevel: 0
+  storyText: Samantala, nalungkot naman ang mga anak ng hari.
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628320
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 30
+  errorMessage: 
+  indentLevel: 0
+  storyText: 'Nagpatawag ng mediko si Don Fernando upang malunasan ang kanyang sakit. '
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628321
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 29
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Bunsod nito, lubhang napabayaan ng hari ang kanyang sarili at \u2018di
+    nagtagal, nagkasakit na ang hari.\n"
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628322
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 28
+  errorMessage: 
+  indentLevel: 0
+  storyText: "Ngunit nalungkot ang hari nang mapanaginipan niya na pinatay at hinulog
+    sa \rbalon ang bunso niyang anak."
+  description: 
+  character: {fileID: 1614005131}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &2063628323
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 27
   errorMessage: 
   indentLevel: 0
   targetObject: {fileID: 1741413943}

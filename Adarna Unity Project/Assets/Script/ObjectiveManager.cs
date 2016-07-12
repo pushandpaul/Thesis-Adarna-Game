@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 public class ObjectiveManager : MonoBehaviour {
 	private static ObjectiveManager instance = null;
@@ -43,10 +45,12 @@ public class ObjectiveManager : MonoBehaviour {
 		setPartObjectives();
 	
 		if(currentObjective != null){
-			if(currentObjective.Description != "")
-				displayCurrentObjective();
-
-			this.printCurrentObjective();
+			if (currentObjective.Description != "" && currentObjective.OnReach.Contains (Objective.ActionOnReach.DisplayToTextBox)) {
+				displayCurrentObjective ();
+				this.printCurrentObjective ();
+				objectivePanelFader.canvasGroup.alpha = 1f;
+			} else
+				objectivePanelFader.canvasGroup.alpha = 0f;
 		}
 
 	}

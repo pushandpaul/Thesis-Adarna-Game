@@ -73,7 +73,7 @@ public class ObjectiveMapper : MonoBehaviour {
 				break;
 		}
 		if(!found)
-			npc.message = npc.name;
+			npc.message = npc.originalMessage;
 			
 	}
 
@@ -98,7 +98,7 @@ public class ObjectiveMapper : MonoBehaviour {
 				break;	
 		}
 		if(!found)
-			objectiveHolder.message = "";
+			objectiveHolder.message = objectiveHolder.origMessage;
 	}
 
 	public void checkIfCurrent_misc(){

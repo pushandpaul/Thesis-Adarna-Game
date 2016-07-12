@@ -41,7 +41,7 @@ public class DialogueController : MonoBehaviour {
 		StartCoroutine(fadeObjectivePanel());
 
 		foreach(DoorHandler door in doors){
-			door.isOpen = false;
+			door.enabled = false;
 		}
 
 		foreach(FollowTarget follower in followerManager.activeFollowers){
@@ -68,7 +68,7 @@ public class DialogueController : MonoBehaviour {
 		DoorHandler[] doors = FindObjectsOfType<DoorHandler>();
 
 		foreach(DoorHandler door in doors){
-			door.isOpen = true;
+			door.enabled = true;
 		}
 			
 		foreach(FollowTarget follower in followerManager.activeFollowers){

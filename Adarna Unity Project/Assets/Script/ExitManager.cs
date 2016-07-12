@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Fungus;
 
 public class ExitManager : MonoBehaviour {
 
@@ -10,11 +11,14 @@ public class ExitManager : MonoBehaviour {
 
 	private LevelManager levelManager;
 	private GameManager gameManager;
+	private Flowchart globalFlowchart;
 	//public FollowTarget followers;
 
 	void Awake(){
 		levelManager = FindObjectOfType<LevelManager>();
 		gameManager = FindObjectOfType<GameManager>();
+		GameObject flowchartHolder = GameObject.FindWithTag ("Global Flowchart");
+		globalFlowchart = flowchartHolder.GetComponent<Flowchart> ();
 	}
 
 	void OnTriggerEnter2D (Collider2D other){
@@ -37,28 +41,35 @@ public class ExitManager : MonoBehaviour {
 				levelLoader.launchScene(nextLocation);
 			}
 			else{
-				Debug.Log("Exit closed!");
-				//Add narrative triggers.
-				if(isRight){
-					playerPositionWhenClosed = new Vector3(transform.position.x - 7f, other.transform.position.y, other.transform.position.z);
-					playerFlipDirection = "l";
-				}
-				else{
-					playerPositionWhenClosed = new Vector3(transform.position.x + 7f, other.transform.position.y, other.transform.position.z);
-					playerFlipDirection = "r";
-				}
-
-				if(moveCharacter != null){
-					moveCharacter.flipCharacter(other.transform, playerFlipDirection);
-					moveCharacter.moveCharacter(other.transform, playerPositionWhenClosed, 3f);
-				}
-				else
-					Debug.Log("Please add 'Movers' prefab in the scene.");
+				globalFlowchart.SendFungusMessage ("Exit " + Random.Range(1,4));
+				StartCoroutine (waitForReverse(other.transform));
 			}
 		}
 	}
 
 	public void setIsOpen(bool isOpen){
 		this.isOpen = isOpen;
+	}
+	IEnumerator waitForReverse(Transform playerHolder){
+		PlayerController player = playerHolder.GetComponent<PlayerController> ();
+		bool inExit = true;
+
+		player.canMove = false;
+
+		while(inExit){
+			if(playerHolder.localScale.x > 0){
+				if(Input.GetKeyDown(KeyCode.A)){
+					player.canMove = true;
+					inExit = true;
+				}
+			}
+			else if(playerHolder.localScale.x < 0){
+				if(Input.GetKeyDown(KeyCode.D)){
+					player.canMove = true;
+					inExit = true;
+				}
+			}
+			yield return null;
+		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Fungus;
 
 public class DoorHandler : MonoBehaviour {
 
@@ -20,10 +21,14 @@ public class DoorHandler : MonoBehaviour {
 	private GameManager gameManager;
 	private LevelLoader levelLoader;
 
+	private Flowchart globalFlowchart;
+
 	void Awake(){
 		levelManager = FindObjectOfType<LevelManager>();
 		gameManager = FindObjectOfType<GameManager>();
 		levelLoader = FindObjectOfType<LevelLoader>();
+		GameObject flowchartHolder = GameObject.FindWithTag ("Global Flowchart");
+		globalFlowchart = flowchartHolder.GetComponent<Flowchart> ();
 
 		if(levelLoader == null){
 			levelLoader = this.gameObject.AddComponent<LevelLoader>();
@@ -38,29 +43,17 @@ public class DoorHandler : MonoBehaviour {
 	}
 
 	void Update () {
-		if(!isOpen){
-			if(!closedMessageDisplayed && playerInZone){
-				Debug.Log("Door closed.");
-				//Add Narrative.
-				closedMessageDisplayed = true;
-			}
-			return;
-		}
-
 		if(waitForPress){
 			if(Input.GetKeyDown(openDoorButton) && playerInZone){
+				if(isOpen){
+					LevelManager.isDoor = true;
+					LevelManager.doorIndex = thisDoorIndex;
+					levelLoader.launchScene(nextLocation);
+				}
+				else {
+					globalFlowchart.SendFungusMessage ("Door " + Random.Range(1,3));
+				}
 				//LevelManager.exitInRight = defaultSpawnLeft;
-				LevelManager.isDoor = true;
-				LevelManager.doorIndex = thisDoorIndex;
-				levelLoader.launchScene(nextLocation);
-			}
-		}
-		else{
-			if(playerInZone){
-				//LevelManager.exitInRight = defaultSpawnLeft;
-				LevelManager.isDoor = true;
-				LevelManager.doorIndex = thisDoorIndex;
-				levelLoader.launchScene(nextLocation);
 			}
 		}
 	}
@@ -72,6 +65,10 @@ public class DoorHandler : MonoBehaviour {
 		if(other.tag == "Player"){
 			Debug.Log("Press " + openDoorButton);
 			playerInZone = true;
+			if(!isOpen && !waitForPress){
+				globalFlowchart.SendFungusMessage ("Door " + Random.Range(1,3));
+				StartCoroutine (waitForReverse(other.transform));
+			}
 		}
 	}
 	void OnTriggerExit2D (Collider2D other){
@@ -79,6 +76,29 @@ public class DoorHandler : MonoBehaviour {
 			Debug.Log("Door Left");
 			playerInZone = false;
 			closedMessageDisplayed = false;
+		}
+	}
+		
+	IEnumerator waitForReverse(Transform playerHolder){
+		PlayerController player = playerHolder.GetComponent<PlayerController> ();
+		bool inDoor = true;
+
+		player.canMove = false;
+
+		while(inDoor){
+			if(playerHolder.localScale.x > 0){
+				if(Input.GetKeyDown(KeyCode.A)){
+					player.canMove = true;
+					inDoor = true;
+				}
+			}
+			else if(playerHolder.localScale.x < 0){
+				if(Input.GetKeyDown(KeyCode.D)){
+					player.canMove = true;
+					inDoor = true;
+				}
+			}
+			yield return null;
 		}
 	}
 }

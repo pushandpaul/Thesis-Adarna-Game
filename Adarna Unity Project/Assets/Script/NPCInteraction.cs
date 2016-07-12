@@ -28,6 +28,7 @@ public class NPCInteraction : MonoBehaviour {
 	public bool anObjective;
 
 	public string message;
+	public string originalMessage;
 
 	public SpeechBubble bubble;
 
@@ -51,9 +52,13 @@ public class NPCInteraction : MonoBehaviour {
 
 		} else {
 			anObjective = false;
-			message = this.name;
+
 		}
 
+		if(message == "")
+			message = this.name;
+
+		originalMessage = message;
 		foreach(Flowchart _flowchart in FindObjectsOfType<Flowchart>()){
 			if(_flowchart.tag != "Global Flowchart"){
 				flowchart = _flowchart;
@@ -183,7 +188,6 @@ public class NPCInteraction : MonoBehaviour {
 		float myColliderRadius = myCollider.radius;
 		float targetDistance = 0f;
 
-
 		if(!onlyTrigger){
 			myColliderRadius *= Mathf.Abs(transform.localScale.x);
 		}
@@ -210,6 +214,11 @@ public class NPCInteraction : MonoBehaviour {
 			yield return null;
 		}
 
-		flowchart.SendFungusMessage(toSend);
+
+		flowchart.SendFungusMessage (toSend);
+		if(!DialogueController.inDialogue){
+			player.canMove = true;
+			player.canJump = true;
+		}
 	}
 }

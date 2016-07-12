@@ -515,6 +515,38 @@ Prefab:
       propertyPath: partObjective.Array.data[2].objectives.Array.data[1]
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5810630, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810630, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489538, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810630, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11465130, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801664, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424406, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: bubble
+      value: 
+      objectReference: {fileID: 298880185}
+    - target: {fileID: 11424406, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
+      propertyPath: message
+      value: Haring Fernando (Laying Down)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
   m_IsPrefabParent: 0
@@ -527,6 +559,12 @@ Animator:
 Transform:
   m_PrefabParentObject: {fileID: 486774, guid: 5949bd820b5f80643b942016c1bff13a, type: 2}
   m_PrefabInternal: {fileID: 298880182}
+--- !u!114 &298880185 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11445738, guid: 5949bd820b5f80643b942016c1bff13a,
+    type: 2}
+  m_PrefabInternal: {fileID: 298880182}
+  m_Script: {fileID: 11500000, guid: 39083b95791559544822fb9bbf4435bc, type: 3}
 --- !u!114 &359568269 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11494696, guid: 5949bd820b5f80643b942016c1bff13a,
@@ -895,7 +933,6 @@ GameObject:
   - 114: {fileID: 1089438672}
   - 114: {fileID: 1089438671}
   - 114: {fileID: 1089438670}
-  - 114: {fileID: 1089438669}
   - 114: {fileID: 1089438668}
   - 114: {fileID: 1089438667}
   - 114: {fileID: 1089438666}
@@ -911,8 +948,6 @@ GameObject:
   - 114: {fileID: 1089438657}
   - 114: {fileID: 1089438490}
   - 114: {fileID: 1089438656}
-  - 114: {fileID: 1089438655}
-  - 114: {fileID: 1089438654}
   - 114: {fileID: 1089438653}
   - 114: {fileID: 1089438530}
   - 114: {fileID: 1089438491}
@@ -1169,7 +1204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -294.66483, y: -6.1134872}
+  scrollPos: {x: -533.90546, y: -28.898277}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 360
@@ -1180,9 +1215,9 @@ MonoBehaviour:
     y: -473
     width: 2077.229
     height: 2184.8127
-  selectedBlock: {fileID: 1089438679}
+  selectedBlock: {fileID: 1089438661}
   selectedCommands:
-  - {fileID: 1089438689}
+  - {fileID: 1089438658}
   variables: []
   description: 
   stepPause: 0
@@ -5501,42 +5536,6 @@ MonoBehaviour:
   targetFlowchart: {fileID: 0}
   targetBlock: {fileID: 1089438529}
   callMode: 1
---- !u!114 &1089438654
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11429428, guid: 0394d566590b0ff4f807c6e0a64b8046,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1089438486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 124
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 1373314817}
-  methodName: endDialogue
-  delay: 0
---- !u!114 &1089438655
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11429582, guid: 0394d566590b0ff4f807c6e0a64b8046,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1089438486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 123
-  errorMessage: 
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 1089438490}
-  callMode: 0
 --- !u!114 &1089438656
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5589,7 +5588,7 @@ MonoBehaviour:
   errorMessage: 
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 1089438669}
+  targetBlock: {fileID: 1089438490}
   callMode: 0
 --- !u!114 &1089438659
 MonoBehaviour:
@@ -5813,33 +5812,8 @@ MonoBehaviour:
   errorMessage: 
   indentLevel: 0
   targetFlowchart: {fileID: 1089438487}
-  targetBlock: {fileID: 1089438669}
+  targetBlock: {fileID: 0}
   callMode: 0
---- !u!114 &1089438669
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 11457452, guid: 0394d566590b0ff4f807c6e0a64b8046,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1089438486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 904.16516
-    y: 148.36612
-    width: 169
-    height: 40
-  itemId: 84
-  blockName: Haring Fernando End
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 1089438654}
-  - {fileID: 1089438655}
 --- !u!114 &1089438670
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6500,7 +6474,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1089438689
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1089438486}

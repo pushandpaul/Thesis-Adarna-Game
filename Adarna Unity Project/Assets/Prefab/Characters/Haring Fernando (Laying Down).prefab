@@ -279,6 +279,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &192848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 440560}
+  - 58: {fileID: 5801664}
+  - 114: {fileID: 11424406}
+  - 114: {fileID: 11487002}
+  m_Layer: 0
+  m_Name: Container Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &197764
 GameObject:
   m_ObjectHideFlags: 1
@@ -373,6 +391,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 402976}
   m_RootOrder: 3
+--- !u!4 &440560
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486774}
+  m_RootOrder: 2
 --- !u!4 &444468
 Transform:
   m_ObjectHideFlags: 1
@@ -474,6 +504,7 @@ Transform:
   m_Children:
   - {fileID: 472758}
   - {fileID: 402976}
+  - {fileID: 440560}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &490338
@@ -528,12 +559,12 @@ Transform:
   - {fileID: 498948}
   m_Father: {fileID: 472758}
   m_RootOrder: 2
---- !u!58 &5810630
+--- !u!58 &5801664
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166110}
+  m_GameObject: {fileID: 192848}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -541,7 +572,21 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1
+--- !u!58 &5810630
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166110}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!95 &9511374
 Animator:
   serializedVersion: 3
@@ -590,6 +635,28 @@ MonoBehaviour:
   Name: 
   destroyed: 0
   persistLookDirection: 0
+--- !u!114 &11424406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 1
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  onlyTrigger: 0
+  toTransform: {fileID: 0}
+  facingRight: 0
+  standardFacing: 0
+  allowFlip: 0
+  anObjective: 0
+  message: Haring Fernando (Laying Down)
+  bubble: {fileID: 11445738}
 --- !u!114 &11445738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -607,7 +674,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166110}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
   m_Name: 
@@ -623,13 +690,33 @@ MonoBehaviour:
   anObjective: 0
   message: 
   bubble: {fileID: 0}
+--- !u!114 &11487002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partObjective:
+  - part: 1
+    objectives: 01000000
+  - part: 2
+    objectives: 0300000009000000
+  - part: 0
+    objectives: 0200000009000000
+  isNPC: 1
+  isObject: 0
 --- !u!114 &11489538
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166110}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
   m_Name: 
