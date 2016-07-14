@@ -5,6 +5,7 @@ public class PauseMenu : MonoBehaviour {
 
 	private GameManager gameManager;
 	private UIFader myUIFader;
+	private bool inControl = false;
 
 	void Awake () {
 		gameManager = FindObjectOfType<GameManager>();
@@ -12,7 +13,6 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	void Update () {
-
 		if(Input.GetKeyDown(KeyCode.Escape)){
 			if(!gameManager.isPaused && !gameManager.pauseRan){
 				ControlPauseMenu(true);
@@ -25,13 +25,25 @@ public class PauseMenu : MonoBehaviour {
 
 	public void ControlPauseMenu(bool isLaunch){
 		//StartCoroutine(PauseMenuController(isLaunch));
-		if(isLaunch)
+		if(isLaunch){
 			myUIFader.canvasGroup.alpha = 1f;
-		else
+			if(!gameManager.blurredCam.gameObject.activeInHierarchy){
+				gameManager.blurredCam.gameObject.SetActive(isLaunch);
+				inControl = true;
+			}
+			else{
+				inControl = false;
+			}
+		}
+			
+		else{
 			myUIFader.canvasGroup.alpha = 0f;
-		
+			if(inControl){
+				gameManager.blurredCam.gameObject.SetActive(isLaunch);
+			}
+		}
+			
 		gameManager.pauseRan = isLaunch;
-		gameManager.blurredCam.gameObject.SetActive(isLaunch);
 		myUIFader.canvasGroup.blocksRaycasts = isLaunch;
 		myUIFader.canvasGroup.interactable = isLaunch;
 		gameManager.pause(isLaunch);

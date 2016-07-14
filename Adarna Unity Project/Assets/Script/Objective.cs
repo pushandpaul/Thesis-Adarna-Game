@@ -80,7 +80,8 @@ public class Objective : MonoBehaviour {
 	}
 
 	public void displayToTextBox(){
-		textBox.setText(manager.currentObjective.Description);
+		
+		textBox.setText("<color=#ffed0b>Layunin:</color> " + manager.currentObjective.Description);
 	}
 
 	private void loadAssessment(){

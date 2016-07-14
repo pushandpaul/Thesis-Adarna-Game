@@ -98,8 +98,8 @@ public class DialogueController : MonoBehaviour {
 	}
 
 	IEnumerator fadeObjectivePanel(){
-		gameManager.mainHUD.canvasGroup.interactable = false;
-		gameManager.mainHUD.canvasGroup.alpha = 0f;
+		//gameManager.mainHUD.canvasGroup.interactable = false;
+		//gameManager.mainHUD.canvasGroup.alpha = 0f;
 
 		while(DialogueController.inDialogue){
 			yield return null;
@@ -113,7 +113,7 @@ public class DialogueController : MonoBehaviour {
 			objectivePanelFader.canvasGroup.alpha = 0f;
 		}
 			
-		gameManager.mainHUD.canvasGroup.alpha = 1f;
-		gameManager.mainHUD.canvasGroup.interactable = true;
+		//gameManager.mainHUD.canvasGroup.alpha = 1f;
+		//gameManager.mainHUD.canvasGroup.interactable = true;
 	}
 }

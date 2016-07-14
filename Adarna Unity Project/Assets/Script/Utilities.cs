@@ -77,4 +77,8 @@ public class Utilities : MonoBehaviour {
 	public void activateTalasalitaanInPart(int part, string salita){
 		FindObjectOfType<TalasalitaanManager>().ActivateInPart(salita, part);
 	}
+
+	public void LaunchTutorial(int index){
+		FindObjectOfType<GameManager>().tutorialManager.Launch(index);
+	}
 }

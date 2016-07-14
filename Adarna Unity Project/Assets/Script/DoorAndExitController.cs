@@ -171,4 +171,38 @@ public class DoorAndExitController : MonoBehaviour {
 			SetupExits();
 		}
 	}
+
+	public void movePlayerAway(Transform playerHolder){
+		StopAllCoroutines();
+		StartCoroutine(movingPlayerAway(playerHolder));
+	}
+
+	IEnumerator movingPlayerAway(Transform playerHolder){
+		float targetPositionX = 0f;
+		float currentPositionX = 0f;
+		Animator playerAnim = playerHolder.GetComponentInChildren<Animator>();
+		PlayerController player = playerHolder.GetComponent<PlayerController>();
+
+		player.canMove = false;
+		player.canJump = false;
+
+		if(playerHolder.localScale.x < 0){
+			playerHolder.localScale = new Vector3(Mathf.Abs(playerHolder.localScale.x), playerHolder.localScale.y, playerHolder.localScale.z);
+			targetPositionX = playerHolder.position.x + 2f;
+			Debug.Log(targetPositionX);
+		}
+		else if(playerHolder.localScale.x > 0){
+			playerHolder.localScale = new Vector3(-Mathf.Abs(playerHolder.localScale.x), playerHolder.localScale.y, playerHolder.localScale.z);
+			targetPositionX = playerHolder.position.x - 2f;
+		}
+		while(targetPositionX != playerHolder.position.x){
+			currentPositionX = Mathf.MoveTowards(playerHolder.position.x, targetPositionX, Time.deltaTime * 4f);
+			playerHolder.position = new Vector3(currentPositionX, playerHolder.position.y, playerHolder.position.z);
+			playerAnim.SetFloat("Speed", Mathf.Abs(playerHolder.position.x - targetPositionX));
+			yield return null;
+		}
+
+		player.canMove = true;
+		player.canJump = true;
+	}
 }

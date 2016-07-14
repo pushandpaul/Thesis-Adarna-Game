@@ -7,6 +7,7 @@ public class TalasalitaanButton : MonoBehaviour {
 	public Text salitaUI;
 	public Text kasingKahuluganUI;
 	public Button button;
+	public Button audioButton;
 	private Transform halimbawaUI;
 	private TalasalitaanManager talasalitaanManager;
 	private Talasalitaan talasalitaaMatch;
@@ -21,6 +22,7 @@ public class TalasalitaanButton : MonoBehaviour {
 		salitaUI.text = "????";
 		kasingKahuluganUI.text = "????";
 		talasalitaanManager = FindObjectOfType<TalasalitaanManager>();
+		audioButton.interactable = false;
 		halimbawaUI = talasalitaanManager.halimbawaUI;
 	}
 
@@ -30,6 +32,7 @@ public class TalasalitaanButton : MonoBehaviour {
 		kasingKahuluganUI.text = talasalitaan.kasingKahulugan;
 		halimbawa = talasalitaan.halimbawa;
 		newlyActivated = talasalitaan.newlyActivated;
+		audioButton.interactable = true;
 
 		notif.SetActive(newlyActivated);
 	}

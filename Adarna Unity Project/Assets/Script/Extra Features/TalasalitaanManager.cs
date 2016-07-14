@@ -12,7 +12,7 @@ public class TalasalitaanManager : MonoBehaviour {
 		public string saknongNumbers;
 		public string summary;
 		public List <Talasalitaan> talasalitaans;
-		bool isFinished;
+		public bool isFinished;
 	}
 
 	[System.Serializable]
@@ -43,6 +43,7 @@ public class TalasalitaanManager : MonoBehaviour {
 	private bool hintViewed = false;
 
 	private GameManager gameManager;
+	private ObjectiveManager objectiveManager;
 
 	private UIFader myUIFader;
 	public int newSalitaCount;
@@ -53,11 +54,12 @@ public class TalasalitaanManager : MonoBehaviour {
 		string jsonString = File.ReadAllText(Application.dataPath + talasalitaanJsonPath);
 		myUIFader = this.GetComponent<UIFader>();
 		gameManager = FindObjectOfType<GameManager>();
+		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		talasalitaanBtns = new List<TalasalitaanButton>();
 
 		partDataList = JsonUtility.FromJson<PartDataList>(jsonString);
-		Activate("Subyang");
-		Activate("Magniig");
+		//Activate("Subyang");
+		//Activate("Magniig");
 		//ShowBook();
 	}
 
@@ -162,9 +164,27 @@ public class TalasalitaanManager : MonoBehaviour {
 			talasalitaanBtns.Add(talasalitaanButton);
 		}
 
-		summaryUI.GetComponentInChildren<Text>().text = partDataList.partsData[part].summary;
-		saknongUIText.text = partDataList.partsData[part].saknongNumbers;
+		setupSummaryData(part);
+
 		//summaryUI.GetComponentInChildren<Image>().sprite =
+	}
+
+	void setupSummaryData(int part){
+		string summaryText = partDataList.partsData[part].summary;
+		string newText = "";
+		string firstLetterFormat = "";
+		Text summaryUIText = summaryUI.GetComponentInChildren<Text>();
+
+		if(gameManager.latestPartIndex >= part && partDataList.partsData[part].isFinished){
+			firstLetterFormat = "<size=" + (summaryUIText.fontSize + 6) + "><b>" + summaryText.Substring(0,1) + "</b></size>";
+			newText =  firstLetterFormat + summaryText.Substring(1, summaryText.Length-1);
+			summaryUIText.text = newText;
+			saknongUIText.text = partDataList.partsData[part].saknongNumbers;
+		}
+		else{
+			summaryUI.GetComponentInChildren<Text>().text = "????";
+			saknongUIText.text = "????";
+		}
 	}
 
 	public void ShowHint(){

@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour {
 		playerPos = FindObjectOfType<PlayerPosition>();
 		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
 		MatchTransform [] ToMatch = FindObjectsOfType<MatchTransform>();
+		CharacterData[] charactersData = FindObjectsOfType<CharacterData>();
 		bool allowMatch = false;
 
 		//Level Initialization
@@ -88,7 +89,7 @@ public class LevelManager : MonoBehaviour {
 		instantChangePlayer(gameManager.currentCharacterName);
 
 		//Initialization of character states
-		gameManager.loadCharData(FindObjectsOfType<CharacterData>());
+		gameManager.loadCharData(charactersData);
 
 		//Follower Initialization
 		if(followerManager != null)

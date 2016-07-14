@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Fungus;
+using UnityEngine.UI;
 
 public class ObjectInteraction : MonoBehaviour {
 	private bool waitForPress;
@@ -18,7 +19,14 @@ public class ObjectInteraction : MonoBehaviour {
 
 	public string message;
 	public string origMessage;
+
+	private InteractPrompt interactionPrompt;
 	// Use this for initialization
+
+	void Awake(){
+		interactionPrompt = FindObjectOfType<InteractPrompt>();
+	}
+
 	void Start () {
 
 		if(message == ""){
@@ -42,11 +50,12 @@ public class ObjectInteraction : MonoBehaviour {
 		//flowchart = FindObjectOfType<Flowchart>();
 		player = FindObjectOfType<PlayerController>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
 			Debug.Log ("Interacted with Object " + gameObject.name);
+			interactionPrompt.show(InteractPrompt.keyToInteract.E, false, transform);
 			checkIfCurrent();
 		}
 	}
@@ -63,14 +72,19 @@ public class ObjectInteraction : MonoBehaviour {
 	}
 
 	void startDialogue(string toSend){
-		flowchart.SendFungusMessage(toSend);
+		if(flowchart != null){
+			flowchart.SendFungusMessage(toSend);	
+		}
 		//objectiveMapper.textBox.disableTextBox();
 	}
 
 	void OnTriggerEnter2D (Collider2D other){
-		Debug.Log("Collided with " + gameObject.name);
+		//Debug.Log("Collided with " + gameObject.name);
 		if(other.tag == "Player"){
 			if(pressToInteract){
+				if(!anObjective || objectiveMapper.checkIfCurrent()){
+					interactionPrompt.show(InteractPrompt.keyToInteract.E, true, transform);
+				}
 				Debug.Log ("Interact");
 				waitForPress = true;
 			}
@@ -82,6 +96,9 @@ public class ObjectInteraction : MonoBehaviour {
 	void OnTriggerExit2D (Collider2D other){
 		if(other.tag == "Player"){
 			if(pressToInteract){
+				if(!anObjective || objectiveMapper.checkIfCurrent()){
+					interactionPrompt.show(InteractPrompt.keyToInteract.E, false, transform);
+				}
 				waitForPress = false;
 			}
 		}

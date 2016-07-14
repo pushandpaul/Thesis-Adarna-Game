@@ -12,12 +12,14 @@ public class ExitManager : MonoBehaviour {
 	private LevelManager levelManager;
 	private GameManager gameManager;
 	private Flowchart globalFlowchart;
+	private DoorAndExitController controller;
 	//public FollowTarget followers;
 
 	void Awake(){
 		levelManager = FindObjectOfType<LevelManager>();
 		gameManager = FindObjectOfType<GameManager>();
 		GameObject flowchartHolder = GameObject.FindWithTag ("Global Flowchart");
+		controller = FindObjectOfType<DoorAndExitController>();
 		globalFlowchart = flowchartHolder.GetComponent<Flowchart> ();
 	}
 
@@ -42,7 +44,9 @@ public class ExitManager : MonoBehaviour {
 			}
 			else{
 				globalFlowchart.SendFungusMessage ("Exit " + Random.Range(1,4));
-				StartCoroutine (waitForReverse(other.transform));
+				StopAllCoroutines();
+				controller.movePlayerAway(other.transform);
+				//StartCoroutine (waitForReverse(other.transform));
 			}
 		}
 	}
@@ -50,6 +54,7 @@ public class ExitManager : MonoBehaviour {
 	public void setIsOpen(bool isOpen){
 		this.isOpen = isOpen;
 	}
+
 	IEnumerator waitForReverse(Transform playerHolder){
 		PlayerController player = playerHolder.GetComponent<PlayerController> ();
 		bool inExit = true;

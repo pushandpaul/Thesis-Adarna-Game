@@ -60,7 +60,7 @@ public class ObjectiveManager : MonoBehaviour {
 	}
 
 	public void displayCurrentObjective(){
-		textBox.setText(currentObjective.Description);
+		textBox.setText("<color=#ffed0b>Layuinin:</color> " +currentObjective.Description);
 	}
 
 	public void setPartObjectives(){

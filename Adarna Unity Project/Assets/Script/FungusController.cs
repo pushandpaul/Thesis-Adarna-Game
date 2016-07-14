@@ -11,6 +11,12 @@ public class FungusController : MonoBehaviour {
 
 	public void SetPlayerAsCharacter(Character character){
 		GameManager gameManager = FindObjectOfType<GameManager> ();
-		character.nameText = gameManager.currentCharacterName;
+
+		if(gameManager.currentCharacterName == "Olikornyo"){
+			PlayerController player = FindObjectOfType<PlayerController>();
+			character.nameText = player.item.getItem().name.Replace("(Nakasakay)", "");
+		}
+		else
+			character.nameText = gameManager.currentCharacterName;
 	}
 }

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
+	public int latestPartIndex = 0;
+	public bool watchedIntro = false;
 	private ObjectiveManager objectiveManager;
 
 	public List <SceneObjects> sceneObjects;
@@ -63,9 +65,12 @@ public class GameManager : MonoBehaviour {
 	public UIFader mainHUD;
 	public Sprite[] heldItems;
 	public MySaveGame mySaveGame;
+	public InitSaveGame initSaveGame;
 
 	public GameObject[] HUDs;
 	public GameObject pauseMenu;
+	private bool pauseInControl;
+	public TutorialManager tutorialManager;
 
 	void Awake () {
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
@@ -94,7 +99,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
-		loadData();
+		loadInitData();
+		loadPartData(0);
 	}
 
 	public void updateSceneList(){
@@ -373,6 +379,8 @@ public class GameManager : MonoBehaviour {
 		List<Save_SceneObjects> save_sceneObjects = new List<Save_SceneObjects>();
 		List<Save_ObjectData> save_objectsData = new List<Save_ObjectData>();
 
+		int currentPartIndex = objectiveManager.currentPartIndex;
+
 		string spriteName = "";
 
 		if(currentHeldItem != null){
@@ -414,20 +422,28 @@ public class GameManager : MonoBehaviour {
 		else
 			spriteName = "";
 		
-		SaveGameSystem.SaveGame(new MySaveGame(objectiveManager.currentPartIndex, save_playerData, save_charData, save_sceneObjects), "MySaveGame");
+		SaveGameSystem.SaveGame(new MySaveGame(currentPartIndex, save_playerData, save_charData, save_sceneObjects, FollowerNames), "MySaveGame_Part_" + currentPartIndex);
+
+		if(objectiveManager.currentPartIndex > latestPartIndex){
+			latestPartIndex = objectiveManager.currentPartIndex;
+		}
+		SaveGameSystem.SaveGame(new InitSaveGame(latestPartIndex, watchedIntro), "InitSaveGame");
+
 	}
 
-	public void loadData(){
+	public void loadPartData(int part){
 		Vector3 temp = Vector3.zero;
-		mySaveGame = SaveGameSystem.LoadGame("MySaveGame") as MySaveGame;
+		mySaveGame = SaveGameSystem.LoadGame("MySaveGame_Part_" + part) as MySaveGame;
 		//SaveGameSystem.DeleteSaveGame("MySaveGame");
 
 		if(mySaveGame != null){
+			
 			objectiveManager.currentPartIndex = mySaveGame.partIndex;
 			objectiveManager.setPartObjectives();
 			currentCharacterName = mySaveGame.playerData.Name;
 			playerIdleState = mySaveGame.playerData.stateHashID;
 			currentHeldItem = searchSpriteInList(mySaveGame.playerData.heldItemName);
+			FollowerNames = mySaveGame.followers;
 
 			foreach(Save_CharData charData in mySaveGame.charData){
 				characters.Add(new SavedCharData(charData.Name, charData.stateHashID, searchSpriteInList(charData.heldSpriteName)));
@@ -439,6 +455,14 @@ public class GameManager : MonoBehaviour {
 					tempLevelManager.setObjectReference(sceneObject.sceneName, objectData.Name, temp, objectData.isDestroyed);
 				}
 			}
+		}
+	}
+
+	public void loadInitData(){
+		initSaveGame = SaveGameSystem.LoadGame("InitSaveGame") as InitSaveGame;
+		if(initSaveGame != null){
+			latestPartIndex = initSaveGame.latestPartIndex;
+			watchedIntro = initSaveGame.watchedIntro;
 		}
 	}
 
@@ -460,8 +484,22 @@ public class GameManager : MonoBehaviour {
 		}
 			
 		if(player != null){
-			player.canMove = !isPaused;
-			player.canJump = !isPaused;
+			if(isPaused){
+				if(!player.canMove && !player.canJump){
+					pauseInControl = false;
+				}
+				else{
+					player.canMove = false;
+					player.canJump = false;
+					pauseInControl = true;
+				}
+			}
+			else{
+				if(pauseInControl){
+					player.canMove = true;
+					player.canJump = true;
+				}
+			}
 		}
 	}
 
