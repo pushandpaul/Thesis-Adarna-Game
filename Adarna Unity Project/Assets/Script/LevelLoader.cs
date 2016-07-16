@@ -61,6 +61,9 @@ public class LevelLoader : MonoBehaviour {
 		ReynoLabasNgPalasyo = 48,
 		ReynoTrigo = 49,
 		Assessment = 50,
+		//UI
+		ChapterSelect = 51,
+		MainMenu = 52,
 	}
 
 	public LevelSelect Levels;
@@ -69,6 +72,7 @@ public class LevelLoader : MonoBehaviour {
 	//private LevelManager levelManager;
 
 	public bool launchOnStart;
+	public static string sceneToLoad;
 
 	void Awake () {
 		Init();
@@ -82,9 +86,10 @@ public class LevelLoader : MonoBehaviour {
 	}
 		
 	public void launchScene(string sceneName){
+		sceneToLoad = sceneName;
 		saveBeforeUnload();
-		StartCoroutine(fadeLevelByName(sceneName));
-		//StartCoroutine(displayLoadingScreen(sceneName));
+		//StartCoroutine(fadeLevelByName(sceneName));
+		StartCoroutine(displayLoadingScreen(sceneName));
 	}
 		
 	public void launchBattleScene(BattleSetup.EnemyType enemyType, BattleSetup.Stage stage){
@@ -157,5 +162,9 @@ public class LevelLoader : MonoBehaviour {
 
 	public void Init(){
 		screenFader = FindObjectOfType<ScreenFader>();
+	}
+
+	void OnLevelWasLoaded(){
+		//sceneToLoad = "";
 	}
 }

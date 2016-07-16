@@ -100,7 +100,8 @@ public class DialogueController : MonoBehaviour {
 	IEnumerator fadeObjectivePanel(){
 		//gameManager.mainHUD.canvasGroup.interactable = false;
 		//gameManager.mainHUD.canvasGroup.alpha = 0f;
-
+		objectivePanelFader.StopAllCoroutines();
+		objectivePanelFader.canvasGroup.alpha = 0f;
 		while(DialogueController.inDialogue){
 			yield return null;
 		}

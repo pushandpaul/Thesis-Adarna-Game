@@ -9,7 +9,7 @@ public class Talasalitaan{
 	public bool activated;
 	public bool newlyActivated;
 
-	public Talasalitaan(string salita, string kasingKahulugan, string halimbawa, bool activated, bool newlyActivated){
+	public Talasalitaan(string salita,string kasingKahulugan, string halimbawa, bool activated, bool newlyActivated){
 		this.salita = salita;
 		this.kasingKahulugan = kasingKahulugan;
 		this.halimbawa = halimbawa;

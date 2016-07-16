@@ -65,6 +65,7 @@ public class Objective : MonoBehaviour {
 		if(this.OnReach.Contains(ActionOnReach.LoadAssessment)){
 			loadAssessment();
 		}
+
 		if(nextObjective != null){
 			
 			manager.currentObjective = this.nextObjective;
@@ -87,6 +88,7 @@ public class Objective : MonoBehaviour {
 	private void loadAssessment(){
 		StartCoroutine(startLoadAssesssment());
 	}
+
 
 	IEnumerator startLoadAssesssment(){
 		LevelLoader levelLoader = FindObjectOfType<LevelLoader>();

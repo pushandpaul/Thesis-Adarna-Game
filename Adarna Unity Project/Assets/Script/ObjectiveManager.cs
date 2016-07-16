@@ -44,14 +44,7 @@ public class ObjectiveManager : MonoBehaviour {
 		textBox = this.GetComponent<TextBoxManager>();
 		setPartObjectives();
 	
-		if(currentObjective != null){
-			if (currentObjective.Description != "" && currentObjective.OnReach.Contains (Objective.ActionOnReach.DisplayToTextBox)) {
-				displayCurrentObjective ();
-				this.printCurrentObjective ();
-				objectivePanelFader.canvasGroup.alpha = 1f;
-			} else
-				objectivePanelFader.canvasGroup.alpha = 0f;
-		}
+		Init();
 
 	}
 
@@ -92,6 +85,7 @@ public class ObjectiveManager : MonoBehaviour {
 	}
 
 	public void nextPart(){
+		GameManager gameManager = FindObjectOfType<GameManager>();
 		currentPartIndex++;
 		setPartObjectives();
 
@@ -100,6 +94,22 @@ public class ObjectiveManager : MonoBehaviour {
 				displayCurrentObjective();
 
 			this.printCurrentObjective();
+		}
+
+		if(gameManager != null){
+			gameManager.feedDataAndSave();
+		}
+
+	}
+
+	public void Init(){
+		if(currentObjective != null){
+			if (currentObjective.Description != "" && currentObjective.OnReach.Contains (Objective.ActionOnReach.DisplayToTextBox)) {
+				displayCurrentObjective ();
+				this.printCurrentObjective ();
+				objectivePanelFader.canvasGroup.alpha = 1f;
+			} else
+				objectivePanelFader.canvasGroup.alpha = 0f;
 		}
 	}
 }

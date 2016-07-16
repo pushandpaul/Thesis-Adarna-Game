@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GameManager : MonoBehaviour {
 
@@ -67,12 +68,16 @@ public class GameManager : MonoBehaviour {
 	public MySaveGame mySaveGame;
 	public InitSaveGame initSaveGame;
 
-	public GameObject[] HUDs;
+	public List <GameObject> HUDs;
 	public GameObject pauseMenu;
+	public GameObject pauseButton;
 	private bool pauseInControl;
 	public TutorialManager tutorialManager;
 
+	public static bool inGame;
+
 	void Awake () {
+		HUDs = new List<GameObject>();
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		initPlayerIdleStateHash = Animator.StringToHash(playerIdleState_string);
 		//Debug.Log(Animator.StringToHash("(Don Pedro) Carry Item Idle"));
@@ -100,7 +105,8 @@ public class GameManager : MonoBehaviour {
 
 	void Start(){
 		loadInitData();
-		loadPartData(0);
+
+		//loadPartData(0);
 	}
 
 	public void updateSceneList(){
@@ -390,6 +396,7 @@ public class GameManager : MonoBehaviour {
 			spriteName = "";
 
 		Save_PlayerData save_playerData = new Save_PlayerData(currentCharacterName, playerIdleState, spriteName);
+		Save_LocationSetup save_locationSetup = new Save_LocationSetup(LevelLoader.sceneToLoad, LevelManager.exitInRight, LevelManager.isDoor, LevelManager.doorIndex);
 
 		foreach(SavedCharData character in characters){
 			if(character.heldItem != null){
@@ -422,7 +429,7 @@ public class GameManager : MonoBehaviour {
 		else
 			spriteName = "";
 		
-		SaveGameSystem.SaveGame(new MySaveGame(currentPartIndex, save_playerData, save_charData, save_sceneObjects, FollowerNames), "MySaveGame_Part_" + currentPartIndex);
+		SaveGameSystem.SaveGame(new MySaveGame(currentPartIndex, save_playerData, save_locationSetup, save_charData, save_sceneObjects, FollowerNames), "MySaveGame_Part_" + currentPartIndex);
 
 		if(objectiveManager.currentPartIndex > latestPartIndex){
 			latestPartIndex = objectiveManager.currentPartIndex;
@@ -439,11 +446,16 @@ public class GameManager : MonoBehaviour {
 		if(mySaveGame != null){
 			
 			objectiveManager.currentPartIndex = mySaveGame.partIndex;
+			objectiveManager.currentObjective = null;
 			objectiveManager.setPartObjectives();
+			objectiveManager.Init();
 			currentCharacterName = mySaveGame.playerData.Name;
 			playerIdleState = mySaveGame.playerData.stateHashID;
 			currentHeldItem = searchSpriteInList(mySaveGame.playerData.heldItemName);
 			FollowerNames = mySaveGame.followers;
+			LevelManager.exitInRight = mySaveGame.locationSetup.isRight;
+			LevelManager.isDoor = mySaveGame.locationSetup.isDoor;
+			LevelManager.doorIndex = mySaveGame.locationSetup.doorIndex;
 
 			foreach(Save_CharData charData in mySaveGame.charData){
 				characters.Add(new SavedCharData(charData.Name, charData.stateHashID, searchSpriteInList(charData.heldSpriteName)));
@@ -455,6 +467,8 @@ public class GameManager : MonoBehaviour {
 					tempLevelManager.setObjectReference(sceneObject.sceneName, objectData.Name, temp, objectData.isDestroyed);
 				}
 			}
+
+			FindObjectOfType<LevelLoader>().launchScene(mySaveGame.locationSetup.sceneToLoad);
 		}
 	}
 
@@ -466,8 +480,36 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void deleteSavedData(){
-		SaveGameSystem.DeleteSaveGame("MySaveGame");
+	public void deleteAllSavedData(){
+		SaveGameSystem.DeleteSaveGame("InitSaveGame");
+		for(int i = 0; i <= latestPartIndex; i++){
+			SaveGameSystem.DeleteSaveGame("MySaveGame_Part_" + i);
+		}
+		initTutorial();
+	}
+
+	public void initTutorial(){
+		foreach(SceneObjects sceneObject in sceneObjects){
+			foreach(ObjectDataReference objectDataRef in sceneObject.sceneObjectData){
+				Destroy(objectDataRef.gameObject);
+			}
+			sceneObject.sceneObjectData.Clear();
+			Destroy(sceneObject.gameObject);
+		}
+
+		sceneObjects.Clear();
+		characters.Clear();
+
+		latestPartIndex = 0;
+		currentCharacterName = "Don Pedro";
+		LevelManager.isDoor = false;
+		LevelManager.doorIndex = 0;
+		LevelManager.exitInRight = true;
+		objectiveManager.currentPartIndex = 0;
+		objectiveManager.currentObjectiveIndex = 0;
+		objectiveManager.setPartObjectives();
+		objectiveManager.Init();
+		FindObjectOfType<LevelLoader>().launchScene("Kwarto ni Haring Fernando");
 	}
 
 	public void pause(bool isPaused){
@@ -509,8 +551,8 @@ public class GameManager : MonoBehaviour {
 
 
 	public void setHUDs(bool enable){
-		if(HUDs == null || HUDs.Length == 0){
-			HUDs = GameObject.FindGameObjectsWithTag ("HUD");
+		if(HUDs == null || HUDs.Count == 0){
+			HUDs = GameObject.FindGameObjectsWithTag ("HUD").ToList();
 		}
 		foreach(GameObject HUD in HUDs){
 			setHUD (HUD, enable);
@@ -526,8 +568,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void hideHUDs(bool show){
-		if(HUDs == null || HUDs.Length == 0){
-			HUDs = GameObject.FindGameObjectsWithTag ("HUD");
+		if(HUDs == null || HUDs.Count == 0){
+			HUDs = GameObject.FindGameObjectsWithTag ("HUD").ToList();
 		}
 		foreach(GameObject HUD in HUDs){
 			hideHUD (HUD.GetComponent<CanvasGroup> (), show);

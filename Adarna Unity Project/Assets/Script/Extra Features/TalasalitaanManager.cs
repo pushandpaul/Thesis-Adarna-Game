@@ -9,6 +9,7 @@ public class TalasalitaanManager : MonoBehaviour {
 	[System.Serializable]
 	public class PartData{
 		public int partIndex;
+		public string title;
 		public string saknongNumbers;
 		public string summary;
 		public List <Talasalitaan> talasalitaans;
@@ -28,6 +29,7 @@ public class TalasalitaanManager : MonoBehaviour {
 	public TalasalitaanButton talasalitaanButtonPrefab;
 	public Transform talasalitaanButtonHolder;
 	public List<TalasalitaanButton> talasalitaanBtns;
+	public Text partTitleUIText;
 	public Transform summaryUI;
 	public Text saknongUIText;
 	public Transform halimbawaUI;
@@ -175,13 +177,18 @@ public class TalasalitaanManager : MonoBehaviour {
 		string firstLetterFormat = "";
 		Text summaryUIText = summaryUI.GetComponentInChildren<Text>();
 
-		if(gameManager.latestPartIndex >= part && partDataList.partsData[part].isFinished){
+		if(gameManager.latestPartIndex > part /*&& partDataList.partsData[part].isFinished*/){
 			firstLetterFormat = "<size=" + (summaryUIText.fontSize + 6) + "><b>" + summaryText.Substring(0,1) + "</b></size>";
 			newText =  firstLetterFormat + summaryText.Substring(1, summaryText.Length-1);
 			summaryUIText.text = newText;
+		} 
+		else if(gameManager.latestPartIndex == part){
+			partTitleUIText.text = partDataList.partsData[part].title;
 			saknongUIText.text = partDataList.partsData[part].saknongNumbers;
+			summaryUI.GetComponentInChildren<Text>().text = "????";
 		}
 		else{
+			partTitleUIText.text = "????";
 			summaryUI.GetComponentInChildren<Text>().text = "????";
 			saknongUIText.text = "????";
 		}

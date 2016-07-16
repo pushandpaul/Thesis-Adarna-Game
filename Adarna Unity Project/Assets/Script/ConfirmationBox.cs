@@ -9,17 +9,21 @@ public class ConfirmationBox : MonoBehaviour {
 	public Button yesBtn;
 	public Button noBtn;
 
+	private GameManager gameManger;
+
 	public PauseMenu pauseMenu;
 
 	public enum Kind{
 		Close,
 		ReturnToMainMenu,
+		DeleteSave,
 	}
 
 	private Kind kind;
 
 	void Awake(){
 		pauseMenu = FindObjectOfType<PauseMenu>();
+		gameManger = FindObjectOfType<GameManager>();
 	}
 
 	public void show(string kindString){
@@ -39,7 +43,13 @@ public class ConfirmationBox : MonoBehaviour {
 			prompt.text = "Sigurado ka bang gusto mong bumalik sa main menu?";
 			yesBtn.GetComponentInChildren<Text>().text = "Oo";
 			break;
+		case("delete save"):
+			kind = Kind.DeleteSave;
+			prompt.text = "Sigurado ka bang gusto mong umulit mula sa simula?";
+			yesBtn.GetComponentInChildren<Text>().text = "Umulit";
+			break;
 		}
+
 	}
 
 	void close(){
@@ -48,6 +58,8 @@ public class ConfirmationBox : MonoBehaviour {
 	}
 
 	public void buttonClicked(bool isYes){
+		LevelLoader levelLoader = FindObjectOfType<LevelLoader>();
+
 		if(isYes){
 			switch(kind){
 			case(Kind.Close): 
@@ -56,6 +68,13 @@ public class ConfirmationBox : MonoBehaviour {
 				break;
 			case(Kind.ReturnToMainMenu): 
 				Debug.Log("Go to main menu.");
+
+				gameManger.pauseMenu.GetComponent<PauseMenu>().ControlPauseMenu(false);
+				FindObjectOfType<LevelLoader>().launchScene("Chapter Selection");
+				break;
+			case(Kind.DeleteSave):
+				Debug.Log("Delete saves");
+				gameManger.deleteAllSavedData();
 				break;
 			}
 		}
