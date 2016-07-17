@@ -68,6 +68,7 @@ public class LevelLoader : MonoBehaviour {
 
 	public LevelSelect Levels;
 	private ScreenFader screenFader;
+	private LoadingScreenManager loadingScreenManager;
 	//private GameManager gameManager;
 	//private LevelManager levelManager;
 
@@ -78,6 +79,7 @@ public class LevelLoader : MonoBehaviour {
 		Init();
 		if(launchOnStart)
 			launchScene();
+		loadingScreenManager = FindObjectOfType<LoadingScreenManager> ();
 	}
 	
 	public void launchScene(){
@@ -88,8 +90,13 @@ public class LevelLoader : MonoBehaviour {
 	public void launchScene(string sceneName){
 		sceneToLoad = sceneName;
 		saveBeforeUnload();
+		loadingScreenManager.loadScene (sceneName);
 		//StartCoroutine(fadeLevelByName(sceneName));
-		StartCoroutine(displayLoadingScreen(sceneName));
+	}
+
+	public void discreteLaunchScene(string sceneName){
+		saveBeforeUnload ();
+		loadingScreenManager.loadScene (sceneName);
 	}
 		
 	public void launchBattleScene(BattleSetup.EnemyType enemyType, BattleSetup.Stage stage){
@@ -147,17 +154,6 @@ public class LevelLoader : MonoBehaviour {
 		float fadeTime = screenFader.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
 		SceneManager.LoadScene(sceneName);
-	}
-
-	IEnumerator displayLoadingScreen(string sceneName){
-		float fadeTime = screenFader.BeginFade(1);
-		yield return new WaitForSeconds(fadeTime);
-		AsyncOperation async = SceneManager.LoadSceneAsync(sceneName);
-
-		while(!async.isDone){
-			Debug.Log("Loading");
-			yield return null;
-		}
 	}
 
 	public void Init(){

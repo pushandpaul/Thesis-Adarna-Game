@@ -2535,6 +2535,8 @@ GameObject:
   - 114: {fileID: 1760139660}
   - 114: {fileID: 1760139661}
   - 114: {fileID: 1760139662}
+  - 114: {fileID: 1760139665}
+  - 114: {fileID: 1760139666}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2752,6 +2754,7 @@ MonoBehaviour:
   - {fileID: 1760139586}
   - {fileID: 1760139569}
   - {fileID: 1760139588}
+  - {fileID: 1760139666}
   - {fileID: 1760139589}
   - {fileID: 1760139590}
   - {fileID: 1760139596}
@@ -5288,8 +5291,8 @@ MonoBehaviour:
   itemId: 431
   errorMessage: 
   indentLevel: 0
-  storyText: "Mahal kong ermitanyong may mabuting kalooban, ako po\u2019y hindi {color=\"yellow\"}salanggapang/tampalasan;
-    manloloko{/color}. "
+  storyText: "Mahal kong ermitanyong may mabuting kalooban, ako po\u2019y hindi {color=\"yellow\"}salanggapang/masamang
+    tao; manloloko{/color}. "
   description: 
   character: {fileID: 1030142447}
   portrait: {fileID: 0}
@@ -5439,6 +5442,7 @@ MonoBehaviour:
   - {fileID: 1760139615}
   - {fileID: 1760139635}
   - {fileID: 1760139630}
+  - {fileID: 1760139665}
   - {fileID: 1760139632}
   - {fileID: 1760139629}
   - {fileID: 1760139644}
@@ -5559,8 +5563,7 @@ MonoBehaviour:
     width: 1644.7129
     height: 1260.2305
   selectedBlock: {fileID: 1760139664}
-  selectedCommands:
-  - {fileID: 1760139659}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -5918,7 +5921,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1760139656
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1760139552}
@@ -5945,7 +5948,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1760139657
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1760139552}
@@ -6006,7 +6009,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1760139658
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1760139552}
@@ -6067,7 +6070,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1760139659
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1760139552}
@@ -6145,7 +6148,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1760139660
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1760139552}
@@ -6160,7 +6163,7 @@ MonoBehaviour:
   duration: 3
 --- !u!114 &1760139661
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1760139552}
@@ -6221,7 +6224,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1760139662
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1760139552}
@@ -6318,6 +6321,94 @@ MonoBehaviour:
   - {fileID: 1760139660}
   - {fileID: 1760139662}
   - {fileID: 1760139618}
+--- !u!114 &1760139665
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760139552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 791
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 290846655}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: activateTalasalitaan
+  targetMethodText: 'activateTalasalitaan (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: salanggapang
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1760139666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760139552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 792
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 290846655}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: activateTalasalitaan
+  targetMethodText: 'activateTalasalitaan (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: natatatap
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!4 &1793007160 stripped
 Transform:
   m_PrefabParentObject: {fileID: 410268, guid: cfa2231d34da56c4fa62626faa743ec8, type: 2}

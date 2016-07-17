@@ -33,6 +33,7 @@ public class LayuninUIManager : MonoBehaviour {
 	}
 
 	void Start(){
+		
 		//Launch("This is my title", "hope you like it", CloseControl.PressAnywhere, true);
 	}
 
@@ -61,7 +62,7 @@ public class LayuninUIManager : MonoBehaviour {
 		if(closeControl == CloseControl.PressAnywhere){
 			this.GetComponent<Button>().interactable = true;
 			allowPanelPress = true;
-			closeKeyTemp = "Pumindot kahit saaan";
+			closeKeyTemp = "Mag-click kahit saaan";
 		}
 		else{
 			this.GetComponent<Button>().interactable = false;
@@ -119,6 +120,10 @@ public class LayuninUIManager : MonoBehaviour {
 		if(showMini){
 			layuninMiniText.text = description.text;
 			layuninMiniUI.FadeIn(10, 5f, true);
+		}
+
+		foreach(GameObject HUD in GameObject.FindGameObjectsWithTag("HUD")){
+			HUD.GetComponent<CanvasGroup>().alpha = 1f;
 		}
 	}
 }

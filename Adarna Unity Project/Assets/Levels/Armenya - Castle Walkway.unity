@@ -336,6 +336,7 @@ MonoBehaviour:
   panelFadeDelay: 0
   anObjective: 0
   message: 
+  origMessage: 
 --- !u!1001 &167701666
 Prefab:
   m_ObjectHideFlags: 0
@@ -742,6 +743,7 @@ MonoBehaviour:
   doorPlacementUp: 1
   isOpen: 1
   closedMessageDisplayed: 0
+  isActualDoor: 1
   waitForPress: 1
 --- !u!4 &692920424 stripped
 Transform:
@@ -783,6 +785,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 743284525}
   - 114: {fileID: 743284526}
+  - 114: {fileID: 743284527}
   m_Layer: 0
   m_Name: Utilities
   m_TagString: Untagged
@@ -817,6 +820,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels: 0
   launchOnStart: 0
+--- !u!114 &743284527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743284524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa01ccb98e548d041b038431ee3ac81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackUIFader: {fileID: 0}
 --- !u!1001 &912218960
 Prefab:
   m_ObjectHideFlags: 0
@@ -1524,6 +1539,10 @@ GameObject:
   - 114: {fileID: 1792214977}
   - 114: {fileID: 1792214976}
   - 114: {fileID: 1792214985}
+  - 114: {fileID: 1792214986}
+  - 114: {fileID: 1792214987}
+  - 114: {fileID: 1792214988}
+  - 114: {fileID: 1792214989}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1669,6 +1688,7 @@ MonoBehaviour:
   - {fileID: 1792214939}
   - {fileID: 1792214929}
   - {fileID: 1792214931}
+  - {fileID: 1792214986}
   - {fileID: 1792214933}
   - {fileID: 1792214930}
   - {fileID: 1792214932}
@@ -1683,10 +1703,12 @@ MonoBehaviour:
   - {fileID: 1792214934}
   - {fileID: 1792214947}
   - {fileID: 1792214948}
+  - {fileID: 1792214987}
   - {fileID: 1792214949}
   - {fileID: 1792214950}
   - {fileID: 1792214951}
   - {fileID: 1792214952}
+  - {fileID: 1792214988}
   - {fileID: 1792214959}
   - {fileID: 1792214968}
   - {fileID: 1792214900}
@@ -1920,9 +1942,9 @@ MonoBehaviour:
     y: -351.4286
     width: 1705.2856
     height: 1155.9308
-  selectedBlock: {fileID: 1792214973}
+  selectedBlock: {fileID: 1792214903}
   selectedCommands:
-  - {fileID: 1792214976}
+  - {fileID: 1792214986}
   variables: []
   description: 
   stepPause: 0
@@ -2329,7 +2351,7 @@ MonoBehaviour:
   itemId: 29
   errorMessage: 
   indentLevel: 0
-  storyText: ' ...amoy {color="yellow"}manusya/amoy tao{/color}...'
+  storyText: ' ...{color="yellow"}amoymanusya/amoy tao{/color}...'
   description: 
   character: {fileID: 167701667}
   portrait: {fileID: 0}
@@ -3096,6 +3118,7 @@ MonoBehaviour:
   - {fileID: 1792214954}
   - {fileID: 1792214962}
   - {fileID: 1792214961}
+  - {fileID: 1792214989}
   - {fileID: 1792214963}
   - {fileID: 1792214964}
   - {fileID: 1792214965}
@@ -3991,6 +4014,182 @@ MonoBehaviour:
   errorMessage: 
   indentLevel: 0
   duration: 1
+--- !u!114 &1792214986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 735
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 743284524}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: activateTalasalitaan
+  targetMethodText: 'activateTalasalitaan (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: amoy manusya
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1792214987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 736
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 743284524}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: activateTalasalitaan
+  targetMethodText: 'activateTalasalitaan (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: masisila
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1792214988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 737
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 743284524}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: activateTalasalitaan
+  targetMethodText: 'activateTalasalitaan (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: angay-angay
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1792214989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792214897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 738
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 743284524}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: activateTalasalitaan
+  targetMethodText: 'activateTalasalitaan (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: palamara
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &1803943808
 GameObject:
   m_ObjectHideFlags: 0

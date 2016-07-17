@@ -17,6 +17,7 @@ public class TalasalitaanButton : MonoBehaviour {
 
 	public bool newlyActivated;
 	public GameObject notif;
+	private AudioSource audioSource;
 
 	void Awake(){
 		salitaUI.text = "????";
@@ -24,6 +25,7 @@ public class TalasalitaanButton : MonoBehaviour {
 		talasalitaanManager = FindObjectOfType<TalasalitaanManager>();
 		audioButton.interactable = false;
 		halimbawaUI = talasalitaanManager.halimbawaUI;
+		audioSource = GetComponent<AudioSource> ();
 	}
 
 	public void Init(Talasalitaan talasalitaan){
@@ -69,5 +71,12 @@ public class TalasalitaanButton : MonoBehaviour {
 
 	public void playAudio(){
 		Debug.Log("Play Audio: Work in progress");
+		AudioClip temp = (AudioClip)Resources.Load ("Talasalitaan Audio/" + salitaUI.text.ToLower ());
+
+		if(temp != audioSource.clip){
+			audioSource.clip = temp;
+		}
+		audioSource.time = 0;
+		audioSource.Play ();
 	}
 }

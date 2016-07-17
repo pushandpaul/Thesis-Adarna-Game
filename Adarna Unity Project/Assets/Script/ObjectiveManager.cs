@@ -86,6 +86,10 @@ public class ObjectiveManager : MonoBehaviour {
 
 	public void nextPart(){
 		GameManager gameManager = FindObjectOfType<GameManager>();
+
+		if(currentPartIndex == 0){
+			LevelLoader.sceneToLoad = "Kwarto ni Haring Fernando";
+		}
 		currentPartIndex++;
 		setPartObjectives();
 
@@ -111,5 +115,9 @@ public class ObjectiveManager : MonoBehaviour {
 			} else
 				objectivePanelFader.canvasGroup.alpha = 0f;
 		}
+	}
+
+	void OnLevelWasLoaded(){
+		objectivePanelFader.gameObject.SetActive (true);	
 	}
 }

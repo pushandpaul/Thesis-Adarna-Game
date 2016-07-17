@@ -23,12 +23,20 @@ public class TutorialManager : MonoBehaviour {
 	public int tutorialIndex = 0;
 	private DialogInput dialogInput; 
 	private PlayerController player;
+
 	void Awake () {
 		uiFader = GetComponent<UIFader>();
 		gameManager = FindObjectOfType<GameManager>();
 		player = FindObjectOfType<PlayerController>();
+
 	}
 
+	void OnLevelLoad(){
+		foreach(Tutorial tutorial in tutorials){
+			tutorial.display.gameObject.SetActive (false);
+		}
+	}
+		
 	void Update(){
 		dialogInput = FindObjectOfType<DialogInput>();
 	
@@ -43,6 +51,10 @@ public class TutorialManager : MonoBehaviour {
 	}
 
 	public void Launch(int index){
+		if(player == null){
+			player = FindObjectOfType<PlayerController> ();
+		}
+		this.enabled = true;
 		if(index < tutorials.Length){
 			this.gameObject.SetActive(true);
 			StopAllCoroutines();
@@ -111,6 +123,10 @@ public class TutorialManager : MonoBehaviour {
 			Debug.Log("Not in dialogue");
 			player.canJump = true;
 			player.canMove = true;
+		}
+		else {
+			player.canJump = false;
+			player.canMove = false;
 		}
 
 		if(currentIndex == 5){

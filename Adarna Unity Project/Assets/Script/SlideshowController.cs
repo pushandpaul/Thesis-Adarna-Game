@@ -13,8 +13,9 @@ public class SlideshowController : MonoBehaviour{
 	private GameManager gameManager;
 
 	[Tooltip("Transition duration in seconds")]
-	public float transitionDuration = 2;
+	public float transitionDuration = 3;
 	public int fadeOutDelay;
+
 
 	void Awake(){
 		GameObject BackUIFaderGO = GameObject.FindGameObjectWithTag("Back UI Fader");
@@ -28,6 +29,7 @@ public class SlideshowController : MonoBehaviour{
 	}
 
 	public void Begin(SlideshowImages images, bool enableHUD, bool enablePause){
+		Debug.Log ("Beginning slideshow.");
 		gameManager.setHUDs (enableHUD);
 		gameManager.setPauseMenu (enablePause);
 		slideshowImages = images.images;
@@ -37,6 +39,7 @@ public class SlideshowController : MonoBehaviour{
 	}
 
 	public void Begin(SlideshowImages images, int startingIndex, bool enablePause, bool enableHUD){
+		Debug.Log ("Beginning slideshow.");
 		gameManager.setHUDs (enableHUD);
 		gameManager.setPauseMenu (enablePause);
 		slideshowImages = images.images;
@@ -46,6 +49,7 @@ public class SlideshowController : MonoBehaviour{
 	}
 
 	public void Next(){
+		Debug.Log ("Next");
 		currentImageIndex++;
 		if(currentImageIndex < slideshowImages.Length){
 			currentImage = slideshowImages[currentImageIndex];
@@ -67,19 +71,24 @@ public class SlideshowController : MonoBehaviour{
 
 	IEnumerator StartTransition(bool toEnd){
 		backUIFader.FadeIn(fadeOutDelay, transitionDuration, true);
+
+		if(toEnd){
+			gameManager.setHUDs (true);
+			gameManager.setPauseMenu (true);
+		}
+
 		while(backUIFader.canvasGroup.alpha < 1){
 			yield return null;
 		}
 
-		if(!toEnd){
+		if(toEnd){
+			slideShowHolder.enabled = false;
+		}
+
+		else if(!toEnd){
 			slideShowHolder.enabled = true;
 			slideShowHolder.sprite = currentImage;
 		}
-		else{
-			slideShowHolder.enabled = false;
-			gameManager.setHUDs (true);
-			gameManager.setPauseMenu (true);
-		}
-			
+
 	}
 }

@@ -343,6 +343,7 @@ GameObject:
   - 114: {fileID: 180859135}
   - 114: {fileID: 180859136}
   - 114: {fileID: 180859122}
+  - 114: {fileID: 180859133}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -596,6 +597,7 @@ MonoBehaviour:
   - {fileID: 180859122}
   - {fileID: 180859092}
   - {fileID: 180859093}
+  - {fileID: 180859133}
   - {fileID: 180859105}
   - {fileID: 180859094}
   - {fileID: 180859107}
@@ -699,8 +701,7 @@ MonoBehaviour:
     height: 1155.9308
   selectedBlock: {fileID: 180859100}
   selectedCommands:
-  - {fileID: 180859109}
-  - {fileID: 180859134}
+  - {fileID: 180859133}
   variables: []
   description: 
   stepPause: 0
@@ -2007,6 +2008,50 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &180859133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180859090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 735
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 290846655}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: activateTalasalitaan
+  targetMethodText: 'activateTalasalitaan (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: tinumpa
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &180859134
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2736,6 +2781,7 @@ MonoBehaviour:
   panelFadeDelay: 0
   anObjective: 0
   message: 
+  origMessage: 
 --- !u!1001 &867715991
 Prefab:
   m_ObjectHideFlags: 0
@@ -3623,6 +3669,7 @@ MonoBehaviour:
   panelFadeDelay: 0
   anObjective: 0
   message: 
+  origMessage: 
 --- !u!4 &1550555060
 Transform:
   m_ObjectHideFlags: 0

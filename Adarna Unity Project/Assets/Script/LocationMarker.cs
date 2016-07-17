@@ -18,8 +18,8 @@ public class LocationMarker : MonoBehaviour {
 		LevelManager levelManager = FindObjectOfType<LevelManager>();
 		string section = "";
 		string sceneName = "";
-
-		if(levelManager != null){
+		myUIFader.canvasGroup.alpha = 0f;
+		if(levelManager != null && this.gameObject.activeInHierarchy){
 			sceneName = levelManager.sceneName.ToLower();
 			if(sceneName.Contains("armenya")){
 				section = "Armenya";	
@@ -56,6 +56,9 @@ public class LocationMarker : MonoBehaviour {
 				StartCoroutine(show(section));
 			}
 			currentSection = section;
+		}
+		else{
+			Debug.Log ("Level Manager is null");
 		}
 	}
 

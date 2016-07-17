@@ -11,26 +11,32 @@ public class ChapterSelectManager : MonoBehaviour {
 
 	public Button selectChapterButton;
 	public Button restartGameButton;
+	public Button startAssessment;
 
 	private ConfirmationBox confirmationBox;
 	private GameManager gameManager;
 	private TalasalitaanManager.PartDataList partReference;
+	private LocationMarker locationMarker;
 
-
+	public GameObject backButton;
 	private int currentPartIndex = 0;
 
 	void Awake(){
 		gameManager = FindObjectOfType<GameManager>();
+		gameManager.GetComponentInChildren<TutorialManager> (true).gameObject.SetActive (false);
 		confirmationBox = gameManager.GetComponentInChildren<ConfirmationBox>(true);
+		locationMarker = gameManager.GetComponentInChildren<LocationMarker>(true);
 		partReference = FindObjectOfType<TalasalitaanManager>().partDataList;
 		currentPartIndex = gameManager.latestPartIndex;
 		initPanels();
 	}
 
 	void Start(){
+		gameManager.HUDs.Add (backButton);
 		gameManager.setHUDs(true);
 		gameManager.setPauseMenu(false);
 		gameManager.pauseButton.SetActive(false);
+		locationMarker.gameObject.SetActive (false);
 		FindObjectOfType<ObjectiveManager>().objectivePanelFader.StopAllCoroutines();
 		FindObjectOfType<ObjectiveManager>().objectivePanelFader.canvasGroup.alpha = 0f;
 	}
@@ -61,9 +67,35 @@ public class ChapterSelectManager : MonoBehaviour {
 
 	void initPanels(){
 
-		if(currentPartIndex > gameManager.latestPartIndex){
-			selectChapterButton.interactable = false;
+		if(currentPartIndex == 0){
+			selectChapterButton.interactable = true;
+			startAssessment.interactable = false;
 		}
+		else if(currentPartIndex > gameManager.latestPartIndex){
+			selectChapterButton.interactable = false;
+			startAssessment.interactable = false;
+		}
+
+		else if(currentPartIndex <= gameManager.latestPartIndex){
+
+			if (!gameManager.prevAssessmentDone) {
+
+				if (currentPartIndex == gameManager.latestPartIndex) {
+					selectChapterButton.interactable = false;
+					startAssessment.interactable = false;
+				} 
+				else{
+					selectChapterButton.interactable = true;
+					startAssessment.interactable = true;
+				}
+
+			} 
+			else{
+				selectChapterButton.interactable = true;
+				startAssessment.interactable = true;
+			}
+		}
+
 		else
 			selectChapterButton.interactable = true;
 
@@ -74,9 +106,8 @@ public class ChapterSelectManager : MonoBehaviour {
 		else
 			chapterAfter.gameObject.SetActive(false);
 		
-		if(currentPartIndex > 0){
-			setChapterPanel(chapterBefore, currentPartIndex-1);
-		}
+		if(currentPartIndex > 0)
+			setChapterPanel (chapterBefore, currentPartIndex - 1);
 
 		else 
 			chapterBefore.gameObject.SetActive(false);
@@ -94,13 +125,16 @@ public class ChapterSelectManager : MonoBehaviour {
 		if(index > gameManager.latestPartIndex){
 			panel.titleText.text = "????";
 		}
+
+		else if(index == gameManager.latestPartIndex && !gameManager.prevAssessmentDone){
+			panel.titleText.text = "????";
+		}
 		else
 			panel.titleText.text = partReference.partsData[index].title;
 	}
 
 	public void selectPart(){
 		
-
 		if(currentPartIndex == 0){
 			gameManager.initTutorial();
 		}
@@ -113,7 +147,7 @@ public class ChapterSelectManager : MonoBehaviour {
 				break;
 			}
 		}
-
+		locationMarker.gameObject.SetActive (true);
 		gameManager.pauseButton.SetActive(true);
 		gameManager.setPauseMenu(true);
 	}
@@ -132,5 +166,10 @@ public class ChapterSelectManager : MonoBehaviour {
 		}
 
 		FindObjectOfType<LevelLoader>().launchScene("Main Menu");
+	}
+
+	public void launchAssessment(){
+		//AssessmentManager.assessmentNumber = currentPartIndex;
+		FindObjectOfType<LevelLoader> ().launchScene ("() Assessment");
 	}
 }

@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour {
 	public string playerIdleState_string;
 	public float playerSpeed = 5f;
 
-	public LevelManager tempLevelManager;
 	public List <FollowTarget> Followers;
 	public List <string> FollowerNames;
 
@@ -67,16 +66,20 @@ public class GameManager : MonoBehaviour {
 	public Sprite[] heldItems;
 	public MySaveGame mySaveGame;
 	public InitSaveGame initSaveGame;
+	public bool prevAssessmentDone = false;
 
 	public List <GameObject> HUDs;
 	public GameObject pauseMenu;
 	public GameObject pauseButton;
 	private bool pauseInControl;
 	public TutorialManager tutorialManager;
+	public GameObject bookHUDbtn;
 
 	public static bool inGame;
+	private BGMManager bgmManager;
 
 	void Awake () {
+		bgmManager = FindObjectOfType<BGMManager> ();
 		HUDs = new List<GameObject>();
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		initPlayerIdleStateHash = Animator.StringToHash(playerIdleState_string);
@@ -384,6 +387,9 @@ public class GameManager : MonoBehaviour {
 		List<Save_CharData> save_charData = new List<Save_CharData>();
 		List<Save_SceneObjects> save_sceneObjects = new List<Save_SceneObjects>();
 		List<Save_ObjectData> save_objectsData = new List<Save_ObjectData>();
+		List<Save_Exit> save_exit = new List<Save_Exit> ();
+		List<Save_ExitDoorData> save_exitDoorData = new List<Save_ExitDoorData> ();
+		DoorAndExitController doorAndExitController = FindObjectOfType<DoorAndExitController> ();
 
 		int currentPartIndex = objectiveManager.currentPartIndex;
 
@@ -396,7 +402,17 @@ public class GameManager : MonoBehaviour {
 			spriteName = "";
 
 		Save_PlayerData save_playerData = new Save_PlayerData(currentCharacterName, playerIdleState, spriteName);
-		Save_LocationSetup save_locationSetup = new Save_LocationSetup(LevelLoader.sceneToLoad, LevelManager.exitInRight, LevelManager.isDoor, LevelManager.doorIndex);
+
+
+		foreach(DoorAndExitController.ExitsInScene exitsInScene in doorAndExitController.exitsInScenes){
+			foreach(DoorAndExitController.ExitData exitData in exitsInScene.exits){
+				save_exit.Add(new Save_Exit (exitData.Name, exitData.isOpen, exitData.isDoor));
+			}
+			save_exitDoorData.Add (new Save_ExitDoorData (exitsInScene.Name, save_exit));
+			save_exit.Clear ();
+		}
+
+		Save_LocationSetup save_locationSetup = new Save_LocationSetup(LevelLoader.sceneToLoad, timeOfDay, LevelManager.exitInRight, LevelManager.isDoor, LevelManager.doorIndex, save_exitDoorData);
 
 		foreach(SavedCharData character in characters){
 			if(character.heldItem != null){
@@ -429,22 +445,28 @@ public class GameManager : MonoBehaviour {
 		else
 			spriteName = "";
 		
-		SaveGameSystem.SaveGame(new MySaveGame(currentPartIndex, save_playerData, save_locationSetup, save_charData, save_sceneObjects, FollowerNames), "MySaveGame_Part_" + currentPartIndex);
+		SaveGameSystem.SaveGame(new MySaveGame(currentPartIndex, save_playerData,save_locationSetup, save_charData, save_sceneObjects, FollowerNames), "MySaveGame_Part_" + currentPartIndex);
 
 		if(objectiveManager.currentPartIndex > latestPartIndex){
 			latestPartIndex = objectiveManager.currentPartIndex;
 		}
-		SaveGameSystem.SaveGame(new InitSaveGame(latestPartIndex, watchedIntro), "InitSaveGame");
+		SaveGameSystem.SaveGame(new InitSaveGame(latestPartIndex, watchedIntro, prevAssessmentDone), "InitSaveGame");
 
+	}
+
+	public void initSaveUpdate(){
+		SaveGameSystem.SaveGame(new InitSaveGame(latestPartIndex, watchedIntro, prevAssessmentDone), "InitSaveGame");
 	}
 
 	public void loadPartData(int part){
 		Vector3 temp = Vector3.zero;
 		mySaveGame = SaveGameSystem.LoadGame("MySaveGame_Part_" + part) as MySaveGame;
+		DoorAndExitController doorAndExitController = FindObjectOfType<DoorAndExitController> ();
 		//SaveGameSystem.DeleteSaveGame("MySaveGame");
 
 		if(mySaveGame != null){
-			
+			LevelManager tempLevelManager = FindObjectOfType<LevelManager> ();
+			List<DoorAndExitController.ExitData> exitData = new List<DoorAndExitController.ExitData>();
 			objectiveManager.currentPartIndex = mySaveGame.partIndex;
 			objectiveManager.currentObjective = null;
 			objectiveManager.setPartObjectives();
@@ -456,6 +478,15 @@ public class GameManager : MonoBehaviour {
 			LevelManager.exitInRight = mySaveGame.locationSetup.isRight;
 			LevelManager.isDoor = mySaveGame.locationSetup.isDoor;
 			LevelManager.doorIndex = mySaveGame.locationSetup.doorIndex;
+			timeOfDay = mySaveGame.locationSetup.timeOfDay;
+
+			foreach(Save_ExitDoorData exitDoorData in mySaveGame.locationSetup.exitDoorData){
+				foreach(Save_Exit exit in exitDoorData.exits){
+					exitData.Add (new DoorAndExitController.ExitData (exit.Name, exit.isOpen, exit.isDoor));
+				}
+				doorAndExitController.exitsInScenes.Add (new DoorAndExitController.ExitsInScene (exitDoorData.sceneName, exitData));
+				exitData.Clear ();
+			}
 
 			foreach(Save_CharData charData in mySaveGame.charData){
 				characters.Add(new SavedCharData(charData.Name, charData.stateHashID, searchSpriteInList(charData.heldSpriteName)));
@@ -467,16 +498,17 @@ public class GameManager : MonoBehaviour {
 					tempLevelManager.setObjectReference(sceneObject.sceneName, objectData.Name, temp, objectData.isDestroyed);
 				}
 			}
-
 			FindObjectOfType<LevelLoader>().launchScene(mySaveGame.locationSetup.sceneToLoad);
 		}
 	}
 
 	public void loadInitData(){
 		initSaveGame = SaveGameSystem.LoadGame("InitSaveGame") as InitSaveGame;
+
 		if(initSaveGame != null){
 			latestPartIndex = initSaveGame.latestPartIndex;
 			watchedIntro = initSaveGame.watchedIntro;
+			prevAssessmentDone = initSaveGame.prevAssessmentDone;
 		}
 	}
 
@@ -506,7 +538,7 @@ public class GameManager : MonoBehaviour {
 		LevelManager.doorIndex = 0;
 		LevelManager.exitInRight = true;
 		objectiveManager.currentPartIndex = 0;
-		objectiveManager.currentObjectiveIndex = 0;
+		objectiveManager.currentObjective = null;
 		objectiveManager.setPartObjectives();
 		objectiveManager.Init();
 		FindObjectOfType<LevelLoader>().launchScene("Kwarto ni Haring Fernando");
@@ -515,13 +547,24 @@ public class GameManager : MonoBehaviour {
 	public void pause(bool isPaused){
 		this.isPaused = isPaused;
 		PlayerController player = FindObjectOfType<PlayerController> ();
+		float originalMusicVol = 0f;
+		float originalAmbinetVol = 0f;
 
 		if(isPaused){
+			originalAmbinetVol = bgmManager.ambientSource.volume;
+			originalMusicVol = bgmManager.musicSource.volume;
+
+			bgmManager.setAmbientVolume (0.08f);
+			bgmManager.setMusicVolume (0.08f);
+
 			hideHUDs(false);
 			Time.timeScale = 0f;
 		}
 		else{
 			hideHUDs (true);
+
+			bgmManager.revertOriginalVol ();
+
 			Time.timeScale = 1f;
 		}
 			

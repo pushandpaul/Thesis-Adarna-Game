@@ -7,6 +7,15 @@ public class DoorAndExitController : MonoBehaviour {
 	public class ExitsInScene{
 		public string Name;
 		public List <ExitData> exits;
+
+		public ExitsInScene(){
+			
+		}
+
+		public ExitsInScene(string Name, List<ExitData> exits){
+			this.Name = Name;
+			this.exits = exits;
+		}
 	}
 
 	[System.Serializable]
@@ -45,6 +54,12 @@ public class DoorAndExitController : MonoBehaviour {
 	private ExitManager[] currentExits;
 	private DoorHandler[] currentDoors;
 	private List<ActualExit> actualExits;
+
+	void Awake(){
+		if(exitsInScenes == null || exitsInScenes.Count == 0){
+			exitsInScenes = new List<ExitsInScene> ();
+		}
+	}
 
 	void Start () {
 		Init();

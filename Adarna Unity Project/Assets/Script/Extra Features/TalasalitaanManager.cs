@@ -24,6 +24,8 @@ public class TalasalitaanManager : MonoBehaviour {
 	public PartDataList partDataList;
 
 	public string talasalitaanJsonPath;
+	public string backupJsonPath;
+	private string backupJson;
 
 	//public TalasalitaanButton talasalitaanButtonPrefab;
 	public TalasalitaanButton talasalitaanButtonPrefab;
@@ -46,6 +48,7 @@ public class TalasalitaanManager : MonoBehaviour {
 
 	private GameManager gameManager;
 	private ObjectiveManager objectiveManager;
+	private AudioSource notificationSound;
 
 	private UIFader myUIFader;
 	public int newSalitaCount;
@@ -53,26 +56,43 @@ public class TalasalitaanManager : MonoBehaviour {
 
 	void Start () {
 		GameObject[] chapSelectBtnHolders = GameObject.FindGameObjectsWithTag("Chapter Button");
-		string jsonString = File.ReadAllText(Application.dataPath + talasalitaanJsonPath);
+		string jsonString = File.ReadAllText (Application.dataPath + talasalitaanJsonPath);
+		backupJson = File.ReadAllText(Application.dataPath + backupJsonPath);
 		myUIFader = this.GetComponent<UIFader>();
 		gameManager = FindObjectOfType<GameManager>();
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		talasalitaanBtns = new List<TalasalitaanButton>();
+		notificationSound = GetComponent<AudioSource> ();
 
 		partDataList = JsonUtility.FromJson<PartDataList>(jsonString);
 		//Activate("Subyang");
 		//Activate("Magniig");
 		//ShowBook();
+
+		foreach(PartData partData in partDataList.partsData){
+			foreach(Talasalitaan talasalitaan in partData.talasalitaans){
+				if(talasalitaan.newlyActivated){
+					newSalitaCount++;
+				}
+			}
+		}
 	}
 
 	private void Activate(Talasalitaan talasalitaan){
-		notif.SetActive(true);
-		newSalitaCount++;
-		notif.GetComponentInChildren<Text>().text = newSalitaCount.ToString();
+
+
 		if(talasalitaan != null){
 			Debug.Log("Found talasalitaan '" + talasalitaan.salita + "'.");
-			talasalitaan.activated = true;
-			talasalitaan.newlyActivated = true;
+			if(!talasalitaan.activated){
+				newSalitaCount++;
+				notif.GetComponentInChildren<Text>().text = newSalitaCount.ToString();
+				notif.SetActive(true);
+				notificationSound.time = 1.1f;
+				notificationSound.Play();
+				talasalitaan.activated = true;
+				talasalitaan.newlyActivated = true;
+
+			}
 		}
 	}
 
@@ -225,6 +245,12 @@ public class TalasalitaanManager : MonoBehaviour {
 		string jsonString = JsonUtility.ToJson(partDataList);
 		Debug.Log(jsonString);
 		File.WriteAllText(Application.dataPath + talasalitaanJsonPath, jsonString);
+	}
+
+	public void ResetPartData(){
+		newSalitaCount = 0;
+		notif.SetActive (false);
+		partDataList = JsonUtility.FromJson<PartDataList>(backupJson);
 	}
 
 	IEnumerator BookController(bool isLaunch){

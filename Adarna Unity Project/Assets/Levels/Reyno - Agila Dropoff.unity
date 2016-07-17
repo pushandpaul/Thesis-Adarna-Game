@@ -310,6 +310,7 @@ MonoBehaviour:
   panelFadeDelay: 0
   anObjective: 0
   message: 
+  origMessage: 
 --- !u!58 &223073836
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -571,6 +572,7 @@ MonoBehaviour:
   doorPlacementUp: 1
   isOpen: 1
   closedMessageDisplayed: 0
+  isActualDoor: 1
   waitForPress: 1
 --- !u!114 &672965563 stripped
 MonoBehaviour:
@@ -608,7 +610,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1 &825883555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1008,7 @@ GameObject:
   - 114: {fileID: 1633076999}
   - 114: {fileID: 1633077000}
   - 114: {fileID: 1633077001}
+  - 114: {fileID: 1633077002}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1747,6 +1750,50 @@ MonoBehaviour:
   fadeWhenDone: 1
   waitForClick: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &1633077002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1633076983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 791
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 825883555}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: activateTalasalitaan
+  targetMethodText: 'activateTalasalitaan (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: binusilak
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &1633077067
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2076,6 +2123,7 @@ MonoBehaviour:
   - {fileID: 1633077001}
   - {fileID: 1633076990}
   - {fileID: 1633076991}
+  - {fileID: 1633077002}
   - {fileID: 1633076993}
   - {fileID: 1633076992}
   - {fileID: 1633076996}
@@ -2189,7 +2237,7 @@ MonoBehaviour:
     height: 1163.2374
   selectedBlock: {fileID: 1633077075}
   selectedCommands:
-  - {fileID: 1633076990}
+  - {fileID: 1633077002}
   variables: []
   description: 
   stepPause: 0

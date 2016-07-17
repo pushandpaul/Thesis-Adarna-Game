@@ -86,6 +86,7 @@ public class Objective : MonoBehaviour {
 	}
 
 	private void loadAssessment(){
+		//AssessmentManager.assessmentNumber = this.objectiveIndex;
 		StartCoroutine(startLoadAssesssment());
 	}
 

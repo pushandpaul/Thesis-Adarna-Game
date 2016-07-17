@@ -491,6 +491,7 @@ MonoBehaviour:
   doorPlacementUp: 1
   isOpen: 1
   closedMessageDisplayed: 0
+  isActualDoor: 1
   waitForPress: 1
 --- !u!1001 &726987927
 Prefab:
@@ -804,7 +805,6 @@ GameObject:
   - 114: {fileID: 1158695808}
   - 114: {fileID: 1158695807}
   - 114: {fileID: 1158695806}
-  - 114: {fileID: 1158695792}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -812,19 +812,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1158695792
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1158695784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 0}
-  message: 'Talk: Haring Salermo (8-3)'
 --- !u!114 &1158695806
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -992,7 +979,7 @@ MonoBehaviour:
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 406
-  zoom: 0.58000034
+  zoom: 0.4900004
   scrollViewRect:
     serializedVersion: 2
     x: -466.46658
@@ -1000,8 +987,7 @@ MonoBehaviour:
     width: 1768.7264
     height: 1163.2374
   selectedBlock: {fileID: 1158695809}
-  selectedCommands:
-  - {fileID: 1158695806}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1133,6 +1119,7 @@ MonoBehaviour:
   doorPlacementUp: 1
   isOpen: 0
   closedMessageDisplayed: 0
+  isActualDoor: 1
   waitForPress: 1
 --- !u!61 &1273495661
 BoxCollider2D:
@@ -1193,6 +1180,7 @@ MonoBehaviour:
   doorPlacementUp: 1
   isOpen: 0
   closedMessageDisplayed: 0
+  isActualDoor: 1
   waitForPress: 1
 --- !u!61 &1364551751
 BoxCollider2D:
@@ -1598,6 +1586,7 @@ MonoBehaviour:
   doorPlacementUp: 1
   isOpen: 0
   closedMessageDisplayed: 0
+  isActualDoor: 1
   waitForPress: 1
 --- !u!61 &1831655319
 BoxCollider2D:

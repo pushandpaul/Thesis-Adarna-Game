@@ -121,7 +121,8 @@ public class LevelManager : MonoBehaviour {
 
 		if(FindObjectsOfType<ObjectData>().Length > 0)
 			gameManager.saveCoordinates(FindObjectsOfType<ObjectData>());
-		followerManager.updateFollowerList();
+		if(followerManager != null)
+			followerManager.updateFollowerList();
 
 		gameManager.prevScene = gameManager.currentScene;
 		gameManager.saveCharData(charactersData);
