@@ -33,6 +33,7 @@ public class TalasalitaanManager : MonoBehaviour {
 	public List<TalasalitaanButton> talasalitaanBtns;
 	public Text partTitleUIText;
 	public Transform summaryUI;
+	public Image summaryImage;
 	public Text saknongUIText;
 	public Transform halimbawaUI;
 	public Text halimbawaUIText;
@@ -54,6 +55,8 @@ public class TalasalitaanManager : MonoBehaviour {
 	public int newSalitaCount;
 	public GameObject notif;
 
+	public Sprite[] thumbnails; 
+
 	void Start () {
 		GameObject[] chapSelectBtnHolders = GameObject.FindGameObjectsWithTag("Chapter Button");
 		string jsonString = File.ReadAllText (Application.dataPath + talasalitaanJsonPath);
@@ -72,10 +75,17 @@ public class TalasalitaanManager : MonoBehaviour {
 		foreach(PartData partData in partDataList.partsData){
 			foreach(Talasalitaan talasalitaan in partData.talasalitaans){
 				if(talasalitaan.newlyActivated){
+					
 					newSalitaCount++;
 				}
 			}
 		}
+
+		if(newSalitaCount > 0){
+			notif.SetActive (true);
+			notif.GetComponentInChildren<Text>().text = newSalitaCount.ToString();
+		}
+
 	}
 
 	private void Activate(Talasalitaan talasalitaan){
@@ -137,7 +147,7 @@ public class TalasalitaanManager : MonoBehaviour {
 	public void ShowBook(){
 		if(!gameManager.pauseRan){
 			StartCoroutine(BookController(true));
-			ShowPartDataUI(FindObjectOfType<ObjectiveManager>().currentPartIndex);
+			ShowPartDataUI(gameManager.latestPartIndex);
 		}
 	}
 
@@ -198,19 +208,25 @@ public class TalasalitaanManager : MonoBehaviour {
 		Text summaryUIText = summaryUI.GetComponentInChildren<Text>();
 
 		if(gameManager.latestPartIndex > part /*&& partDataList.partsData[part].isFinished*/){
+			partTitleUIText.text = partDataList.partsData[part].title;
 			firstLetterFormat = "<size=" + (summaryUIText.fontSize + 6) + "><b>" + summaryText.Substring(0,1) + "</b></size>";
 			newText =  firstLetterFormat + summaryText.Substring(1, summaryText.Length-1);
 			summaryUIText.text = newText;
+			summaryImage.enabled = true;
+			summaryImage.sprite = thumbnails [part];
 		} 
 		else if(gameManager.latestPartIndex == part){
 			partTitleUIText.text = partDataList.partsData[part].title;
 			saknongUIText.text = partDataList.partsData[part].saknongNumbers;
 			summaryUI.GetComponentInChildren<Text>().text = "????";
+			summaryImage.enabled = true;
+			summaryImage.sprite = thumbnails [part];
 		}
 		else{
 			partTitleUIText.text = "????";
 			summaryUI.GetComponentInChildren<Text>().text = "????";
 			saknongUIText.text = "????";
+			summaryImage.enabled = false;
 		}
 	}
 

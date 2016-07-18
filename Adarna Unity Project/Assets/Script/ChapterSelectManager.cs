@@ -13,6 +13,8 @@ public class ChapterSelectManager : MonoBehaviour {
 	public Button restartGameButton;
 	public Button startAssessment;
 
+	public Sprite[] thumbnails;
+
 	private ConfirmationBox confirmationBox;
 	private GameManager gameManager;
 	private TalasalitaanManager.PartDataList partReference;
@@ -34,6 +36,7 @@ public class ChapterSelectManager : MonoBehaviour {
 	void Start(){
 		gameManager.HUDs.Add (backButton);
 		gameManager.setHUDs(true);
+		gameManager.bookHUDbtn.SetActive (true);
 		gameManager.setPauseMenu(false);
 		gameManager.pauseButton.SetActive(false);
 		locationMarker.gameObject.SetActive (false);
@@ -115,7 +118,16 @@ public class ChapterSelectManager : MonoBehaviour {
 
 	void setChapterPanel(ChapterPanel panel, int index){
 		panel.gameObject.SetActive(true);
-	
+
+		if(index <= gameManager.latestPartIndex){
+			panel.image.enabled = true;
+			panel.image.sprite = thumbnails [index];
+		}
+
+		else{
+			panel.image.enabled = false;
+		}
+
 		if(partReference.partsData[index].partIndex > 0){
 			panel.partIndexText.text = "" + partReference.partsData[index].partIndex;
 		}
@@ -124,19 +136,23 @@ public class ChapterSelectManager : MonoBehaviour {
 
 		if(index > gameManager.latestPartIndex){
 			panel.titleText.text = "????";
+
 		}
 
 		else if(index == gameManager.latestPartIndex && !gameManager.prevAssessmentDone){
 			panel.titleText.text = "????";
+
 		}
-		else
+		else{
 			panel.titleText.text = partReference.partsData[index].title;
+		}
+			
 	}
 
 	public void selectPart(){
 		
 		if(currentPartIndex == 0){
-			gameManager.initTutorial();
+			gameManager.initTutorial(false);
 		}
 		else
 			gameManager.loadPartData(currentPartIndex);

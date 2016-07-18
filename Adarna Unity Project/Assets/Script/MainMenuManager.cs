@@ -9,6 +9,8 @@ public class MainMenuManager : MonoBehaviour {
 	private TalasalitaanManager talasalitaanManager;
 	private LocationMarker locationMarker;
 
+	public AudioClip mainMenuBGM;
+
 	void Awake(){
 		gameManager = FindObjectOfType<GameManager>();
 		confirmationBox = gameManager.GetComponentInChildren<ConfirmationBox>(true);
@@ -16,13 +18,24 @@ public class MainMenuManager : MonoBehaviour {
 	}
 
 	void Start(){
+		BGMManager bgmManager = FindObjectOfType<BGMManager> ();
+		if(bgmManager != null){
+			bgmManager.overridePlay (mainMenuBGM);
+		}
 		gameManager.setPauseMenu(false);
 		gameManager.pauseButton.SetActive(false);
 		gameManager.setHUDs(false);
 	}
 
 	public void play(){
-		FindObjectOfType<LevelLoader>().launchScene("Chapter Selection");
+		LevelLoader levelLoader = FindObjectOfType<LevelLoader> ();
+		if (gameManager.watchedIntro) {
+			levelLoader.launchScene ("Chapter Selection");
+		} else{
+			levelLoader.launchScene ("Intro");
+			gameManager.watchedIntro = true;
+		}
+		gameManager.setHUDs (true);
 	}
 
 	public void openBook(){

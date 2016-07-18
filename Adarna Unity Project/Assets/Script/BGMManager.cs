@@ -24,6 +24,8 @@ public class BGMManager : MonoBehaviour {
 
 	private float origMusicVolume;
 	private float origAmbientVolume;
+
+	private bool overrideThis;
 	void Awake(){
 		origMusicVolume = musicSource.volume;
 		origAmbientVolume = ambientSource.volume;
@@ -31,6 +33,13 @@ public class BGMManager : MonoBehaviour {
 	}
 
 	void OnLevelWasLoaded(){
+
+		if(overrideThis){
+			overrideThis = false;
+			return;
+		}
+
+
 		LevelManager levelManager = FindObjectOfType<LevelManager> ();
 		if(levelManager != null){
 			foreach(SectionMusic sectionMusic in sectionMusics){
@@ -87,6 +96,9 @@ public class BGMManager : MonoBehaviour {
 		else if(toDetermine.Contains("forest")){
 			section = "berbanya forest";
 		}
+		else if(toDetermine.Contains("bahay ni ermitanyo")){
+			section = "berbanya forest";
+		}
 		else {
 			section = "berbanya";
 		}
@@ -135,5 +147,12 @@ public class BGMManager : MonoBehaviour {
 	public void revertOriginalVol(){
 		musicSource.volume = origMusicVolume;
 		ambientSource.volume = origAmbientVolume;
+	}
+
+	public void overridePlay(AudioClip toPlay){
+		overrideThis = true;
+		musicSource.time = 0;
+		musicSource.clip = toPlay;
+		musicSource.Play ();
 	}
 }

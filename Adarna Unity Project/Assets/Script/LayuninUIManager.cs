@@ -58,6 +58,10 @@ public class LayuninUIManager : MonoBehaviour {
 		this.closeInstruction.text = "(" + closeInstruction + ")";
 		this.showMini = showMini;
 
+		while(FindObjectOfType<ScreenFader>().alpha == 0){
+			yield return null;
+		}
+
 		gameManager.pauseMenu.SetActive(false);
 		if(closeControl == CloseControl.PressAnywhere){
 			this.GetComponent<Button>().interactable = true;

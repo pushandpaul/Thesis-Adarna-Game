@@ -2883,11 +2883,15 @@ GameObject:
   - 114: {fileID: 485541413}
   - 114: {fileID: 485541412}
   - 114: {fileID: 485541411}
-  - 114: {fileID: 485541410}
   - 114: {fileID: 485541409}
   - 114: {fileID: 485541417}
   - 114: {fileID: 485541418}
   - 114: {fileID: 485541419}
+  - 114: {fileID: 485541420}
+  - 114: {fileID: 485541421}
+  - 114: {fileID: 485541410}
+  - 114: {fileID: 485541422}
+  - 114: {fileID: 485541423}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2919,9 +2923,8 @@ MonoBehaviour:
     y: -473
     width: 1890.7004
     height: 1297.7845
-  selectedBlock: {fileID: 485541369}
-  selectedCommands:
-  - {fileID: 485541368}
+  selectedBlock: {fileID: 485541408}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -3218,7 +3221,9 @@ MonoBehaviour:
   eventHandler: {fileID: 485541380}
   commandList:
   - {fileID: 485541378}
+  - {fileID: 485541422}
   - {fileID: 485541379}
+  - {fileID: 485541423}
   - {fileID: 485541419}
   - {fileID: 485541377}
 --- !u!114 &485541382
@@ -3594,6 +3599,7 @@ MonoBehaviour:
   eventHandler: {fileID: 485541399}
   commandList:
   - {fileID: 485541402}
+  - {fileID: 485541420}
   - {fileID: 485541401}
   - {fileID: 485541403}
   - {fileID: 485541407}
@@ -4088,6 +4094,7 @@ MonoBehaviour:
   eventHandler: {fileID: 485541417}
   commandList:
   - {fileID: 485541416}
+  - {fileID: 485541421}
   - {fileID: 485541415}
   - {fileID: 485541418}
   - {fileID: 485541414}
@@ -4124,7 +4131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 49
+  itemId: 55
   errorMessage: 
   indentLevel: 0
   targetObject: {fileID: 1103785653}
@@ -4159,7 +4166,7 @@ MonoBehaviour:
       intValue: 0
       boolValue: 0
       floatValue: 0
-      stringValue: 
+      stringValue: Left Exit
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
@@ -4699,6 +4706,92 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &485541420
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485541366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 53
+  errorMessage: 
+  indentLevel: 0
+  storyText: Halika na't hanapin natin ang ibon!
+  description: 
+  character: {fileID: 1595218215}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &485541421
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485541366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 54
+  errorMessage: 
+  indentLevel: 0
+  storyText: Kailangan ko na sakyan ang aking kabayo at hanapin ang aking kapatid...
+  description: 
+  character: {fileID: 1595218215}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &485541422
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485541366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 56
+  errorMessage: 
+  indentLevel: 0
+  animator: {fileID: 1218580588}
+  stateName: Praying
+  layer: -1
+  time: 0
+--- !u!114 &485541423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485541366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 57
+  errorMessage: 
+  indentLevel: 0
+  animator: {fileID: 1218580588}
+  stateName: Standing From Praying
+  layer: -1
+  time: 0
 --- !u!1 &495039934
 GameObject:
   m_ObjectHideFlags: 0
@@ -9272,6 +9365,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1218580586}
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+--- !u!95 &1218580588 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9560318, guid: c030ba30e8be9a241aa1f4962c3a078a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1218580586}
 --- !u!1 &1221037912
 GameObject:
   m_ObjectHideFlags: 0

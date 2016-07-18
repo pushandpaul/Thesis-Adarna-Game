@@ -66,7 +66,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &108552
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -242,6 +242,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &154956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400482}
+  - 58: {fileID: 5816134}
+  - 114: {fileID: 11449410}
+  m_Layer: 0
+  m_Name: Container Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &163756
 GameObject:
   m_ObjectHideFlags: 1
@@ -344,7 +361,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &186390
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -359,7 +376,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &191580
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -389,6 +406,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &400482
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.26, y: 0.5400009, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 433388}
+  m_RootOrder: 4
 --- !u!4 &402354
 Transform:
   m_ObjectHideFlags: 1
@@ -483,11 +512,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09800023, y: 0.09799996, z: -2.5014648}
-  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1}
+  m_LocalPosition: {x: 0.19600034, y: 0.19599915, z: -2.5014648}
+  m_LocalScale: {x: 2.6666667, y: 2.6666667, z: 1}
   m_Children: []
-  m_Father: {fileID: 459208}
-  m_RootOrder: 5
+  m_Father: {fileID: 433388}
+  m_RootOrder: 2
 --- !u!4 &433388
 Transform:
   m_ObjectHideFlags: 1
@@ -495,10 +524,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.889, y: -2.18, z: 0.18066406}
+  m_LocalPosition: {x: 1.87, y: -9.67, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 459208}
+  - {fileID: 496534}
+  - {fileID: 419758}
+  - {fileID: 471338}
+  - {fileID: 400482}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &436238
@@ -594,16 +627,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.088, y: -0.058, z: 0.0063476562}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 474926}
   - {fileID: 408512}
   - {fileID: 436238}
   - {fileID: 450094}
-  - {fileID: 496534}
-  - {fileID: 419758}
-  - {fileID: 471338}
   m_Father: {fileID: 433388}
   m_RootOrder: 0
 --- !u!4 &463956
@@ -637,11 +667,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.003000915, y: -1.7120005, z: -0.0014648438}
+  m_LocalPosition: {x: 0.006001711, y: -3.4240017, z: -0.0014648438}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 459208}
-  m_RootOrder: 6
+  m_Father: {fileID: 433388}
+  m_RootOrder: 3
 --- !u!4 &474926
 Transform:
   m_ObjectHideFlags: 1
@@ -679,15 +709,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.008000076, y: 2.658, z: 3.7289965}
-  m_LocalScale: {x: 0.23668669, y: 0.112806134, z: 1}
+  m_LocalPosition: {x: 0.016000032, y: 5.316, z: 3.7289965}
+  m_LocalScale: {x: 0.47337338, y: 0.22561227, z: 1}
   m_Children:
   - {fileID: 445018}
   - {fileID: 403116}
   - {fileID: 496488}
   - {fileID: 457250}
-  m_Father: {fileID: 459208}
-  m_RootOrder: 4
+  m_Father: {fileID: 433388}
+  m_RootOrder: 1
 --- !u!4 &496600
 Transform:
   m_ObjectHideFlags: 1
@@ -717,6 +747,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &5816134
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154956}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 2.64, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!61 &6172044
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -728,7 +772,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.11, y: 0.4}
+  m_Offset: {x: -0.11, y: 0.47}
   serializedVersion: 2
   m_Size: {x: 2.45, y: 7.65}
 --- !u!95 &9566186
@@ -839,6 +883,29 @@ MonoBehaviour:
   isOriginalScale: 0
   matchOnStart: 0
   matchPlayer: 1
+--- !u!114 &11449410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressToInteract: 1
+  flowchart: {fileID: 0}
+  player: {fileID: 0}
+  onlyTrigger: 1
+  toTransform: {fileID: 0}
+  facingRight: 1
+  standardFacing: 1
+  allowFlip: 1
+  anObjective: 0
+  message: Reyna Valeriana (Walking)
+  originalMessage: 
+  bubble: {fileID: 11430332}
 --- !u!114 &11449596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -853,6 +920,7 @@ MonoBehaviour:
   owner: {fileID: 459208}
   shadowMaxDistance: 20
   slopeOffset: 0.3
+  isStatic: 0
 --- !u!114 &11482600
 MonoBehaviour:
   m_ObjectHideFlags: 1

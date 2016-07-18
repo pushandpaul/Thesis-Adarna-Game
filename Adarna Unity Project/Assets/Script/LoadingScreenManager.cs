@@ -38,13 +38,12 @@ public class LoadingScreenManager : MonoBehaviour {
 		}
 		Debug.Log ("Finished loading!");
 
+		screenFader.alpha = 0f;
 		fadeTime = screenFader.BeginFade (1);
 
 		yield return new WaitForSeconds (fadeTime);
-
 		loadingScreen.canvasGroup.alpha = 0f;
 		loadingScreen.canvasGroup.blocksRaycasts = false;
 		screenFader.BeginFade (-1);
-
 	}
 }

@@ -21,6 +21,7 @@ public class ConfirmationBox : MonoBehaviour {
 
 	private Kind kind;
 
+
 	void Awake(){
 		pauseMenu = FindObjectOfType<PauseMenu>();
 		gameManger = FindObjectOfType<GameManager>();

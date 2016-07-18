@@ -836,7 +836,6 @@ GameObject:
   - 114: {fileID: 1065881229}
   - 114: {fileID: 1065881228}
   - 114: {fileID: 1065881227}
-  - 114: {fileID: 1065881226}
   - 114: {fileID: 1065881239}
   - 114: {fileID: 1065881240}
   - 114: {fileID: 1065881222}
@@ -1045,50 +1044,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1065881226
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1065881221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 239
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 31907810}
-  targetComponentAssemblyName: CameraController, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: CameraController
-  targetMethod: Zoom
-  targetMethodText: 'Zoom (Single): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Single
-      intValue: 0
-      boolValue: 0
-      floatValue: 8
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &1065881227
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1188,7 +1143,6 @@ MonoBehaviour:
   - {fileID: 1065881228}
   - {fileID: 1065881242}
   - {fileID: 1065881239}
-  - {fileID: 1065881226}
   - {fileID: 1065881240}
   - {fileID: 1065881223}
   - {fileID: 1065881222}
@@ -1347,7 +1301,7 @@ MonoBehaviour:
     height: 1293.1182
   selectedBlock: {fileID: 1065881231}
   selectedCommands:
-  - {fileID: 1065881242}
+  - {fileID: 1065881240}
   variables: []
   description: 
   stepPause: 0
@@ -1500,7 +1454,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1065881242
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1065881221}

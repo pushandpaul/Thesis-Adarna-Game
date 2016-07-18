@@ -574,6 +574,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &128432
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 435568}
+  - 114: {fileID: 11495638}
+  m_Layer: 0
+  m_Name: Finish Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &128506
 GameObject:
   m_ObjectHideFlags: 1
@@ -2784,6 +2800,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 455044}
   m_RootOrder: 11
+--- !u!4 &435568
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128432}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454358}
+  m_RootOrder: 15
 --- !u!4 &435982
 Transform:
   m_ObjectHideFlags: 1
@@ -3024,6 +3052,7 @@ Transform:
   - {fileID: 403240}
   - {fileID: 438582}
   - {fileID: 401258}
+  - {fileID: 435568}
   m_Father: {fileID: 480576}
   m_RootOrder: 0
 --- !u!4 &455044
@@ -4851,8 +4880,8 @@ MonoBehaviour:
   objectiveLocation: 7
   Kind: 0
   Status: 0
-  OnReach: 01000000000000000200000004000000
-  nextObjective: {fileID: 11479960}
+  OnReach: 010000000000000002000000
+  nextObjective: {fileID: 11495638}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11434810
@@ -5016,8 +5045,8 @@ MonoBehaviour:
   - {fileID: 176710}
   - {fileID: 185514}
   - {fileID: 182564}
-  currentPartIndex: 1
-  currentObjective: {fileID: 11479960}
+  currentPartIndex: 0
+  currentObjective: {fileID: 11445998}
   currentObjectiveIndex: 0
   objectivePanelFader: {fileID: 0}
   fadeDelay: 10
@@ -5511,11 +5540,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 'Start: Narrative (0-5)'
-  Description: 
+  Description: Maglakbay at hanapin ang Ibong Adarna!
   objectiveLocation: 6
   Kind: 0
   Status: 0
-  OnReach: 0100000000000000
+  OnReach: 010000000000000002000000
   nextObjective: {fileID: 11439238}
   objectiveIndex: 0
   textBoxDisplayed: 0
@@ -6173,11 +6202,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 'Start: Narrative (0-1)'
-  Description: 
+  Description: Maglakbay at hanapin ang Ibong Adarna!
   objectiveLocation: 6
   Kind: 0
   Status: 0
-  OnReach: 0100000000000000
+  OnReach: 010000000000000002000000
   nextObjective: {fileID: 11465684}
   objectiveIndex: 0
   textBoxDisplayed: 0
@@ -6500,6 +6529,26 @@ MonoBehaviour:
   Status: 0
   OnReach: 010000000000000002000000
   nextObjective: {fileID: 11482750}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
+--- !u!114 &11495638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Finish Tutorial
+  Description: 
+  objectiveLocation: 7
+  Kind: 0
+  Status: 0
+  OnReach: 0100000004000000
+  nextObjective: {fileID: 0}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11495812

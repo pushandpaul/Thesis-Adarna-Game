@@ -84,6 +84,11 @@ public class TutorialManager : MonoBehaviour {
 		uiFader.StopAllCoroutines();
 		uiFader.FadeIn(0, 5f, false);
 		currentIndex =  index;
+
+		/*foreach(NPCInteraction npc in FindObjectsOfType<NPCInteraction>()){
+			npc.enabled = false;
+		}*/
+
 		if(index > 0){
 			tutorials[index-1].display.SetActive(false);
 		}
@@ -115,6 +120,10 @@ public class TutorialManager : MonoBehaviour {
 		uiFader.StopAllCoroutines();
 		uiFader.FadeOut(0, 5f);
 		//gameManager.pause(false);
+
+		/*foreach(NPCInteraction npc in FindObjectsOfType<NPCInteraction>()){
+			npc.enabled = true;
+		}*/
 
 		while(uiFader.canvasGroup.alpha != 0){
 			yield return null;

@@ -14,6 +14,10 @@ public class LocationMarker : MonoBehaviour {
 		myUIFader = GetComponent<UIFader>();
 	}
 
+	void Start(){
+		
+	}
+
 	void OnLevelWasLoaded(){
 		LevelManager levelManager = FindObjectOfType<LevelManager>();
 		string section = "";
@@ -29,7 +33,7 @@ public class LocationMarker : MonoBehaviour {
 					section = "Reino de los Crystales";
 				}
 			}
-			else if(sceneName.Contains("mountaintop")){
+			else if(sceneName.Contains("mountain")){
 				section = "Bundok Tabor";
 			}
 			else{
@@ -44,6 +48,10 @@ public class LocationMarker : MonoBehaviour {
 					}
 					else
 						section = "Kagubatan";
+				}
+
+				else if(sceneName.Contains("bahay ni ermitanyo")){
+					section = "Kagubatan";
 				}
 
 				else{
@@ -73,6 +81,8 @@ public class LocationMarker : MonoBehaviour {
 		while(DialogueController.inDialogue){
 			yield return null;
 		}
+
+		Debug.Log("trying to show");
 
 		myUIFader.StopAllCoroutines();
 		myUIFader.FadeIn(5, 1f, true);

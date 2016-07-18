@@ -108,7 +108,6 @@ public class GameManager : MonoBehaviour {
 
 	void Start(){
 		loadInitData();
-
 		//loadPartData(0);
 	}
 
@@ -405,11 +404,11 @@ public class GameManager : MonoBehaviour {
 
 
 		foreach(DoorAndExitController.ExitsInScene exitsInScene in doorAndExitController.exitsInScenes){
+			save_exit = new List<Save_Exit> ();
 			foreach(DoorAndExitController.ExitData exitData in exitsInScene.exits){
 				save_exit.Add(new Save_Exit (exitData.Name, exitData.isOpen, exitData.isDoor));
 			}
 			save_exitDoorData.Add (new Save_ExitDoorData (exitsInScene.Name, save_exit));
-			save_exit.Clear ();
 		}
 
 		Save_LocationSetup save_locationSetup = new Save_LocationSetup(LevelLoader.sceneToLoad, timeOfDay, LevelManager.exitInRight, LevelManager.isDoor, LevelManager.doorIndex, save_exitDoorData);
@@ -451,7 +450,8 @@ public class GameManager : MonoBehaviour {
 			latestPartIndex = objectiveManager.currentPartIndex;
 		}
 		SaveGameSystem.SaveGame(new InitSaveGame(latestPartIndex, watchedIntro, prevAssessmentDone), "InitSaveGame");
-
+		TalasalitaanManager talasalitaanManager = FindObjectOfType<TalasalitaanManager> ();
+		talasalitaanManager.RewriteJson ();
 	}
 
 	public void initSaveUpdate(){
@@ -517,10 +517,10 @@ public class GameManager : MonoBehaviour {
 		for(int i = 0; i <= latestPartIndex; i++){
 			SaveGameSystem.DeleteSaveGame("MySaveGame_Part_" + i);
 		}
-		initTutorial();
+		initTutorial(true);
 	}
 
-	public void initTutorial(){
+	public void initTutorial(bool restartEntirely){
 		foreach(SceneObjects sceneObject in sceneObjects){
 			foreach(ObjectDataReference objectDataRef in sceneObject.sceneObjectData){
 				Destroy(objectDataRef.gameObject);
@@ -532,7 +532,10 @@ public class GameManager : MonoBehaviour {
 		sceneObjects.Clear();
 		characters.Clear();
 
-		latestPartIndex = 0;
+		if(restartEntirely){
+			latestPartIndex = 0;	
+		}
+
 		currentCharacterName = "Don Pedro";
 		LevelManager.isDoor = false;
 		LevelManager.doorIndex = 0;
@@ -598,7 +601,8 @@ public class GameManager : MonoBehaviour {
 			HUDs = GameObject.FindGameObjectsWithTag ("HUD").ToList();
 		}
 		foreach(GameObject HUD in HUDs){
-			setHUD (HUD, enable);
+			if(HUD != null)
+				setHUD (HUD, enable);
 		}
 	}
 
@@ -611,9 +615,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void hideHUDs(bool show){
-		if(HUDs == null || HUDs.Count == 0){
-			HUDs = GameObject.FindGameObjectsWithTag ("HUD").ToList();
-		}
+		HUDs = GameObject.FindGameObjectsWithTag ("HUD").ToList();
+
 		foreach(GameObject HUD in HUDs){
 			hideHUD (HUD.GetComponent<CanvasGroup> (), show);
 		}
