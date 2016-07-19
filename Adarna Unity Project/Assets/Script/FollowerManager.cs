@@ -100,7 +100,10 @@ public class FollowerManager : MonoBehaviour {
 	}
 
 	public void updateFollowerList(){
-		gameManager.FollowerNames.Clear();
+		if(gameManager != null){
+			gameManager.FollowerNames = new List<string> ();
+		}
+		//gameManager.FollowerNames.Clear();
 		foreach(FollowTarget activeFollower in activeFollowers){
 			gameManager.FollowerNames.Add(activeFollower.name);
 		}

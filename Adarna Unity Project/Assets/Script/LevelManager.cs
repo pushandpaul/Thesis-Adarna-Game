@@ -56,7 +56,10 @@ public class LevelManager : MonoBehaviour {
 			gameManager.loadCoordinates(objectData);
 		}
 
-		changeTimeOfDay(gameManager.timeOfDay.ToString());
+		if(gameManager != null){
+			changeTimeOfDay(gameManager.timeOfDay.ToString());
+		}
+
 
 		//Player Initialization
 		if(!playerPos.Load()){

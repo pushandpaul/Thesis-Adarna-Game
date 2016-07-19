@@ -11873,6 +11873,8 @@ GameObject:
   - 114: {fileID: 1481369283}
   - 114: {fileID: 1481369282}
   - 114: {fileID: 1481369281}
+  - 114: {fileID: 1481369285}
+  - 114: {fileID: 1481369286}
   m_Layer: 0
   m_Name: Assessment Manager
   m_TagString: Untagged
@@ -11904,20 +11906,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -948.32556, y: -44.285538}
+  scrollPos: {x: -1150.613, y: 235.23672}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.52717394
+  zoom: 0.49
   scrollViewRect:
     serializedVersion: 2
     x: -574.24646
     y: -658.65283
     width: 3040.9683
     height: 2605.4778
-  selectedBlock: {fileID: 1481368741}
+  selectedBlock: {fileID: 1481368534}
   selectedCommands:
-  - {fileID: 1481368740}
+  - {fileID: 1481369285}
   variables: []
   description: 
   stepPause: 0
@@ -14745,6 +14747,7 @@ MonoBehaviour:
   - {fileID: 1481368532}
   - {fileID: 1481368544}
   - {fileID: 1481369281}
+  - {fileID: 1481369285}
   - {fileID: 1481368414}
   - {fileID: 1481368416}
 --- !u!114 &1481368535
@@ -17668,8 +17671,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1911.6058
-    y: 169.70222
+    x: 1913.5027
+    y: 171.59914
     width: 124
     height: 40
   itemId: 269
@@ -19596,6 +19599,7 @@ MonoBehaviour:
   - {fileID: 1481368743}
   - {fileID: 1481368754}
   - {fileID: 1481368755}
+  - {fileID: 1481369286}
   - {fileID: 1481368756}
 --- !u!114 &1481368745
 MonoBehaviour:
@@ -22077,7 +22081,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1902.2775
-    y: 734.33575
+    y: 732.43884
     width: 120
     height: 40
   itemId: 512
@@ -27400,7 +27404,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1903.258
-    y: 1021.9702
+    y: 1023.8671
     width: 120
     height: 40
   itemId: 774
@@ -27608,7 +27612,7 @@ MonoBehaviour:
       intValue: 0
       boolValue: 0
       floatValue: 0
-      stringValue: Armenya - Hallway
+      stringValue: Reyno - Generic Forest
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
@@ -29494,7 +29498,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1577.5198
-    y: 1149.2227
+    y: 1147.6023
     width: 120
     height: 40
   itemId: 882
@@ -32223,6 +32227,94 @@ MonoBehaviour:
   targetMethod: addScore
   targetMethodText: 'addScore (): Void'
   methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1481369285
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481368410}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1010
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: changeTimeOfDay
+  targetMethodText: 'changeTimeOfDay (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: d
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1481369286
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481368410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1011
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: setSpawnDirection
+  targetMethodText: 'setSpawnDirection (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
