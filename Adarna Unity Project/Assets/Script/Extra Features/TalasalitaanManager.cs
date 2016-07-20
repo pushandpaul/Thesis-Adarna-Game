@@ -57,7 +57,7 @@ public class TalasalitaanManager : MonoBehaviour {
 
 	public Sprite[] thumbnails; 
 
-	void Start () {
+	void Awake () {
 		GameObject[] chapSelectBtnHolders = GameObject.FindGameObjectsWithTag("Chapter Button");
 		string jsonString = File.ReadAllText (Application.dataPath + talasalitaanJsonPath);
 		backupJson = File.ReadAllText(Application.dataPath + backupJsonPath);
@@ -267,6 +267,7 @@ public class TalasalitaanManager : MonoBehaviour {
 		newSalitaCount = 0;
 		notif.SetActive (false);
 		partDataList = JsonUtility.FromJson<PartDataList>(backupJson);
+		File.WriteAllText(Application.dataPath + talasalitaanJsonPath, backupJson);
 	}
 
 	IEnumerator BookController(bool isLaunch){

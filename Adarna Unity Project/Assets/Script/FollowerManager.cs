@@ -9,9 +9,12 @@ public class FollowerManager : MonoBehaviour {
 	private PlayerController player;
 	private GameManager gameManager;
 
-	public void setActiveFollowers () {
+	void Awake(){
 		gameManager = FindObjectOfType<GameManager>();
 		player = FindObjectOfType<PlayerController>();
+	}
+
+	public void setActiveFollowers () {
 		activeFollowers = new List<FollowTarget>();
 		localFollowers = FindObjectsOfType<FollowTarget>();
 		List <FollowTarget> unactiveFollowers = new List<FollowTarget>();

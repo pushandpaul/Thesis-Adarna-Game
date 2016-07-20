@@ -19,6 +19,10 @@ public class PlayerSwitch : MonoBehaviour {
 	*/
 	private bool toInitialize = false;
 
+	void Awake(){
+		playerHolder = FindObjectOfType<PlayerController>();
+	}
+
 	public void actualSwitch(Transform newPlayer){ 
 		
 		//camera follows another player, previous player stays in the scene - used for instances of actual switching players

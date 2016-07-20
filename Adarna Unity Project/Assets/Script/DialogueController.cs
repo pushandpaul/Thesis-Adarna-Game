@@ -22,7 +22,7 @@ public class DialogueController : MonoBehaviour {
 	public bool centerCam;
 
 	public static bool inDialogue;
-	void Start () {
+	void Awake () {
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		objectiveManager = FindObjectOfType<ObjectiveManager>();

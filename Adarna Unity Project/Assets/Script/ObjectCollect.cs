@@ -10,7 +10,7 @@ public class ObjectCollect : MonoBehaviour {
 
 	public bool includedInMassCollect = false;
 
-	void Start () {
+	void Awake () {
 		gameManager = FindObjectOfType<GameManager>();
 		objectData = this.GetComponent<ObjectData>();
 		objectiveMapper = this.GetComponent<ObjectiveMapper>();

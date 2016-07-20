@@ -29,7 +29,7 @@ public class ObjectiveManager : MonoBehaviour {
 		else if(FindObjectsOfType<ObjectiveManager>().Length == 1){
 			DontDestroyOnLoad(this.gameObject);
 		}
-
+		textBox = this.GetComponent<TextBoxManager>();
 		/*if(instance == null){
 			instance = this;
 			DontDestroyOnLoad(gameObject);
@@ -41,7 +41,7 @@ public class ObjectiveManager : MonoBehaviour {
 	}
 
 	void Start () {
-		textBox = this.GetComponent<TextBoxManager>();
+		
 		setPartObjectives();
 	
 		Init();

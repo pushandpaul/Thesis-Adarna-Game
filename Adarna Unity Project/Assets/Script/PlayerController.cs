@@ -31,8 +31,9 @@ public class PlayerController : MonoBehaviour {
 	private float defaultCamOffset;
 
 	private GameManager gameManager;
+	private bool movementInControl = false;
 	// Use this for initialization
-	void Start () {
+	void Awake() {
 		camera = FindObjectOfType<CameraController>();
 		gameManager = FindObjectOfType<GameManager> ();
 		anim = GetComponentInChildren<Animator>();
@@ -46,8 +47,15 @@ public class PlayerController : MonoBehaviour {
 			moveSpeed = gameManager.playerSpeed;
 		moveSpeed += (Mathf.Abs(transform.localScale.x) % 0.5f) * 10;
 		Debug.Log("This is player speed: " + moveSpeed);
+		canMove = false;
+		canJump = false;
+	
 
 		initState();
+	}
+
+	void Start(){
+		StartCoroutine(waitTilScreenFaded());
 	}
 
 	void FixedUpdate (){
@@ -160,6 +168,21 @@ public class PlayerController : MonoBehaviour {
 		moveSpeed = 5f;
 		moveSpeed += (Mathf.Abs(transform.localScale.x) % 0.5f) * 10;
 		gameManager.playerSpeed = 5f;
+	}
+
+	IEnumerator waitTilScreenFaded(){
+		LoadingScreenManager loadingScreen = FindObjectOfType<LoadingScreenManager>();
+
+		if(loadingScreen != null){
+			while(!loadingScreen.officiallyLoaded){
+				yield return null;
+			}
+		}
+			
+		if(!DialogueController.inDialogue && !TutorialManager.inTutorial){
+			canMove = true;
+			canJump = true;
+		}
 	}
 }
 

@@ -32,11 +32,6 @@ public class LayuninUIManager : MonoBehaviour {
 		gameManager = FindObjectOfType<GameManager>();
 	}
 
-	void Start(){
-		
-		//Launch("This is my title", "hope you like it", CloseControl.PressAnywhere, true);
-	}
-
 	void Update(){
 		if(layuninUI.canvasGroup.alpha == 0f)
 			return;
@@ -48,6 +43,7 @@ public class LayuninUIManager : MonoBehaviour {
 	}
 
 	public void Launch(string title, string description, CloseControl closeControl, bool showMini){
+		StopAllCoroutines();
 		StartCoroutine(Launching(title, description, closeControl, showMini));
 	}
 
@@ -57,10 +53,7 @@ public class LayuninUIManager : MonoBehaviour {
 		this.description.text = description;
 		this.closeInstruction.text = "(" + closeInstruction + ")";
 		this.showMini = showMini;
-
-		while(FindObjectOfType<ScreenFader>().alpha == 0){
-			yield return null;
-		}
+		LoadingScreenManager loadingScreen = FindObjectOfType<LoadingScreenManager>();
 
 		gameManager.pauseMenu.SetActive(false);
 		if(closeControl == CloseControl.PressAnywhere){
@@ -100,6 +93,10 @@ public class LayuninUIManager : MonoBehaviour {
 			HUD.GetComponent<CanvasGroup>().alpha = 0f;
 		}
 
+		while(!FindObjectOfType<LoadingScreenManager>().officiallyLoaded){
+			yield return null;
+		}
+
 		while(FindObjectOfType<ScreenFader>().alpha > 0){
 			yield return null;
 		}
@@ -108,6 +105,7 @@ public class LayuninUIManager : MonoBehaviour {
 	}
 		
 	public void Close(){
+		StopAllCoroutines();
 		StartCoroutine(Closing());
 	}
 

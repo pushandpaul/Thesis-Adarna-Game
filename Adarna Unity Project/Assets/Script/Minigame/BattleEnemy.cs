@@ -103,6 +103,7 @@ public class BattleEnemy : MonoBehaviour {
 
 	void EndTurn(){
 		Debug.Log("Enemy turn has ended.");
+		battleStateMachine.commandPrompt.canvasGroup.alpha = 0f;
 		if(player.stats.currentHP == 0){
 			battleStateMachine.currentState = BattleStateMachine.BattleStates.LOSE;
 		}
@@ -134,11 +135,13 @@ public class BattleEnemy : MonoBehaviour {
 		yield return new WaitForSeconds(1);
 
 		if(attackMove == Stats_BattleEnemy.Moves.Attack){
+			battleStateMachine.setCommandPrompt("Umatake ang " + stats.name + "!");
 			attackPower = stats.attack;
 			animationName = moveAnimation.name;
 		}
 
 		else  if(attackMove == Stats_BattleEnemy.Moves.StrongAttack){
+			battleStateMachine.setCommandPrompt("Ginamit ng " + stats.name + "ang Malakas na Pag-atake!");
 			attackPower = stats.attack * 2;
 			animationName = moveAnimation.name;
 		}
@@ -156,6 +159,7 @@ public class BattleEnemy : MonoBehaviour {
 		yield return new WaitForSeconds(1);
 
 		if(move == Stats_BattleEnemy.Moves.Heal){
+			battleStateMachine.setCommandPrompt("Nagapgaling ang " + stats.name);
 			animationName = moveAnimation.name;
 			increaseHP = true;
 		}

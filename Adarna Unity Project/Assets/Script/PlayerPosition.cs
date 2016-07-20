@@ -16,7 +16,7 @@ public class PlayerPosition : MonoBehaviour {
 
 	private List <PositionRef> positionRefs;
 
-	void Start(){
+	void Awake(){
 		positionRefs = new List<PositionRef>();
 	}
 

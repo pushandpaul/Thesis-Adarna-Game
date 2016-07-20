@@ -21,7 +21,7 @@ public class Bar : MonoBehaviour {
 	public Sprite highState;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		image = this.GetComponent<Image>();
 		lowPercent *= .01f;
 		medPercent *= .01f;

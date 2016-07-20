@@ -6,7 +6,7 @@ public class LightController : MonoBehaviour {
 	private Light light;
 	public float lightIntensity;
 
-	void Start(){
+	void Awake(){
 		light = this.GetComponent<Light>();
 		lightIntensity = light.intensity;
 	}

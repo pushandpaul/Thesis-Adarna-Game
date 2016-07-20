@@ -104,11 +104,7 @@ public class GameManager : MonoBehaviour {
 		//SaveGameSystem.DeleteSaveGame("MySaveGame");
 		LevelManager.exitInRight = !spawnIsRight;
 		//LevelManager.setSpawnDirection (spawnIsRight);
-	}
-
-	void Start(){
 		loadInitData();
-		//loadPartData(0);
 	}
 
 	public void updateSceneList(){
@@ -390,6 +386,9 @@ public class GameManager : MonoBehaviour {
 		List<Save_ExitDoorData> save_exitDoorData = new List<Save_ExitDoorData> ();
 		DoorAndExitController doorAndExitController = FindObjectOfType<DoorAndExitController> ();
 
+		//temporary
+		doorAndExitController.exitsInScenes = new List<DoorAndExitController.ExitsInScene>();
+
 		int currentPartIndex = objectiveManager.currentPartIndex;
 
 		string spriteName = "";
@@ -403,13 +402,13 @@ public class GameManager : MonoBehaviour {
 		Save_PlayerData save_playerData = new Save_PlayerData(currentCharacterName, playerIdleState, spriteName);
 
 
-		foreach(DoorAndExitController.ExitsInScene exitsInScene in doorAndExitController.exitsInScenes){
+		/*foreach(DoorAndExitController.ExitsInScene exitsInScene in doorAndExitController.exitsInScenes){
 			save_exit = new List<Save_Exit> ();
 			foreach(DoorAndExitController.ExitData exitData in exitsInScene.exits){
 				save_exit.Add(new Save_Exit (exitData.Name, exitData.isOpen, exitData.isDoor));
 			}
 			save_exitDoorData.Add (new Save_ExitDoorData (exitsInScene.Name, save_exit));
-		}
+		}*/
 
 		Save_LocationSetup save_locationSetup = new Save_LocationSetup(LevelLoader.sceneToLoad, timeOfDay, LevelManager.exitInRight, LevelManager.isDoor, LevelManager.doorIndex, save_exitDoorData);
 
@@ -480,13 +479,13 @@ public class GameManager : MonoBehaviour {
 			LevelManager.doorIndex = mySaveGame.locationSetup.doorIndex;
 			timeOfDay = mySaveGame.locationSetup.timeOfDay;
 
-			foreach(Save_ExitDoorData exitDoorData in mySaveGame.locationSetup.exitDoorData){
+			/*foreach(Save_ExitDoorData exitDoorData in mySaveGame.locationSetup.exitDoorData){
 				foreach(Save_Exit exit in exitDoorData.exits){
 					exitData.Add (new DoorAndExitController.ExitData (exit.Name, exit.isOpen, exit.isDoor));
 				}
 				doorAndExitController.exitsInScenes.Add (new DoorAndExitController.ExitsInScene (exitDoorData.sceneName, exitData));
-				exitData.Clear ();
-			}
+				exitData = new List<DoorAndExitController.ExitData>();
+			}*/
 
 			foreach(Save_CharData charData in mySaveGame.charData){
 				characters.Add(new SavedCharData(charData.Name, charData.stateHashID, searchSpriteInList(charData.heldSpriteName)));
@@ -514,10 +513,12 @@ public class GameManager : MonoBehaviour {
 
 	public void deleteAllSavedData(){
 		SaveGameSystem.DeleteSaveGame("InitSaveGame");
+		FindObjectOfType<TalasalitaanManager>().ResetPartData();
 		for(int i = 0; i <= latestPartIndex; i++){
 			SaveGameSystem.DeleteSaveGame("MySaveGame_Part_" + i);
 		}
 		initTutorial(true);
+
 	}
 
 	public void initTutorial(bool restartEntirely){
@@ -525,18 +526,20 @@ public class GameManager : MonoBehaviour {
 			foreach(ObjectDataReference objectDataRef in sceneObject.sceneObjectData){
 				Destroy(objectDataRef.gameObject);
 			}
-			sceneObject.sceneObjectData.Clear();
+			sceneObject.sceneObjectData = new List<ObjectDataReference>();
 			Destroy(sceneObject.gameObject);
 		}
 
-		sceneObjects.Clear();
-		characters.Clear();
+		sceneObjects  = new List<SceneObjects>();
+		characters = new List<SavedCharData>();
 
 		if(restartEntirely){
 			latestPartIndex = 0;	
 		}
 
 		currentCharacterName = "Don Pedro";
+		currentHeldItem = null;
+		FollowerNames = new List<string>();
 		LevelManager.isDoor = false;
 		LevelManager.doorIndex = 0;
 		LevelManager.exitInRight = true;
@@ -573,12 +576,13 @@ public class GameManager : MonoBehaviour {
 			
 		if(player != null){
 			if(isPaused){
-				if(!player.canMove && !player.canJump){
+				if(!player.canMove && !player.canJump || DialogueController.inDialogue){
 					pauseInControl = false;
 				}
 				else{
 					player.canMove = false;
 					player.canJump = false;
+					Debug.Log("Global Pause will handle player movement");
 					pauseInControl = true;
 				}
 			}
@@ -597,9 +601,8 @@ public class GameManager : MonoBehaviour {
 
 
 	public void setHUDs(bool enable){
-		if(HUDs == null || HUDs.Count == 0){
-			HUDs = GameObject.FindGameObjectsWithTag ("HUD").ToList();
-		}
+		HUDs = GameObject.FindGameObjectsWithTag ("HUD").ToList();
+		setHUD(mainHUD.gameObject, enable);
 		foreach(GameObject HUD in HUDs){
 			if(HUD != null)
 				setHUD (HUD, enable);
@@ -616,7 +619,7 @@ public class GameManager : MonoBehaviour {
 
 	public void hideHUDs(bool show){
 		HUDs = GameObject.FindGameObjectsWithTag ("HUD").ToList();
-
+		hideHUD(mainHUD.GetComponent<CanvasGroup>(), show);
 		foreach(GameObject HUD in HUDs){
 			hideHUD (HUD.GetComponent<CanvasGroup> (), show);
 		}

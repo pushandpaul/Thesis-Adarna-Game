@@ -39,13 +39,13 @@ public class LevelManager : MonoBehaviour {
 			gameManager.updateSceneList();	
 		}
 		FindObjectOfType<DoorAndExitController>().Init();
-	}
-	void Start() {
-
 		player = FindObjectOfType<PlayerController>();
 		camera = FindObjectOfType<CameraController>();
 		location = FindObjectOfType<Location>();
 		playerPos = FindObjectOfType<PlayerPosition>();
+	}
+	void Start() {
+
 		FollowerManager followerManager = FindObjectOfType<FollowerManager>();
 		MatchTransform [] ToMatch = FindObjectsOfType<MatchTransform>();
 		CharacterData[] charactersData = FindObjectsOfType<CharacterData>();
@@ -163,21 +163,27 @@ public class LevelManager : MonoBehaviour {
 			else if(myTimeOfDay[0] == 'n'){
 				globalLight.setLightIntensity(0f);
 				Debug.Log("Global Light Intensity adjusted to night time");
+				Debug.Log("Setting character light intensity.");
 				foreach(GameObject lightHolder in characterLight){
 					if(location.isInterior)
 						lightHolder.GetComponent<Light>().intensity = 0f;
 					else
 						lightHolder.GetComponent<Light>().intensity = 1.8f;
 				}
+				Debug.Log("Setting night sprite light intensity.");
 				foreach(GameObject nightSprite in nightSprites){
 					nightSprite.GetComponent<SpriteRenderer>().enabled = true;
 				}
+				Debug.Log("Setting night light intensity.");
 				foreach(GameObject nightLight in nightLights){
 					nightLight.GetComponent<Light>().enabled = true;
 				}
 			}
 		}
-
+		Debug.Log("Setting time of day to game manager");
+		if(gameManager == null){
+			gameManager = FindObjectOfType<GameManager>();
+		}
 		gameManager.timeOfDay = myTimeOfDay[0];
 	}
 

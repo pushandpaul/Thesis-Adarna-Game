@@ -13,8 +13,10 @@ public class SlideshowController : MonoBehaviour{
 	private GameManager gameManager;
 
 	[Tooltip("Transition duration in seconds")]
-	public float transitionDuration = 3;
+	public float transitionDuration = 0.1f;
 	public int fadeOutDelay;
+
+	public bool controlHUD = false;
 
 
 	void Awake(){
@@ -24,31 +26,34 @@ public class SlideshowController : MonoBehaviour{
 
 		backUIFader = BackUIFaderGO.GetComponent<UIFader>();
 		slideShowHolder = slideshowHolderGO.GetComponent<Image>();
-		transitionDuration = 1/transitionDuration;
+		//transitionDuration = 1/transitionDuration;
 	}
 
 	public void Begin(SlideshowImages images, bool enableHUD, bool enablePause){
-		Debug.Log ("Beginning slideshow.");
-		if(gameManager != null){
-			gameManager.setHUDs (enableHUD);
-			gameManager.setPauseMenu (enablePause);
-		}
-
-		slideshowImages = images.images;
-		currentImage = slideshowImages[0];
-		currentImageIndex = 0;
-		TransitionImage(false);
+		Begin(images, 0, enablePause, enableHUD);
 	}
 
 	public void Begin(SlideshowImages images, int startingIndex, bool enablePause, bool enableHUD){
 		Debug.Log ("Beginning slideshow.");
+
+		if(gameManager.mainHUD.gameObject.activeSelf){
+			controlHUD = true;
+		}
+		else
+			controlHUD = false;
+
 		if(gameManager != null){
-			gameManager.setHUDs (enableHUD);
+			if(controlHUD){
+				gameManager.setHUDs (enableHUD);
+			}
 			gameManager.setPauseMenu (enablePause);
 		}
 		slideshowImages = images.images;
 		currentImage = slideshowImages[startingIndex];
 		currentImageIndex = startingIndex;
+
+
+
 		TransitionImage(false);
 	}
 
@@ -77,9 +82,14 @@ public class SlideshowController : MonoBehaviour{
 		
 		backUIFader.FadeIn(fadeOutDelay, transitionDuration, true);
 
-		if(toEnd){
+
+		if(toEnd && controlHUD){
+			Debug.Log("Slideshow is in control.");
 			gameManager.setHUDs (true);
 			gameManager.setPauseMenu (true);
+		}
+		else if(!controlHUD){
+			Debug.Log("Slideshow is not in control.");
 		}
 
 		while(backUIFader.canvasGroup.alpha < 1){
@@ -94,6 +104,8 @@ public class SlideshowController : MonoBehaviour{
 			slideShowHolder.enabled = true;
 			slideShowHolder.sprite = currentImage;
 		}
+
+
 
 	}
 

@@ -6,9 +6,13 @@ public class LoadingScreenManager : MonoBehaviour {
 
 	private ScreenFader screenFader; 
 	public UIFader loadingScreen;
+	private PauseMenu pauseMenu;
+
+	public bool officiallyLoaded = false;
 
 	void Awake(){
 		screenFader = FindObjectOfType<ScreenFader> ();
+		pauseMenu = FindObjectOfType<PauseMenu>();
 	}
 
 	public void loadScene(string sceneName){
@@ -17,18 +21,25 @@ public class LoadingScreenManager : MonoBehaviour {
 
 	IEnumerator startLoadingScene(string sceneName){
 		float fadeTime = screenFader.BeginFade(1);
-
 		LevelManager levelManager = FindObjectOfType<LevelManager> ();
+		bool inControl = false;
+
+		officiallyLoaded = false;
+
 		if(levelManager != null){
 			levelManager.onLevelExit ();
 		}
-			
-		yield return new WaitForSeconds(fadeTime);
 
+		if(pauseMenu.enabled){
+			pauseMenu.enabled = false;
+			inControl = true;
+		}
+
+		yield return new WaitForSeconds(fadeTime);
 		screenFader.BeginFade (-1);
 		loadingScreen.canvasGroup.alpha = 1f;
 		loadingScreen.canvasGroup.blocksRaycasts = true;
-		yield return new WaitForSeconds (fadeTime);
+		yield return new WaitForSeconds (fadeTime); 
 
 		AsyncOperation async = SceneManager.LoadSceneAsync(sceneName);
 
@@ -44,6 +55,13 @@ public class LoadingScreenManager : MonoBehaviour {
 		yield return new WaitForSeconds (fadeTime);
 		loadingScreen.canvasGroup.alpha = 0f;
 		loadingScreen.canvasGroup.blocksRaycasts = false;
-		screenFader.BeginFade (-1);
+		fadeTime = screenFader.BeginFade (-1);
+
+		yield return new WaitForSeconds(fadeTime - (fadeTime * 0.2f));
+
+		if(inControl){
+			pauseMenu.enabled = true;
+		}
+		officiallyLoaded = true;
 	}
 }

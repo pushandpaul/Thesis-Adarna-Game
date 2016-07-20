@@ -25,9 +25,6 @@ public class ObjectiveMapper : MonoBehaviour {
 
 	void Awake(){
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
-	}
-	void Start () {
-		
 		if(isNPC)
 			npc = this.GetComponent<NPCInteraction>();
 		else if(isObject)

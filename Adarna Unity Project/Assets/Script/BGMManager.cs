@@ -34,6 +34,8 @@ public class BGMManager : MonoBehaviour {
 
 	void OnLevelWasLoaded(){
 
+		bool ambientFound = false;
+
 		if(overrideThis){
 			overrideThis = false;
 			return;
@@ -63,12 +65,9 @@ public class BGMManager : MonoBehaviour {
 							ambientSource.clip = environmentMusic.ambience;
 							ambientSource.Play ();
 						}
-
+						ambientFound = true;
 						break;
 					}
-				}
-				else{
-					ambientSource.Stop ();
 				}
 
 			}

@@ -22,6 +22,10 @@ public class UIFader : MonoBehaviour {
 		StartCoroutine(ToFade(duration, canvasGroup.alpha, target));
 	}
 
+	public void setCanvasGroup(CanvasGroup canvasGroup){
+		this.canvasGroup = canvasGroup;
+	}
+
 	IEnumerator InFade(int outDelay, float duration, bool autoFadeOut){
 		canvasGroup.gameObject.SetActive(true);
 		while(canvasGroup.alpha < 1){

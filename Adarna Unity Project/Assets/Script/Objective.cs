@@ -93,7 +93,7 @@ public class Objective : MonoBehaviour {
 
 	IEnumerator startLoadAssesssment(){
 		LevelLoader levelLoader = FindObjectOfType<LevelLoader>();
-
+		AssessmentManager.assessmentNumber = manager.currentPartIndex;
 		while(!DialogueController.inDialogue){
 			yield return null;
 		}

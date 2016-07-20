@@ -23,7 +23,6 @@ public class MainMenuManager : MonoBehaviour {
 			bgmManager.overridePlay (mainMenuBGM);
 		}
 		gameManager.setPauseMenu(false);
-		gameManager.pauseButton.SetActive(false);
 		gameManager.setHUDs(false);
 	}
 
@@ -35,7 +34,6 @@ public class MainMenuManager : MonoBehaviour {
 			levelLoader.launchScene ("Intro");
 			gameManager.watchedIntro = true;
 		}
-		gameManager.setHUDs (true);
 	}
 
 	public void openBook(){

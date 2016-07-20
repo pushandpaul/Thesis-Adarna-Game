@@ -23,6 +23,9 @@ public class TutorialManager : MonoBehaviour {
 	public int tutorialIndex = 0;
 	private DialogInput dialogInput; 
 	private PlayerController player;
+	private bool tutorialShown;
+
+	public static bool inTutorial = false;
 
 	void Awake () {
 		uiFader = GetComponent<UIFader>();
@@ -51,6 +54,7 @@ public class TutorialManager : MonoBehaviour {
 	}
 
 	public void Launch(int index){
+		inTutorial = true;
 		if(player == null){
 			player = FindObjectOfType<PlayerController> ();
 		}
@@ -106,13 +110,12 @@ public class TutorialManager : MonoBehaviour {
 		else
 			gameManager.hideHUDs(false);
 		
-		while(FindObjectOfType<ScreenFader>().alpha > 0){
+		while(FindObjectOfType<ScreenFader>().alpha > 0.1f){
 			yield return null;
 		}
-			
-		player.canJump = false;
+
 		player.canMove = false;
-			
+		player.canJump = false;
 		//gameManager.blurredCam.gameObject.SetActive(true);
 	}
 
@@ -128,6 +131,7 @@ public class TutorialManager : MonoBehaviour {
 		while(uiFader.canvasGroup.alpha != 0){
 			yield return null;
 		}
+		tutorialShown = false;
 		if(!DialogueController.inDialogue){
 			Debug.Log("Not in dialogue");
 			player.canJump = true;
@@ -151,5 +155,11 @@ public class TutorialManager : MonoBehaviour {
 		if(dialogInput != null){
 			dialogInput.keyPressMode = DialogInput.KeyPressMode.KeyPressed;
 		}
+
+		if(tutorials.Length - 1 == currentIndex){
+			this.enabled = false;
+		}
+
+		inTutorial = false;	
 	}
 }

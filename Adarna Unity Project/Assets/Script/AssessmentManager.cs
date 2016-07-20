@@ -10,18 +10,26 @@ public class AssessmentManager : MonoBehaviour {
 
 	public int score = 0;
 	public int totalItems = 5;
+	private TalasalitaanManager.PartDataList partReference;
 
-	//public static int assessmentNumber = 0;
+	public AudioClip BGMusic;
 
-	void Start () {
+	public static int assessmentNumber = 0;
+
+	void Awake () {
 		gameManager = FindObjectOfType<GameManager>();
 		objectiveManager = FindObjectOfType<ObjectiveManager>();
 		flowchart = this.GetComponent<Flowchart>();
-
-		flowchart.SendFungusMessage ("Part " + objectiveManager.currentPartIndex + " Assessment");
+		partReference = FindObjectOfType<TalasalitaanManager>().partDataList;
 
 		gameManager.bookHUDbtn.SetActive (false);
 		//ExitAssessment("Kwarto ni Haring Fernando");
+	}
+
+	void Start(){
+		flowchart.SendFungusMessage ("Part " + assessmentNumber + " Assessment");
+		Debug.Log("Part " + assessmentNumber + " Assessment");
+		FindObjectOfType<BGMManager>().overridePlay(BGMusic);
 	}
 
 	public void addScore(){
@@ -42,13 +50,26 @@ public class AssessmentManager : MonoBehaviour {
 			
 		LevelLoader.sceneToLoad = sceneToLaunch;
 		Debug.Log("This is the scene to load:" + LevelLoader.sceneToLoad);
-		//gameManager.feedDataAndSave();
+
 		Debug.Log("This is the part to save:" + objectiveManager.currentPartIndex);
 
-		if(objectiveMapper.checkIfCurrent()){
-			this.GetComponent<ObjectiveMapper> ().checkIfCurrent_misc ();
-			FindObjectOfType<LevelLoader> ().launchScene (sceneToLaunch);
+
+		if(score >= 3 && !partReference.partsData[assessmentNumber].isFinished){
+			partReference.partsData[assessmentNumber].isFinished = true;
+			if(this.GetComponent<ObjectiveMapper> ().checkIfCurrent()){
+				FindObjectOfType<LevelLoader> ().launchScene (sceneToLaunch);
+			}
+			else{
+				levelLoader.discreteLaunchScene("Chapter Selection");
+				FindObjectOfType<TalasalitaanManager>().RewriteJson();
+			}
 		}
+		else{
+			levelLoader.discreteLaunchScene("Chapter Selection");
+		}
+
+		this.GetComponent<ObjectiveMapper> ().checkIfCurrent_misc ();
+		//gameManager.feedDataAndSave();
 
 		/*
 		if (score >= 3) {

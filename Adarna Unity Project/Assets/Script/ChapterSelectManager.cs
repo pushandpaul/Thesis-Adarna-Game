@@ -30,14 +30,16 @@ public class ChapterSelectManager : MonoBehaviour {
 		locationMarker = gameManager.GetComponentInChildren<LocationMarker>(true);
 		partReference = FindObjectOfType<TalasalitaanManager>().partDataList;
 		currentPartIndex = gameManager.latestPartIndex;
+		if(!partReference.partsData[currentPartIndex - 1].isFinished && currentPartIndex > 1){
+			currentPartIndex = gameManager.latestPartIndex - 1;
+		}
+
 		initPanels();
 	}
 
 	void Start(){
 		gameManager.HUDs.Add (backButton);
 		gameManager.setHUDs(true);
-		gameManager.bookHUDbtn.SetActive (true);
-		gameManager.setPauseMenu(false);
 		gameManager.pauseButton.SetActive(false);
 		locationMarker.gameObject.SetActive (false);
 		FindObjectOfType<ObjectiveManager>().objectivePanelFader.StopAllCoroutines();
@@ -69,34 +71,30 @@ public class ChapterSelectManager : MonoBehaviour {
 	}
 
 	void initPanels(){
-
+		int previousPartIndex = gameManager.latestPartIndex - 1;
 		if(currentPartIndex == 0){
 			selectChapterButton.interactable = true;
 			startAssessment.interactable = false;
 		}
 		else if(currentPartIndex > gameManager.latestPartIndex){
 			selectChapterButton.interactable = false;
+			//if(partReference.partsData[i].isFinished)
 			startAssessment.interactable = false;
 		}
 
 		else if(currentPartIndex <= gameManager.latestPartIndex){
 
-			if (!gameManager.prevAssessmentDone) {
-
-				if (currentPartIndex == gameManager.latestPartIndex) {
-					selectChapterButton.interactable = false;
-					startAssessment.interactable = false;
-				} 
-				else{
-					selectChapterButton.interactable = true;
-					startAssessment.interactable = true;
-				}
-
-			} 
-			else{
+			if(currentPartIndex == gameManager.latestPartIndex && partReference.partsData[previousPartIndex].isFinished || currentPartIndex == 1){
 				selectChapterButton.interactable = true;
+			}
+			else
+				selectChapterButton.interactable = false;
+
+			if(currentPartIndex <= previousPartIndex){
 				startAssessment.interactable = true;
 			}
+			else
+				startAssessment.interactable = false;
 		}
 
 		else
@@ -118,10 +116,19 @@ public class ChapterSelectManager : MonoBehaviour {
 
 	void setChapterPanel(ChapterPanel panel, int index){
 		panel.gameObject.SetActive(true);
+		int previousPartIndex = gameManager.latestPartIndex - 1;
+
+		if(previousPartIndex < 0){
+			previousPartIndex = 0;
+		}
 
 		if(index <= gameManager.latestPartIndex){
-			panel.image.enabled = true;
-			panel.image.sprite = thumbnails [index];
+			if(partReference.partsData[previousPartIndex].isFinished || index <= 1){
+				panel.image.enabled = true;
+				panel.image.sprite = thumbnails [index];
+			}
+			else
+				panel.image.enabled = false;
 		}
 
 		else{
@@ -134,12 +141,7 @@ public class ChapterSelectManager : MonoBehaviour {
 		else
 			panel.partIndexText.text ="T";
 
-		if(index > gameManager.latestPartIndex){
-			panel.titleText.text = "????";
-
-		}
-
-		else if(index == gameManager.latestPartIndex && !gameManager.prevAssessmentDone){
+		if(index > gameManager.latestPartIndex || !partReference.partsData[previousPartIndex].isFinished && index > 1){
 			panel.titleText.text = "????";
 
 		}
@@ -186,6 +188,7 @@ public class ChapterSelectManager : MonoBehaviour {
 
 	public void launchAssessment(){
 		//AssessmentManager.assessmentNumber = currentPartIndex;
+		AssessmentManager.assessmentNumber = currentPartIndex;
 		FindObjectOfType<LevelLoader> ().launchScene ("() Assessment");
 	}
 }

@@ -14,7 +14,7 @@ public class ShadowController : MonoBehaviour {
 	private bool hitGround = false;
 	public bool isStatic = false;
 
-	void Start(){
+	void Awake(){
 		initialPosition = transform.localPosition;
 	}
 

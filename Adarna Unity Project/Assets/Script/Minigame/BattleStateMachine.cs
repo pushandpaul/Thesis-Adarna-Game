@@ -26,6 +26,13 @@ public class BattleStateMachine : MonoBehaviour {
 	public Text endBattlePrompt;
 	public Button endBattleButton;
 
+	public UIFader commandPrompt;
+	private Text commandPromptText;
+
+	void Awake(){
+		commandPromptText = commandPrompt.GetComponentInChildren<Text>();
+	}
+
 	void Update () {
 
 		if(!battleOnGoing)
@@ -110,15 +117,23 @@ public class BattleStateMachine : MonoBehaviour {
 	}
 
 	void Win(){
+		LevelLoader levelLoader = FindObjectOfType<LevelLoader> ();
+		ObjectiveMapper objectiveMapper = GetComponentInChildren<ObjectiveMapper> ();
+
 		executedWin = true;
-		setEndBattlePanelMsg("Wagi!", "Tumuloy");
+		levelLoader.launchPrevScene ();
+		objectiveMapper.checkIfCurrent_misc ();
+		//setEndBattlePanelMsg("Wagi!", "Tumuloy");
 		Debug.Log("You Win");
 
 	}
 
 	void Lose(){
+		LevelLoader levelLoader = FindObjectOfType<LevelLoader> ();
+
 		executedLose = true;
-		setEndBattlePanelMsg("Talo", "Ulitin");
+		levelLoader.launchScene ("(Minigame) Battle");
+		//setEndBattlePanelMsg("Talo", "Ulitin");
 		Debug.Log("You Lose");
 	}
 
@@ -140,5 +155,10 @@ public class BattleStateMachine : MonoBehaviour {
 		else if(executedLose){
 			levelLoader.launchScene ("(Minigame) Battle");
 		}
+	}
+
+	public void setCommandPrompt(string prompt){
+		commandPrompt.canvasGroup.alpha = 1f;
+		commandPromptText.text = prompt;
 	}
 }

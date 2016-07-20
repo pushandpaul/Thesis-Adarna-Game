@@ -37,7 +37,7 @@ public class DayapMinigame : MonoBehaviour {
 
 	public int dayapCount = 7;
 
-	void Start () {
+	void Awake () {
 		player = FindObjectOfType<PlayerController>();
 		levelLoader = FindObjectOfType<LevelLoader>();
 		bar = barUI.GetComponent<Image>();
@@ -54,6 +54,9 @@ public class DayapMinigame : MonoBehaviour {
 		//endMiniGame("End on Start");
 	}
 	void Update () {
+
+		player.canMove = false;
+		player.canJump = false;
 
 		if(!minigameManager.checkCanStart()){
 			return;

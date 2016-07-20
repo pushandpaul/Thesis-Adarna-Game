@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour {
 			myUIFader.canvasGroup.alpha = 1f;
 			if(!gameManager.blurredCam.gameObject.activeInHierarchy){
 				gameManager.blurredCam.gameObject.SetActive(isLaunch);
+				Debug.Log("Pause menu will handle the movement of the player");
 				inControl = true;
 			}
 			else{

@@ -38,18 +38,23 @@ public class BattlePlayer : MonoBehaviour {
 	public AnimationClip strongAttackAnim;
 	public AnimationClip defendAnim;
 
-	void Start(){
+	public CanvasGroup commandButtonGroup;
+
+	void Awake(){
 		battleStateMachine = FindObjectOfType<BattleStateMachine>();
 		anim = GetComponentInChildren<Animator>();
 		camera = FindObjectOfType<CameraController>();
+	}
 
+	void Start(){
+		
 		if(battleStateMachine != null){
 			anim.Play("Attack Idle");
 			baseHPTextBox.text = "/" + stats.baseHP;
 			stats.currentHP = stats.baseHP;
 			currentHPTextBox.text = "" + stats.currentHP;
 			enemy = battleStateMachine.enemy;
-
+			setButtonCanvas(true);
 			foreach(Button commandButton in commandButtons){
 				commandButton.interactable = false;
 			}
@@ -65,7 +70,7 @@ public class BattlePlayer : MonoBehaviour {
 
 		camera.setPlayerAsFollowing();
 		camera.Zoom(5.0f, 0.8f);
-
+		setButtonCanvas(true);
 		foreach(Button commandButton in commandButtons){
 			if(commandButton != strongAttackButton)
 				commandButton.interactable = true;
@@ -82,6 +87,7 @@ public class BattlePlayer : MonoBehaviour {
 
 	public void Attack(){
 		Debug.Log("Player attacked!");
+		battleStateMachine.setCommandPrompt("Umatake si Don Juan!");
 		commandPicked();
 		StartCoroutine(StartAttackAnim(MoveSet.Attack));
 		/*enemy.DecreaseHP(battleStateMachine.ComputeDamage(stats.accuracy, stats.criticalChance, stats.critAdditionPercent, stats.attack, enemy.inDefense, enemy.stats.defense));
@@ -93,6 +99,7 @@ public class BattlePlayer : MonoBehaviour {
 
 	public void StrongAttack(){
 		Debug.Log("Player used strong attack!");
+		battleStateMachine.setCommandPrompt("Ginamit ni Don Juan ang Malakas na Pag-atake!");
 		commandPicked();
 		StartCoroutine(StartAttackAnim(MoveSet.StrongAttack));
 		/*attackCharge = 0;
@@ -102,6 +109,7 @@ public class BattlePlayer : MonoBehaviour {
 
 	public void Defend(){
 		inDefense = true;
+		battleStateMachine.setCommandPrompt("Dumepensa si Don Juan.");
 		commandPicked();
 		StartCoroutine(StartAnimVarControlled(MoveSet.Defend));
 		//EndTurn();
@@ -117,23 +125,31 @@ public class BattlePlayer : MonoBehaviour {
 	}
 
 	void commandPicked(){
+		setButtonCanvas(false);
+		//commandButtonGroup.alpha = 0f;
 		camera.revertFollowing();
 		camera.Zoom(camera.initialCamSize, 0.8f);
 	}
 
 	public void EndTurn(){
 		Debug.Log("Player turn has ended.");
-
-		foreach(Button commandButton in commandButtons){
-			commandButton.interactable = false;
-		}
-
+		battleStateMachine.commandPrompt.canvasGroup.alpha = 0f;
 		if(enemy.stats.currentHP == 0){
 			battleStateMachine.currentState = BattleStateMachine.BattleStates.WIN;
 		}
 			
 		else
 			battleStateMachine.currentState = BattleStateMachine.BattleStates.ENEMYCHOICE;
+	}
+
+	void setButtonCanvas(bool enable){
+		if(enable){
+			commandButtonGroup.alpha = 1f;
+		}
+		else
+			commandButtonGroup.alpha = 0f;
+		
+		commandButtonGroup.interactable = enable;
 	}
 
 	IEnumerator StartAttackAnim(MoveSet attackMove){

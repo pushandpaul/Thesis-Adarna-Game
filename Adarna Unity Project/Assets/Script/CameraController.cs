@@ -47,7 +47,7 @@ public class CameraController : MonoBehaviour {
 	public bool isZoomed;
 
 	void Awake(){
-
+		player = FindObjectOfType<PlayerController>();
 		camera = this.GetComponent<Camera>();
 		foregrounds = new List<SpriteRenderer>();
 
@@ -79,7 +79,6 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = FindObjectOfType<PlayerController>();
 
 		if(followThis == null){
 			setPlayerAsFollowing();

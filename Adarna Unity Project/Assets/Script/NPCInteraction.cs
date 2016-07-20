@@ -31,6 +31,7 @@ public class NPCInteraction : MonoBehaviour {
 	public string originalMessage;
 
 	public SpeechBubble bubble;
+	private bool keyPressed = false;
 
 	void Awake(){
 		objectiveMapper = this.GetComponent<ObjectiveMapper>();
@@ -38,10 +39,8 @@ public class NPCInteraction : MonoBehaviour {
 			toTransform = transform.parent;
 		}
 		else
-			toTransform = transform;;
-	}
+			toTransform = transform;
 
-	void Start () {
 		if(bubble == null){
 			bubble = this.GetComponentInChildren<SpeechBubble> ();
 		}
@@ -71,11 +70,14 @@ public class NPCInteraction : MonoBehaviour {
 		colliderOffsetX = this.GetComponent<CircleCollider2D>().offset.x;
 		colliderOffsetY = this.GetComponent<CircleCollider2D>().offset.y;
 
+	}
+
+	void Start(){
 		if(anObjective){
 			StartCoroutine(displaySpeechBubble());
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update () { 
 
@@ -109,7 +111,8 @@ public class NPCInteraction : MonoBehaviour {
 		}
 		else
 			toFlip = false;
-		if(pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
+		if(!keyPressed && pressToInteract && waitForPress && Input.GetKeyDown(KeyCode.E)){
+			keyPressed = true;
 			backupScale = toTransform.localScale;
 			if(toFlip){
 				toTransform.localScale = new Vector3(-backupScale.x, backupScale.y, backupScale.z);
@@ -209,16 +212,21 @@ public class NPCInteraction : MonoBehaviour {
 
 		//May use in movecharacter in the future
 		while(player.transform.position != targetPosition){
+			Debug.Log("Backing off");
 			player.transform.position = Vector3.MoveTowards(player.transform.position, targetPosition, Time.deltaTime * 4f);
 			playerAnim.SetFloat("Speed", Vector3.Distance(player.transform.position, targetPosition));
 			yield return null;
 		}
 
-
 		flowchart.SendFungusMessage (toSend);
-		if(!DialogueController.inDialogue){
-			player.canMove = true;
-			player.canJump = true;
+
+		while(DialogueController.inDialogue){
+			yield return null;
 		}
+
+		player.canMove = true;
+		player.canJump = true;
+		keyPressed = false;
+
 	}
 }

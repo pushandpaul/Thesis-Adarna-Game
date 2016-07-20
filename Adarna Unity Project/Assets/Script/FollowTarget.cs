@@ -18,7 +18,7 @@ public class FollowTarget : MonoBehaviour {
 	public Animator anim;
 	private NPCInteraction npc;
 
-	void Start () {
+	void Awake () {
 		target = FindObjectOfType<PlayerController>().transform;
 		anim = transform.GetComponentInChildren<Animator>();
 		npc = GetComponent<NPCInteraction>();

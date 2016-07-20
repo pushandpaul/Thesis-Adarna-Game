@@ -107,7 +107,9 @@ public class MoveCharacter : MonoBehaviour {
 
 		if(player != null){
 			player.allowFlip = true;
-			player.canJump = true;
+			if(!DialogueController.inDialogue){
+				player.canJump = true;
+			}
 		}
 			
 		if(animatorFound)

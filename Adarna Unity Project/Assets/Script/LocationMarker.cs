@@ -4,14 +4,15 @@ using System.Collections;
 
 public class LocationMarker : MonoBehaviour {
 
-	private UIFader myUIFader;
+	public UIFader myUIFader;
 	private string currentSection;
 
 	public Text sectionUIText;
 	public Text sectionUIShadow;
 
 	void Awake(){
-		myUIFader = GetComponent<UIFader>();
+		//myUIFader = GetComponent<UIFader>();
+		myUIFader.setCanvasGroup(this.GetComponent<CanvasGroup>());
 	}
 
 	void Start(){
@@ -61,6 +62,8 @@ public class LocationMarker : MonoBehaviour {
 				
 			if(currentSection != section && section != ""){
 				StopAllCoroutines();
+				myUIFader.StopAllCoroutines();
+				myUIFader.canvasGroup.alpha = 0f;
 				StartCoroutine(show(section));
 			}
 			currentSection = section;
@@ -77,15 +80,12 @@ public class LocationMarker : MonoBehaviour {
 		while(FindObjectOfType<ScreenFader>().alpha > 0f){
 			yield return null;
 		}
-
-		while(DialogueController.inDialogue){
-			yield return null;
-		}
-
+			
 		Debug.Log("trying to show");
 
-		myUIFader.StopAllCoroutines();
 		myUIFader.FadeIn(5, 1f, true);
+
 	}
+
 
 }
