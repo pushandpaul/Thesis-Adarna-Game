@@ -83,10 +83,11 @@ public class ChapterSelectManager : MonoBehaviour {
 		}
 
 		else if(currentPartIndex <= gameManager.latestPartIndex){
-
-			if(currentPartIndex == gameManager.latestPartIndex && partReference.partsData[previousPartIndex].isFinished || currentPartIndex == 1){
+			
+			if (currentPartIndex == gameManager.latestPartIndex && partReference.partsData [previousPartIndex].isFinished || currentPartIndex == 1) {
 				selectChapterButton.interactable = true;
-			}
+			} else if (currentPartIndex < gameManager.latestPartIndex)
+				selectChapterButton.interactable = true;
 			else
 				selectChapterButton.interactable = false;
 
@@ -189,6 +190,7 @@ public class ChapterSelectManager : MonoBehaviour {
 	public void launchAssessment(){
 		//AssessmentManager.assessmentNumber = currentPartIndex;
 		AssessmentManager.assessmentNumber = currentPartIndex;
+		gameManager.setPauseMenu(true);
 		FindObjectOfType<LevelLoader> ().launchScene ("() Assessment");
 	}
 }

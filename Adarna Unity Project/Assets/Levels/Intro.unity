@@ -346,6 +346,7 @@ MonoBehaviour:
   backUIFader: {fileID: 0}
   transitionDuration: 2
   fadeOutDelay: 0
+  controlHUD: 0
 --- !u!1 &1837129343
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +438,6 @@ GameObject:
   - 114: {fileID: 2063628295}
   - 114: {fileID: 2063628294}
   - 114: {fileID: 2063628289}
-  - 114: {fileID: 2063628290}
   - 114: {fileID: 2063628291}
   - 114: {fileID: 2063628292}
   - 114: {fileID: 2063628305}
@@ -447,10 +447,8 @@ GameObject:
   - 114: {fileID: 2063628307}
   - 114: {fileID: 2063628308}
   - 114: {fileID: 2063628306}
-  - 114: {fileID: 2063628309}
   - 114: {fileID: 2063628312}
   - 114: {fileID: 2063628311}
-  - 114: {fileID: 2063628310}
   - 114: {fileID: 2063628314}
   - 114: {fileID: 2063628313}
   - 114: {fileID: 2063628317}
@@ -461,14 +459,28 @@ GameObject:
   - 114: {fileID: 2063628321}
   - 114: {fileID: 2063628320}
   - 114: {fileID: 2063628319}
-  - 114: {fileID: 2063628318}
   - 114: {fileID: 2063628325}
-  - 114: {fileID: 2063628324}
   - 114: {fileID: 2063628327}
-  - 114: {fileID: 2063628326}
-  - 114: {fileID: 2063628328}
   - 114: {fileID: 2063628329}
   - 114: {fileID: 2063628330}
+  - 114: {fileID: 2063628290}
+  - 114: {fileID: 2063628293}
+  - 114: {fileID: 2063628309}
+  - 114: {fileID: 2063628310}
+  - 114: {fileID: 2063628318}
+  - 114: {fileID: 2063628324}
+  - 114: {fileID: 2063628326}
+  - 114: {fileID: 2063628328}
+  - 114: {fileID: 2063628331}
+  - 114: {fileID: 2063628332}
+  - 114: {fileID: 2063628333}
+  - 114: {fileID: 2063628334}
+  - 114: {fileID: 2063628335}
+  - 114: {fileID: 2063628336}
+  - 114: {fileID: 2063628337}
+  - 114: {fileID: 2063628338}
+  - 114: {fileID: 2063628339}
+  - 114: {fileID: 2063628340}
   m_Layer: 0
   m_Name: Test Flowchart
   m_TagString: Untagged
@@ -490,8 +502,8 @@ MonoBehaviour:
   itemId: 7
   errorMessage: 
   indentLevel: 0
-  storyText: "Siya si Haring Fernando, tinitingala ng marami. Ang kabiyak naman ng
-    kanyang puso ay si Donya Valeriana, tunay na maganda\u2019t mabait."
+  storyText: "Masaya siyang namumuno kasama ang maganda\u2019t mabait niya kabiyak
+    na si Donya Valeriana at ang kanilang tatlong anak na bunga ng kanilang pagmamahalan."
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -504,29 +516,48 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2063628290
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 8
+  itemId: 39
   errorMessage: 
   indentLevel: 0
-  storyText: Mayroon silang tatlong anak na binata, tatlong bunga ng kanilang pagmamahalan.
-  description: 
-  character: {fileID: 1837129344}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 319a1affd9b4d244fb167572d84b7a36, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &2063628291
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -568,7 +599,7 @@ MonoBehaviour:
   itemId: 10
   errorMessage: 
   indentLevel: 0
-  storyText: "Si Don Pedro ang panganay sa magkakapatid na maganda ang tindig\u2026"
+  storyText: Si Don Pedro na may magandang tindig ang panganay sa magkakapatid...
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -579,6 +610,50 @@ MonoBehaviour:
   fadeWhenDone: 1
   waitForClick: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &2063628293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 40
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: ad7b160da9d6f6f42936167a3c78e150, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &2063628294
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -593,7 +668,7 @@ MonoBehaviour:
   itemId: 6
   errorMessage: 
   indentLevel: 0
-  storyText: Sinisiguro niyang magpapairal lamang siya ng makakabuti sa bayan.
+  storyText: Siya si haring Fernando, tinitingala ng marami.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -645,8 +720,8 @@ MonoBehaviour:
   itemId: 4
   errorMessage: 
   indentLevel: 0
-  storyText: "Sagana ang kanyang pamamalakad sa kaharian at kanyang tinatanggap \rmayaman
-    man o mahirap.\n"
+  storyText: Parati niyang inuuna ang kapakanan ng bayan at dahil dito sagana ang
+    pamumuhay ng mga tao, mayaman man o mahirap.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -671,8 +746,8 @@ MonoBehaviour:
   itemId: 3
   errorMessage: 
   indentLevel: 0
-  storyText: "Noong unang panahon, sa kahariang tinatawag na Berbanya, naroon \rang
-    isang haring hinahangaan. \r\n"
+  storyText: Noong unang panahon, sa kahariang tinatawag na Berbanya, ay may isang
+    haring tapat at makatarungan sa kanyang mga nasasakupan.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -809,41 +884,52 @@ MonoBehaviour:
   eventHandler: {fileID: 2063628329}
   commandList:
   - {fileID: 2063628299}
+  - {fileID: 2063628293}
   - {fileID: 2063628297}
   - {fileID: 2063628295}
-  - {fileID: 2063628296}
-  - {fileID: 2063628294}
-  - {fileID: 2063628289}
   - {fileID: 2063628290}
+  - {fileID: 2063628296}
+  - {fileID: 2063628310}
+  - {fileID: 2063628294}
+  - {fileID: 2063628318}
+  - {fileID: 2063628289}
   - {fileID: 2063628291}
+  - {fileID: 2063628324}
   - {fileID: 2063628292}
   - {fileID: 2063628305}
+  - {fileID: 2063628326}
   - {fileID: 2063628304}
   - {fileID: 2063628307}
+  - {fileID: 2063628328}
   - {fileID: 2063628298}
   - {fileID: 2063628302}
+  - {fileID: 2063628331}
   - {fileID: 2063628308}
+  - {fileID: 2063628332}
   - {fileID: 2063628306}
-  - {fileID: 2063628309}
   - {fileID: 2063628312}
+  - {fileID: 2063628333}
   - {fileID: 2063628311}
-  - {fileID: 2063628310}
   - {fileID: 2063628314}
+  - {fileID: 2063628334}
   - {fileID: 2063628313}
   - {fileID: 2063628317}
+  - {fileID: 2063628335}
   - {fileID: 2063628316}
+  - {fileID: 2063628336}
   - {fileID: 2063628315}
   - {fileID: 2063628323}
+  - {fileID: 2063628337}
   - {fileID: 2063628322}
+  - {fileID: 2063628338}
   - {fileID: 2063628321}
   - {fileID: 2063628325}
+  - {fileID: 2063628339}
   - {fileID: 2063628320}
+  - {fileID: 2063628340}
   - {fileID: 2063628319}
-  - {fileID: 2063628318}
+  - {fileID: 2063628309}
   - {fileID: 2063628327}
-  - {fileID: 2063628324}
-  - {fileID: 2063628326}
-  - {fileID: 2063628328}
   - {fileID: 2063628330}
 --- !u!114 &2063628301
 MonoBehaviour:
@@ -870,7 +956,7 @@ MonoBehaviour:
     height: 940.66016
   selectedBlock: {fileID: 2063628300}
   selectedCommands:
-  - {fileID: 2063628295}
+  - {fileID: 2063628294}
   variables: []
   description: 
   stepPause: 0
@@ -984,8 +1070,8 @@ MonoBehaviour:
   itemId: 17
   errorMessage: 
   indentLevel: 0
-  storyText: "Mabuting \rmag-aruga ang mag-asawa kaya naman lumaki silang mabubuting
-    tao. \r"
+  storyText: "Sa kabila ng pagiging mayaman, ninais rin ng hari na lumaki silang matatalino
+    kaya naman sila\u2019y pinag-aral."
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1037,7 +1123,8 @@ MonoBehaviour:
   itemId: 16
   errorMessage: 
   indentLevel: 0
-  storyText: "Sila ang mga anak nina Haring Fernando at Donya Valeriana. \n"
+  storyText: 'Dahil sa mabuting pag-aaruga ng mag-asawa, lumaking mabubuting tao ang
+    tatlong prinsipe.  '
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1050,55 +1137,75 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2063628309
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 18
+  itemId: 41
   errorMessage: 
   indentLevel: 0
-  storyText: "Naniniwala ang kanilang ama na kahit mayaman sila ay kailangan nilang
-    mag-aral para lumaki silang matatalino. \r"
-  description: 
-  character: {fileID: 1837129344}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: stopAudio
+  targetMethodText: 'stopAudio (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &2063628310
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 21
+  itemId: 42
   errorMessage: 
   indentLevel: 0
-  storyText: "Pinili ng tatlong magkakapatid na mamuno sa kaharian.\r"
-  description: 
-  character: {fileID: 1837129344}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 3203c9c35887fc646aaf3220ff1a8e70, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &2063628311
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1113,8 +1220,8 @@ MonoBehaviour:
   itemId: 20
   errorMessage: 
   indentLevel: 0
-  storyText: "Dumating ang oras kung saan kailangan nilang mamili kung pamumuno o
-    \rpagpapari. "
+  storyText: Dumating ang oras kung saan kailangan nilang mamili kung pamumuno o pagpapari
+    at pinili ng tatlo na pamunuan ang kaharian.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1166,8 +1273,8 @@ MonoBehaviour:
   itemId: 23
   errorMessage: 
   indentLevel: 0
-  storyText: Sinanay ang mga prinsipeng humawak ng patalim at naging mahusay sila
-    sa paggamit nito...
+  storyText: "Sinanay ang mga prinsipe humawak ng espada at \u2018di nagtagal ay naging
+    mahusay sila."
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1219,8 +1326,7 @@ MonoBehaviour:
   itemId: 26
   errorMessage: 
   indentLevel: 0
-  storyText: "Walang kaguluhan \rat puno ng saya ang mga naglilingkod sa kaharian
-    sapagkat mabuti ang mag-asawa. \r"
+  storyText: Walang kaguluhan at puno ng saya ang mga naglilingkod sa kaharian.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1285,30 +1391,48 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628318
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 32
+  itemId: 43
   errorMessage: 
   indentLevel: 0
-  storyText: "Gayunpaman, dininig din ng Diyos ang hiling ng hari at nakahanap sila
-    ng maggagamot.\r"
-  description: 
-  character: {fileID: 1837129344}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: ce6baa6661ad20d4eac0e900b8dde7c2, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &2063628319
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1323,7 +1447,8 @@ MonoBehaviour:
   itemId: 31
   errorMessage: 
   indentLevel: 0
-  storyText: Samantala, nalungkot naman ang mga anak ng hari.
+  storyText: Kaya naman napagpasiyahan ni Don Fernando na ipadala ang kanyang panganay
+    na anak para hulihin ang ibon.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1348,7 +1473,9 @@ MonoBehaviour:
   itemId: 30
   errorMessage: 
   indentLevel: 0
-  storyText: 'Nagpatawag ng mediko si Don Fernando upang malunasan ang kanyang sakit. '
+  storyText: Agad namang nagpatawag ng Mediko ngunit pagkatapos matignan ang hari,
+    sinabi nito na tanging ang kanta lamang ng Ibong Adarna ang makapagpapagaling
+    sa hari.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1373,8 +1500,8 @@ MonoBehaviour:
   itemId: 29
   errorMessage: 
   indentLevel: 0
-  storyText: "Bunsod nito, lubhang napabayaan ng hari ang kanyang sarili at \u2018di
-    nagtagal, nagkasakit na ang hari.\n"
+  storyText: Napabayaan niya ang kanyang kalusugan matapos mapanaginipang mamamatay
+    ang bunsong anak.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1399,8 +1526,8 @@ MonoBehaviour:
   itemId: 28
   errorMessage: 
   indentLevel: 0
-  storyText: "Ngunit nalungkot ang hari nang mapanaginipan niya na pinatay at hinulog
-    sa \rbalon ang bunso niyang anak."
+  storyText: Ngunit isang araw, binalot ng lungkot ang buong kaharian dahil sa pagkakasakit
+    ng hari.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1440,30 +1567,48 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628324
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 34
+  itemId: 44
   errorMessage: 
   indentLevel: 0
-  storyText: "Ayon sa mediko, tila isang ibong nagngangalang Adarna lamang ang \r\nmakapagpapagaling
-    sa sakit ng hari."
-  description: 
-  character: {fileID: 1837129344}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 4392b60df11d7df4db1041dbe44e491c, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &2063628325
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1493,30 +1638,48 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628326
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 36
+  itemId: 45
   errorMessage: 
   indentLevel: 0
-  storyText: Malayo sa kaharian, naninirahan sa puno ng Piedras Platas na matatatagpuan
-    sa bundok Tabor ang ibon.
-  description: 
-  character: {fileID: 1837129344}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: bed7f42d5a05ada4ea00756e77fb3c6c, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &2063628327
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1546,30 +1709,48 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628328
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 37
+  itemId: 46
   errorMessage: 
   indentLevel: 0
-  storyText: "Kung kaya\u2019t nag-umpisa ang paglalakbay ng magkakapatid upang hanapin
-    ang Ibong Adarna. "
-  description: 
-  character: {fileID: 1837129344}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 91c63daa855e9ca4192eb17f3a3655a2, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &2063628329
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1626,6 +1807,486 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &2063628331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 47
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 09106b1fe08ef724e93b7bab690fc0db, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 48
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 357c4bd68811f06468f3c6873d06a854, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 49
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 8de38bcbfebeec7469c35b37b61ae1ec, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 50
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 40ab9ea49fbaefc42852e8ae1bb0667c, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 51
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 4037405ffd5ecc6479c0ecc944997c2d, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 52
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 197bc3332ffc1f54c8b429b7d5deada4, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 53
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: dcda3e8876676a84f87d1af950893305, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 54
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 89a7be5eb9142024cbae908eb3c100e2, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 55
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: e951e2110425c0b439efb1e1fd767700, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 56
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2079816589}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: b131c4bef9ce18a41b30798ac370e7df, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!1 &2079816589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2079816591}
+  - 114: {fileID: 2079816590}
+  m_Layer: 0
+  m_Name: Utilities
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2079816590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2079816589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa01ccb98e548d041b038431ee3ac81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackUIFader: {fileID: 0}
+--- !u!4 &2079816591
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2079816589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 68.019684, y: 8.81595, z: 2.234375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &2121102339
 GameObject:
   m_ObjectHideFlags: 0

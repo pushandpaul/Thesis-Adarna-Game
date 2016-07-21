@@ -1885,6 +1885,8 @@ GameObject:
   - 114: {fileID: 1198304484}
   - 114: {fileID: 1198304485}
   - 114: {fileID: 1198304486}
+  - 114: {fileID: 1198304487}
+  - 114: {fileID: 1198304488}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2139,7 +2141,9 @@ MonoBehaviour:
   - {fileID: 1198304397}
   - {fileID: 1198304395}
   - {fileID: 1198304393}
+  - {fileID: 1198304487}
   - {fileID: 1198304398}
+  - {fileID: 1198304488}
   - {fileID: 1198304485}
   - {fileID: 1198304407}
   - {fileID: 1198304394}
@@ -2248,8 +2252,7 @@ MonoBehaviour:
     width: 1642.8276
     height: 1163.2374
   selectedBlock: {fileID: 1198304527}
-  selectedCommands:
-  - {fileID: 1198304486}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -5212,6 +5215,77 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1198304487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1198304392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 825
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 290846655}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: dcc30c86a095fc14a8a2806130af655e, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1198304488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1198304392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 826
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 290846655}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: stopAudio
+  targetMethodText: 'stopAudio (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &1198304490
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6160,6 +6234,7 @@ MonoBehaviour:
   backUIFader: {fileID: 0}
   transitionDuration: 2
   fadeOutDelay: 0
+  controlHUD: 0
 --- !u!4 &1793007160 stripped
 Transform:
   m_PrefabParentObject: {fileID: 410268, guid: cfa2231d34da56c4fa62626faa743ec8, type: 2}

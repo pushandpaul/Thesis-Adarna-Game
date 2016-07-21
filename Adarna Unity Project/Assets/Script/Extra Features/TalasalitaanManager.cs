@@ -211,6 +211,7 @@ public class TalasalitaanManager : MonoBehaviour {
 			partTitleUIText.text = partDataList.partsData[part].title;
 			firstLetterFormat = "<size=" + (summaryUIText.fontSize + 6) + "><b>" + summaryText.Substring(0,1) + "</b></size>";
 			newText =  firstLetterFormat + summaryText.Substring(1, summaryText.Length-1);
+			saknongUIText.text = partDataList.partsData[part].saknongNumbers;
 			summaryUIText.text = newText;
 			summaryImage.enabled = true;
 			summaryImage.sprite = thumbnails [part];

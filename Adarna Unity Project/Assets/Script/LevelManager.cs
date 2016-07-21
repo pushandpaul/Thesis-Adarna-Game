@@ -31,8 +31,11 @@ public class LevelManager : MonoBehaviour {
 		public string parentName;
 	}
 
+	private PlayerSwitch playerSwitch;
+
 	void Awake(){
 		gameManager = FindObjectOfType<GameManager>();
+		playerSwitch = FindObjectOfType<PlayerSwitch> ();
 		objectData = FindObjectsOfType<ObjectData>();
 		if(gameManager != null && objectData.Length > 0){
 			gameManager.currentScene = sceneName;
@@ -191,7 +194,6 @@ public class LevelManager : MonoBehaviour {
 		if(!inScene)
 			newPlayer = GameObject.Find (newPlayer.name).transform;
 		if(newPlayer.tag == "Playable Character"){
-			PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 			playerSwitch.actualSwitch(newPlayer);
 		}
 
@@ -203,7 +205,6 @@ public class LevelManager : MonoBehaviour {
 		if(!inScene)
 			newPlayer = GameObject.Find (newPlayer.name).transform;
 		if(newPlayer.tag == "Playable Character"){
-			PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 			playerSwitch.actualSwitch(newPlayer, holderTransfer);
 		}
 		else
@@ -246,7 +247,6 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void instantChangePlayer(string newPlayerName){
-		PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 		Transform newPlayer = null;
 		if(newPlayerName != gameManager.defaultCharacterName){
 			foreach(Transform playableCharacter in gameManager.playableCharacters){
@@ -285,7 +285,6 @@ public class LevelManager : MonoBehaviour {
 		 * routine 'b' - sets the position of the player holder to the new player
 		*/
 		char[] myRoutine = routine.ToCharArray();
-		PlayerSwitch playerSwitch = FindObjectOfType<PlayerSwitch>();
 		playerSwitch.routine = myRoutine[0];
 	}
 

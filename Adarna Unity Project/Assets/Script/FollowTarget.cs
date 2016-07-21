@@ -15,12 +15,21 @@ public class FollowTarget : MonoBehaviour {
 	private bool allowFlip;
 	private float reachBeforeFlip;
 
+	public Animator[] anims;
 	public Animator anim;
 	private NPCInteraction npc;
 
 	void Awake () {
 		target = FindObjectOfType<PlayerController>().transform;
-		anim = transform.GetComponentInChildren<Animator>();
+		anims = transform.GetComponentsInChildren<Animator>(true);
+
+		foreach(Animator _anim in anims){
+			if(_anim.name != "Speech Bubble"){
+				anim = _anim;
+				break;
+			}
+		}
+
 		npc = GetComponent<NPCInteraction>();
 		defaultScaleX = Mathf.Abs(target.localScale.x);
 		tempScale = defaultScaleX;
@@ -60,16 +69,22 @@ public class FollowTarget : MonoBehaviour {
 			Follow(tempDistanceLimit);
 		}
 
-		anim.SetFloat("Speed", distanceFromLimit);
-		anim.SetBool("Ground", grounded);
-
-
-
+		if(anim == null){
+			findCorrectAnimator ();
+		}
+		else{
+			anim.SetFloat("Speed", distanceFromLimit);
+			anim.SetBool("Ground", grounded);
+		}
+			
 	}
 
 	public void Follow(float distance){
 		float targetDirectionX = target.position.x - transform.position.x + distance;
 		float xPosition = transform.position.x;
+
+		findCorrectAnimator ();
+
 		xPosition += targetDirectionX * speed * Time.deltaTime;
 		transform.position = new Vector3(xPosition, transform.position.y, transform.position.z);
 	}
@@ -84,5 +99,16 @@ public class FollowTarget : MonoBehaviour {
 
 	public void setIsFollowing(bool boolean){
 		isFollowing = boolean;
+	}
+
+	public void findCorrectAnimator(){
+		anims = transform.GetComponentsInChildren<Animator>(true);
+
+		foreach(Animator _anim in anims){
+			if(_anim.name != "Speech Bubble"){
+				anim = _anim;
+				break;
+			}
+		}
 	}
 }

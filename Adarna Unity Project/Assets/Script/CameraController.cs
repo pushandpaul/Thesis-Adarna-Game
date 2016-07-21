@@ -51,6 +51,8 @@ public class CameraController : MonoBehaviour {
 		camera = this.GetComponent<Camera>();
 		foregrounds = new List<SpriteRenderer>();
 
+		lerpSpeed = new Vector2 (3, 4);
+
 		initialFollowThis = followThis;
 
 		spriteController = FindObjectOfType<SpriteController>();

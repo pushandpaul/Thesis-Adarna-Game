@@ -102,7 +102,7 @@ public class Objective : MonoBehaviour {
 			yield return null;
 		}
 
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(0.5f);
 
 		if(levelLoader != null){
 			levelLoader.launchScene("() Assessment");

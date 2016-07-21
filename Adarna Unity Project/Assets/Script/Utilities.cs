@@ -5,10 +5,12 @@ public class Utilities : MonoBehaviour {
 
 	public GameObject BackUIFader;
 	private GameManager gameManager;
+	private AudioSource audioSource;
 
 	void Awake(){
 		BackUIFader = GameObject.FindGameObjectWithTag ("Back UI Fader");
 		gameManager = FindObjectOfType<GameManager>();
+		audioSource = GetComponent<AudioSource> ();
 	}
 
 	public void fadeScreenToBlack(float duration){
@@ -102,5 +104,18 @@ public class Utilities : MonoBehaviour {
 
 	public void changeTimeOfDayLater(string timeOfDay){
 		gameManager.timeOfDay = timeOfDay.ToCharArray()[0];
+	}
+
+	public void playAudio(AudioClip clip){
+		if(audioSource == null){
+			audioSource = gameObject.AddComponent<AudioSource> ();
+		}
+		audioSource.clip = clip;
+		audioSource.time = 0;
+		audioSource.Play ();
+	}
+
+	public void stopAudio(){
+		audioSource.Stop ();
 	}
 }

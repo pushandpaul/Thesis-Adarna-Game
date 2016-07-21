@@ -50,7 +50,7 @@ public class ObjectInteraction : MonoBehaviour {
 		player = FindObjectOfType<PlayerController>();
 	}
 
-	void Start(){
+	void OnLevelWasLoaded(){
 		//this.GetComponent<Collider2D>().enabled = true;
 		StartCoroutine(waitBeforeEnabling());
 	}
@@ -86,7 +86,7 @@ public class ObjectInteraction : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other){
-
+		
 		//triggered = true;
 		//Debug.Log("Collided with " + gameObject.name);
 		if(other.tag == "Player"){

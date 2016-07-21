@@ -54,7 +54,7 @@ public class AssessmentManager : MonoBehaviour {
 		Debug.Log("This is the part to save:" + objectiveManager.currentPartIndex);
 
 
-		if(score >= 3 && !partReference.partsData[assessmentNumber].isFinished){
+		if(/*score >= 3 &&*/ !partReference.partsData[assessmentNumber].isFinished){
 			partReference.partsData[assessmentNumber].isFinished = true;
 			if(this.GetComponent<ObjectiveMapper> ().checkIfCurrent()){
 				FindObjectOfType<LevelLoader> ().launchScene (sceneToLaunch);

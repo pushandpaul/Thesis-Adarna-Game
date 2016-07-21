@@ -57,10 +57,10 @@ public class BGMManager : MonoBehaviour {
 				}
 			}
 			foreach(EnvironmentMusic environmentMusic in environmentMusics){
-				if (determineEnvironment (levelManager.sceneName) == environmentMusic.environmentName){
-					if(ambientSource.clip != environmentMusic.ambience){
+				if (determineEnvironment (levelManager.sceneName) == environmentMusic.environmentName) {
+					if (ambientSource.clip != environmentMusic.ambience) {
 
-						if(ambientSource.clip != environmentMusic.ambience){
+						if (ambientSource.clip != environmentMusic.ambience) {
 							ambientSource.time = 0f;
 							ambientSource.clip = environmentMusic.ambience;
 							ambientSource.Play ();
@@ -68,7 +68,8 @@ public class BGMManager : MonoBehaviour {
 						ambientFound = true;
 						break;
 					}
-				}
+				} else
+					ambientSource.clip = null;
 
 			}
 		}

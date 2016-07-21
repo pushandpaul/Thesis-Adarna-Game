@@ -543,6 +543,7 @@ MonoBehaviour:
   backUIFader: {fileID: 0}
   transitionDuration: 2
   fadeOutDelay: 0
+  controlHUD: 0
 --- !u!1001 &644826005
 Prefab:
   m_ObjectHideFlags: 0
@@ -798,6 +799,8 @@ GameObject:
   - 114: {fileID: 745093254}
   - 114: {fileID: 745093255}
   - 114: {fileID: 745093256}
+  - 114: {fileID: 745093257}
+  - 114: {fileID: 745093258}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2202,7 +2205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 855.078
+    x: 853.549
     y: 273.4791
     width: 174
     height: 40
@@ -2216,7 +2219,9 @@ MonoBehaviour:
   - {fileID: 745093142}
   - {fileID: 745093141}
   - {fileID: 745093120}
+  - {fileID: 745093257}
   - {fileID: 745093119}
+  - {fileID: 745093258}
   - {fileID: 745093190}
   - {fileID: 745093139}
   - {fileID: 745093138}
@@ -2592,8 +2597,8 @@ MonoBehaviour:
   itemId: 138
   errorMessage: 
   indentLevel: 0
-  storyText: Babantayan ko muna ang ibon. Kunin mo ang banga sa likod mo at may iuutos
-    ako sayo.
+  storyText: Babantayan ko muna ang ibon. Kunin mo ang banga sa labas ng bahay at
+    may iuutos ako sayo.
   description: 
   character: {fileID: 321171345}
   portrait: {fileID: 0}
@@ -2676,8 +2681,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 857.47565
-    y: 186.29698
+    x: 856.0137
+    y: 187.75893
     width: 176
     height: 40
   itemId: 135
@@ -4431,11 +4436,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -349.09995, y: -22.760849}
+  scrollPos: {x: -331.62735, y: -73.83464}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 374
-  zoom: 0.74402165
+  zoom: 0.65402174
   scrollViewRect:
     serializedVersion: 2
     x: -361.18542
@@ -4444,7 +4449,7 @@ MonoBehaviour:
     height: 1363.8989
   selectedBlock: {fileID: 745093166}
   selectedCommands:
-  - {fileID: 745093256}
+  - {fileID: 745093258}
   variables: []
   description: 
   stepPause: 0
@@ -4555,7 +4560,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &745093256
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 745093117}
@@ -4592,6 +4597,77 @@ MonoBehaviour:
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &745093257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745093117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 793
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2045268147}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: 309496b3e68e45c4b9ae6ad9c8f04fb3, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &745093258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745093117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 794
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 2045268147}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: stopAudio
+  targetMethodText: 'stopAudio (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
