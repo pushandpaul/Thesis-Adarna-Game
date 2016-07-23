@@ -106,6 +106,10 @@ public class Utilities : MonoBehaviour {
 		gameManager.timeOfDay = timeOfDay.ToCharArray()[0];
 	}
 
+	public void overrideBGM(AudioClip clip){
+		FindObjectOfType<BGMManager>().overridePlay(clip);
+	}
+
 	public void playAudio(AudioClip clip){
 		if(audioSource == null){
 			audioSource = gameObject.AddComponent<AudioSource> ();

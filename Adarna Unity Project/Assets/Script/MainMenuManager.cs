@@ -17,6 +17,8 @@ public class MainMenuManager : MonoBehaviour {
 		gameManager = FindObjectOfType<GameManager>();
 		confirmationBox = gameManager.GetComponentInChildren<ConfirmationBox>(true);
 		talasalitaanManager = FindObjectOfType<TalasalitaanManager>();
+
+		gameManager.setPauseMenu (false);
 	}
 
 	void Start(){

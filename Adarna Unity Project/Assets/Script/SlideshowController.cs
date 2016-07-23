@@ -17,6 +17,7 @@ public class SlideshowController : MonoBehaviour{
 	public int fadeOutDelay;
 
 	public bool controlHUD = false;
+	public bool controlPause = false;
 
 
 	void Awake(){
@@ -46,7 +47,12 @@ public class SlideshowController : MonoBehaviour{
 			if(controlHUD){
 				gameManager.setHUDs (enableHUD);
 			}
-			gameManager.setPauseMenu (enablePause);
+			if(gameManager.pauseMenu.GetComponentInChildren<PauseMenu>(true).enabled){
+				gameManager.setPauseMenu (enablePause);
+				controlPause = true;
+			}
+			else
+				controlPause = false;
 		}
 		slideshowImages = images.images;
 		currentImage = slideshowImages[startingIndex];
@@ -60,7 +66,7 @@ public class SlideshowController : MonoBehaviour{
 	public void Next(){
 		Debug.Log ("Next");
 		currentImageIndex++;
-		if(currentImageIndex < slideshowImages.Length){
+		if(currentImageIndex < slideshowImages.Length - 1){
 			currentImage = slideshowImages[currentImageIndex];
 			TransitionImage(false);
 		}
@@ -83,10 +89,12 @@ public class SlideshowController : MonoBehaviour{
 		backUIFader.FadeIn(fadeOutDelay, transitionDuration, true);
 
 
-		if(toEnd && controlHUD){
+		if(toEnd){
 			Debug.Log("Slideshow is in control.");
-			gameManager.setHUDs (true);
-			gameManager.setPauseMenu (true);
+			if(controlHUD)
+				gameManager.setHUDs (true);
+			if(controlPause)
+				gameManager.setPauseMenu (true);
 		}
 		else if(!controlHUD){
 			Debug.Log("Slideshow is not in control.");

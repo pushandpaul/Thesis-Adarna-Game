@@ -66,6 +66,7 @@ public class LevelLoader : MonoBehaviour {
 		ChapterSelect = 52,
 		MainMenu = 53,
 		Intro = 54,
+		Prayer = 55,
 	}
 
 	public LevelSelect Levels;

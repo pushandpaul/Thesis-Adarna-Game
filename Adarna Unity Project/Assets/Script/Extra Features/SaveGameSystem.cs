@@ -67,7 +67,7 @@ public static class SaveGameSystem
 
 	private static string GetSavePath(string name)
 	{
-		//return Path.Combine(Application.persistentDataPath, name + ".sav");
-		return Path.Combine(Application.dataPath , "StreamingAssets/TempSaves/" + name + ".sav");
+		return Path.Combine(Application.persistentDataPath, name + ".sav");
+		//return Path.Combine(Application.dataPath , "StreamingAssets/TempSaves/" + name + ".sav");
 	}
 }

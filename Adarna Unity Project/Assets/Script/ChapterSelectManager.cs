@@ -30,8 +30,10 @@ public class ChapterSelectManager : MonoBehaviour {
 		locationMarker = gameManager.GetComponentInChildren<LocationMarker>(true);
 		partReference = FindObjectOfType<TalasalitaanManager>().partDataList;
 		currentPartIndex = gameManager.latestPartIndex;
-		if(!partReference.partsData[currentPartIndex - 1].isFinished && currentPartIndex > 1){
-			currentPartIndex = gameManager.latestPartIndex - 1;
+		if(currentPartIndex > 1){
+			if(!partReference.partsData[currentPartIndex - 1].isFinished){
+				currentPartIndex = gameManager.latestPartIndex - 1;
+			}
 		}
 
 		initPanels();
@@ -41,6 +43,7 @@ public class ChapterSelectManager : MonoBehaviour {
 		gameManager.HUDs.Add (backButton);
 		gameManager.setHUDs(true);
 		gameManager.pauseButton.SetActive(false);
+		gameManager.setPauseMenu(false);
 		locationMarker.gameObject.SetActive (false);
 		FindObjectOfType<ObjectiveManager>().objectivePanelFader.StopAllCoroutines();
 		FindObjectOfType<ObjectiveManager>().objectivePanelFader.canvasGroup.alpha = 0f;

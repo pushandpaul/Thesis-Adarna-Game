@@ -547,6 +547,7 @@ public class GameManager : MonoBehaviour {
 		objectiveManager.currentObjective = null;
 		objectiveManager.setPartObjectives();
 		objectiveManager.Init();
+		this.latestPartIndex = 0;
 		FindObjectOfType<LevelLoader>().launchScene("Kwarto ni Haring Fernando");
 	}
 
