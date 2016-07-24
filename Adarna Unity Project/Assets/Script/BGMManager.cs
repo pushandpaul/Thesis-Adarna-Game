@@ -59,18 +59,19 @@ public class BGMManager : MonoBehaviour {
 			foreach(EnvironmentMusic environmentMusic in environmentMusics){
 				if (determineEnvironment (levelManager.sceneName) == environmentMusic.environmentName) {
 					if (ambientSource.clip != environmentMusic.ambience) {
-
 						if (ambientSource.clip != environmentMusic.ambience) {
 							ambientSource.time = 0f;
 							ambientSource.clip = environmentMusic.ambience;
 							ambientSource.Play ();
 						}
-						ambientFound = true;
-						break;
 					}
-				} else
-					ambientSource.clip = null;
+					ambientFound = true;
+					break;
+				}
 
+			}
+			if(!ambientFound){
+				ambientSource.clip = null;
 			}
 		}
 	}

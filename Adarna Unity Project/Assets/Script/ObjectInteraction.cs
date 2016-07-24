@@ -66,6 +66,7 @@ public class ObjectInteraction : MonoBehaviour {
 
 	private void checkIfCurrent(){
 		if(!messageSent){
+			Debug.Log("Message not sent. Creating message for '" + this.name +"'.");
 			if(anObjective){
 				objectiveMapper.checkIfCurrent_object();
 			}
@@ -75,10 +76,14 @@ public class ObjectInteraction : MonoBehaviour {
 			}
 			messageSent = true;
 		}
+		else{
+			Debug.Log("Message already sent '" + this.name +"'.");
+		}
 	}
 
 	void startDialogue(string toSend){
 		if(flowchart != null){
+			Debug.Log("Excecuting block for '" + this.name + "'.");
 			//flowchart.SendFungusMessage(toSend);	
 			flowchart.ExecuteBlock(toSend);
 		}
@@ -90,6 +95,7 @@ public class ObjectInteraction : MonoBehaviour {
 		//triggered = true;
 		//Debug.Log("Collided with " + gameObject.name);
 		if(other.tag == "Player"){
+			Debug.Log("Player entered '" + this.name + "' trigger.");
 			if(pressToInteract){
 				if(!anObjective || objectiveMapper.checkIfCurrent()){
 					interactionPrompt.show(InteractPrompt.keyToInteract.E, true, transform);
@@ -105,6 +111,7 @@ public class ObjectInteraction : MonoBehaviour {
 	void OnTriggerExit2D (Collider2D other){
 
 		if(other.tag == "Player"){
+			Debug.Log("Player left '" + this.name + "' trigger.");
 			messageSent = false;
 			if(pressToInteract){
 				if(!anObjective || objectiveMapper.checkIfCurrent()){

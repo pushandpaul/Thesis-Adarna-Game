@@ -218,65 +218,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
---- !u!1 &94824806
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 94824808}
-  - 212: {fileID: 94824807}
-  m_Layer: 0
-  m_Name: Rocks ng Bato Bros_0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &94824807
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 94824806}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7e66c477583484c4db68d9546d77642e, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1067694563
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5b39877e720be564691f4e84f9e8af7c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
---- !u!4 &94824808
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 94824806}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5899963, y: 1.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 734113054}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!1 &96141289
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,11 +856,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 448148, guid: 2dde3925c3bb0f74b823f7e49456c106, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 29.955553
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 448148, guid: 2dde3925c3bb0f74b823f7e49456c106, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.2784
+      value: -12.6
       objectReference: {fileID: 0}
     - target: {fileID: 448148, guid: 2dde3925c3bb0f74b823f7e49456c106, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1324,8 +1266,6 @@ GameObject:
   - 114: {fileID: 532386744}
   - 114: {fileID: 532386755}
   - 114: {fileID: 532386757}
-  - 114: {fileID: 532386792}
-  - 114: {fileID: 532386938}
   - 114: {fileID: 532386947}
   - 114: {fileID: 532386960}
   - 114: {fileID: 532386959}
@@ -1478,6 +1418,10 @@ GameObject:
   - 114: {fileID: 532387095}
   - 114: {fileID: 532387096}
   - 114: {fileID: 532387097}
+  - 114: {fileID: 532387098}
+  - 114: {fileID: 532386792}
+  - 114: {fileID: 532386938}
+  - 114: {fileID: 532387099}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1541,6 +1485,7 @@ MonoBehaviour:
   - {fileID: 532386937}
   - {fileID: 532386737}
   - {fileID: 532386736}
+  - {fileID: 532386792}
   - {fileID: 532386735}
   - {fileID: 532386734}
   - {fileID: 532386757}
@@ -2436,7 +2381,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 25, y: -2.27, z: 0}
+      vector3Value: {x: 25, y: -2.3, z: 0}
     variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
@@ -4190,30 +4135,30 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &532386792
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 376
+  itemId: 845
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 1134703565}
-  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
+  targetObject: {fileID: 31907810}
+  targetComponentAssemblyName: CameraController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: ItemToGive
-  targetMethod: setItem
-  targetMethodText: 'setItem (Sprite): Void'
+  targetComponentText: CameraController
+  targetMethod: setFollowing
+  targetMethodText: 'setFollowing (Transform): Void'
   methodParameters:
   - objValue:
-      typeAssemblyname: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      typeFullname: UnityEngine.Sprite
+      typeFullname: UnityEngine.Transform
       intValue: 0
       boolValue: 0
       floatValue: 0
@@ -4221,8 +4166,8 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 21300000, guid: 45262230639ce48429ab2105204097e1, type: 3}
+      objectValue: {fileID: 1379386496}
+      spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
@@ -5415,7 +5360,7 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 1849675907}
+      objectValue: {fileID: 644826009}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -5776,7 +5721,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
@@ -6044,7 +5989,6 @@ MonoBehaviour:
   - {fileID: 532387097}
   - {fileID: 532387072}
   - {fileID: 532386826}
-  - {fileID: 532386792}
   - {fileID: 532386840}
   - {fileID: 532386823}
   - {fileID: 532386822}
@@ -6054,7 +5998,6 @@ MonoBehaviour:
   - {fileID: 532386845}
   - {fileID: 532387050}
   - {fileID: 532386831}
-  - {fileID: 532386938}
   - {fileID: 532386834}
   - {fileID: 532387073}
   - {fileID: 532386838}
@@ -6063,7 +6006,9 @@ MonoBehaviour:
   - {fileID: 532386832}
   - {fileID: 532386844}
   - {fileID: 532387044}
+  - {fileID: 532386938}
   - {fileID: 532387070}
+  - {fileID: 532387099}
   - {fileID: 532386847}
 --- !u!114 &532386851
 MonoBehaviour:
@@ -7389,8 +7334,9 @@ MonoBehaviour:
   - {fileID: 532386878}
   - {fileID: 532386936}
   - {fileID: 532386817}
-  - {fileID: 532387095}
+  - {fileID: 532387098}
   - {fileID: 532386896}
+  - {fileID: 532387095}
   - {fileID: 532386895}
   - {fileID: 532386818}
   - {fileID: 532387096}
@@ -8284,7 +8230,7 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 685794021}
+      objectValue: {fileID: 1379386496}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -8314,26 +8260,60 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &532386938
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 377
+  itemId: 846
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 1134703565}
-  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetObject: {fileID: 1731175767}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: ItemToGive
-  targetMethod: disableItem
-  targetMethodText: 'disableItem (): Void'
-  methodParameters: []
+  targetComponentText: Utilities
+  targetMethod: setExitAccess
+  targetMethodText: 'setExitAccess (GameObject, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.GameObject, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.GameObject
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 1315913232}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -13822,7 +13802,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 30.5, y: -3, z: 0}
+      vector3Value: {x: 25.5, y: -3, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -14831,26 +14811,9 @@ MonoBehaviour:
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
   targetComponentText: Utilities
-  targetMethod: playAudio
-  targetMethodText: 'playAudio (AudioClip): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      typeFullname: UnityEngine.AudioClip
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 8300000, guid: c66056d1fd62892418f8fdf5de3e1043, type: 3}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
+  targetMethod: stopAudio
+  targetMethodText: 'stopAudio (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -14954,7 +14917,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 30, y: -2.27, z: 0}
+      vector3Value: {x: 25, y: -2.27, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -14968,6 +14931,145 @@ MonoBehaviour:
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
       objectValue: {fileID: 1379386496}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &532387098
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532386704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 844
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1731175767}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: playAudio
+  targetMethodText: 'playAudio (AudioClip): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.AudioClip
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 8300000, guid: c66056d1fd62892418f8fdf5de3e1043, type: 3}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &532387099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532386704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 847
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1731175767}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: setExitAccess
+  targetMethodText: 'setExitAccess (String, String, Boolean, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Mountain to Forest
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Right Exit
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -15212,49 +15314,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 172482, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-      propertyPath: m_TagString
-      value: Respawn
-      objectReference: {fileID: 0}
-    - target: {fileID: 127622, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-      propertyPath: m_TagString
-      value: Night Light
-      objectReference: {fileID: 0}
-    - target: {fileID: 189258, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 432868, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 494202, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 461062, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 403976, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 475184, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 175068, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &734113054 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 494278, guid: 76be959d4b72a99439e7be76b5039396, type: 2}
-  m_PrefabInternal: {fileID: 734113053}
 --- !u!1 &738815477
 GameObject:
   m_ObjectHideFlags: 0
@@ -15855,6 +15917,26 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 449068, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 427526, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 476750, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 468982, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 479492, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
   m_IsPrefabParent: 0
@@ -15870,10 +15952,6 @@ Animator:
 --- !u!4 &1134703564 stripped
 Transform:
   m_PrefabParentObject: {fileID: 458828, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
-  m_PrefabInternal: {fileID: 1134703561}
---- !u!1 &1134703565 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 179706, guid: 8c44e90d94eb7dc4591e4f3facc1db0b, type: 2}
   m_PrefabInternal: {fileID: 1134703561}
 --- !u!1001 &1147130285
 Prefab:
@@ -16084,6 +16162,7 @@ MonoBehaviour:
   transitionDuration: 2
   fadeOutDelay: 0
   controlHUD: 0
+  controlPause: 0
 --- !u!1 &1352581920
 GameObject:
   m_ObjectHideFlags: 0
@@ -16265,7 +16344,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1607695757
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 45262230639ce48429ab2105204097e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -17701,64 +17780,6 @@ Transform:
   - {fileID: 1966276220}
   m_Father: {fileID: 0}
   m_RootOrder: 13
---- !u!1 &2046482547
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2046482549}
-  - 212: {fileID: 2046482548}
-  m_Layer: 0
-  m_Name: Rocks ng Bato Bros_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &2046482548
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2046482547}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7e66c477583484c4db68d9546d77642e, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1067694563
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300002, guid: 5b39877e720be564691f4e84f9e8af7c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
---- !u!4 &2046482549
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2046482547}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1799965, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 734113054}
-  m_RootOrder: 5
 --- !u!114 &2049704004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17772,20 +17793,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -460.91287, y: -320.84888}
+  scrollPos: {x: -323.4859, y: -477.71304}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 407
-  zoom: 0.76
+  zoom: 0.82000005
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 2627.3176
     height: 1672.7627
-  selectedBlock: {fileID: 532386850}
+  selectedBlock: {fileID: 532386815}
   selectedCommands:
-  - {fileID: 532386829}
+  - {fileID: 532387076}
   variables: []
   description: 
   stepPause: 0

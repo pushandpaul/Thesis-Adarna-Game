@@ -94,8 +94,11 @@ public class ObjectiveMapper : MonoBehaviour {
 			if(found)
 				break;	
 		}
-		if(!found)
+		if(!found){
 			objectiveHolder.message = objectiveHolder.origMessage;
+			Debug.Log("'" + objectiveHolder.name + "'" + " does not trigger an objective.");
+		}
+			
 	}
 
 	public void checkIfCurrent_misc(){
