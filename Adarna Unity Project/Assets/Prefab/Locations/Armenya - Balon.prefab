@@ -41,13 +41,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 483282}
   - 212: {fileID: 21279904}
+  - 114: {fileID: 11469686}
   m_Layer: 0
-  m_Name: Balon
+  m_Name: Balon Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &121142
 GameObject:
   m_ObjectHideFlags: 1
@@ -400,7 +401,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.799999, y: -8.833, z: 0}
+  m_LocalPosition: {x: 3.84, y: -13.82, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 440144}
@@ -505,12 +506,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587b8fea6c8083a4dacdf11e7b57277f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressToInteract: 1
+  pressToInteract: 0
   flowchart: {fileID: 0}
   player: {fileID: 0}
   panelFadeDelay: 0
   anObjective: 0
   message: 
+  origMessage: 
 --- !u!114 &11465242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,8 +529,24 @@ MonoBehaviour:
     objectives: 03000000
   - part: 5
     objectives: 0e000000
+  - part: 6
+    objectives: 05000000
   isNPC: 0
   isObject: 1
+--- !u!114 &11469686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4c624b2eb542244872fc8391355cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  destroyed: 0
+  persistLookDirection: 0
 --- !u!114 &11477912
 MonoBehaviour:
   m_ObjectHideFlags: 1

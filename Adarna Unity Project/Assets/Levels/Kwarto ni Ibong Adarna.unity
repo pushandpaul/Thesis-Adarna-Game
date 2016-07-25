@@ -973,6 +973,7 @@ MonoBehaviour:
   transitionDuration: 2
   fadeOutDelay: 0
   controlHUD: 0
+  controlPause: 0
 --- !u!1 &863400539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1253,10 @@ GameObject:
   - 114: {fileID: 1036713572}
   - 114: {fileID: 1036713573}
   - 114: {fileID: 1036713574}
+  - 114: {fileID: 1036713575}
+  - 114: {fileID: 1036713576}
+  - 114: {fileID: 1036713577}
+  - 114: {fileID: 1036713578}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1272,11 +1277,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -54.38559, y: -26.471237}
+  scrollPos: {x: -101.38559, y: 52.528763}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 375
-  zoom: 0.9100002
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -379.0296
@@ -1284,8 +1289,7 @@ MonoBehaviour:
     width: 1639.8188
     height: 1133.4209
   selectedBlock: {fileID: 1036713486}
-  selectedCommands:
-  - {fileID: 1036713559}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1418,7 +1422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 400.0997
+    x: 401.0997
     y: -51.23352
     width: 173
     height: 40
@@ -1443,6 +1447,7 @@ MonoBehaviour:
   - {fileID: 1036713556}
   - {fileID: 1036713564}
   - {fileID: 1036713388}
+  - {fileID: 1036713575}
   - {fileID: 1036713558}
   - {fileID: 1036713385}
 --- !u!114 &1036713384
@@ -5773,9 +5778,12 @@ MonoBehaviour:
   - {fileID: 1036713505}
   - {fileID: 1036713507}
   - {fileID: 1036713506}
+  - {fileID: 1036713578}
   - {fileID: 1036713559}
   - {fileID: 1036713574}
+  - {fileID: 1036713576}
   - {fileID: 1036713560}
+  - {fileID: 1036713577}
   - {fileID: 1036713465}
   - {fileID: 1036713476}
   - {fileID: 1036713487}
@@ -6556,7 +6564,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036713375}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
@@ -8299,11 +8307,11 @@ MonoBehaviour:
   - {fileID: 1036713521}
   - {fileID: 1036713520}
   - {fileID: 1036713519}
-  - {fileID: 1036713518}
   - {fileID: 1036713517}
   - {fileID: 1036713568}
   - {fileID: 1036713514}
   - {fileID: 1036713569}
+  - {fileID: 1036713518}
   - {fileID: 1036713515}
   - {fileID: 1036713513}
   - {fileID: 1036713512}
@@ -9351,7 +9359,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1036713574
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036713375}
@@ -9430,6 +9438,284 @@ MonoBehaviour:
       boolValue: 1
       floatValue: 0
       stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1036713575
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1036713375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 827
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1951588255}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: stopAudio
+  targetMethodText: 'stopAudio (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1036713576
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1036713375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 828
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1951588255}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: setExitAccess
+  targetMethodText: 'setExitAccess (String, String, Boolean, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Forest Test
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Right Exit
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1036713577
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1036713375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 829
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1951588255}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: setExitAccess
+  targetMethodText: 'setExitAccess (String, String, Boolean, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Mountain to Forest
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Right Exit
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1036713578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1036713375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 830
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1124809387}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: removeObjectReference
+  targetMethodText: 'removeObjectReference (String, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Kwarto ni Haring Fernando
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Haring Fernando (Walking)
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}

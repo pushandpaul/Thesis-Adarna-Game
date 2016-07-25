@@ -1302,6 +1302,7 @@ MonoBehaviour:
   transitionDuration: 2
   fadeOutDelay: 0
   controlHUD: 0
+  controlPause: 0
 --- !u!1001 &1085744554
 Prefab:
   m_ObjectHideFlags: 0
@@ -1576,6 +1577,9 @@ GameObject:
   - 114: {fileID: 1163381619}
   - 114: {fileID: 1163381620}
   - 114: {fileID: 1163381621}
+  - 114: {fileID: 1163381622}
+  - 114: {fileID: 1163381623}
+  - 114: {fileID: 1163381624}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1606,8 +1610,9 @@ MonoBehaviour:
     y: -351.2195
     width: 1642.8276
     height: 1163.2374
-  selectedBlock: {fileID: 1163381549}
-  selectedCommands: []
+  selectedBlock: {fileID: 1163381560}
+  selectedCommands:
+  - {fileID: 1163381585}
   variables: []
   description: 
   stepPause: 0
@@ -1705,6 +1710,7 @@ MonoBehaviour:
   - {fileID: 1163381616}
   - {fileID: 1163381504}
   - {fileID: 1163381617}
+  - {fileID: 1163381622}
   - {fileID: 1163381577}
   - {fileID: 1163381576}
   - {fileID: 1163381575}
@@ -2188,6 +2194,7 @@ MonoBehaviour:
   - {fileID: 1163381507}
   - {fileID: 1163381613}
   - {fileID: 1163381614}
+  - {fileID: 1163381623}
   - {fileID: 1163381518}
   - {fileID: 1163381517}
   - {fileID: 1163381516}
@@ -3212,7 +3219,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 421.09506
-    y: 260.97556
+    y: 262.29135
     width: 173
     height: 40
   itemId: 257
@@ -3569,6 +3576,7 @@ MonoBehaviour:
   - {fileID: 1163381567}
   - {fileID: 1163381568}
   - {fileID: 1163381569}
+  - {fileID: 1163381624}
   - {fileID: 1163381554}
 --- !u!114 &1163381561
 MonoBehaviour:
@@ -4197,7 +4205,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 34, y: -1, z: 0}
+      vector3Value: {x: 34, y: -0.16, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -4544,7 +4552,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 34, y: 1, z: 0}
+      vector3Value: {x: 34, y: -0.16, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -4839,7 +4847,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 23, y: 20, z: 0}
+      vector3Value: {x: 38.86666, y: -12, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -5035,7 +5043,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 34, y: 1, z: 0}
+      vector3Value: {x: 34, y: -0.16, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -5934,7 +5942,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1163381613
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163381493}
@@ -6029,7 +6037,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1163381614
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163381493}
@@ -6124,7 +6132,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1163381615
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163381493}
@@ -6168,7 +6176,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1163381616
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163381493}
@@ -6212,7 +6220,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1163381617
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163381493}
@@ -6239,7 +6247,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1163381618
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163381493}
@@ -6283,7 +6291,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1163381619
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163381493}
@@ -6310,7 +6318,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1163381620
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163381493}
@@ -6354,7 +6362,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1163381621
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163381493}
@@ -6374,6 +6382,240 @@ MonoBehaviour:
   targetMethod: stopAudio
   targetMethodText: 'stopAudio (): Void'
   methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1163381622
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1163381493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 761
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 743284524}
+  targetComponentAssemblyName: SaveAndDestroy, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SaveAndDestroy
+  targetMethod: saveNowDestroyLater
+  targetMethodText: 'saveNowDestroyLater (GameObject): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.GameObject, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.GameObject
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 760839006}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1163381623
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1163381493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 762
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 743284524}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: setExitAccess
+  targetMethodText: 'setExitAccess (String, String, Boolean, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Armenya - Hallway
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Right Exit
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1163381624
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1163381493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 763
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 743284524}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: setExitAccess
+  targetMethodText: 'setExitAccess (String, String, Boolean, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Armenya - Hallway
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Right Exit
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void

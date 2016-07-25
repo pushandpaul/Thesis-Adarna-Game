@@ -268,6 +268,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void setSpawnDirection(bool isRight) {
+		isDoor = false;
 		if (isRight) {
 			exitInRight = false;
 			Debug.Log ("Spawn set to right");

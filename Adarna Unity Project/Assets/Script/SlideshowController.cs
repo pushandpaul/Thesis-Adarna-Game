@@ -66,7 +66,7 @@ public class SlideshowController : MonoBehaviour{
 	public void Next(){
 		Debug.Log ("Next");
 		currentImageIndex++;
-		if(currentImageIndex < slideshowImages.Length - 1){
+		if(currentImageIndex < slideshowImages.Length){
 			currentImage = slideshowImages[currentImageIndex];
 			TransitionImage(false);
 		}

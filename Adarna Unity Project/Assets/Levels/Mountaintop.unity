@@ -735,6 +735,7 @@ GameObject:
   - 114: {fileID: 998950292}
   - 114: {fileID: 998950293}
   - 114: {fileID: 998950294}
+  - 114: {fileID: 998950295}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -778,7 +779,8 @@ MonoBehaviour:
     width: 1560
     height: 967.8688
   selectedBlock: {fileID: 998950271}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 998950295}
   variables: []
   description: 
   stepPause: 0
@@ -893,8 +895,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 338.08572
-    y: 86
+    x: 342.0331
+    y: 84.684204
     width: 180
     height: 40
   itemId: 106
@@ -909,6 +911,7 @@ MonoBehaviour:
   - {fileID: 998950276}
   - {fileID: 998950277}
   - {fileID: 998950278}
+  - {fileID: 998950295}
   - {fileID: 998950273}
 --- !u!114 &998950272
 MonoBehaviour:
@@ -1677,6 +1680,67 @@ MonoBehaviour:
       boolValue: 0
       floatValue: 0
       stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &998950295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998950263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 371
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: removeObjectReference
+  targetMethodText: 'removeObjectReference (String, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Kwarto ni Ibong Adarna
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Haring Fernando (Walking)
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}

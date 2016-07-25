@@ -347,6 +347,7 @@ MonoBehaviour:
   transitionDuration: 2
   fadeOutDelay: 0
   controlHUD: 0
+  controlPause: 0
 --- !u!1 &1837129343
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +482,7 @@ GameObject:
   - 114: {fileID: 2063628338}
   - 114: {fileID: 2063628339}
   - 114: {fileID: 2063628340}
+  - 114: {fileID: 2063628341}
   m_Layer: 0
   m_Name: Test Flowchart
   m_TagString: Untagged
@@ -502,7 +504,7 @@ MonoBehaviour:
   itemId: 7
   errorMessage: 
   indentLevel: 0
-  storyText: "Masaya siyang namumuno kasama ang maganda\u2019t mabait niya kabiyak
+  storyText: "Masaya siyang namumuno kasama ang maganda\u2019t mabait niyang kabiyak
     na si Donya Valeriana at ang kanilang tatlong anak na bunga ng kanilang pagmamahalan."
   description: 
   character: {fileID: 1837129344}
@@ -516,7 +518,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2063628290
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -612,7 +614,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2063628293
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -668,7 +670,7 @@ MonoBehaviour:
   itemId: 6
   errorMessage: 
   indentLevel: 0
-  storyText: Siya si haring Fernando, tinitingala ng marami.
+  storyText: Siya si Haring Fernando, tinitingala ng marami.
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -926,6 +928,7 @@ MonoBehaviour:
   - {fileID: 2063628325}
   - {fileID: 2063628339}
   - {fileID: 2063628320}
+  - {fileID: 2063628341}
   - {fileID: 2063628340}
   - {fileID: 2063628319}
   - {fileID: 2063628309}
@@ -956,7 +959,7 @@ MonoBehaviour:
     height: 940.66016
   selectedBlock: {fileID: 2063628300}
   selectedCommands:
-  - {fileID: 2063628294}
+  - {fileID: 2063628341}
   variables: []
   description: 
   stepPause: 0
@@ -1137,7 +1140,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2063628309
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1164,7 +1167,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628310
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1273,8 +1276,8 @@ MonoBehaviour:
   itemId: 23
   errorMessage: 
   indentLevel: 0
-  storyText: "Sinanay ang mga prinsipe humawak ng espada at \u2018di nagtagal ay naging
-    mahusay sila."
+  storyText: "Sinanay ang mga prinsipeng humawak ng espada at \u2018di nagtagal ay
+    naging mahusay sila."
   description: 
   character: {fileID: 1837129344}
   portrait: {fileID: 0}
@@ -1391,7 +1394,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628318
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1567,7 +1570,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628324
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1638,7 +1641,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628326
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1709,7 +1712,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628328
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1809,7 +1812,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628331
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1853,7 +1856,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628332
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1897,7 +1900,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628333
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1941,7 +1944,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628334
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -1985,7 +1988,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628335
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -2029,7 +2032,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628336
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -2073,7 +2076,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628337
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -2117,7 +2120,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628338
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -2161,7 +2164,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628339
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -2205,7 +2208,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2063628340
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063628288}
@@ -2242,6 +2245,33 @@ MonoBehaviour:
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2063628341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 57
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1741413943}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SlideshowController
+  targetMethod: Next
+  targetMethodText: 'Next (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void

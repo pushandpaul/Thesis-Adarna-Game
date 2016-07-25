@@ -1401,6 +1401,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11461246, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
+      propertyPath: commandList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 414420, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1541,6 +1545,34 @@ Prefab:
       propertyPath: voiceOverClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11461246, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
+      propertyPath: commandList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2029065740}
+    - target: {fileID: 11461246, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
+      propertyPath: commandList.Array.data[2]
+      value: 
+      objectReference: {fileID: 2029065738}
+    - target: {fileID: 11461246, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 2029065739}
+    - target: {fileID: 11461246, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 2029065741}
+    - target: {fileID: 11498198, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
+      propertyPath: scrollPos.x
+      value: -198.96216
+      objectReference: {fileID: 0}
+    - target: {fileID: 11498198, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
+      propertyPath: scrollPos.y
+      value: 172.538
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461246, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 2029065737}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
   m_IsPrefabParent: 0
@@ -1552,7 +1584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!114 &2029065735 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11489394, guid: 53eb1541642022143a08d1f9a181fa12,
+  m_PrefabParentObject: {fileID: 11461246, guid: 53eb1541642022143a08d1f9a181fa12,
     type: 2}
   m_PrefabInternal: {fileID: 2029065733}
   m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
@@ -1560,7 +1592,19 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 102366, guid: 53eb1541642022143a08d1f9a181fa12, type: 2}
   m_PrefabInternal: {fileID: 2029065733}
---- !u!114 &2029065737
+--- !u!114 &2029065737 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11419266, guid: 53eb1541642022143a08d1f9a181fa12,
+    type: 2}
+  m_PrefabInternal: {fileID: 2029065733}
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+--- !u!114 &2029065738 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11432984, guid: 53eb1541642022143a08d1f9a181fa12,
+    type: 2}
+  m_PrefabInternal: {fileID: 2029065733}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+--- !u!114 &2029065739
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
@@ -1571,7 +1615,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 793
+  itemId: 152
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 429764310}
+  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Utilities
+  targetMethod: stopAudio
+  targetMethodText: 'stopAudio (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &2029065740
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2029065736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 151
   errorMessage: 
   indentLevel: 0
   targetObject: {fileID: 429764310}
@@ -1604,9 +1675,9 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &2029065738
+--- !u!114 &2029065741
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2029065736}
@@ -1615,7 +1686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 794
+  itemId: 153
   errorMessage: 
   indentLevel: 0
   targetObject: {fileID: 429764310}
@@ -1623,40 +1694,30 @@ MonoBehaviour:
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
   targetComponentText: Utilities
-  targetMethod: stopAudio
-  targetMethodText: 'stopAudio (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &2029065739
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2029065736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 795
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 429764310}
-  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Utilities
-  targetMethod: playAudio
-  targetMethodText: 'playAudio (AudioClip): Void'
+  targetMethod: setExitAccess
+  targetMethodText: 'setExitAccess (GameObject, Boolean): Void'
   methodParameters:
   - objValue:
-      typeAssemblyname: UnityEngine.AudioClip, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      typeAssemblyname: UnityEngine.GameObject, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      typeFullname: UnityEngine.AudioClip
+      typeFullname: UnityEngine.GameObject
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 1136915464}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
       intValue: 0
       boolValue: 0
       floatValue: 0
@@ -1664,39 +1725,12 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 8300000, guid: bd8541f8454c5e54c82ee9c79b856adf, type: 3}
+      objectValue: {fileID: 0}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &2029065740
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2029065736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 796
-  errorMessage: 
-  indentLevel: 0
-  targetObject: {fileID: 429764310}
-  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Utilities
-  targetMethod: stopAudio
-  targetMethodText: 'stopAudio (): Void'
-  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void

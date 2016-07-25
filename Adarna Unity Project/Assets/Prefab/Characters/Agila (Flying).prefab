@@ -155,7 +155,7 @@ GameObject:
   - 4: {fileID: 466130}
   - 58: {fileID: 5845662}
   - 114: {fileID: 11414056}
-  - 114: {fileID: 11483210}
+  - 114: {fileID: 11472730}
   m_Layer: 0
   m_Name: Container Trigger
   m_TagString: Untagged
@@ -575,7 +575,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.29, y: -8.9, z: 0}
+  m_LocalPosition: {x: 34.49306, y: -10.672527, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 459858}
@@ -629,7 +629,7 @@ Transform:
   m_GameObject: {fileID: 100346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2, y: -1.16, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.073448285, z: 0.7967792}
+  m_LocalScale: {x: 0.35, y: 0.073448285, z: 1}
   m_Children:
   - {fileID: 457054}
   m_Father: {fileID: 459858}
@@ -674,9 +674,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 2.64, y: 0}
+  m_Offset: {x: 0.1, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 4
 --- !u!58 &5897744
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -804,8 +804,8 @@ MonoBehaviour:
   partObjective:
   - part: 7
     objectives: 07000000
-  isNPC: 1
-  isObject: 0
+  isNPC: 0
+  isObject: 1
 --- !u!114 &11431408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -864,7 +864,7 @@ MonoBehaviour:
   portraits: []
   portraitsFace: 0
   description: 
---- !u!114 &11483210
+--- !u!114 &11472730
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -872,21 +872,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 131114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9f42ed264d6a34b816b92c212ee0f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 587b8fea6c8083a4dacdf11e7b57277f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pressToInteract: 1
   flowchart: {fileID: 0}
   player: {fileID: 0}
-  onlyTrigger: 1
-  toTransform: {fileID: 0}
-  facingRight: 1
-  standardFacing: 1
-  allowFlip: 1
+  panelFadeDelay: 0
   anObjective: 0
   message: 
-  originalMessage: 
-  bubble: {fileID: 11431408}
+  origMessage: 
 --- !u!114 &11495348
 MonoBehaviour:
   m_ObjectHideFlags: 1

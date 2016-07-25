@@ -375,6 +375,7 @@ GameObject:
   - 114: {fileID: 290846657}
   - 114: {fileID: 290846658}
   - 114: {fileID: 290846659}
+  - 114: {fileID: 290846660}
   m_Layer: 0
   m_Name: Utilities
   m_TagString: Untagged
@@ -431,6 +432,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BackUIFader: {fileID: 0}
+--- !u!114 &290846660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 290846655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9145e326cbb3e40ac38cf442ec10fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &329046602
 Prefab:
   m_ObjectHideFlags: 0
@@ -438,14 +450,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11465242, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
-      propertyPath: partObjective.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11465242, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
-      propertyPath: partObjective.Array.data[2].objectives.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 440144, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 61.3
@@ -476,19 +480,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440144, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
       propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 11465242, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
-      propertyPath: partObjective.Array.data[2].part
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11465242, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
-      propertyPath: partObjective.Array.data[2].objectives.Array.data[0]
-      value: 5
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &329046605 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 483282, guid: bbfb999b33d47ee43b61e0136a3f201f, type: 2}
+  m_PrefabInternal: {fileID: 329046602}
 --- !u!1001 &336306242
 Prefab:
   m_ObjectHideFlags: 0
@@ -1718,6 +1718,18 @@ GameObject:
   - 114: {fileID: 1152808236}
   - 114: {fileID: 1152808237}
   - 114: {fileID: 1152808238}
+  - 114: {fileID: 1152808239}
+  - 114: {fileID: 1152808240}
+  - 114: {fileID: 1152808241}
+  - 114: {fileID: 1152808242}
+  - 114: {fileID: 1152808243}
+  - 114: {fileID: 1152808244}
+  - 114: {fileID: 1152808245}
+  - 114: {fileID: 1152808246}
+  - 114: {fileID: 1152808248}
+  - 114: {fileID: 1152808247}
+  - 114: {fileID: 1152808249}
+  - 114: {fileID: 1152808250}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1783,19 +1795,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: 239.03171, y: -726.2101}
+  scrollPos: {x: 5.1208344, y: -875.1813}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 320
-  zoom: 0.61000013
+  zoom: 0.82
   scrollViewRect:
     serializedVersion: 2
     x: -562.926
     y: -382.95453
     width: 2705.0168
     height: 1999.6782
-  selectedBlock: {fileID: 1152808135}
-  selectedCommands: []
+  selectedBlock: {fileID: 1152808204}
+  selectedCommands:
+  - {fileID: 1152808160}
   variables: []
   description: 
   stepPause: 0
@@ -2007,7 +2020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 301.13635
+    x: 298.42435
     y: 119.772675
     width: 169
     height: 40
@@ -2017,6 +2030,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1152807997}
   commandList:
   - {fileID: 1152808000}
+  - {fileID: 1152808239}
   - {fileID: 1152808191}
   - {fileID: 1152808192}
   - {fileID: 1152808001}
@@ -5786,16 +5800,21 @@ MonoBehaviour:
   - {fileID: 1152808237}
   - {fileID: 1152808056}
   - {fileID: 1152808238}
+  - {fileID: 1152808240}
   - {fileID: 1152808215}
   - {fileID: 1152808220}
   - {fileID: 1152808134}
   - {fileID: 1152808144}
   - {fileID: 1152808199}
+  - {fileID: 1152808243}
   - {fileID: 1152808201}
   - {fileID: 1152808143}
   - {fileID: 1152808145}
   - {fileID: 1152808146}
+  - {fileID: 1152808244}
   - {fileID: 1152808147}
+  - {fileID: 1152808241}
+  - {fileID: 1152808242}
   - {fileID: 1152808148}
 --- !u!114 &1152808136
 MonoBehaviour:
@@ -6189,7 +6208,7 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 1249693395}
+      objectValue: {fileID: 1030142448}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -6504,7 +6523,7 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 1249693395}
+      objectValue: {fileID: 1030142448}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -6792,7 +6811,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1152807984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
@@ -7840,7 +7859,7 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 1249693395}
+      objectValue: {fileID: 1030142448}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -8541,7 +8560,7 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 1249693395}
+      objectValue: {fileID: 1030142448}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -8923,9 +8942,15 @@ MonoBehaviour:
   eventHandler: {fileID: 1152808149}
   commandList:
   - {fileID: 1152808203}
+  - {fileID: 1152808246}
+  - {fileID: 1152808245}
   - {fileID: 1152808153}
   - {fileID: 1152808152}
+  - {fileID: 1152808247}
+  - {fileID: 1152808248}
+  - {fileID: 1152808249}
   - {fileID: 1152808166}
+  - {fileID: 1152808250}
   - {fileID: 1152808202}
   - {fileID: 1152808216}
   - {fileID: 1152808196}
@@ -10208,6 +10233,653 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1152808239
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 749
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1566442615}
+  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveObject
+  targetMethod: punchMove
+  targetMethodText: 'punchMove (Vector3, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 9.799999, y: -8.833, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 329046605}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808240
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 750
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1921789166}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SlideshowController
+  targetMethod: Stop
+  targetMethodText: 'Stop (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808241
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 751
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: removeObjectReference
+  targetMethodText: 'removeObjectReference (String, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Armenya - Ilalim ng Balon
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Donya Juana (Walking)
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808242
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 752
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: removeObjectReference
+  targetMethodText: 'removeObjectReference (String, String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Armenya - Ilalim ng Balon
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Donya Leonora (Walking)
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808243
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 753
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 31907810}
+  targetComponentAssemblyName: CameraController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraController
+  targetMethod: setFollowing
+  targetMethodText: 'setFollowing (Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1644319488}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808244
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 754
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 31907810}
+  targetComponentAssemblyName: CameraController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraController
+  targetMethod: setPlayerAsFollowing
+  targetMethodText: 'setPlayerAsFollowing (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808245
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 755
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1566442615}
+  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveObject
+  targetMethod: punchMove
+  targetMethodText: 'punchMove (Vector3, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 9.799999, y: -8.833, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 329046605}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 756
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1566442614}
+  targetComponentAssemblyName: MoveCharacter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveCharacter
+  targetMethod: moveCharacter
+  targetMethodText: 'moveCharacter (Transform, Vector3, Single): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1030142448}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 69, y: -1.86, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Single
+      intValue: 0
+      boolValue: 0
+      floatValue: 3
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 758
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: changePlayer
+  targetMethodText: 'changePlayer (Transform, Boolean, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1249693399}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 128172119}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 757
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1566442615}
+  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveObject
+  targetMethod: punchMove
+  targetMethodText: 'punchMove (Vector3, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 10, y: -10, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 128172119}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 759
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1566442615}
+  targetComponentAssemblyName: MoveObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: MoveObject
+  targetMethod: punchMove
+  targetMethodText: 'punchMove (Vector3, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Vector3, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Vector3
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 3, y: -13.82, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 329046605}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1152808250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152807984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 760
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 31907810}
+  targetComponentAssemblyName: CameraController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraController
+  targetMethod: setPlayerAsFollowing
+  targetMethodText: 'setPlayerAsFollowing (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &1158384220
 GameObject:
   m_ObjectHideFlags: 0
@@ -10294,83 +10966,83 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 415330, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.3072329
+      value: 0.20680396
       objectReference: {fileID: 0}
     - target: {fileID: 415330, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.95163435
+      value: 0.97838247
       objectReference: {fileID: 0}
     - target: {fileID: 418394, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.001363018
+      value: -0.06495274
       objectReference: {fileID: 0}
     - target: {fileID: 418394, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9999991
+      value: 0.9978883
       objectReference: {fileID: 0}
     - target: {fileID: 468462, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.18849386
+      value: -0.028294912
       objectReference: {fileID: 0}
     - target: {fileID: 468462, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.98207444
+      value: 0.9995997
       objectReference: {fileID: 0}
     - target: {fileID: 465814, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.0018684146
+      value: 0.6411729
       objectReference: {fileID: 0}
     - target: {fileID: 465814, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.99999833
+      value: 0.76739645
       objectReference: {fileID: 0}
     - target: {fileID: 426112, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.00010391794
+      value: 0.00010851672
       objectReference: {fileID: 0}
     - target: {fileID: 426112, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.000047082638
+      value: -0.000034957913
       objectReference: {fileID: 0}
     - target: {fileID: 426112, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.18571457
+      value: 0.08290504
       objectReference: {fileID: 0}
     - target: {fileID: 426112, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9826037
+      value: 0.9965575
       objectReference: {fileID: 0}
     - target: {fileID: 459288, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.03844799
+      value: -0.57291263
       objectReference: {fileID: 0}
     - target: {fileID: 459288, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.99926066
+      value: 0.8196165
       objectReference: {fileID: 0}
     - target: {fileID: 442176, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.022255532
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 442176, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.0071548284
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 442176, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.13924417
+      value: -0.47847822
       objectReference: {fileID: 0}
     - target: {fileID: 442176, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9899821
+      value: 0.87809944
       objectReference: {fileID: 0}
     - target: {fileID: 462568, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.17424884
+      value: 0.1662381
       objectReference: {fileID: 0}
     - target: {fileID: 462568, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.98470175
+      value: 0.98608565
       objectReference: {fileID: 0}
     - target: {fileID: 443524, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalPosition.x
@@ -10386,11 +11058,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 409574, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.009380139
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 409574, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9999561
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409574, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.07013603
+      objectReference: {fileID: 0}
+    - target: {fileID: 409574, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99753743
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
@@ -10416,6 +11096,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1249693394}
   m_Script: {fileID: 11500000, guid: 37c44957f9754454fa3b0a610c3aec74, type: 3}
+--- !u!4 &1249693399 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 409574, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
+  m_PrefabInternal: {fileID: 1249693394}
 --- !u!1 &1274112544
 GameObject:
   m_ObjectHideFlags: 0
@@ -11188,6 +11872,7 @@ MonoBehaviour:
   transitionDuration: 2
   fadeOutDelay: 0
   controlHUD: 0
+  controlPause: 0
 --- !u!1 &1937974020
 GameObject:
   m_ObjectHideFlags: 0
