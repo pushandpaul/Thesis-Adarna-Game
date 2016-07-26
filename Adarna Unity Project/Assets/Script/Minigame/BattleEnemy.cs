@@ -88,6 +88,7 @@ public class BattleEnemy : MonoBehaviour {
 	public void IncreaseHP(int addHP){
 		stats.currentHP += addHP;
 		if(stats.currentHP > stats.baseHP){
+			battleStateMachine.setFloatingText("+" + addHP.ToString());
 			stats.currentHP = stats.baseHP;
 		}
 		return;

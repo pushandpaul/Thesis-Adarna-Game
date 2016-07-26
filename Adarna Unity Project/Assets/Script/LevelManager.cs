@@ -132,6 +132,7 @@ public class LevelManager : MonoBehaviour {
 
 		gameManager.prevScene = gameManager.currentScene;
 		gameManager.saveCharData(charactersData);
+		FindObjectOfType<BGMManager>().overrideThis = false;
 	}
 
 	public void unclonedInstace(GameObject toInstantiate, Vector3 position){

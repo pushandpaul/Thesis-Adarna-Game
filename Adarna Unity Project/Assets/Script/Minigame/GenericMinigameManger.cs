@@ -8,6 +8,7 @@ public class GenericMinigameManger : MonoBehaviour {
 	public string title;
 	public string description;
 	private LayuninUIManager layuninUI;
+	public AudioClip minigameAudio;
 
 	void Awake () {
 		layuninUI = FindObjectOfType<LayuninUIManager>();
@@ -17,6 +18,10 @@ public class GenericMinigameManger : MonoBehaviour {
 		if(LayuninUIManager.lastTriggered != minigameName){
 			layuninUI.Launch(title, description, LayuninUIManager.CloseControl.PressAnywhere, true);
 			LayuninUIManager.lastTriggered = minigameName;
+			if(minigameAudio != null){
+				layuninUI.songAfter = minigameAudio;
+			}
+
 		}
 		else
 			allowMinigameStart = true;

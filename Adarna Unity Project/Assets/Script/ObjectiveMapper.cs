@@ -109,8 +109,13 @@ public class ObjectiveMapper : MonoBehaviour {
 			Debug.Log("This is the current objective");
 			objectiveManager.currentObjective.onReach();
 
-			if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox))
+			if(objectiveManager.currentObjective.OnReach.Contains(Objective.ActionOnReach.DisplayToTextBox)){
+				objectiveManager.currentObjective.displayToTextBox();
 				uiFader.FadeIn(objectiveManager.fadeDelay, objectiveManager.panelFaderSpeed, true);
+			}
+				
+			//wtf is this
+
 		}
 	}
 }

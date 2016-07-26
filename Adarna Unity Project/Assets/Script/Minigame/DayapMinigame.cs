@@ -15,7 +15,9 @@ public class DayapMinigame : MonoBehaviour {
 	private ObjectiveManager objectiveManager;
 	private UIFader objectiveUIFader;
 	private GenericMinigameManger minigameManager;
+	private BGMManager bgmManager;
 
+	public AudioClip song;
 	public Sprite dayap;
 	public ItemToGive itemToGive;
 
@@ -46,6 +48,7 @@ public class DayapMinigame : MonoBehaviour {
 		objectiveUIFader = objectiveManager.objectivePanelFader;
 		timer = FindObjectOfType<Timer>();
 		minigameManager = GetComponent<GenericMinigameManger>();
+		bgmManager = FindObjectOfType<BGMManager>();
 
 		player.canMove = false;
 		player.canJump = false;
@@ -53,6 +56,8 @@ public class DayapMinigame : MonoBehaviour {
 		//timer.startTimer();
 		//endMiniGame("End on Start");
 	}
+
+
 	void Update () {
 
 		player.canMove = false;
@@ -114,6 +119,7 @@ public class DayapMinigame : MonoBehaviour {
 
 
 	private void startMiniGame(){
+		//bgmManager.setMusicVolume(0.8f);
 		timer.startTimer(timerDuration);
 	}
 
@@ -122,6 +128,7 @@ public class DayapMinigame : MonoBehaviour {
 		Debug.Log(message);
 		timer.stopTimer();
 		this.enabled = false;
+		//bgmManager.revertOriginalVol();
 		if(success){
 			objectiveMapper.checkIfCurrent_misc();
 			levelLoader.Levels = LevelLoader.LevelSelect.ForestPedrasPlatas;

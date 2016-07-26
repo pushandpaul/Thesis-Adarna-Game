@@ -16,6 +16,11 @@ public class FungusController : MonoBehaviour {
 			PlayerController player = FindObjectOfType<PlayerController>();
 			character.nameText = player.item.getItem().name.Replace("(Nakasakay)", "");
 		}
+
+		else if(gameManager.currentCharacterName.Contains("Haring Fernando")){
+			character.nameText = "Haring Fernando";
+		}
+
 		else
 			character.nameText = gameManager.currentCharacterName;
 	}

@@ -20,8 +20,12 @@ public class ChapterSelectManager : MonoBehaviour {
 	private TalasalitaanManager.PartDataList partReference;
 	private LocationMarker locationMarker;
 
+	public AudioClip BGM;
 	public GameObject backButton;
 	private int currentPartIndex = 0;
+
+	public Button backBtn;
+	public Button nextBtn;
 
 	void Awake(){
 		gameManager = FindObjectOfType<GameManager>();
@@ -35,7 +39,6 @@ public class ChapterSelectManager : MonoBehaviour {
 				currentPartIndex = gameManager.latestPartIndex - 1;
 			}
 		}
-
 		initPanels();
 	}
 
@@ -47,6 +50,9 @@ public class ChapterSelectManager : MonoBehaviour {
 		locationMarker.gameObject.SetActive (false);
 		FindObjectOfType<ObjectiveManager>().objectivePanelFader.StopAllCoroutines();
 		FindObjectOfType<ObjectiveManager>().objectivePanelFader.canvasGroup.alpha = 0f;
+		if(BGM != null){
+			FindObjectOfType<BGMManager>().overridePlay(BGM);
+		}
 	}
 
 	void Update(){
@@ -61,6 +67,13 @@ public class ChapterSelectManager : MonoBehaviour {
 
 	public void next(){
 		if(currentPartIndex < 12){
+			if(currentPartIndex == 11){
+				nextBtn.gameObject.SetActive(false);
+			}
+			else{
+				nextBtn.gameObject.SetActive(true);
+				backBtn.gameObject.SetActive(true);
+			}
 			currentPartIndex++;
 		}
 		initPanels();
@@ -68,6 +81,13 @@ public class ChapterSelectManager : MonoBehaviour {
 
 	public void back(){
 		if(currentPartIndex > 0){
+			if(currentPartIndex == 1){
+				backBtn.gameObject.SetActive(false);
+			}
+			else{
+				backBtn.gameObject.SetActive(true);
+				nextBtn.gameObject.SetActive(true);
+			}
 			currentPartIndex--;
 		}
 		initPanels();
@@ -169,6 +189,8 @@ public class ChapterSelectManager : MonoBehaviour {
 				break;
 			}
 		}
+			
+		FindObjectOfType<DoorAndExitController>().exitsInScenes = new List<DoorAndExitController.ExitsInScene>();
 		locationMarker.gameObject.SetActive (true);
 		gameManager.pauseButton.SetActive(true);
 		gameManager.setPauseMenu(true);

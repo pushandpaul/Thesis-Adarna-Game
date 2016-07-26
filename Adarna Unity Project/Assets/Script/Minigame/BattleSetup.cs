@@ -34,6 +34,7 @@ public class BattleSetup : MonoBehaviour {
 	public Transform playerBattlePosition;
 	public Transform enemyBattlePosition;
 
+	public GameObject enemyAvatar;
 	public EnemyPrefab[] enemyPrefabs;
 	public BattleStagePrefab[] battleStagePrefabs;
 
@@ -51,7 +52,6 @@ public class BattleSetup : MonoBehaviour {
 
 	public void Init(EnemyType enemyType, Stage stage, int enemyBaseHP){
 
-		GameObject enemyAvatar;
 		Vector3 enemyPosition = Vector3.zero;
 		CameraController camera = FindObjectOfType<CameraController> ();
 		float cameraSize = 0f;

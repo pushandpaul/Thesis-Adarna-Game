@@ -11,6 +11,17 @@ public class Utilities : MonoBehaviour {
 		BackUIFader = GameObject.FindGameObjectWithTag ("Back UI Fader");
 		gameManager = FindObjectOfType<GameManager>();
 		audioSource = GetComponent<AudioSource> ();
+		if(audioSource != null){
+			audioSource.tag = "VO Source";
+		}
+	}
+
+	void Update(){
+		/*if(audioSource != null){
+			if(audioSource.isPlaying){
+				Debug.Log("VO is Playing");
+			}
+		}*/
 	}
 
 	public void fadeScreenToBlack(float duration){
@@ -113,6 +124,7 @@ public class Utilities : MonoBehaviour {
 	public void playAudio(AudioClip clip){
 		if(audioSource == null){
 			audioSource = gameObject.AddComponent<AudioSource> ();
+			audioSource.tag = "VO Source";
 		}
 		audioSource.clip = clip;
 		audioSource.time = 0;

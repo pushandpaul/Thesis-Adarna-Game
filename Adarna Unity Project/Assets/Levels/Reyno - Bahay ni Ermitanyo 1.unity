@@ -1805,6 +1805,7 @@ GameObject:
   - 114: {fileID: 1198304487}
   - 114: {fileID: 1198304488}
   - 114: {fileID: 1198304489}
+  - 114: {fileID: 1198304491}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2047,8 +2048,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 421.9511
-    y: 151.21948
+    x: 420.6353
+    y: 149.90369
     width: 151
     height: 40
   itemId: 12
@@ -2065,6 +2066,7 @@ MonoBehaviour:
   - {fileID: 1198304485}
   - {fileID: 1198304407}
   - {fileID: 1198304489}
+  - {fileID: 1198304491}
   - {fileID: 1198304394}
   - {fileID: 1198304396}
 --- !u!114 &1198304401
@@ -2170,9 +2172,9 @@ MonoBehaviour:
     y: -351.2195
     width: 1642.8276
     height: 1163.2374
-  selectedBlock: {fileID: 1198304527}
+  selectedBlock: {fileID: 1198304400}
   selectedCommands:
-  - {fileID: 1198304483}
+  - {fileID: 1198304491}
   variables: []
   description: 
   stepPause: 0
@@ -5311,6 +5313,24 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1198304491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1198304392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17bf03aedcb1a649a46d333619f3017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 828
+  errorMessage: 
+  indentLevel: 0
+  animator: {fileID: 134714563}
+  stateName: (Olikornyo) Idle
+  layer: -1
+  time: 0
 --- !u!114 &1198304494
 MonoBehaviour:
   m_ObjectHideFlags: 2

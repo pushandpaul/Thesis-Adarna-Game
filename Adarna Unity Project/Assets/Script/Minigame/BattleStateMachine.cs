@@ -29,6 +29,10 @@ public class BattleStateMachine : MonoBehaviour {
 	public UIFader commandPrompt;
 	private Text commandPromptText;
 
+	public GameObject floatingTextPrefab;
+	public AnimationClip floatingTextAnim;
+
+	public Transform floatingTextPanel;
 	void Awake(){
 		commandPromptText = commandPrompt.GetComponentInChildren<Text>();
 	}
@@ -110,9 +114,14 @@ public class BattleStateMachine : MonoBehaviour {
 		}
 		else
 			Debug.Log(currentTurn + " attack Missed.");
-
+		
 		damage = Mathf.RoundToInt(damageFloat);
-
+		if(damage > 0){
+			setFloatingText("-" + damage.ToString());
+		}
+		else{
+			setFloatingText("Hindi tumama");
+		}
 		return damage;
 	}
 
@@ -160,5 +169,29 @@ public class BattleStateMachine : MonoBehaviour {
 	public void setCommandPrompt(string prompt){
 		commandPrompt.canvasGroup.alpha = 1f;
 		commandPromptText.text = prompt;
+	}
+
+	public void setFloatingText(string text){
+		GameObject floatingText = (GameObject)Instantiate(floatingTextPrefab, Vector3.zero, Quaternion.identity);
+		Text[] texts = floatingText.GetComponentsInChildren<Text>();
+		floatingText.transform.SetParent(floatingTextPanel, true);
+		floatingText.transform.localScale = new Vector3(1,1,1);
+
+		if(currentState == BattleStates.PLAYERCHOICE){
+			floatingText.transform.position = Camera.main.WorldToScreenPoint(FindObjectOfType<BattleSetup>().enemyAvatar.transform.position);
+		}
+		else if(currentState == BattleStates.ENEMYCHOICE){
+			Vector3 tempPosition = new Vector3(player.transform.position.x + 3f, player.transform.position.y - 5f, player.transform.position.z);
+			floatingText.transform.position = Camera.main.WorldToScreenPoint(tempPosition);
+		}
+
+		foreach(Text _text in texts){
+			_text.text = text;
+		}
+		StartCoroutine(destroyFloatingText(floatingText));
+	}
+	IEnumerator destroyFloatingText(GameObject floatingText){
+		yield return new WaitForSeconds(floatingTextAnim.length);
+		Destroy(floatingText);
 	}
 }

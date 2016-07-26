@@ -77,7 +77,8 @@ public class GameManager : MonoBehaviour {
 
 	public static bool inGame;
 	private BGMManager bgmManager;
-
+	private bool unpauseVO;
+	private GameObject VOSourceObject;
 	void Awake () {
 		bgmManager = FindObjectOfType<BGMManager> ();
 		HUDs = new List<GameObject>();
@@ -547,7 +548,7 @@ public class GameManager : MonoBehaviour {
 		objectiveManager.currentObjective = null;
 		objectiveManager.setPartObjectives();
 		objectiveManager.Init();
-		this.latestPartIndex = 0;
+		//this.latestPartIndex = 0;
 		FindObjectOfType<LevelLoader>().launchScene("Kwarto ni Haring Fernando");
 	}
 
@@ -556,13 +557,26 @@ public class GameManager : MonoBehaviour {
 		PlayerController player = FindObjectOfType<PlayerController> ();
 		float originalMusicVol = 0f;
 		float originalAmbinetVol = 0f;
+		AudioSource VOSource = null;
+		VOSourceObject = GameObject.FindWithTag("VO Source");
+
+		if(VOSourceObject != null){
+			VOSource = VOSourceObject.GetComponent<AudioSource>();
+		}
 
 		if(isPaused){
 			originalAmbinetVol = bgmManager.ambientSource.volume;
 			originalMusicVol = bgmManager.musicSource.volume;
-
-			bgmManager.setAmbientVolume (0.08f);
-			bgmManager.setMusicVolume (0.08f);
+			bgmManager.ambientSource.Pause();
+			bgmManager.musicSource.Pause();
+			//bgmManager.setAmbientVolume (0.08f);
+			//bgmManager.setMusicVolume (0.08f);
+			if(VOSource != null){
+				if(VOSource.isPlaying){
+					VOSource.Pause();
+					unpauseVO = true;
+				}
+			}
 
 			hideHUDs(false);
 			Time.timeScale = 0f;
@@ -570,7 +584,15 @@ public class GameManager : MonoBehaviour {
 		else{
 			hideHUDs (true);
 
+			bgmManager.ambientSource.Play();
+			bgmManager.musicSource.Play();
 			bgmManager.revertOriginalVol ();
+
+
+			if(unpauseVO && VOSource != null){
+				VOSource.Play();
+				unpauseVO = false;
+			}
 
 			Time.timeScale = 1f;
 		}

@@ -72,12 +72,13 @@ public class DoorHandler : MonoBehaviour {
 	}
 
 	void displayDialogue(){
-		if(isActualDoor){
+		/*if(isActualDoor){
 			globalFlowchart.SendFungusMessage ("Door " + Random.Range(1,3));
 		}
 		else{
 			globalFlowchart.SendFungusMessage ("Exit " + Random.Range(1,4));
-		}
+		}*/
+		globalFlowchart.SendFungusMessage ("Exit " + Random.Range(1,4));
 	}
 
 	void showInteractionprompt(bool show){
@@ -106,7 +107,11 @@ public class DoorHandler : MonoBehaviour {
 				}
 			}
 			else{
-				showInteractionprompt(true);
+				if(isOpen){
+					showInteractionprompt(true);
+				}
+				else
+					showInteractionprompt(false);
 			}
 		}
 	}

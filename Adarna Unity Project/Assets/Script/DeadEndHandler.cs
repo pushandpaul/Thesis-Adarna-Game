@@ -17,19 +17,23 @@ public class DeadEndHandler : MonoBehaviour {
 	IEnumerator waitForReverse(Transform player){
 
 		bool inDeadEnd = true;
+		PlayerController playerController = player.GetComponent<PlayerController>();
 
-		player.GetComponent<PlayerController>().canMove = false;
+		if(playerController != null)
+			playerController.canMove = false;
 
 		while(inDeadEnd){
 			if(player.localScale.x > 0){
 				if(Input.GetKeyDown(KeyCode.A)){
-					player.GetComponent<PlayerController>().canMove = true;
+					if(playerController != null  && !DialogueController.inDialogue)
+						playerController.canMove = true;
 					inDeadEnd = false;
 				}
 			}
 			else if(player.localScale.x < 0){
 				if(Input.GetKeyDown(KeyCode.D)){
-					player.GetComponent<PlayerController>().canMove = true;
+					if(playerController != null && !DialogueController.inDialogue)
+						playerController.canMove = true;
 					inDeadEnd = false;
 				}
 			}

@@ -181,7 +181,7 @@ public class DoorAndExitController : MonoBehaviour {
 			actualExits.Add(new ActualExit(currentDoor.gameObject, true));
 		}
 
-		if(levelManager != null){
+		if(levelManager != null && actualExits.Count > 0){
 			currentExitsInScene = FindScene(levelManager.sceneName);
 			SetupExits();
 		}

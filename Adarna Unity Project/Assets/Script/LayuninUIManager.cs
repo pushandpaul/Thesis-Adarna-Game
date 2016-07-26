@@ -27,6 +27,7 @@ public class LayuninUIManager : MonoBehaviour {
 	public UIFader layuninMiniUI;
 	public Text layuninMiniText;
 
+	public AudioClip songAfter;
 	void Awake(){
 		lastTriggered = "";
 		gameManager = FindObjectOfType<GameManager>();
@@ -126,6 +127,10 @@ public class LayuninUIManager : MonoBehaviour {
 
 		foreach(GameObject HUD in GameObject.FindGameObjectsWithTag("HUD")){
 			HUD.GetComponent<CanvasGroup>().alpha = 1f;
+		}
+
+		if(songAfter != null){
+			FindObjectOfType<BGMManager>().overridePlay(songAfter);
 		}
 	}
 }

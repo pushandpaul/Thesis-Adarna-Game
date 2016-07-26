@@ -25,7 +25,7 @@ public class BGMManager : MonoBehaviour {
 	private float origMusicVolume;
 	private float origAmbientVolume;
 
-	private bool overrideThis;
+	public bool overrideThis;
 	void Awake(){
 		origMusicVolume = musicSource.volume;
 		origAmbientVolume = ambientSource.volume;
@@ -37,7 +37,7 @@ public class BGMManager : MonoBehaviour {
 		bool ambientFound = false;
 
 		if(overrideThis){
-			overrideThis = false;
+			//overrideThis = false;
 			return;
 		}
 
@@ -89,7 +89,7 @@ public class BGMManager : MonoBehaviour {
 		}
 		else if(toDetermine.Contains("reyno")){
 			if(!toDetermine.Contains("forest"))
-				section = "reyno";
+				section = "reino";
 		}
 		else if(toDetermine.Contains("castle") || toDetermine.Contains("kwarto")){
 			section = "berbanya castle";
@@ -110,7 +110,7 @@ public class BGMManager : MonoBehaviour {
 	string determineEnvironment(string toDetermine){
 		string environment = "";
 		toDetermine = toDetermine.ToLower ();
-		if(toDetermine.Contains("forest")){
+		if(toDetermine.Contains("forest") || toDetermine == "bahay ni ermitanyo"){
 			Debug.Log ("this is forest");
 			if(FindObjectOfType<GameManager>().timeOfDay == 'n'){
 				environment = "forest night";
@@ -127,6 +127,11 @@ public class BGMManager : MonoBehaviour {
 		}
 		else if(toDetermine.Contains("ilalim")){
 			environment = "ilalim";
+		}
+		else if(toDetermine.Contains("reyno")){
+			if(toDetermine.Contains("trigo") || toDetermine.Contains("labas ng palasyo")){
+				environment = "reino labas";
+			}
 		}
 
 		return environment;
