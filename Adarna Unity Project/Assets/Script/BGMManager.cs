@@ -85,7 +85,8 @@ public class BGMManager : MonoBehaviour {
 				section = "armenya forest";
 			}
 			else
-				section = "armenya castle";
+				section = "armenya forest";
+				//section = "armenya castle";
 		}
 		else if(toDetermine.Contains("reyno")){
 			if(!toDetermine.Contains("forest"))

@@ -105,7 +105,9 @@ public class SlideshowController : MonoBehaviour{
 		}
 
 		if(toEnd){
+			
 			slideShowHolder.enabled = false;
+			slideShowHolder.sprite = null;
 		}
 
 		else if(!toEnd){

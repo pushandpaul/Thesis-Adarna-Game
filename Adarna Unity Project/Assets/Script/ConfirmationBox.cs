@@ -46,7 +46,7 @@ public class ConfirmationBox : MonoBehaviour {
 			break;
 		case("delete save"):
 			kind = Kind.DeleteSave;
-			prompt.text = "Sigurado ka bang gusto mong umulit mula sa simula?";
+			prompt.text = "Sigurado ka bang gusto mong umulit mula sa simula? (Mabubura lahat ng iyong progreso.)";
 			yesBtn.GetComponentInChildren<Text>().text = "Umulit";
 			break;
 		}

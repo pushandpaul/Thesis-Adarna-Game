@@ -88,7 +88,6 @@ public class BattleEnemy : MonoBehaviour {
 	public void IncreaseHP(int addHP){
 		stats.currentHP += addHP;
 		if(stats.currentHP > stats.baseHP){
-			battleStateMachine.setFloatingText("+" + addHP.ToString());
 			stats.currentHP = stats.baseHP;
 		}
 		return;
@@ -168,11 +167,12 @@ public class BattleEnemy : MonoBehaviour {
 		anim.Play (animationName);
 		yield return new WaitForSeconds(moveAnimation.length);
 
-		if(increaseHP){
-			IncreaseHP((int)stats.special);
-		}
 
 		EndTurn ();
+		if(increaseHP){
+			IncreaseHP((int)stats.special);
+			battleStateMachine.setFloatingText("+" + stats.special);
+		}
 	}
 
 }
