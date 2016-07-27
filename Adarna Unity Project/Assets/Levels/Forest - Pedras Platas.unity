@@ -1326,6 +1326,7 @@ GameObject:
   - 114: {fileID: 532387101}
   - 114: {fileID: 532387102}
   - 114: {fileID: 532387103}
+  - 114: {fileID: 532387104}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -8960,7 +8961,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 717.9201
-    y: -19.125847
+    y: -13.862694
     width: 173
     height: 40
   itemId: 379
@@ -10999,7 +11000,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 694.13635
-    y: 160.24426
+    y: 161.38065
     width: 217
     height: 40
   itemId: 431
@@ -11048,6 +11049,7 @@ MonoBehaviour:
   - {fileID: 532387034}
   - {fileID: 532387067}
   - {fileID: 532387029}
+  - {fileID: 532387104}
   - {fileID: 532386994}
   - {fileID: 532387068}
   - {fileID: 532386995}
@@ -14373,7 +14375,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
@@ -14960,7 +14962,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532386704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
@@ -15177,6 +15179,33 @@ MonoBehaviour:
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &532387104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532386704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 852
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1877202029}
+  targetComponentAssemblyName: ObjectiveMapper, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ObjectiveMapper
+  targetMethod: checkIfCurrent_misc
+  targetMethodText: 'checkIfCurrent_misc (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -17521,6 +17550,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1877202030}
+  - 114: {fileID: 1877202031}
   m_Layer: 0
   m_Name: Pedras Platas Triggers
   m_TagString: Untagged
@@ -17543,6 +17573,22 @@ Transform:
   - {fileID: 1974805978}
   m_Father: {fileID: 0}
   m_RootOrder: 18
+--- !u!114 &1877202031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877202029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ea8a224bd8374bbb3c8b27730a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partObjective:
+  - part: 0
+    objectives: 0f000000
+  isNPC: 0
+  isObject: 0
 --- !u!1 &1906597290
 GameObject:
   m_ObjectHideFlags: 0
@@ -17903,20 +17949,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -442.2044, y: 43.0878}
+  scrollPos: {x: -469.88916, y: 105.8931}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 407
-  zoom: 0.70000017
+  zoom: 0.88000005
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -473
     width: 2627.3176
     height: 1672.7627
-  selectedBlock: {fileID: 532386901}
+  selectedBlock: {fileID: 532387017}
   selectedCommands:
-  - {fileID: 532387101}
+  - {fileID: 532387104}
   variables: []
   description: 
   stepPause: 0
