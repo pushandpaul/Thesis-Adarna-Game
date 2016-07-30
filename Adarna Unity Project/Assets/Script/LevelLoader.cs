@@ -67,6 +67,13 @@ public class LevelLoader : MonoBehaviour {
 		MainMenu = 53,
 		Intro = 54,
 		Prayer = 55,
+		ReynoDalampasigan = 56,
+		ReynoFields = 57,
+		ReynoStables = 58,
+		ReynoKwartoNiMaria = 59,
+		ReynoDagat = 60,
+		//Minigame
+		MinigameIlalimNgDagat = 61,
 	}
 
 	public LevelSelect Levels;

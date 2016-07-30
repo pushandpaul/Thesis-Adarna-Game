@@ -1376,7 +1376,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 316, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &140087529
@@ -2507,7 +2507,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2609,7 +2609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 55
+  Levels: 45
   launchOnStart: 1
 --- !u!4 &268044221
 Transform:
@@ -5506,52 +5506,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 655777583}
---- !u!1001 &657467013
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -10.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 423008, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 129102, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &657523529
 GameObject:
   m_ObjectHideFlags: 0
@@ -8890,7 +8844,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.35
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10995,6 +10949,10 @@ Prefab:
       propertyPath: OnReach.Array.data[2]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: currentPartIndex
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
   m_IsPrefabParent: 0
@@ -12223,7 +12181,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1553859825}
   m_HandleRect: {fileID: 402944417}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -12826,7 +12784,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.0038452148, y: 0}
+  m_AnchoredPosition: {x: 0.0038452148, y: 0.000015258789}
   m_SizeDelta: {x: 360.1, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1632658095
@@ -14165,7 +14123,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1854877083}
   m_HandleRect: {fileID: 231021568}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
