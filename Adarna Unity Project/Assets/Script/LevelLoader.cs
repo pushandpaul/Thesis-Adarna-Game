@@ -74,6 +74,8 @@ public class LevelLoader : MonoBehaviour {
 		ReynoDagat = 60,
 		//Minigame
 		MinigameIlalimNgDagat = 61,
+		ReynoBahayNiJuanLoob = 62,
+		MinigamePagbuoNgKastilyo = 63,
 	}
 
 	public LevelSelect Levels;
