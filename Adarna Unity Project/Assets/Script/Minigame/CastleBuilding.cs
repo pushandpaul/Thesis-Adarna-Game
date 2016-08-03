@@ -10,6 +10,8 @@ public class CastleBuilding : MonoBehaviour {
 		public Sprite wrong;
 	}
 
+	private GenericMinigameManger minigameManager;
+
 	public BinaryStates[] castleStates;
 	//public Animator transitionAnimator;
 	//public AnimationClip transitionAnim;
@@ -20,6 +22,16 @@ public class CastleBuilding : MonoBehaviour {
 	//public float timeBeforeChange;
 
 	public Flowchart flowchart;
+
+	public GameObject magicEffectPrefab;
+	public Vector3 magicEffectPos;
+	private float magicEffectDuration;
+
+
+	void Awake(){
+		minigameManager = FindObjectOfType<GenericMinigameManger> ();
+		magicEffectDuration = magicEffectPrefab.GetComponent<ParticleSystem> ().duration;
+	}
 
 	void Start(){
 		GameObject backUIFaderHolder = GameObject.FindGameObjectWithTag("Back UI Fader");
@@ -56,23 +68,24 @@ public class CastleBuilding : MonoBehaviour {
 			yield return null;
 		}
 
-		/*float remainingTime = transitionAnim.length -  timeBeforeChange;
+		GameObject tempParticle = (GameObject)Instantiate (magicEffectPrefab);
+		ParticleSystem particle = tempParticle.GetComponent<ParticleSystem> ();
 
-		transitionAnimator.Play ("blah");
-
-		if(remainingTime < 0){
-			remainingTime = 0;
+		while(particle.IsAlive()){
+			yield return null;
 		}
-		
-		yield return new WaitForSeconds (timeBeforeChange);
-		castleRenderer.sprite = newStateSprite;
-		yield return new WaitForSeconds (remainingTime);*/
+		Destroy (tempParticle);
 
 		if(isWrong){
 			flowchart.ExecuteBlock ("Wrong");
 		}
 		else{
-			flowchart.ExecuteBlock ("Question " + currentStateIndex);
+			if(currentStateIndex < castleStates.Length - 1){
+				flowchart.ExecuteBlock ("Question " + currentStateIndex);
+			}
+			else{
+				flowchart.ExecuteBlock ("End");
+			}
 		}
 		
 	}

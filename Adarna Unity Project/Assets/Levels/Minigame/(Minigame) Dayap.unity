@@ -2844,11 +2844,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameName: Minigame - Dayap
+  minigameSceneName: (Minigame) Dayap
   allowMinigameStart: 0
   title: Manatiling gising sa pitong kanta ng Ibong Adarna.
   description: Pindutin ang 'E' upang sugatan ang sarili at pigaan ito ng dayap. Siguraduhing
     hindi mauubos ang dayap at baka ika'y makatulog!
   minigameAudio: {fileID: 8300000, guid: afb8e5cb72adbcc4d83f102088ab95d3, type: 3}
+  losingScreen: {fileID: 0}
+  losingPromptUI: {fileID: 0}
+  losingImage: {fileID: 0}
+  losingSprite: {fileID: 0}
+  losingPrompt: 
+  showInstruction: 1
 --- !u!1 &658531579
 GameObject:
   m_ObjectHideFlags: 0
@@ -4703,6 +4710,8 @@ GameObject:
   - 114: {fileID: 1509823672}
   - 114: {fileID: 1509823674}
   - 114: {fileID: 1509823673}
+  - 114: {fileID: 1509823675}
+  - 114: {fileID: 1509823676}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -4732,11 +4741,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: -350
     y: -473
-    width: 1466.9666
+    width: 1604.4316
     height: 1232.5684
-  selectedBlock: {fileID: 1509823672}
-  selectedCommands:
-  - {fileID: 1509823673}
+  selectedBlock: {fileID: 1509823675}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -5157,8 +5165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 475.75723
-    y: 97.6176
+    x: 528.97687
+    y: 108.82175
     width: 120
     height: 40
   itemId: 20
@@ -5223,6 +5231,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1509823672}
+--- !u!114 &1509823675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1509823652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 533.3799
+    y: 233.8257
+    width: 120
+    height: 40
+  itemId: 22
+  blockName: Lose
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1509823676}
+--- !u!114 &1509823676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1509823652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 23
+  errorMessage: 
+  indentLevel: 0
+  storyText: Naku, ubos na ang aking dayap!
+  description: 
+  character: {fileID: 1726151191}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
 --- !u!1 &1569160409
 GameObject:
   m_ObjectHideFlags: 0

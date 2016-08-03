@@ -944,6 +944,14 @@ GameObject:
   - 114: {fileID: 687323766}
   - 114: {fileID: 687323765}
   - 114: {fileID: 687323764}
+  - 114: {fileID: 687323770}
+  - 114: {fileID: 687323714}
+  - 114: {fileID: 687323771}
+  - 114: {fileID: 687323772}
+  - 114: {fileID: 687323774}
+  - 114: {fileID: 687323773}
+  - 114: {fileID: 687323775}
+  - 114: {fileID: 687323776}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -962,7 +970,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!114 &687323711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,19 +983,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: 282.63226, y: 49.950302}
+  scrollPos: {x: 544.57794, y: 34.36592}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.4600002
+  zoom: 0.9999997
   scrollViewRect:
     serializedVersion: 2
-    x: -778.81616
+    x: -897.57794
     y: -389.06247
-    width: 2638.6914
+    width: 2757.4531
     height: 1320.2498
-  selectedBlock: {fileID: 0}
-  selectedCommands: []
+  selectedBlock: {fileID: 687323774}
+  selectedCommands:
+  - {fileID: 687323776}
   variables: []
   description: 
   stepPause: 0
@@ -1045,6 +1054,32 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 687323723}
+  - {fileID: 687323773}
+--- !u!114 &687323714
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687323709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 61
+  errorMessage: 
+  indentLevel: 0
+  storyText: This is the End
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
 --- !u!114 &687323715
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2379,6 +2414,212 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 687323768}
+--- !u!114 &687323770
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687323709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 166.92313
+    y: 20.312515
+    width: 120
+    height: 40
+  itemId: 60
+  blockName: End
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 687323714}
+  - {fileID: 687323771}
+  - {fileID: 687323772}
+--- !u!114 &687323771
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687323709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 62
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1668099657}
+  targetComponentAssemblyName: ObjectiveMapper, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ObjectiveMapper
+  targetMethod: checkIfCurrent_misc
+  targetMethodText: 'checkIfCurrent_misc (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &687323772
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687323709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 63
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1168315698}
+  targetComponentAssemblyName: LevelLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelLoader
+  targetMethod: launchScene
+  targetMethodText: 'launchScene (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Reyno - Dalampasigan
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &687323773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687323709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 66
+  errorMessage: 
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 687323774}
+  callMode: 0
+--- !u!114 &687323774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687323709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: -109.116455
+    y: 23.403305
+    width: 120
+    height: 40
+  itemId: 65
+  blockName: Lose
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 687323775}
+  - {fileID: 687323776}
+--- !u!114 &687323775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687323709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 67
+  errorMessage: 
+  indentLevel: 0
+  storyText: You lose!
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &687323776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687323709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 68
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1558542580}
+  targetComponentAssemblyName: GenericMinigameManger, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: GenericMinigameManger
+  targetMethod: showLosingScreen
+  targetMethodText: 'showLosingScreen (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &707597870
 GameObject:
   m_ObjectHideFlags: 0
@@ -3662,6 +3903,53 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1558542580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1558542581}
+  - 114: {fileID: 1558542582}
+  m_Layer: 0
+  m_Name: Minigame Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1558542581
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558542580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+--- !u!114 &1558542582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558542580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36b7e8115e397c4eabcc4904e0a7362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameName: Pagbuo ng Palasyo
+  minigameSceneName: (Minigame) Pagbuo ng Palasyo
+  allowMinigameStart: 0
+  title: 
+  description: 
+  minigameAudio: {fileID: 0}
+  losingScreen: {fileID: 0}
+  showInstruction: 0
 --- !u!4 &1617096705
 Transform:
   m_ObjectHideFlags: 0
@@ -3733,7 +4021,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 436090, guid: 1bfe3c85ac364554dafa4662a490aa71, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11416910, guid: 1bfe3c85ac364554dafa4662a490aa71, type: 2}
       propertyPath: flowchart
@@ -3745,6 +4033,10 @@ Prefab:
 --- !u!1 &1668099657 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 126726, guid: 1bfe3c85ac364554dafa4662a490aa71, type: 2}
+  m_PrefabInternal: {fileID: 1668099656}
+--- !u!4 &1668099658 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 436090, guid: 1bfe3c85ac364554dafa4662a490aa71, type: 2}
   m_PrefabInternal: {fileID: 1668099656}
 --- !u!1 &1688906530
 GameObject:
@@ -4216,15 +4508,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1668099658}
     m_Modifications:
     - target: {fileID: 491504, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.39
+      value: -10.46
       objectReference: {fileID: 0}
     - target: {fileID: 491504, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.01
+      value: -2.04
       objectReference: {fileID: 0}
     - target: {fileID: 491504, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4248,35 +4540,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 491504, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
       propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 19843630, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
-      propertyPath: ClampVelocityModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19843630, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
-      propertyPath: InheritVelocityModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19843630, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
-      propertyPath: VelocityModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19843630, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
-      propertyPath: VelocityModule.inWorldSpace
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19972760, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
-      propertyPath: m_SortingLayerID
-      value: -788061679
-      objectReference: {fileID: 0}
-    - target: {fileID: 19972760, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19843630, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}
-      propertyPath: ShapeModule.boxX
-      value: 1.9564719
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d6f3f8d5d36202419a34d1134012965, type: 2}

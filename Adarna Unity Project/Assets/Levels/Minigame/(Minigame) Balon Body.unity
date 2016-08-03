@@ -1578,6 +1578,7 @@ GameObject:
   - 114: {fileID: 1130423540}
   - 114: {fileID: 1130423546}
   - 114: {fileID: 1130423542}
+  - 114: {fileID: 1130423547}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1608,7 +1609,7 @@ MonoBehaviour:
     y: -350
     width: 1658.8572
     height: 1005.71423
-  selectedBlock: {fileID: 1130423545}
+  selectedBlock: {fileID: 1130423547}
   selectedCommands: []
   variables: []
   description: 
@@ -1963,6 +1964,28 @@ MonoBehaviour:
   errorMessage: 
   indentLevel: 0
   targetGameObject: {fileID: 1937559576}
+--- !u!114 &1130423547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1130423527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 131.42856
+    y: 142.85712
+    width: 120
+    height: 40
+  itemId: 17
+  blockName: Lose
+  description: 
+  eventHandler: {fileID: 0}
+  commandList: []
 --- !u!1 &1133634700
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,9 +2798,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameName: Minigame - Balon
+  minigameSceneName: (Minigame) Balon Body
   allowMinigameStart: 0
   title: Abutin ang ibaba ng balon!
   description: Pindutin ang 'S' upang bumaba ng balon at 'W' naman upang umakyat.
+  minigameAudio: {fileID: 0}
+  losingScreen: {fileID: 0}
+  losingPromptUI: {fileID: 0}
+  losingImage: {fileID: 0}
+  losingSprite: {fileID: 0}
+  losingPrompt: 
+  showInstruction: 1
 --- !u!1 &1494691955
 GameObject:
   m_ObjectHideFlags: 0

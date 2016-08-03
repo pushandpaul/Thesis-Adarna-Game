@@ -1287,7 +1287,7 @@ GameObject:
   - 4: {fileID: 484164}
   - 114: {fileID: 11420204}
   m_Layer: 0
-  m_Name: 'Reach: Kubo ni Juan (9-2)'
+  m_Name: Pagbuo ng Kastilyo (Minigame)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1735,6 +1735,22 @@ GameObject:
   - 114: {fileID: 11479960}
   m_Layer: 0
   m_Name: 'Start: Narrative'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &172672
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 448416}
+  - 114: {fileID: 11479778}
+  m_Layer: 0
+  m_Name: 'Reach: Kubo ni Juan (9-2)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2446,7 +2462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470110}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!4 &400258
 Transform:
   m_ObjectHideFlags: 1
@@ -3283,6 +3299,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 497332}
   m_RootOrder: 11
+--- !u!4 &448416
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.977099, y: 0.36602533, z: -1.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470110}
+  m_RootOrder: 9
 --- !u!4 &448936
 Transform:
   m_ObjectHideFlags: 1
@@ -3653,8 +3681,9 @@ Transform:
   - {fileID: 448936}
   - {fileID: 495410}
   - {fileID: 439344}
-  - {fileID: 484164}
+  - {fileID: 448416}
   - {fileID: 405662}
+  - {fileID: 484164}
   - {fileID: 400076}
   m_Father: {fileID: 480576}
   m_RootOrder: 9
@@ -4081,7 +4110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470110}
-  m_RootOrder: 9
+  m_RootOrder: 11
 --- !u!4 &484568
 Transform:
   m_ObjectHideFlags: 1
@@ -4990,13 +5019,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 'Reach: Kubo ni Juan (9-2)'
-  Description: Bumalik sa iyong kubo at hintayin si Donya Maria.
-  objectiveLocation: 62
-  Kind: 1
+  Name: Pagbuo ng Kastilyo (Minigame)
+  Description: 
+  objectiveLocation: 63
+  Kind: 2
   Status: 0
-  OnReach: 010000000000000002000000
-  nextObjective: {fileID: 11469708}
+  OnReach: 01000000
+  nextObjective: {fileID: 0}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11420586
@@ -5789,7 +5818,7 @@ MonoBehaviour:
   Kind: 1
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 11420204}
+  nextObjective: {fileID: 11479778}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11449734
@@ -6404,7 +6433,7 @@ MonoBehaviour:
   Kind: 0
   Status: 0
   OnReach: 010000000000000002000000
-  nextObjective: {fileID: 0}
+  nextObjective: {fileID: 11420204}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11470768
@@ -6605,6 +6634,26 @@ MonoBehaviour:
   Status: 1
   OnReach: 0400000001000000
   nextObjective: {fileID: 0}
+  objectiveIndex: 0
+  textBoxDisplayed: 0
+--- !u!114 &11479778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 'Reach: Kubo ni Juan (9-2)'
+  Description: Bumalik sa iyong kubo at hintayin si Donya Maria.
+  objectiveLocation: 62
+  Kind: 1
+  Status: 0
+  OnReach: 010000000000000002000000
+  nextObjective: {fileID: 11469708}
   objectiveIndex: 0
   textBoxDisplayed: 0
 --- !u!114 &11479960
