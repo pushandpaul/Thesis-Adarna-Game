@@ -75,7 +75,11 @@ public class LevelLoader : MonoBehaviour {
 		//Minigame
 		MinigameIlalimNgDagat = 61,
 		ReynoBahayNiJuanLoob = 62,
+		//Minigame
 		MinigamePagbuoNgKastilyo = 63,
+		ReynoNewCastle = 64,
+		//Minigame
+		MinigameMoveMountain = 65,
 	}
 
 	public LevelSelect Levels;
@@ -138,7 +142,8 @@ public class LevelLoader : MonoBehaviour {
 	public void reloadScene(){
 		GameManager gameManager = FindObjectOfType<GameManager>();
 		saveBeforeUnload ();
-		StartCoroutine(fadeLevelByName(gameManager.currentScene));
+		//StartCoroutine(fadeLevelByName(gameManager.currentScene));
+		loadingScreenManager.loadScene (gameManager.currentScene);
 	}
 
 	public void launchPrevScene(){

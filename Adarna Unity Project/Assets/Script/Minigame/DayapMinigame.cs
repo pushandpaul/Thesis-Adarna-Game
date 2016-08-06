@@ -128,16 +128,17 @@ public class DayapMinigame : MonoBehaviour {
 		Debug.Log(message);
 		timer.stopTimer();
 		this.enabled = false;
-		//bgmManager.revertOriginalVol();
 		if(success){
 			objectiveMapper.checkIfCurrent_misc();
+			levelLoader.launchScene("Forest - Pedras Platas");
 			levelLoader.Levels = LevelLoader.LevelSelect.ForestPedrasPlatas;
 		}
 			
 		else{
-			levelLoader.Levels = LevelLoader.LevelSelect.MinigameDayap;
+			//levelLoader.Levels = LevelLoader.LevelSelect.MinigameDayap;
+			FindObjectOfType<GenericMinigameManger>().lose();
 		}
-		levelLoader.launchScene();
+		//levelLoader.launchScene();
 	}
 
 

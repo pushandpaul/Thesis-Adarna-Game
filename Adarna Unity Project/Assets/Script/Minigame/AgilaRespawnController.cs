@@ -21,7 +21,8 @@ public class AgilaRespawnController : MonoBehaviour {
 		while(agila.transform.position.y > GameObject.FindWithTag("Out of the Screen").transform.position.y){
 			yield return null;
 		}
-		GetComponentInChildren<RespawnManager>().FadeAndRespawnf ();
+		FindObjectOfType<GenericMinigameManger>().lose();
+		//GetComponentInChildren<RespawnManager>().FadeAndRespawnf ();
 		agila.SetCanMove (false);
 		agila.SetObstacleTriggered(false);
 	}

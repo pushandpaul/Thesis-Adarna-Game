@@ -139,9 +139,10 @@ public class BattleStateMachine : MonoBehaviour {
 
 	void Lose(){
 		LevelLoader levelLoader = FindObjectOfType<LevelLoader> ();
-
+		GenericMinigameManger minigameManager = FindObjectOfType<GenericMinigameManger>();
+		minigameManager.lose();
 		executedLose = true;
-		levelLoader.launchScene ("(Minigame) Battle");
+		//levelLoader.launchScene ("(Minigame) Battle");
 		//setEndBattlePanelMsg("Talo", "Ulitin");
 		Debug.Log("You Lose");
 	}

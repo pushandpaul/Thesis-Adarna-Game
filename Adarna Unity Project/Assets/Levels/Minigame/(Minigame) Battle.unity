@@ -606,10 +606,6 @@ MonoBehaviour:
     upang umatake at ang kalasag naman upang dumepensa.
   minigameAudio: {fileID: 8300000, guid: 4983035eda915e54badc9e2c479c846a, type: 3}
   losingScreen: {fileID: 0}
-  losingPromptUI: {fileID: 0}
-  losingImage: {fileID: 0}
-  losingSprite: {fileID: 0}
-  losingPrompt: 
   showInstruction: 1
 --- !u!1 &172468504
 GameObject:
@@ -3890,6 +3886,8 @@ GameObject:
   - 4: {fileID: 1880460985}
   - 114: {fileID: 1880460984}
   - 114: {fileID: 1880460983}
+  - 114: {fileID: 1880460987}
+  - 114: {fileID: 1880460986}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3918,7 +3916,9 @@ MonoBehaviour:
   blockName: Lose
   description: 
   eventHandler: {fileID: 0}
-  commandList: []
+  commandList:
+  - {fileID: 1880460987}
+  - {fileID: 1880460986}
 --- !u!114 &1880460984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3943,7 +3943,8 @@ MonoBehaviour:
     width: 920
     height: 840
   selectedBlock: {fileID: 1880460983}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1880460986}
   variables: []
   description: 
   stepPause: 0
@@ -3964,6 +3965,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!114 &1880460986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1880460982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 26
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 153939953}
+  targetComponentAssemblyName: GenericMinigameManger, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: GenericMinigameManger
+  targetMethod: showLosingScreen
+  targetMethodText: 'showLosingScreen (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1880460987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1880460982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 25
+  errorMessage: 
+  indentLevel: 0
+  storyText: You Lose!
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  setSayDialog: {fileID: 0}
 --- !u!1 &1913456197
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class CastleBuilding : MonoBehaviour {
 	[System.Serializable]
 	public class BinaryStates{
 		public Sprite correct;
-		public Sprite wrong;
+		public Sprite[] wrong;
 	}
 
 	private GenericMinigameManger minigameManager;
@@ -45,8 +45,8 @@ public class CastleBuilding : MonoBehaviour {
 		Debug.Log ("Answer Correct.");
 	}
 
-	public void wrong(){
-		StartCoroutine (transitioning (castleStates [currentStateIndex].wrong, true));
+	public void wrong(int spriteIndex){
+		StartCoroutine (transitioning (castleStates [currentStateIndex].wrong[spriteIndex], true));
 		Debug.Log("Answer Wrong.");
 	}
 
@@ -78,9 +78,10 @@ public class CastleBuilding : MonoBehaviour {
 
 		if(isWrong){
 			flowchart.ExecuteBlock ("Wrong");
+			//Excecute lose method in minigameManager in this block^
 		}
 		else{
-			if(currentStateIndex < castleStates.Length - 1){
+			if(currentStateIndex < castleStates.Length){
 				flowchart.ExecuteBlock ("Question " + currentStateIndex);
 			}
 			else{

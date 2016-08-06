@@ -2851,10 +2851,6 @@ MonoBehaviour:
     hindi mauubos ang dayap at baka ika'y makatulog!
   minigameAudio: {fileID: 8300000, guid: afb8e5cb72adbcc4d83f102088ab95d3, type: 3}
   losingScreen: {fileID: 0}
-  losingPromptUI: {fileID: 0}
-  losingImage: {fileID: 0}
-  losingSprite: {fileID: 0}
-  losingPrompt: 
   showInstruction: 1
 --- !u!1 &658531579
 GameObject:
@@ -4711,6 +4707,7 @@ GameObject:
   - 114: {fileID: 1509823674}
   - 114: {fileID: 1509823673}
   - 114: {fileID: 1509823675}
+  - 114: {fileID: 1509823677}
   - 114: {fileID: 1509823676}
   m_Layer: 0
   m_Name: Flowchart
@@ -4732,7 +4729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: -49.018097, y: -93.834656}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -4744,7 +4741,8 @@ MonoBehaviour:
     width: 1604.4316
     height: 1232.5684
   selectedBlock: {fileID: 1509823675}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1509823676}
   variables: []
   description: 
   stepPause: 0
@@ -5253,8 +5251,53 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1509823677}
   - {fileID: 1509823676}
 --- !u!114 &1509823676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1509823652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 26
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 653524003}
+  targetComponentAssemblyName: GenericMinigameManger, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: GenericMinigameManger
+  targetMethod: showLosingScreen
+  targetMethodText: 'showLosingScreen (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1509823677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -5265,12 +5308,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 23
+  itemId: 25
   errorMessage: 
   indentLevel: 0
-  storyText: Naku, ubos na ang aking dayap!
+  storyText: You Lose!
   description: 
-  character: {fileID: 1726151191}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1

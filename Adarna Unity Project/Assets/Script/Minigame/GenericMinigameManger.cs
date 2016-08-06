@@ -15,12 +15,17 @@ public class GenericMinigameManger : MonoBehaviour {
 	public AudioClip minigameAudio;
 
 	public LosingScreen losingScreen;
+	public string losingPrompt;
 
 	public bool showInstruction = true;
 
 	void Awake () {
 		layuninUI = FindObjectOfType<LayuninUIManager>();
-		FindObjectOfType<GameManager> ().currentScene = minigameSceneName;
+		GameManager gameManager = FindObjectOfType<GameManager>();
+		if(gameManager != null){
+			gameManager.currentScene = minigameSceneName;
+		}
+
 		losingScreen = FindObjectOfType<LosingScreen> ();
 
 		Flowchart[] flowcharts = FindObjectsOfType<Flowchart> ();

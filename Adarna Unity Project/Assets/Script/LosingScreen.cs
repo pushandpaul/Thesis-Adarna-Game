@@ -26,16 +26,23 @@ public class LosingScreen : MonoBehaviour {
 
 	public void reset(){
 		show (false);
-		if(leveLoader != null){
-			leveLoader.reloadScene ();
+		if(leveLoader == null){
+			leveLoader = this.gameObject.AddComponent<LevelLoader>();
 		}
+
+		leveLoader.reloadScene();
+			
 	}
 
 	public void quit(){
 		show (false);
-		if(leveLoader != null){
-			leveLoader.launchScene("Main Menu");
+
+		if(leveLoader == null){
+			leveLoader = this.gameObject.AddComponent<LevelLoader>();
 		}
+
+		leveLoader.launchScene("Main Menu");
+
 	}
 
 	public void show(bool show){
