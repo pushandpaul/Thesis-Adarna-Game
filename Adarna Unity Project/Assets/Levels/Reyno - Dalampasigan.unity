@@ -1866,6 +1866,7 @@ GameObject:
   - 114: {fileID: 1881023565}
   - 114: {fileID: 1881023548}
   - 114: {fileID: 1881023547}
+  - 114: {fileID: 1881023549}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2856,9 +2857,8 @@ MonoBehaviour:
     y: -351.2195
     width: 1772.7332
     height: 1163.2374
-  selectedBlock: {fileID: 1881023566}
-  selectedCommands:
-  - {fileID: 1881023548}
+  selectedBlock: {fileID: 1881023552}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -4352,6 +4352,50 @@ MonoBehaviour:
   targetFlowchart: {fileID: 0}
   targetBlock: {fileID: 1881023506}
   callMode: 0
+--- !u!114 &1881023549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881023475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 932
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 290846655}
+  targetComponentAssemblyName: LevelLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelLoader
+  targetMethod: launchScene
+  targetMethodText: 'launchScene (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: (Minigame) Pagbuo ng Palasyo
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &1881023550
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4507,6 +4551,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1881023547}
   commandList:
   - {fileID: 1881023565}
+  - {fileID: 1881023549}
   - {fileID: 1881023548}
 --- !u!1 &1891734507
 GameObject:

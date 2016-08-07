@@ -92,10 +92,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 934206646}
     m_Modifications:
-    - target: {fileID: 11417148, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
-      propertyPath: partObjective.Array.data[1].objectives.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 486670, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.98
@@ -127,10 +123,6 @@ Prefab:
     - target: {fileID: 486670, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11417148, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
-      propertyPath: partObjective.Array.data[1].objectives.Array.data[2]
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
@@ -1257,13 +1249,10 @@ GameObject:
   - 114: {fileID: 1561504917}
   - 114: {fileID: 1561504916}
   - 114: {fileID: 1561504915}
-  - 114: {fileID: 1561504914}
-  - 114: {fileID: 1561504913}
-  - 114: {fileID: 1561504912}
-  - 114: {fileID: 1561504911}
   - 114: {fileID: 1561504910}
-  - 114: {fileID: 1561504918}
-  - 114: {fileID: 1561504919}
+  - 114: {fileID: 1561504911}
+  - 114: {fileID: 1561504912}
+  - 114: {fileID: 1561504913}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1762,25 +1751,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0
-  scrollPos: {x: -93.78107, y: -290.33505}
+  scrollPos: {x: -49.75354, y: -88.79321}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 374
-  zoom: 0.8200001
+  zoom: 0.7900001
   scrollViewRect:
     serializedVersion: 2
     x: -466.46658
     y: -351.2195
     width: 1853.4404
-    height: 1322.5109
-  selectedBlock: {fileID: 1561504917}
+    height: 1351.779
+  selectedBlock: {fileID: 1561504833}
   selectedCommands:
-  - {fileID: 1561504919}
-  - {fileID: 1561504915}
-  - {fileID: 1561504913}
-  - {fileID: 1561504914}
-  - {fileID: 1561504912}
-  - {fileID: 1561504918}
+  - {fileID: 1561504869}
   variables: []
   description: 
   stepPause: 0
@@ -3698,38 +3682,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 325
+  itemId: 322
   errorMessage: 
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 1561504883}
+  targetBlock: {fileID: 1561504844}
   callMode: 0
 --- !u!114 &1561504912
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1561504824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 324
-  errorMessage: 
-  indentLevel: 0
-  storyText: '...masyado na siyang nawili sa pagbibigay ng pagsubok sa iyo.'
-  description: 
-  character: {fileID: 20199350}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &1561504913
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
@@ -3743,13 +3702,91 @@ MonoBehaviour:
   itemId: 323
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 1951588255}
-  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetObject: {fileID: 1124809387}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Utilities
-  targetMethod: activateTalasalitaan
-  targetMethodText: 'activateTalasalitaan (String): Void'
+  targetComponentText: LevelManager
+  targetMethod: changePlayer
+  targetMethodText: 'changePlayer (Transform, Boolean, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 20199353}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1995216807}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1561504913
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561504824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 324
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1124809387}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: changeTimeOfDay
+  targetMethodText: 'changeTimeOfDay (String): Void'
   methodParameters:
   - objValue:
       typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -3758,7 +3795,7 @@ MonoBehaviour:
       intValue: 0
       boolValue: 0
       floatValue: 0
-      stringValue: manimdim
+      stringValue: n
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
@@ -3773,31 +3810,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1561504914
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1561504824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 322
-  errorMessage: 
-  indentLevel: 0
-  storyText: Magpahinga ka na Don Juan at ako na ang bahala sa utos ng aking ama...
-  description: 
-  character: {fileID: 20199350}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
 --- !u!114 &1561504915
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3812,8 +3824,8 @@ MonoBehaviour:
   itemId: 321
   errorMessage: 
   indentLevel: 0
-  storyText: "Mahal ko, \u2018wag kang {color=\"yellow\"}manimdim/mangamba{/color},
-    kayang kaya ko ang pinagagawa \rng hari."
+  storyText: Magpahinga ka na Don Juan, pangako kong tutuparin ang gusto ng aking
+    ama.
   description: 
   character: {fileID: 20199350}
   portrait: {fileID: 0}
@@ -3854,8 +3866,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 434.52612
-    y: 521.53546
+    x: 438.18466
+    y: 536.16943
     width: 188
     height: 40
   itemId: 319
@@ -3865,62 +3877,9 @@ MonoBehaviour:
   commandList:
   - {fileID: 1561504916}
   - {fileID: 1561504915}
-  - {fileID: 1561504913}
-  - {fileID: 1561504914}
   - {fileID: 1561504912}
-  - {fileID: 1561504918}
-  - {fileID: 1561504919}
+  - {fileID: 1561504913}
   - {fileID: 1561504911}
---- !u!114 &1561504918
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1561504824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 326
-  errorMessage: 
-  indentLevel: 0
-  storyText: "\u2018Wag kang mag-alala mamangha ang hari sa kastilyo na aking gagawin."
-  description: 
-  character: {fileID: 20199350}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
---- !u!114 &1561504919
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1561504824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 327
-  errorMessage: 
-  indentLevel: 0
-  storyText: Maraming salamat muli giliw ko, hindi ko ito magagawa nang wala ka.
-  description: 
-  character: {fileID: 1218580587}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  setSayDialog: {fileID: 0}
 --- !u!1001 &1642142816
 Prefab:
   m_ObjectHideFlags: 0
