@@ -869,6 +869,49 @@ MonoBehaviour:
   cameraSpawnZ: -4.5
   isInterior: 1
   size: 0
+--- !u!1 &635704330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 635704331}
+  - 114: {fileID: 635704332}
+  m_Layer: 0
+  m_Name: Slideshow Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &635704331
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 635704330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 788073942}
+  m_RootOrder: 1
+--- !u!114 &635704332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 635704330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb40715de49e4b4b8b508904c969b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 21300000, guid: b43bea100a228f940996ee6a49e8e770, type: 3}
+  - {fileID: 21300000, guid: fa5ceb226a743be49bfc3986477a4357, type: 3}
+  - {fileID: 21300000, guid: 2dcc022b9ee5ecf4897ca3a43e741c46, type: 3}
 --- !u!1 &636688757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1069,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 496721241}
   m_RootOrder: 1
+--- !u!1 &788073941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 788073942}
+  m_Layer: 0
+  m_Name: Slideshow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &788073942
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 788073941}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 219.5, y: 123.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1976387404}
+  - {fileID: 635704331}
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
 --- !u!1 &817521071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1940,6 @@ GameObject:
   - 114: {fileID: 1561504849}
   - 114: {fileID: 1561504850}
   - 114: {fileID: 1561504856}
-  - 114: {fileID: 1561504857}
   - 114: {fileID: 1561504858}
   - 114: {fileID: 1561504859}
   - 114: {fileID: 1561504860}
@@ -1880,6 +1951,9 @@ GameObject:
   - 114: {fileID: 1561504875}
   - 114: {fileID: 1561504876}
   - 114: {fileID: 1561504877}
+  - 114: {fileID: 1561504878}
+  - 114: {fileID: 1561504879}
+  - 114: {fileID: 1561504857}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2621,9 +2695,9 @@ MonoBehaviour:
     y: -351.2195
     width: 1768.7264
     height: 1163.2374
-  selectedBlock: {fileID: 1561504841}
+  selectedBlock: {fileID: 1561504865}
   selectedCommands:
-  - {fileID: 1561504877}
+  - {fileID: 1561504870}
   variables: []
   description: 
   stepPause: 0
@@ -2871,21 +2945,55 @@ MonoBehaviour:
   itemId: 360
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 1951588255}
-  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
+  targetObject: {fileID: 1976387403}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Utilities
-  targetMethod: fadeScreenToBlack
-  targetMethodText: 'fadeScreenToBlack (Single): Void'
+  targetComponentText: SlideshowController
+  targetMethod: Begin
+  targetMethodText: 'Begin (SlideshowImages, Boolean, Boolean): Void'
   methodParameters:
   - objValue:
-      typeAssemblyname: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Single
+      typeAssemblyname: SlideshowImages, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: SlideshowImages
       intValue: 0
       boolValue: 0
-      floatValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 635704332}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
       stringValue: 
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
@@ -2903,7 +3011,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1561504857
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -2912,34 +3020,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 361
+  itemId: 375
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 1951588255}
-  targetComponentAssemblyName: Utilities, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
+  targetObject: {fileID: 1976387403}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Utilities
-  targetMethod: fadeScreenToClear
-  targetMethodText: 'fadeScreenToClear (Single): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Single
-      intValue: 0
-      boolValue: 0
-      floatValue: 1
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
+  targetComponentText: SlideshowController
+  targetMethod: Stop
+  targetMethodText: 'Stop (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -2973,7 +3064,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1561504859
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3017,7 +3108,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1561504860
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3265,16 +3356,18 @@ MonoBehaviour:
   - {fileID: 1561504856}
   - {fileID: 1561504859}
   - {fileID: 1561504849}
+  - {fileID: 1561504878}
   - {fileID: 1561504860}
   - {fileID: 1561504850}
+  - {fileID: 1561504879}
   - {fileID: 1561504867}
   - {fileID: 1561504858}
   - {fileID: 1561504868}
+  - {fileID: 1561504857}
   - {fileID: 1561504869}
   - {fileID: 1561504871}
   - {fileID: 1561504875}
   - {fileID: 1561504876}
-  - {fileID: 1561504857}
   - {fileID: 1561504870}
   - {fileID: 1561504848}
 --- !u!114 &1561504866
@@ -3340,7 +3433,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1561504867
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3384,7 +3477,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1561504868
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3411,7 +3504,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1561504869
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3506,7 +3599,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1561504870
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3550,7 +3643,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1561504871
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3739,7 +3832,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1561504875
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3783,7 +3876,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1561504876
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3827,7 +3920,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1561504877
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561504824}
@@ -3898,6 +3991,60 @@ MonoBehaviour:
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1561504878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561504824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 373
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1976387403}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SlideshowController
+  targetMethod: Next
+  targetMethodText: 'Next (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1561504879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561504824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 374
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1976387403}
+  targetComponentAssemblyName: SlideshowController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SlideshowController
+  targetMethod: Next
+  targetMethodText: 'Next (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -4165,6 +4312,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels: 0
   launchOnStart: 0
+--- !u!1 &1976387403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1976387404}
+  - 114: {fileID: 1976387405}
+  m_Layer: 0
+  m_Name: Slideshow Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1976387404
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976387403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 788073942}
+  m_RootOrder: 0
+--- !u!114 &1976387405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976387403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ec60a08576c9e479855f2ac45d92b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backUIFader: {fileID: 0}
+  transitionDuration: 2
+  fadeOutDelay: 0
+  controlHUD: 0
+  controlPause: 0
 --- !u!1001 &1995216806
 Prefab:
   m_ObjectHideFlags: 0
