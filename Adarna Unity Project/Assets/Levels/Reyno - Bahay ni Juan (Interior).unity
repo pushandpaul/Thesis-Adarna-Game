@@ -94,11 +94,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 486670, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.98
+      value: -1.09
       objectReference: {fileID: 0}
     - target: {fileID: 486670, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -9.1
+      value: -9.42
       objectReference: {fileID: 0}
     - target: {fileID: 486670, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
       propertyPath: m_LocalPosition.z
@@ -128,6 +128,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 486670, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 486670, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
   m_IsPrefabParent: 0
@@ -141,6 +149,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 20199348}
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+--- !u!4 &20199351 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 494200, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
+  m_PrefabInternal: {fileID: 20199348}
 --- !u!1 &31907810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1879,7 @@ GameObject:
   - 114: {fileID: 1561504870}
   - 114: {fileID: 1561504875}
   - 114: {fileID: 1561504876}
+  - 114: {fileID: 1561504877}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2124,7 +2137,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: -10, y: -2.17, z: 0}
+      vector3Value: {x: -10, y: -1.12, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -2202,7 +2215,7 @@ MonoBehaviour:
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 1, y: -1.11, z: 0}
+      vector3Value: {x: 0.5, y: -1.11, z: 0}
     variableKey: 
   - objValue:
       typeAssemblyname: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -2503,6 +2516,7 @@ MonoBehaviour:
   - {fileID: 1561504839}
   - {fileID: 1561504837}
   - {fileID: 1561504826}
+  - {fileID: 1561504877}
   - {fileID: 1561504830}
 --- !u!114 &1561504842
 MonoBehaviour:
@@ -2608,7 +2622,8 @@ MonoBehaviour:
     width: 1768.7264
     height: 1163.2374
   selectedBlock: {fileID: 1561504841}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1561504877}
   variables: []
   description: 
   stepPause: 0
@@ -3228,7 +3243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 447.1234
+    x: 443.71432
     y: 232.17558
     width: 173
     height: 40
@@ -3800,6 +3815,84 @@ MonoBehaviour:
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
       objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1561504877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561504824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 372
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1124809387}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelManager
+  targetMethod: changePlayer
+  targetMethodText: 'changePlayer (Transform, Boolean, Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 20199351}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1995216807}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}

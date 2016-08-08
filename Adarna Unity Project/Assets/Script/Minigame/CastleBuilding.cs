@@ -41,7 +41,13 @@ public class CastleBuilding : MonoBehaviour {
 
 	public void correct(){
 		currentStateIndex++;
-		StartCoroutine (transitioning (castleStates [currentStateIndex].correct, false));
+		if(currentStateIndex < castleStates.Length){
+			StartCoroutine (transitioning (castleStates [currentStateIndex].correct, false));
+		}
+		else{
+			StartCoroutine (transitioning (null, false));
+		}
+
 		Debug.Log ("Answer Correct.");
 	}
 
@@ -62,7 +68,9 @@ public class CastleBuilding : MonoBehaviour {
 			yield return null;
 		}
 
-		castleRenderer.sprite = newStateSprite;
+		if(newStateSprite != null){
+			castleRenderer.sprite = newStateSprite;
+		}
 
 		while(backUIFader.canvasGroup.alpha > 0){
 			yield return null;
@@ -81,10 +89,12 @@ public class CastleBuilding : MonoBehaviour {
 			//Excecute lose method in minigameManager in this block^
 		}
 		else{
-			if(currentStateIndex < castleStates.Length){
+			if(currentStateIndex < castleStates.Length - 1){
+				Debug.Log("New Question.");
 				flowchart.ExecuteBlock ("Question " + currentStateIndex);
 			}
 			else{
+				Debug.Log("Minigame End");
 				flowchart.ExecuteBlock ("End");
 			}
 		}
