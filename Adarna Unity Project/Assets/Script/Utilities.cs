@@ -5,12 +5,14 @@ public class Utilities : MonoBehaviour {
 
 	public GameObject BackUIFader;
 	private GameManager gameManager;
+	private LevelLoader levelLoader;
 	private AudioSource audioSource;
 
 	void Awake(){
 		BackUIFader = GameObject.FindGameObjectWithTag ("Back UI Fader");
 		gameManager = FindObjectOfType<GameManager>();
 		audioSource = GetComponent<AudioSource> ();
+		levelLoader = FindObjectOfType<LevelLoader>();
 		if(audioSource != null){
 			audioSource.tag = "VO Source";
 		}
@@ -133,5 +135,14 @@ public class Utilities : MonoBehaviour {
 
 	public void stopAudio(){
 		audioSource.Stop ();
+	}
+
+	public void launchUnderwater(Vector3 toCollectPosition, bool hasTimeLimit, float timeLimit){
+		UnderwaterManager.toCollectPosition = toCollectPosition;
+		UnderwaterManager.hasTimeLimit = hasTimeLimit;
+		UnderwaterManager.timeLimit = timeLimit;
+		if(levelLoader != null){
+			levelLoader.launchScene("(Minigame) Underwater");
+		}
 	}
 }

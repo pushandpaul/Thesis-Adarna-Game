@@ -97,12 +97,12 @@ public class LayuninUIManager : MonoBehaviour {
 		while(!FindObjectOfType<LoadingScreenManager>().officiallyLoaded){
 			yield return null;
 		}
-
 		while(FindObjectOfType<ScreenFader>().alpha > 0){
 			yield return null;
 		}
 
 		gameManager.pause(true);
+
 	}
 		
 	public void Close(){

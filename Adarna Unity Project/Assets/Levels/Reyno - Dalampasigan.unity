@@ -553,13 +553,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 405364, guid: 18d755645851b9442b6efc1f61a1a3eb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 405364, guid: 18d755645851b9442b6efc1f61a1a3eb, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.5
+    - target: {fileID: 21214768, guid: 18d755645851b9442b6efc1f61a1a3eb, type: 2}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18d755645851b9442b6efc1f61a1a3eb, type: 2}
@@ -1726,18 +1722,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11499272, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 31907812}
     - target: {fileID: 187952, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 473250, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3.5
-      objectReference: {fileID: 0}
     - target: {fileID: 424588, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -1746,17 +1734,13 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 452668, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
+    - target: {fileID: 21268046, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 452668, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 452668, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
+    - target: {fileID: 21268046, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c030ba30e8be9a241aa1f4962c3a078a, type: 2}
@@ -2713,6 +2697,9 @@ GameObject:
   - 114: {fileID: 1881023599}
   - 114: {fileID: 1881023600}
   - 114: {fileID: 1881023561}
+  - 114: {fileID: 1881023601}
+  - 114: {fileID: 1881023603}
+  - 114: {fileID: 1881023602}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3742,9 +3729,9 @@ MonoBehaviour:
     y: -351.2195
     width: 1772.7332
     height: 1243.8342
-  selectedBlock: {fileID: 1881023552}
+  selectedBlock: {fileID: 1881023517}
   selectedCommands:
-  - {fileID: 1881023542}
+  - {fileID: 1881023523}
   variables: []
   description: 
   stepPause: 0
@@ -4064,8 +4051,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 408.26242
-    y: 206.9013
+    x: 404.46494
+    y: 201.83801
     width: 205
     height: 40
   itemId: 840
@@ -4087,6 +4074,7 @@ MonoBehaviour:
   - {fileID: 1881023495}
   - {fileID: 1881023557}
   - {fileID: 1881023555}
+  - {fileID: 1881023601}
   - {fileID: 1881023554}
   - {fileID: 1881023553}
   - {fileID: 1881023512}
@@ -5500,13 +5488,13 @@ MonoBehaviour:
   itemId: 935
   errorMessage: 
   indentLevel: 0
-  targetObject: {fileID: 41134307}
-  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetObject: {fileID: 1508380268}
+  targetComponentAssemblyName: LevelManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: ItemToGive
-  targetMethod: setItem
-  targetMethodText: 'setItem (Sprite): Void'
+  targetComponentText: LevelManager
+  targetMethod: 
+  targetMethodText: 
   methodParameters:
   - objValue:
       typeAssemblyname: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -5803,7 +5791,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1881023561
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881023475}
@@ -7262,7 +7250,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1881023597
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881023475}
@@ -7306,7 +7294,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1881023598
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881023475}
@@ -7333,7 +7321,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1881023599
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881023475}
@@ -7360,7 +7348,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1881023600
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881023475}
@@ -7385,6 +7373,100 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1881023601
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881023475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 980
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 41134307}
+  targetComponentAssemblyName: ItemToGive, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ItemToGive
+  targetMethod: setItem
+  targetMethodText: 'setItem (Sprite): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: UnityEngine.Sprite
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 21300002, guid: cbb56d823d2d1d345ba471506bc4a2a4, type: 3}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1881023602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881023475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 982
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 1030142448}
+  targetComponentAssemblyName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayerController
+  targetMethod: 
+  targetMethodText: 
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: 
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1881023603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881023475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 173.14334
+    y: 100.92189
+    width: 120
+    height: 40
+  itemId: 981
+  blockName: New Block
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1881023602}
 --- !u!1 &1891734507
 GameObject:
   m_ObjectHideFlags: 0

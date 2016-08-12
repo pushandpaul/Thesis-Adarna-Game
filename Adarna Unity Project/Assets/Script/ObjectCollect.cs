@@ -26,12 +26,15 @@ public class ObjectCollect : MonoBehaviour {
 		}
 	}
 	void OnTriggerEnter2D (Collider2D other){
-		if(other.tag == "Player")
+		if(other.tag == "Player"){
 			waitForPress = true;
+		}
+			
 	}
 	void OnTriggerExit2D (Collider2D other){
-		if(other.tag == "Player")
+		if(other.tag == "Player"){
 			waitForPress = false;
+		}
 	}
 
 	public void carryItem() {
