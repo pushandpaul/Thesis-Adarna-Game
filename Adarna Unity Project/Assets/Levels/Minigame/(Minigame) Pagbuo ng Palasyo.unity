@@ -784,6 +784,9 @@ MonoBehaviour:
   absXAxisFeedBack: 0
   absYAxisFeedBack: 1
   idleState: {fileID: 7400000, guid: e41f960ba81670949a1f4d6b170a5f90, type: 2}
+  animationDiffY: 1
+  animationDiffX: 1
+  moveDiagonally: 0
 --- !u!50 &233583464
 Rigidbody2D:
   serializedVersion: 2
@@ -1631,8 +1634,7 @@ MonoBehaviour:
     width: 2757.4531
     height: 1320.2498
   selectedBlock: {fileID: 687323770}
-  selectedCommands:
-  - {fileID: 687323779}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -3242,6 +3244,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 687323771}
   - {fileID: 687323778}
   - {fileID: 687323782}
   - {fileID: 687323714}
@@ -3253,7 +3256,6 @@ MonoBehaviour:
   - {fileID: 687323781}
   - {fileID: 687323785}
   - {fileID: 687323787}
-  - {fileID: 687323771}
   - {fileID: 687323772}
   - {fileID: 687323777}
 --- !u!114 &687323771

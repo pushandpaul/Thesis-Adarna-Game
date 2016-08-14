@@ -2463,7 +2463,8 @@ MonoBehaviour:
   playerIdleState: 0
   playerIdleState_string: Idle
   playerSpeed: 7
-  Followers: []
+  Followers:
+  - {fileID: 11407862, guid: 2a87e4595c45ef94e9791a13ab47b767, type: 2}
   FollowerNames: []
   spawnIsRight: 0
   characters: []
@@ -2480,7 +2481,7 @@ MonoBehaviour:
   - {fileID: 494200, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
   - {fileID: 483036, guid: 18d755645851b9442b6efc1f61a1a3eb, type: 2}
   - {fileID: 412370, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-  currentCharacterName: Don Juan
+  currentCharacterName: Maria Blanca
   defaultCharacterName: Don Juan
   isPaused: 0
   blurredCam: {fileID: 981623638}
@@ -2687,7 +2688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 61
+  Levels: 56
   launchOnStart: 1
 --- !u!4 &268044221
 Transform:
@@ -6604,8 +6605,7 @@ MonoBehaviour:
     width: 920
     height: 840
   selectedBlock: {fileID: 858526993}
-  selectedCommands:
-  - {fileID: 858526992}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -7562,6 +7562,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: objectivePanelFader
+      value: 
+      objectReference: {fileID: 307318458}
     - target: {fileID: 11457262, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: textBox
       value: 
@@ -7570,13 +7574,27 @@ Prefab:
       propertyPath: theText
       value: 
       objectReference: {fileID: 307318456}
-    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
-      propertyPath: objectivePanelFader
+    - target: {fileID: 11489392, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: nextObjective
       value: 
-      objectReference: {fileID: 307318458}
+      objectReference: {fileID: 1643812026}
+    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: currentObjective
+      value: 
+      objectReference: {fileID: 1010923973}
+    - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
+      propertyPath: currentPartIndex
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1010923973 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11467718, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1010923972}
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
 --- !u!1 &1018424979
 GameObject:
   m_ObjectHideFlags: 0
@@ -12749,7 +12767,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1553859825}
   m_HandleRect: {fileID: 402944417}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13473,6 +13491,12 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1632658093}
+--- !u!114 &1643812026 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11440488, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1010923972}
+  m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
 --- !u!1 &1651578659
 GameObject:
   m_ObjectHideFlags: 0
@@ -14960,7 +14984,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1854877083}
   m_HandleRect: {fileID: 231021568}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
