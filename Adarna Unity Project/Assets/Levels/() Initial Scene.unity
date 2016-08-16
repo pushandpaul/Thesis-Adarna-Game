@@ -2464,7 +2464,8 @@ MonoBehaviour:
   playerIdleState_string: Idle
   playerSpeed: 7
   Followers:
-  - {fileID: 11407862, guid: 2a87e4595c45ef94e9791a13ab47b767, type: 2}
+  - {fileID: 11470666, guid: 5558aa40da511e54bac2e4e0113e7173, type: 2}
+  - {fileID: 11465722, guid: e8b0fe1258153184b867ab768308e96d, type: 2}
   FollowerNames: []
   spawnIsRight: 0
   characters: []
@@ -2481,7 +2482,7 @@ MonoBehaviour:
   - {fileID: 494200, guid: c95cd7b7a50215740961bcfe2e29a534, type: 2}
   - {fileID: 483036, guid: 18d755645851b9442b6efc1f61a1a3eb, type: 2}
   - {fileID: 412370, guid: 16b56de22e6cef643b438aa5f9102129, type: 2}
-  currentCharacterName: Maria Blanca
+  currentCharacterName: Don Juan
   defaultCharacterName: Don Juan
   isPaused: 0
   blurredCam: {fileID: 981623638}
@@ -2688,7 +2689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 56
+  Levels: 7
   launchOnStart: 1
 --- !u!4 &268044221
 Transform:
@@ -6574,6 +6575,7 @@ GameObject:
   - 114: {fileID: 858526994}
   - 114: {fileID: 858526992}
   - 114: {fileID: 858526995}
+  - 114: {fileID: 858526996}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -6597,7 +6599,7 @@ MonoBehaviour:
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.82000005
   scrollViewRect:
     serializedVersion: 2
     x: -350
@@ -6605,7 +6607,8 @@ MonoBehaviour:
     width: 920
     height: 840
   selectedBlock: {fileID: 858526993}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 858526996}
   variables: []
   description: 
   stepPause: 0
@@ -6727,6 +6730,7 @@ MonoBehaviour:
   eventHandler: {fileID: 858526995}
   commandList:
   - {fileID: 858526992}
+  - {fileID: 858526996}
 --- !u!114 &858526994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6751,6 +6755,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 858526993}
+--- !u!114 &858526996
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 858526989}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2
+  errorMessage: 
+  indentLevel: 0
+  targetObject: {fileID: 268044219}
+  targetComponentAssemblyName: LevelLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelLoader
+  targetMethod: launchScene
+  targetMethodText: 'launchScene (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: Reyno - Kwarto ni Maria
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &867081512
 GameObject:
   m_ObjectHideFlags: 0
@@ -7584,14 +7632,14 @@ Prefab:
       objectReference: {fileID: 1010923973}
     - target: {fileID: 11438758, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
       propertyPath: currentPartIndex
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461b6b6d0c850374e83bd51b7ebe3e4d, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1010923973 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11467718, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
+  m_PrefabParentObject: {fileID: 11433096, guid: 461b6b6d0c850374e83bd51b7ebe3e4d,
     type: 2}
   m_PrefabInternal: {fileID: 1010923972}
   m_Script: {fileID: 11500000, guid: a898fdbf5b6ed0641bcb5bc552103edb, type: 3}
@@ -11768,6 +11816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1410569039}
+  usedLoadingScreen: 0
   officiallyLoaded: 0
 --- !u!114 &1410569039
 MonoBehaviour:
@@ -13446,7 +13495,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.0038452148, y: 0}
+  m_AnchoredPosition: {x: 0.0038452148, y: -0.000015258789}
   m_SizeDelta: {x: 360.1, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1632658095
@@ -14801,7 +14850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partDataList:
     partsData: []
-  talasalitaanJsonPath: \StreamingAssets\Text\Talasalitaan.json
+  talasalitaanJsonPath: Talasalitaan
   backupJsonPath: \StreamingAssets\Text\Talasalitaan_Backup.json
   talasalitaanButtonPrefab: {fileID: 11419028, guid: b77f051a930f10f4081e3ef1b2b19a28,
     type: 2}
@@ -14984,7 +15033,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1854877083}
   m_HandleRect: {fileID: 231021568}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

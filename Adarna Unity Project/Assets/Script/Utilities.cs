@@ -13,6 +13,10 @@ public class Utilities : MonoBehaviour {
 		gameManager = FindObjectOfType<GameManager>();
 		audioSource = GetComponent<AudioSource> ();
 		levelLoader = FindObjectOfType<LevelLoader>();
+
+		if(levelLoader == null){
+			levelLoader = gameObject.AddComponent<LevelLoader>();
+		}
 		if(audioSource != null){
 			audioSource.tag = "VO Source";
 		}
@@ -141,8 +145,6 @@ public class Utilities : MonoBehaviour {
 		UnderwaterManager.toCollectPosition = toCollectPosition;
 		UnderwaterManager.hasTimeLimit = hasTimeLimit;
 		UnderwaterManager.timeLimit = timeLimit;
-		if(levelLoader != null){
-			levelLoader.launchScene("(Minigame) Underwater");
-		}
+		levelLoader.launchScene("(Minigame) Underwater");
 	}
 }

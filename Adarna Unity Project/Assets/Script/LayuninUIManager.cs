@@ -57,6 +57,7 @@ public class LayuninUIManager : MonoBehaviour {
 		LoadingScreenManager loadingScreen = FindObjectOfType<LoadingScreenManager>();
 
 		gameManager.pauseMenu.SetActive(false);
+		Debug.Log("Launching layunin instructions.");
 		if(closeControl == CloseControl.PressAnywhere){
 			this.GetComponent<Button>().interactable = true;
 			allowPanelPress = true;
@@ -93,14 +94,16 @@ public class LayuninUIManager : MonoBehaviour {
 		foreach(GameObject HUD in GameObject.FindGameObjectsWithTag("HUD")){
 			HUD.GetComponent<CanvasGroup>().alpha = 0f;
 		}
-
+		Debug.Log("Waiting until officially loaded");
 		while(!FindObjectOfType<LoadingScreenManager>().officiallyLoaded){
 			yield return null;
 		}
-		while(FindObjectOfType<ScreenFader>().alpha > 0){
+		Debug.Log("Waiting until screen fader fades completely");
+
+		while(FindObjectOfType<ScreenFader>().alpha > 0) {
 			yield return null;
 		}
-
+		Debug.Log("Done! Layunin will pause the game.");
 		gameManager.pause(true);
 
 	}

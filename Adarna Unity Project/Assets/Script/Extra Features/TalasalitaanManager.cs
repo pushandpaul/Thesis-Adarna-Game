@@ -63,10 +63,11 @@ public class TalasalitaanManager : MonoBehaviour {
 		backupJson = File.ReadAllText(Application.dataPath + backupJsonPath);
 
 		if(!File.Exists(Application.dataPath + talasalitaanJsonPath)){
-			File.WriteAllText(Application.dataPath + talasalitaanJsonPath, backupJson);
+			//File.WriteAllText(Application.persistentDataPath + talasalitaanJsonPath, backupJson);
+			File.WriteAllText(Path.Combine(Application.persistentDataPath, talasalitaanJsonPath + ".json"), backupJson);
 		}
 
-		jsonString = File.ReadAllText (Application.dataPath + talasalitaanJsonPath);
+		jsonString = File.ReadAllText (Application.persistentDataPath + talasalitaanJsonPath);
 
 		myUIFader = this.GetComponent<UIFader>();
 		gameManager = FindObjectOfType<GameManager>();

@@ -124,6 +124,7 @@ public class MoveMountain_Draggable : MonoBehaviour {
 		setupIsMoving(true);
 		Vector3 currentMousePos = Camera.main.ScreenToWorldPoint(new Vector3(x, y ,0f));
 		Vector3 newPosition = new Vector3(initialPosition.x + (currentMousePos.x - initialMousePos.x), initialPosition.y + (currentMousePos.y - initialMousePos.y), initialPosition.z);
+		hoverState.SetActive(true);
 		transform.position = newPosition;
 	}
 

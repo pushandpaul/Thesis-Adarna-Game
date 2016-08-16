@@ -25,6 +25,10 @@ public class ScreenFader : MonoBehaviour {
 		return(fadeSpeed);
 	}
 
+	public float getFadeDirection(){
+		return fadeDirection;
+	}
+
 	void OnLevelWasLoaded(){
 		this.BeginFade(-1);
 	}

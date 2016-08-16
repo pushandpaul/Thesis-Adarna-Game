@@ -75,7 +75,7 @@ public class ConfirmationBox : MonoBehaviour {
 					levelLoader = this.gameObject.AddComponent<LevelLoader> ();
 				}
 
-				levelLoader.launchScene("Chapter Selection");
+				levelLoader.launchScene("Main Menu");
 				break;
 			case(Kind.DeleteSave):
 				Debug.Log("Delete saves");

@@ -54,7 +54,7 @@ public class LevelLoader : MonoBehaviour {
 		MinigameAgila = 41,
 		ReynoCastleThrone = 42,
 		ReynoCastleHallway = 43,
-		ReynGardenHallway = 44,
+		ReynoGardenHallway = 44,
 		ReynoPrinsesaHallway = 45,
 		ReynoKwartoNgHari = 46,
 		ReynoBalcony = 47,
@@ -93,13 +93,15 @@ public class LevelLoader : MonoBehaviour {
 
 	void Awake () {
 		Init();
+
+		loadingScreenManager = FindObjectOfType<LoadingScreenManager> ();
 		if(launchOnStart)
 			launchScene();
-		loadingScreenManager = FindObjectOfType<LoadingScreenManager> ();
 	}
 	
 	public void launchScene(){
 		saveBeforeUnload();
+		loadingScreenManager.usedLoadingScreen = false;
 		StartCoroutine(fadeLevelByList());
 	}
 		

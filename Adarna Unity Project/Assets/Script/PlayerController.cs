@@ -55,7 +55,14 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Start(){
-		StartCoroutine(waitTilScreenFaded());
+		if(FindObjectOfType<LoadingScreenManager>().usedLoadingScreen){
+			StartCoroutine(waitTilScreenFaded());
+		}
+		else{
+			canMove = true;
+			canJump = true;
+		}
+			
 	}
 
 	void FixedUpdate (){

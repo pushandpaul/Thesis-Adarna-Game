@@ -8,6 +8,7 @@ public class LoadingScreenManager : MonoBehaviour {
 	public UIFader loadingScreen;
 	private PauseMenu pauseMenu;
 
+	public bool usedLoadingScreen = false;
 	public bool officiallyLoaded = false;
 
 	void Awake(){
@@ -16,6 +17,11 @@ public class LoadingScreenManager : MonoBehaviour {
 	}
 
 	public void loadScene(string sceneName){
+		//May subject to change
+		StopAllCoroutines();
+	
+		officiallyLoaded = false;
+		usedLoadingScreen = true;
 		StartCoroutine (startLoadingScene (sceneName));
 	}
 
@@ -23,8 +29,6 @@ public class LoadingScreenManager : MonoBehaviour {
 		float fadeTime = screenFader.BeginFade(1);
 		LevelManager levelManager = FindObjectOfType<LevelManager> ();
 		bool inControl = false;
-
-		officiallyLoaded = false;
 
 		if(levelManager != null){
 			levelManager.onLevelExit ();
@@ -42,7 +46,6 @@ public class LoadingScreenManager : MonoBehaviour {
 		yield return new WaitForSeconds (fadeTime); 
 
 		AsyncOperation async = SceneManager.LoadSceneAsync(sceneName);
-
 		while (!async.isDone) {
 			Debug.Log ("Loading");
 			yield return null;
@@ -58,7 +61,6 @@ public class LoadingScreenManager : MonoBehaviour {
 		fadeTime = screenFader.BeginFade (-1);
 
 		yield return new WaitForSeconds(fadeTime - (fadeTime * 0.2f));
-
 		if(inControl){
 			pauseMenu.enabled = true;
 		}

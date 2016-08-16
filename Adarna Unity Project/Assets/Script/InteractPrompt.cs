@@ -19,7 +19,9 @@ public class InteractPrompt : MonoBehaviour {
 	void Awake () {
 		myRenderer = this.GetComponent<SpriteRenderer>();
 	}
-
+	void OnLevelWasLoaded(){
+		myRenderer.enabled = false;
+	}
 	public void show(keyToInteract key, bool show, Transform referencePoint){
 		myRenderer.enabled = show;
 		if(show){
