@@ -2689,8 +2689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa3b2eccd10004bac9585522e0fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: 7
-  launchOnStart: 1
+  Levels: 31
+  launchOnStart: 0
 --- !u!4 &268044221
 Transform:
   m_ObjectHideFlags: 0
@@ -6599,12 +6599,12 @@ MonoBehaviour:
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.82000005
+  zoom: 0.96999997
   scrollViewRect:
     serializedVersion: 2
     x: -350
     y: -350
-    width: 920
+    width: 921.2195
     height: 840
   selectedBlock: {fileID: 858526993}
   selectedCommands:
@@ -6720,7 +6720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 50
+    x: 51.219513
     y: 50
     width: 120
     height: 40
@@ -6761,7 +6761,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 858526989}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
@@ -6774,17 +6774,51 @@ MonoBehaviour:
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
   targetComponentText: LevelLoader
-  targetMethod: launchScene
-  targetMethodText: 'launchScene (String): Void'
+  targetMethod: launchBattleScene
+  targetMethodText: 'launchBattleScene (EnemyType, Stage, CombatStance): Void'
   methodParameters:
   - objValue:
-      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.String
+      typeAssemblyname: BattleSetup+EnemyType, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: BattleSetup+EnemyType
       intValue: 0
       boolValue: 0
       floatValue: 0
-      stringValue: Reyno - Kwarto ni Maria
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: BattleSetup+Stage, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: BattleSetup+Stage
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: BattlePlayer+CombatStance, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      typeFullname: BattlePlayer+CombatStance
+      intValue: 1
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
@@ -12816,7 +12850,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1553859825}
   m_HandleRect: {fileID: 402944417}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -15033,7 +15067,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1854877083}
   m_HandleRect: {fileID: 231021568}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

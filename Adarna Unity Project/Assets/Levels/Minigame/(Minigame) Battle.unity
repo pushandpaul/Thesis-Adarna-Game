@@ -606,6 +606,7 @@ MonoBehaviour:
     upang umatake at ang kalasag naman upang dumepensa.
   minigameAudio: {fileID: 8300000, guid: 4983035eda915e54badc9e2c479c846a, type: 3}
   losingScreen: {fileID: 0}
+  losingPrompt: 
   showInstruction: 1
 --- !u!1 &172468504
 GameObject:
@@ -1589,6 +1590,41 @@ MonoBehaviour:
   strongAttackButton: {fileID: 2098510054}
   currentHPTextBox: {fileID: 239202842}
   baseHPTextBox: {fileID: 905369844}
+  stanceMoveSets:
+  - stance: 0
+    idleAnim: {fileID: 7400000, guid: 5bc876af5b4d9c140afb10bdcc2e2e47, type: 2}
+    attack:
+      animation: {fileID: 7400000, guid: 00aceff333be7ab45b652a61742a0a62, type: 2}
+      icon: {fileID: 0}
+    strongAttack:
+      animation: {fileID: 7400000, guid: 9dc40b862c8a1ce4991ea123ccff1bb9, type: 2}
+      icon: {fileID: 0}
+    defend:
+      animation: {fileID: 7400000, guid: cae841dc9b7a9ab4cb8b638d4e00dbc1, type: 2}
+      icon: {fileID: 0}
+  - stance: 1
+    idleAnim: {fileID: 7400000, guid: 245dc32755be5c34b8cf8576a819cfac, type: 2}
+    attack:
+      animation: {fileID: 7400000, guid: cae841dc9b7a9ab4cb8b638d4e00dbc1, type: 2}
+      icon: {fileID: 0}
+    strongAttack:
+      animation: {fileID: 7400000, guid: 00aceff333be7ab45b652a61742a0a62, type: 2}
+      icon: {fileID: 0}
+    defend:
+      animation: {fileID: 7400000, guid: 9dc40b862c8a1ce4991ea123ccff1bb9, type: 2}
+      icon: {fileID: 0}
+  currStanceMoveSet:
+    stance: 0
+    idleAnim: {fileID: 0}
+    attack:
+      animation: {fileID: 0}
+      icon: {fileID: 0}
+    strongAttack:
+      animation: {fileID: 0}
+      icon: {fileID: 0}
+    defend:
+      animation: {fileID: 0}
+      icon: {fileID: 0}
   attackAnim: {fileID: 7400000, guid: 00aceff333be7ab45b652a61742a0a62, type: 2}
   strongAttackAnim: {fileID: 7400000, guid: 9dc40b862c8a1ce4991ea123ccff1bb9, type: 2}
   defendAnim: {fileID: 7400000, guid: cae841dc9b7a9ab4cb8b638d4e00dbc1, type: 2}

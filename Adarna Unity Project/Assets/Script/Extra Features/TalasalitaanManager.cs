@@ -60,14 +60,16 @@ public class TalasalitaanManager : MonoBehaviour {
 	void Awake () {
 		GameObject[] chapSelectBtnHolders = GameObject.FindGameObjectsWithTag("Chapter Button");
 		string jsonString = "";
+		string actualPath = Path.Combine(Application.persistentDataPath, talasalitaanJsonPath + ".json");
 		backupJson = File.ReadAllText(Application.dataPath + backupJsonPath);
 
-		if(!File.Exists(Application.dataPath + talasalitaanJsonPath)){
+
+		if(!File.Exists(actualPath)){
 			//File.WriteAllText(Application.persistentDataPath + talasalitaanJsonPath, backupJson);
-			File.WriteAllText(Path.Combine(Application.persistentDataPath, talasalitaanJsonPath + ".json"), backupJson);
+			File.WriteAllText(actualPath, backupJson);
 		}
 
-		jsonString = File.ReadAllText (Application.persistentDataPath + talasalitaanJsonPath);
+		jsonString = File.ReadAllText (actualPath);
 
 		myUIFader = this.GetComponent<UIFader>();
 		gameManager = FindObjectOfType<GameManager>();

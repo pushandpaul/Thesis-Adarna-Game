@@ -118,9 +118,14 @@ public class LevelLoader : MonoBehaviour {
 	}
 		
 	public void launchBattleScene(BattleSetup.EnemyType enemyType, BattleSetup.Stage stage){
+		launchBattleScene(enemyType, stage, BattlePlayer.CombatStance.Sword);
+	}
+
+	public void launchBattleScene(BattleSetup.EnemyType enemyType, BattleSetup.Stage stage, BattlePlayer.CombatStance playerStance){
 		GameManager gameManager = FindObjectOfType<GameManager>();
 		LevelManager levelManager = FindObjectOfType<LevelManager>();
 
+		BattlePlayer.currCombatStance = playerStance;
 		gameManager.setBattleInit (enemyType, stage, 0);
 
 		if(levelManager != null)
@@ -133,6 +138,7 @@ public class LevelLoader : MonoBehaviour {
 		GameManager gameManager = FindObjectOfType<GameManager>();
 		LevelManager levelManager = FindObjectOfType<LevelManager>();
 
+		BattlePlayer.currCombatStance = BattlePlayer.CombatStance.Sword;
 		gameManager.setBattleInit (enemyType, stage, enemyBaseHP);
 
 		if(levelManager != null)

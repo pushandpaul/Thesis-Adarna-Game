@@ -27,16 +27,29 @@ public class BattlePlayer : MonoBehaviour {
 		Defend,
 	}
 
-	[System.Serializable]
-	public class MoveAnimation{
-		public MoveSet type;
-		public string Name;
-		public AnimationClip animation;
+	public enum CombatStance{
+		Sword,
+		Brawl,
 	}
 
-	public AnimationClip attackAnim;
-	public AnimationClip strongAttackAnim;
-	public AnimationClip defendAnim;
+	[System.Serializable]
+	public class StanceMoveSet{
+		public CombatStance stance;
+		public AnimationClip idleAnim;
+		public Move attack;
+		public Move strongAttack;
+		public Move defend;
+	}
+
+	[System.Serializable]
+	public class Move{
+		public AnimationClip animation;
+		public Sprite icon;
+	}
+
+	public StanceMoveSet[] stanceMoveSets;
+	public static CombatStance currCombatStance;
+	private StanceMoveSet currStanceMoveSet;
 
 	public CanvasGroup commandButtonGroup;
 
@@ -44,12 +57,19 @@ public class BattlePlayer : MonoBehaviour {
 		battleStateMachine = FindObjectOfType<BattleStateMachine>();
 		anim = GetComponentInChildren<Animator>();
 		camera = FindObjectOfType<CameraController>();
+		//currCombatStance = CombatStance.Sword;
+		foreach(StanceMoveSet stanceMoveSet in stanceMoveSets){
+			if(currCombatStance == stanceMoveSet.stance){
+				currStanceMoveSet = stanceMoveSet;
+				break;
+			}
+		}
+		//currStanceMoveSet = stanceMoveSets[0];
 	}
 
 	void Start(){
-		
 		if(battleStateMachine != null){
-			anim.Play("Attack Idle");
+			anim.Play(currStanceMoveSet.idleAnim.name);
 			baseHPTextBox.text = "/" + stats.baseHP;
 			stats.currentHP = stats.baseHP;
 			currentHPTextBox.text = "" + stats.currentHP;
@@ -159,13 +179,13 @@ public class BattlePlayer : MonoBehaviour {
 		int computedDamage = 0;
 
 		if(attackMove == MoveSet.Attack){
-			animationName = "Attack";
-			myMoveAnim = attackAnim;
+			animationName = currStanceMoveSet.attack.animation.name;
+			myMoveAnim = currStanceMoveSet.attack.animation;
 			attackPower = stats.attack;
 		}
 		else if(attackMove == MoveSet.StrongAttack){
-			animationName = "Strong Attack";
-			myMoveAnim = strongAttackAnim;
+			animationName = currStanceMoveSet.strongAttack.animation.name;
+			myMoveAnim = currStanceMoveSet.strongAttack.animation;
 			attackPower = stats.attack * 2;
 			attackCharge = 0;
 		}
@@ -196,7 +216,7 @@ public class BattlePlayer : MonoBehaviour {
 			varIsBool = true;
 			boolTrigger = inDefense;
 			variableName = "Defend";
-			myMoveAnim = defendAnim;
+			myMoveAnim = currStanceMoveSet.defend.animation;
 		}
 
 		if(varIsBool)
