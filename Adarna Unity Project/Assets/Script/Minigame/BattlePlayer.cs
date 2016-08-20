@@ -12,8 +12,15 @@ public class BattlePlayer : MonoBehaviour {
 	public bool inDefense;
 	private int attackCharge = 0;
 
-	public Button[] commandButtons;
+	//public Button[] commandButtons;
+	public Button attackButton;
+	public Button defendButton;
 	public Button strongAttackButton;
+
+	public Image portraitUI;
+	public Sprite lowHPPortrait;
+	public Sprite medHPPortrait;
+	public Sprite highHPPortrait;
 
 	//Temporary
 	public Text currentHPTextBox;
@@ -37,14 +44,17 @@ public class BattlePlayer : MonoBehaviour {
 		public CombatStance stance;
 		public AnimationClip idleAnim;
 		public Move attack;
-		public Move strongAttack;
 		public Move defend;
+		public Move strongAttack;
 	}
 
 	[System.Serializable]
 	public class Move{
 		public AnimationClip animation;
 		public Sprite icon;
+		public Sprite iconHighligted;
+		public Sprite iconPressed;
+		public Sprite iconDisable;
 	}
 
 	public StanceMoveSet[] stanceMoveSets;
@@ -61,6 +71,9 @@ public class BattlePlayer : MonoBehaviour {
 		foreach(StanceMoveSet stanceMoveSet in stanceMoveSets){
 			if(currCombatStance == stanceMoveSet.stance){
 				currStanceMoveSet = stanceMoveSet;
+				initButtonIcons(attackButton, currStanceMoveSet.attack);
+				initButtonIcons(defendButton, currStanceMoveSet.defend);
+				initButtonIcons(strongAttackButton, currStanceMoveSet.strongAttack);
 				break;
 			}
 		}
@@ -75,9 +88,14 @@ public class BattlePlayer : MonoBehaviour {
 			currentHPTextBox.text = "" + stats.currentHP;
 			enemy = battleStateMachine.enemy;
 			setButtonCanvas(true);
-			foreach(Button commandButton in commandButtons){
+
+			attackButton.interactable = false;
+			defendButton.interactable = false;
+			strongAttackButton.interactable = false;
+
+			/*foreach(Button commandButton in commandButtons){
 				commandButton.interactable = false;
-			}
+			}*/
 		}
 	}
 
@@ -91,6 +109,17 @@ public class BattlePlayer : MonoBehaviour {
 		camera.setPlayerAsFollowing();
 		camera.Zoom(5.0f, 0.8f);
 		setButtonCanvas(true);
+
+		attackButton.interactable = true;
+		defendButton.interactable = true;
+
+		if(attackCharge == 2){
+			strongAttackButton.interactable = true;
+		}
+		else if(attackCharge < 2){
+			strongAttackButton.interactable = false;
+		}
+		/*
 		foreach(Button commandButton in commandButtons){
 			if(commandButton != strongAttackButton)
 				commandButton.interactable = true;
@@ -102,7 +131,7 @@ public class BattlePlayer : MonoBehaviour {
 					commandButton.interactable = false;
 				}
 			}
-		}
+		}*/
 	}
 
 	public void Attack(){
@@ -140,7 +169,17 @@ public class BattlePlayer : MonoBehaviour {
 		if(stats.currentHP < 0){
 			stats.currentHP = 0;
 		}
+
+		if(stats.currentHP < .20 * stats.baseHP){
+			portraitUI.sprite = lowHPPortrait;
+		}
+		else if(stats.currentHP < .70 * stats.baseHP){
+			portraitUI.sprite = medHPPortrait;
+		}
+		else
+			portraitUI.sprite = highHPPortrait;
 		currentHPTextBox.text = "" + stats.currentHP;
+
 		return;
 	}
 
@@ -170,6 +209,18 @@ public class BattlePlayer : MonoBehaviour {
 			commandButtonGroup.alpha = 0f;
 		
 		commandButtonGroup.interactable = enable;
+	}
+
+	void initButtonIcons(Button button, Move move){
+
+		SpriteState mySpriteState = new SpriteState();
+
+		button.image.sprite = move.icon;
+		mySpriteState.highlightedSprite = move.iconHighligted;
+		mySpriteState.pressedSprite = move.iconPressed;
+		mySpriteState.disabledSprite = move.iconDisable;
+
+		button.spriteState = mySpriteState;
 	}
 
 	IEnumerator StartAttackAnim(MoveSet attackMove){
@@ -203,6 +254,7 @@ public class BattlePlayer : MonoBehaviour {
 				if(attackCharge > 2)
 					attackCharge = 2;
 			}
+
 		}
 		EndTurn();
 	}

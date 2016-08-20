@@ -1247,7 +1247,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -141}
+  m_AnchoredPosition: {x: 0, y: -116}
   m_SizeDelta: {x: 858, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368590408
@@ -1583,11 +1583,13 @@ MonoBehaviour:
     criticalChance: 60
     critAdditionPercent: 50
   inDefense: 0
-  commandButtons:
-  - {fileID: 1913456199}
-  - {fileID: 2098510054}
-  - {fileID: 276120912}
+  attackButton: {fileID: 1913456199}
+  defendButton: {fileID: 276120912}
   strongAttackButton: {fileID: 2098510054}
+  portraitUI: {fileID: 1694001670}
+  lowHPPortrait: {fileID: 21300010, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+  medHPPortrait: {fileID: 21300008, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+  highHPPortrait: {fileID: 21300012, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
   currentHPTextBox: {fileID: 239202842}
   baseHPTextBox: {fileID: 905369844}
   stanceMoveSets:
@@ -1595,39 +1597,42 @@ MonoBehaviour:
     idleAnim: {fileID: 7400000, guid: 5bc876af5b4d9c140afb10bdcc2e2e47, type: 2}
     attack:
       animation: {fileID: 7400000, guid: 00aceff333be7ab45b652a61742a0a62, type: 2}
-      icon: {fileID: 0}
-    strongAttack:
-      animation: {fileID: 7400000, guid: 9dc40b862c8a1ce4991ea123ccff1bb9, type: 2}
-      icon: {fileID: 0}
+      icon: {fileID: 21300000, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+      iconHighligted: {fileID: 21300014, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+      iconPressed: {fileID: 21300014, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+      iconDisable: {fileID: 21300014, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
     defend:
       animation: {fileID: 7400000, guid: cae841dc9b7a9ab4cb8b638d4e00dbc1, type: 2}
-      icon: {fileID: 0}
+      icon: {fileID: 21300004, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+      iconHighligted: {fileID: 21300016, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+      iconPressed: {fileID: 21300016, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+      iconDisable: {fileID: 21300016, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+    strongAttack:
+      animation: {fileID: 7400000, guid: 9dc40b862c8a1ce4991ea123ccff1bb9, type: 2}
+      icon: {fileID: 21300006, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+      iconHighligted: {fileID: 21300018, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+      iconPressed: {fileID: 21300018, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
+      iconDisable: {fileID: 21300020, guid: 18ec9ef176dace54da6020e719ebb915, type: 3}
   - stance: 1
     idleAnim: {fileID: 7400000, guid: 245dc32755be5c34b8cf8576a819cfac, type: 2}
     attack:
       animation: {fileID: 7400000, guid: cae841dc9b7a9ab4cb8b638d4e00dbc1, type: 2}
-      icon: {fileID: 0}
-    strongAttack:
-      animation: {fileID: 7400000, guid: 00aceff333be7ab45b652a61742a0a62, type: 2}
-      icon: {fileID: 0}
+      icon: {fileID: 21300000, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
+      iconHighligted: {fileID: 21300006, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
+      iconPressed: {fileID: 21300006, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
+      iconDisable: {fileID: 21300006, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
     defend:
       animation: {fileID: 7400000, guid: 9dc40b862c8a1ce4991ea123ccff1bb9, type: 2}
-      icon: {fileID: 0}
-  currStanceMoveSet:
-    stance: 0
-    idleAnim: {fileID: 0}
-    attack:
-      animation: {fileID: 0}
-      icon: {fileID: 0}
+      icon: {fileID: 21300002, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
+      iconHighligted: {fileID: 21300008, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
+      iconPressed: {fileID: 21300008, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
+      iconDisable: {fileID: 21300008, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
     strongAttack:
-      animation: {fileID: 0}
-      icon: {fileID: 0}
-    defend:
-      animation: {fileID: 0}
-      icon: {fileID: 0}
-  attackAnim: {fileID: 7400000, guid: 00aceff333be7ab45b652a61742a0a62, type: 2}
-  strongAttackAnim: {fileID: 7400000, guid: 9dc40b862c8a1ce4991ea123ccff1bb9, type: 2}
-  defendAnim: {fileID: 7400000, guid: cae841dc9b7a9ab4cb8b638d4e00dbc1, type: 2}
+      animation: {fileID: 7400000, guid: 00aceff333be7ab45b652a61742a0a62, type: 2}
+      icon: {fileID: 21300004, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
+      iconHighligted: {fileID: 21300010, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
+      iconPressed: {fileID: 21300010, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
+      iconDisable: {fileID: 21300012, guid: f101bd08dc0aa674d9fc74ec5238cb0d, type: 3}
   commandButtonGroup: {fileID: 704189594}
 --- !u!58 &441197022
 CircleCollider2D:
@@ -3140,6 +3145,8 @@ MonoBehaviour:
   battleStagePrefabs:
   - stage: 0
     prefab: {fileID: 153628, guid: 47e971257e7e2d647a6722bd498a3ea4, type: 2}
+  - stage: 1
+    prefab: {fileID: 196216, guid: 569a5e8195a84ed4da40a6968ac284d2, type: 2}
 --- !u!1 &1300393292
 GameObject:
   m_ObjectHideFlags: 0

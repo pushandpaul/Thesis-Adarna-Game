@@ -11,6 +11,7 @@ public class BattleSetup : MonoBehaviour {
 
 	public enum Stage{
 		ArmenyaCastle,
+		RDLCStables,
 	}
 
 	[System.Serializable]
