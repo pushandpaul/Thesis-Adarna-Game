@@ -23,7 +23,8 @@ public class TalasalitaanManager : MonoBehaviour {
 
 	public PartDataList partDataList;
 
-	public string talasalitaanJsonPath;
+	public string talasalitaanFileName;
+	private string talasalitaanJsonPath;
 	public string backupJsonPath;
 	private string backupJson;
 
@@ -60,16 +61,16 @@ public class TalasalitaanManager : MonoBehaviour {
 	void Awake () {
 		GameObject[] chapSelectBtnHolders = GameObject.FindGameObjectsWithTag("Chapter Button");
 		string jsonString = "";
-		string actualPath = Path.Combine(Application.persistentDataPath, talasalitaanJsonPath + ".json");
+		talasalitaanJsonPath = Path.Combine(Application.persistentDataPath, talasalitaanFileName + ".json");
 		backupJson = File.ReadAllText(Application.dataPath + backupJsonPath);
 
 
-		if(!File.Exists(actualPath)){
+		if(!File.Exists(talasalitaanJsonPath)){
 			//File.WriteAllText(Application.persistentDataPath + talasalitaanJsonPath, backupJson);
-			File.WriteAllText(actualPath, backupJson);
+			File.WriteAllText(talasalitaanJsonPath, backupJson);
 		}
 
-		jsonString = File.ReadAllText (actualPath);
+		jsonString = File.ReadAllText (talasalitaanJsonPath);
 
 		myUIFader = this.GetComponent<UIFader>();
 		gameManager = FindObjectOfType<GameManager>();
@@ -99,7 +100,6 @@ public class TalasalitaanManager : MonoBehaviour {
 	}
 
 	private void Activate(Talasalitaan talasalitaan){
-
 
 		if(talasalitaan != null){
 			Debug.Log("Found talasalitaan '" + talasalitaan.salita + "'.");
@@ -271,14 +271,14 @@ public class TalasalitaanManager : MonoBehaviour {
 	public void RewriteJson(){
 		string jsonString = JsonUtility.ToJson(partDataList);
 		Debug.Log(jsonString);
-		File.WriteAllText(Application.dataPath + talasalitaanJsonPath, jsonString);
+		File.WriteAllText(talasalitaanJsonPath, jsonString);
 	}
 
 	public void ResetPartData(){
 		newSalitaCount = 0;
 		notif.SetActive (false);
 		partDataList = JsonUtility.FromJson<PartDataList>(backupJson);
-		File.WriteAllText(Application.dataPath + talasalitaanJsonPath, backupJson);
+		File.WriteAllText(talasalitaanJsonPath, backupJson);
 	}
 
 	IEnumerator BookController(bool isLaunch){

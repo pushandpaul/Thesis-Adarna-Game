@@ -37,6 +37,7 @@ public class BattlePlayer : MonoBehaviour {
 	public enum CombatStance{
 		Sword,
 		Brawl,
+		Whip,
 	}
 
 	[System.Serializable]

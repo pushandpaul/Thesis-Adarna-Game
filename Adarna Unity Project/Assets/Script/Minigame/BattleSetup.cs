@@ -7,6 +7,7 @@ public class BattleSetup : MonoBehaviour {
 	public enum EnemyType{
 		Higante,
 		Serpyente,
+		KabayongMaliap,
 	}
 
 	public enum Stage{

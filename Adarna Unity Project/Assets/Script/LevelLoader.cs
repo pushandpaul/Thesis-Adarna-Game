@@ -80,6 +80,7 @@ public class LevelLoader : MonoBehaviour {
 		ReynoNewCastle = 64,
 		//Minigame
 		MinigameMoveMountain = 65,
+		ReynoBaryo = 66,
 	}
 
 	public LevelSelect Levels;
